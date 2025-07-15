@@ -105,20 +105,26 @@ $(function(){initNavTree('input__box_8h.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_ela_line_edit_8h_source.html">ElaLineEdit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_tool_tip_8h_source.html">ElaToolTip.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 input_box.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__box_8h__incl.png" border="0" usemap="#ainput__box_8h" alt=""/></div>
 <map name="ainput__box_8h" id="ainput__box_8h">
-<area shape="rect" title=" " alt="" coords="48,5,137,32"/>
-<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="43,80,142,107"/>
-<area shape="poly" title=" " alt="" coords="95,33,95,64,90,64,90,33"/>
+<area shape="rect" title=" " alt="" coords="96,5,185,32"/>
+<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="31,80,130,107"/>
+<area shape="poly" title=" " alt="" coords="132,34,102,70,98,66,128,31"/>
+<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="154,80,247,107"/>
+<area shape="poly" title=" " alt="" coords="153,31,183,66,179,70,149,34"/>
 <area shape="rect" title=" " alt="" coords="5,155,84,181"/>
-<area shape="poly" title=" " alt="" coords="86,109,63,143,59,140,82,106"/>
+<area shape="poly" title=" " alt="" coords="77,108,60,142,55,139,72,106"/>
 <area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="108,155,176,181"/>
-<area shape="poly" title=" " alt="" coords="103,106,127,140,123,143,99,109"/>
+<area shape="poly" title=" " alt="" coords="93,105,124,141,120,145,89,109"/>
 <area shape="rect" title=" " alt="" coords="82,229,202,256"/>
 <area shape="poly" title=" " alt="" coords="144,182,144,214,139,214,139,182"/>
+<area shape="poly" title=" " alt="" coords="192,109,164,144,159,141,188,106"/>
+<area shape="rect" title=" " alt="" coords="200,155,273,181"/>
+<area shape="poly" title=" " alt="" coords="209,106,226,139,221,142,204,108"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -126,35 +132,41 @@ input_box.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__box_8h__dep__incl.png" border="0" usemap="#ainput__box_8hdep" alt=""/></div>
 <map name="ainput__box_8hdep" id="ainput__box_8hdep">
-<area shape="rect" title=" " alt="" coords="219,5,307,32"/>
-<area shape="rect" href="input__box_8cpp.html" title=" " alt="" coords="5,80,108,107"/>
-<area shape="poly" title=" " alt="" coords="214,40,94,82,92,77,212,35"/>
-<area shape="rect" href="login__form_8h.html" title=" " alt="" coords="277,80,369,107"/>
-<area shape="poly" title=" " alt="" coords="285,42,315,78,311,81,281,46"/>
-<area shape="rect" href="moc__input__box_8cpp.html" title=" " alt="" coords="91,237,225,264"/>
-<area shape="poly" title=" " alt="" coords="243,46,206,94,187,124,172,156,162,200,160,237,155,237,157,199,167,154,182,122,201,91,239,42"/>
-<area shape="rect" href="registration__form_8h.html" title=" " alt="" coords="534,80,664,107"/>
-<area shape="poly" title=" " alt="" coords="323,30,541,77,540,82,322,35"/>
-<area shape="rect" href="login__form_8cpp.html" title=" " alt="" coords="182,155,288,181"/>
-<area shape="poly" title=" " alt="" coords="298,119,252,156,249,152,294,115"/>
-<area shape="rect" href="login__register__form_8h.html" title=" " alt="" coords="475,155,617,181"/>
-<area shape="poly" title=" " alt="" coords="377,109,508,151,506,157,375,114"/>
-<area shape="rect" href="moc__login__form_8cpp.html" title=" " alt="" coords="313,155,451,181"/>
-<area shape="poly" title=" " alt="" coords="345,117,374,153,370,156,341,121"/>
-<area shape="rect" href="login__register__form_8cpp.html" title=" " alt="" coords="468,237,624,264"/>
-<area shape="poly" title=" " alt="" coords="548,197,548,237,543,237,543,197"/>
-<area shape="rect" href="moc__login__register__form_8cpp.html" title=" " alt="" coords="313,229,443,272"/>
-<area shape="poly" title=" " alt="" coords="507,191,422,231,420,226,505,186"/>
-<area shape="rect" href="ui_2_login_interface_2_login_interface__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="250,320,402,347"/>
-<area shape="poly" title=" " alt="" coords="359,287,336,321,332,318,354,284"/>
-<area shape="poly" title=" " alt="" coords="342,192,320,209,303,230,298,253,301,277,320,318,315,320,296,279,292,253,298,228,316,205,338,187"/>
-<area shape="poly" title=" " alt="" coords="199,269,301,317,299,322,197,273"/>
-<area shape="poly" title=" " alt="" coords="583,121,557,156,553,153,579,118"/>
-<area shape="rect" href="moc__registration__form_8cpp.html" title=" " alt="" coords="648,237,823,264"/>
-<area shape="poly" title=" " alt="" coords="622,117,726,235,722,239,618,120"/>
-<area shape="rect" href="registration__form_8cpp.html" title=" " alt="" coords="692,155,835,181"/>
-<area shape="poly" title=" " alt="" coords="643,111,735,152,733,156,641,116"/>
-<area shape="poly" title=" " alt="" coords="660,270,637,275,392,322,391,317,636,269,659,265"/>
+<area shape="rect" title=" " alt="" coords="400,5,488,32"/>
+<area shape="rect" href="input__box_8cpp.html" title=" " alt="" coords="205,80,307,107"/>
+<area shape="poly" title=" " alt="" coords="398,40,290,82,288,77,396,35"/>
+<area shape="rect" href="login__form_8h.html" title=" " alt="" coords="331,80,424,107"/>
+<area shape="poly" title=" " alt="" coords="424,45,391,81,387,78,420,42"/>
+<area shape="rect" href="moc__input__box_8cpp.html" title=" " alt="" coords="765,237,899,264"/>
+<area shape="poly" title=" " alt="" coords="495,35,591,78,660,118,726,163,819,235,815,239,722,167,657,123,588,82,493,40"/>
+<area shape="rect" href="registration__form_8h.html" title=" " alt="" coords="447,80,577,107"/>
+<area shape="poly" title=" " alt="" coords="468,42,502,78,498,81,464,45"/>
+<area shape="rect" href="login__form_8cpp.html" title=" " alt="" coords="27,155,133,181"/>
+<area shape="poly" title=" " alt="" coords="317,112,133,157,132,151,316,107"/>
+<area shape="rect" href="login__register__form_8h.html" title=" " alt="" coords="320,155,462,181"/>
+<area shape="poly" title=" " alt="" coords="385,122,391,154,386,155,380,123"/>
+<area shape="rect" href="moc__login__form_8cpp.html" title=" " alt="" coords="158,155,296,181"/>
+<area shape="poly" title=" " alt="" coords="339,116,254,156,252,152,336,111"/>
+<area shape="rect" href="_app_controller_8h.html" title=" " alt="" coords="44,237,156,264"/>
+<area shape="poly" title=" " alt="" coords="331,188,146,239,145,234,330,183"/>
+<area shape="rect" href="login__register__form_8cpp.html" title=" " alt="" coords="386,237,542,264"/>
+<area shape="poly" title=" " alt="" coords="414,191,455,235,451,239,410,195"/>
+<area shape="rect" href="moc__login__register__form_8cpp.html" title=" " alt="" coords="231,229,361,272"/>
+<area shape="poly" title=" " alt="" coords="366,194,322,231,319,227,363,190"/>
+<area shape="rect" href="_app_controller_8cpp.html" title=" " alt="" coords="5,320,131,347"/>
+<area shape="poly" title=" " alt="" coords="92,279,75,321,70,319,87,277"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="155,320,229,347"/>
+<area shape="poly" title=" " alt="" coords="127,272,180,318,176,322,124,276"/>
+<area shape="rect" href="ui_2_login_interface_2_login_interface__autogen_2mocs__compilation_8cpp.html" title=" " alt="" coords="415,320,566,347"/>
+<area shape="poly" title=" " alt="" coords="361,276,461,317,459,322,359,281"/>
+<area shape="poly" title=" " alt="" coords="218,196,210,234,212,254,221,270,233,280,250,290,299,305,357,316,415,323,414,328,357,321,298,310,248,294,230,285,217,274,207,255,205,234,213,195"/>
+<area shape="poly" title=" " alt="" coords="769,271,754,275,548,322,547,317,753,269,768,266"/>
+<area shape="poly" title=" " alt="" coords="479,117,413,156,411,152,477,113"/>
+<area shape="rect" href="moc__registration__form_8cpp.html" title=" " alt="" coords="566,237,741,264"/>
+<area shape="poly" title=" " alt="" coords="517,121,525,151,539,180,557,198,577,213,619,234,616,239,574,217,553,202,535,183,520,153,512,123"/>
+<area shape="rect" href="registration__form_8cpp.html" title=" " alt="" coords="550,155,693,181"/>
+<area shape="poly" title=" " alt="" coords="545,113,604,152,601,156,542,118"/>
+<area shape="poly" title=" " alt="" coords="616,274,517,322,515,317,613,269"/>
 </map>
 </div>
 </div>

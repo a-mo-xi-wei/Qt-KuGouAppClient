@@ -6,8 +6,8 @@
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="105,210,142,202,143,208,106,215"/>
 <area shape="rect" id="Node000009" href="$class_ku_gou_server.html#ab2ff25675fe6c092412770e22da81da1" title="初始化数据库。" alt="" coords="153,235,249,261"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="106,229,138,234,137,240,105,234"/>
-<area shape="rect" id="Node000011" href="$class_ku_gou_server.html#a9408a7ce11fb1150c2e47b983fa3136a" title="初始化路由。" alt="" coords="162,424,240,451"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="68,235,184,409,179,412,63,238"/>
+<area shape="rect" id="Node000011" href="$class_ku_gou_server.html#a9408a7ce11fb1150c2e47b983fa3136a" title="初始化路由。" alt="" coords="162,576,240,603"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="64,236,191,560,186,562,59,238"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="179,134,171,123,173,113,183,105,201,103,222,107,230,117,226,120,220,111,201,108,185,110,177,115,177,122,183,130"/>
 <area shape="rect" id="Node000004" href="$class_qs_logging_1_1_logger.html#ae0059ac4e088aa41cb02aa29b744be37" title="Adds a log message destination. Don&#39;t add null destinations." alt="" coords="328,5,467,48"/>
 <area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="233,177,247,166,264,139,269,112,276,85,283,72,295,58,313,45,316,50,299,62,287,75,281,87,274,113,269,141,251,170,236,182"/>
@@ -22,23 +22,37 @@
 <area shape="rect" id="Node000010" href="$common_8cpp.html#a60797bf326249255d5381c7af5c95029" title="初始化数据库连接池。" alt="" coords="356,272,439,299"/>
 <area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="250,255,342,272,341,277,249,260"/>
 <area shape="rect" id="Node000012" href="$class_ku_gou_server.html#a895033ee5b0217df3f2af999f76c6da1" title="处理添加歌曲 API。" alt="" coords="344,323,451,349"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="214,421,249,390,296,359,328,346,330,351,298,364,252,394,217,425"/>
-<area shape="rect" id="Node000017" href="$class_ku_gou_server.html#ae4ef7290bce7ddf38cee4ce44673f738" title="处理删除歌曲 API。" alt="" coords="346,373,450,400"/>
-<area shape="poly" id="edge17_Node000011_Node000017" title=" " alt="" coords="239,425,296,409,330,401,331,406,298,415,241,430"/>
-<area shape="rect" id="Node000018" href="$class_ku_gou_server.html#a9ead17bfbf93c7c6b95363a9c41245fc" title="处理获取本地歌曲列表 API。" alt="" coords="330,424,466,451"/>
-<area shape="poly" id="edge18_Node000011_Node000018" title=" " alt="" coords="240,435,314,435,314,440,240,440"/>
-<area shape="rect" id="Node000019" href="$class_ku_gou_server.html#a1b5bd63b228d49d4e93bb28688fbf7c6" title="处理搜索歌曲 API。" alt="" coords="335,475,460,501"/>
-<area shape="poly" id="edge19_Node000011_Node000019" title=" " alt="" coords="241,445,298,460,327,468,326,473,296,465,239,450"/>
-<area shape="rect" id="Node000020" href="$class_ku_gou_server.html#a37370bb4bbd7d3613a341b112dda15be" title="处理测试 API。" alt="" coords="358,525,437,552"/>
-<area shape="poly" id="edge20_Node000011_Node000020" title=" " alt="" coords="217,449,252,481,298,511,344,527,342,532,296,516,249,485,214,453"/>
-<area shape="rect" id="Node000021" href="$class_ku_gou_server.html#a4fcea6cd7ac7f227f269ad994a05dd35" title="处理版本 API。" alt="" coords="349,576,446,603"/>
-<area shape="poly" id="edge21_Node000011_Node000021" title=" " alt="" coords="211,450,243,505,268,536,298,562,335,578,333,583,296,566,264,540,239,508,206,453"/>
-<area shape="rect" id="Node000013" href="$class_s_result.html#a8615f9f2cf33875c2b4ec8312b4ed7f2" title="生成失败结果" alt="" coords="560,272,671,299"/>
-<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="451,321,544,299,545,304,452,326"/>
-<area shape="rect" id="Node000015" href="$class_ku_gou_server.html#a68989f19f3d7c7e92e3b03a80bb1c3a7" title="安全处理数值类型。" alt="" coords="569,323,662,349"/>
-<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="452,333,554,333,554,339,452,339"/>
-<area shape="rect" id="Node000016" href="$class_ku_gou_server.html#a214d4a7bff4f1498bf2677710adb4457" title="安全处理字符串，防止 SQL 注入。" alt="" coords="575,373,656,400"/>
-<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="452,346,561,371,560,377,451,351"/>
-<area shape="rect" id="Node000014" href="$struct_s_result_code_1_1_code.html#a1539e7b7f1a160380f014dda080a5686" title="转换为 JSON 格式" alt="" coords="733,264,879,307"/>
-<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="672,283,717,283,717,288,672,288"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="201,575,208,533,224,475,252,413,272,384,295,359,328,342,330,347,299,363,276,387,257,415,229,477,213,534,206,576"/>
+<area shape="rect" id="Node000018" href="$class_ku_gou_server.html#ae4ef7290bce7ddf38cee4ce44673f738" title="处理删除歌曲 API。" alt="" coords="346,373,450,400"/>
+<area shape="poly" id="edge18_Node000011_Node000018" title=" " alt="" coords="203,575,213,541,231,497,258,450,275,428,295,410,329,393,332,398,299,414,279,432,262,453,236,499,218,543,208,577"/>
+<area shape="rect" id="Node000019" href="$class_ku_gou_server.html#a0d351aa7c5eba177436ebe495f6281bc" title=" " alt="" coords="340,424,456,451"/>
+<area shape="poly" id="edge19_Node000011_Node000019" title=" " alt="" coords="206,574,239,519,264,487,296,460,323,447,325,452,298,465,268,491,243,522,211,577"/>
+<area shape="rect" id="Node000020" href="$class_ku_gou_server.html#ae6a8287ed6cef87a3ce8ce8f287cb6e1" title=" " alt="" coords="326,475,469,501"/>
+<area shape="poly" id="edge20_Node000011_Node000020" title=" " alt="" coords="214,573,249,542,296,511,311,504,313,509,298,516,252,546,217,577"/>
+<area shape="rect" id="Node000021" href="$class_ku_gou_server.html#a9ead17bfbf93c7c6b95363a9c41245fc" title="处理获取本地歌曲列表 API。" alt="" coords="330,525,466,552"/>
+<area shape="poly" id="edge21_Node000011_Node000021" title=" " alt="" coords="239,577,296,561,326,554,327,559,298,567,241,582"/>
+<area shape="rect" id="Node000022" href="$class_ku_gou_server.html#a182166c4c721e986d0558efdd2e9205a" title=" " alt="" coords="355,576,440,603"/>
+<area shape="poly" id="edge22_Node000011_Node000022" title=" " alt="" coords="240,587,339,587,339,592,240,592"/>
+<area shape="rect" id="Node000023" href="$class_ku_gou_server.html#a0d48e3a56de8108cef9e2c5ba3219a7d" title=" " alt="" coords="346,627,449,653"/>
+<area shape="poly" id="edge23_Node000011_Node000023" title=" " alt="" coords="241,597,298,612,332,621,330,626,296,617,239,602"/>
+<area shape="rect" id="Node000024" href="$class_ku_gou_server.html#a1b5bd63b228d49d4e93bb28688fbf7c6" title="处理搜索歌曲 API。" alt="" coords="335,677,460,704"/>
+<area shape="poly" id="edge24_Node000011_Node000024" title=" " alt="" coords="217,601,252,633,298,663,321,672,319,677,296,668,249,637,214,605"/>
+<area shape="rect" id="Node000025" href="$class_ku_gou_server.html#ab9a538bedf1f9af9c7a444290869391f" title="处理获取搜索建议 API。" alt="" coords="318,728,478,755"/>
+<area shape="poly" id="edge25_Node000011_Node000025" title=" " alt="" coords="211,602,243,657,268,688,299,714,307,719,304,723,295,718,264,692,239,660,206,605"/>
+<area shape="rect" id="Node000026" href="$class_ku_gou_server.html#a37370bb4bbd7d3613a341b112dda15be" title="处理测试 API。" alt="" coords="358,779,437,805"/>
+<area shape="poly" id="edge26_Node000011_Node000026" title=" " alt="" coords="208,602,218,635,236,680,262,726,279,747,299,765,320,777,344,784,342,789,318,782,295,769,275,750,258,729,231,682,213,637,203,604"/>
+<area shape="rect" id="Node000027" href="$class_ku_gou_server.html#adb2e7b654d344a202c09f7639222c38a" title=" " alt="" coords="334,829,462,856"/>
+<area shape="poly" id="edge27_Node000011_Node000027" title=" " alt="" coords="206,603,213,644,229,702,257,763,276,791,299,815,321,829,318,833,295,819,272,795,252,766,224,704,208,646,201,604"/>
+<area shape="rect" id="Node000028" href="$class_ku_gou_server.html#a4fcea6cd7ac7f227f269ad994a05dd35" title="处理版本 API。" alt="" coords="349,880,446,907"/>
+<area shape="poly" id="edge28_Node000011_Node000028" title=" " alt="" coords="205,603,209,652,223,724,235,762,251,800,272,835,299,866,316,877,335,885,333,890,313,882,295,870,268,839,246,803,230,764,218,725,204,653,200,603"/>
+<area shape="rect" id="Node000013" href="$class_s_result.html#a8615f9f2cf33875c2b4ec8312b4ed7f2" title="生成失败结果" alt="" coords="560,247,671,273"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="451,322,497,308,521,296,545,283,559,277,561,282,548,288,524,301,499,313,453,328"/>
+<area shape="rect" id="Node000015" href="$color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="586,297,645,324"/>
+<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="451,327,570,313,571,318,452,332"/>
+<area shape="rect" id="Node000016" href="$class_ku_gou_server.html#a68989f19f3d7c7e92e3b03a80bb1c3a7" title="安全处理数值类型。" alt="" coords="569,348,662,375"/>
+<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="452,340,554,352,554,357,451,345"/>
+<area shape="rect" id="Node000017" href="$class_ku_gou_server.html#a214d4a7bff4f1498bf2677710adb4457" title="安全处理字符串，防止 SQL 注入。" alt="" coords="575,399,656,425"/>
+<area shape="poly" id="edge17_Node000012_Node000017" title=" " alt="" coords="453,344,499,359,524,371,547,384,562,390,560,395,545,389,521,376,497,364,451,350"/>
+<area shape="rect" id="Node000014" href="$struct_s_result_code_1_1_code.html#a1539e7b7f1a160380f014dda080a5686" title="转换为 JSON 格式" alt="" coords="733,239,879,281"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="672,257,717,257,717,263,672,263"/>
 </map>

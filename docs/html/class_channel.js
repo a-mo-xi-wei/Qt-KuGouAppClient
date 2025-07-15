@@ -8,7 +8,6 @@ var class_channel =
     [ "initUi", "class_channel.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
     [ "initVector", "class_channel.html#a90c20eba367d53522d3fcbb6b03111ba", null ],
     [ "mousePressEvent", "class_channel.html#a7523c71b2bf60975302287ec8923f80e", null ],
-    [ "resizeEvent", "class_channel.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "m_buttonGroup", "class_channel.html#ad47442fcf7db8bd0dab09d79ad4c1d47", null ],
     [ "m_childrenWidget", "class_channel.html#a5524969a3988b46d2637746aadd64eeb", null ],
     [ "m_crowdWidget", "class_channel.html#aa52c4de146df8262cdd19877994b0a1b", null ],

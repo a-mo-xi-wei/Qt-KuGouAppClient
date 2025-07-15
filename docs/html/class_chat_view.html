@@ -128,11 +128,13 @@ ChatView 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_chat_view__coll__graph.png" border="0" usemap="#a_chat_view_coll__map" alt="Collaboration graph"/></div>
 <map name="a_chat_view_coll__map" id="a_chat_view_coll__map">
-<area shape="rect" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="48,128,126,155"/>
-<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
-<area shape="poly" title=" " alt="" coords="54,46,85,127,80,128,49,48"/>
-<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="102,5,165,32"/>
-<area shape="poly" title=" " alt="" coords="126,48,94,128,89,127,121,46"/>
+<area shape="rect" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="40,172,118,199"/>
+<area shape="rect" title=" " alt="" coords="5,81,78,108"/>
+<area shape="poly" title=" " alt="" coords="55,122,76,170,71,172,50,124"/>
+<area shape="rect" href="class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="101,81,200,108"/>
+<area shape="poly" title=" " alt="" coords="133,122,91,173,87,170,129,118"/>
+<area shape="rect" title=" " alt="" coords="105,5,196,32"/>
+<area shape="poly" title=" " alt="" coords="154,47,154,81,148,81,148,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
@@ -162,15 +164,11 @@ Public 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:a21a97d51efa77b8fced8a5939afa2ab7" id="r_a21a97d51efa77b8fced8a5939afa2ab7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21a97d51efa77b8fced8a5939afa2ab7">eventFilter</a> (QObject *o, QEvent *e) override</td></tr>
-<tr class="memdesc:a21a97d51efa77b8fced8a5939afa2ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">事件过滤器  <br /></td></tr>
-<tr class="separator:a21a97d51efa77b8fced8a5939afa2ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
-<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制事件  <br /></td></tr>
-<tr class="separator:aa71936647c7e332ab07cbec003a8c9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
 <tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整大小事件  <br /></td></tr>
 <tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eb1890b4d4dfb7bf76fb7c44cbdebf" id="r_a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26eb1890b4d4dfb7bf76fb7c44cbdebf">showEvent</a> (QShowEvent *event) override</td></tr>
+<tr class="separator:a26eb1890b4d4dfb7bf76fb7c44cbdebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private 槽</h2></td></tr>
@@ -192,24 +190,12 @@ Private 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:a1869a14ca92ea188a114a98792c0238f" id="r_a1869a14ca92ea188a114a98792c0238f"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1869a14ca92ea188a114a98792c0238f">m_pVl</a></td></tr>
-<tr class="memdesc:a1869a14ca92ea188a114a98792c0238f"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直布局  <br /></td></tr>
-<tr class="separator:a1869a14ca92ea188a114a98792c0238f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c729e5fdab0464c0044ba0145a08557" id="r_a5c729e5fdab0464c0044ba0145a08557"><td class="memItemLeft" align="right" valign="top">QScrollArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c729e5fdab0464c0044ba0145a08557">m_pScrollArea</a></td></tr>
-<tr class="memdesc:a5c729e5fdab0464c0044ba0145a08557"><td class="mdescLeft">&#160;</td><td class="mdescRight">滚动区域  <br /></td></tr>
-<tr class="separator:a5c729e5fdab0464c0044ba0145a08557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd12341d8fe8de49a515da725296e7a" id="r_a3dd12341d8fe8de49a515da725296e7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_scroll_area.html">MyScrollArea</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dd12341d8fe8de49a515da725296e7a">m_pScrollArea</a></td></tr>
+<tr class="memdesc:a3dd12341d8fe8de49a515da725296e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">滚动区域  <br /></td></tr>
+<tr class="separator:a3dd12341d8fe8de49a515da725296e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb63ba2342e3413cc2cd7f2bd4762442" id="r_acb63ba2342e3413cc2cd7f2bd4762442"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb63ba2342e3413cc2cd7f2bd4762442">isAppended</a></td></tr>
 <tr class="memdesc:acb63ba2342e3413cc2cd7f2bd4762442"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否追加聊天项  <br /></td></tr>
 <tr class="separator:acb63ba2342e3413cc2cd7f2bd4762442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76efe19fa23d16eae732af921dc898cf" id="r_a76efe19fa23d16eae732af921dc898cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76efe19fa23d16eae732af921dc898cf">m_logo</a> {}</td></tr>
-<tr class="memdesc:a76efe19fa23d16eae732af921dc898cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logo 标签  <br /></td></tr>
-<tr class="separator:a76efe19fa23d16eae732af921dc898cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a9b4306263b8829ef9cb4e44c8be7f9" id="r_a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a9b4306263b8829ef9cb4e44c8be7f9">m_helloText</a> {}</td></tr>
-<tr class="memdesc:a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">欢迎文本标签  <br /></td></tr>
-<tr class="separator:a3a9b4306263b8829ef9cb4e44c8be7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5ac64a46254f83f7a6240650893d643" id="r_aa5ac64a46254f83f7a6240650893d643"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_label.html">QLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ac64a46254f83f7a6240650893d643">m_funcText</a> {}</td></tr>
-<tr class="memdesc:aa5ac64a46254f83f7a6240650893d643"><td class="mdescLeft">&#160;</td><td class="mdescRight">功能描述标签  <br /></td></tr>
-<tr class="separator:aa5ac64a46254f83f7a6240650893d643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeee108cd649c3633a1fd719824747f1" id="r_adeee108cd649c3633a1fd719824747f1"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeee108cd649c3633a1fd719824747f1">m_centerInitWidget</a> {}</td></tr>
 <tr class="memdesc:adeee108cd649c3633a1fd719824747f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">居中初始化部件  <br /></td></tr>
 <tr class="separator:adeee108cd649c3633a1fd719824747f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,6 +233,7 @@ Private 属性</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>&lt; Logo 标签</p>
 <p>&lt; 设置 Logo 尺寸</p>
 <p>&lt; 设置 Logo 图片</p>
 <p>&lt; 设置欢迎文本高度</p>
@@ -257,6 +244,7 @@ Private 属性</h2></td></tr>
 <p>&lt; 设置居中对齐</p>
 <p>&lt; 添加 Logo</p>
 <p>&lt; 添加欢迎文本</p>
+<p>&lt; 功能描述标签</p>
 <p>&lt; 设置功能描述</p>
 <p>&lt; 设置功能描述样式</p>
 <p>&lt; 创建垂直布局</p>
@@ -269,12 +257,9 @@ Private 属性</h2></td></tr>
 <p>&lt; 设置边距</p>
 <p>&lt; 创建滚动区域</p>
 <p>&lt; 设置扩展策略</p>
-<p>&lt; 设置对象名称</p>
 <p>&lt; 设置无边框</p>
 <p>&lt; 添加滚动区域</p>
 <p>&lt; 创建内容控件</p>
-<p>&lt; 设置对象名称</p>
-<p>&lt; 启用背景填充</p>
 <p>&lt; 设置扩展策略</p>
 <p>&lt; 创建垂直布局</p>
 <p>&lt; 添加底部拉伸</p>
@@ -283,8 +268,6 @@ Private 属性</h2></td></tr>
 <p>&lt; 隐藏水平滚动条</p>
 <p>&lt; 获取垂直滚动条</p>
 <p>&lt; 连接滚动条范围变化信号</p>
-<p>&lt; 启用控件大小调整</p>
-<p>&lt; 安装事件过滤器</p>
 <p>&lt; 设置居中部件父对象</p>
 <p>&lt; 穿透鼠标事件</p>
 <p>&lt; 置于顶层</p>
@@ -344,57 +327,6 @@ Private 属性</h2></td></tr>
 <area shape="poly" title=" " alt="" coords="124,49,156,54,155,59,123,55"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a21a97d51efa77b8fced8a5939afa2ab7" name="a21a97d51efa77b8fced8a5939afa2ab7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21a97d51efa77b8fced8a5939afa2ab7">&#9670;&#160;</a></span>eventFilter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool eventFilter </td>
-          <td>(</td>
-          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>o</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>事件过滤器 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">o</td><td>目标对象 </td></tr>
-    <tr><td class="paramname">e</td><td>事件对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
-<dl class="section note"><dt>注解</dt><dd>重写基类方法</dd></dl>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">o</td><td>目标对象 </td></tr>
-    <tr><td class="paramname">e</td><td>事件对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>返回</dt><dd>是否处理事件 </dd></dl>
-<p>&lt; 显示滚动条</p>
-<p>&lt; 隐藏滚动条</p>
-<p>&lt; 调用基类方法</p>
 
 </div>
 </div>
@@ -513,47 +445,6 @@ Private 属性</h2></td></tr>
 <area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="aa71936647c7e332ab07cbec003a8c9a2" name="aa71936647c7e332ab07cbec003a8c9a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa71936647c7e332ab07cbec003a8c9a2">&#9670;&#160;</a></span>paintEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void paintEvent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>绘制事件 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>绘制事件对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>重写基类方法</dd></dl>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>绘制事件对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-<p>&lt; 绘制控件</p>
 
 </div>
 </div>
@@ -712,6 +603,41 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
+<a id="a26eb1890b4d4dfb7bf76fb7c44cbdebf" name="a26eb1890b4d4dfb7bf76fb7c44cbdebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26eb1890b4d4dfb7bf76fb7c44cbdebf">&#9670;&#160;</a></span>showEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showEvent </td>
+          <td>(</td>
+          <td class="paramtype">QShowEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_chat_view_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph.png" border="0" usemap="#aclass_chat_view_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph" alt=""/></div>
+<map name="aclass_chat_view_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph" id="aclass_chat_view_a26eb1890b4d4dfb7bf76fb7c44cbdebf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" href="class_chat_view.html#ad86057da9ac648ff24c26adef0c08249" title="更新居中部件位置" alt="" coords="140,5,327,32"/>
+<area shape="poly" title=" " alt="" coords="92,16,124,16,124,21,92,21"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1154df5ad643129f599cf411c71dc5ff" name="a1154df5ad643129f599cf411c71dc5ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1154df5ad643129f599cf411c71dc5ff">&#9670;&#160;</a></span>startFadeInAnimation()</h2>
 
@@ -849,14 +775,16 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph.png" border="0" usemap="#aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph" alt=""/></div>
 <map name="aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph" id="aclass_chat_view_ad86057da9ac648ff24c26adef0c08249_icgraph">
-<area shape="rect" title="更新居中部件位置" alt="" coords="352,23,539,49"/>
-<area shape="rect" href="class_chat_view.html#ae5c0d53816415eb4b4358228b330a113" title="删除所有聊天项" alt="" coords="5,23,111,49"/>
-<area shape="poly" title=" " alt="" coords="365,22,304,13,231,8,159,13,104,25,103,20,158,8,231,3,304,8,366,17"/>
-<area shape="rect" href="class_chat_view.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="186,23,276,49"/>
-<area shape="poly" title=" " alt="" coords="336,39,277,39,277,33,336,33"/>
-<area shape="rect" href="class_chat_view.html#a1154df5ad643129f599cf411c71dc5ff" title="启动淡入动画" alt="" coords="159,73,304,100"/>
-<area shape="poly" title=" " alt="" coords="372,56,291,75,290,70,371,51"/>
-<area shape="poly" title=" " alt="" coords="168,71,106,53,107,48,169,66"/>
+<area shape="rect" title="更新居中部件位置" alt="" coords="352,53,539,79"/>
+<area shape="rect" href="class_chat_view.html#ae5c0d53816415eb4b4358228b330a113" title="删除所有聊天项" alt="" coords="5,53,111,79"/>
+<area shape="poly" title=" " alt="" coords="400,49,354,31,303,18,231,8,199,10,159,18,116,34,81,54,78,50,114,29,158,13,199,5,231,3,305,13,356,26,402,44"/>
+<area shape="rect" href="class_chat_view.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="调整大小事件" alt="" coords="186,27,276,54"/>
+<area shape="poly" title=" " alt="" coords="336,56,276,49,277,43,337,51"/>
+<area shape="rect" href="class_chat_view.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title=" " alt="" coords="188,78,274,105"/>
+<area shape="poly" title=" " alt="" coords="337,82,275,89,275,84,336,76"/>
+<area shape="rect" href="class_chat_view.html#a1154df5ad643129f599cf411c71dc5ff" title="启动淡入动画" alt="" coords="159,129,304,155"/>
+<area shape="poly" title=" " alt="" coords="393,88,305,119,273,131,271,126,303,114,391,83"/>
+<area shape="poly" title=" " alt="" coords="173,125,158,119,83,82,85,78,160,114,175,120"/>
 </map>
 </div>
 
@@ -911,8 +839,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="aa5ac64a46254f83f7a6240650893d643" name="aa5ac64a46254f83f7a6240650893d643"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5ac64a46254f83f7a6240650893d643">&#9670;&#160;</a></span>m_funcText</h2>
+<a id="a3dd12341d8fe8de49a515da725296e7a" name="a3dd12341d8fe8de49a515da725296e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd12341d8fe8de49a515da725296e7a">&#9670;&#160;</a></span>m_pScrollArea</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -921,79 +849,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_funcText {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>功能描述标签 </p>
-
-</div>
-</div>
-<a id="a3a9b4306263b8829ef9cb4e44c8be7f9" name="a3a9b4306263b8829ef9cb4e44c8be7f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a9b4306263b8829ef9cb4e44c8be7f9">&#9670;&#160;</a></span>m_helloText</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_helloText {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>欢迎文本标签 </p>
-
-</div>
-</div>
-<a id="a76efe19fa23d16eae732af921dc898cf" name="a76efe19fa23d16eae732af921dc898cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76efe19fa23d16eae732af921dc898cf">&#9670;&#160;</a></span>m_logo</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_q_label.html">QLabel</a>* m_logo {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Logo 标签 </p>
-
-</div>
-</div>
-<a id="a5c729e5fdab0464c0044ba0145a08557" name="a5c729e5fdab0464c0044ba0145a08557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c729e5fdab0464c0044ba0145a08557">&#9670;&#160;</a></span>m_pScrollArea</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QScrollArea* m_pScrollArea</td>
+          <td class="memname"><a class="el" href="class_my_scroll_area.html">MyScrollArea</a>* m_pScrollArea</td>
         </tr>
       </table>
   </td>
@@ -1004,30 +860,6 @@ Private 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>滚动区域 </p>
-
-</div>
-</div>
-<a id="a1869a14ca92ea188a114a98792c0238f" name="a1869a14ca92ea188a114a98792c0238f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1869a14ca92ea188a114a98792c0238f">&#9670;&#160;</a></span>m_pVl</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVBoxLayout* m_pVl</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>垂直布局 </p>
 
 </div>
 </div>

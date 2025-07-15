@@ -6,6 +6,6 @@ var class_ela_suggest_model =
     [ "data", "class_ela_suggest_model.html#ae93b915598cdbe5ae59dddf41d917a53", null ],
     [ "getSearchSuggestion", "class_ela_suggest_model.html#a88a505f459b254967ca8449d2a715a52", null ],
     [ "rowCount", "class_ela_suggest_model.html#ad9832d26ca09bab67c22ea84c499ebdc", null ],
-    [ "setSearchSuggestion", "class_ela_suggest_model.html#a639bb4d2b6636eaf009f6a39bc3cbbce", null ],
-    [ "_suggestionVector", "class_ela_suggest_model.html#aa1c4b2f6626009acb7da1633101f4d6b", null ]
+    [ "setSearchSuggestion", "class_ela_suggest_model.html#a15543cb7f45e5c97bbbc5ff2ee7894b3", null ],
+    [ "_suggestionVector", "class_ela_suggest_model.html#a62283eb8b33201e0a327f6c5a419923d", null ]
 ];

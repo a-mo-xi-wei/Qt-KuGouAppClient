@@ -71,7 +71,7 @@ var searchData=
   ['vialcirclecheck_68',['VialCircleCheck',['../_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cac7eb7b50dc836529decd7713065b5f7c',1,'Def.h']]],
   ['vials_69',['Vials',['../_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca865e4078e01a07cb5f7f404069012069',1,'Def.h']]],
   ['vialvirus_70',['VialVirus',['../_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9cafe07ce0ba2543d88252ca2d37907b8c6',1,'Def.h']]],
-  ['video_71',['Video',['../class_ui_1_1_video.html',1,'Video'],['../class_video.html',1,'Video'],['../class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec',1,'TitleWidget::Video'],['../class_video.html#a5d96128f407e3b6b3725d20c097f8a97',1,'Video::Video()'],['../_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caff13e87d7cbbe18fface435a5b84aaec',1,'Video:&#160;Def.h']]],
+  ['video_71',['Video',['../class_ui_1_1_video.html',1,'Video'],['../class_video.html',1,'Video'],['../class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec',1,'TitleWidget::Video'],['../class_video.html#a5d96128f407e3b6b3725d20c097f8a97',1,'Video::Video()'],['../class_music_repository.html#ab349cf6e13f31c2da559fc39cec5b001a34e2d1989a1dbf75cd631596133ee5ee',1,'MusicRepository::Video'],['../_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9caff13e87d7cbbe18fface435a5b84aaec',1,'Video:&#160;Def.h']]],
   ['video_2ecpp_72',['Video.cpp',['../_video_8cpp.html',1,'']]],
   ['video_2eh_73',['Video.h',['../_video_8h.html',1,'']]],
   ['video_5fauthor_5flabel_74',['video_author_label',['../class_ui___music_repo_video.html#a01a7c71ea3d9d0ef968926a15b674d91',1,'Ui_MusicRepoVideo::video_author_label'],['../class_ui___video_block_widget.html#a01a7c71ea3d9d0ef968926a15b674d91',1,'Ui_VideoBlockWidget::video_author_label']]],

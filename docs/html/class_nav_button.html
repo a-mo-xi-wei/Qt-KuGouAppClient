@@ -102,14 +102,12 @@ $(function(){initNavTree('class_nav_button.html',''); initResizable(true); });
 <a href="#signals">信号</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
 <a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_nav_button-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">NavButton类 参考</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>导航按钮类，用于广告轮播的左右切换  
- <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_advertise_board_8h_source.html">AdvertiseBoard.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -117,7 +115,7 @@ $(function(){initNavTree('class_nav_button.html',''); initResizable(true); });
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button__inherit__graph.png" border="0" usemap="#a_nav_button_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_nav_button_inherit__map" id="a_nav_button_inherit__map">
-<area shape="rect" title="导航按钮类，用于广告轮播的左右切换" alt="" coords="5,80,89,107"/>
+<area shape="rect" title=" " alt="" coords="5,80,89,107"/>
 <area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="16,5,78,32"/>
 <area shape="poly" title=" " alt="" coords="50,48,50,80,44,80,44,48"/>
 </map>
@@ -127,7 +125,7 @@ NavButton 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button__coll__graph.png" border="0" usemap="#a_nav_button_coll__map" alt="Collaboration graph"/></div>
 <map name="a_nav_button_coll__map" id="a_nav_button_coll__map">
-<area shape="rect" title="导航按钮类，用于广告轮播的左右切换" alt="" coords="5,80,89,107"/>
+<area shape="rect" title=" " alt="" coords="5,80,89,107"/>
 <area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="16,5,78,32"/>
 <area shape="poly" title=" " alt="" coords="50,48,50,80,44,80,44,48"/>
 </map>
@@ -141,33 +139,30 @@ NavButton 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:aed2b96bba6aae3e8a660f41ff20e5d3e" id="r_aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed2b96bba6aae3e8a660f41ff20e5d3e">NavButton</a> (const QString &amp;normal, const QString &amp;hover, QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
 <tr class="separator:aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd5647ab518a1dde8b7dfcaaa4ed446" id="r_a8cd5647ab518a1dde8b7dfcaaa4ed446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cd5647ab518a1dde8b7dfcaaa4ed446">setHoverState</a> (bool hover)</td></tr>
+<tr class="separator:a8cd5647ab518a1dde8b7dfcaaa4ed446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:ae30868492e047dc485c73e92d33a0b1d" id="r_ae30868492e047dc485c73e92d33a0b1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30868492e047dc485c73e92d33a0b1d">enterEvent</a> (QEnterEvent *event) override</td></tr>
-<tr class="memdesc:ae30868492e047dc485c73e92d33a0b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标进入事件  <br /></td></tr>
-<tr class="separator:ae30868492e047dc485c73e92d33a0b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5389554336d47de8a8249cf2aaf682a2" id="r_a5389554336d47de8a8249cf2aaf682a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a> (QEvent *event) override</td></tr>
-<tr class="memdesc:a5389554336d47de8a8249cf2aaf682a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标离开事件  <br /></td></tr>
-<tr class="separator:a5389554336d47de8a8249cf2aaf682a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7523c71b2bf60975302287ec8923f80e" id="r_a7523c71b2bf60975302287ec8923f80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7523c71b2bf60975302287ec8923f80e">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
-<tr class="memdesc:a7523c71b2bf60975302287ec8923f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">鼠标按下事件  <br /></td></tr>
-<tr class="separator:a7523c71b2bf60975302287ec8923f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df57dfac7a608de1ed3dc7bceda487e" id="r_a4df57dfac7a608de1ed3dc7bceda487e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df57dfac7a608de1ed3dc7bceda487e">event</a> (QEvent *event) override</td></tr>
+<tr class="separator:a4df57dfac7a608de1ed3dc7bceda487e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a46ed2122db70ac26531740f3b73307f2" id="r_a46ed2122db70ac26531740f3b73307f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ed2122db70ac26531740f3b73307f2">checkHoverState</a> ()</td></tr>
+<tr class="separator:a46ed2122db70ac26531740f3b73307f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
 <tr class="memitem:ad1664973748ceacfc4ff8f75c72ae6a6" id="r_ad1664973748ceacfc4ff8f75c72ae6a6"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1664973748ceacfc4ff8f75c72ae6a6">m_normal</a></td></tr>
-<tr class="memdesc:ad1664973748ceacfc4ff8f75c72ae6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">普通状态图片  <br /></td></tr>
 <tr class="separator:ad1664973748ceacfc4ff8f75c72ae6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347b73f652bda0199c8d89d1d7133612" id="r_a347b73f652bda0199c8d89d1d7133612"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347b73f652bda0199c8d89d1d7133612">m_hover</a></td></tr>
-<tr class="memdesc:a347b73f652bda0199c8d89d1d7133612"><td class="mdescLeft">&#160;</td><td class="mdescRight">悬停状态图片  <br /></td></tr>
 <tr class="separator:a347b73f652bda0199c8d89d1d7133612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c288fd1b337441eac116e41703fdc8" id="r_a26c288fd1b337441eac116e41703fdc8"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c288fd1b337441eac116e41703fdc8">m_checkTimer</a></td></tr>
+<tr class="separator:a26c288fd1b337441eac116e41703fdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>导航按钮类，用于广告轮播的左右切换 </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+<h2 class="groupheader">构造及析构函数说明</h2>
 <a id="aed2b96bba6aae3e8a660f41ff20e5d3e" name="aed2b96bba6aae3e8a660f41ff20e5d3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed2b96bba6aae3e8a660f41ff20e5d3e">&#9670;&#160;</a></span>NavButton()</h2>
 
@@ -180,12 +175,12 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a> </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>normalImage</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>normal</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>hoverImage</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>hover</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -199,29 +194,67 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>构造函数 </p>
-<p><a class="el" href="class_nav_button.html" title="导航按钮类，用于广告轮播的左右切换">NavButton</a> 构造函数，初始化导航按钮</p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">normal</td><td>普通状态图片 </td></tr>
-    <tr><td class="paramname">hover</td><td>悬停状态图片 </td></tr>
-    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr</td></tr>
-    <tr><td class="paramname">normalImage</td><td>普通状态图片路径 </td></tr>
-    <tr><td class="paramname">hoverImage</td><td>悬停状态图片路径 </td></tr>
-    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
-  </table>
-  </dd>
-</dl>
-<p>&lt; 启用悬停事件</p>
-<p>&lt; 启用鼠标跟踪</p>
-<p>&lt; 设置普通状态图片</p>
-<p>&lt; 设置透明背景</p>
-<p>&lt; 设置图片居中</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph.png" border="0" usemap="#aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph" alt=""/></div>
+<map name="aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph" id="aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title=" " alt="" coords="137,5,259,32"/>
+<area shape="poly" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="307,5,412,32"/>
+<area shape="poly" title=" " alt="" coords="259,16,291,16,291,21,259,21"/>
+</map>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
+<a id="a46ed2122db70ac26531740f3b73307f2" name="a46ed2122db70ac26531740f3b73307f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ed2122db70ac26531740f3b73307f2">&#9670;&#160;</a></span>checkHoverState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkHoverState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph.png" border="0" usemap="#aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph" alt=""/></div>
+<map name="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph" id="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="176,5,281,32"/>
+<area shape="poly" title=" " alt="" coords="128,16,160,16,160,21,128,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph.png" border="0" usemap="#aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph" alt=""/></div>
+<map name="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph" id="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,259,32"/>
+<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title=" " alt="" coords="5,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a263c24e31a1115d0b7b016189a710cb8" name="a263c24e31a1115d0b7b016189a710cb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a263c24e31a1115d0b7b016189a710cb8">&#9670;&#160;</a></span>clicked</h2>
 
@@ -250,17 +283,17 @@ Private 属性</h2></td></tr>
 <div class="center"><img src="class_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph.png" border="0" usemap="#aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph" alt=""/></div>
 <map name="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph" id="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph">
 <area shape="rect" title=" " alt="" coords="227,43,289,69"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,179,48"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="5,5,179,48"/>
 <area shape="poly" title=" " alt="" coords="211,51,179,45,180,39,212,45"/>
-<area shape="rect" href="class_nav_button.html#a7523c71b2bf60975302287ec8923f80e" title="鼠标按下事件" alt="" coords="28,72,156,99"/>
-<area shape="poly" title=" " alt="" coords="212,67,157,77,156,71,211,61"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title=" " alt="" coords="65,72,119,99"/>
+<area shape="poly" title=" " alt="" coords="212,67,120,83,119,78,211,62"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae30868492e047dc485c73e92d33a0b1d" name="ae30868492e047dc485c73e92d33a0b1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae30868492e047dc485c73e92d33a0b1d">&#9670;&#160;</a></span>enterEvent()</h2>
+<a id="a4df57dfac7a608de1ed3dc7bceda487e" name="a4df57dfac7a608de1ed3dc7bceda487e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df57dfac7a608de1ed3dc7bceda487e">&#9670;&#160;</a></span>event()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,50 +302,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void enterEvent </td>
-          <td>(</td>
-          <td class="paramtype">QEnterEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>鼠标进入事件 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>进入事件 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>显示悬停状态图片</dd></dl>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>进入事件 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>切换到悬停状态图片 </dd></dl>
-<p>&lt; 设置悬停状态图片</p>
-<p>&lt; 调用父类处理</p>
-
-</div>
-</div>
-<a id="a5389554336d47de8a8249cf2aaf682a2" name="a5389554336d47de8a8249cf2aaf682a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5389554336d47de8a8249cf2aaf682a2">&#9670;&#160;</a></span>leaveEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void leaveEvent </td>
+          <td class="memname">bool event </td>
           <td>(</td>
           <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
           <td></td>
@@ -324,22 +314,55 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>鼠标离开事件 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>离开事件 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>恢复普通状态图片 </dd></dl>
-<p>&lt; 设置普通状态图片</p>
-<p>&lt; 调用父类处理</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph.png" border="0" usemap="#aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph" alt=""/></div>
+<map name="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph" id="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,59,57"/>
+<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title=" " alt="" coords="128,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="59,36,113,25,114,30,60,41"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="107,56,212,83"/>
+<area shape="poly" title=" " alt="" coords="60,47,92,53,91,58,59,52"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a7523c71b2bf60975302287ec8923f80e" name="a7523c71b2bf60975302287ec8923f80e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7523c71b2bf60975302287ec8923f80e">&#9670;&#160;</a></span>mousePressEvent()</h2>
+<a id="a8cd5647ab518a1dde8b7dfcaaa4ed446" name="a8cd5647ab518a1dde8b7dfcaaa4ed446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd5647ab518a1dde8b7dfcaaa4ed446">&#9670;&#160;</a></span>setHoverState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setHoverState </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>hover</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph.png" border="0" usemap="#aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph" alt=""/></div>
+<map name="aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph" id="aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph">
+<area shape="rect" title=" " alt="" coords="307,31,412,57"/>
+<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title=" " alt="" coords="137,5,259,32"/>
+<area shape="poly" title=" " alt="" coords="291,36,259,31,260,26,292,31"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title=" " alt="" coords="171,56,224,83"/>
+<area shape="poly" title=" " alt="" coords="292,57,225,68,224,63,291,52"/>
+<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title=" " alt="" coords="5,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a26c288fd1b337441eac116e41703fdc8" name="a26c288fd1b337441eac116e41703fdc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c288fd1b337441eac116e41703fdc8">&#9670;&#160;</a></span>m_checkTimer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,50 +371,18 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mousePressEvent </td>
-          <td>(</td>
-          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">QTimer* m_checkTimer</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>鼠标按下事件 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>按下事件 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>发送按下信号</dd></dl>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>鼠标事件 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>触发点击信号 </dd></dl>
-<p>&lt; 触发点击信号</p>
-<p>&lt; 调用父类处理</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_nav_button_a7523c71b2bf60975302287ec8923f80e_cgraph.png" border="0" usemap="#aclass_nav_button_a7523c71b2bf60975302287ec8923f80e_cgraph" alt=""/></div>
-<map name="aclass_nav_button_a7523c71b2bf60975302287ec8923f80e_cgraph" id="aclass_nav_button_a7523c71b2bf60975302287ec8923f80e_cgraph">
-<area shape="rect" title="鼠标按下事件" alt="" coords="5,5,134,32"/>
-<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title=" " alt="" coords="182,5,244,32"/>
-<area shape="poly" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
-</map>
-</div>
-
 </div>
 </div>
-<h2 class="groupheader">类成员变量说明</h2>
 <a id="a347b73f652bda0199c8d89d1d7133612" name="a347b73f652bda0199c8d89d1d7133612"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a347b73f652bda0199c8d89d1d7133612">&#9670;&#160;</a></span>m_hover</h2>
 
@@ -411,8 +402,6 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>悬停状态图片 </p>
 
 </div>
 </div>
@@ -435,8 +424,6 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>普通状态图片 </p>
 
 </div>
 </div>

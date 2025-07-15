@@ -23,7 +23,7 @@ var class_ela_suggest_box_private =
     [ "_searchView", "class_ela_suggest_box_private.html#ad8965ede634ffaf4ce9c6c5b40ee59f2", null ],
     [ "_searchViewBaseWidget", "class_ela_suggest_box_private.html#a98c6dbb6359ae1f8ed7da7b8b86608ee", null ],
     [ "_shadowLayout", "class_ela_suggest_box_private.html#a8a645d2fe55e68ff05247de36c948e35", null ],
-    [ "_suggestionVector", "class_ela_suggest_box_private.html#aa1c4b2f6626009acb7da1633101f4d6b", null ],
+    [ "_suggestionVector", "class_ela_suggest_box_private.html#a62283eb8b33201e0a327f6c5a419923d", null ],
     [ "_themeMode", "class_ela_suggest_box_private.html#abab7c56bd707e57041aaca2f2b3906b1", null ],
-    [ "m_ignoreTextChanges", "class_ela_suggest_box_private.html#a1838fd113d02828b84bbb01760ed577e", null ]
+    [ "m_libHttp", "class_ela_suggest_box_private.html#a95d746c5f8c79461e6e79c49728c5b65", null ]
 ];

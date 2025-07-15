@@ -9,5 +9,6 @@ var class_c_libhttp =
     [ "Progress", "class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27", null ],
     [ "UploadFile", "class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5", null ],
     [ "UrlRequestGet", "class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7", null ],
+    [ "UrlRequestGetRaw", "class_c_libhttp.html#a940102b09b175111413e72f431eaf9f5", null ],
     [ "UrlRequestPost", "class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a", null ]
 ];

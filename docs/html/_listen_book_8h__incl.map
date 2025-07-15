@@ -1,54 +1,59 @@
 <map id="ListenBook.h" name="ListenBook.h">
-<area shape="rect" id="Node000001" title="定义 ListenBook 类，提供听书主界面" alt="" coords="1089,5,1187,32"/>
-<area shape="rect" id="Node000002" href="$_listen_recommend_8h.html" title="定义 ListenRecommend 类，提供推荐界面" alt="" coords="375,80,629,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1089,28,629,80,628,75,1089,23"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="708,592,781,619"/>
-<area shape="poly" id="edge28_Node000001_Node000014" title=" " alt="" coords="1158,31,1186,54,1217,87,1242,128,1250,151,1253,175,1253,433,1251,469,1245,498,1231,522,1205,546,1173,563,1129,576,1017,594,896,603,797,606,797,601,896,597,1016,588,1128,571,1171,558,1202,542,1226,519,1240,496,1246,468,1247,433,1247,175,1245,152,1237,130,1213,90,1182,58,1154,35"/>
-<area shape="rect" id="Node000019" href="$_listen_my_download_8h.html" title="定义 ListenMyDownload 类，提供下载管理界面" alt="" coords="775,411,965,453"/>
-<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="1090,34,1037,53,983,82,960,100,941,122,929,147,925,175,925,268,921,304,913,338,890,398,885,396,908,337,916,303,919,268,919,174,924,145,937,119,956,97,980,77,1035,48,1088,29"/>
-<area shape="rect" id="Node000022" href="$_listen_recently_play_8h.html" title="定义 ListenRecentlyPlay 类，提供最近播放界面" alt="" coords="1064,245,1212,288"/>
-<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="1141,33,1141,230,1135,230,1135,33"/>
-<area shape="rect" id="Node000023" title=" " alt="" coords="1288,80,1356,107"/>
-<area shape="poly" id="edge29_Node000001_Node000023" title=" " alt="" coords="1171,30,1277,71,1275,76,1169,35"/>
-<area shape="rect" id="Node000003" href="$_listen_option_menu_8h.html" title="定义 ListenOptionMenu 类，提供听单选项菜单功能" alt="" coords="110,155,313,197"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="457,110,301,153,300,148,456,105"/>
-<area shape="rect" id="Node000009" href="$_listen_table_widget_8h.html" title="定义 ListenTableWidget 类，提供表格控件" alt="" coords="418,155,586,197"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="505,107,505,139,499,139,499,107"/>
-<area shape="poly" id="edge18_Node000002_Node000014" title=" " alt="" coords="536,105,570,124,600,153,617,181,624,206,626,265,626,433,628,456,635,478,658,519,688,554,717,580,714,584,684,557,654,522,630,480,623,457,621,433,621,265,619,207,612,183,596,156,567,129,534,110"/>
-<area shape="rect" id="Node000018" title=" " alt="" coords="337,163,395,189"/>
-<area shape="poly" id="edge19_Node000002_Node000018" title=" " alt="" coords="482,109,402,157,399,152,479,105"/>
-<area shape="rect" id="Node000004" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="158,253,264,280"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,198,214,238,209,238,209,198"/>
-<area shape="rect" id="Node000005" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="76,336,174,363"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="200,282,151,328,147,324,196,279"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="198,336,262,363"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="217,280,226,321,221,322,212,281"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="95,419,189,445"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="130,363,139,403,134,404,125,364"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="5,419,71,445"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="113,365,64,410,60,406,109,361"/>
-<area shape="rect" id="Node000010" href="$_gallery_widget_8h.html" title="定义 GalleryWidget 类，提供照片画廊控件" alt="" coords="412,253,526,280"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="497,199,481,240,476,238,492,197"/>
-<area shape="poly" id="edge17_Node000009_Node000014" title=" " alt="" coords="519,196,536,225,555,262,569,304,575,348,575,433,576,467,579,493,588,516,607,542,626,559,648,573,694,591,692,596,645,578,622,564,603,546,583,519,573,494,570,467,570,433,570,348,564,305,550,264,532,227,514,199"/>
-<area shape="rect" id="Node000011" href="$_gallery_photo_widget_8h.html" title="定义 GalleryPhotoWidget 类，提供照片卡片控件" alt="" coords="386,336,535,363"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="470,281,466,321,461,321,465,280"/>
-<area shape="rect" id="Node000012" href="$_my_block_widget_8h.html" title="定义 MyBlockWidget 类，提供块状控件功能" alt="" coords="410,419,535,445"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="465,363,471,403,466,404,460,364"/>
-<area shape="rect" id="Node000015" href="$_water_zoom_button_8h.html" title="定义 WaterZoomButton 类，提供具有缩放和水波纹效果的按钮" alt="" coords="249,419,387,445"/>
-<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="440,365,355,413,352,408,437,361"/>
-<area shape="rect" id="Node000013" href="$_s_mask_widget_8h.html" title="定义 SMaskWidget 类，提供带动画的遮罩控件" alt="" coords="421,509,535,536"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="476,446,479,494,474,494,471,446"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="520,534,695,586,693,591,519,539"/>
-<area shape="rect" id="Node000016" href="$_interactive_button_base_8h.html" title="定义 InteractiveButtonBase 类，提供交互式按钮基类" alt="" coords="236,509,397,536"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="320,446,320,494,314,494,315,446"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="267,592,366,619"/>
-<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="319,536,319,577,314,577,314,536"/>
-<area shape="poly" id="edge25_Node000019_Node000014" title=" " alt="" coords="776,452,734,472,716,486,702,503,696,522,700,542,710,562,724,580,720,583,706,565,695,544,690,521,697,500,713,482,731,467,774,447"/>
-<area shape="rect" id="Node000020" href="$_downloaded_widget_8h.html" title="定义 DownloadedWidget 类，提供已下载界面" alt="" coords="712,501,922,544"/>
-<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="860,455,839,490,834,487,855,452"/>
-<area shape="rect" id="Node000021" href="$_downloading_widget_8h.html" title="定义 DownloadingWidget 类，提供下载中界面" alt="" coords="946,501,1162,544"/>
-<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="914,452,999,492,996,497,912,456"/>
-<area shape="poly" id="edge22_Node000020_Node000014" title=" " alt="" coords="800,546,768,582,764,578,796,543"/>
-<area shape="poly" id="edge24_Node000021_Node000014" title=" " alt="" coords="975,547,797,593,796,588,974,542"/>
-<area shape="poly" id="edge27_Node000022_Node000014" title=" " alt="" coords="1152,287,1177,338,1199,406,1205,443,1204,480,1195,515,1176,546,1149,565,1110,580,1061,590,1006,598,892,606,796,607,796,602,892,601,1005,593,1060,585,1108,575,1147,560,1172,542,1190,513,1199,479,1199,444,1194,408,1172,340,1147,289"/>
+<area shape="rect" id="Node000001" title="定义 ListenBook 类，提供听书主界面" alt="" coords="862,5,959,32"/>
+<area shape="rect" id="Node000002" href="$_listen_recommend_8h.html" title="定义 ListenRecommend 类，提供推荐界面" alt="" coords="430,88,684,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="862,34,628,87,627,81,861,29"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="613,592,686,619"/>
+<area shape="poly" id="edge31_Node000001_Node000014" title=" " alt="" coords="862,27,648,47,363,83,227,106,113,132,69,147,36,161,15,176,8,191,8,433,13,454,26,473,48,491,78,508,153,535,245,557,344,574,441,586,598,599,598,604,440,591,343,579,244,562,152,540,75,512,45,496,23,477,8,456,3,434,3,190,11,173,33,157,67,142,112,127,226,101,362,78,648,42,861,21"/>
+<area shape="rect" id="Node000019" href="$_listen_my_download_8h.html" title="定义 ListenMyDownload 类，提供下载管理界面" alt="" coords="816,411,1005,453"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="913,32,913,191,913,276,913,395,908,395,908,276,908,191,908,32"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1358,509,1426,536"/>
+<area shape="poly" id="edge32_Node000001_Node000024" title=" " alt="" coords="946,30,994,53,1045,87,1067,109,1086,133,1098,160,1103,190,1103,350,1110,362,1130,379,1197,421,1353,500,1350,505,1194,425,1126,383,1105,366,1097,351,1097,191,1093,162,1081,136,1063,112,1041,91,991,58,944,35"/>
+<area shape="rect" id="Node000025" href="$_listen_recently_play_8h.html" title="定义 ListenRecentlyPlay 类，提供最近播放界面" alt="" coords="1331,80,1480,123"/>
+<area shape="poly" id="edge29_Node000001_Node000025" title=" " alt="" coords="960,25,1316,83,1315,88,959,31"/>
+<area shape="rect" id="Node000003" href="$_listen_option_menu_8h.html" title="定义 ListenOptionMenu 类，提供听单选项菜单功能" alt="" coords="101,171,304,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="507,118,301,169,300,164,506,113"/>
+<area shape="rect" id="Node000009" href="$_listen_table_widget_8h.html" title="定义 ListenTableWidget 类，提供表格控件" alt="" coords="338,171,505,213"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="539,118,467,164,464,160,536,113"/>
+<area shape="poly" id="edge18_Node000002_Node000014" title=" " alt="" coords="569,114,585,139,601,170,621,220,627,273,627,433,633,511,645,577,640,578,628,512,621,433,621,273,616,221,596,172,581,141,564,117"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="529,179,586,205"/>
+<area shape="poly" id="edge19_Node000002_Node000018" title=" " alt="" coords="560,115,560,163,555,163,555,115"/>
+<area shape="rect" id="Node000004" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="140,261,246,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,214,199,246,194,246,198,214"/>
+<area shape="rect" id="Node000005" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="144,336,242,363"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="196,289,196,320,191,320,191,289"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="56,336,120,363"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="176,291,120,329,117,325,173,286"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="43,419,136,445"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="179,365,119,411,115,407,175,361"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="161,419,226,445"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="196,363,196,403,191,403,191,363"/>
+<area shape="rect" id="Node000010" href="$_gallery_widget_8h.html" title="定义 GalleryWidget 类，提供照片画廊控件" alt="" coords="364,261,478,288"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="424,214,424,245,419,245,419,214"/>
+<area shape="poly" id="edge17_Node000009_Node000014" title=" " alt="" coords="465,212,502,234,538,265,565,303,573,325,576,348,576,433,578,465,583,490,608,543,631,578,626,581,603,545,578,491,573,466,571,433,571,348,568,326,560,305,534,269,499,239,463,216"/>
+<area shape="rect" id="Node000011" href="$_gallery_photo_widget_8h.html" title="定义 GalleryPhotoWidget 类，提供照片卡片控件" alt="" coords="347,336,496,363"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="424,289,424,320,419,320,419,289"/>
+<area shape="rect" id="Node000012" href="$_my_block_widget_8h.html" title="定义 MyBlockWidget 类，提供块状控件功能" alt="" coords="411,419,536,445"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="432,362,459,404,455,407,427,365"/>
+<area shape="rect" id="Node000015" href="$_water_zoom_button_8h.html" title="定义 WaterZoomButton 类，提供具有缩放和水波纹效果的按钮" alt="" coords="250,419,387,445"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="407,365,348,411,345,407,404,361"/>
+<area shape="rect" id="Node000013" href="$_s_mask_widget_8h.html" title="定义 SMaskWidget 类，提供带动画的遮罩控件" alt="" coords="422,509,536,536"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="477,446,480,494,474,494,471,446"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="506,534,610,583,608,588,504,539"/>
+<area shape="rect" id="Node000016" href="$_interactive_button_base_8h.html" title="定义 InteractiveButtonBase 类，提供交互式按钮基类" alt="" coords="237,509,398,536"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="321,446,320,494,315,494,316,446"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="268,592,367,619"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="320,536,320,577,315,577,315,536"/>
+<area shape="poly" id="edge25_Node000019_Node000014" title=" " alt="" coords="816,450,756,470,728,485,702,503,687,520,675,539,659,578,654,576,670,537,682,517,698,499,725,480,754,465,815,445"/>
+<area shape="rect" id="Node000020" href="$_downloaded_widget_8h.html" title="定义 DownloadedWidget 类，提供已下载界面" alt="" coords="883,501,1093,544"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="931,452,962,488,958,491,927,456"/>
+<area shape="rect" id="Node000021" href="$_downloading_widget_8h.html" title="定义 DownloadingWidget 类，提供下载中界面" alt="" coords="1117,501,1334,544"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="985,451,1138,494,1136,499,984,457"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="712,509,784,536"/>
+<area shape="poly" id="edge26_Node000019_Node000022" title=" " alt="" coords="874,456,786,504,783,499,871,452"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="808,509,858,536"/>
+<area shape="poly" id="edge27_Node000019_Node000023" title=" " alt="" coords="895,456,856,499,852,496,891,452"/>
+<area shape="poly" id="edge28_Node000019_Node000024" title=" " alt="" coords="1006,443,1193,469,1282,484,1346,499,1353,501,1351,506,1345,504,1281,490,1192,475,1005,448"/>
+<area shape="poly" id="edge22_Node000020_Node000014" title=" " alt="" coords="901,547,702,594,700,589,900,542"/>
+<area shape="poly" id="edge24_Node000021_Node000014" title=" " alt="" coords="1117,545,1106,547,701,600,700,595,1105,541,1116,540"/>
+<area shape="poly" id="edge30_Node000025_Node000014" title=" " alt="" coords="1420,122,1450,188,1462,230,1467,273,1467,433,1468,496,1461,521,1440,546,1424,555,1398,563,1324,576,1225,586,1111,594,879,603,701,606,701,601,878,598,1111,588,1224,581,1323,571,1397,558,1422,550,1437,542,1456,519,1463,495,1461,433,1461,273,1456,231,1445,189,1415,124"/>
 </map>

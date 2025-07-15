@@ -1,21 +1,33 @@
 <map id="initUi" name="initUi">
-<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,113,57,140"/>
-<area shape="rect" id="Node000002" href="$class_local_download.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="105,113,232,140"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,124,89,124,89,129,57,129"/>
-<area shape="rect" id="Node000003" href="$class_local_download.html#af2c76ccfaeae4b8cac82f0846391d219" title="初始化已下载歌曲界面" alt="" coords="282,24,422,51"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,110,279,70,307,55,310,60,281,74,199,115"/>
-<area shape="rect" id="Node000005" href="$class_local_download.html#adabc65c3f7d55f08432e5c7b69bb500b" title="初始化已下载视频界面" alt="" coords="280,84,423,111"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="232,114,264,109,265,114,233,119"/>
-<area shape="rect" id="Node000007" href="$class_local_download.html#a6404daede2cfd9dfba8bdf317e953ae1" title="初始化正在下载界面" alt="" coords="295,139,408,165"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="233,133,280,139,279,145,232,138"/>
-<area shape="rect" id="Node000009" href="$class_local_download.html#af96b73dc56b1cfbf724f10c1ad5a0308" title="初始化本地歌曲界面" alt="" coords="302,197,401,224"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="201,138,308,188,305,193,198,143"/>
-<area shape="rect" id="Node000004" href="$class_downloaded_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="476,5,628,48"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,31,460,29,460,34,422,36"/>
-<area shape="rect" id="Node000006" href="$class_downloaded_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="474,72,630,115"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="424,93,459,93,459,98,424,99"/>
-<area shape="rect" id="Node000008" href="$class_downloading.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="471,139,633,181"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="409,152,456,153,455,159,408,157"/>
-<area shape="rect" id="Node000010" href="$class_local_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="478,205,626,248"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="402,212,463,217,462,222,402,217"/>
+<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,307,57,333"/>
+<area shape="rect" id="Node000002" href="$class_local_download.html#aebc31945fa34b123ada488d5710cce62" title="初始化索引标签" alt="" coords="123,281,214,308"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,313,107,303,108,308,58,318"/>
+<area shape="rect" id="Node000003" href="$class_local_download.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="105,332,232,359"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="58,322,90,328,89,333,57,327"/>
+<area shape="rect" id="Node000004" href="$class_local_download.html#afc90cde235e776bd014aebedff7f9e70" title="创建页面" alt="" coords="285,307,372,333"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="232,333,269,327,270,332,233,338"/>
+<area shape="rect" id="Node000016" href="$class_local_download.html#ab868524a9562cda1f7b60b4220e2248e" title="启用/禁用按钮" alt="" coords="280,357,377,384"/>
+<area shape="poly" id="edge15_Node000003_Node000016" title=" " alt="" coords="233,353,265,358,264,363,232,358"/>
+<area shape="rect" id="Node000005" href="$class_local_download.html#a2aa22f3ffe26bfd91ada08e52fc8633d" title="取消循环播放信号" alt="" coords="466,5,580,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="328,306,332,256,346,185,358,147,375,109,396,73,424,42,450,26,453,31,427,46,401,76,380,111,363,148,351,186,338,257,333,306"/>
+<area shape="rect" id="Node000006" href="$class_local_song.html#a2aa22f3ffe26bfd91ada08e52fc8633d" title="取消循环播放信号" alt="" coords="432,56,614,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="329,306,336,264,353,207,381,146,400,117,424,93,428,89,432,93,427,97,404,121,385,148,358,209,342,266,334,307"/>
+<area shape="rect" id="Node000007" href="$class_downloaded_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="447,107,599,149"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="332,305,363,236,390,195,424,159,432,153,435,158,427,163,394,198,368,239,337,307"/>
+<area shape="rect" id="Node000008" href="$class_downloaded_video.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="445,173,601,216"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="339,304,374,266,424,226,432,221,435,226,427,230,378,270,343,308"/>
+<area shape="rect" id="Node000009" href="$class_downloading.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="442,240,604,283"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="372,304,435,285,436,290,373,310"/>
+<area shape="rect" id="Node000010" href="$class_local_download.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="463,307,583,333"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="373,317,447,317,447,323,373,323"/>
+<area shape="rect" id="Node000011" href="$class_local_song.html#aa23356daca3ed71116d6ae55df2991f4" title="搜索更多音乐信号" alt="" coords="449,357,597,400"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="373,330,436,350,435,355,372,336"/>
+<area shape="rect" id="Node000012" href="$class_local_download.html#a946bac2fde3fa2d415ca46244b635561" title="本地音乐数量标签变化槽函数" alt="" coords="433,424,613,451"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="362,332,379,343,394,362,403,379,411,395,427,410,435,415,432,419,424,414,407,398,398,381,390,364,376,347,359,336"/>
+<area shape="rect" id="Node000013" href="$class_local_download.html#a510995dc883818ca17b4108a74da7b52" title="播放音乐信号" alt="" coords="483,475,563,501"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="365,332,379,344,391,360,397,375,402,405,408,434,415,447,427,461,446,473,468,480,467,485,444,478,424,465,410,450,403,435,397,406,392,377,386,362,375,347,362,336"/>
+<area shape="rect" id="Node000014" href="$class_local_song.html#a510995dc883818ca17b4108a74da7b52" title="播放音乐信号" alt="" coords="448,525,598,552"/>
+<area shape="poly" id="edge13_Node000004_Node000014" title=" " alt="" coords="366,332,379,344,394,367,400,389,401,432,404,472,412,492,427,511,436,519,433,523,423,515,407,494,399,473,396,432,395,390,389,369,375,347,362,336"/>
+<area shape="rect" id="Node000015" href="$class_local_song.html#afe21a797d3d22561398cb2e4d360bc96" title="更新数量标签信号" alt="" coords="425,576,621,603"/>
+<area shape="poly" id="edge14_Node000004_Node000015" title=" " alt="" coords="367,332,379,344,396,374,403,403,403,431,401,458,398,484,400,510,408,536,427,562,430,565,426,569,423,566,404,538,395,511,393,484,395,457,398,430,398,403,391,376,375,347,363,336"/>
 </map>

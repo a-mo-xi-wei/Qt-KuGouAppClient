@@ -4,6 +4,7 @@ var class_sqlite_data_provider =
     [ "~SqliteDataProvider", "class_sqlite_data_provider.html#a69d1ca6ae3db952cfdb5a9068ce2cfde", null ],
     [ "connect", "class_sqlite_data_provider.html#ac9980b034930cec43ef5e08534f85d94", null ],
     [ "disconnect", "class_sqlite_data_provider.html#a960705de531a20389fb29928d43258c3", null ],
+    [ "execDeleteSql", "class_sqlite_data_provider.html#aefb87ee2ad210e78ee32e767e2ac53de", null ],
     [ "execInsertSql", "class_sqlite_data_provider.html#a102af10cf2fd7c80c746e0375908cfeb", null ],
     [ "execSql", "class_sqlite_data_provider.html#a323ab4214f61bc5495305c1dba9b4206", null ],
     [ "execSqls", "class_sqlite_data_provider.html#a516e61593f0a15f321f498a6cc7a507a", null ],

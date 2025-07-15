@@ -113,27 +113,33 @@ $(function(){initNavTree('_recently_played_8h.html',''); initResizable(true); })
 <code>#include &quot;<a class="el" href="_recently_song_channel_8h_source.html">RecentlySongChannel/RecentlySongChannel.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_recently_m_v_channel_8h_source.html">RecentlyMVChannel/RecentlyMVChannel.h</a>&quot;</code><br />
 <code>#include &lt;QWidget&gt;</code><br />
+<code>#include &lt;QPointer&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 RecentlyPlayed.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_recently_played_8h__incl.png" border="0" usemap="#a_recently_played_8h" alt=""/></div>
 <map name="a_recently_played_8h" id="a_recently_played_8h">
-<area shape="rect" title="定义 RecentlyPlayed 类，管理最近播放界面" alt="" coords="584,5,709,32"/>
+<area shape="rect" title="定义 RecentlyPlayed 类，管理最近播放界面" alt="" coords="772,5,897,32"/>
 <area shape="rect" href="_recently_single_song_8h.html" title="定义 RecentlySingleSong 类，管理最近单曲界面" alt="" coords="131,80,285,123"/>
-<area shape="poly" title=" " alt="" coords="584,33,304,83,301,83,300,78,304,77,584,28"/>
+<area shape="poly" title=" " alt="" coords="772,28,564,48,304,83,300,83,300,78,304,77,563,43,772,23"/>
 <area shape="rect" title=" " alt="" coords="512,171,584,197"/>
-<area shape="poly" title=" " alt="" coords="584,26,518,32,448,43,387,59,365,70,350,82,341,100,344,115,358,129,379,142,437,161,497,173,496,178,436,166,377,147,354,133,340,118,336,99,346,78,362,65,385,54,447,38,518,27,584,21"/>
+<area shape="poly" title=" " alt="" coords="772,26,657,33,524,45,409,62,370,71,350,82,340,99,343,114,356,128,378,141,436,160,497,173,496,178,435,165,376,145,353,132,339,117,335,98,346,78,368,66,408,56,523,40,657,28,772,21"/>
 <area shape="rect" href="_recently_song_list_8h.html" title="定义 RecentlySongList 类，管理最近歌单界面" alt="" coords="360,80,541,123"/>
-<area shape="poly" title=" " alt="" coords="617,35,516,76,514,71,615,30"/>
+<area shape="poly" title=" " alt="" coords="775,35,557,81,556,75,774,30"/>
 <area shape="rect" href="_recently_video_widget_8h.html" title="定义 RecentlyVideoWidget 类，管理最近视频界面" alt="" coords="566,80,728,123"/>
-<area shape="poly" title=" " alt="" coords="649,32,649,65,644,65,644,32"/>
+<area shape="poly" title=" " alt="" coords="806,35,710,76,708,71,804,30"/>
 <area shape="rect" href="_recently_song_channel_8h.html" title="定义 RecentlySongChannel 类，管理最近歌曲频道界面" alt="" coords="752,80,918,123"/>
-<area shape="poly" title=" " alt="" coords="677,30,773,71,771,76,675,35"/>
+<area shape="poly" title=" " alt="" coords="837,32,837,65,832,65,832,32"/>
 <area shape="rect" href="_recently_m_v_channel_8h.html" title="定义 RecentlyMVChannel 类，管理最近MV频道界面" alt="" coords="941,80,1139,123"/>
-<area shape="poly" title=" " alt="" coords="709,30,927,74,926,79,708,35"/>
-<area shape="rect" title=" " alt="" coords="1163,88,1232,115"/>
-<area shape="poly" title=" " alt="" coords="710,19,797,24,908,34,1030,51,1151,77,1159,80,1157,85,1150,83,1029,57,908,39,797,29,709,24"/>
+<area shape="poly" title=" " alt="" coords="868,30,974,71,972,76,866,35"/>
+<area shape="rect" title=" " alt="" coords="1162,88,1235,115"/>
+<area shape="poly" title=" " alt="" coords="898,25,1016,45,1151,77,1158,80,1156,85,1150,83,1015,50,897,31"/>
+<area shape="rect" title=" " alt="" coords="1259,88,1309,115"/>
+<area shape="poly" title=" " alt="" coords="897,20,970,25,1058,36,1154,52,1247,77,1251,79,1249,84,1246,83,1153,58,1058,41,969,30,897,25"/>
+<area shape="rect" title=" " alt="" coords="1334,88,1402,115"/>
+<area shape="poly" title=" " alt="" coords="897,19,982,25,1089,35,1206,52,1322,77,1329,80,1328,85,1321,83,1205,57,1088,40,982,30,897,25"/>
 <area shape="rect" href="_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="86,171,212,197"/>
 <area shape="poly" title=" " alt="" coords="195,125,170,159,165,156,191,122"/>
 <area shape="poly" title=" " alt="" coords="286,118,497,168,496,173,285,124"/>

@@ -9,7 +9,6 @@ var class_video_widget =
     [ "initVector", "class_video_widget.html#a90c20eba367d53522d3fcbb6b03111ba", null ],
     [ "mousePressEvent", "class_video_widget.html#a7523c71b2bf60975302287ec8923f80e", null ],
     [ "on_all_toolButton_toggled", "class_video_widget.html#aeacbba7c7d4483c2310411cd9e0daca7", null ],
-    [ "resizeEvent", "class_video_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "m_americanWidget", "class_video_widget.html#ab5b1e8d236b551cfcde273b4a8fdd1cb", null ],
     [ "m_buttonGroup", "class_video_widget.html#ad47442fcf7db8bd0dab09d79ad4c1d47", null ],
     [ "m_childrenWidget", "class_video_widget.html#a2c1d42618759d3b9be39e585ce57ce3d", null ],

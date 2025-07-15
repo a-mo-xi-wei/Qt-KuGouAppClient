@@ -340,12 +340,6 @@ var namespaces_dup =
       [ "safe_duration_cast", "namespacesafe__duration__cast.html#a8a653f2a1cc545ab18e52d93e1227caa", null ],
       [ "safe_float_conversion", "namespacesafe__duration__cast.html#aff7ac2bf64a788e3e576fda2f3758053", null ]
     ] ],
-    [ "SearchFlag", "namespace_search_flag.html", [
-      [ "flag1", "namespace_search_flag.html#ab3f8cc746952e023e170abc50274d1f3", null ],
-      [ "flag2", "namespace_search_flag.html#ad6928a7457c7dcf1efb619f020ba3b90", null ],
-      [ "flag3", "namespace_search_flag.html#a6f527020a3d7c4d4b1b2eb2fac662394", null ],
-      [ "flag4", "namespace_search_flag.html#aeb986329cce56d6a53dcb889fdabec31", null ]
-    ] ],
     [ "SJwt", "namespace_s_jwt.html", "namespace_s_jwt" ],
     [ "spdlog", "namespacespdlog.html", "namespacespdlog" ],
     [ "std", "namespacestd.html", "namespacestd" ],

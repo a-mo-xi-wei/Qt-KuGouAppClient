@@ -1,50 +1,57 @@
 <map id="loadNextSong" name="loadNextSong">
-<area shape="rect" id="Node000001" title="加载下一首歌曲" alt="" coords="5,107,109,133"/>
-<area shape="rect" id="Node000002" href="$class_local_song.html#a3374a842b7cda8c27ee40ec5c7f3d034" title="结束加载" alt="" coords="498,5,595,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,104,191,76,300,48,396,32,483,22,483,27,397,37,302,53,192,81,101,109"/>
-<area shape="rect" id="Node000007" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="157,157,253,184"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="99,131,150,149,148,154,98,136"/>
-<area shape="rect" id="Node000003" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="761,31,800,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="596,21,746,38,745,43,595,27"/>
-<area shape="rect" id="Node000004" href="$class_ela_message_bar.html#af8ac00160c4a557adfbba2c9508fa5e8" title="显示成功消息" alt="" coords="695,81,866,108"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="587,30,693,67,716,74,715,79,692,72,585,35"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="759,41,738,30,735,17,750,7,780,4,807,6,823,13,826,24,816,34,812,30,821,23,819,17,806,12,780,9,751,12,740,19,743,26,761,36"/>
-<area shape="rect" id="Node000005" href="$class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="916,81,1129,108"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="866,92,900,92,900,97,866,97"/>
-<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="983,83,976,73,981,63,997,57,1023,55,1051,57,1066,64,1063,69,1050,62,1023,60,998,62,985,67,981,72,988,79"/>
-<area shape="rect" id="Node000006" href="$class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="1177,73,1337,116"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="1130,92,1162,92,1162,97,1130,97"/>
-<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="235,154,300,129,428,97,555,73,745,45,746,50,555,78,429,103,302,135,237,159"/>
-<area shape="poly" id="edge26_Node000007_Node000004" title=" " alt="" coords="253,162,679,105,680,111,254,167"/>
-<area shape="rect" id="Node000008" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="301,335,400,361"/>
-<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="219,183,331,321,327,324,215,186"/>
-<area shape="rect" id="Node000012" href="$class_local_song.html#afe21a797d3d22561398cb2e4d360bc96" title="更新数量标签信号" alt="" coords="717,233,844,260"/>
-<area shape="poly" id="edge27_Node000007_Node000012" title=" " alt="" coords="254,174,702,234,701,239,253,180"/>
-<area shape="rect" id="Node000021" href="$_local_song_8cpp.html#af1c2af478725817de5781ab35232b4da" title="匹配非乱码字符的正则表达式" alt="" coords="331,385,370,412"/>
-<area shape="poly" id="edge25_Node000007_Node000021" title=" " alt="" coords="212,183,222,220,240,269,267,323,303,371,319,384,316,388,299,375,262,326,235,271,217,221,207,185"/>
-<area shape="rect" id="Node000009" href="$class_music_item_widget.html#af1643adccdb3db443b2d770ffa55728f" title="删除歌曲信号" alt="" coords="448,259,645,285"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="373,332,447,295,468,288,470,293,449,300,376,337"/>
-<area shape="rect" id="Node000010" href="$class_local_song.html#af5ddd758aac4d0083427a8eac26aebbd" title="删除歌曲槽函数" alt="" coords="482,157,611,184"/>
-<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="362,332,399,292,447,245,512,191,516,195,450,249,403,296,366,336"/>
-<area shape="rect" id="Node000014" href="$class_music_item_widget.html#a6d58098c6cf63c241ed03bc797256bb1" title="播放信号" alt="" coords="469,309,624,336"/>
-<area shape="poly" id="edge18_Node000008_Node000014" title=" " alt="" coords="400,339,453,332,453,337,401,344"/>
-<area shape="rect" id="Node000015" href="$class_local_song.html#a510995dc883818ca17b4108a74da7b52" title="播放音乐信号" alt="" coords="506,360,587,387"/>
-<area shape="poly" id="edge19_Node000008_Node000015" title=" " alt="" coords="401,352,491,364,491,369,400,357"/>
-<area shape="rect" id="Node000016" href="$class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="463,411,630,453"/>
-<area shape="poly" id="edge20_Node000008_Node000016" title=" " alt="" coords="380,360,402,371,449,396,464,402,462,407,447,401,399,376,377,364"/>
-<area shape="rect" id="Node000017" href="$class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="450,477,643,504"/>
-<area shape="poly" id="edge21_Node000008_Node000017" title=" " alt="" coords="387,360,402,371,419,396,426,420,433,442,450,463,455,467,452,472,447,467,428,445,420,422,414,399,398,375,383,364"/>
-<area shape="rect" id="Node000018" href="$class_local_song.html#acdf3c8266ececd2ce19f0116af28fc89" title="设置播放高亮" alt="" coords="475,528,618,555"/>
-<area shape="poly" id="edge22_Node000008_Node000018" title=" " alt="" coords="388,360,402,372,415,391,422,410,425,446,429,481,436,497,450,514,463,523,460,528,447,518,432,500,424,482,420,447,417,411,410,393,398,375,385,364"/>
-<area shape="rect" id="Node000020" href="$class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="451,579,642,605"/>
-<area shape="poly" id="edge24_Node000008_Node000020" title=" " alt="" coords="389,360,402,372,418,398,425,424,424,473,423,496,425,519,433,542,450,565,453,568,450,571,446,568,428,544,420,520,418,496,419,472,420,424,413,400,398,375,386,364"/>
-<area shape="poly" id="edge13_Node000010_Node000003" title=" " alt="" coords="562,155,617,112,653,88,692,67,745,49,747,54,694,72,656,93,620,116,565,159"/>
-<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="591,154,644,136,692,117,714,110,716,115,694,123,646,141,592,159"/>
-<area shape="rect" id="Node000011" href="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="720,132,841,159"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="611,161,704,151,704,156,612,166"/>
-<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="592,182,646,200,694,219,716,226,714,231,692,224,644,205,591,187"/>
-<area shape="rect" id="Node000013" href="$class_local_song.html#ac8c5ea460f7dfd2af0f743eabb55e876" title="更新当前播放索引" alt="" coords="711,183,850,209"/>
-<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="612,175,695,184,695,189,611,180"/>
-<area shape="rect" id="Node000019" href="$class_music_item_widget.html#a1b31f50930092d4ba6115354b369732e" title="设置播放状态" alt="" coords="693,520,868,563"/>
-<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="618,539,677,539,677,544,618,544"/>
+<area shape="rect" id="Node000001" title="加载下一首歌曲" alt="" coords="5,131,109,157"/>
+<area shape="rect" id="Node000002" href="$class_local_song.html#a3374a842b7cda8c27ee40ec5c7f3d034" title="结束加载" alt="" coords="498,29,595,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,128,191,100,300,72,396,56,483,46,483,51,397,61,302,77,192,105,101,133"/>
+<area shape="rect" id="Node000007" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="157,232,253,259"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="79,155,173,221,170,225,76,160"/>
+<area shape="rect" id="Node000003" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="761,29,800,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="596,40,745,40,745,45,596,45"/>
+<area shape="rect" id="Node000004" href="$class_ela_message_bar.html#af8ac00160c4a557adfbba2c9508fa5e8" title="显示成功消息" alt="" coords="695,80,866,107"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="596,51,701,74,700,79,595,56"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="759,39,738,28,735,15,750,6,780,3,807,5,823,12,826,23,816,33,812,29,821,21,819,15,806,10,780,8,751,11,740,17,743,25,761,35"/>
+<area shape="rect" id="Node000005" href="$class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="916,105,1129,132"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="866,100,901,103,900,109,866,105"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="983,107,976,97,981,87,997,81,1023,79,1051,81,1066,88,1063,93,1050,86,1023,84,998,86,985,91,981,96,988,103"/>
+<area shape="rect" id="Node000006" href="$class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="1177,97,1337,140"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="1130,116,1162,116,1162,121,1130,121"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="220,230,256,203,300,175,340,156,372,144,448,123,614,78,745,47,746,53,615,83,449,128,374,149,342,161,302,180,259,207,224,234"/>
+<area shape="poly" id="edge30_Node000007_Node000004" title=" " alt="" coords="240,229,300,207,404,176,510,148,691,108,692,113,511,154,406,181,302,212,241,234"/>
+<area shape="rect" id="Node000008" href="$color_8h.html#a12b134d4f21276bc7e0473bd2cdb1c9c" title="Formats arguments and returns the result as a string using ANSI escape sequences to specify text form..." alt="" coords="322,384,380,411"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="216,258,250,311,274,342,303,370,310,375,306,380,299,374,271,345,246,314,211,261"/>
+<area shape="rect" id="Node000009" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="301,333,400,360"/>
+<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="227,257,319,322,316,326,224,261"/>
+<area shape="rect" id="Node000015" href="$class_local_song.html#afe21a797d3d22561398cb2e4d360bc96" title="更新数量标签信号" alt="" coords="717,333,844,360"/>
+<area shape="poly" id="edge31_Node000007_Node000015" title=" " alt="" coords="253,235,331,226,431,224,485,227,540,235,594,249,646,268,662,280,672,293,680,307,694,319,704,325,702,329,691,324,676,310,667,296,658,284,643,273,593,254,539,241,485,233,431,229,331,231,253,240"/>
+<area shape="rect" id="Node000024" href="$_local_song_8cpp.html#af1c2af478725817de5781ab35232b4da" title="匹配非乱码字符的正则表达式" alt="" coords="331,435,370,461"/>
+<area shape="poly" id="edge29_Node000007_Node000024" title=" " alt="" coords="213,258,243,333,269,379,303,421,319,433,316,437,299,425,265,382,238,335,208,260"/>
+<area shape="rect" id="Node000010" href="$class_music_item_widget.html#af1643adccdb3db443b2d770ffa55728f" title="删除歌曲信号" alt="" coords="448,283,645,309"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="400,331,448,319,477,311,478,316,449,324,401,336"/>
+<area shape="rect" id="Node000011" href="$class_local_song.html#af5ddd758aac4d0083427a8eac26aebbd" title="删除歌曲槽函数" alt="" coords="482,181,611,208"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="368,331,447,269,514,216,517,220,450,273,371,335"/>
+<area shape="rect" id="Node000017" href="$class_music_item_widget.html#a6d58098c6cf63c241ed03bc797256bb1" title="播放信号" alt="" coords="469,333,624,360"/>
+<area shape="poly" id="edge22_Node000009_Node000017" title=" " alt="" coords="401,344,453,344,453,349,401,349"/>
+<area shape="rect" id="Node000018" href="$class_local_song.html#a510995dc883818ca17b4108a74da7b52" title="播放音乐信号" alt="" coords="506,384,587,411"/>
+<area shape="poly" id="edge23_Node000009_Node000018" title=" " alt="" coords="401,357,449,369,492,381,491,386,448,375,400,362"/>
+<area shape="rect" id="Node000019" href="$class_music_item_widget.html#a63e18b34ea211235a80eeadb450ede32" title="设置涟漪填充颜色" alt="" coords="463,435,630,477"/>
+<area shape="poly" id="edge24_Node000009_Node000019" title=" " alt="" coords="383,358,402,370,417,384,426,396,435,408,450,420,458,425,455,430,447,425,431,412,422,400,413,387,399,374,381,363"/>
+<area shape="rect" id="Node000020" href="$class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7" title="设置定时器时间间隔，控制填充速度" alt="" coords="450,501,643,528"/>
+<area shape="poly" id="edge25_Node000009_Node000020" title=" " alt="" coords="388,358,402,370,414,386,420,402,425,432,431,460,438,474,450,487,455,491,451,495,447,491,433,477,426,462,420,433,415,403,409,389,398,374,384,363"/>
+<area shape="rect" id="Node000021" href="$class_local_song.html#acdf3c8266ececd2ce19f0116af28fc89" title="设置播放高亮" alt="" coords="475,552,618,579"/>
+<area shape="poly" id="edge26_Node000009_Node000021" title=" " alt="" coords="389,358,402,370,417,393,423,416,425,458,427,499,435,518,450,538,463,548,460,552,446,542,430,521,422,500,419,458,418,416,412,395,398,374,385,362"/>
+<area shape="rect" id="Node000023" href="$class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2" title="设置圆角半径" alt="" coords="451,603,642,629"/>
+<area shape="poly" id="edge28_Node000009_Node000023" title=" " alt="" coords="389,359,402,370,419,400,426,429,427,457,424,484,421,511,423,537,431,563,450,589,453,591,449,595,446,592,427,565,418,538,416,511,418,484,421,457,421,430,414,402,398,374,386,363"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="563,179,643,110,666,86,691,66,718,54,745,46,746,51,720,59,694,70,669,90,647,114,566,183"/>
+<area shape="poly" id="edge19_Node000011_Node000004" title=" " alt="" coords="602,178,643,160,657,150,667,139,676,128,691,116,703,110,706,115,694,121,680,131,671,142,661,154,646,165,604,183"/>
+<area shape="rect" id="Node000012" href="$class_ela_message_bar.html#ae88944cbca6cf0cc02953a28ed45af83" title="显示错误消息" alt="" coords="707,131,854,157"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="611,178,700,159,701,164,612,183"/>
+<area shape="rect" id="Node000013" href="$namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="702,181,858,208"/>
+<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="612,192,687,192,687,197,612,197"/>
+<area shape="rect" id="Node000014" href="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="720,232,841,259"/>
+<area shape="poly" id="edge18_Node000011_Node000014" title=" " alt="" coords="612,206,705,226,704,232,611,211"/>
+<area shape="poly" id="edge20_Node000011_Node000015" title=" " alt="" coords="613,205,646,225,665,249,671,274,677,297,695,319,705,327,702,331,691,323,672,299,666,275,660,251,643,229,610,210"/>
+<area shape="rect" id="Node000016" href="$class_local_song.html#ac8c5ea460f7dfd2af0f743eabb55e876" title="更新当前播放索引" alt="" coords="711,283,850,309"/>
+<area shape="poly" id="edge21_Node000011_Node000016" title=" " alt="" coords="604,206,646,224,661,236,671,247,680,258,694,268,706,274,703,279,691,273,676,262,667,251,657,240,643,229,602,211"/>
+<area shape="poly" id="edge16_Node000012_Node000005" title=" " alt="" coords="854,134,900,129,901,134,855,139"/>
+<area shape="rect" id="Node000022" href="$class_music_item_widget.html#a1b31f50930092d4ba6115354b369732e" title="设置播放状态" alt="" coords="693,544,868,587"/>
+<area shape="poly" id="edge27_Node000021_Node000022" title=" " alt="" coords="618,563,677,563,677,568,618,568"/>
 </map>

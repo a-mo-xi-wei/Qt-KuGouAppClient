@@ -100,7 +100,7 @@ var searchData=
   ['_5fslidesmoothanimation_97',['_slideSmoothAnimation',['../class_ela_scroll_bar_private.html#aae7dd0b5ac85cbc78b1d6990b0b910c5',1,'ElaScrollBarPrivate']]],
   ['_5fstate_98',['_state',['../class_interactive_button_base.html#a3e5db5a553abc454da6cbb06819afd75',1,'InteractiveButtonBase']]],
   ['_5fstyle_99',['_style',['../class_ela_plain_text_edit_private.html#a0f815916593f8e36894e85090ffafbb5',1,'ElaPlainTextEditPrivate']]],
-  ['_5fsuggestionvector_100',['_suggestionVector',['../class_ela_suggest_box_private.html#aa1c4b2f6626009acb7da1633101f4d6b',1,'ElaSuggestBoxPrivate::_suggestionVector'],['../class_ela_suggest_model.html#aa1c4b2f6626009acb7da1633101f4d6b',1,'ElaSuggestModel::_suggestionVector']]],
+  ['_5fsuggestionvector_100',['_suggestionVector',['../class_ela_suggest_box_private.html#a62283eb8b33201e0a327f6c5a419923d',1,'ElaSuggestBoxPrivate::_suggestionVector'],['../class_ela_suggest_model.html#a62283eb8b33201e0a327f6c5a419923d',1,'ElaSuggestModel::_suggestionVector']]],
   ['_5ft_101',['_t',['../class_interactive_button_base.html#a61b4ab32cdb1b3db4e9a43236d7fdc83',1,'InteractiveButtonBase']]],
   ['_5ftext_102',['_text',['../class_ela_message_bar_private.html#ad9a3c9b82e5b3f365cad26cb46d5c994',1,'ElaMessageBarPrivate']]],
   ['_5ftextleftspacing_103',['_textLeftSpacing',['../class_ela_message_bar_private.html#ada2b1deced6953649d6c6b36cbbbe8f8',1,'ElaMessageBarPrivate']]],

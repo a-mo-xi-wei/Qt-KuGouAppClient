@@ -63,6 +63,7 @@ var class_title_widget =
     [ "resizeEvent", "class_title_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "searchTextReturnPressed", "class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1", null ],
     [ "setEnableChange", "class_title_widget.html#a93f9d0763b80a0b3aa3476e3770de66c", null ],
+    [ "setEnableTitleButton", "class_title_widget.html#a7eaa4436a068ca584f8b62945ced6abb", null ],
     [ "setMenuPosition", "class_title_widget.html#a0af7e99bd8f28620179c2875b5700c08", null ],
     [ "setTitleIndex", "class_title_widget.html#ae4e9263c9459d5439b1d35d96ee79d6b", null ],
     [ "showAboutDialog", "class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b", null ],

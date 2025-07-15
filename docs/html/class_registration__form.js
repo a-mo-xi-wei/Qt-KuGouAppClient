@@ -2,8 +2,8 @@ var class_registration__form =
 [
     [ "Registration_form", "class_registration__form.html#a28581e6b7b9ca7378fdfde42408c5a45", null ],
     [ "animations", "class_registration__form.html#ace83a5000440db8295cf96ae51d339ed", null ],
-    [ "crop_corner", "class_registration__form.html#aa2da5013ddbb5b62046ab618db896fab", null ],
-    [ "draw_text", "class_registration__form.html#af69de6b382a44a68ff96c18d03e078be", null ],
+    [ "crop_corner", "class_registration__form.html#a1386acad83fa5b2fc8cedd8fbfd915b3", null ],
+    [ "draw_text", "class_registration__form.html#a5e20b68f173de449f788a440070e0776", null ],
     [ "execute_animation", "class_registration__form.html#a66718ab49eaeeff4220c7d06dacf01d1", null ],
     [ "paintEvent", "class_registration__form.html#aa71936647c7e332ab07cbec003a8c9a2", null ],
     [ "animation", "class_registration__form.html#a56832f0123708420258c3793a362eedd", null ],

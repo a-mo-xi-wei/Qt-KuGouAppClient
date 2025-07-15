@@ -12,7 +12,6 @@ var class_daily_recommend =
     [ "on_history_recommend_toolButton_clicked", "class_daily_recommend.html#a839c37ccb7bcd014f252a8f2b9c400f9", null ],
     [ "on_play_toolButton_clicked", "class_daily_recommend.html#ae99430b6dd77da69da48acbff01374ad", null ],
     [ "on_vip_toolButton_clicked", "class_daily_recommend.html#ac6753a1d3727e351f69f5ac6e1a7510c", null ],
-    [ "resizeEvent", "class_daily_recommend.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "m_dayLab", "class_daily_recommend.html#af55ae59ceed05d5bbbcff90de0ce6c64", null ],
     [ "m_monthLab", "class_daily_recommend.html#af957bf91a3532d146847f0bcc2c3a1de", null ],
     [ "ui", "class_daily_recommend.html#a05e2e3a0082618757ea79aab07b0ea19", null ]

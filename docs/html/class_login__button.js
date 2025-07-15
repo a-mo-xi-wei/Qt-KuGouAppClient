@@ -7,7 +7,7 @@ var class_login__button =
     [ "Login_button", "class_login__button.html#ac638f0adf49a08308e2385f7d6ffe898", null ],
     [ "center_text", "class_login__button.html#a9d01717e4ca55a9a3e344b6412275846", null ],
     [ "color_opacity", "class_login__button.html#a580f4ab99d6f7d6b7232251382abe2e2", null ],
-    [ "draw_text", "class_login__button.html#af69de6b382a44a68ff96c18d03e078be", null ],
+    [ "draw_text", "class_login__button.html#a5e20b68f173de449f788a440070e0776", null ],
     [ "event", "class_login__button.html#a8fdf3d356a24927124fd8a425da29b77", null ],
     [ "execute_animation_signal", "class_login__button.html#afc7c0fd4bc2df695d8b644a8c1bfa4a3", null ],
     [ "mousePressEvent", "class_login__button.html#a7523c71b2bf60975302287ec8923f80e", null ],

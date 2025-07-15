@@ -1,14 +1,44 @@
 <map id="initUi" name="initUi">
-<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,81,57,108"/>
-<area shape="rect" id="Node000002" href="$class_music_repository.html#a7c64dd183c091c6d4c5aa3527f94a37e" title="初始化按钮组" alt="" coords="116,5,227,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,79,103,42,115,36,117,41,106,46,51,83"/>
-<area shape="rect" id="Node000003" href="$class_music_repository.html#a16c59d9fd008c0bac1c3e60e43acca0a" title="初始化新碟上架控件" alt="" coords="105,56,238,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,88,89,82,90,87,57,93"/>
-<area shape="rect" id="Node000004" href="$class_music_repository.html#acae5a2e7f07fed8a118d91a49d473a29" title="初始化精选视频控件" alt="" coords="113,107,230,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="57,97,99,104,98,109,56,102"/>
-<area shape="rect" id="Node000005" href="$class_music_repository.html#a90c20eba367d53522d3fcbb6b03111ba" title="初始化容器" alt="" coords="134,157,209,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="51,106,106,143,120,150,118,155,103,148,48,111"/>
-<area shape="rect" id="Node000006" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="286,157,325,184"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="209,168,271,168,271,173,209,173"/>
-<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="283,160,278,150,280,140,290,133,306,131,324,134,332,142,328,146,321,139,306,136,292,138,285,143,283,149,288,157"/>
+<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,233,57,260"/>
+<area shape="rect" id="Node000002" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="163,44,202,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="32,232,39,202,52,161,73,118,103,81,124,67,147,60,149,65,126,72,106,85,77,121,57,163,44,203,37,234"/>
+<area shape="rect" id="Node000003" href="$class_music_repository.html#a7c64dd183c091c6d4c5aa3527f94a37e" title="初始化按钮组" alt="" coords="127,95,238,121"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="43,231,103,169,150,129,153,133,106,173,47,235"/>
+<area shape="rect" id="Node000007" href="$class_music_repository.html#a16c59d9fd008c0bac1c3e60e43acca0a" title="初始化新碟上架控件" alt="" coords="116,183,250,209"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="56,236,126,212,127,217,58,241"/>
+<area shape="rect" id="Node000013" href="$class_music_repository.html#acae5a2e7f07fed8a118d91a49d473a29" title="初始化精选视频控件" alt="" coords="125,259,241,285"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="58,248,110,257,109,262,57,254"/>
+<area shape="rect" id="Node000020" href="$namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="105,309,261,336"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="50,258,76,277,106,295,119,301,116,306,103,300,73,281,47,262"/>
+<area shape="rect" id="Node000021" href="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="122,360,244,387"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="41,259,66,302,84,326,106,346,113,351,111,355,103,350,80,329,61,305,36,262"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="161,49,153,39,154,28,164,20,183,17,206,22,214,34,209,36,203,27,183,23,166,25,158,30,158,37,165,46"/>
+<area shape="rect" id="Node000004" href="$class_music_repository.html#ac0a29dfcf532e75a70285a4787cc0f2c" title=" " alt="" coords="357,5,475,32"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="234,92,260,80,283,61,293,51,308,42,341,29,343,34,310,46,296,55,287,65,262,85,236,96"/>
+<area shape="rect" id="Node000006" href="$class_music_repository.html#ab868524a9562cda1f7b60b4220e2248e" title="启用或禁用按钮" alt="" coords="368,56,465,83"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="238,96,352,77,353,82,239,101"/>
+<area shape="rect" id="Node000005" href="$class_music_repo_list.html#a577e699921fb58de1d51f2352a6088e1" title="设置封面图片" alt="" coords="592,5,780,32"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="475,16,576,16,576,21,475,21"/>
+<area shape="rect" id="Node000008" href="$class_music_repo_block.html#a9ad2c9eccab3874898785fcf65ea732b" title="设置封面图片" alt="" coords="316,107,516,133"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="214,180,308,143,335,135,337,140,310,148,215,185"/>
+<area shape="rect" id="Node000009" href="$class_music_repo_block.html#a8e961db3689a87ed1805184d4c66c5d3" title="设置歌手名称" alt="" coords="324,157,508,184"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="249,186,309,180,310,185,250,191"/>
+<area shape="rect" id="Node000011" href="$class_music_repo_block.html#a0f9ad0adbcb62033118856fbb9b09426" title="设置歌曲名称" alt="" coords="310,208,522,235"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="250,201,295,206,295,211,249,206"/>
+<area shape="rect" id="Node000010" href="$class_music_repo_block.html#a99b3226aaa69db0bbdc90fd3fb46d152" title="更新歌手名称文本" alt="" coords="571,157,801,184"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="508,168,556,168,556,173,508,173"/>
+<area shape="rect" id="Node000012" href="$class_music_repo_block.html#a46ae6233d063dd03d68aa50fb78a7052" title="更新歌曲名称文本" alt="" coords="575,208,797,235"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="522,219,559,219,559,224,522,224"/>
+<area shape="rect" id="Node000014" href="$class_music_repo_video.html#a43290dd8483ee5c69ffb82df772af4b0" title="设置作者名称" alt="" coords="324,259,508,285"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="241,269,308,269,308,275,241,275"/>
+<area shape="rect" id="Node000016" href="$class_music_repo_video.html#a577e699921fb58de1d51f2352a6088e1" title="设置封面图片" alt="" coords="316,309,516,336"/>
+<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="242,282,337,303,336,308,241,287"/>
+<area shape="rect" id="Node000017" href="$class_music_repo_video.html#a63131f75b21e758751fe1c60fce6ad1d" title="设置图标" alt="" coords="321,360,511,387"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="239,283,262,295,278,308,287,322,296,334,310,346,322,352,320,356,308,350,292,338,283,325,274,312,260,300,237,288"/>
+<area shape="rect" id="Node000018" href="$class_music_repo_video.html#a93f2a5d2dbe240d905986b12dd601208" title="设置视频名称" alt="" coords="309,411,523,437"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="243,283,263,295,274,308,281,322,287,348,293,373,299,385,311,397,316,401,313,405,307,401,295,388,288,375,282,349,276,324,270,311,259,299,240,287"/>
+<area shape="rect" id="Node000015" href="$class_music_repo_video.html#a4524096108d4ff696f94c56312b4af52" title="更新作者名称文本" alt="" coords="586,259,786,301"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="509,272,570,274,570,279,509,277"/>
+<area shape="rect" id="Node000019" href="$class_music_repo_video.html#ad348df3dcade07302ca6160c721c8f98" title="更新视频名称文本" alt="" coords="586,403,786,445"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="524,421,570,421,570,427,524,427"/>
 </map>

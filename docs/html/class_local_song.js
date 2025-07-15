@@ -49,7 +49,6 @@ var class_local_song =
     [ "playMusic", "class_local_song.html#a510995dc883818ca17b4108a74da7b52", null ],
     [ "playNextSong", "class_local_song.html#a28d2968ec110c34c15f2354b2ca85f41", null ],
     [ "playPrevSong", "class_local_song.html#a6d7933cb6403dc2a79154add780b1e19", null ],
-    [ "resizeEvent", "class_local_song.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "scrollToItem", "class_local_song.html#a09a9f9a11a92f99bc63be245778c0903", null ],
     [ "setPlayItemHighlight", "class_local_song.html#acdf3c8266ececd2ce19f0116af28fc89", null ],
     [ "startSerialLoading", "class_local_song.html#a1535a02c1a76094119209356430261e4", null ],

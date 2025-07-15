@@ -155,6 +155,8 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a52d72d391d2b33228bf6eae5dc30fef7" id="r_a52d72d391d2b33228bf6eae5dc30fef7"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52d72d391d2b33228bf6eae5dc30fef7">UrlRequestGet</a> (const QString &amp;url, const QString &amp;data, int timeout=500000)</td></tr>
 <tr class="memdesc:a52d72d391d2b33228bf6eae5dc30fef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">向一个http发送一个get请求  <br /></td></tr>
 <tr class="separator:a52d72d391d2b33228bf6eae5dc30fef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940102b09b175111413e72f431eaf9f5" id="r_a940102b09b175111413e72f431eaf9f5"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a940102b09b175111413e72f431eaf9f5">UrlRequestGetRaw</a> (const QString &amp;url, const QString &amp;data, int timeout=500000)</td></tr>
+<tr class="separator:a940102b09b175111413e72f431eaf9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1be1b3498eebb405f0396353bdf837b5" id="r_a1be1b3498eebb405f0396353bdf837b5"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be1b3498eebb405f0396353bdf837b5">UploadFile</a> (const QString &amp;strServerUrl, const QString &amp;srcFilePath, int timeout=500000)</td></tr>
 <tr class="memdesc:a1be1b3498eebb405f0396353bdf837b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">http上传一个文件  <br /></td></tr>
 <tr class="separator:a1be1b3498eebb405f0396353bdf837b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,26 +217,29 @@ Public 成员函数</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph.png" border="0" usemap="#aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph" alt=""/></div>
 <map name="aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph" id="aclass_c_libhttp_a72034a41ce9f3400cff1d1a26c8f6e1b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,157,84,184"/>
-<area shape="rect" href="class_c_libhttp.html#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件" alt="" coords="139,5,239,32"/>
-<area shape="poly" title=" " alt="" coords="51,156,82,106,104,76,130,49,144,38,147,42,133,53,108,79,86,109,55,158"/>
-<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="302,81,376,108"/>
-<area shape="poly" title=" " alt="" coords="54,155,85,121,107,105,131,92,171,82,212,78,287,82,287,88,212,83,172,87,133,97,110,109,89,125,58,158"/>
-<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="432,120,528,147"/>
-<area shape="poly" title=" " alt="" coords="84,165,417,136,417,141,84,170"/>
-<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="294,259,384,285"/>
-<area shape="poly" title=" " alt="" coords="85,181,284,251,283,256,83,186"/>
-<area shape="rect" href="class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件" alt="" coords="147,107,230,133"/>
-<area shape="poly" title=" " alt="" coords="83,154,134,136,135,141,85,159"/>
-<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="135,259,243,285"/>
-<area shape="poly" title=" " alt="" coords="63,182,133,238,150,248,147,253,130,242,59,186"/>
-<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="132,309,246,336"/>
-<area shape="poly" title=" " alt="" coords="54,183,84,237,106,268,133,295,138,299,135,303,130,299,102,271,79,239,50,186"/>
-<area shape="poly" title=" " alt="" coords="218,30,299,72,296,76,216,35"/>
-<area shape="poly" title=" " alt="" coords="377,102,418,114,417,119,376,107"/>
-<area shape="poly" title=" " alt="" coords="230,110,287,101,288,106,231,116"/>
-<area shape="poly" title=" " alt="" coords="243,269,278,269,278,275,243,275"/>
-<area shape="poly" title=" " alt="" coords="230,306,282,288,284,293,232,311"/>
+<area shape="rect" title=" " alt="" coords="5,183,84,209"/>
+<area shape="rect" href="class_c_libhttp.html#a7517480067f7723b125dc8cf7d97a88a" title="从http上下载一个文件" alt="" coords="149,5,250,32"/>
+<area shape="poly" title=" " alt="" coords="48,181,77,119,101,82,130,49,145,38,148,42,133,53,105,85,82,122,53,183"/>
+<area shape="rect" href="class_c_libhttp.html#a9c7ce3aa95fd87935e4e45fe3a3cfb27" title=" " alt="" coords="324,81,397,108"/>
+<area shape="poly" title=" " alt="" coords="50,181,80,135,103,111,131,92,176,78,223,73,269,75,309,80,308,86,268,80,223,79,177,83,133,97,106,115,84,138,55,184"/>
+<area shape="rect" href="class_c_libhttp.html#afb2a0a23c4cb2ceddd230442e7f9e8f4" title=" " alt="" coords="453,120,549,147"/>
+<area shape="poly" title=" " alt="" coords="84,188,437,139,438,145,85,193"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="315,284,405,311"/>
+<area shape="poly" title=" " alt="" coords="84,199,170,215,268,244,326,273,324,278,266,249,168,220,83,204"/>
+<area shape="rect" href="class_c_libhttp.html#a1be1b3498eebb405f0396353bdf837b5" title="http上传一个文件" alt="" coords="158,107,241,133"/>
+<area shape="poly" title=" " alt="" coords="71,180,130,150,154,138,156,143,133,154,74,185"/>
+<area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="145,259,254,285"/>
+<area shape="poly" title=" " alt="" coords="74,207,133,238,156,249,154,254,130,242,71,212"/>
+<area shape="rect" href="class_c_libhttp.html#a940102b09b175111413e72f431eaf9f5" title=" " alt="" coords="132,309,267,336"/>
+<area shape="poly" title=" " alt="" coords="56,208,87,251,109,274,133,295,140,300,138,304,130,299,105,278,83,254,52,211"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="142,360,256,387"/>
+<area shape="poly" title=" " alt="" coords="53,209,80,274,103,312,133,346,138,350,135,354,130,350,99,316,75,277,48,211"/>
+<area shape="poly" title=" " alt="" coords="231,30,318,72,315,77,229,35"/>
+<area shape="poly" title=" " alt="" coords="398,102,439,114,438,119,397,107"/>
+<area shape="poly" title=" " alt="" coords="241,111,308,100,308,105,242,116"/>
+<area shape="poly" title=" " alt="" coords="254,278,300,285,299,290,253,283"/>
+<area shape="poly" title=" " alt="" coords="267,309,299,304,300,309,268,315"/>
+<area shape="poly" title=" " alt="" coords="239,357,266,346,322,316,324,321,268,350,241,362"/>
 </map>
 </div>
 
@@ -401,21 +406,24 @@ Public 成员函数</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph.png" border="0" usemap="#aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph" alt=""/></div>
 <map name="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph" id="aclass_c_libhttp_ab530c9bfbf50bde9c0b72203027b1b21_icgraph">
-<area shape="rect" title=" " alt="" coords="689,81,780,108"/>
+<area shape="rect" title=" " alt="" coords="689,107,780,133"/>
 <area shape="rect" href="class_about_dialog.html#a95170a0a271a7e8133ff94cad8a73e45" title="获取 Gitee 项目的 Star 数量" alt="" coords="427,5,641,32"/>
-<area shape="poly" title=" " alt="" coords="698,75,640,46,604,35,606,30,642,42,700,71"/>
+<area shape="poly" title=" " alt="" coords="708,98,677,71,640,46,611,35,613,30,643,42,681,66,712,94"/>
 <area shape="rect" href="class_c_libhttp.html#a52d72d391d2b33228bf6eae5dc30fef7" title="向一个http发送一个get请求" alt="" coords="480,56,588,83"/>
-<area shape="poly" title=" " alt="" coords="674,90,589,79,589,74,674,84"/>
-<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="263,107,341,133"/>
-<area shape="poly" title=" " alt="" coords="674,101,341,120,341,115,673,96"/>
-<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="477,157,591,184"/>
-<area shape="poly" title=" " alt="" coords="695,118,642,141,588,159,586,154,640,136,693,113"/>
+<area shape="poly" title=" " alt="" coords="674,107,588,86,590,80,675,102"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="263,132,341,159"/>
+<area shape="poly" title=" " alt="" coords="674,126,341,146,341,140,673,121"/>
+<area shape="rect" href="class_c_libhttp.html#a940102b09b175111413e72f431eaf9f5" title=" " alt="" coords="466,157,602,184"/>
+<area shape="poly" title=" " alt="" coords="675,138,591,159,589,154,673,133"/>
+<area shape="rect" href="class_c_libhttp.html#a362fb258b5a1ab3db48230467ca3be5a" title="向一个http发送一个post请求" alt="" coords="477,208,591,235"/>
+<area shape="poly" title=" " alt="" coords="712,146,681,174,642,198,592,215,591,210,640,194,677,169,708,142"/>
 <area shape="rect" href="class_about_dialog.html#a589417f264bff3ae9919ac50f8f360a3" title="初始化对话框布局" alt="" coords="225,5,379,32"/>
 <area shape="poly" title=" " alt="" coords="411,21,379,21,379,16,411,16"/>
 <area shape="rect" href="class_about_dialog.html#a1a9553ce8ca226111b5822aa27d3a772" title="构造函数，初始化关于对话框" alt="" coords="5,5,177,32"/>
 <area shape="poly" title=" " alt="" coords="209,21,177,21,177,16,209,16"/>
-<area shape="poly" title=" " alt="" coords="465,87,342,114,341,109,464,82"/>
-<area shape="poly" title=" " alt="" coords="461,158,341,131,342,126,462,152"/>
+<area shape="poly" title=" " alt="" coords="471,90,428,104,342,134,340,129,426,99,470,85"/>
+<area shape="poly" title=" " alt="" coords="451,164,341,152,342,147,452,159"/>
+<area shape="poly" title=" " alt="" coords="461,208,426,199,332,162,334,157,428,193,462,203"/>
 </map>
 </div>
 
@@ -586,6 +594,52 @@ Public 成员函数</h2></td></tr>
 <div class="center"><img src="class_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph.png" border="0" usemap="#aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph" alt=""/></div>
 <map name="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph" id="aclass_c_libhttp_a52d72d391d2b33228bf6eae5dc30fef7_icgraph">
 <area shape="rect" title="向一个http发送一个get请求" alt="" coords="132,5,240,32"/>
+<area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a940102b09b175111413e72f431eaf9f5" name="a940102b09b175111413e72f431eaf9f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940102b09b175111413e72f431eaf9f5">&#9670;&#160;</a></span>UrlRequestGetRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray UrlRequestGetRaw </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">500000</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a940102b09b175111413e72f431eaf9f5_cgraph.png" border="0" usemap="#aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_cgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_cgraph" id="aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" href="class_c_libhttp.html#ab530c9bfbf50bde9c0b72203027b1b21" title=" " alt="" coords="189,5,279,32"/>
+<area shape="poly" title=" " alt="" coords="141,16,173,16,173,21,141,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_libhttp_a940102b09b175111413e72f431eaf9f5_icgraph.png" border="0" usemap="#aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_icgraph" alt=""/></div>
+<map name="aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_icgraph" id="aclass_c_libhttp_a940102b09b175111413e72f431eaf9f5_icgraph">
+<area shape="rect" title=" " alt="" coords="132,5,267,32"/>
 <area shape="rect" href="class_c_libhttp.html#a72034a41ce9f3400cff1d1a26c8f6e1b" title=" " alt="" coords="5,5,84,32"/>
 <area shape="poly" title=" " alt="" coords="116,21,84,21,84,16,116,16"/>
 </map>

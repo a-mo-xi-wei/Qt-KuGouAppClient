@@ -49,6 +49,7 @@ var class_music_item_widget =
     [ "setIndexText", "class_music_item_widget.html#a7de7756311c6e87c4a9d4600dda907d8", null ],
     [ "setInformation", "class_music_item_widget.html#a3257c611e6f2d35712663a6e298ba76e", null ],
     [ "setInterval", "class_music_item_widget.html#aa4fd81b36db6f7e28b968918751a17f7", null ],
+    [ "setNetUrl", "class_music_item_widget.html#a0035b410a0220e8aef17fdc672939670", null ],
     [ "setPlayState", "class_music_item_widget.html#a1b31f50930092d4ba6115354b369732e", null ],
     [ "setPopular", "class_music_item_widget.html#a9c89c294bf835de8cde28721fd368d93", null ],
     [ "setRadius", "class_music_item_widget.html#a04ae76275927b43c09f4df15c74691e2", null ],

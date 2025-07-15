@@ -13,7 +13,7 @@ var class_main_window =
     [ "resizeEvent", "class_main_window.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "setElaToolTip", "class_main_window.html#a327b3c5ae850d1f61a9cae21f8f4de72", null ],
     [ "setMouseCursor", "class_main_window.html#abcc871beb4813fa9f3a0e5a25fe4c03c", null ],
-    [ "isClosing", "class_main_window.html#a3d77822180af8e026f5570a84f4caf05", null ],
+    [ "showEvent", "class_main_window.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf", null ],
     [ "isPress", "class_main_window.html#a906a028efbd9793f48afa05f8eb647a1", null ],
     [ "m_aboutDialog", "class_main_window.html#acd538ce4c060afbb2a81636e42a1d08e", null ],
     [ "m_showDialog", "class_main_window.html#aa0e892212c056496150b9ce8710b9603", null ],

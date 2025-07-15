@@ -1,5 +1,8 @@
 var NAVTREEINDEX54 =
 {
+"class_chat_view.html#ae475029786888f5b79e1155c03105c72":[2,0,52,5],
+"class_chat_view.html#ae5c0d53816415eb4b4358228b330a113":[2,0,52,6],
+"class_check_box1.html":[2,0,53],
 "class_check_box1.html#a18d8ef3df72adc394e26952015bff615":[2,0,53,0],
 "class_check_box1.html#a1b632cc8b6a79a49b122d4252fc733b2":[2,0,53,5],
 "class_check_box1.html#a52861a0c2697d5ae0c745b24a776aecb":[2,0,53,4],
@@ -14,12 +17,11 @@ var NAVTREEINDEX54 =
 "class_collect_video.html#ae00e3469e2aa67a622084a935bf59148":[2,0,56,1],
 "class_collect_video.html#aedb6e537eb73b751612930ce6710bf91":[2,0,56,4],
 "class_daily_recommend.html":[2,0,71],
-"class_daily_recommend.html#a05e2e3a0082618757ea79aab07b0ea19":[2,0,71,15],
+"class_daily_recommend.html#a05e2e3a0082618757ea79aab07b0ea19":[2,0,71,14],
 "class_daily_recommend.html#a4c010533bcee743a2630c68f1ac292b0":[2,0,71,7],
 "class_daily_recommend.html#a4c31fa17ce6a5cc8533d92486ed88966":[2,0,71,3],
 "class_daily_recommend.html#a839c37ccb7bcd014f252a8f2b9c400f9":[2,0,71,9],
 "class_daily_recommend.html#a9785e43d7191481ed39fb4b1fc9dbbbb":[2,0,71,1],
-"class_daily_recommend.html#a9a27ed4ceb22d2a19bdb88ed785085a1":[2,0,71,12],
 "class_daily_recommend.html#aa657bd21b1ef013ac26b9b87c58100db":[2,0,71,0],
 "class_daily_recommend.html#ab4d3c795be146b123cb6496f5da4cbb9":[2,0,71,6],
 "class_daily_recommend.html#ac05465c66c47f2caebb711218a7e118a":[2,0,71,4],
@@ -27,8 +29,8 @@ var NAVTREEINDEX54 =
 "class_daily_recommend.html#ac6753a1d3727e351f69f5ac6e1a7510c":[2,0,71,11],
 "class_daily_recommend.html#ae99430b6dd77da69da48acbff01374ad":[2,0,71,10],
 "class_daily_recommend.html#af33653a755c92cbe26561696aa130533":[2,0,71,2],
-"class_daily_recommend.html#af55ae59ceed05d5bbbcff90de0ce6c64":[2,0,71,13],
-"class_daily_recommend.html#af957bf91a3532d146847f0bcc2c3a1de":[2,0,71,14],
+"class_daily_recommend.html#af55ae59ceed05d5bbbcff90de0ce6c64":[2,0,71,12],
+"class_daily_recommend.html#af957bf91a3532d146847f0bcc2c3a1de":[2,0,71,13],
 "class_daily_recommend.html#afba6e95967cc3eb25fd518f7bde6ec04":[2,0,71,5],
 "class_device_widget.html":[2,0,74],
 "class_device_widget.html#a1d814602ac0752be104e51235985a6c5":[2,0,74,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "class_ela_menu.html#a4071f65004ff710cb8d95b9c19a33d5b":[2,0,97,1],
 "class_ela_menu.html#a442ac268777411924d7b091663c75172":[2,0,97,4],
 "class_ela_menu.html#a683e89fa3744a2c350a5668aa60c4a6e":[2,0,97,5],
-"class_ela_menu.html#a6846686a8f69771c037863b8eb6ae7d2":[2,0,97,16],
-"class_ela_menu.html#a95d76d07dd760f4d7608d4e0a575d3fd":[2,0,97,6],
-"class_ela_menu.html#a964db201b4bb2e74913997d756de6e82":[2,0,97,8]
+"class_ela_menu.html#a6846686a8f69771c037863b8eb6ae7d2":[2,0,97,16]
 };

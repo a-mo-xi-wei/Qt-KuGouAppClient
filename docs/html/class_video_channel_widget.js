@@ -8,7 +8,6 @@ var class_video_channel_widget =
     [ "initUi", "class_video_channel_widget.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
     [ "initVector", "class_video_channel_widget.html#a90c20eba367d53522d3fcbb6b03111ba", null ],
     [ "mousePressEvent", "class_video_channel_widget.html#a7523c71b2bf60975302287ec8923f80e", null ],
-    [ "resizeEvent", "class_video_channel_widget.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
     [ "m_ACGNWidget", "class_video_channel_widget.html#ab12c502500b556a658e22e57bfd9c646", null ],
     [ "m_buttonGroup", "class_video_channel_widget.html#ad47442fcf7db8bd0dab09d79ad4c1d47", null ],
     [ "m_childrenWidget", "class_video_channel_widget.html#ad927a358a5964f04e4664b46b9fd2643", null ],

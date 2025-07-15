@@ -103,68 +103,83 @@ $(function(){initNavTree('login__register__form_8cpp.html',''); initResizable(tr
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="login__register__form_8h_source.html">login_register_form.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="windoweffect_8h_source.html">windoweffect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ela_tool_tip_8h_source.html">ElaToolTip.h</a>&quot;</code><br />
 <code>#include &lt;QGraphicsDropShadowEffect&gt;</code><br />
 <code>#include &lt;QMouseEvent&gt;</code><br />
 <code>#include &lt;QPainter&gt;</code><br />
 <code>#include &lt;QPainterPath&gt;</code><br />
+<code>#include &lt;QParallelAnimationGroup&gt;</code><br />
 <code>#include &lt;QPushButton&gt;</code><br />
+<code>#include &lt;QTimeLine&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 login_register_form.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="login__register__form_8cpp__incl.png" border="0" usemap="#alogin__register__form_8cpp" alt=""/></div>
 <map name="alogin__register__form_8cpp" id="alogin__register__form_8cpp">
-<area shape="rect" title=" " alt="" coords="942,5,1099,32"/>
-<area shape="rect" href="login__register__form_8h.html" title=" " alt="" coords="324,80,466,107"/>
-<area shape="poly" title=" " alt="" coords="942,32,482,85,481,79,942,26"/>
-<area shape="rect" title=" " alt="" coords="611,320,710,347"/>
-<area shape="poly" title=" " alt="" coords="942,33,847,53,807,67,781,82,763,104,754,126,750,148,750,171,750,219,744,246,731,273,714,295,694,313,690,309,710,291,726,271,739,244,744,219,745,171,745,148,749,125,759,102,777,78,805,62,845,48,941,28"/>
-<area shape="rect" href="windoweffect_8h.html" title=" " alt="" coords="792,80,900,107"/>
-<area shape="poly" title=" " alt="" coords="991,35,892,76,889,71,989,30"/>
-<area shape="rect" title=" " alt="" coords="924,80,1117,107"/>
-<area shape="poly" title=" " alt="" coords="1023,33,1023,64,1018,64,1018,33"/>
-<area shape="rect" title=" " alt="" coords="1140,80,1245,107"/>
-<area shape="poly" title=" " alt="" coords="1051,30,1150,71,1147,76,1049,35"/>
-<area shape="rect" title=" " alt="" coords="1268,80,1341,107"/>
-<area shape="poly" title=" " alt="" coords="1071,30,1254,76,1252,82,1069,35"/>
-<area shape="rect" title=" " alt="" coords="1364,80,1464,107"/>
-<area shape="poly" title=" " alt="" coords="1092,30,1349,77,1348,82,1091,35"/>
-<area shape="rect" href="scroll__bar_8h.html" title=" " alt="" coords="402,163,490,189"/>
-<area shape="poly" title=" " alt="" coords="405,106,432,148,428,151,401,109"/>
-<area shape="rect" href="transparent__transition__interface_8h.html" title=" " alt="" coords="514,155,660,197"/>
-<area shape="poly" title=" " alt="" coords="426,105,525,146,523,151,424,110"/>
-<area shape="rect" href="registration__form_8h.html" title=" " alt="" coords="156,163,285,189"/>
-<area shape="poly" title=" " alt="" coords="369,110,262,158,260,154,367,105"/>
-<area shape="rect" href="login__form_8h.html" title=" " alt="" coords="40,163,132,189"/>
-<area shape="poly" title=" " alt="" coords="335,110,245,131,144,157,135,160,134,155,142,152,243,125,334,105"/>
-<area shape="rect" title=" " alt="" coords="309,163,377,189"/>
-<area shape="poly" title=" " alt="" coords="389,109,362,151,357,148,385,106"/>
-<area shape="rect" title=" " alt="" coords="292,245,365,272"/>
-<area shape="poly" title=" " alt="" coords="429,192,361,239,358,234,426,188"/>
-<area shape="rect" title=" " alt="" coords="389,245,580,272"/>
-<area shape="poly" title=" " alt="" coords="562,200,514,238,511,234,559,196"/>
-<area shape="rect" href="hollow__button_8h.html" title=" " alt="" coords="604,245,717,272"/>
-<area shape="poly" title=" " alt="" coords="608,196,641,232,637,235,604,200"/>
-<area shape="poly" title=" " alt="" coords="663,273,663,304,658,304,658,273"/>
-<area shape="rect" title=" " alt="" coords="310,320,448,347"/>
-<area shape="poly" title=" " alt="" coords="612,275,444,318,442,313,611,270"/>
-<area shape="rect" href="input__box_8h.html" title=" " alt="" coords="48,245,137,272"/>
-<area shape="poly" title=" " alt="" coords="202,192,127,239,124,235,199,188"/>
-<area shape="rect" href="login__button_8h.html" title=" " alt="" coords="165,245,268,272"/>
-<area shape="poly" title=" " alt="" coords="223,190,221,230,215,230,217,190"/>
-<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="43,320,142,347"/>
-<area shape="poly" title=" " alt="" coords="95,273,95,304,90,304,90,273"/>
-<area shape="rect" title=" " alt="" coords="5,395,84,421"/>
-<area shape="poly" title=" " alt="" coords="86,349,63,383,59,380,82,346"/>
-<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="108,395,176,421"/>
-<area shape="poly" title=" " alt="" coords="103,346,127,380,123,383,99,349"/>
-<area shape="rect" title=" " alt="" coords="82,469,202,496"/>
+<area shape="rect" title=" " alt="" coords="1163,5,1320,32"/>
+<area shape="rect" href="login__register__form_8h.html" title=" " alt="" coords="264,80,406,107"/>
+<area shape="poly" title=" " alt="" coords="1163,29,422,88,421,82,1163,24"/>
+<area shape="rect" title=" " alt="" coords="477,320,576,347"/>
+<area shape="poly" title=" " alt="" coords="1163,24,1073,29,974,39,887,56,853,68,830,82,812,104,804,127,803,150,804,175,807,200,805,225,797,250,779,274,748,292,700,307,592,327,591,321,699,302,746,287,776,270,793,247,800,224,801,200,799,175,797,150,799,126,807,101,826,78,851,63,885,51,973,33,1072,23,1163,19"/>
+<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="75,320,168,347"/>
+<area shape="poly" title=" " alt="" coords="1163,24,959,29,696,39,439,57,333,69,253,83,172,104,139,116,110,131,85,150,64,175,47,206,35,246,32,259,35,271,53,293,77,310,74,315,49,297,30,273,26,259,30,245,42,204,59,172,81,146,107,126,137,111,171,98,252,77,332,63,438,52,696,34,959,24,1163,19"/>
+<area shape="rect" href="windoweffect_8h.html" title=" " alt="" coords="841,80,949,107"/>
+<area shape="poly" title=" " alt="" coords="1181,35,964,80,963,75,1180,30"/>
+<area shape="rect" title=" " alt="" coords="973,80,1166,107"/>
+<area shape="poly" title=" " alt="" coords="1213,35,1115,76,1112,71,1211,30"/>
+<area shape="rect" title=" " alt="" coords="1189,80,1294,107"/>
+<area shape="poly" title=" " alt="" coords="1244,33,1244,64,1239,64,1239,33"/>
+<area shape="rect" title=" " alt="" coords="1317,80,1390,107"/>
+<area shape="poly" title=" " alt="" coords="1262,30,1323,69,1320,74,1260,35"/>
+<area shape="rect" title=" " alt="" coords="1413,80,1512,107"/>
+<area shape="poly" title=" " alt="" coords="1281,30,1410,72,1409,77,1279,35"/>
+<area shape="rect" title=" " alt="" coords="1536,80,1704,107"/>
+<area shape="poly" title=" " alt="" coords="1308,30,1540,74,1539,79,1307,35"/>
+<area shape="rect" title=" " alt="" coords="1727,80,1812,107"/>
+<area shape="poly" title=" " alt="" coords="1320,25,1496,45,1713,77,1712,82,1495,50,1320,30"/>
+<area shape="rect" title=" " alt="" coords="1836,80,1900,107"/>
+<area shape="poly" title=" " alt="" coords="1321,21,1542,39,1680,55,1821,77,1820,82,1679,60,1542,44,1320,27"/>
+<area shape="rect" href="scroll__bar_8h.html" title=" " alt="" coords="44,245,132,272"/>
+<area shape="poly" title=" " alt="" coords="264,106,167,126,126,140,101,157,91,173,86,192,86,230,80,230,81,191,86,171,97,153,124,135,165,121,262,101"/>
+<area shape="rect" href="transparent__transition__interface_8h.html" title=" " alt="" coords="474,155,620,197"/>
+<area shape="poly" title=" " alt="" coords="369,105,479,146,477,151,367,110"/>
+<area shape="rect" href="registration__form_8h.html" title=" " alt="" coords="204,163,333,189"/>
+<area shape="poly" title=" " alt="" coords="326,109,290,153,286,149,322,105"/>
+<area shape="rect" href="login__form_8h.html" title=" " alt="" coords="357,163,449,189"/>
+<area shape="poly" title=" " alt="" coords="347,105,385,149,381,153,343,109"/>
+<area shape="rect" title=" " alt="" coords="111,163,180,189"/>
+<area shape="poly" title=" " alt="" coords="305,110,192,157,189,158,187,154,190,152,303,105"/>
+<area shape="rect" title=" " alt="" coords="5,395,78,421"/>
+<area shape="poly" title=" " alt="" coords="85,274,65,321,50,380,44,379,60,319,80,272"/>
+<area shape="rect" title=" " alt="" coords="574,245,765,272"/>
+<area shape="poly" title=" " alt="" coords="580,196,639,234,636,239,577,200"/>
+<area shape="rect" href="hollow__button_8h.html" title=" " alt="" coords="437,245,550,272"/>
+<area shape="poly" title=" " alt="" coords="535,199,513,234,508,231,531,196"/>
+<area shape="poly" title=" " alt="" coords="502,271,517,305,512,307,497,274"/>
+<area shape="rect" title=" " alt="" coords="315,320,453,347"/>
+<area shape="poly" title=" " alt="" coords="476,275,417,314,414,309,473,270"/>
+<area shape="rect" href="input__box_8h.html" title=" " alt="" coords="197,245,286,272"/>
+<area shape="poly" title=" " alt="" coords="267,191,253,232,248,230,261,189"/>
+<area shape="rect" href="login__button_8h.html" title=" " alt="" coords="310,245,413,272"/>
+<area shape="poly" title=" " alt="" coords="284,188,338,233,334,237,281,192"/>
+<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="192,320,291,347"/>
+<area shape="poly" title=" " alt="" coords="244,273,244,304,239,304,239,273"/>
+<area shape="poly" title=" " alt="" coords="222,275,157,314,154,309,219,270"/>
+<area shape="rect" title=" " alt="" coords="202,395,281,421"/>
+<area shape="poly" title=" " alt="" coords="244,347,244,379,239,379,239,347"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="107,395,176,421"/>
+<area shape="poly" title=" " alt="" coords="226,349,173,387,170,383,223,345"/>
+<area shape="rect" title=" " alt="" coords="82,469,201,496"/>
 <area shape="poly" title=" " alt="" coords="144,422,144,454,139,454,139,422"/>
-<area shape="poly" title=" " alt="" coords="269,267,281,269,596,320,595,325,280,275,268,272"/>
-<area shape="poly" title=" " alt="" coords="246,270,338,311,336,316,244,275"/>
-<area shape="poly" title=" " alt="" coords="90,190,93,230,88,230,84,190"/>
-<area shape="poly" title=" " alt="" coords="108,188,185,235,182,239,105,192"/>
-<area shape="rect" title=" " alt="" coords="804,163,888,189"/>
-<area shape="poly" title=" " alt="" coords="848,107,848,147,843,147,843,107"/>
+<area shape="poly" title=" " alt="" coords="109,349,68,386,65,382,106,345"/>
+<area shape="poly" title=" " alt="" coords="128,346,137,379,131,381,122,348"/>
+<area shape="poly" title=" " alt="" coords="391,270,485,311,483,316,389,275"/>
+<area shape="poly" title=" " alt="" coords="368,272,378,304,373,306,363,273"/>
+<area shape="poly" title=" " alt="" coords="379,192,281,241,279,236,376,187"/>
+<area shape="poly" title=" " alt="" coords="399,191,377,233,372,231,394,189"/>
+<area shape="rect" title=" " alt="" coords="853,163,936,189"/>
+<area shape="poly" title=" " alt="" coords="898,107,898,147,892,147,892,107"/>
 </map>
 </div>
 </div></div><!-- contents -->

@@ -145,9 +145,9 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ae93b915598cdbe5ae59dddf41d917a53" id="r_ae93b915598cdbe5ae59dddf41d917a53"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae93b915598cdbe5ae59dddf41d917a53">data</a> (const QModelIndex &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, int role) const override</td></tr>
 <tr class="memdesc:ae93b915598cdbe5ae59dddf41d917a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取数据  <br /></td></tr>
 <tr class="separator:ae93b915598cdbe5ae59dddf41d917a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a639bb4d2b6636eaf009f6a39bc3cbbce" id="r_a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a639bb4d2b6636eaf009f6a39bc3cbbce">setSearchSuggestion</a> (QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt; suggestionVector)</td></tr>
-<tr class="memdesc:a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索建议项  <br /></td></tr>
-<tr class="separator:a639bb4d2b6636eaf009f6a39bc3cbbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15543cb7f45e5c97bbbc5ff2ee7894b3" id="r_a15543cb7f45e5c97bbbc5ff2ee7894b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15543cb7f45e5c97bbbc5ff2ee7894b3">setSearchSuggestion</a> (QVector&lt; QSharedPointer&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> &gt; &gt; suggestionVector)</td></tr>
+<tr class="memdesc:a15543cb7f45e5c97bbbc5ff2ee7894b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索建议项  <br /></td></tr>
+<tr class="separator:a15543cb7f45e5c97bbbc5ff2ee7894b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a068c2779d321ad502869276c93e95257" id="r_a068c2779d321ad502869276c93e95257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a068c2779d321ad502869276c93e95257">clearSearchNode</a> ()</td></tr>
 <tr class="memdesc:a068c2779d321ad502869276c93e95257"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除搜索节点  <br /></td></tr>
 <tr class="separator:a068c2779d321ad502869276c93e95257"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,9 +157,9 @@ Public 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:aa1c4b2f6626009acb7da1633101f4d6b" id="r_aa1c4b2f6626009acb7da1633101f4d6b"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1c4b2f6626009acb7da1633101f4d6b">_suggestionVector</a></td></tr>
-<tr class="memdesc:aa1c4b2f6626009acb7da1633101f4d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">符合搜索的建议项列表  <br /></td></tr>
-<tr class="separator:aa1c4b2f6626009acb7da1633101f4d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62283eb8b33201e0a327f6c5a419923d" id="r_a62283eb8b33201e0a327f6c5a419923d"><td class="memItemLeft" align="right" valign="top">QVector&lt; QSharedPointer&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62283eb8b33201e0a327f6c5a419923d">_suggestionVector</a></td></tr>
+<tr class="memdesc:a62283eb8b33201e0a327f6c5a419923d"><td class="mdescLeft">&#160;</td><td class="mdescRight">符合搜索的建议项列表  <br /></td></tr>
+<tr class="separator:a62283eb8b33201e0a327f6c5a419923d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>建议项模型，管理搜索建议项列表 </p>
@@ -215,7 +215,7 @@ Private 属性</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -309,9 +309,6 @@ Private 属性</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>建议项指针 </dd></dl>
-<p>&lt; 行号超出范围</p>
-<p>&lt; 列表为空</p>
-<p>&lt; 返回建议项</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
@@ -352,8 +349,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a639bb4d2b6636eaf009f6a39bc3cbbce" name="a639bb4d2b6636eaf009f6a39bc3cbbce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a639bb4d2b6636eaf009f6a39bc3cbbce">&#9670;&#160;</a></span>setSearchSuggestion()</h2>
+<a id="a15543cb7f45e5c97bbbc5ff2ee7894b3" name="a15543cb7f45e5c97bbbc5ff2ee7894b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15543cb7f45e5c97bbbc5ff2ee7894b3">&#9670;&#160;</a></span>setSearchSuggestion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,7 +358,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void setSearchSuggestion </td>
           <td>(</td>
-          <td class="paramtype">QVector&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>suggestionVector</em></span></td><td>)</td>
+          <td class="paramtype">QVector&lt; QSharedPointer&lt; <a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>suggestionVector</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -375,7 +372,6 @@ Private 属性</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>注解</dt><dd>更新模型数据 </dd></dl>
-<p>&lt; 空列表直接返回</p>
 <p>&lt; 开始重置模型</p>
 <p>&lt; 更新建议项列表</p>
 <p>&lt; 结束重置模型</p>
@@ -383,8 +379,8 @@ Private 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">类成员变量说明</h2>
-<a id="aa1c4b2f6626009acb7da1633101f4d6b" name="aa1c4b2f6626009acb7da1633101f4d6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1c4b2f6626009acb7da1633101f4d6b">&#9670;&#160;</a></span>_suggestionVector</h2>
+<a id="a62283eb8b33201e0a327f6c5a419923d" name="a62283eb8b33201e0a327f6c5a419923d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62283eb8b33201e0a327f6c5a419923d">&#9670;&#160;</a></span>_suggestionVector</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +389,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="class_ela_suggestion.html">ElaSuggestion</a> *&gt; _suggestionVector</td>
+          <td class="memname">QVector&lt;QSharedPointer&lt;<a class="el" href="class_ela_suggestion.html">ElaSuggestion</a>&gt; &gt; _suggestionVector</td>
         </tr>
       </table>
   </td>
