@@ -20,7 +20,6 @@
 #include <array>
 #include <memory>
 
-class RefreshMask;
 class QButtonGroup;
 
 /**
@@ -125,10 +124,6 @@ protected:
      */
     void mousePressEvent(QMouseEvent *event) override;
 
-    void resizeEvent(QResizeEvent *event) override;
-
-    void showEvent(QShowEvent *event) override;
-
 signals:
     /**
      * @brief 播放音乐信号
@@ -169,7 +164,6 @@ private:
     std::unique_ptr<Downloading>         m_downloading;         ///< 正在下载界面
     std::array<QPointer<QWidget>, 4>     m_pages{};             ///< 页面数组
     int                                  m_currentIdx{0};       ///< 当前页面索引
-    std::unique_ptr<RefreshMask>        m_refreshMask;       ///< 刷新遮罩
 };
 
 #endif // LOCALDOWNLOAD_H

@@ -31,6 +31,7 @@ struct JsonObjectHash {
 
 class QMediaPlayer;
 class QScrollBar;
+class RefreshMask;
 
 /**
  * @namespace Ui
@@ -147,6 +148,8 @@ private:
      * @param mediaPath
      */
     void scrollToItem(const QString& mediaPath);
+
+    void handleSongsResult(const QJsonArray &songs);
 
 private slots:
     /**
@@ -384,6 +387,10 @@ protected:
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    void showEvent(QShowEvent *event) override;
+
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::LocalSong                       *ui;                        ///< UI 指针
     std::unique_ptr<QMediaPlayer>        m_player;                  ///< 媒体播放器
@@ -395,6 +402,7 @@ private:
     QTimer* m_loadTimer = nullptr;                                  ///< 加载定时器
     int m_currentLoadIndex = 0;                                     ///< 当前加载索引
     bool m_isLoading = false;                                       ///< 是否正在加载
+    std::unique_ptr<RefreshMask>        m_refreshMask;              ///< 刷新遮罩
 
     bool                                 m_isOrderPlay = false;     ///< 是否顺序播放
     QAction                             *m_searchAction{};          ///< 搜索动作
