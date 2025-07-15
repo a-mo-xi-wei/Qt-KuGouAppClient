@@ -10,7 +10,6 @@
 #include "ui_LocalDownload.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
-#include "RefreshMask.h"
 
 #include <QFile>
 #include <QButtonGroup>
@@ -27,7 +26,6 @@ LocalDownload::LocalDownload(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::LocalDownload)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-    , m_refreshMask(std::make_unique<RefreshMask>())               ///< 初始化刷新遮罩
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/local.css")); ///< 加载样式表
@@ -111,8 +109,6 @@ void LocalDownload::onMaxScreenHandle()
 QWidget* LocalDownload::createPage(int id)
 {
     QWidget* page = nullptr;
-    qDebug()<<"遮罩绘制";
-    m_refreshMask->showLoading(1000);
     switch (id) {
         case 0:
             m_localSong = std::make_unique<LocalSong>(ui->stackedWidget);
@@ -196,7 +192,7 @@ void LocalDownload::initStackedWidget()
         } else {
             while (QLayoutItem* item = layout->takeAt(0)) {
                 if (QWidget* widget = item->widget()) {
-                    qDebug()<<"删除旧控件";
+                    // qDebug()<<"删除旧控件";
                     widget->deleteLater();
                     switch (m_currentIdx) {
                         case 0: m_localSong.reset(); break;
@@ -246,8 +242,6 @@ void LocalDownload::initStackedWidget()
  */
 void LocalDownload::initUi()
 {
-    this->m_refreshMask->setParent(this);            ///< 设置遮罩父对象
-
     ui->download_history_toolButton->hide();             ///< 隐藏下载历史按钮
     initStackedWidget();                                 ///< 初始化堆栈窗口
     initIndexLab();                                     ///< 初始化索引标签
@@ -377,22 +371,6 @@ void LocalDownload::mousePressEvent(QMouseEvent *event)
         }
     }
     QWidget::mousePressEvent(event);
-}
-
-void LocalDownload::resizeEvent(QResizeEvent *event) {
-    QWidget::resizeEvent(event);
-    auto rect = ui->stackedWidget->geometry();
-    rect.adjust(5, 16, -6, 0);
-    this->m_refreshMask->setGeometry(rect); ///< 设置遮罩几何形状
-    this->m_refreshMask->move(m_refreshMask->parentWidget()->mapFrom(this, ui->stackedWidget->pos()));
-}
-
-void LocalDownload::showEvent(QShowEvent *event) {
-    QWidget::showEvent(event);
-    auto rect = ui->stackedWidget->geometry();
-    rect.adjust(5, 16, -6, 0);
-    this->m_refreshMask->setGeometry(rect);
-    this->m_refreshMask->move(m_refreshMask->parentWidget()->mapFrom(this, ui->stackedWidget->pos()));
 }
 
 /**
