@@ -194,15 +194,16 @@ void LocalDownload::initStackedWidget()
                 if (QWidget* widget = item->widget()) {
                     // qDebug()<<"删除旧控件";
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_localSong.reset(); break;
-                        case 1: m_downloadedSong.reset(); break;
-                        case 2: m_downloadedVideo.reset(); break;
-                        case 3: m_downloading.reset(); break;
-                        default: break;
-                    }
+
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_localSong.reset(); break;
+                case 1: m_downloadedSong.reset(); break;
+                case 2: m_downloadedVideo.reset(); break;
+                case 3: m_downloading.reset(); break;
+                default: break;
             }
         }
 

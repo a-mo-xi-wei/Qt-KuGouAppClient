@@ -189,16 +189,16 @@ void RecentlyPlayed::initStackedWidget()
             while (QLayoutItem* item = layout->takeAt(0)) {
                 if (QWidget* widget = item->widget()) {
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_singleSong.reset();break;
-                        case 1: m_songList.reset();break;
-                        case 2: m_videoWidget.reset();break;
-                        case 3: m_songChannel.reset();break;
-                        case 4: m_mvChannel.reset();break;
-                        default: break;
-                    }
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_singleSong.reset();break;
+                case 1: m_songList.reset();break;
+                case 2: m_videoWidget.reset();break;
+                case 3: m_songChannel.reset();break;
+                case 4: m_mvChannel.reset();break;
+                default: break;
             }
         }
 

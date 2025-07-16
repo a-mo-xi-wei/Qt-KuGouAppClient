@@ -172,14 +172,14 @@ void PurchasedMusic::initStackedWidget()
             while (QLayoutItem* item = layout->takeAt(0)) {
                 if (QWidget* widget = item->widget()) {
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_paidSingle.reset();break;
-                        case 1: m_purchasedAlbums.reset();break;
-                        case 2: m_purchasedVideos.reset();break;
-                        default: break;
-                    }
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_paidSingle.reset();break;
+                case 1: m_purchasedAlbums.reset();break;
+                case 2: m_purchasedVideos.reset();break;
+                default: break;
             }
         }
 

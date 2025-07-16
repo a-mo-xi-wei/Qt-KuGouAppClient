@@ -170,13 +170,13 @@ void MusicCloudDisk::initStackedWidget()
             while (QLayoutItem* item = layout->takeAt(0)) {
                 if (QWidget* widget = item->widget()) {
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_uploadedSong.reset();break;
-                        case 1: m_uploadingSong.reset();break;
-                        default: break;
-                    }
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_uploadedSong.reset();break;
+                case 1: m_uploadingSong.reset();break;
+                default: break;
             }
         }
 

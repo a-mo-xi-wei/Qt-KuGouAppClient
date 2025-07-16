@@ -245,15 +245,15 @@ void Search::initStackedWidget()
                 if (QWidget* widget = item->widget()) {
                     qDebug()<<"删除旧页面";
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_recommendWidget.reset();break;
-                        case 1: m_rankWidget.reset();break;
-                        case 2: m_specialWidget.reset();break;
-                        case 3: m_channelWidget.reset();break;
-                        default: break;
-                    }
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_recommendWidget.reset();break;
+                case 1: m_rankWidget.reset();break;
+                case 2: m_specialWidget.reset();break;
+                case 3: m_channelWidget.reset();break;
+                default: break;
             }
         }
 
