@@ -151,18 +151,18 @@ void MyCollection::initStackedWidget()
                 if (QWidget* widget = item->widget()) {
                     // qDebug()<<"删除旧的控件";
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_singleSong.reset(); break;
-                        case 1: m_songList.reset(); break;
-                        case 2: m_specialAlbum.reset(); break;
-                        case 3: m_collectVideo.reset(); break;
-                        case 4: m_singerWidget.reset(); break;
-                        case 5: m_deviceWidget.reset(); break;
-                        default: break;
-                    }
 
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_singleSong.reset(); break;
+                case 1: m_songList.reset(); break;
+                case 2: m_specialAlbum.reset(); break;
+                case 3: m_collectVideo.reset(); break;
+                case 4: m_singerWidget.reset(); break;
+                case 5: m_deviceWidget.reset(); break;
+                default: break;
             }
         }
 

@@ -271,18 +271,18 @@ void AllMusic::initStackedWidget()
             while (QLayoutItem* item = layout->takeAt(0)) {
                 if (QWidget* widget = item->widget()) {
                     widget->deleteLater();
-                    switch (m_currentIdx) {
-                        case 0: m_allWidget.reset();break;
-                        case 1: m_allLove.reset();break;
-                        case 2: m_allSongList.reset();break;
-                        case 3: m_allRecent.reset();break;
-                        case 4: m_allLocal.reset();break;
-                        case 5: m_allPaid.reset();break;
-                        case 6: m_allCloudDisk.reset();break;
-                        default: break;
-                    }
                 }
                 delete item;
+            }
+            switch (m_currentIdx) {
+                case 0: m_allWidget.reset();break;
+                case 1: m_allLove.reset();break;
+                case 2: m_allSongList.reset();break;
+                case 3: m_allRecent.reset();break;
+                case 4: m_allLocal.reset();break;
+                case 5: m_allPaid.reset();break;
+                case 6: m_allCloudDisk.reset();break;
+                default: break;
             }
         }
 
