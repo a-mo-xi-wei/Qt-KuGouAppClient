@@ -10,10 +10,10 @@
 #ifndef SLIDESHOW_H
 #define SLIDESHOW_H
 
-#include "InteractiveButtonBase.h"
 #include "SideHideLabel.h"
 #include <QVBoxLayout>
 
+class QPushButton;
 /**
  * @class SlideShow
  * @brief 轮播图控件类，支持图片滑动、自动轮播和指示器
@@ -98,6 +98,8 @@ public slots:
     void slideToRight();
 
 private:
+    void updateButtonColor(QPushButton *btn, const QColor &normal, const QColor &hover);
+
     /**
      * @brief 获取缩放和圆角处理的图片
      * @param pixmap 原始图片
@@ -146,7 +148,7 @@ private:
     QList<SideHideLabel *>           labels;             ///< 图片标签列表
     QList<QPixmap>                   pixmaps;            ///< 原始图片列表
     QList<QString>                   texts;              ///< 图片关联文本列表
-    QList<InteractiveButtonBase *>   indications;        ///< 指示器按钮列表
+    QList<QPushButton *>   indications;                  ///< 指示器按钮列表
     int                              currentIndex = -1;  ///< 当前图片索引
     QTimer                          *autoSlideTimer{};   ///< 自动轮播定时器
     SideHideLabel                   *hidingLabel{};      ///< 正在隐藏的标签
@@ -157,11 +159,11 @@ private:
     double                           sideOffside = 0.4;                                 ///< 两侧卡片位置偏移比例
     double                           imgOffside = 0.15;                                 ///< 图片内偏移比例
     bool                             scalePixmap = false;                               ///< 图片缩放标志（已废弃）
-    QHBoxLayout                     *indicationLayout{}; ///< 指示器布局
-    QRect                            centerRect;         ///< 中心卡片区域
+
+    // QRect                            centerRect;         ///< 中心卡片区域
     QRect                            leftRect;           ///< 左侧卡片区域
     QRect                            rightRect;          ///< 右侧卡片区域
-    QRect                            backRect;           ///< 隐藏卡片区域
+    // QRect                            backRect;           ///< 隐藏卡片区域
 };
 
 #endif // SLIDESHOW_H

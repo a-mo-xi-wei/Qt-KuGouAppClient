@@ -9,14 +9,20 @@
 #include "VideoWidget.h"
 #include "ui_VideoWidget.h"
 #include "logger.hpp"
+#include "Async.h"
+#include "RefreshMask.h"
 
 #include <QFile>
 #include <QButtonGroup>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QPropertyAnimation>
 #include <QScrollBar>
 #include <QTimer>
 #include <QWheelEvent>
 #include <random>
+
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -32,19 +38,7 @@ VideoWidget::VideoWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::VideoWidget)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))                ///< 初始化按钮组
-    , m_recommendWidget(std::make_unique<VideoPartWidget>(this))         ///< 初始化推荐分区
-    , m_videoRankWidget(std::make_unique<VideoPartWidget>(this))         ///< 初始化视频榜分区
-    , m_MVWidget(std::make_unique<VideoPartWidget>(this))               ///< 初始化 MV 分区
-    , m_siteWidget(std::make_unique<VideoPartWidget>(this))             ///< 初始化现场分区
-    , m_coverWidget(std::make_unique<VideoPartWidget>(this))            ///< 初始化翻唱分区
-    , m_danceWidget(std::make_unique<VideoPartWidget>(this))            ///< 初始化舞蹈分区
-    , m_childrenWidget(std::make_unique<VideoPartWidget>(this))         ///< 初始化儿童分区
-    , m_liveWidget(std::make_unique<VideoPartWidget>(this))             ///< 初始化 TME LIVE 分区
-    , m_firstConcertWidget(std::make_unique<VideoPartWidget>(this))     ///< 初始化首唱会分区
-    , m_chineseLanguageWidget(std::make_unique<VideoPartWidget>(this))  ///< 初始化华语分区
-    , m_southKoreaWidget(std::make_unique<VideoPartWidget>(this))       ///< 初始化韩国分区
-    , m_japanWidget(std::make_unique<VideoPartWidget>(this))            ///< 初始化日本分区
-    , m_americanWidget(std::make_unique<VideoPartWidget>(this))         ///< 初始化欧美分区
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
     ui->setupUi(this);                                          ///< 设置 UI 布局
     QFile file(GET_CURRENT_DIR + QStringLiteral("/video.css")); ///< 加载样式表
@@ -61,7 +55,6 @@ VideoWidget::VideoWidget(QWidget *parent)
     }
     initButtonGroup();                                          ///< 初始化按钮组
     initTotalWidget();                                          ///< 初始化视频分区
-    initVector();                                               ///< 初始化图片路径
     initUi();                                                   ///< 初始化界面
 }
 
@@ -100,8 +93,22 @@ void VideoWidget::initButtonGroup() const
  * @brief 初始化视频分区
  * @note 设置 13 个分区的标题
  */
-void VideoWidget::initTotalWidget() const
+void VideoWidget::initTotalWidget()
 {
+    m_recommendWidget         = std::make_unique<VideoPartWidget>(this);
+    m_videoRankWidget         = std::make_unique<VideoPartWidget>(this);
+    m_MVWidget                = std::make_unique<VideoPartWidget>(this);
+    m_siteWidget              = std::make_unique<VideoPartWidget>(this);
+    m_coverWidget             = std::make_unique<VideoPartWidget>(this);
+    m_danceWidget             = std::make_unique<VideoPartWidget>(this);
+    m_childrenWidget          = std::make_unique<VideoPartWidget>(this);
+    m_liveWidget              = std::make_unique<VideoPartWidget>(this);
+    m_firstConcertWidget      = std::make_unique<VideoPartWidget>(this);
+    m_chineseLanguageWidget   = std::make_unique<VideoPartWidget>(this);
+    m_southKoreaWidget        = std::make_unique<VideoPartWidget>(this);
+    m_japanWidget             = std::make_unique<VideoPartWidget>(this);
+    m_americanWidget          = std::make_unique<VideoPartWidget>(this);
+
     this->m_recommendWidget->setTitleName("推荐");                     ///< 设置推荐标题
     this->m_videoRankWidget->setTitleName("视频榜");                   ///< 设置视频榜标题
     this->m_MVWidget->setTitleName("MV");                              ///< 设置 MV 标题
@@ -118,25 +125,12 @@ void VideoWidget::initTotalWidget() const
 }
 
 /**
- * @brief 初始化图片路径
- * @note 加载并打乱 120 张封面图片
- */
-void VideoWidget::initVector()
-{
-    for (int i = 1; i <= 120; ++i)
-    {
-        this->m_pixPathVector.emplace_back(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i)); ///< 添加封面图片
-    }
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 使用当前时间作为随机种子
-    std::shuffle(this->m_pixPathVector.begin(), this->m_pixPathVector.end(), std::default_random_engine(seed)); ///< 打乱图片列表
-}
-
-/**
  * @brief 初始化界面
  * @note 设置布局、信号和视频块
  */
 void VideoWidget::initUi()
 {
+    m_refreshMask->keepLoading();
     // 加入布局
     auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取垂直布局
     lay->setSpacing(0);                                         ///< 设置间距
@@ -155,12 +149,13 @@ void VideoWidget::initUi()
     lay->insertWidget(lay->count(), m_americanWidget.get());       ///< 添加欧美分区
 
     // 处理信号
-    this->m_vScrollBar = ui->scrollArea->verticalScrollBar();          ///< 获取垂直滚动条
+    auto vScrollBar = ui->scrollArea->verticalScrollBar();          ///< 获取垂直滚动条
     auto connectButton = [this](const QPushButton *button, QWidget *targetWidget) {
         connect(button, &QPushButton::clicked, this, [this, targetWidget] {
             ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y()); ///< 平滑滚动到目标分区
         });
     };
+
     connectButton(ui->recommend_pushButton, this->m_recommendWidget.get());           ///< 连接推荐按钮
     connectButton(ui->video_rank_pushButton, this->m_videoRankWidget.get());          ///< 连接视频榜按钮
     connectButton(ui->MV_pushButton, this->m_MVWidget.get());                        ///< 连接 MV 按钮
@@ -175,359 +170,6 @@ void VideoWidget::initUi()
     connectButton(ui->Japan_pushButton, this->m_japanWidget.get());                  ///< 连接日本按钮
     connectButton(ui->American_pushButton, this->m_americanWidget.get());            ///< 连接欧美按钮
 
-    // @note 未使用，保留用于调试
-    /*
-    connect(ui->recommend_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_recommendWidget->mapToParent(QPoint(0, 0)).y());
-    });
-    connect(ui->video_rank_pushButton, &QPushButton::clicked, this, [this] {
-        this->m_vScrollBar->setValue(this->m_videoRankWidget->mapToParent(QPoint(0, 0)).y());
-    });
-        connect(ui->MV_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_MVWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->site_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_siteWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->cover_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_coverWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->dance_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_danceWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->children_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_childrenWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->live_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_liveWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->first_concert_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_firstConcertWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->chinese_language_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_chineseLanguageWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->South_Korea_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_southKoreaWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->Japan_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_japanWidget->mapToParent(QPoint(0, 0)).y());
-        });
-        connect(ui->American_pushButton,&QPushButton::clicked,this,[this] {
-            this->m_vScrollBar->setValue(this->m_americanWidget->mapToParent(QPoint(0, 0)).y());
-        });
-    */
-
-    // 连接滚轮信号
-    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &VideoWidget::handleWheelValue); ///< 连接滚轮信号
-    connect(this->m_vScrollBar, &QScrollBar::valueChanged, this, &VideoWidget::handleWheelValue); ///< 连接滚动条值变化信号
-
-    // 添加推荐分区视频块
-    const QString tipText[] = {
-        "", "音乐现场", "综艺制作形式", "舞蹈", "创意", "演奏", "舞蹈"
-    };
-    const QString videoName[] = {
-        "", "把《恐龙抗狼》改得燃一点？", "连名带姓（live）", "花姐《一个多情又无情的人》DJ舞曲版",
-        "民族舞", "二胡演奏 萨卡萨卡班班甲鱼鱼", "ROSE《APT》2024/11/29"
-    };
-    const QString author[] = {
-        "", "武言圣", "刘天佑Tay", "网络潮流大时代", "往昔忆尽红", "雷天神", "你好我的女神"
-    };
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 1; j <= 3; ++j)
-        {
-            auto block = new VideoBlockWidget(this);            ///< 创建视频块
-            auto idx = i * 3 + j;
-            block->setCoverPix(this->m_pixPathVector[idx]);      ///< 设置封面
-            block->setShowTip();                               ///< 显示提示
-            block->setTipText(tipText[idx]);                   ///< 设置提示文本
-            block->setVideoName(videoName[idx]);               ///< 设置视频名称
-            block->setAuthor(author[idx]);                     ///< 设置作者
-            block->setIconPix(this->m_pixPathVector[idx]);     ///< 设置图标
-            this->m_recommendWidget->addBlockWidget(i, j - 1, block); ///< 添加到推荐分区
-        }
-    }
-
-    // 添加其他分区视频块
-    auto cur = 6;
-    {
-        const QString videoName[] = {
-            "", "永不言败", "无名的人", "toxic till the end",
-            "茶花开了", "只字不提", "陪伴"
-        };
-        const QString author[] = {
-            "", "周深", "张韶涵", "ROSE", "王睿卓", "于和伟", "陈慧娴"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_videoRankWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "APT.", "aespa 《Whiplash》MV", "Stray Kids \"Walkin On Water\" M/V",
-            "战·永不言败", "谭维维MV上线", "\'DRIP\' MV"
-        };
-        const QString author[] = {
-            "", "Bruno Mars", "aespa", "Stray Kids", "周深", "谭维维", "BABYMONSTER"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_MVWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "无效陪伴", "达拉崩吧", "壁上观",
-            "11", "Strategy", "Warp Me In Plastic"
-        };
-        const QString author[] = {
-            "", "汪苏泷", "周深", "张远", "队长", "TWICE", "7mm"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_siteWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "《土坡上的狗尾巴草》卢润泽", "我是奶龙，我才是奶龙！#每日一笑", "《谁》洋澜一",
-            "《苹果香》安安", "离别开出花", "Empty Love"
-        };
-        const QString author[] = {
-            "", "夏娃子", "夏娃子", "豆豆果", "豆豆果", "陆鳐LuLu", "陆鳐LuLu"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_coverWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "科目三(舞蹈)", "LIKE THAT", "DRIP",
-            "梦", "Strategy", "Whiplash"
-        };
-        const QString author[] = {
-            "", "蛋蛋", "BABYMONSTER", "BABYMONSTER", "时代少年团", "TWICE", "aespa"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_danceWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "Buster the Hero Fire Truck Saves the Day", "第二季45-船长爸爸", "Colors Rap",
-            "生日快乐", "第三季01-堆肥", "奇迹无限"
-        };
-        const QString author[] = {
-            "", "Little Baby Nursery Rhyme Friends", "Peppa Pig", "Little Baby Nursery Rhyme Friends",
-            "贝瓦儿歌", "Peppa Pig", "何洛洛"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_childrenWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "《纯妹妹》单依纯-第五届腾讯音乐娱乐盛典", "男儿歌", "《璀璨冒险人》周深-第五届腾讯音乐娱乐盛典",
-            "《小美满》-第五届腾讯音乐娱乐盛典", "醉", "第四届TMEA盛典 张杰《少年中国说》"
-        };
-        const QString author[] = {
-            "", "单依纯", "时代少年团", "周深", "周深", "时代少年团", "张杰"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_liveWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "夏天的风", "暗里着迷（温柔女生版）", "孟婆的碗",
-            "迟来的爱", "我是你的格桑花", "辞九门回忆"
-        };
-        const QString author[] = {
-            "", "Uu（刘梦妤）", "童珺", "魏佳艺", "金润吉", "欣宝儿", "邓寓君(等什么君)"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_firstConcertWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "战·永不言败", "谭维维新歌MV上线", "姑娘别哭泣",
-            "无效陪伴", "达拉崩吧", "壁上观"
-        };
-        const QString author[] = {
-            "", "周深", "谭维维", "懒大王", "汪苏泷", "周深", "张远"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_chineseLanguageWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "APT.", "aespa 《Whiplash》MV", "Stray Kids \"Walkin On Water\" M/V",
-            "\'DRIP\' MV", "TOMBOY", "Nxde"
-        };
-        const QString author[] = {
-            "", "Bruno Mars", "aespa", "Stray Kids", "BABYMONSTER", "(G)I-DLE", "(G)I-DLE"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_southKoreaWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "不乱不破", "おべか", "责任集合体(无责任集合体)",
-            "アイドル", "絶対敵対メチャキライャ-", "aespa《Hot Mess》MV"
-        };
-        const QString author[] = {
-            "", "HOYO-MiX", "すりい", "マサラダ", "YOASOBI", "aespa", "Strategy"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_japanWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-    cur += 6;
-    {
-        const QString videoName[] = {
-            "", "Wrap Me In Plastic", "Uptown Funk", "ADDICT",
-            "Come Home", "Smokin Out The Window", "Uptown Funk"
-        };
-        const QString author[] = {
-            "", "7mm", "Mark Ronson", "Hazbin Hotel", "Thomas Day", "Bruno Mars", "Mark Ronson"
-        };
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                auto block = new VideoBlockWidget(this);
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx + cur]);
-                block->setVideoName(videoName[idx]);
-                block->setAuthor(author[idx]);
-                block->setIconPix(this->m_pixPathVector[idx + cur]);
-                this->m_americanWidget->addBlockWidget(i, j - 1, block);
-            }
-        }
-    }
-
     // 设置全部按钮
     ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
     ui->all_toolButton->setApproach(true);                    ///< 启用接近效果
@@ -536,6 +178,95 @@ void VideoWidget::initUi()
     ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
     ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
     ui->title_widget2->hide();                                ///< 初始隐藏第二标题区域
+
+    // 连接滚轮信号
+    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &VideoWidget::handleWheelValue); ///< 连接滚轮信号
+    connect(vScrollBar, &QScrollBar::valueChanged, this, &VideoWidget::handleWheelValue); ///< 连接滚动条值变化信号
+
+    // 异步加载 JSON 文本
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/video.json")); ///< 加载 JSON 文件
+        if (!file.open(QIODevice::ReadOnly)) {
+          qWarning() << "Could not open file for reading video.json";
+          STREAM_WARN() << "Could not open file for reading video.json"; ///< 记录警告日志
+          return true;
+        }
+        const auto obj = QJsonDocument::fromJson(file.readAll()); ///< 解析 JSON
+        auto arr       = obj.array();
+        for (const auto &item: arr) {
+          auto obj = item.toObject();
+          this->m_videoAuthorVector.emplace_back(obj.value(QStringLiteral("videoName")).toString(),obj.value(QStringLiteral("author")).toString());
+        }
+        file.close();
+
+        /// 初始化图片路径
+        for (int i = 1; i <= 120; ++i)
+        {
+            this->m_pixPathVector.emplace_back(QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i)); ///< 添加封面图片
+        }
+
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 使用当前时间作为随机种子
+        std::shuffle(this->m_pixPathVector.begin(), this->m_pixPathVector.end(), std::default_random_engine(seed)); ///< 打乱图片列表
+        std::shuffle(this->m_videoAuthorVector.begin(), this->m_videoAuthorVector.end(), std::default_random_engine(seed));
+        return true;
+    });
+
+    Async::onResultReady(future, this, [this](bool flag) {
+        for (int i = 0; i < 2; ++i)
+        {
+            for (int j = 1; j <= 3; ++j)
+            {
+                const QString tipText[] = {
+                    "", "音乐现场", "综艺制作形式", "舞蹈", "创意", "演奏", "舞蹈"
+                };
+                auto block = new VideoBlockWidget(this);            ///< 创建视频块
+                auto idx = i * 3 + j;
+                block->setCoverPix(this->m_pixPathVector[idx]);      ///< 设置封面
+                block->setShowTip();                               ///< 显示提示
+                block->setTipText(tipText[idx]);                   ///< 设置提示文本
+                block->setVideoName(m_videoAuthorVector[idx].first);               ///< 设置视频名称
+                block->setAuthor(m_videoAuthorVector[idx].second);                     ///< 设置作者
+                block->setIconPix(this->m_pixPathVector[idx]);     ///< 设置图标
+                this->m_recommendWidget->addBlockWidget(i, j - 1, block); ///< 添加到推荐分区
+            }
+        }
+        QTimer::singleShot(100, this, [this] { loadSectionBlocks(m_videoRankWidget.get(),1); });
+        QTimer::singleShot(200, this, [this] { loadSectionBlocks(m_MVWidget.get(),2); });
+        QTimer::singleShot(300, this, [this] { loadSectionBlocks(m_siteWidget.get(),3); });
+        QTimer::singleShot(400, this, [this] { loadSectionBlocks(m_coverWidget.get(),4); });
+        QTimer::singleShot(500, this, [this] { loadSectionBlocks(m_danceWidget.get(),5); });
+        QTimer::singleShot(600, this, [this] { loadSectionBlocks(m_childrenWidget.get(),6); });
+        QTimer::singleShot(700, this, [this] { loadSectionBlocks(m_liveWidget.get(),7); });
+        QTimer::singleShot(800, this, [this] { loadSectionBlocks(m_firstConcertWidget.get(),8); });
+        QTimer::singleShot(900, this, [this] { loadSectionBlocks(m_chineseLanguageWidget.get(),9); });
+        QTimer::singleShot(1000, this, [this] { loadSectionBlocks(m_southKoreaWidget.get(),10); });
+        QTimer::singleShot(1100, this, [this] { loadSectionBlocks(m_japanWidget.get(),11); });
+        QTimer::singleShot(1200, this, [this] {
+            loadSectionBlocks(m_americanWidget.get(),12);
+            m_refreshMask->hideLoading("");
+        });
+    });
+
+}
+
+void VideoWidget::loadSectionBlocks(VideoPartWidget *section, const int idx) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 1; j <= 3; ++j) {
+            int index = i * 3 + j + idx * 6;
+            if (index >= m_videoAuthorVector.size() || index >= m_pixPathVector.size()) return;
+
+            auto block = new VideoBlockWidget(this);
+            block->setCoverPix(m_pixPathVector[index]);
+            block->setVideoName(m_videoAuthorVector[index].first);
+            block->setAuthor(m_videoAuthorVector[index].second);
+            block->setIconPix(m_pixPathVector[index]);
+            block->adjustSize();
+            block->updateGeometry();
+            section->addBlockWidget(i, j - 1, block);
+            section->updateGeometry();
+            section->update();
+        }
+    }
 }
 
 /**
@@ -574,78 +305,38 @@ void VideoWidget::on_all_toolButton_toggled()
  */
 void VideoWidget::handleWheelValue(const int &value)
 {
-    if (value >= this->m_recommendWidget->mapToParent(QPoint(0, 0)).y() &&
-        value < this->m_videoRankWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->recommend_pushButton->setChecked(true);           ///< 选中推荐按钮
-    }
-    else if (value >= this->m_videoRankWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_MVWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->video_rank_pushButton->setChecked(true);          ///< 选中视频榜按钮
-    }
-    else if (value >= this->m_MVWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_siteWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->MV_pushButton->setChecked(true);                  ///< 选中 MV 按钮
-    }
-    else if (value >= this->m_siteWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_coverWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->site_pushButton->setChecked(true);               ///< 选中现场按钮
-    }
-    else if (value >= this->m_coverWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_danceWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->cover_pushButton->setChecked(true);              ///< 选中翻唱按钮
-    }
-    else if (value >= this->m_danceWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_childrenWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->dance_pushButton->setChecked(true);              ///< 选中舞蹈按钮
-    }
-    else if (value >= this->m_childrenWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_liveWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->children_pushButton->setChecked(true);           ///< 选中儿童按钮
-    }
-    else if (value >= this->m_liveWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_firstConcertWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->live_pushButton->setChecked(true);               ///< 选中 TME LIVE 按钮
-    }
-    else if (value >= this->m_firstConcertWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_chineseLanguageWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->first_concert_pushButton->setChecked(true);      ///< 选中首唱会按钮
-    }
-    else if (value >= this->m_chineseLanguageWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_southKoreaWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->chinese_language_pushButton->setChecked(true);   ///< 选中华语按钮
-    }
-    else if (value >= this->m_southKoreaWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_japanWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->South_Korea_pushButton->setChecked(true);        ///< 选中韩国按钮
-    }
-    else if (value >= this->m_japanWidget->mapToParent(QPoint(0, 0)).y() &&
-             value < this->m_americanWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->Japan_pushButton->setChecked(true);              ///< 选中日本按钮
-    }
-    else if (value >= this->m_americanWidget->mapToParent(QPoint(0, 0)).y())
-    {
-        ui->American_pushButton->setChecked(true);           ///< 选中欧美按钮
+    const QVector<QPair<QWidget*, QPushButton*>> sectionMappings = {
+        {m_recommendWidget.get(),       ui->recommend_pushButton},
+        {m_videoRankWidget.get(),       ui->video_rank_pushButton},
+        {m_MVWidget.get(),              ui->MV_pushButton},
+        {m_siteWidget.get(),            ui->site_pushButton},
+        {m_coverWidget.get(),           ui->cover_pushButton},
+        {m_danceWidget.get(),           ui->dance_pushButton},
+        {m_childrenWidget.get(),        ui->children_pushButton},
+        {m_liveWidget.get(),            ui->live_pushButton},
+        {m_firstConcertWidget.get(),    ui->first_concert_pushButton},
+        {m_chineseLanguageWidget.get(), ui->chinese_language_pushButton},
+        {m_southKoreaWidget.get(),      ui->South_Korea_pushButton},
+        {m_japanWidget.get(),           ui->Japan_pushButton},
+        {m_americanWidget.get(),        ui->American_pushButton}
+    };
+
+    for (int i = 0; i < sectionMappings.size(); ++i) {
+        QWidget* currentWidget = sectionMappings[i].first;
+        QWidget* nextWidget = (i + 1 < sectionMappings.size()) ? sectionMappings[i + 1].first : nullptr;
+
+        int currentY = currentWidget->mapToParent(QPoint(0, 0)).y();
+        int nextY = nextWidget ? nextWidget->mapToParent(QPoint(0, 0)).y() : INT_MAX;
+
+        if (value >= currentY && value < nextY) {
+            sectionMappings[i].second->setChecked(true);
+            break;
+        }
     }
 }
 
-/**
- * @brief 鼠标按下事件
- * @param event 鼠标事件
- * @note 默认实现
- */
-void VideoWidget::mousePressEvent(QMouseEvent *event)
-{
-    QWidget::mousePressEvent(event);                    ///< 调用父类处理
+void VideoWidget::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }

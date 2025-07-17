@@ -11,10 +11,9 @@
 
 #include "VideoChannelPartWidget.h"
 
-#include <memory>
-
 class QScrollBar;
 class QButtonGroup;
+class RefreshMask;
 
 /**
  * @namespace Ui
@@ -53,17 +52,14 @@ private:
     /**
      * @brief 初始化分类部件
      */
-    void initTotalWidget() const;
+    void initTotalWidget();
 
     /**
      * @brief 初始化界面
      */
     void initUi();
 
-    /**
-     * @brief 初始化图片路径容器
-     */
-    void initVector();
+    void loadSectionBlocks(VideoChannelPartWidget* section,const int& cnt , const int& sum);
 
 private slots:
     /**
@@ -73,12 +69,7 @@ private slots:
     void handleWheelValue(const int &value);
 
 protected:
-    /**
-     * @brief 鼠标按下事件
-     * @param event 鼠标事件对象
-     * @note 重写基类方法
-     */
-    void mousePressEvent(QMouseEvent *event) override;
+    void showEvent(QShowEvent *event) override;
 
 private:
     Ui::VideoChannelWidget                  *ui;                    ///< UI 指针
@@ -94,8 +85,9 @@ private:
     std::unique_ptr<VideoChannelPartWidget>  m_danceWidget;         ///< 舞蹈分类
     std::unique_ptr<VideoChannelPartWidget>  m_siteWidget;          ///< 现场分类
     std::unique_ptr<VideoChannelPartWidget>  m_singerWidget;        ///< 歌手分类
-    QList<QString>                     m_pixPathVector;       ///< 图片路径容器
-    QScrollBar                              *m_vScrollBar;          ///< 垂直滚动条
+    QList<QString>                           m_pixPathVector;       ///< 图片路径容器
+    QList<QString>                           m_coverTextVector;     ///< 图片文字容器
+    std::unique_ptr<RefreshMask>             m_refreshMask;         ///< 刷新遮罩
 };
 
 #endif // VIDEOCHANNELWIDGET_H

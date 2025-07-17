@@ -11,8 +11,6 @@
 
 #include "VideoPartWidget.h"
 #include <QWidget>
-#include <memory>
-#include <vector>
 
 /**
  * @class QScrollBar
@@ -25,6 +23,7 @@ class QScrollBar;
  * @brief Qt 按钮组类，用于管理互斥按钮
  */
 class QButtonGroup;
+class RefreshMask;
 
 /**
  * @namespace Ui
@@ -66,19 +65,15 @@ private:
      * @brief 初始化视频分区
      * @note 设置 13 个分区的标题
      */
-    void initTotalWidget() const;
-
-    /**
-     * @brief 初始化图片路径
-     * @note 加载并打乱 120 张封面图片
-     */
-    void initVector();
+    void initTotalWidget();
 
     /**
      * @brief 初始化界面
      * @note 设置布局、信号和视频块
      */
     void initUi();
+
+    void loadSectionBlocks(VideoPartWidget* section,int idx);
 
 private slots:
     /**
@@ -95,12 +90,7 @@ private slots:
     void handleWheelValue(const int &value);
 
 protected:
-    /**
-     * @brief 鼠标按下事件
-     * @param event 鼠标事件
-     * @note 默认实现
-     */
-    void mousePressEvent(QMouseEvent *event) override;
+    void showEvent(QShowEvent *event) override;
 
 private:
     Ui::VideoWidget *ui;                                     ///< UI 界面指针
@@ -118,8 +108,9 @@ private:
     std::unique_ptr<VideoPartWidget> m_southKoreaWidget;     ///< 韩国分区
     std::unique_ptr<VideoPartWidget> m_japanWidget;          ///< 日本分区
     std::unique_ptr<VideoPartWidget> m_americanWidget;       ///< 欧美分区
-    QList<QString> m_pixPathVector;                    ///< 封面图片路径列表
-    QScrollBar *m_vScrollBar{};                              ///< 垂直滚动条
+    std::unique_ptr<RefreshMask>     m_refreshMask;          ///< 刷新遮罩
+    QList<QString> m_pixPathVector;                          ///< 封面图片路径列表
+    QList<QPair<QString,QString>> m_videoAuthorVector;       ///< 视频名称列表
 };
 
 #endif // VIDEOWIDGET_H

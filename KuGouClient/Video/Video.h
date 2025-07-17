@@ -14,6 +14,9 @@
 #include "MVWidget/MVWidget.h"
 
 #include <QWidget>
+#include <QPointer>
+#include <memory>
+#include <array>
 
 class QButtonGroup;
 
@@ -48,60 +51,38 @@ public:
      */
     ~Video() override;
 
+private:
     /**
      * @brief 初始化界面
      */
-    void initUi() const;
+    void initUi();
 
-private:
     /**
      * @brief 初始化堆栈窗口
      */
     void initStackedWidget();
 
     /**
-     * @brief 初始化视频频道控件
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initVideoChannelWidget();
-
-    /**
-     * @brief 初始化视频控件
-     */
-    void initVideoWidget();
-
-    /**
-     * @brief 初始化 MV 控件
-     */
-    void initMVWidget();
+    QWidget* createPage(const int& id);
 
     /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */
-    void enableButton(const bool &flag) const;
-
-    private slots:
-        /**
-         * @brief 处理视频频道按钮点击
-         */
-        void on_video_channel_pushButton_clicked();
-
-    /**
-     * @brief 处理 MV 按钮点击
-     */
-    void on_MV_pushButton_clicked();
-
-    /**
-     * @brief 处理视频按钮点击
-     */
-    void on_video_pushButton_clicked();
+    void enableButton(bool flag) const;
 
 private:
     Ui::Video *ui;                                     ///< UI 指针
-    std::unique_ptr<QButtonGroup>       m_buttonGroup; ///< 按钮组
+    std::unique_ptr<QButtonGroup> m_buttonGroup;       ///< 按钮组
     std::unique_ptr<VideoChannelWidget> m_videoChannelWidget; ///< 视频频道控件
-    std::unique_ptr<VideoWidget>        m_videoWidget;    ///< 视频控件
-    std::unique_ptr<MVWidget>           m_MVWidget;       ///< MV 控件
+    std::unique_ptr<VideoWidget> m_videoWidget;       ///< 视频控件
+    std::unique_ptr<MVWidget> m_MVWidget;             ///< MV 控件
+    std::array<QPointer<QWidget>, 3> m_pages{};       ///< 页面数组
+    int m_currentIdx{0};                              ///< 当前页面索引
 };
 
 #endif // VIDEO_H

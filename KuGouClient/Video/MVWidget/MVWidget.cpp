@@ -8,9 +8,13 @@
 
 #include "MVWidget.h"
 #include "ui_MVWidget.h"
+#include "MVBlockWidget.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
 #include "ElaToolTip.h"
+#include "Async.h"
+#include "RefreshMask.h"
+
 #include <QFile>
 #include <QMouseEvent>
 #include <QButtonGroup>
@@ -19,6 +23,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -31,6 +36,7 @@ MVWidget::MVWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MVWidget)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
     ui->setupUi(this);
     {
@@ -48,6 +54,7 @@ MVWidget::MVWidget(QWidget *parent)
     }
 
     initUi(); ///< 初始化界面
+
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
         enableButton(true);                              ///< 动画结束时启用按钮
     });
@@ -67,7 +74,7 @@ MVWidget::~MVWidget()
  * @param beg 开始索引
  * @return 创建的页面控件
  */
-QWidget* MVWidget::createRepoPage(const int& beg)
+QWidget* MVWidget::createPage(const int& beg)
 {
     auto pageWidget = new QWidget;
     auto mainLayout = new QVBoxLayout(pageWidget);
@@ -114,11 +121,11 @@ void MVWidget::initButtonGroup()
         auto *layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
-        m_repoPages[i] = placeholder;
+        m_pages[i] = placeholder;
         ui->stackedWidget->insertWidget(i, placeholder);
     }
 
-    m_repoPages[m_currentIdx]->layout()->addWidget(createRepoPage(1));
+    m_pages[m_currentIdx]->layout()->addWidget(createPage(1));
     ui->stackedWidget->slideInIdx(0);
 
     // 响应按钮点击事件
@@ -129,7 +136,7 @@ void MVWidget::initButtonGroup()
 
         enableButton(false);
 
-        QWidget *placeholder = m_repoPages[m_currentIdx];
+        QWidget *placeholder = m_pages[m_currentIdx];
         if (!placeholder) {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
@@ -150,12 +157,12 @@ void MVWidget::initButtonGroup()
                 delete item;
             }
         }
-        placeholder = m_repoPages[id];
+        placeholder = m_pages[id];
         layout = placeholder->layout();
 
         // 创建新页面
         int beginIndex = id * 10 + 1;
-        QWidget *realPage = createRepoPage(beginIndex);
+        QWidget *realPage = createPage(beginIndex);
         if (!realPage) {
             qWarning() << "[WARNING] Failed to create repo page at index:" << id;
         } else {
@@ -169,7 +176,6 @@ void MVWidget::initButtonGroup()
     });
 }
 
-
 /**
  * @brief 初始化直播场景分类
  */
@@ -181,11 +187,11 @@ void MVWidget::initLiveScene()
         for (int col = 0; col < 3; ++col)
         {
             int index = row * 3 + col + 41; // 从索引 41 开始
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
+            auto widget = new MVBlockWidget(ui->live_scene_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
             widget->setTitle(this->m_total[index].title);      ///< 设置标题
             widget->hideDesc();                                ///< 隐藏描述
+            layout->addWidget(widget, row, col);               ///< 插入布局中
         }
     }
 }
@@ -201,11 +207,11 @@ void MVWidget::initHonorOfKings()
         for (int col = 0; col < 3; ++col)
         {
             int index = row * 3 + col + 51; // 从索引 51 开始
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
+            auto widget = new MVBlockWidget(ui->honor_of_kings_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
             widget->setTitle(this->m_total[index].title);      ///< 设置标题
             widget->hideDesc();                                ///< 隐藏描述
+            layout->addWidget(widget, row, col);
         }
     }
 }
@@ -221,11 +227,11 @@ void MVWidget::initAwardCeremony()
         for (int col = 0; col < 3; ++col)
         {
             int index = row * 3 + col + 61; // 从索引 61 开始
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
+            auto widget = new MVBlockWidget(ui->award_ceremony_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
             widget->setTitle(this->m_total[index].title);      ///< 设置标题
             widget->hideDesc();                                ///< 隐藏描述
+            layout->addWidget(widget, row, col);
         }
     }
 }
@@ -241,50 +247,14 @@ void MVWidget::initHotMV()
         for (int col = 0; col < 3; ++col)
         {
             int index = row * 3 + col + 71; // 从索引 71 开始
-            auto item = layout->itemAtPosition(row, col);
-            auto widget = static_cast<MVBlockWidget *>(item->widget());
+            auto widget = new MVBlockWidget(ui->hot_MV_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
             widget->setTitle(this->m_total[index].title);      ///< 设置标题
             widget->hideDesc();                                ///< 隐藏描述
+            layout->addWidget(widget, row, col);
         }
     }
 }
-
-/**
- * @brief 初始化数据容器
- */
-void MVWidget::initVector()
-{
-    {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
-        if (!file.open(QIODevice::ReadOnly))
-        {
-            qWarning() << "Could not open file for reading title.json";
-            STREAM_WARN() << "Could not open file for reading title.json";
-            return;
-        }
-        auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
-        for (const auto &item : arr)
-        {
-            QString title = item.toObject().value("title").toString();
-            this->m_titleAndDesc.emplace_back(title, parseTitle(title)); ///< 解析标题
-        }
-        file.close();
-        std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
-        auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
-        m_titleAndDesc.erase(last, m_titleAndDesc.end());
-    }
-
-    for (int i = 1; i <= 100; i++)
-    {
-        this->m_total.emplace_back(
-            QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
-            m_titleAndDesc[i].first,
-            m_titleAndDesc[i].second); ///< 添加音乐信息
-    }
-}
-
 
 /**
  * @brief 解析标题
@@ -334,59 +304,97 @@ void MVWidget::enableButton(const bool &flag) const {
  */
 void MVWidget::initUi()
 {
-    initVector();     ///< 初始化数据容器
-    initLiveScene();  ///< 初始化直播场景
-    initHonorOfKings(); ///< 初始化王者荣耀
-    initAwardCeremony(); ///< 初始化颁奖典礼
-    initHotMV();      ///< 初始化热门 MV
-    initButtonGroup(); ///< 初始化按钮组
+    m_refreshMask->keepLoading();
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            qWarning() << "Could not open file for reading title.json";
+            STREAM_WARN() << "Could not open file for reading title.json";
+            return true;
+        }
+        auto obj = QJsonDocument::fromJson(file.readAll());
+        auto arr = obj.array();
+        for (const auto &item : arr)
+        {
+            QString title = item.toObject().value("title").toString();
+            this->m_titleAndDesc.emplace_back(title, parseTitle(title)); ///< 解析标题，感觉有点浪费
+        }
+        file.close();
 
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.png"))); ///< 添加广告图片
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.png")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.png")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/4.png")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/5.png")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/6.png")));
+        std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
+        auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
+        m_titleAndDesc.erase(last, m_titleAndDesc.end());
+
+        for (int i = 1; i <= 100; i++)
+        {
+            this->m_total.emplace_back(
+                QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
+                m_titleAndDesc[i].first,
+                m_titleAndDesc[i].second); ///< 添加音乐信息
+        }
+
+        return true;
+    });
+    Async::onResultReady(future, this, [this](bool flag) {
+        QTimer::singleShot(300, this, [this] {initButtonGroup();});         ///< 初始化按钮组
+        QTimer::singleShot(400, this, [this] {initLiveScene();});           ///< 初始化直播场景
+        QTimer::singleShot(500, this, [this] {initHonorOfKings();});        ///< 初始化王者荣耀
+        QTimer::singleShot(600, this, [this] {initAwardCeremony();});       ///< 初始化颁奖典礼
+        QTimer::singleShot(700, this, [this] {initHotMV();});               ///< 初始化热门 MV
+        QTimer::singleShot(800,this,[this] {m_refreshMask->hideLoading("");});
+
+        this->m_searchAction = new QAction(this); ///< 创建搜索动作
+        this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
+        this->m_searchAction->setIconVisibleInMenu(false);
+        ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
+        ui->search_lineEdit->setBorderRadius(10);
+        auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
+        font.setWeight(QFont::Bold);
+        font.setPixelSize(12);
+        ui->search_lineEdit->setFont(font);
+
+        QToolButton *searchButton = nullptr;
+        foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
+        {
+            if (btn->defaultAction() == this->m_searchAction)
+            {
+                searchButton = btn;
+                auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建提示
+                search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置提示文本
+                break;
+            }
+        }
+
+        if (searchButton)
+            searchButton->installEventFilter(this); ///< 安装事件过滤器
+
+        ui->pushButton5->hide(); ///< 隐藏按钮
+        ui->pushButton6->hide();
+        ui->pushButton7->hide();
+        ui->pushButton8->hide();
+        ui->pushButton5->setFixedSize(105, 30); ///< 设置按钮大小
+        ui->pushButton6->setFixedSize(105, 30);
+        ui->pushButton7->setFixedSize(105, 30);
+        ui->pushButton8->setFixedSize(105, 30);
+
+        ui->recommend_pushButton->click(); ///< 默认触发推荐按钮
+    });
+
+    initAdvertiseWidget();     ///< 初始化滑动广告
+}
+
+void MVWidget::initAdvertiseWidget() const {
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.jpg"))); ///< 添加广告图片
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/4.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/5.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/6.jpg")));
     ui->advertise_widget->setCurrentIndex(0); ///< 设置初始索引
     ui->advertise_widget->adjustSize();       ///< 调整大小
     ui->advertise_widget->setAutoSlide(4000); ///< 设置自动轮播
     ui->advertise_widget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
-
-    this->m_searchAction = new QAction(this); ///< 创建搜索动作
-    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
-    this->m_searchAction->setIconVisibleInMenu(false);
-    ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
-    ui->search_lineEdit->setBorderRadius(10);
-    auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
-    font.setWeight(QFont::Bold);
-    font.setPixelSize(12);
-    ui->search_lineEdit->setFont(font);
-
-    QToolButton *searchButton = nullptr;
-    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
-    {
-        if (btn->defaultAction() == this->m_searchAction)
-        {
-            searchButton = btn;
-            auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建提示
-            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置提示文本
-            break;
-        }
-    }
-
-    if (searchButton)
-        searchButton->installEventFilter(this); ///< 安装事件过滤器
-
-    ui->pushButton5->hide(); ///< 隐藏按钮
-    ui->pushButton6->hide();
-    ui->pushButton7->hide();
-    ui->pushButton8->hide();
-    ui->pushButton5->setFixedSize(105, 30); ///< 设置按钮大小
-    ui->pushButton6->setFixedSize(105, 30);
-    ui->pushButton7->setFixedSize(105, 30);
-    ui->pushButton8->setFixedSize(105, 30);
-
-    ui->recommend_pushButton->clicked(); ///< 默认触发推荐按钮
 }
 
 /**
@@ -448,6 +456,13 @@ bool MVWidget::eventFilter(QObject *watched, QEvent *event)
         }
     }
     return QObject::eventFilter(watched, event);
+}
+
+void MVWidget::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    ui->advertise_widget->setFixedHeight(ui->advertise_widget->width() / 5 + 65); ///< 调整广告高度
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }
 
 /**
