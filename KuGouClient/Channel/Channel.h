@@ -16,6 +16,7 @@
 
 class QScrollBar;
 class QButtonGroup;
+class RefreshMask;
 
 /**
  * @namespace Ui
@@ -57,17 +58,14 @@ private:
     /**
      * @brief 初始化分区控件
      */
-    void initTotalWidget() const;
+    void initTotalWidget();
 
     /**
      * @brief 初始化界面
      */
     void initUi();
 
-    /**
-     * @brief 初始化歌曲-歌手和封面图片向量
-     */
-    void initVector();
+    void loadSectionBlocks(PartWidget *section, const int &cnt, const int &sum);
 
 private slots:
     /**
@@ -77,11 +75,7 @@ private slots:
     void handleWheelValue(const int &value);
 
 protected:
-    /**
-     * @brief 鼠标按下事件
-     * @param event 鼠标事件
-     */
-    void mousePressEvent(QMouseEvent *event) override;
+    void showEvent(QShowEvent *event) override;
 
 private:
     Ui::Channel                                  *ui;                            ///< UI 指针
@@ -100,9 +94,10 @@ private:
     std::unique_ptr<PartWidget>                   m_varietyWidget{};             ///< 综艺分区控件
     std::unique_ptr<PartWidget>                   m_nationalCustomsWidget{};     ///< 国风分区控件
     std::unique_ptr<PartWidget>                   m_sportsWidget{};              ///< 运动分区控件
-    QList<std::pair<QString, QString>>      m_songAndsinger{};             ///< 歌曲-歌手配对
-    QList<QString>                          m_pixPathVector{};             ///< 封面图片路径
-    QScrollBar                                   *m_vScrollBar{};                ///< 垂直滚动条
+    QList<std::pair<QString, QString>>            m_songAndsinger{};             ///< 歌曲-歌手配对
+    QList<QString>                                m_pixPathVector{};             ///< 封面图片路径
+    QList<QString>                                m_titleVector{};               ///< 标题
+    std::unique_ptr<RefreshMask>                  m_refreshMask;                 ///< 刷新遮罩
 };
 
 #endif // CHANNEL_H
