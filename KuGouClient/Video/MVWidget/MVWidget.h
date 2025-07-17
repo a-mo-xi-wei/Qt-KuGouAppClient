@@ -5,6 +5,7 @@
 #include <QPointer>
 #include <array>
 
+class RefreshMask;
 class QButtonGroup;
 
 /**
@@ -41,7 +42,7 @@ private:
      * @param beg 开始索引
      * @return 创建的页面控件
      */
-    QWidget* createRepoPage(const int& beg);
+    QWidget* createPage(const int& beg);
 
     /**
      * @brief 初始化按钮组
@@ -52,6 +53,8 @@ private:
      * @brief 初始化界面
      */
     void initUi();
+
+    void initAdvertiseWidget() const;
 
     /**
      * @brief 初始化直播场景分类
@@ -72,11 +75,6 @@ private:
      * @brief 初始化热门 MV 分类
      */
     void initHotMV();
-
-    /**
-     * @brief 初始化数据容器
-     */
-    void initVector();
 
     /**
      * @brief 解析标题
@@ -107,6 +105,8 @@ protected:
      * @note 重写基类方法
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
+
+    void showEvent(QShowEvent *event) override;
 
 private slots:
     /**
@@ -155,13 +155,14 @@ private:
         QString description; ///< 描述
     };
 
-    Ui::MVWidget                            *ui;                    ///< UI 指针
-    std::unique_ptr<QButtonGroup>            m_buttonGroup;         ///< 按钮组
-    QAction                                 *m_searchAction{};      ///< 搜索动作
-    QList<std::pair<QString, QString>> m_titleAndDesc;        ///< 标题和描述对
-    QList<MusicInfo>                   m_total;               ///< 所有音乐信息
-    std::array<QPointer<QWidget>, 4> m_repoPages{};  // QPointer 可检测被释放的页面
+    Ui::MVWidget                            *ui;                   ///< UI 指针
+    std::unique_ptr<QButtonGroup>           m_buttonGroup;         ///< 按钮组
+    QAction                                 *m_searchAction{};     ///< 搜索动作
+    QList<std::pair<QString, QString>>      m_titleAndDesc;        ///< 标题和描述对
+    QList<MusicInfo>                        m_total;               ///< 所有音乐信息
+    std::array<QPointer<QWidget>, 4>        m_pages{};         // QPointer 可检测被释放的页面
     int m_currentIdx{0};
+    std::unique_ptr<RefreshMask>             m_refreshMask;         ///< 刷新遮罩
 };
 
 #endif // MVWIDGET_H

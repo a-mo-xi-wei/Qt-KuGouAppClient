@@ -14,6 +14,9 @@
    <string>MVWidget</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
    <item>
     <widget class="MyScrollArea" name="scrollArea">
      <property name="frameShape">
@@ -29,9 +32,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-206</y>
+        <y>0</y>
         <width>842</width>
-        <height>906</height>
+        <height>770</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -643,35 +646,7 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="MVBlockWidget" name="widget_12" native="true"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="MVBlockWidget" name="widget_13" native="true"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="MVBlockWidget" name="widget_14" native="true"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="MVBlockWidget" name="widget_17" native="true"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="MVBlockWidget" name="widget_16" native="true"/>
-          </item>
-          <item row="1" column="2">
-           <widget class="MVBlockWidget" name="widget_15" native="true"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="MVBlockWidget" name="widget_18" native="true"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="MVBlockWidget" name="widget_20" native="true"/>
-          </item>
-          <item row="2" column="2">
-           <widget class="MVBlockWidget" name="widget_19" native="true"/>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_2"/>
         </widget>
        </item>
        <item>
@@ -744,26 +719,7 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="0" column="0">
-           <widget class="MVBlockWidget" name="widget_24" native="true"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="MVBlockWidget" name="widget_26" native="true"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="MVBlockWidget" name="widget_28" native="true"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="MVBlockWidget" name="widget_25" native="true"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="MVBlockWidget" name="widget_27" native="true"/>
-          </item>
-          <item row="1" column="2">
-           <widget class="MVBlockWidget" name="widget_29" native="true"/>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_3"/>
         </widget>
        </item>
        <item>
@@ -836,26 +792,7 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="MVBlockWidget" name="widget_31" native="true"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="MVBlockWidget" name="widget_32" native="true"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="MVBlockWidget" name="widget_33" native="true"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="MVBlockWidget" name="widget_34" native="true"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="MVBlockWidget" name="widget_35" native="true"/>
-          </item>
-          <item row="1" column="2">
-           <widget class="MVBlockWidget" name="widget_36" native="true"/>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_4"/>
         </widget>
        </item>
        <item>
@@ -928,35 +865,7 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <widget class="MVBlockWidget" name="widget_39" native="true"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="MVBlockWidget" name="widget_40" native="true"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="MVBlockWidget" name="widget_41" native="true"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="MVBlockWidget" name="widget_42" native="true"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="MVBlockWidget" name="widget_43" native="true"/>
-          </item>
-          <item row="1" column="2">
-           <widget class="MVBlockWidget" name="widget_44" native="true"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="MVBlockWidget" name="widget_45" native="true"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="MVBlockWidget" name="widget_46" native="true"/>
-          </item>
-          <item row="2" column="2">
-           <widget class="MVBlockWidget" name="widget_47" native="true"/>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_5"/>
         </widget>
        </item>
       </layout>
@@ -976,12 +885,6 @@
    <class>MyScrollArea</class>
    <extends>QScrollArea</extends>
    <header>MyScrollArea.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>MVBlockWidget</class>
-   <extends>QWidget</extends>
-   <header>MVBlockWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

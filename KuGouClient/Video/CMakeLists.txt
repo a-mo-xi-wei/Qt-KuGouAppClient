@@ -24,5 +24,4 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/MVWidget/SliderBoard
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyFlowLayout
-        MyButton MyBlockWidget MyScrollArea)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget MyFlowLayout MyBlockWidget MyScrollArea)

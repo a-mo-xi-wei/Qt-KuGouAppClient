@@ -13,6 +13,8 @@
 #include <QTimer>
 #include <QGraphicsDropShadowEffect>
 
+#include "ElaPushButton.h"
+
 /** @brief 阴影半径常量 */
 #define SHADOW_RADIUS 12
 
@@ -34,7 +36,8 @@ SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
 {
     setPixmapSize(QSize(520, 150)); ///< 设置默认图片大小
 
-    indicationLayout = new QHBoxLayout; ///< 创建指示器布局
+    auto indicationLayout = new QHBoxLayout; ///< 创建指示器布局
+    indicationLayout->setObjectName("indicationLayout");
     auto mainLayout = new QVBoxLayout(this); ///< 创建主布局
     mainLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding)); ///< 添加弹性空间
     mainLayout->addLayout(indicationLayout); ///< 添加指示器布局
@@ -122,18 +125,23 @@ void SlideShow::insertImage(const int &index, const QPixmap &pixmap, QString tex
     label->show();                      ///< 显示标签
     label->installEventFilter(this);    ///< 安装事件过滤器
 
-    auto btn = new InteractiveButtonBase(this); ///< 创建指示器按钮
-    btn->setFixedSize(8, 8);                    ///< 设置按钮大小
-    btn->setRadius(4);                          ///< 设置圆角半径
-    btn->setNormalColor(normalColor);           ///< 设置默认颜色
-    btn->setHoverColor(selectColor);            ///< 设置悬停颜色
-    indications.insert(index, btn);             ///< 插入指示器
-    indicationLayout->insertWidget(index, btn); ///< 添加到布局
 
-    connect(btn, &InteractiveButtonBase::signalMouseEnter, this, [=]{
-        const auto idx = static_cast<int>(indications.indexOf(btn));
-        setCurrentIndex(idx);                   ///< 鼠标悬停时切换索引
-    });
+    auto btn = new QPushButton(this); ///< 创建指示器按钮
+    btn->setFixedSize(8, 8);                    ///< 设置按钮大小
+    updateButtonColor(btn,normalColor,selectColor);
+
+    indications.insert(index, btn);             ///< 插入指示器
+
+    auto allLayouts = findChildren<QHBoxLayout*>();
+    for (auto layout : allLayouts)
+    {
+        if (layout->objectName() == "indicationLayout")
+        {
+            layout->insertWidget(index, btn); ///< 添加到布局
+        }
+    }
+
+    btn->installEventFilter(this);
 
     for (auto indication : indications)
         indication->raise();                    ///< 提升指示器层级
@@ -165,6 +173,20 @@ void SlideShow::removeImage(const int &index)
         setCurrentIndex(currentIndex);         ///< 更新索引
     }
 }
+void SlideShow::updateButtonColor(QPushButton* btn, const QColor& normal, const QColor& hover)
+{
+    btn->setStyleSheet(QString(R"(
+        QPushButton {
+            background-color: %1;
+            border: none;
+            border-radius: 4px;
+        }
+        QPushButton:hover {
+            background-color: %2;
+        }
+    )").arg(normal.name(), hover.name()));
+}
+
 
 /**
  * @brief 设置当前图片索引
@@ -184,7 +206,7 @@ void SlideShow::setCurrentIndex(int index)
 
     bool leftToRight = currentIndex < index;   ///< 判断滑动方向
     if (currentIndex >= 0 && currentIndex < count)
-        indications.at(currentIndex)->setNormalColor(normalColor); ///< 恢复指示器颜色
+        updateButtonColor(indications.at(currentIndex),normalColor,selectColor); ///< 恢复指示器颜色
 
     SideHideLabel *leavingLabel = nullptr;
     if (currentIndex >= 0 && currentIndex < count)
@@ -207,9 +229,9 @@ void SlideShow::setCurrentIndex(int index)
     for (auto indication : indications)
     {
         indication->raise();                   ///< 提升指示器
-        indication->setNormalColor(normalColor); ///< 恢复颜色
+        updateButtonColor(indication,normalColor,selectColor); ///< 恢复颜色
     }
-    indications.at(index)->setNormalColor(selectColor); ///< 设置选中颜色
+    updateButtonColor(indications.at(index),selectColor,selectColor); ///< 设置选中颜色
 }
 
 /**
@@ -293,7 +315,7 @@ void SlideShow::adjustLabels(SideHideLabel *leavingLabel)
     double scale = backScale;        ///< 两侧缩放比例
     int marginTop = sh / 2 - h / 2 - SHADOW_RADIUS / 2; ///< 计算顶部边距
 
-    centerRect = QRect(sw / 2 - w / 2, marginTop, w, h); ///< 中心区域
+    auto centerRect = QRect(sw / 2 - w / 2, marginTop, w, h); ///< 中心区域
     leftRect = QRect(static_cast<int>(centerRect.left() - w * scale * sideOffside), ///< 左侧区域
                      marginTop + static_cast<int>(h * (1 - scale) / 2),
                      static_cast<int>(w * scale),
@@ -302,7 +324,7 @@ void SlideShow::adjustLabels(SideHideLabel *leavingLabel)
                       marginTop + static_cast<int>(h * (1 - scale) / 2),
                       static_cast<int>(w * scale),
                       static_cast<int>(h * scale));
-    backRect = QRect(static_cast<int>(sw / 2 - w * scale / 2), ///< 隐藏区域
+    auto backRect = QRect(static_cast<int>(sw / 2 - w * scale / 2), ///< 隐藏区域
                      marginTop + static_cast<int>(h * (1 - scale) / 2),
                      static_cast<int>(w * scale),
                      static_cast<int>(h * scale));
@@ -416,6 +438,15 @@ bool SlideShow::eventFilter(QObject *obj, QEvent *event)
             }
             else // 不是当前图片，可能是动画或者两侧的
                 setCurrentIndex(index);        ///< 切换到点击的图片
+        }
+    }
+    if (event->type() == QEvent::Enter)
+    {
+        auto btn = qobject_cast<QPushButton *>(obj);
+        if (btn)
+        {
+            int idx = indications.indexOf(btn);
+            setCurrentIndex(idx);
         }
     }
 
