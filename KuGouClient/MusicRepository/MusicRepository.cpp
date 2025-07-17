@@ -214,10 +214,15 @@ void MusicRepository::initUi() {
                 m_musicData[i + 10].song,
                 m_musicData[i + 10].singer); ///< 插入视频信息
         }
-
-        initNewDiskWidget(); ///< 初始化新碟上架
-        initSelectWidget();  ///< 初始化精选视频
-        initButtonGroup();   ///< 初始化按钮组
+        QTimer::singleShot(100,this,[this] {
+            initButtonGroup();   ///< 初始化按钮组
+        });
+        QTimer::singleShot(200,this,[this] {
+            initNewDiskWidget(); ///< 初始化新碟上架
+        });
+        QTimer::singleShot(300,this,[this] {
+            initSelectWidget();  ///< 初始化精选视频
+        });
         ui->chinese_pushButton->click(); ///< 默认点击华语按钮
     });
 }

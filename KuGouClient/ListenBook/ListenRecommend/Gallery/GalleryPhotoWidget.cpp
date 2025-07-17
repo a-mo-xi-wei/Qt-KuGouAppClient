@@ -1,7 +1,7 @@
 /**
  * @file GalleryPhotoWidget.cpp
  * @brief 实现 GalleryPhotoWidget 类，提供照片卡片控件功能
- * @author WeiWang
+ * @author iwxyi
  * @date 2025-05-16
  * @version 1.0
  */

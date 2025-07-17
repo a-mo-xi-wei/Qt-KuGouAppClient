@@ -15,6 +15,7 @@
 
 #include <QFile>
 #include <QDateTime>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -26,8 +27,6 @@
 DailyRecommend::DailyRecommend(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DailyRecommend)
-    , m_monthLab(new QLabel(this))
-    , m_dayLab(new QLabel(this))
 {
     ui->setupUi(this);                                   ///< 初始化 UI
     {
@@ -61,14 +60,17 @@ DailyRecommend::~DailyRecommend()
 void DailyRecommend::initUi()
 {
     initDateLab();                                       ///< 初始化日期标签
+
     ui->history_recommend_toolButton->setIconSize(QSize(10, 10)); ///< 设置历史推荐按钮图标大小
     ui->history_recommend_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
     ui->history_recommend_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
     ui->history_recommend_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
     ui->history_recommend_toolButton->setApproach(true); ///< 启用接近效果
     ui->history_recommend_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
+
     ui->play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标
     ui->play_toolButton->setText(QStringLiteral("播放")); ///< 设置播放按钮文本
+
     auto vip_toolButton_toolTip = new ElaToolTip(ui->vip_toolButton); ///< 创建 VIP 按钮工具提示
     vip_toolButton_toolTip->setToolTip(QStringLiteral("威哥出品，不存在VIP")); ///< 设置 VIP 工具提示内容
     auto collect_toolButton_toolTip = new ElaToolTip(ui->collect_toolButton); ///< 创建收藏按钮工具提示
@@ -77,16 +79,19 @@ void DailyRecommend::initUi()
     download_toolButton_toolTip->setToolTip(QStringLiteral("下载")); ///< 设置下载工具提示内容
     auto batch_toolButton_toolTip = new ElaToolTip(ui->batch_toolButton); ///< 创建批量操作按钮工具提示
     batch_toolButton_toolTip->setToolTip(QStringLiteral("批量操作")); ///< 设置批量操作工具提示内容
+
     ui->vip_toolButton->setIconSize(QSize(18, 18));      ///< 设置 VIP 按钮图标大小
     ui->vip_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg"))); ///< 设置 VIP 按钮图标
     ui->vip_toolButton->setText(QStringLiteral("+30"));   ///< 设置 VIP 按钮文本
     ui->vip_toolButton->setApproach(true);               ///< 启用接近效果
+
     ui->collect_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/like-gray.svg"))); ///< 设置收藏按钮图标
     ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg"))); ///< 设置下载按钮图标
     ui->batch_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/batch-gray.svg"))); ///< 设置批量操作按钮图标
     ui->count_label->setText(QStringLiteral("30"));       ///< 设置歌曲数量标签
     ui->ico_label->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg")).scaled(18, 18)); ///< 设置图标标签
-    initTableWidget();                                   ///< 初始化歌曲列表控件
+
+    QTimer::singleShot(100, this, [this]{initTableWidget();}); ///< 初始化歌曲列表控件
 }
 
 /**
@@ -95,21 +100,23 @@ void DailyRecommend::initUi()
  */
 void DailyRecommend::initDateLab()
 {
-    this->m_monthLab->setObjectName("monthLab");         ///< 设置月份标签对象名称
-    this->m_dayLab->setObjectName("dayLab");             ///< 设置日期标签对象名称
-    const QDate currentDate = QDate::currentDate();      ///< 获取当前日期
+    auto monthLab = new QLabel(this);
+    auto dayLab = new QLabel(this);
+    monthLab->setObjectName("monthLab");            ///< 设置月份标签对象名称
+    dayLab->setObjectName("dayLab");                ///< 设置日期标签对象名称
+    const QDate currentDate = QDate::currentDate();   ///< 获取当前日期
     const QString monthStr = QString::number(currentDate.month()) + "月"; ///< 设置月份文本
-    this->m_monthLab->setText(monthStr);                 ///< 应用月份文本
+    monthLab->setText(monthStr);                 ///< 应用月份文本
     const QString dayStr = QString("%1").arg(currentDate.day(), 2, 10, QChar('0')); ///< 设置日期文本（补零）
-    this->m_dayLab->setFixedHeight(40);                  ///< 设置日期标签固定高度
-    this->m_dayLab->setText(dayStr);                     ///< 应用日期文本
-    this->m_monthLab->setScaledContents(true);           ///< 启用月份标签内容缩放
-    this->m_dayLab->setScaledContents(true);             ///< 启用日期标签内容缩放
+    dayLab->setFixedHeight(40);               ///< 设置日期标签固定高度
+    dayLab->setText(dayStr);                     ///< 应用日期文本
+    monthLab->setScaledContents(true);           ///< 启用月份标签内容缩放
+    dayLab->setScaledContents(true);             ///< 启用日期标签内容缩放
     const QPoint targetPos = ui->top_cover_label->pos(); ///< 获取封面标签位置
-    this->m_monthLab->move(targetPos.x() + 30, targetPos.y() + 30); ///< 移动月份标签
-    this->m_dayLab->move(targetPos.x() + 30, targetPos.y() + 35 + this->m_monthLab->height()); ///< 移动日期标签
-    this->m_monthLab->raise();                           ///< 提升月份标签层级
-    this->m_dayLab->raise();                             ///< 提升日期标签层级
+    monthLab->move(targetPos.x() + 30, targetPos.y() + 30); ///< 移动月份标签
+    dayLab->move(targetPos.x() + 30, targetPos.y() + 35 + monthLab->height()); ///< 移动日期标签
+    monthLab->raise();                           ///< 提升月份标签层级
+    dayLab->raise();                             ///< 提升日期标签层级
 }
 
 /**

@@ -51,9 +51,13 @@ Channel::Channel(QWidget *parent)
         }
         ui->title_label->setStyleSheet(QString("border:none;border-image: url('%1');").arg(":/Res/window/music-channel.png")); ///< 设置标题图片
     }
-    initButtonGroup();                                   ///< 初始化按钮组
-    initTotalWidget();                                   ///< 初始化分区控件
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this] {
+        initButtonGroup();                                   ///< 初始化按钮组
+    });
+    QTimer::singleShot(200,this,[this] {
+        initTotalWidget();                                   ///< 初始化分区控件
+        initUi();                                            ///< 初始化界面
+    });
 }
 
 /**
@@ -93,19 +97,19 @@ void Channel::initButtonGroup() const
 void Channel::initTotalWidget()
 {
     m_recommendWidget       = std::make_unique<PartWidget>(this);
-    m_djWidget      = std::make_unique<PartWidget>(this);
+    m_djWidget              = std::make_unique<PartWidget>(this);
     m_languageWidget        = std::make_unique<PartWidget>(this);
-    m_themeWidget       = std::make_unique<PartWidget>(this);
-    m_sceneWidget       = std::make_unique<PartWidget>(this);
-    m_moodWidget        = std::make_unique<PartWidget>(this);
-    m_styleWidget       = std::make_unique<PartWidget>(this);
-    m_crowdWidget       = std::make_unique<PartWidget>(this);
+    m_themeWidget           = std::make_unique<PartWidget>(this);
+    m_sceneWidget           = std::make_unique<PartWidget>(this);
+    m_moodWidget            = std::make_unique<PartWidget>(this);
+    m_styleWidget           = std::make_unique<PartWidget>(this);
+    m_crowdWidget           = std::make_unique<PartWidget>(this);
     m_childrenWidget        = std::make_unique<PartWidget>(this);
-    m_musicalInstrumentWidget       = std::make_unique<PartWidget>(this);
-    m_labelWidget       = std::make_unique<PartWidget>(this);
-    m_varietyWidget     = std::make_unique<PartWidget>(this);
-    m_nationalCustomsWidget     = std::make_unique<PartWidget>(this);
-    m_sportsWidget      = std::make_unique<PartWidget>(this);
+    m_musicalInstrumentWidget = std::make_unique<PartWidget>(this);
+    m_labelWidget           = std::make_unique<PartWidget>(this);
+    m_varietyWidget         = std::make_unique<PartWidget>(this);
+    m_nationalCustomsWidget = std::make_unique<PartWidget>(this);
+    m_sportsWidget          = std::make_unique<PartWidget>(this);
 
     this->m_recommendWidget->setTitleName("推荐");       ///< 设置推荐分区标题
     this->m_djWidget->setTitleName("DJ");               ///< 设置 DJ 分区标题

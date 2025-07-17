@@ -10,7 +10,6 @@
 #define DAILYRECOMMEND_H
 
 #include "MusicItemWidget.h"
-#include <QWidget>
 
 class QLabel;
 
@@ -100,8 +99,6 @@ private slots:
 
 private:
     Ui::DailyRecommend *ui;             ///< UI 指针
-    QLabel             *m_monthLab{};   ///< 月份标签
-    QLabel             *m_dayLab{};     ///< 日期标签
 };
 
 #endif // DAILYRECOMMEND_H

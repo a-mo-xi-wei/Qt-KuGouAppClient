@@ -12,6 +12,7 @@
 #include "logger.hpp"
 #include "Async.h"
 #include "ElaMessageBar.h"
+#include "RefreshMask.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -40,8 +41,10 @@ ListenRecommend::ListenRecommend(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ListenRecommend)
     , m_refreshTimer(new QTimer(this))
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
-    ui->setupUi(this);                                   ///< 初始化 UI
+    ui->setupUi(this);
+
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/recommend.css")); ///< 加载样式表
         if (file.open(QIODevice::ReadOnly))
@@ -54,7 +57,9 @@ ListenRecommend::ListenRecommend(QWidget *parent)
             return;
         }
     }
+
     initUi();                                            ///< 初始化界面
+
     auto menu = new MyMenu(MyMenu::MenuKind::ListenOption, this); ///< 创建菜单
     m_menu = menu->getMenu<ListenOptionMenu>();          ///< 获取分类菜单
     connect(m_menu, &ListenOptionMenu::clickedFuncName, this, &ListenRecommend::onMenuFuncClicked); ///< 连接菜单点击信号
@@ -76,15 +81,17 @@ ListenRecommend::~ListenRecommend()
  */
 void ListenRecommend::initUi()
 {
+    m_refreshMask->keepLoading();
+
     ui->all_classify_toolButton->setHoverFontColor(QColor(QStringLiteral("#26A1FF"))); ///< 设置悬停字体颜色
     ui->all_classify_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-black.svg"))); ///< 设置默认图标
     ui->all_classify_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
     ui->all_classify_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-black.svg"))); ///< 设置离开图标
     ui->all_classify_toolButton->setIconSize(QSize(10, 10)); ///< 设置图标大小
     ui->all_classify_toolButton->setApproach(true);      ///< 启用接近效果
+
     this->m_refreshTimer->setSingleShot(true);           ///< 设置定时器单次触发
-    initDailyRecommendGalleryWidget();                   ///< 初始化每日推荐画廊
-    initTableWidgets();                                  ///< 初始化其他表格控件
+
     QList<QToolButton *> buttons = ui->classify_widget->findChildren<QToolButton *>(); ///< 获取分类按钮
     for (const auto &button : buttons)
     {
@@ -93,6 +100,13 @@ void ListenRecommend::initUi()
                                        QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
         });
     }
+
+    QTimer::singleShot(100,this,[this] {
+        initDailyRecommendGalleryWidget();
+    });
+    QTimer::singleShot(200,this,[this] {
+        initTableWidgets();                                  ///< 初始化其他表格控件
+    });
 }
 
 /**
@@ -139,7 +153,10 @@ void ListenRecommend::initTableWidgets()
         widget->setCnt(info.cnt);
         widget->setTitle(info.title);
         connect(widget, &ListenTableWidget::toolBtnClicked, this, &ListenRecommend::onToolButtonClicked);
-        initOtherGalleryWidget(info.galleryName, widget);
+        QTimer::singleShot(info.cnt * 100 + 100 , this, [this, widget,info] {
+            initOtherGalleryWidget(info.galleryName, widget);
+            if (info.cnt == 16)m_refreshMask->hideLoading("");
+        });
         lay->addWidget(widget);
     }
 
@@ -212,7 +229,7 @@ void ListenRecommend::initDailyRecommendGalleryWidget()
 void ListenRecommend::initOtherGalleryWidget(const QString &jsonFileName, const ListenTableWidget *gallery)
 {
     const auto cnt = gallery->getCnt();                  ///< 获取计数
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [jsonFileName, cnt]() {
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [jsonFileName] {
         QList<QPair<QString, QString>> result;           ///< 数据列表
         QFile file(GET_CURRENT_DIR + QString("/jsonFiles/%1.json").arg(jsonFileName)); ///< 打开 JSON 文件
         if (!file.open(QIODevice::ReadOnly))
@@ -327,4 +344,16 @@ void ListenRecommend::onMenuFuncClicked(const QString &funcName)
 {
     ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                                QString("%1 功能未实现 敬请期待").arg(funcName), 1000, this->window()); ///< 显示未实现提示
+}
+
+void ListenRecommend::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
+}
+
+void ListenRecommend::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }

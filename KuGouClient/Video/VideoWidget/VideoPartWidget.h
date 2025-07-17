@@ -11,8 +11,6 @@
 
 #include "VideoBlockWidget.h"
 
-#include <QWidget>
-
 /**
  * @class QLabel
  * @brief Qt 标签类，用于显示标题
@@ -56,14 +54,6 @@ private:
      * @note 设置标题、容器和网格布局
      */
     void initUi();
-
-protected:
-    /**
-     * @brief 绘制事件
-     * @param event 绘制事件
-     * @note 默认实现
-     */
-    void paintEvent(QPaintEvent *event) override;
 
 private:
     QLabel *m_titleLab{};   ///< 标题标签

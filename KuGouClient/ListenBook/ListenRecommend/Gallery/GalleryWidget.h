@@ -1,7 +1,7 @@
 /**
 * @file GalleryWidget.h
  * @brief 定义 GalleryWidget 类，提供照片画廊控件
- * @author WeiWang
+ * @author iwxyi
  * @date 2025-05-16
  * @version 1.0
  * @note 参考开源项目：iwxyi 的 Qt-GalleryWidget，项目地址：https://github.com/iwxyi/Qt-GalleryWidget

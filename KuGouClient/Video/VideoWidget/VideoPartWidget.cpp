@@ -79,13 +79,3 @@ void VideoPartWidget::initUi()
     // lay->setContentsMargins(0, 0, 0, 0);
     // this->m_tabWidget->setLayout(lay);
 }
-
-/**
- * @brief 绘制事件
- * @param event 绘制事件
- * @note 默认实现
- */
-void VideoPartWidget::paintEvent(QPaintEvent *event)
-{
-    QWidget::paintEvent(event);                         ///< 调用父类处理
-}

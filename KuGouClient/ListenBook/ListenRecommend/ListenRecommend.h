@@ -27,6 +27,7 @@ namespace Ui
 QT_END_NAMESPACE
 
 class QTimer;
+class RefreshMask;
 
 /**
  * @class ListenRecommend
@@ -101,11 +102,17 @@ private slots:
      */
     void onMenuFuncClicked(const QString &funcName);
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
+    void showEvent(QShowEvent *event) override;
+
 private:
-    Ui::ListenRecommend                                   *ui;              ///< UI 指针
-    ListenOptionMenu                                      *m_menu{};        ///< 分类菜单
-    QList<std::pair<QString, QString>>               m_galleryVector[17]; ///< 画廊数据数组
-    QTimer                                                *m_refreshTimer{};  ///< 刷新定时器
+    Ui::ListenRecommend                    *ui;                 ///< UI 指针
+    ListenOptionMenu                       *m_menu{};           ///< 分类菜单
+    QList<std::pair<QString, QString>>      m_galleryVector[17];///< 画廊数据数组
+    QTimer                                 *m_refreshTimer{};   ///< 刷新定时器
+    std::unique_ptr<RefreshMask>            m_refreshMask;      ///< 刷新遮罩
 };
 
 #endif // LISTENRECOMMEND_H

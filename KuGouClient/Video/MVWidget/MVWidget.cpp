@@ -378,7 +378,7 @@ void MVWidget::initUi()
         ui->pushButton7->setFixedSize(105, 30);
         ui->pushButton8->setFixedSize(105, 30);
 
-        ui->recommend_pushButton->click(); ///< 默认触发推荐按钮
+        ui->recommend_pushButton->clicked(); ///< 默认触发推荐按钮
     });
 
     initAdvertiseWidget();     ///< 初始化滑动广告

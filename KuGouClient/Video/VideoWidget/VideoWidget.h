@@ -10,7 +10,6 @@
 #define VIDEOWIDGET_H
 
 #include "VideoPartWidget.h"
-#include <QWidget>
 
 /**
  * @class QScrollBar
