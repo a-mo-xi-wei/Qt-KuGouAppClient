@@ -41,8 +41,12 @@ Video::Video(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    initUi();
-    initStackedWidget();
+    QTimer::singleShot(100,this,[this] {
+        initUi();
+    });
+    QTimer::singleShot(200,this,[this] {
+        initStackedWidget();
+    });
 
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);

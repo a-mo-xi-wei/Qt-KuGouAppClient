@@ -1,7 +1,7 @@
 /**
  * @file GalleryPhotoWidget.h
  * @brief 定义 GalleryPhotoWidget 类，提供照片卡片控件
- * @author WeiWang
+ * @author iwxyi
  * @date 2025-05-16
  * @version 1.0
  */

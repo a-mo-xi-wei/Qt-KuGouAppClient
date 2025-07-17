@@ -1,7 +1,7 @@
 /**
  * @file GalleryWidget.cpp
  * @brief 实现 GalleryWidget 类，提供照片画廊控件功能
- * @author WeiWang
+ * @author iwxyi
  * @date 2025-05-16
  * @version 1.0
  * @note 参考开源项目：iwxyi 的 Qt-GalleryWidget，项目地址：https://github.com/iwxyi/Qt-GalleryWidget
@@ -10,7 +10,6 @@
 #include "GalleryWidget.h"
 
 #include <QPropertyAnimation>
-#include <QResizeEvent>
 
 /**
  * @brief 水平间距
@@ -40,6 +39,10 @@ GalleryWidget::GalleryWidget(QWidget *parent)
  */
 void GalleryWidget::addData(GalleryPhotoWidget *it)
 {
+    if (!it->parent()) {
+        it->setParent(this);       // 设置父控件，加入 QWidget 层级
+    }
+    it->show();                    // 显式显示
     widgets.append(it);                                  ///< 添加卡片到列表
     resizeGallery();                                     ///< 调整画廊布局
 }

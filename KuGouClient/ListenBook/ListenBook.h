@@ -1,5 +1,5 @@
 /**
- * @file ListenBook.h
+* @file ListenBook.h
  * @brief 定义 ListenBook 类，提供听书主界面
  * @author WeiWang
  * @date 2024-11-18
@@ -14,12 +14,10 @@
 #include "ListenRecentlyPlay/ListenRecentlyPlay.h"
 
 #include <QWidget>
+#include <QPointer>
 #include <memory>
+#include <array>
 
-/**
- * @class QButtonGroup
- * @brief 按钮组类，用于管理互斥按钮
- */
 class QButtonGroup;
 
 /**
@@ -67,54 +65,26 @@ private:
     void initStackedWidget();
 
     /**
-     * @brief 初始化推荐页面
-     * @note 创建推荐页面控件并添加到堆栈窗口
+     * @brief 创建页面
+     * @param id 页面索引
+     * @return 创建的页面控件
      */
-    void initListenRecommend();
-
-    /**
-     * @brief 初始化下载页面
-     * @note 创建下载页面控件并连接切换信号
-     */
-    void initListenMyDownload();
-
-    /**
-     * @brief 初始化最近播放页面
-     * @note 创建最近播放页面控件并连接切换信号
-     */
-    void initListenRecentlyPlay();
+    QWidget* createPage(int id);
 
     /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */
-    void enableButton(const bool &flag) const;
-
-private slots:
-    /**
-     * @brief 推荐按钮点击槽函数
-     * @note 切换到推荐页面并触发动画
-     */
-    void on_listen_recommend_toolButton_clicked();
-
-    /**
-     * @brief 下载按钮点击槽函数
-     * @note 切换到下载页面并触发动画
-     */
-    void on_listen_my_download_toolButton_clicked();
-
-    /**
-     * @brief 最近播放按钮点击槽函数
-     * @note 切换到最近播放页面并触发动画
-     */
-    void on_recently_play_toolButton_clicked();
+    void enableButton(bool flag) const;
 
 private:
-    Ui::ListenBook                       *ui;                    ///< UI 指针
-    std::unique_ptr<QButtonGroup>         m_buttonGroup{};       ///< 按钮组
-    std::unique_ptr<ListenRecommend>      m_listenRecommend{};   ///< 推荐页面
-    std::unique_ptr<ListenMyDownload>     m_listenMyDownload{};  ///< 下载页面
-    std::unique_ptr<ListenRecentlyPlay>   m_listenRecentlyPlay{}; ///< 最近播放页面
+    Ui::ListenBook *ui;                                ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;       ///< 按钮组
+    std::unique_ptr<ListenRecommend> m_listenRecommend;   ///< 推荐页面
+    std::unique_ptr<ListenMyDownload> m_listenMyDownload;  ///< 下载页面
+    std::unique_ptr<ListenRecentlyPlay> m_listenRecentlyPlay; ///< 最近播放页面
+    std::array<QPointer<QWidget>, 3> m_pages{};        ///< 页面数组
+    int m_currentIdx{0};                               ///< 当前页面索引
 };
 
 #endif // LISTENBOOK_H

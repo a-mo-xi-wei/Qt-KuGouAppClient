@@ -42,9 +42,9 @@ RecommendForYou::RecommendForYou(QWidget *parent)
         return;
     }
 
-    initAdvertiseBoard();                                ///< 初始化广告轮播
-    initClassifyWidget();                                ///< 初始化分类按钮
-    initTabWidget();                                     ///< 初始化推荐表格
+    QTimer::singleShot(0,this,[this]{initAdvertiseBoard();});///< 初始化广告轮播
+    QTimer::singleShot(100,this,[this]{initClassifyWidget();});  ///< 初始化分类按钮
+    QTimer::singleShot(100,this,[this]{initTabWidget();});     ///< 初始化推荐表格
 }
 
 /**
@@ -129,19 +129,26 @@ void RecommendForYou::initClassifyWidget() const
  * @brief 初始化推荐表格
  * @note 添加推荐表格到布局
  */
-void RecommendForYou::initTabWidget()
-{
+void RecommendForYou::initTabWidget() {
     const auto layout = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取垂直布局
     if (!layout)
     {
         return;                                          ///< 空指针保护
     }
-    layout->insertWidget(layout->count(),
-                         new TableWidget(QStringLiteral(" 今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
-    layout->insertWidget(layout->count(),
-                         new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this)); ///< 添加潮流音乐站
-    layout->insertWidget(layout->count(),
-                         new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this)); ///< 添加热门好歌精选
+    QTimer::singleShot(100,this,[this,layout] {
+        layout->insertWidget(layout->count(),
+                             new TableWidget(QStringLiteral(" 今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
+    });
+    QTimer::singleShot(200,this,[this,layout] {
+        layout->insertWidget(layout->count(),
+                             new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this)); ///< 添加潮流音乐站
+    });
+    QTimer::singleShot(300,this,[this,layout] {
+        layout->insertWidget(layout->count(),
+                             new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this)); ///< 添加热门好歌精选
+    });
+    QTimer::singleShot(400,this,[this,layout] {
     layout->insertWidget(layout->count(),
                          new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this)); ///< 添加私人专属好歌
+    });
 }

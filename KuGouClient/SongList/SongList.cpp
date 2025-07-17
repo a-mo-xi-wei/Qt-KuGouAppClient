@@ -21,6 +21,8 @@
 #include <random>
 #include <chrono>
 
+#include "Async.h"
+
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -45,8 +47,7 @@ SongList::SongList(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
-    initCoverVector();                                   ///< 初始化封面库
-    initDescVector();                                    ///< 初始化描述库
+
     initUi();                                            ///< 初始化界面
 
     auto menu = new MyMenu(MyMenu::MenuKind::ListOption, this); ///< 创建选项菜单
@@ -70,6 +71,52 @@ SongList::~SongList()
  */
 void SongList::initUi()
 {
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+        QFile file(GET_CURRENT_DIR + QStringLiteral("/desc.json")); ///< 加载描述文件
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            qWarning() << "Could not open file for reading desc.json"; ///< 记录警告日志
+            STREAM_WARN() << "Could not open file for reading desc.json";
+            return true;
+        }
+        auto obj = QJsonDocument::fromJson(file.readAll()); ///< 解析 JSON
+        auto arr = obj.array();
+        for (const auto &item : arr)
+        {
+            QString title = item.toObject().value("desc").toString(); ///< 获取描述
+            this->m_descVector.emplace_back(title);          ///< 添加描述
+        }
+        file.close();
+        std::sort(m_descVector.begin(), m_descVector.end()); ///< 排序
+        auto last = std::unique(m_descVector.begin(), m_descVector.end()); ///< 去重
+        m_descVector.erase(last, m_descVector.end());       ///< 删除重复项
+
+        for (int i = 1; i <= 210; ++i)
+        {
+            this->m_coverVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i)); ///< 添加封面图片
+        }
+
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 使用当前时间作为随机种子
+        std::shuffle(this->m_coverVector.begin(), this->m_coverVector.end(), std::default_random_engine(seed)); ///< 打乱封面列表
+        std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed)); ///< 打乱描述列表
+
+        return true;
+    });
+    Async::onResultReady(future, this, [this](bool flag) {
+        auto lay = new MyFlowLayout(ui->table_widget, true, 0);         ///< 创建流动布局
+        lay->setContentsMargins(0, 20, 0, 20);               ///< 设置边距
+        ui->table_widget->setLayout(lay);                    ///< 设置布局
+        const auto size = std::min(this->m_coverVector.size(), this->m_descVector.size()); ///< 获取最小大小
+        for (int i = 0; i < size; ++i)
+        {
+            auto block = new SongBlock(this);         ///< 创建歌曲块
+            block->setCoverPix(this->m_coverVector[i]);      ///< 设置封面
+            block->setShowTip();                             ///< 显示提示
+            block->setDescText(this->m_descVector[i]);       ///< 设置描述
+            lay->addWidget(block);                           ///< 添加到布局
+        }
+    });
+
     ui->all_toolButton->setMouseTracking(true);          ///< 启用鼠标跟踪
     ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
     ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
@@ -80,19 +127,6 @@ void SongList::initUi()
     ui->all_toolButton->setEnterIconSize(QSize(10, 10)); ///< 设置悬停图标大小
     ui->all_toolButton->setLeaveIconSize(QSize(10, 10)); ///< 设置离开图标大小
 
-    shuffleVector();                                     ///< 打乱数据
-    auto lay = new MyFlowLayout(ui->table_widget, true, 0); ///< 创建流动布局
-    lay->setContentsMargins(0, 20, 0, 20);              ///< 设置边距
-    ui->table_widget->setLayout(lay);                    ///< 设置布局
-    const auto size = std::min(this->m_coverVector.size(), this->m_descVector.size()); ///< 获取最小大小
-    for (int i = 0; i < size; ++i)
-    {
-        auto block = new SongBlock(this);                ///< 创建歌曲块
-        block->setCoverPix(this->m_coverVector[i]);      ///< 设置封面
-        block->setShowTip();                             ///< 显示提示
-        block->setDescText(this->m_descVector[i]);       ///< 设置描述
-        lay->addWidget(block);                           ///< 添加到布局
-    }
     QList<QToolButton *> buttons = ui->widget->findChildren<QToolButton *>(); ///< 获取所有工具按钮
     for (const auto &button : buttons)
     {
@@ -101,55 +135,6 @@ void SongList::initUi()
                                        QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
         });
     }
-}
-
-/**
- * @brief 初始化封面库
- * @note 加载 210 张封面图片
- */
-void SongList::initCoverVector()
-{
-    for (int i = 1; i <= 210; ++i)
-    {
-        this->m_coverVector.emplace_back(QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i)); ///< 添加封面图片
-    }
-}
-
-/**
- * @brief 初始化描述库
- * @note 从 JSON 文件加载描述并去重排序
- */
-void SongList::initDescVector()
-{
-    QFile file(GET_CURRENT_DIR + QStringLiteral("/descs.json")); ///< 加载描述文件
-    if (!file.open(QIODevice::ReadOnly))
-    {
-        qWarning() << "Could not open file for reading descs.json"; ///< 记录警告日志
-        STREAM_WARN() << "Could not open file for reading descs.json";
-        return;
-    }
-    auto obj = QJsonDocument::fromJson(file.readAll()); ///< 解析 JSON
-    auto arr = obj.array();
-    for (const auto &item : arr)
-    {
-        QString title = item.toObject().value("desc").toString(); ///< 获取描述
-        this->m_descVector.emplace_back(title);          ///< 添加描述
-    }
-    file.close();
-    std::sort(m_descVector.begin(), m_descVector.end()); ///< 排序
-    auto last = std::unique(m_descVector.begin(), m_descVector.end()); ///< 去重
-    m_descVector.erase(last, m_descVector.end());       ///< 删除重复项
-}
-
-/**
- * @brief 打乱数据
- * @note 随机打乱封面和描述列表
- */
-void SongList::shuffleVector()
-{
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); ///< 使用当前时间作为随机种子
-    std::shuffle(this->m_coverVector.begin(), this->m_coverVector.end(), std::default_random_engine(seed)); ///< 打乱封面列表
-    std::shuffle(this->m_descVector.begin(), this->m_descVector.end(), std::default_random_engine(seed)); ///< 打乱描述列表
 }
 
 /**
