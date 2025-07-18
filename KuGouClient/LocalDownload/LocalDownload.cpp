@@ -14,6 +14,7 @@
 #include <QFile>
 #include <QButtonGroup>
 #include <QMouseEvent>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -39,7 +40,7 @@ LocalDownload::LocalDownload(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this] {initUi();});
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); }); ///< 连接动画完成信号
     connect(this->m_localSong.get(), &LocalSong::playMusic, this, [this](const QString &localPath) {
         emit playMusic(localPath);                       ///< 中转播放音乐信号
@@ -243,13 +244,15 @@ void LocalDownload::initStackedWidget()
  */
 void LocalDownload::initUi()
 {
-    ui->download_history_toolButton->hide();             ///< 隐藏下载历史按钮
-    initStackedWidget();                                 ///< 初始化堆栈窗口
-    initIndexLab();                                     ///< 初始化索引标签
-    ui->local_music_pushButton->click();                ///< 默认点击本地音乐按钮
-    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
-    ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);  ///< 设置边距
+    QTimer::singleShot(100,this,[this]{initStackedWidget();});///< 初始化堆栈窗口
+    QTimer::singleShot(200,this,[this] {
+        initIndexLab();                                     ///< 初始化索引标签
+        ui->download_history_toolButton->hide();             ///< 隐藏下载历史按钮
+        ui->local_music_pushButton->click();                ///< 默认点击本地音乐按钮
+        ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
+        ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
+        ui->stackedWidget->setContentsMargins(0, 0, 0, 0);  ///< 设置边距
+    });
 }
 
 /**

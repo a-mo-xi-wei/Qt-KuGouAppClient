@@ -13,6 +13,7 @@
 #include <QButtonGroup>
 #include <QFile>
 #include <QMouseEvent>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -38,7 +39,7 @@ MyCollection::MyCollection(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this] {initUi();});
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); }); ///< 连接动画完成信号
     enableButton(true);                                  ///< 启用按钮
 }
@@ -198,12 +199,14 @@ void MyCollection::initStackedWidget()
  */
 void MyCollection::initUi()
 {
-    initStackedWidget();                                 ///< 初始化堆栈窗口
-    initIndexLab();                                     ///< 初始化索引标签
-    ui->singleSong_pushButton->click();                ///< 默认点击单曲按钮
-    ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
-    ui->stackedWidget->setSpeed(400);                  ///< 设置动画速度
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
+    QTimer::singleShot(100,this,[this]{initStackedWidget();}); ///< 初始化堆栈窗口
+    QTimer::singleShot(200,this,[this] {
+        initIndexLab();                                     ///< 初始化索引标签
+        ui->singleSong_pushButton->click();                ///< 默认点击单曲按钮
+        ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
+        ui->stackedWidget->setSpeed(400);                  ///< 设置动画速度
+        ui->stackedWidget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
+    });
 }
 
 /**

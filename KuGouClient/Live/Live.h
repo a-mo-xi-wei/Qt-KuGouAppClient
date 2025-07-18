@@ -13,6 +13,7 @@
 #include "LiveMusicPartWidget/LiveMusicPartWidget.h"
 #include "LiveBigLeftWidget/LiveBigLeftWidget.h"
 
+class RefreshMask;
 /**
  * @class QScrollBar
  * @brief 滚动条控件类
@@ -163,7 +164,7 @@ private:
     std::unique_ptr<LiveBigLeftWidget>    m_appearanceWidget; ///< 颜值控件
     std::unique_ptr<LiveCommonPartWidget> m_danceWidget;     ///< 舞蹈控件
     std::unique_ptr<LiveBigLeftWidget>    m_gameWidget;      ///< 游戏控件
-    QScrollBar                      *m_vScrollBar;           ///< 垂直滚动条
+    std::unique_ptr<RefreshMask>                  m_refreshMask;                 ///< 刷新遮罩
 };
 
 #endif // LIVE_H

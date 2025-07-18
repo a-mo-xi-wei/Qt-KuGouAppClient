@@ -14,6 +14,7 @@
 #include <QEasingCurve>
 #include <QFile>
 #include <QMouseEvent>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -39,7 +40,7 @@ PurchasedMusic::PurchasedMusic(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    initUi();
+    QTimer::singleShot(100,this,[this] {initUi();});
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
 }
@@ -93,14 +94,15 @@ QWidget* PurchasedMusic::createPage(int id)
  * @brief 初始化界面
  * @note 初始化索引标签、堆栈窗口和默认付费单曲界面
  */
-void PurchasedMusic::initUi()
-{
-    initIndexLab();
-    initStackedWidget();
-    ui->paid_single_pushButton->click();
-    ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
-    ui->stackedWidget->setSpeed(400);
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+void PurchasedMusic::initUi() {
+    QTimer::singleShot(100,this,[this]{initIndexLab();});
+    QTimer::singleShot(200,this,[this]{
+        initStackedWidget();
+        ui->paid_single_pushButton->click();
+        ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+        ui->stackedWidget->setSpeed(400);
+        ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+    });
 }
 
 /**

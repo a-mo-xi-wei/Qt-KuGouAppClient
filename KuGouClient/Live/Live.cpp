@@ -11,6 +11,7 @@
 #include "MyScrollArea.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "RefreshMask.h"
 
 #include <QButtonGroup>
 #include <QDir>
@@ -19,6 +20,7 @@
 #include <QPainterPath>
 #include <QRandomGenerator>
 #include <QScrollBar>
+#include <QTimer>
 #include <QWheelEvent>
 
 /** @brief 获取当前文件所在目录宏 */
@@ -51,6 +53,7 @@ Live::Live(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Live)
     , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
     ui->setupUi(this);                                   ///< 初始化 UI
     QFile file(GET_CURRENT_DIR + QStringLiteral("/live.css")); ///< 加载样式表
@@ -64,8 +67,8 @@ Live::Live(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
-    initButtonGroup();                                   ///< 初始化按钮组
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this]{initButtonGroup();});///< 初始化按钮组
+    QTimer::singleShot(200,this,[this]{initUi();});
 }
 
 /**
@@ -99,53 +102,70 @@ void Live::initButtonGroup() const
  */
 void Live::initUi()
 {
-    initPopularWidget();                                 ///< 初始化热门控件
-    initAttentionWidget();                               ///< 初始化关注控件
-    initRecommendWidget();                               ///< 初始化推荐控件
-    initMusicWidget();                                   ///< 初始化音乐控件
-    initNewStarWidget();                                 ///< 初始化新秀控件
-    initAppearanceWidget();                              ///< 初始化颜值控件
-    initDanceWidget();                                   ///< 初始化舞蹈控件
-    initGameWidget();                                    ///< 初始化游戏控件
-    this->m_vScrollBar = ui->scrollArea->verticalScrollBar(); ///< 获取垂直滚动条
-    auto connectButton1 = [this](const QPushButton *button, QWidget *targetWidget) {
-        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
-            ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y()); ///< 平滑滚动到目标位置
+    m_refreshMask->keepLoading();
+    QTimer::singleShot(0, this, [this]() {
+        initPopularWidget();
+        QTimer::singleShot(0, this, [this]() {
+            initAttentionWidget();
+            QTimer::singleShot(0, this, [this]() {
+                initRecommendWidget();
+                QTimer::singleShot(0, this, [this]() {
+                    initMusicWidget();
+                    QTimer::singleShot(0, this, [this]() {
+                        initNewStarWidget();
+                        QTimer::singleShot(0, this, [this]() {
+                            initAppearanceWidget();
+                            QTimer::singleShot(0, this, [this]() {
+                                initDanceWidget();
+                                QTimer::singleShot(0, this, [this]() {
+                                    initGameWidget();
+                                    // 后续代码
+                                    auto vScrollBar = ui->scrollArea->verticalScrollBar();
+                                    auto connectButton1 = [this](const QPushButton *button, QWidget *targetWidget) {
+                                        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+                                            ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y());
+                                        });
+                                    };
+                                    auto connectButton2 = [this](const QPushButton *button, QWidget *targetWidget) {
+                                        if (!targetWidget) {
+                                            qWarning() << "targetWidget is null for button" << button->objectName();
+                                            return;
+                                        }
+                                        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+                                            ui->scrollArea->smoothScrollTo(targetWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y());
+                                        });
+                                    };
+                                    connectButton1(ui->popular_pushButton, ui->popular_widget);
+                                    connectButton1(ui->attention_pushButton, ui->attention_widget);
+                                    connectButton2(ui->recommend_pushButton, this->m_recommendWidget.get());
+                                    connectButton2(ui->music_pushButton, this->m_musicWidget.get());
+                                    connectButton2(ui->new_star_pushButton, this->m_newStarWidget.get());
+                                    connectButton2(ui->appearance_pushButton, this->m_appearanceWidget.get());
+                                    connectButton2(ui->dance_pushButton, this->m_danceWidget.get());
+                                    connectButton2(ui->barrage_game_pushButton, this->m_gameWidget.get());
+                                    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue);
+                                    connect(vScrollBar, &QScrollBar::valueChanged, this, &Live::handleWheelValue);
+                                    auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout());
+                                    if (!lay) {
+                                        qWarning() << "布局不存在";
+                                        STREAM_WARN() << "布局不存在";
+                                        return;
+                                    }
+                                    lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get());
+                                    lay->insertWidget(lay->count() - 1, this->m_musicWidget.get());
+                                    lay->insertWidget(lay->count() - 1, this->m_newStarWidget.get());
+                                    lay->insertWidget(lay->count() - 1, this->m_appearanceWidget.get());
+                                    lay->insertWidget(lay->count() - 1, this->m_danceWidget.get());
+                                    lay->insertWidget(lay->count() - 1, this->m_gameWidget.get());
+                                    m_refreshMask->hideLoading("");
+                                });
+                            });
+                        });
+                    });
+                });
+            });
         });
-    };
-    auto connectButton2 = [this](const QPushButton *button, QWidget *targetWidget) {
-        if (!targetWidget)
-        {
-            qWarning() << "targetWidget is null for button" << button->objectName();
-            return;                                      ///< 检查空指针
-        }
-        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
-            ui->scrollArea->smoothScrollTo(targetWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y()); ///< 平滑滚动到目标位置
-        });
-    };
-    connectButton1(ui->popular_pushButton, ui->popular_widget); ///< 连接热门按钮
-    connectButton1(ui->attention_pushButton, ui->attention_widget); ///< 连接关注按钮
-    connectButton2(ui->recommend_pushButton, this->m_recommendWidget.get()); ///< 连接推荐按钮
-    connectButton2(ui->music_pushButton, this->m_musicWidget.get()); ///< 连接音乐按钮
-    connectButton2(ui->new_star_pushButton, this->m_newStarWidget.get()); ///< 连接新秀按钮
-    connectButton2(ui->appearance_pushButton, this->m_appearanceWidget.get()); ///< 连接颜值按钮
-    connectButton2(ui->dance_pushButton, this->m_danceWidget.get()); ///< 连接舞蹈按钮
-    connectButton2(ui->barrage_game_pushButton, this->m_gameWidget.get()); ///< 连接弹幕游戏按钮
-    connect(ui->scrollArea, &MyScrollArea::wheelValue, this, &Live::handleWheelValue); ///< 连接滚动区域信号
-    connect(this->m_vScrollBar, &QScrollBar::valueChanged, this, &Live::handleWheelValue); ///< 连接滚动条信号
-    auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取布局
-    if (!lay)
-    {
-        qWarning() << "布局不存在";
-        STREAM_WARN() << "布局不存在";                   ///< 记录警告日志
-        return;
-    }
-    lay->insertWidget(lay->count() - 1, this->m_recommendWidget.get()); ///< 添加推荐控件
-    lay->insertWidget(lay->count() - 1, this->m_musicWidget.get()); ///< 添加音乐控件
-    lay->insertWidget(lay->count() - 1, this->m_newStarWidget.get()); ///< 添加新秀控件
-    lay->insertWidget(lay->count() - 1, this->m_appearanceWidget.get()); ///< 添加颜值控件
-    lay->insertWidget(lay->count() - 1, this->m_danceWidget.get()); ///< 添加舞蹈控件
-    lay->insertWidget(lay->count() - 1, this->m_gameWidget.get()); ///< 添加游戏控件
+    });
 }
 
 /**
@@ -342,44 +362,34 @@ void Live::initGameWidget()
  */
 void Live::handleWheelValue(const int &value)
 {
-    if (value >= ui->popular_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-        value < ui->attention_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->popular_pushButton->setChecked(true);        ///< 选中热门按钮
+    const QVector<QPair<QWidget*, QPushButton*>> sectionMappings = {
+        {ui->popular_widget, ui->popular_pushButton},
+        {ui->attention_widget, ui->attention_pushButton},
+        {this->m_recommendWidget.get(), ui->recommend_pushButton},
+        {this->m_musicWidget.get(), ui->music_pushButton},
+        {this->m_newStarWidget.get(), ui->new_star_pushButton},
+        {this->m_appearanceWidget.get(), ui->appearance_pushButton},
+        {this->m_danceWidget.get(), ui->dance_pushButton},
+        {this->m_gameWidget.get(), ui->barrage_game_pushButton}
+    };
+
+    // 重置所有按钮的选中状态
+    for (const auto &mapping : sectionMappings) {
+        mapping.second->setChecked(false);
     }
-    else if (value >= ui->attention_widget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->attention_pushButton->setChecked(true);      ///< 选中关注按钮
-    }
-    else if (value >= this->m_recommendWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_musicWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->recommend_pushButton->setChecked(true);      ///< 选中推荐按钮
-    }
-    else if (value >= this->m_musicWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_newStarWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->music_pushButton->setChecked(true);          ///< 选中音乐按钮
-    }
-    else if (value >= this->m_newStarWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_appearanceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->new_star_pushButton->setChecked(true);       ///< 选中新秀按钮
-    }
-    else if (value >= this->m_appearanceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_danceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->appearance_pushButton->setChecked(true);     ///< 选中颜值按钮
-    }
-    else if (value >= this->m_danceWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() &&
-             value < this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->dance_pushButton->setChecked(true);          ///< 选中舞蹈按钮
-    }
-    else if (value >= this->m_gameWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y())
-    {
-        ui->barrage_game_pushButton->setChecked(true);   ///< 选中弹幕游戏按钮
+
+    // 查找当前滚动位置对应的按钮
+    for (int i = 0; i < sectionMappings.size(); ++i) {
+        QWidget* currentWidget = sectionMappings[i].first;
+        QWidget* nextWidget = (i + 1 < sectionMappings.size()) ? sectionMappings[i + 1].first : nullptr;
+
+        int currentY = currentWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y();
+        int nextY = nextWidget ? nextWidget->mapTo(ui->scrollArea->widget(), QPoint(0, 0)).y() : INT_MAX;
+
+        if (value >= currentY && value < nextY) {
+            sectionMappings[i].second->setChecked(true);
+            break;
+        }
     }
 }
 
@@ -403,6 +413,8 @@ void Live::resizeEvent(QResizeEvent *event)
     QWidget::resizeEvent(event);                         ///< 调用父类事件
     ui->popular_widget->setFixedHeight(ui->popular_widget->width() * 2 / 5); ///< 设置热门控件高度
     ui->table_widget->setFixedWidth(this->window()->width() - 50); ///< 设置表格宽度
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }
 
 /**
@@ -415,4 +427,6 @@ void Live::showEvent(QShowEvent *event)
     QWidget::showEvent(event);                           ///< 调用父类事件
     ui->popular_widget->setFixedHeight(ui->popular_widget->width() * 2 / 5); ///< 设置热门控件高度
     ui->table_widget->setFixedWidth(this->window()->width() - 50); ///< 设置表格宽度
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }

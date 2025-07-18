@@ -11,6 +11,7 @@
 
 #include "MusicItemWidget.h"
 
+class RefreshMask;
 class QLabel;
 
 /**
@@ -97,8 +98,14 @@ private slots:
      */
     void on_batch_toolButton_clicked();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
+    void showEvent(QShowEvent *event) override;
+
 private:
-    Ui::DailyRecommend *ui;             ///< UI 指针
+    Ui::DailyRecommend *ui;
+    std::unique_ptr<RefreshMask>   m_refreshMask; ///< 刷新遮罩
 };
 
 #endif // DAILYRECOMMEND_H

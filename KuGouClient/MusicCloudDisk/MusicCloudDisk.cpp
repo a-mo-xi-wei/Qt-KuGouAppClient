@@ -14,6 +14,7 @@
 #include <QButtonGroup>
 #include <QFile>
 #include <QMouseEvent>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -39,7 +40,7 @@ MusicCloudDisk::MusicCloudDisk(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    initUi();
+    QTimer::singleShot(100,this,[this] {initUi();});
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
 }
@@ -88,18 +89,20 @@ QWidget* MusicCloudDisk::createPage(int id)
  */
 void MusicCloudDisk::initUi()
 {
-    initIndexLab();
-    ui->new_add_toolButton->setIconSize(QSize(10, 10));
-    ui->new_add_toolButton->setIcon(QIcon(":/MenuIcon/Res/menuIcon/right-black.svg"));
-    ui->new_add_toolButton->setEnterIcon(QIcon(":/MenuIcon/Res/menuIcon/right-blue.svg"));
-    ui->new_add_toolButton->setLeaveIcon(QIcon(":/MenuIcon/Res/menuIcon/right-black.svg"));
-    ui->new_add_toolButton->setApproach(true);
-    ui->new_add_toolButton->setHoverFontColor(QColor("#3AA1FF"));
-    initStackedWidget();
-    ui->uploaded_song_pushButton->click();
-    ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
-    ui->stackedWidget->setSpeed(400);
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+    QTimer::singleShot(100,this,[this]{initIndexLab();});
+    QTimer::singleShot(200,this,[this] {
+        initStackedWidget();
+        ui->new_add_toolButton->setIconSize(QSize(10, 10));
+        ui->new_add_toolButton->setIcon(QIcon(":/MenuIcon/Res/menuIcon/right-black.svg"));
+        ui->new_add_toolButton->setEnterIcon(QIcon(":/MenuIcon/Res/menuIcon/right-blue.svg"));
+        ui->new_add_toolButton->setLeaveIcon(QIcon(":/MenuIcon/Res/menuIcon/right-black.svg"));
+        ui->new_add_toolButton->setApproach(true);
+        ui->new_add_toolButton->setHoverFontColor(QColor("#3AA1FF"));
+        ui->uploaded_song_pushButton->click();
+        ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+        ui->stackedWidget->setSpeed(400);
+        ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+   });
 }
 
 /**

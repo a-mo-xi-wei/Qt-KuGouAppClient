@@ -13,6 +13,8 @@
 #include "MyMenu.h"
 #include "logger.hpp"
 #include "ElaMessageBar.h"
+#include "Async.h"
+#include "RefreshMask.h"
 
 #include <QFile>
 #include <QJsonArray>
@@ -20,8 +22,7 @@
 #include <QJsonObject>
 #include <random>
 #include <chrono>
-
-#include "Async.h"
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -33,6 +34,7 @@
 SongList::SongList(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::SongList)
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
     ui->setupUi(this);                                   ///< 设置 UI 布局
     QFile file(GET_CURRENT_DIR + QStringLiteral("/list.css")); ///< 加载样式表
@@ -48,7 +50,7 @@ SongList::SongList(QWidget *parent)
         return;
     }
 
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this]{initUi();}); ///< 初始化界面
 
     auto menu = new MyMenu(MyMenu::MenuKind::ListOption, this); ///< 创建选项菜单
     m_menu = menu->getMenu<ListOptionMenu>();            ///< 获取菜单
@@ -71,6 +73,7 @@ SongList::~SongList()
  */
 void SongList::initUi()
 {
+    this->m_refreshMask->keepLoading();
     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/desc.json")); ///< 加载描述文件
         if (!file.open(QIODevice::ReadOnly))
@@ -115,26 +118,27 @@ void SongList::initUi()
             block->setDescText(this->m_descVector[i]);       ///< 设置描述
             lay->addWidget(block);                           ///< 添加到布局
         }
+        ui->all_toolButton->setMouseTracking(true);          ///< 启用鼠标跟踪
+        ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
+        ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
+        ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
+        ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
+        ui->all_toolButton->setApproach(true);               ///< 启用接近效果
+        ui->all_toolButton->setChangeSize(true);             ///< 启用动态大小
+        ui->all_toolButton->setEnterIconSize(QSize(10, 10)); ///< 设置悬停图标大小
+        ui->all_toolButton->setLeaveIconSize(QSize(10, 10)); ///< 设置离开图标大小
+
+        QList<QToolButton *> buttons = ui->widget->findChildren<QToolButton *>(); ///< 获取所有工具按钮
+        for (const auto &button : buttons)
+        {
+            connect(button, &QToolButton::clicked, this, [this, button] {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                                           QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
+            });
+        }
+        this->m_refreshMask->hideLoading("");
     });
 
-    ui->all_toolButton->setMouseTracking(true);          ///< 启用鼠标跟踪
-    ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
-    ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
-    ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
-    ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
-    ui->all_toolButton->setApproach(true);               ///< 启用接近效果
-    ui->all_toolButton->setChangeSize(true);             ///< 启用动态大小
-    ui->all_toolButton->setEnterIconSize(QSize(10, 10)); ///< 设置悬停图标大小
-    ui->all_toolButton->setLeaveIconSize(QSize(10, 10)); ///< 设置离开图标大小
-
-    QList<QToolButton *> buttons = ui->widget->findChildren<QToolButton *>(); ///< 获取所有工具按钮
-    for (const auto &button : buttons)
-    {
-        connect(button, &QToolButton::clicked, this, [this, button] {
-            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                                       QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
-        });
-    }
 }
 
 /**
@@ -186,4 +190,16 @@ void SongList::onMenuFuncClicked(const QString &funcName)
 {
     ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                                QString("%1 功能未实现 敬请期待").arg(funcName), 1000, this->window()); ///< 显示未实现提示
+}
+
+void SongList::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
+}
+
+void SongList::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }
