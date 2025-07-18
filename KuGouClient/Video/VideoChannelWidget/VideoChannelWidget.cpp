@@ -50,9 +50,11 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
             return;
         }
     }
-    initButtonGroup();                                            ///< 初始化按钮组
-    initTotalWidget();                                            ///< 初始化分类部件
-    initUi();                                                     ///< 初始化界面
+    QTimer::singleShot(100,this,[this]{initButtonGroup();}); ///< 初始化按钮组
+    QTimer::singleShot(200,this,[this] {
+        initTotalWidget();    ///< 初始化分类部件
+        initUi();             ///< 初始化界面
+    });
 }
 
 /**

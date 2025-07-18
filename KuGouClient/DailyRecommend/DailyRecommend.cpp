@@ -12,6 +12,7 @@
 #include "logger.hpp"
 #include "ElaMessageBar.h"
 #include "ElaToolTip.h"
+#include "RefreshMask.h"
 
 #include <QFile>
 #include <QDateTime>
@@ -27,6 +28,7 @@
 DailyRecommend::DailyRecommend(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DailyRecommend)
+    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
 {
     ui->setupUi(this);                                   ///< 初始化 UI
     {
@@ -42,7 +44,7 @@ DailyRecommend::DailyRecommend(QWidget *parent)
             return;
         }
     }
-    initUi();                                            ///< 初始化界面
+    QTimer::singleShot(100,this,[this]{initUi();});
 }
 
 /**
@@ -59,8 +61,7 @@ DailyRecommend::~DailyRecommend()
  */
 void DailyRecommend::initUi()
 {
-    initDateLab();                                       ///< 初始化日期标签
-
+    this->m_refreshMask->keepLoading();
     ui->history_recommend_toolButton->setIconSize(QSize(10, 10)); ///< 设置历史推荐按钮图标大小
     ui->history_recommend_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
     ui->history_recommend_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
@@ -91,7 +92,8 @@ void DailyRecommend::initUi()
     ui->count_label->setText(QStringLiteral("30"));       ///< 设置歌曲数量标签
     ui->ico_label->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg")).scaled(18, 18)); ///< 设置图标标签
 
-    QTimer::singleShot(100, this, [this]{initTableWidget();}); ///< 初始化歌曲列表控件
+    QTimer::singleShot(100, this, [this]{initDateLab();});///< 初始化日期标签
+    QTimer::singleShot(200, this, [this]{initTableWidget();this->m_refreshMask->hideLoading("");}); ///< 初始化歌曲列表控件
 }
 
 /**
@@ -128,23 +130,41 @@ void DailyRecommend::initTableWidget()
     const auto layout = dynamic_cast<QVBoxLayout *>(ui->scrollAreaWidgetContents->layout()); ///< 获取垂直布局
     if (!layout)
     {
-        return;                                          ///< 布局不存在时返回
+        qWarning() << "布局不存在";
+        return; ///< 布局不存在时返回
     }
-    for (int i = 0; i < 30; i++)
-    {
-        SongInfor tempInformation;                       ///< 临时歌曲信息
-        tempInformation.index = i;                       ///< 设置索引
-        tempInformation.cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(i % 10 + 1)); ///< 设置封面
-        tempInformation.songName = "网络歌曲";           ///< 设置歌曲名称
-        tempInformation.singer = "网络歌手";             ///< 设置歌手
-        tempInformation.duration = "未知时长";           ///< 设置时长
-        tempInformation.mediaPath = "未知路径";          ///< 设置媒体路径
+
+    const int totalItems = 30; ///< 总共创建30个音乐项
+    auto currentIndex = std::make_shared<int>(0); ///< 当前处理的索引
+    QTimer *timer = new QTimer(this);
+    timer->setInterval(50); ///< 每50ms处理一个，防止卡顿
+
+    connect(timer, &QTimer::timeout, this, [=]() mutable {
+        if (*currentIndex >= totalItems)
+        {
+            timer->stop();
+            timer->deleteLater();
+            return; ///< 处理完毕，停止定时器
+        }
+
+        SongInfor tempInformation; ///< 临时歌曲信息
+        tempInformation.index = *currentIndex; ///< 设置索引
+        tempInformation.cover = QPixmap(QString(":/Res/tablisticon/pix%1.png").arg(*currentIndex % 10 + 1)); ///< 设置封面
+        tempInformation.songName = "网络歌曲"; ///< 设置歌曲名称
+        tempInformation.singer = "网络歌手"; ///< 设置歌手
+        tempInformation.duration = "未知时长"; ///< 设置时长
+        tempInformation.mediaPath = "未知路径"; ///< 设置媒体路径
         tempInformation.addTime = QDateTime::currentDateTime(); ///< 设置添加时间
-        tempInformation.playCount = 0;                   ///< 设置播放次数
-        const auto item = new MusicItemWidget(tempInformation, this); ///< 创建音乐项控件
-        initMusicItem(item);                             ///< 初始化音乐项
-        layout->insertWidget(layout->count(), item);     ///< 添加到布局
-    }
+        tempInformation.playCount = 0; ///< 设置播放次数
+
+        auto item = new MusicItemWidget(tempInformation, this); ///< 创建音乐项控件
+        initMusicItem(item); ///< 初始化音乐项
+        layout->insertWidget(layout->count(), item); ///< 添加到布局
+
+        ++(*currentIndex); ///< 递增索引
+    });
+
+    timer->start(); ///< 启动定时器
 }
 
 /**
@@ -216,4 +236,12 @@ void DailyRecommend::on_batch_toolButton_clicked()
 {
     ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                                "批量操作 功能未实现 敬请期待", 1000, this->window()); ///< 显示提示
+}
+
+void DailyRecommend::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+}
+
+void DailyRecommend::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event);
 }

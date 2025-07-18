@@ -13,6 +13,7 @@
 #include <QWidget>
 #include <vector>
 
+class RefreshMask;
 /**
  * @namespace Ui
  * @brief UI 命名空间，包含歌曲列表界面的 UI 类
@@ -67,12 +68,12 @@ private:
      */
     void shuffleVector();
 
-    private slots:
-        /**
-         * @brief 全部按钮点击槽函数
-         * @note 显示菜单并切换图标
-         */
-        void on_all_toolButton_clicked();
+private slots:
+    /**
+     * @brief 全部按钮点击槽函数
+     * @note 显示菜单并切换图标
+     */
+    void on_all_toolButton_clicked();
 
     /**
      * @brief 菜单功能点击槽函数
@@ -81,11 +82,17 @@ private:
      */
     void onMenuFuncClicked(const QString &funcName);
 
+protected:
+    void showEvent(QShowEvent *event) override;
+
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::SongList *ui;                   ///< UI 界面指针
     QList<QString> m_coverVector; ///< 封面图片列表
     QList<QString> m_descVector;  ///< 描述文本列表
     ListOptionMenu *m_menu{};           ///< 选项菜单
+    std::unique_ptr<RefreshMask>                  m_refreshMask;                 ///< 刷新遮罩
 };
 
 #endif // SONGLIST_H

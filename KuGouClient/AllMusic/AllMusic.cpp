@@ -18,6 +18,7 @@
 #include <QMouseEvent>
 #include <QGuiApplication>
 #include <QScreen>
+#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -47,7 +48,8 @@ AllMusic::AllMusic(QWidget *parent)
 
     auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
     m_sortOptMenu = menu->getMenu<SortOptionMenu>();
-    initUi();
+
+    QTimer::singleShot(100,this,[this] {initUi();});
 
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
@@ -170,9 +172,6 @@ void AllMusic::initUi()
         all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
     });
 
-    initIndexLab();
-    initStackedWidget();
-
     ui->all_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg")));
     ui->all_download_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/download-gray.svg")));
     ui->all_download_toolButton->installEventFilter(this);
@@ -199,10 +198,14 @@ void AllMusic::initUi()
         searchButton->installEventFilter(this);
     }
 
-    ui->all_pushButton->click();
-    ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
-    ui->stackedWidget->setSpeed(400);
-    ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+    QTimer::singleShot(100,this,[this]{initIndexLab();});
+    QTimer::singleShot(200,this,[this] {
+        initStackedWidget();
+        ui->all_pushButton->click();
+        ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+        ui->stackedWidget->setSpeed(400);
+        ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+    });
 }
 
 /**

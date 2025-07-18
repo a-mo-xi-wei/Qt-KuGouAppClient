@@ -291,6 +291,12 @@ void Channel::showEvent(QShowEvent *event) {
     m_refreshMask->raise();  // 确保遮罩在最上层
 }
 
+void Channel::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+    m_refreshMask->setGeometry(rect());
+    m_refreshMask->raise();  // 确保遮罩在最上层
+}
+
 /**
  * @brief 处理滚动条值变化
  * @param value 滚动条值
