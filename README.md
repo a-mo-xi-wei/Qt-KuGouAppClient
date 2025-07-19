@@ -58,7 +58,7 @@ Based on Qt Widget + UiTools module + Custom control + QSS + QsLog + Custom **Sp
 
 集成 **QsLog** 和自定义 **Spdlog** 实现健壮的日志系统，使用 JWT 确保安全的用户认证。采用**SQLite**存储音乐元数据（标题/专辑/路径），使用Qt SQL模块实现播放记录管理
 
-通过 **QNetworkAccessManager** 实现在线音乐流媒体播放，结合 QtConcurrent 和 QFutureWatcher 实现非阻塞线程任务调度，基于 **QThreadPool** 构建动态弹性线程池，通过 QRunnable 封装任务单元，实现线程资源的自动回收。
+通过 **QNetworkAccessManager** 实现在线音乐流媒体播放，结合 QtConcurrent 和 QFutureWatcher 实现非阻塞线程串行任务调度，基于 **QThreadPool** 构建动态弹性线程池，通过 QRunnable 封装任务单元，实现线程资源的自动回收。
 
 项目难点：播放列表、搜索功能、菜单功能，歌词显示、播放控制等**播放器核心功能**设计问题，自定义控件和事件响应，遮罩绘图，控件拉伸，**特效绘制**，
 复杂业务逻辑问题，登录注册、**Ai对话**、**数据库连接池**设计、**异步非阻塞式线程**设计、**日志系统**设计、**网络模块**设计、**开源库**（如 FFmpeg 和 SDL）的集成与优化，以提升媒体播放能力。
