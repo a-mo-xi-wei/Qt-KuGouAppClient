@@ -78,7 +78,6 @@ QWidget* Search::createPage(int id)
                 m_recommendWidget = std::make_unique<QWidget>(ui->stackedWidget);
                 lay = new MyFlowLayout(m_recommendWidget.get(), 10, -1, 2);
                 m_recommendWidget->setLayout(lay);
-                m_recommendWidget->setFixedHeight(1000);
                 itemCount = 54;
             }
             page = m_recommendWidget.get();
@@ -89,7 +88,6 @@ QWidget* Search::createPage(int id)
                 lay = new ElaFlowLayout(m_rankWidget.get(), 5, 8, 6);
                 static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
                 m_rankWidget->setLayout(lay);
-                m_rankWidget->setFixedHeight(500);
                 itemCount = 19;
             }
             page = m_rankWidget.get();
@@ -100,7 +98,6 @@ QWidget* Search::createPage(int id)
                 lay = new ElaFlowLayout(m_specialWidget.get(), 5, 8, 6);
                 static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
                 m_specialWidget->setLayout(lay);
-                m_specialWidget->setFixedHeight(700);
                 itemCount = 27;
             }
             page = m_specialWidget.get();
@@ -111,7 +108,6 @@ QWidget* Search::createPage(int id)
                 lay = new ElaFlowLayout(m_channelWidget.get(), 5, 8, 6);
                 static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
                 m_channelWidget->setLayout(lay);
-                m_channelWidget->setFixedHeight(200);
                 m_channelWidget->setObjectName("channelWidget");
                 itemCount = 7;
             }
@@ -217,7 +213,6 @@ void Search::initStackedWidget()
 
     m_pages[0]->layout()->addWidget(createPage(0));
     ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->setFixedHeight(m_recommendWidget->height());
     m_currentBtn = ui->recommend_pushButton;
 
     connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
@@ -263,7 +258,6 @@ void Search::initStackedWidget()
             qWarning() << "[WARNING] Failed to create page at index:" << id;
         } else {
             layout->addWidget(realPage);
-            ui->stackedWidget->setFixedHeight(realPage->height());
         }
 
         ui->stackedWidget->slideInIdx(id);
