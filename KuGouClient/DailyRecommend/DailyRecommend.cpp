@@ -93,7 +93,7 @@ void DailyRecommend::initUi()
     ui->ico_label->setPixmap(QPixmap(QStringLiteral(":/TabIcon/Res/tabIcon/yellow-diamond.svg")).scaled(18, 18)); ///< 设置图标标签
 
     QTimer::singleShot(100, this, [this]{initDateLab();});///< 初始化日期标签
-    QTimer::singleShot(200, this, [this]{initTableWidget();this->m_refreshMask->hideLoading("");}); ///< 初始化歌曲列表控件
+    QTimer::singleShot(200, this, [this]{initTableWidget();}); ///< 初始化歌曲列表控件
 }
 
 /**
@@ -137,11 +137,13 @@ void DailyRecommend::initTableWidget()
     const int totalItems = 30; ///< 总共创建30个音乐项
     auto currentIndex = std::make_shared<int>(0); ///< 当前处理的索引
     QTimer *timer = new QTimer(this);
-    timer->setInterval(50); ///< 每50ms处理一个，防止卡顿
+    timer->setInterval(10); ///< 每10ms处理一个，防止卡顿
 
     connect(timer, &QTimer::timeout, this, [=]() mutable {
         if (*currentIndex >= totalItems)
         {
+            this->m_refreshMask->hideLoading("");
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
             timer->stop();
             timer->deleteLater();
             return; ///< 处理完毕，停止定时器
@@ -240,8 +242,16 @@ void DailyRecommend::on_batch_toolButton_clicked()
 
 void DailyRecommend::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
+    auto r = rect();
+    r.setRight(rect().right() - 4);
+    m_refreshMask->setGeometry(r);
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }
 
 void DailyRecommend::showEvent(QShowEvent *event) {
     QWidget::showEvent(event);
+    auto r = rect();
+    r.setRight(rect().right() - 4);
+    m_refreshMask->setGeometry(r);
+    m_refreshMask->raise();  // 确保遮罩在最上层
 }

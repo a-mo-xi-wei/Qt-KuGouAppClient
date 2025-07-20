@@ -9,6 +9,8 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 
+#include <QTimer>
+
 #include "PartWidget.h"
 
 #include <QWidget>
@@ -78,6 +80,12 @@ protected:
     void showEvent(QShowEvent *event) override;
 
     void resizeEvent(QResizeEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::Channel                                  *ui;                            ///< UI 指针

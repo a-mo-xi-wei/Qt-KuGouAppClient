@@ -9,6 +9,7 @@
 #ifndef RECOMMENDFORYOU_H
 #define RECOMMENDFORYOU_H
 
+#include <QTimer>
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -54,6 +55,12 @@ private:
      * @note 添加推荐表格到布局
      */
     void initTabWidget();
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::RecommendForYou *ui; ///< UI 界面指针

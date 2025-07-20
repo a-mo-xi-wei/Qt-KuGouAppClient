@@ -252,6 +252,7 @@ void LocalDownload::initUi()
         ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
         ui->stackedWidget->setSpeed(400);                   ///< 设置动画速度
         ui->stackedWidget->setContentsMargins(0, 0, 0, 0);  ///< 设置边距
+        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
     });
 }
 

@@ -227,6 +227,8 @@ void ListenBook::initStackedWidget()
         STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
     });
 
+    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+
     ui->listen_recommend_toolButton->click();
 }
 

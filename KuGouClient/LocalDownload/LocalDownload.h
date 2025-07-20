@@ -19,6 +19,7 @@
 #include <QPointer>
 #include <array>
 #include <memory>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -154,6 +155,12 @@ private slots:
      * @note 更新本地音乐数量标签
      */
     void local_music_label_changed(const int &num);
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::LocalDownload                   *ui;                    ///< UI 指针

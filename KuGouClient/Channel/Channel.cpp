@@ -18,6 +18,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QQueue>
 #include <QScrollBar>
 #include <QTimer>
 #include <QWheelEvent>
@@ -228,50 +229,47 @@ void Channel::initUi()
             return;
         }
 
-        QTimer::singleShot(0, this, [this] {
-            loadSectionBlocks(m_recommendWidget.get(), 17, 0);
-        });
-        QTimer::singleShot(100, this, [this] {
-            loadSectionBlocks(m_djWidget.get(), 14, 17);
-        });
-        QTimer::singleShot(200, this, [this] {
-            loadSectionBlocks(m_languageWidget.get(), 17, 31);
-        });
-        QTimer::singleShot(300, this, [this] {
-            loadSectionBlocks(m_themeWidget.get(), 28, 48);
-        });
-        QTimer::singleShot(400, this, [this] {
-            loadSectionBlocks(m_sceneWidget.get(), 18, 76);
-        });
-        QTimer::singleShot(500, this, [this] {
-            loadSectionBlocks(m_moodWidget.get(), 8, 94);
-        });
-        QTimer::singleShot(600, this, [this] {
-            loadSectionBlocks(m_styleWidget.get(), 14, 102);
-        });
-        QTimer::singleShot(700, this, [this] {
-            loadSectionBlocks(m_crowdWidget.get(), 4, 116);
-        });
-        QTimer::singleShot(800, this, [this] {
-            loadSectionBlocks(m_childrenWidget.get(), 12, 120);
-        });
-        QTimer::singleShot(900, this, [this] {
-            loadSectionBlocks(m_musicalInstrumentWidget.get(), 11, 132);
-        });
-        QTimer::singleShot(1000, this, [this] {
-            loadSectionBlocks(m_labelWidget.get(), 6, 143);
-        });
-        QTimer::singleShot(1100, this, [this] {
-            loadSectionBlocks(m_varietyWidget.get(), 27, 149);
-        });
-        QTimer::singleShot(1200, this, [this] {
-            loadSectionBlocks(m_nationalCustomsWidget.get(), 6, 176);
-        });
-        QTimer::singleShot(1300, this, [this] {
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
+
+        tasks << [this] { loadSectionBlocks(m_recommendWidget.get(), 17, 0); };
+        tasks << [this] { loadSectionBlocks(m_djWidget.get(), 14, 17); };
+        tasks << [this] { loadSectionBlocks(m_languageWidget.get(), 17, 31); };
+        tasks << [this] { loadSectionBlocks(m_themeWidget.get(), 28, 48); };
+        tasks << [this] { loadSectionBlocks(m_sceneWidget.get(), 18, 76); };
+        tasks << [this] { loadSectionBlocks(m_moodWidget.get(), 8, 94); };
+        tasks << [this] { loadSectionBlocks(m_styleWidget.get(), 14, 102); };
+        tasks << [this] { loadSectionBlocks(m_crowdWidget.get(), 4, 116); };
+        tasks << [this] { loadSectionBlocks(m_childrenWidget.get(), 12, 120); };
+        tasks << [this] { loadSectionBlocks(m_musicalInstrumentWidget.get(), 11, 132); };
+        tasks << [this] { loadSectionBlocks(m_labelWidget.get(), 6, 143); };
+        tasks << [this] { loadSectionBlocks(m_varietyWidget.get(), 27, 149); };
+        tasks << [this] { loadSectionBlocks(m_nationalCustomsWidget.get(), 6, 176); };
+        tasks << [this] {
             loadSectionBlocks(m_sportsWidget.get(), 7, 182);
-            m_refreshMask->hideLoading(""); ///< 隐藏加载遮罩
-        });
+            m_refreshMask->hideLoading(""); ///< 所有加载完成后隐藏遮罩
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+        };
+
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
+        (*runner)();
+
     });
+
+
 }
 
 void Channel::loadSectionBlocks(PartWidget *section, const int &cnt, const int &sum) {

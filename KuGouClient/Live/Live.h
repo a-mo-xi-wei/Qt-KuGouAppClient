@@ -9,6 +9,8 @@
 #ifndef LIVE_H
 #define LIVE_H
 
+#include <QTimer>
+
 #include "LiveCommonPartWidget/LiveCommonPartWidget.h"
 #include "LiveMusicPartWidget/LiveMusicPartWidget.h"
 #include "LiveBigLeftWidget/LiveBigLeftWidget.h"
@@ -154,6 +156,12 @@ protected:
      * @note 调整控件尺寸
      */
     void showEvent(QShowEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::Live                        *ui;                     ///< UI 指针

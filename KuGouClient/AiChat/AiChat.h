@@ -12,6 +12,7 @@
 #include "Chat.h"
 #include <QWidget>
 #include <QElapsedTimer>
+#include <QTimer>
 
 class QtMaterialSnackbar;
 class QtMaterialFloatingActionButton;
@@ -96,6 +97,12 @@ protected:
      * @note 重写基类方法
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::AiChat *const                   ui;                     ///< UI 指针

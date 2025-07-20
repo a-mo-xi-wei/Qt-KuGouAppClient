@@ -17,6 +17,7 @@
 #include <QPointer>
 #include <memory>
 #include <array>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -74,6 +75,12 @@ private:
      * @param flag 是否启用
      */
     void enableButton(bool flag) const;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::Video *ui;                                     ///< UI 指针

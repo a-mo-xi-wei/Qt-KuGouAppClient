@@ -18,6 +18,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QPropertyAnimation>
+#include <QQueue>
 #include <QScrollBar>
 #include <QTimer>
 #include <QWheelEvent>
@@ -50,8 +51,8 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
             return;
         }
     }
-    QTimer::singleShot(100,this,[this]{initButtonGroup();}); ///< 初始化按钮组
-    QTimer::singleShot(200,this,[this] {
+    QTimer::singleShot(0,this,[this]{initButtonGroup();}); ///< 初始化按钮组
+    QTimer::singleShot(100,this,[this] {
         initTotalWidget();    ///< 初始化分类部件
         initUi();             ///< 初始化界面
     });
@@ -188,22 +189,42 @@ void VideoChannelWidget::initUi()
     });
 
     Async::onResultReady(future, this, [this](bool flag) {
-        QTimer::singleShot(0, this, [this] {loadSectionBlocks(m_popularWidget.get(),10,0);});
-        QTimer::singleShot(100, this, [this] { loadSectionBlocks(m_childrenWidget.get(),14, 10); });
-        QTimer::singleShot(200, this, [this] { loadSectionBlocks(m_themeWidget.get(), 10, 24); });
-        QTimer::singleShot(300, this, [this] { loadSectionBlocks(m_filmWidget.get(), 7, 34); });
-        QTimer::singleShot(400, this, [this] { loadSectionBlocks(m_varietyWidget.get(), 1, 41); });
-        QTimer::singleShot(500, this, [this] { loadSectionBlocks(m_ACGNWidget.get(), 6, 42); });
-        QTimer::singleShot(600, this, [this] { loadSectionBlocks(m_sceneWidget.get(), 3, 48); });
-        QTimer::singleShot(700, this, [this] { loadSectionBlocks(m_languageWidget.get(), 9, 51); });
-        QTimer::singleShot(800, this, [this] { loadSectionBlocks(m_danceWidget.get(), 3, 60); });
-        QTimer::singleShot(900, this, [this] { loadSectionBlocks(m_siteWidget.get(), 14, 63); });
-        QTimer::singleShot(1000, this, [this] {
-            loadSectionBlocks(m_singerWidget.get(), 26, 77);
-            m_refreshMask->hideLoading("");
-        });
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
 
+        tasks << [this] { loadSectionBlocks(m_popularWidget.get(), 10, 0); };
+        tasks << [this] { loadSectionBlocks(m_childrenWidget.get(), 14, 10); };
+        tasks << [this] { loadSectionBlocks(m_themeWidget.get(), 10, 24); };
+        tasks << [this] { loadSectionBlocks(m_filmWidget.get(), 7, 34); };
+        tasks << [this] { loadSectionBlocks(m_varietyWidget.get(), 1, 41); };
+        tasks << [this] { loadSectionBlocks(m_ACGNWidget.get(), 6, 42); };
+        tasks << [this] { loadSectionBlocks(m_sceneWidget.get(), 3, 48); };
+        tasks << [this] { loadSectionBlocks(m_languageWidget.get(), 9, 51); };
+        tasks << [this] { loadSectionBlocks(m_danceWidget.get(), 3, 60); };
+        tasks << [this] { loadSectionBlocks(m_siteWidget.get(), 14, 63); };
+        tasks << [this] {
+            loadSectionBlocks(m_singerWidget.get(), 26, 77);
+            m_refreshMask->hideLoading(""); // 最后一个任务执行完成后关闭加载
+        };
+
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
+
+        (*runner)();  // 启动串行调度
     });
+
 }
 
 void VideoChannelWidget::loadSectionBlocks(VideoChannelPartWidget *section, const int &cnt, const int &sum) {
