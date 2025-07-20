@@ -74,6 +74,7 @@ void TitleWidget::setEnableChange(const bool &flag)
 }
 
 void TitleWidget::setEnableTitleButton(const bool &flag) {
+    ui->max_toolButton->setEnabled(flag);
     ui->title_music_pushButton->setEnabled(flag);
     ui->title_live_pushButton->setEnabled(flag);
     ui->title_listen_book_pushButton->setEnabled(flag);

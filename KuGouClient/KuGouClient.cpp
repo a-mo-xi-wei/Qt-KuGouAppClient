@@ -229,7 +229,51 @@ void KuGouClient::onSelectedWidget(const int& id) {
     ///< 可以在此处筛选哪些界面不需要动态地创建删除
     if (id == 3 ||  id == 4) {                    ///< 已经缓存的直接显示
         m_isInitialized = true;
-        ui->stackedWidget->slideInIdx(m_currentIdx);
+        ///< 删除还是要正常进行
+        enableButton(false);
+        QWidget* placeholder = m_pages[m_currentIdx];
+        if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 4) {
+            if (!placeholder) {
+                qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+                enableButton(true);
+                return;
+            }
+            QLayout* layout = placeholder->layout();
+            if (!layout) {
+                layout = new QVBoxLayout(placeholder);
+                layout->setContentsMargins(0, 0, 0, 0);
+                layout->setSpacing(0);
+            } else {
+                while (QLayoutItem* item = layout->takeAt(0)) {
+                    if (QWidget* widget = item->widget()) {
+                        // qDebug()<<"删除旧控件";
+                        widget->deleteLater();
+                    }
+                    delete item;
+                }
+
+                switch (m_currentIdx) {
+                    case 0: m_live.reset(); break;
+                    case 1: m_listenBook.reset(); break;
+                    case 2: m_search.reset(); break;
+                        // case 3: m_recommendForYou.reset();break;
+                        // case 4: m_musicRepository.reset(); break;
+                    case 5: m_channel.reset(); break;
+                    case 6: m_video.reset(); break;
+                    case 7: m_aiChat.reset(); break;
+                    case 8: m_songList.reset(); break;
+                    case 9: m_dailyRecommend.reset(); break;
+                    case 10: m_collection.reset(); break;
+                    case 11: m_localDownload.reset();break;
+                    case 12: m_musicCloudDisk.reset(); break;
+                    case 13: m_purchasedMusic.reset(); break;
+                    case 14: m_recentlyPlayed.reset(); break;
+                    case 15: m_allMusic.reset(); break;
+                    default: break;
+                }
+            }
+        }
+        ui->stackedWidget->slideInIdx(id);
         return;
     }
     if (id == 16) {
@@ -296,6 +340,7 @@ void KuGouClient::onSelectedWidget(const int& id) {
     }
 
     ui->stackedWidget->slideInIdx(id);
+
     m_currentIdx = id;
     STREAM_INFO() << "切换到界面 ID:" << id;
 }
@@ -747,6 +792,7 @@ void KuGouClient::enableButton(const bool &flag) {
     for (auto* button : buttons) {
         button->setEnabled(flag);
     }
+
     ui->title_widget->setEnableChange(flag);
     ui->title_widget->setEnableTitleButton(flag);
 }
