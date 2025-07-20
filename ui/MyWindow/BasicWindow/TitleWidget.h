@@ -53,7 +53,8 @@ public:
         MusicCloudDisk = 12,  ///< 音乐云盘界面
         PurchasedMusic = 13,  ///< 已购音乐界面
         RecentlyPlayed = 14,  ///< 最近播放界面
-        AllMusic = 15         ///< 全部音乐界面
+        AllMusic = 15,        ///< 全部音乐界面
+        SearchResult = 16     ///< 搜索结果界面
     };
 
     /**
@@ -291,7 +292,7 @@ signals:
      * @param index 目标界面索引
      * @param slide 是否使用滑动动画
      */
-    void currentStackChange(const int &index, const bool &slide = false);
+    void currentStackChange(const int &index);
 
     /**
      * @brief 左侧菜单显示信号，控制菜单显示状态

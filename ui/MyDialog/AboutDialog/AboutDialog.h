@@ -83,7 +83,7 @@ private:
     QtMaterialDialog *const m_dialog;        ///< 对话框对象
     QWidget*                m_topWidget;     ///< 顶部控件
     QFont                   m_font;          ///< 字体对象
-    int                     m_stars = 90;    ///< Gitee Star 数量
+    int                     m_stars = 125;    ///< Gitee Star 数量
     CLibhttp                m_libHttp;       ///< HTTP 请求对象
 };
 
