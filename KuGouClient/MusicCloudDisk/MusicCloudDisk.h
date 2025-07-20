@@ -17,6 +17,7 @@
 #include <memory>
 #include <array>
 #include <QPointer>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -107,6 +108,12 @@ protected:
      * @note 处理标签点击触发按钮点击
      */
     void mousePressEvent(QMouseEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::MusicCloudDisk                  *ui;                    ///< UI 指针

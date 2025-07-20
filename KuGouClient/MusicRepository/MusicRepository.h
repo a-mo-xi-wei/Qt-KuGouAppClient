@@ -12,6 +12,7 @@
 #include <QWidget>
 #include <QPointer>
 #include <array>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -108,6 +109,12 @@ private slots:
      * @note 显示未实现提示
      */
     void on_more_pushButton3_clicked();
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     /**

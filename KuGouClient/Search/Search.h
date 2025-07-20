@@ -14,6 +14,7 @@
 #include <memory>
 #include <vector>
 #include <array>
+#include <QTimer>
 
 class QButtonGroup;
 class QPushButton;
@@ -106,6 +107,12 @@ protected:
      * @note 触发当前页面刷新
      */
     void showEvent(QShowEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::Search *ui;                              ///< UI 界面指针

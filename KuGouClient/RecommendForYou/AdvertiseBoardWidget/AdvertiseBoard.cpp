@@ -215,12 +215,9 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
 }
 
 void AdvertiseBoard::resizeEvent(QResizeEvent *ev) {
-    if (m_isResizing) return; // 避免重复缩放
-    m_isResizing = true;
     updateButtonPosition();
     setFixedHeight(ev->size().width() / m_aspectRatio);
     updateScaledPosters();
-    m_isResizing = false;
     QWidget::resizeEvent(ev);
 }
 

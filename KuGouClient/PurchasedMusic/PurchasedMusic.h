@@ -17,6 +17,7 @@
 #include <QPointer>
 #include <array>
 #include <memory>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -105,6 +106,12 @@ protected:
      * @note 点击标签切换界面
      */
     void mousePressEvent(QMouseEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::PurchasedMusic                 *ui;                 ///< UI 指针

@@ -206,6 +206,7 @@ void MyCollection::initUi()
         ui->stackedWidget->setAnimation(QEasingCurve::Type::OutQuart); ///< 设置动画曲线
         ui->stackedWidget->setSpeed(400);                  ///< 设置动画速度
         ui->stackedWidget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
+        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
     });
 }
 
@@ -218,8 +219,6 @@ void MyCollection::initIndexLab()
     QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab, ui->idx5_lab, ui->idx6_lab };
     QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3,
                                ui->guide_widget4, ui->guide_widget5, ui->guide_widget6 };
-    QPushButton* buttons[] = { ui->singleSong_pushButton, ui->songList_pushButton, ui->specialAlbum_pushButton,
-                              ui->collectVideo_pushButton, ui->singer_pushButton, ui->device_pushButton };
     QLabel* numLabels[] = { ui->singleSong_number_label, ui->songList_number_label, ui->specialAlbum_number_label,
                            ui->collectVideo_number_label, ui->singer_number_label, ui->device_number_label };
 

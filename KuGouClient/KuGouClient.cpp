@@ -26,7 +26,6 @@
 #include <QPoint>
 #include <QMouseEvent>
 #include <QButtonGroup>
-#include <QFontDatabase>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QSizeGrip>
@@ -86,8 +85,6 @@ KuGouClient::KuGouClient(MainWindow *parent)
         PRINT_INFO("PRINT_INFO : 客户端初始化（info）%s", "成功");       ///< 格式化日志
         LOG_INFO("LOG_INFO : 客户端初始化（info）{}", "成功");           ///< 模板日志
     }
-    // @note 初始化字体资源
-    initFontRes();
     ui->setupUi(this);                                             ///< 设置 UI 布局
 
     QFile file(GET_CURRENT_DIR + QStringLiteral("/kugou.css"));   ///< 加载样式表
@@ -101,11 +98,16 @@ KuGouClient::KuGouClient(MainWindow *parent)
     }
     initPlayer();                                                  ///< 初始化播放器
     initUi();                                                      ///< 初始化界面
-    
+
     setupButtonConnections(); // 初始化按钮连接
 
     // @note 动画结束，恢复按钮可交互
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
+        if (m_isInitialized) {
+            /// qDebug()<<__LINE__<<" 动画结束，初始化完成，设置按钮可交互";
+            enableButton(true);
+        }
+    });
     enableButton(true);                                            ///< 启用按钮
     ui->stackedWidget->setVerticalMode(true);                      ///< 设置堆栈窗口垂直滑动
     // @note 默认选中为你推荐页面
@@ -151,72 +153,6 @@ void KuGouClient::initPlayer() {
         // @note 未使用，保留用于调试
         // qDebug() << "pictureFound : " << picture;
     });                                                            ///< 连接图片发现信号
-}
-
-/**
- * @brief 初始化字体资源
- * @note 加载五种字体资源
- */
-void KuGouClient::initFontRes() {
-    // 加载 dialog.ttf 字体
-    auto fontId = QFontDatabase::addApplicationFont(":/Res/font/dialog.ttf"); ///< 加载对话字体
-    if (fontId == -1) {
-        // @note 未使用，保留用于调试
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";                    ///< 记录警告日志
-        return;
-    }
-    // @note 未使用，保留用于调试
-    // auto families = QFontDatabase::applicationFontFamilies(fontId);
-    // qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //AaSongLiuKaiTi
-
-    // 加载 ElaAwesome.ttf 字体
-    fontId = QFontDatabase::addApplicationFont(":/Res/font/ElaAwesome.ttf"); ///< 加载图标字体
-    if (fontId == -1) {
-        // @note 未使用，保留用于调试
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";                    ///< 记录警告日志
-        return;
-    }
-    // @note 未使用，保留用于调试
-    // families = QFontDatabase::applicationFontFamilies(fontId);
-    // qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //ElaAwesome
-
-    // 加载 qing-ning-you-yuan.ttf 字体
-    fontId = QFontDatabase::addApplicationFont(":/Res/font/qing-ning-you-yuan.ttf"); ///< 加载优圆字体
-    if (fontId == -1) {
-        // @note 未使用，保留用于调试
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";                    ///< 记录警告日志
-        return;
-    }
-    // @note 未使用，保留用于调试
-    // families = QFontDatabase::applicationFontFamilies(fontId);
-    // qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //YouYuan
-
-    // 加载 JetBrainsMonoNerdFont-Bold.ttf 字体
-    fontId = QFontDatabase::addApplicationFont(":/Res/font/JetBrainsMonoNerdFont-Bold.ttf"); ///< 加载代码字体
-    if (fontId == -1) {
-        // @note 未使用，保留用于调试
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";                    ///< 记录警告日志
-        return;
-    }
-    // @note 未使用，保留用于调试
-    // families = QFontDatabase::applicationFontFamilies(fontId);
-    // qDebug() << "Loaded font families:" << families; // 输出实际字体名称  //JetBrainsMono NF
-
-    // 加载 chinese-simplify.ttf 字体
-    fontId = QFontDatabase::addApplicationFont(":/Res/font/chinese-simplify.ttf"); ///< 加载简体中文字体
-    if (fontId == -1) {
-        // @note 未使用，保留用于调试
-        qWarning() << "字体加载失败。。。";
-        STREAM_WARN() << "字体加载失败。。。";                    ///< 记录警告日志
-        return;
-    }
-    // @note 未使用，保留用于调试
-    // auto families = QFontDatabase::applicationFontFamilies(fontId);
-    // qDebug() << "Loaded font families:" << families; // 输出实际字体名称    //dingliehuobanfont
 }
 
 /**
@@ -268,60 +204,100 @@ void KuGouClient::initUi() {
  * @note 初始化指定组件并连接跳转信号
  */
 void KuGouClient::initStackedWidget() {
-    // @note 使用模板函数初始化组件
-    {
-        // @note 未使用，用于调试以减少编译时间，但可能会有不可预料的bug
-        /*
-         * // initComponent(m_live,0);
-         * // initComponent(m_listenBook,1);
-         * // initComponent(m_search,2);
-         * initComponent(m_recommendForYou,3);
-         * initComponent(m_musicRepository,4);
-         * // initComponent(m_channel,5);
-         * // initComponent(m_video,6);
-         * // initComponent(m_aiChat,7);
-         * // initComponent(m_songList,8);
-         * // initComponent(m_dailyRecommend,9);
-         * // initComponent(m_collection,10);
-         * // initComponent(m_localDownload,11);
-         * // initComponent(m_musicCloudDisk,12);
-         * // initComponent(m_purchasedMusic,13);
-         * // initComponent(m_recentlyPlayed,14);
-         * // initComponent(m_allMusic,15);
-         */
-        initComponent(m_live,0);                               ///< 初始化直播界面
-        initComponent(m_listenBook,1);                         ///< 初始化听书界面
-        initComponent(m_search,2);                             ///< 初始化探索界面
-        initComponent(m_recommendForYou,3);                    ///< 初始化为你推荐界面
-        initComponent(m_musicRepository,4);                    ///< 初始化乐库界面
-        initComponent(m_channel,5);                            ///< 初始化频道界面
-        initComponent(m_video,6);                              ///< 初始化视频界面
-        initComponent(m_aiChat,7);                             ///< 初始化ai对话界面
-        initComponent(m_songList,8);                           ///< 初始化歌单界面
-        initComponent(m_dailyRecommend,9);                     ///< 初始化每日推荐界面
-        initComponent(m_collection,10);                        ///< 初始化收藏界面
-        initComponent(m_localDownload,11);                     ///< 初始化本地与下载界面
-        initComponent(m_musicCloudDisk,12);                    ///< 初始化音乐云盘界面
-        initComponent(m_purchasedMusic,13);                    ///< 初始化已购音乐界面
-        initComponent(m_recentlyPlayed,14);                    ///< 初始化最近播放界面
-        initComponent(m_allMusic,15);                          ///< 初始化全部音乐界面
+    m_menuBtnGroup->setParent(ui->center_menu_widget);
+    for (int i = 0; i < 17; ++i) {
+        auto* placeholder = new QWidget;
+        auto* layout = new QVBoxLayout(placeholder);
+        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setSpacing(0);
+        m_pages[i] = placeholder;
+        ui->stackedWidget->insertWidget(i, placeholder);
     }
 
-    // @note 响应相关跳转
-    connect(this->m_collection.get(), &MyCollection::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });          ///< 切换到乐库界面
-    connect(this->m_localDownload.get(), &LocalDownload::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });      ///< 切换到乐库界面
-    connect(this->m_musicCloudDisk.get(), &MusicCloudDisk::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
-    connect(this->m_purchasedMusic.get(), &PurchasedMusic::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
-    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });    ///< 切换到乐库界面
-    connect(this->m_recentlyPlayed.get(), &RecentlyPlayed::find_more_channel, [this] { ui->title_widget->onLeftMenu_channel_clicked(); });          ///< 切换到频道页面
-    connect(this->m_allMusic.get(), &AllMusic::find_more_music, [this] { ui->title_widget->onLeftMenu_musicRepository_clicked(); });                ///< 切换到乐库界面
+    ///< 默认构造下面两个界面的原因：由于图片解码后占用内存过高，导致切换时动态申请内存会造成卡顿，因此不采用懒加载
+    m_pages[3]->layout()->addWidget(createPage(3)); // Default to RecommendForYou
+    m_pages[4]->layout()->addWidget(createPage(4));
 
-    // @note 本地下载相关信号
-    connect(this->m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouClient::onPlayLocalMusic); ///< 连接播放本地音乐
-    connect(this->m_localDownload.get(), &LocalDownload::cancelLoopPlay, this, [this] {
-        if (m_isSingleCircle) ui->circle_toolButton->clicked(); ///< 取消单曲循环
-    });                                                           ///< 连接取消循环播放
-    connect(this, &KuGouClient::maxScreen, this->m_localDownload.get(), &LocalDownload::onMaxScreenHandle); ///< 连接最大化屏幕处理
+    ui->stackedWidget->setCurrentIndex(3);
+
+    /// 都被titleWidget 转发回来了，无需再次连接
+    /// connect(m_menuBtnGroup.get(), &QButtonGroup::idClicked, this,&KuGouClient::onSelectedWidget);
+}
+
+void KuGouClient::onSelectedWidget(const int& id) {
+    if (m_currentIdx == id) return;
+    ///< 可以在此处筛选哪些界面不需要动态地创建删除
+    if (id == 3 ||  id == 4) {                    ///< 已经缓存的直接显示
+        m_isInitialized = true;
+        ui->stackedWidget->slideInIdx(m_currentIdx);
+        return;
+    }
+    if (id == 16) {
+        m_isInitialized = true;
+        ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+        return;
+    }
+
+    m_refreshMask->hideLoading("");
+    m_snackbar->hide();
+    m_isInitialized = false;
+    /// qDebug()<<__LINE__ << " 设置按钮状态为禁用";
+    enableButton(false);
+    QWidget* placeholder = m_pages[m_currentIdx];
+    if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 4) {
+        if (!placeholder) {
+            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+            enableButton(true);
+            return;
+        }
+        QLayout* layout = placeholder->layout();
+        if (!layout) {
+            layout = new QVBoxLayout(placeholder);
+            layout->setContentsMargins(0, 0, 0, 0);
+            layout->setSpacing(0);
+        } else {
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                if (QWidget* widget = item->widget()) {
+                    // qDebug()<<"删除旧控件";
+                    widget->deleteLater();
+                }
+                delete item;
+            }
+
+            switch (m_currentIdx) {
+                case 0: m_live.reset(); break;
+                case 1: m_listenBook.reset(); break;
+                case 2: m_search.reset(); break;
+                // case 3: m_recommendForYou.reset();break;
+                // case 4: m_musicRepository.reset(); break;
+                case 5: m_channel.reset(); break;
+                case 6: m_video.reset(); break;
+                case 7: m_aiChat.reset(); break;
+                case 8: m_songList.reset(); break;
+                case 9: m_dailyRecommend.reset(); break;
+                case 10: m_collection.reset(); break;
+                case 11: m_localDownload.reset();break;
+                case 12: m_musicCloudDisk.reset(); break;
+                case 13: m_purchasedMusic.reset(); break;
+                case 14: m_recentlyPlayed.reset(); break;
+                case 15: m_allMusic.reset(); break;
+                default: break;
+            }
+        }
+    }
+    placeholder = m_pages[id];
+    auto layout = placeholder->layout();
+
+    QWidget* realPage = createPage(id);
+    if (!realPage) {
+        qWarning() << "[WARNING] Failed to create page at index:" << id;
+    } else {
+        layout->addWidget(realPage);
+    }
+
+    ui->stackedWidget->slideInIdx(id);
+    m_currentIdx = id;
+    STREAM_INFO() << "切换到界面 ID:" << id;
 }
 
 /**
@@ -556,7 +532,6 @@ void KuGouClient::initTitleWidget() {
     });
     // @note 响应刷新窗口
     connect(ui->title_widget, &TitleWidget::refresh, this, [this] {
-        updateSize(); ///< 更新窗口大小
         this->m_refreshMask->showLoading(); ///< 显示加载遮罩
         this->m_refreshMask->raise(); ///< 提升遮罩层级
     });
@@ -739,30 +714,21 @@ void KuGouClient::initMenu() {
     ui->recently_played_toolButton->setIcon(QIcon(QStringLiteral(":/Res/window/history.svg"))); ///< 设置最近播放图标
     ui->all_music_toolButton->setIcon(QIcon(QStringLiteral(":/Res/titlebar/menu-black.svg"))); ///< 设置全部音乐图标
     // @note 设置互斥按钮组
-    this->m_menuBtnGroup->addButton(ui->recommend_you_toolButton);      ///< 添加推荐按钮
-    this->m_menuBtnGroup->addButton(ui->music_repository_toolButton);   ///< 添加音乐库按钮
-    this->m_menuBtnGroup->addButton(ui->channel_toolButton);            ///< 添加频道按钮
-    this->m_menuBtnGroup->addButton(ui->video_toolButton);              ///< 添加视频按钮
-    this->m_menuBtnGroup->addButton(ui->live_toolButton);               ///< 添加直播按钮
-    this->m_menuBtnGroup->addButton(ui->ai_chat_toolButton);            ///< 添加 AI 聊天按钮
-    this->m_menuBtnGroup->addButton(ui->song_list_toolButton);          ///< 添加歌单按钮
-    this->m_menuBtnGroup->addButton(ui->daily_recommend_toolButton);    ///< 添加每日推荐按钮
-    this->m_menuBtnGroup->addButton(ui->my_collection_toolButton);      ///< 添加收藏按钮
-    this->m_menuBtnGroup->addButton(ui->local_download_toolButton);     ///< 添加本地下载按钮
-    this->m_menuBtnGroup->addButton(ui->music_cloud_disk_toolButton);   ///< 添加云盘按钮
-    this->m_menuBtnGroup->addButton(ui->purchased_music_toolButton);    ///< 添加已购音乐按钮
-    this->m_menuBtnGroup->addButton(ui->recently_played_toolButton);    ///< 添加最近播放按钮
-    this->m_menuBtnGroup->addButton(ui->all_music_toolButton);          ///< 添加全部音乐按钮
+    this->m_menuBtnGroup->addButton(ui->recommend_you_toolButton,3);      ///< 添加推荐按钮
+    this->m_menuBtnGroup->addButton(ui->music_repository_toolButton,4);   ///< 添加音乐库按钮
+    this->m_menuBtnGroup->addButton(ui->channel_toolButton,5);            ///< 添加频道按钮
+    this->m_menuBtnGroup->addButton(ui->video_toolButton,6);              ///< 添加视频按钮
+    this->m_menuBtnGroup->addButton(ui->live_toolButton,0);               ///< 添加直播按钮
+    this->m_menuBtnGroup->addButton(ui->ai_chat_toolButton,7);            ///< 添加 AI 聊天按钮
+    this->m_menuBtnGroup->addButton(ui->song_list_toolButton,8);          ///< 添加歌单按钮
+    this->m_menuBtnGroup->addButton(ui->daily_recommend_toolButton,9);    ///< 添加每日推荐按钮
+    this->m_menuBtnGroup->addButton(ui->my_collection_toolButton,10);      ///< 添加收藏按钮
+    this->m_menuBtnGroup->addButton(ui->local_download_toolButton,11);     ///< 添加本地下载按钮
+    this->m_menuBtnGroup->addButton(ui->music_cloud_disk_toolButton,12);   ///< 添加云盘按钮
+    this->m_menuBtnGroup->addButton(ui->purchased_music_toolButton,13);    ///< 添加已购音乐按钮
+    this->m_menuBtnGroup->addButton(ui->recently_played_toolButton,14);    ///< 添加最近播放按钮
+    this->m_menuBtnGroup->addButton(ui->all_music_toolButton,15);          ///< 添加全部音乐按钮
     this->m_menuBtnGroup->setExclusive(true);                           ///< 设置互斥
-}
-
-/**
- * @brief 更新窗口大小
- * @note 触发重绘并同步遮罩大小
- */
-void KuGouClient::updateSize() {
-    QResizeEvent resizeEvent(this->size(), this->size());         ///< 创建调整大小事件
-    QApplication::sendEvent(this, &resizeEvent);                   ///< 发送事件
 }
 
 /**
@@ -771,35 +737,207 @@ void KuGouClient::updateSize() {
  * @note 控制 14 个菜单按钮和标题栏的交互
  */
 void KuGouClient::enableButton(const bool &flag) {
-    ui->recommend_you_toolButton->setEnabled(flag);               ///< 设置推荐按钮
-    ui->music_repository_toolButton->setEnabled(flag);            ///< 设置音乐库按钮
-    ui->song_list_toolButton->setEnabled(flag);                   ///< 设置歌单按钮
-    ui->channel_toolButton->setEnabled(flag);                     ///< 设置频道按钮
-    ui->video_toolButton->setEnabled(flag);                       ///< 设置视频按钮
-    ui->live_toolButton->setEnabled(flag);                        ///< 设置直播按钮
-    ui->ai_chat_toolButton->setEnabled(flag);                     ///< 设置 AI 聊天按钮
-    ui->daily_recommend_toolButton->setEnabled(flag);             ///< 设置每日推荐按钮
-    ui->my_collection_toolButton->setEnabled(flag);               ///< 设置收藏按钮
-    ui->local_download_toolButton->setEnabled(flag);              ///< 设置本地下载按钮
-    ui->music_cloud_disk_toolButton->setEnabled(flag);            ///< 设置云盘按钮
-    ui->purchased_music_toolButton->setEnabled(flag);             ///< 设置已购音乐按钮
-    ui->recently_played_toolButton->setEnabled(flag);             ///< 设置最近播放按钮
-    ui->all_music_toolButton->setEnabled(flag);                   ///< 设置全部音乐按钮
-    ui->title_widget->setEnableChange(flag);                      ///< 设置标题栏交互
+    QToolButton* buttons[] = {
+        ui->recommend_you_toolButton, ui->music_repository_toolButton, ui->song_list_toolButton,
+        ui->channel_toolButton, ui->video_toolButton, ui->live_toolButton, ui->ai_chat_toolButton,
+        ui->daily_recommend_toolButton, ui->my_collection_toolButton, ui->local_download_toolButton,
+        ui->music_cloud_disk_toolButton, ui->purchased_music_toolButton, ui->recently_played_toolButton,
+        ui->all_music_toolButton
+    };
+    for (auto* button : buttons) {
+        button->setEnabled(flag);
+    }
+    ui->title_widget->setEnableChange(flag);
     ui->title_widget->setEnableTitleButton(flag);
+}
+
+QWidget* KuGouClient::createPage(int id) {
+    QWidget* page = nullptr;
+    switch (id) {
+        case 0: // Live
+            if (!m_live) m_live = std::make_unique<Live>(ui->stackedWidget);
+            page = m_live.get();
+            connect(m_live.get(),&Live::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 1: // ListenBook
+            if (!m_listenBook) m_listenBook = std::make_unique<ListenBook>(ui->stackedWidget);
+            page = m_listenBook.get();
+            connect(m_listenBook.get(),&ListenBook::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 2: // Search
+            if (!m_search) m_search = std::make_unique<Search>(ui->stackedWidget);
+            page = m_search.get();
+            connect(m_search.get(),&Search::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 3: // RecommendForYou
+            if (!m_recommendForYou) m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
+            page = m_recommendForYou.get();
+            connect(m_recommendForYou.get(),&RecommendForYou::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 4: // MusicRepository
+            if (!m_musicRepository) m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
+            page = m_musicRepository.get();
+            connect(m_musicRepository.get(),&MusicRepository::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 5: // Channel
+            if (!m_channel) m_channel = std::make_unique<Channel>(ui->stackedWidget);
+            page = m_channel.get();
+            connect(m_channel.get(),&Channel::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 6: // Video
+            if (!m_video) m_video = std::make_unique<Video>(ui->stackedWidget);
+            page = m_video.get();
+            connect(m_video.get(),&Video::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 7: // AiChat
+            if (!m_aiChat) m_aiChat = std::make_unique<AiChat>(ui->stackedWidget);
+            page = m_aiChat.get();
+            connect(m_aiChat.get(),&AiChat::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 8: // SongList
+            if (!m_songList) m_songList = std::make_unique<SongList>(ui->stackedWidget);
+            page = m_songList.get();
+            connect(m_songList.get(),&SongList::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 9: // DailyRecommend
+            if (!m_dailyRecommend) m_dailyRecommend = std::make_unique<DailyRecommend>(ui->stackedWidget);
+            page = m_dailyRecommend.get();
+            connect(m_dailyRecommend.get(),&DailyRecommend::initialized,this,[this] {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 10: // MyCollection
+            if (!m_collection) {
+                m_collection = std::make_unique<MyCollection>(ui->stackedWidget);
+                connect(m_collection.get(), &MyCollection::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+            }
+            page = m_collection.get();
+            connect(m_collection.get(),&MyCollection::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 11: // LocalDownload
+            if (!m_localDownload) {
+                m_localDownload = std::make_unique<LocalDownload>(ui->stackedWidget);
+                connect(m_localDownload.get(), &LocalDownload::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+                connect(m_localDownload.get(), &LocalDownload::playMusic, this, &KuGouClient::onPlayLocalMusic);
+                connect(m_localDownload.get(), &LocalDownload::cancelLoopPlay, this, [this] {
+                    if (m_isSingleCircle) ui->circle_toolButton->click();
+                });
+                connect(this, &KuGouClient::maxScreen, m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
+            }
+            page = m_localDownload.get();
+            connect(m_localDownload.get(),&LocalDownload::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 12: // MusicCloudDisk
+            if (!m_musicCloudDisk) {
+                m_musicCloudDisk = std::make_unique<MusicCloudDisk>(ui->stackedWidget);
+                connect(m_musicCloudDisk.get(), &MusicCloudDisk::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+            }
+            page = m_musicCloudDisk.get();
+            connect(m_musicCloudDisk.get(), &MusicCloudDisk::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 13: // PurchasedMusic
+            if (!m_purchasedMusic) {
+                m_purchasedMusic = std::make_unique<PurchasedMusic>(ui->stackedWidget);
+                connect(m_purchasedMusic.get(), &PurchasedMusic::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+            }
+            page = m_purchasedMusic.get();
+            connect(m_purchasedMusic.get(), &PurchasedMusic::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 14: // RecentlyPlayed
+            if (!m_recentlyPlayed) {
+                m_recentlyPlayed = std::make_unique<RecentlyPlayed>(ui->stackedWidget);
+                connect(m_recentlyPlayed.get(), &RecentlyPlayed::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+                connect(m_recentlyPlayed.get(), &RecentlyPlayed::find_more_channel, this, [this] {
+                    ui->channel_toolButton->click();
+                });
+            }
+            page = m_recentlyPlayed.get();
+            connect(m_recentlyPlayed.get(), &RecentlyPlayed::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        case 15: // AllMusic
+            if (!m_allMusic) {
+                m_allMusic = std::make_unique<AllMusic>(ui->stackedWidget);
+                connect(m_allMusic.get(), &AllMusic::find_more_music, this, [this] {
+                    ui->music_repository_toolButton->click();
+                });
+            }
+            page = m_allMusic.get();
+            connect(m_allMusic.get(), &AllMusic::initialized, this, [this]  {
+                this->m_isInitialized = true;
+                enableButton(true);
+            },Qt::QueuedConnection);
+            break;
+        default:
+            qWarning() << "[WARNING] Invalid page ID:" << id;
+            return nullptr;
+    }
+    return page;
 }
 
 // 实现文件
 void KuGouClient::setupButtonConnections()
 {
     // 建立按钮与对应函数的映射关系
-    m_buttonMap = {
-        {ui->recommend_you_toolButton,         &TitleWidget::onLeftMenu_recommend_clicked},
+    QMap<QToolButton*, void(TitleWidget::*)()> buttonMap = {
+        {ui->recommend_you_toolButton,          &TitleWidget::onLeftMenu_recommend_clicked},
         {ui->music_repository_toolButton,       &TitleWidget::onLeftMenu_musicRepository_clicked},
         {ui->channel_toolButton,                &TitleWidget::onLeftMenu_channel_clicked},
-        {ui->video_toolButton,                 &TitleWidget::onLeftMenu_video_clicked},
+        {ui->video_toolButton,                  &TitleWidget::onLeftMenu_video_clicked},
         {ui->live_toolButton,                   &TitleWidget::onLeftMenu_live_clicked},
-        {ui->ai_chat_toolButton,               &TitleWidget::onLeftMenu_ai_chat_clicked},
+        {ui->ai_chat_toolButton,                &TitleWidget::onLeftMenu_ai_chat_clicked},
         {ui->song_list_toolButton,              &TitleWidget::onLeftMenu_songList_clicked},
         {ui->daily_recommend_toolButton,        &TitleWidget::onLeftMenu_dailyRecommend_clicked},
         {ui->my_collection_toolButton,          &TitleWidget::onLeftMenu_collection_clicked},
@@ -811,7 +949,7 @@ void KuGouClient::setupButtonConnections()
     };
 
     // 统一连接所有按钮信号
-    for (auto it = m_buttonMap.begin(); it != m_buttonMap.end(); ++it) {
+    for (auto it = buttonMap.begin(); it != buttonMap.end(); ++it) {
         connect(it.key(), &QToolButton::clicked, this, [this, func = it.value()] {
             (ui->title_widget->*func)(); // 调用对应的成员函数
         });
@@ -843,41 +981,19 @@ void KuGouClient::mouseMoveEvent(QMouseEvent *event) {
 
     if (isPress) {
         if (mouse_press_region == kMousePositionMid) {
-            if (ui->title_widget->geometry().contains(this->m_pressPos)) {
-                if (this->m_isMaxScreen == true) {
-                    ///< 最大化状态下拖动
-                    this->m_startGeometry.setX(event->pos().x() - this->m_normalGeometry.width() / 2);
-                    this->m_startGeometry.setY(event->pos().y() - 20);
-                    this->m_startGeometry.setWidth(this->m_normalGeometry.width());
-                    this->m_startGeometry.setHeight(this->m_normalGeometry.height());
-                    ui->title_widget->max_toolButton()->clicked(); ///< 触发最大化按钮
+            if (ui->title_widget->geometry().contains(m_pressPos) || ui->play_widget->geometry().contains(m_pressPos)) {
+                if (m_isMaxScreen) {
+                    m_startGeometry.setX(event->pos().x() - m_normalGeometry.width() / 2);
+                    m_startGeometry.setY(event->pos().y() - (ui->title_widget->geometry().contains(m_pressPos) ? 20 : m_normalGeometry.height() - 20));
+                    m_startGeometry.setWidth(m_normalGeometry.width());
+                    m_startGeometry.setHeight(m_normalGeometry.height());
+                    ui->title_widget->max_toolButton()->clicked();
                     return;
                 }
-                move(windowsLastPs + point_offset); ///< 移动窗口
-            }
-            if (ui->play_widget->geometry().contains(this->m_pressPos)) {
-                if (this->m_isMaxScreen == true) {
-                    ///< 最大化状态下拖动
-                    this->m_startGeometry.setX(event->pos().x() - this->m_normalGeometry.width() / 2);
-                    this->m_startGeometry.setY(event->pos().y() - this->m_normalGeometry.height() + 20);
-                    this->m_startGeometry.setWidth(this->m_normalGeometry.width());
-                    this->m_startGeometry.setHeight(this->m_normalGeometry.height());
-                    ui->title_widget->max_toolButton()->clicked(); ///< 触发最大化按钮
-                    return;
-                }
-                move(windowsLastPs + point_offset); ///< 移动窗口
+                move(windowsLastPs + point_offset);
             }
         }
     }
-}
-
-/**
- * @brief 绘制事件
- * @param ev 绘制事件
- * @note 默认实现
- */
-void KuGouClient::paintEvent(QPaintEvent *ev) {
-    MainWindow::paintEvent(ev); ///< 调用父类处理
 }
 
 /**
@@ -887,11 +1003,7 @@ void KuGouClient::paintEvent(QPaintEvent *ev) {
  */
 void KuGouClient::resizeEvent(QResizeEvent *event) {
     MainWindow::resizeEvent(event); ///< 调用父类处理
-    if (this->geometry() != this->screen()->availableGeometry()) {
-        this->m_isMaxScreen = false; ///< 非全屏状态
-    } else {
-        this->m_isMaxScreen = true; ///< 全屏状态
-    }
+    m_isMaxScreen = (this->geometry() == this->screen()->availableGeometry());
     // @note 移动角标
     this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
                            this->height() - this->m_sizeGrip->height() - 8);
@@ -984,25 +1096,6 @@ bool KuGouClient::eventFilter(QObject *watched, QEvent *event) {
 }
 
 /**
- * @brief 显示事件
- * @param event 显示事件
- * @note 更新窗口大小
- */
-void KuGouClient::showEvent(QShowEvent *event) {
-    MainWindow::showEvent(event); ///< 调用父类处理
-    updateSize(); ///< 更新窗口大小
-}
-
-/**
- * @brief 关闭事件
- * @param event 关闭事件
- * @note 默认实现
- */
-void KuGouClient::closeEvent(QCloseEvent *event) {
-    MainWindow::closeEvent(event); ///< 调用父类处理
-}
-
-/**
 * @brief 处理suggestBox选中项槽函数
  * @note 切换搜索结果界面
  */
@@ -1012,7 +1105,7 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, 
     ///< 切换到音乐界面
     onLeftMenuShow(true);
     qDebug() << "选中：" << suggestText << " 附带数据：" << suggestData;
-    ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+    onSelectedWidget(16);
     auto topLab = m_searchResultWidget->findChild<QLabel *>("searchResultTopLabel");
     if (topLab) {
         if (!suggestText.trimmed().isEmpty()){
@@ -1210,16 +1303,17 @@ void KuGouClient::onKeyRight() {
  * @param slide 是否滑动切换
  * @note 更新堆栈页面和按钮状态
  */
-void KuGouClient::onTitleCurrentStackChange(const int &index, const bool &slide) {
-    if (ui->stackedWidget->currentIndex() == index) return;
+void KuGouClient::onTitleCurrentStackChange(const int &index) {
+    if (m_currentIdx == index) return;
+    m_isInitialized = false;
+    enableButton(false); ///< 禁用按钮
+    onSelectedWidget(index);
+    m_currentIdx = index;
     this->m_refreshMask->hideLoading(""); ///< 隐藏刷新遮罩
     this->m_snackbar->hide(); ///< 隐藏消息提示条
-    if (slide) {
-        enableButton(false); ///< 禁用按钮
-        ui->stackedWidget->slideInIdx(index); ///< 滑动切换页面
-    } else {
-        ui->stackedWidget->setCurrentIndex(index); ///< 直接切换页面
-    }
+
+    ui->stackedWidget->slideInIdx(index); ///< 滑动切换页面
+
     switch (index) {
         case 3: ui->recommend_you_toolButton->setChecked(true); break; ///< 推荐页面
         case 4: ui->music_repository_toolButton->setChecked(true); break; ///< 音乐库页面
@@ -1236,7 +1330,6 @@ void KuGouClient::onTitleCurrentStackChange(const int &index, const bool &slide)
         case 15: ui->all_music_toolButton->setChecked(true); break; ///< 全部音乐页面
         default: break;
     }
-    updateSize(); ///< 更新窗口大小
 }
 
 /**
@@ -1261,7 +1354,7 @@ void KuGouClient::onTitleMaxScreen() {
     // STREAM_INFO() << "最大化窗口";
     ///< 窗口缩放动画
     auto animation = new QPropertyAnimation(this, "geometry"); ///< 初始化窗口动画
-    
+
     if (m_isMaxScreen) {
         this->m_isMaxScreen = false; ///< 设置正常状态
         m_endGeometry = m_startGeometry; ///< 记录正常几何形状

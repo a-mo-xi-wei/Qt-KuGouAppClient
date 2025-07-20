@@ -19,6 +19,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMouseEvent>
+#include <QQueue>
 #include <QTimer>
 #include <random>
 
@@ -113,6 +114,8 @@ void MusicRepository::initButtonGroup() {
     m_repoPages[m_currentIdx]->layout()->addWidget(createRepoPage(1));
     ui->stackedWidget->slideInIdx(0);
 
+    ui->chinese_pushButton->click(); ///< 默认点击华语按钮
+
     // 响应按钮点击事件
     connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id) {
         // qDebug() << "[DEBUG] Current stack index:" << m_currentIdx;
@@ -198,33 +201,52 @@ void MusicRepository::initUi() {
     Async::onResultReady(future, this, [this](const QList<QJsonObject> &datas) {
         if (datas.isEmpty()) {
             qWarning() << "musicrepo.json is empty or failed to parse";
-            STREAM_WARN() << "musicrepo.json is empty or failed to parse"; ///< 记录警告日志
+            STREAM_WARN() << "musicrepo.json is empty or failed to parse";
             return;
         }
 
-        for (int i = 1; i <= std::min(60, static_cast<int>(datas.size())); i++) {
+        for (int i = 1; i <= std::min(60, static_cast<int>(datas.size())); ++i) {
             this->m_musicData.emplace_back(
                 QString(":/BlockCover/Res/blockcover/music-block-cover%1.jpg").arg(i),
                 datas[i].value("song").toString(),
-                datas[i].value("singer").toString()); ///< 插入全部音乐信息
+                datas[i].value("singer").toString());
         }
+
         for (int i = 1; i <= 40; ++i) {
             this->m_videoVector.emplace_back(
                 QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
                 m_musicData[i + 10].song,
-                m_musicData[i + 10].singer); ///< 插入视频信息
+                m_musicData[i + 10].singer);
         }
-        QTimer::singleShot(100,this,[this] {
-            initButtonGroup();   ///< 初始化按钮组
-        });
-        QTimer::singleShot(200,this,[this] {
-            initNewDiskWidget(); ///< 初始化新碟上架
-        });
-        QTimer::singleShot(300,this,[this] {
-            initSelectWidget();  ///< 初始化精选视频
-        });
-        ui->chinese_pushButton->click(); ///< 默认点击华语按钮
+
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
+
+        tasks << [this] { initButtonGroup(); };
+        tasks << [this] { initNewDiskWidget(); };
+        tasks << [this] {
+            initSelectWidget();
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+        };
+
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
+
+        (*runner)();
     });
+
 }
 
 /**

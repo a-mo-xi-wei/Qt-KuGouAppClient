@@ -90,7 +90,6 @@ private:
     qreal m_aspectRatio = 2.0;
     bool m_isAnimating = false;
     bool m_slidingToNext = true;
-    bool m_isResizing = false;
     QList<QRect> m_dotRects; // 存储圆点的矩形区域
 };
 

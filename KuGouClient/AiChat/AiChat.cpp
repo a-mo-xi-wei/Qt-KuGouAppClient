@@ -109,6 +109,7 @@ void AiChat::initUi()
     m_snackbar->setBackgroundColor(QColor(132, 202, 192, 200)); ///< 设置消息条背景色
     m_snackbar->setStyleSheet("border-radius: 10px;");      ///< 设置消息条样式
     connect(this->m_sendBtn, &QPushButton::clicked, this, &AiChat::onSendBtnClicked); ///< 连接发送按钮信号
+    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
 }
 
 /**

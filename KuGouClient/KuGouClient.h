@@ -1,9 +1,9 @@
 /**
- * @file KuGouApp.h
- * @brief 酷狗音乐应用主窗口的头文件，定义 KuGouApp 类
+ * @file KuGouClient.h
+ * @brief 酷狗音乐应用主窗口的头文件，定义 KuGouClient 类
  * @author WeiWang
  * @date 2024-12-15
- * @version 1.0
+ * @version 1.1
  */
 
 #ifndef KUGOUCLIENT_H
@@ -33,6 +33,10 @@
 #include "Search.h"
 #include "SpeedDialogState.h"
 #include "TitleWidget.h"
+
+#include <QPointer>
+#include <memory>
+#include <array>
 
 /**
  * @class QButtonGroup
@@ -102,12 +106,6 @@ private:
     void initPlayer();
 
     /**
-     * @brief 初始化字体资源
-     * @note 加载应用程序所需的字体
-     */
-    void initFontRes();
-
-    /**
      * @brief 初始化界面
      * @note 设置窗口属性、标题栏、堆栈窗口和播放控件
      */
@@ -118,6 +116,8 @@ private:
      * @note 初始化所有界面组件并添加到堆栈
      */
     void initStackedWidget();
+
+    void onSelectedWidget(const int &id);
 
     /**
      * @brief 初始化搜索结果界面
@@ -167,17 +167,18 @@ private:
     void initMenu();
 
     /**
-     * @brief 更新窗口大小
-     * @note 触发调整大小事件
-     */
-    void updateSize();
-
-    /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      * @note 控制菜单按钮和标题栏的交互
      */
     void enableButton(const bool& flag);
+
+    /**
+     * @brief 动态创建删除页面
+     * @param id 需要创建的页面id
+     * @return 指向创建好的页面的指针
+     */
+    QWidget* createPage(int id);
 
     /**
      * @brief 信号映射表
@@ -198,13 +199,6 @@ protected:
      * @note 处理窗口拖动和最大化恢复
      */
     void mouseMoveEvent(QMouseEvent *event) override;
-
-    /**
-     * @brief 绘制事件
-     * @param ev 绘制事件
-     * @note 绘制窗口背景
-     */
-    void paintEvent(QPaintEvent *ev) override;
 
     /**
      * @brief 调整大小事件
@@ -229,20 +223,6 @@ protected:
      * @note 处理进度条和封面标签的事件
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
-
-    /**
-     * @brief 显示事件
-     * @param event 显示事件
-     * @note 更新窗口大小
-     */
-    void showEvent(QShowEvent *event) override;
-
-    /**
-     * @brief 关闭事件
-     * @param event 关闭事件
-     * @note 处理窗口关闭
-     */
-    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     /**
@@ -379,7 +359,7 @@ private slots:
      * @param slide 是否使用滑动动画
      * @note 切换堆栈窗口并更新按钮状态
      */
-    void onTitleCurrentStackChange(const int& index, const bool& slide);
+    void onTitleCurrentStackChange(const int& index);
 
     /**
      * @brief 左侧菜单显示槽函数
@@ -495,9 +475,11 @@ private:
     std::unique_ptr<AllMusic>           m_allMusic;        ///< 全部音乐界面
     std::unique_ptr<ListenBook>         m_listenBook;      ///< 听书界面
     std::unique_ptr<Search>             m_search;          ///< 搜索界面
-    std::unique_ptr<QWidget>            m_searchResultWidget;    ///< 搜索结果界面
+    std::unique_ptr<QWidget>            m_searchResultWidget;///< 搜索结果界面
+
+    std::array<QPointer<QWidget>, 17>   m_pages{};               ///< 16 components + search result
+    int                                 m_currentIdx{3};         ///< 当前页面索引
     QVector<MusicItemWidget *>          m_searchMusicItemVector; ///< 音乐项容器
-    QMap<QToolButton*, void(TitleWidget::*)()> m_buttonMap; ///< 按钮-函数映射
     // 窗口缩放相关
     bool m_isTransForming = false;                      ///< 是否正在执行缩放动画
     bool m_isSingleCircle = false;                      ///< 是否单曲循环
@@ -508,10 +490,13 @@ private:
     QRect m_startGeometry;                              ///< 动画起始几何形状
     QRect m_endGeometry;                                ///< 动画结束几何形状
     QRect m_normalGeometry;                             ///< 正常窗口几何形状
+    // 播放信息
     QString m_musicTitle;                               ///< 当前歌曲标题
     QString m_musicArtist;                              ///< 当前歌曲艺术家
     // 服务器交互
     CLibhttp   m_libHttp;                               ///< HTTP 请求库
+    // 窗口创建相关
+    bool    m_isInitialized = false;                    ///< 是否初始化完成
 };
 
 #endif // KUGOUCLIENT_H

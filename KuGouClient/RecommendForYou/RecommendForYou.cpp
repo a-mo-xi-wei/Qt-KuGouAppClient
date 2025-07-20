@@ -12,6 +12,7 @@
 #include "logger.hpp"
 
 #include <QDir>
+#include <QQueue>
 #include <QResizeEvent>
 #include <QScrollBar>
 #include <QTimer>
@@ -42,9 +43,34 @@ RecommendForYou::RecommendForYou(QWidget *parent)
         return;
     }
 
-    QTimer::singleShot(0,this,[this]{initAdvertiseBoard();});///< 初始化广告轮播
-    QTimer::singleShot(100,this,[this]{initClassifyWidget();});  ///< 初始化分类按钮
-    QTimer::singleShot(100,this,[this]{initTabWidget();});     ///< 初始化推荐表格
+    {
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
+
+        tasks << [this] { initAdvertiseBoard(); };
+        tasks << [this] { initClassifyWidget(); };
+        tasks << [this] {
+            initTabWidget();
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+        };
+
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+
+            auto task = queue->dequeue();
+            QTimer::singleShot(100, nullptr, [task, runner]() { // 100ms 延时可调整
+                task();
+                (*runner)();
+            });
+        };
+
+        (*runner)();
+    }
 }
 
 /**
@@ -62,12 +88,12 @@ RecommendForYou::~RecommendForYou()
  */
 void RecommendForYou::initAdvertiseBoard() const
 {
-    QDir dir(__FILE__);                                  ///< 获取当前文件目录
+    QDir dir(__FILE__);                          ///< 获取当前文件目录
     dir.cdUp();                                          ///< 向上两级目录
     dir.cdUp();
     // @note 未使用，保留用于调试
     // qDebug() << "当前目录：" << dir.dirName();
-    dir.cd("Res/recommend/poster");                      ///< 进入海报目录
+    dir.cd("Res/recommend/poster");            ///< 进入海报目录
     // @note 未使用，保留用于调试
     // qDebug() << "当前目录：" << dir.dirName();
 
@@ -81,7 +107,7 @@ void RecommendForYou::initAdvertiseBoard() const
         // qDebug() << "图片路径为：" << path;
         // const QPixmap pix(path);
         // if (pix.isNull()) qDebug() << "图像错误";
-        ui->advertise_board_widget->addPoster(QPixmap(path)); ///< 添加海报
+        ui->advertise_board_widget->addPoster(path); ///< 添加海报
     }
 }
 

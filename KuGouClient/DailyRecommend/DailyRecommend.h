@@ -9,6 +9,8 @@
 #ifndef DAILYRECOMMEND_H
 #define DAILYRECOMMEND_H
 
+#include <QTimer>
+
 #include "MusicItemWidget.h"
 
 class RefreshMask;
@@ -102,6 +104,12 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
     void showEvent(QShowEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::DailyRecommend *ui;

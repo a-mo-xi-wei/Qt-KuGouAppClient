@@ -205,6 +205,7 @@ void AllMusic::initUi()
         ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
         ui->stackedWidget->setSpeed(400);
         ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
     });
 }
 

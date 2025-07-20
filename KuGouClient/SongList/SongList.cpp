@@ -22,6 +22,7 @@
 #include <QJsonObject>
 #include <random>
 #include <chrono>
+#include <QQueue>
 #include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
@@ -74,6 +75,25 @@ SongList::~SongList()
 void SongList::initUi()
 {
     this->m_refreshMask->keepLoading();
+
+    ui->all_toolButton->setMouseTracking(true);          ///< 启用鼠标跟踪
+    ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
+    ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
+    ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
+    ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
+    ui->all_toolButton->setApproach(true);               ///< 启用接近效果
+    ui->all_toolButton->setChangeSize(true);             ///< 启用动态大小
+    ui->all_toolButton->setEnterIconSize(QSize(10, 10)); ///< 设置悬停图标大小
+    ui->all_toolButton->setLeaveIconSize(QSize(10, 10)); ///< 设置离开图标大小
+
+    QList<QToolButton *> buttons = ui->widget->findChildren<QToolButton *>(); ///< 获取所有工具按钮
+    for (const auto &button : buttons)
+    {
+        connect(button, &QToolButton::clicked, this, [this, button] {
+            ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
+                                       QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
+        });
+    }
     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/desc.json")); ///< 加载描述文件
         if (!file.open(QIODevice::ReadOnly))
@@ -106,37 +126,51 @@ void SongList::initUi()
         return true;
     });
     Async::onResultReady(future, this, [this](bool flag) {
-        auto lay = new MyFlowLayout(ui->table_widget, true, 0);         ///< 创建流动布局
-        lay->setContentsMargins(0, 20, 0, 20);               ///< 设置边距
-        ui->table_widget->setLayout(lay);                    ///< 设置布局
-        const auto size = std::min(this->m_coverVector.size(), this->m_descVector.size()); ///< 获取最小大小
-        for (int i = 0; i < size; ++i)
-        {
-            auto block = new SongBlock(this);         ///< 创建歌曲块
-            block->setCoverPix(this->m_coverVector[i]);      ///< 设置封面
-            block->setShowTip();                             ///< 显示提示
-            block->setDescText(this->m_descVector[i]);       ///< 设置描述
-            lay->addWidget(block);                           ///< 添加到布局
-        }
-        ui->all_toolButton->setMouseTracking(true);          ///< 启用鼠标跟踪
-        ui->all_toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置默认图标
-        ui->all_toolButton->setEnterIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-blue.svg"))); ///< 设置悬停图标
-        ui->all_toolButton->setLeaveIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/down-gray.svg"))); ///< 设置离开图标
-        ui->all_toolButton->setHoverFontColor(QColor(QStringLiteral("#3AA1FF"))); ///< 设置悬停字体颜色
-        ui->all_toolButton->setApproach(true);               ///< 启用接近效果
-        ui->all_toolButton->setChangeSize(true);             ///< 启用动态大小
-        ui->all_toolButton->setEnterIconSize(QSize(10, 10)); ///< 设置悬停图标大小
-        ui->all_toolButton->setLeaveIconSize(QSize(10, 10)); ///< 设置离开图标大小
+        auto lay = new MyFlowLayout(ui->table_widget, true, 0);
+        lay->setContentsMargins(0, 20, 0, 20);
+        ui->table_widget->setLayout(lay);
 
-        QList<QToolButton *> buttons = ui->widget->findChildren<QToolButton *>(); ///< 获取所有工具按钮
-        for (const auto &button : buttons)
-        {
-            connect(button, &QToolButton::clicked, this, [this, button] {
-                ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                                           QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
-            });
+        const auto size = std::min(m_coverVector.size(), m_descVector.size());
+
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
+
+        for (int i = 0; i < size; ++i) {
+            const auto cover = m_coverVector[i];
+            const auto desc  = m_descVector[i];
+
+            tasks << [this, lay, cover, desc] {
+                auto block = new SongBlock(this);
+                block->setCoverPix(cover);
+                block->setShowTip();
+                block->setDescText(desc);
+                lay->addWidget(block);
+                m_refreshMask->setGeometry(rect()); // 可选：动态调整遮罩大小
+            };
         }
-        this->m_refreshMask->hideLoading("");
+
+        // 添加最后一个任务，隐藏 loading
+        tasks << [this] {
+            m_refreshMask->hideLoading("");
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+        };
+
+        // 串行执行
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
+
+        (*runner)();
     });
 
 }

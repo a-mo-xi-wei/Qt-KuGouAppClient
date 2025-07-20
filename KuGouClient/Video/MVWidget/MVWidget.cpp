@@ -23,6 +23,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QQueue>
 
 
 /** @brief 获取当前文件所在目录宏 */
@@ -305,6 +306,7 @@ void MVWidget::enableButton(const bool &flag) const {
 void MVWidget::initUi()
 {
     m_refreshMask->keepLoading();
+
     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
         if (!file.open(QIODevice::ReadOnly))
@@ -337,49 +339,69 @@ void MVWidget::initUi()
         return true;
     });
     Async::onResultReady(future, this, [this](bool flag) {
-        QTimer::singleShot(300, this, [this] {initButtonGroup();});         ///< 初始化按钮组
-        QTimer::singleShot(400, this, [this] {initLiveScene();});           ///< 初始化直播场景
-        QTimer::singleShot(500, this, [this] {initHonorOfKings();});        ///< 初始化王者荣耀
-        QTimer::singleShot(600, this, [this] {initAwardCeremony();});       ///< 初始化颁奖典礼
-        QTimer::singleShot(700, this, [this] {initHotMV();});               ///< 初始化热门 MV
-        QTimer::singleShot(800,this,[this] {m_refreshMask->hideLoading("");});
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
 
-        this->m_searchAction = new QAction(this); ///< 创建搜索动作
-        this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
-        this->m_searchAction->setIconVisibleInMenu(false);
-        ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
-        ui->search_lineEdit->setBorderRadius(10);
-        auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
-        font.setWeight(QFont::Bold);
-        font.setPixelSize(12);
-        ui->search_lineEdit->setFont(font);
+        tasks << [this] { initButtonGroup(); };
+        tasks << [this] { initLiveScene(); };
+        tasks << [this] { initHonorOfKings(); };
+        tasks << [this] { initAwardCeremony(); };
+        tasks << [this] { initHotMV(); };
+        tasks << [this] { m_refreshMask->hideLoading(""); };
 
-        QToolButton *searchButton = nullptr;
-        foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
-        {
-            if (btn->defaultAction() == this->m_searchAction)
-            {
-                searchButton = btn;
-                auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建提示
-                search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置提示文本
-                break;
-            }
-        }
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
 
-        if (searchButton)
-            searchButton->installEventFilter(this); ///< 安装事件过滤器
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
 
-        ui->pushButton5->hide(); ///< 隐藏按钮
-        ui->pushButton6->hide();
-        ui->pushButton7->hide();
-        ui->pushButton8->hide();
-        ui->pushButton5->setFixedSize(105, 30); ///< 设置按钮大小
-        ui->pushButton6->setFixedSize(105, 30);
-        ui->pushButton7->setFixedSize(105, 30);
-        ui->pushButton8->setFixedSize(105, 30);
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
 
-        ui->recommend_pushButton->clicked(); ///< 默认触发推荐按钮
+        (*runner)();
     });
+
+    this->m_searchAction = new QAction(this); ///< 创建搜索动作
+    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
+    this->m_searchAction->setIconVisibleInMenu(false);
+    ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
+    ui->search_lineEdit->setBorderRadius(10);
+    auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
+    font.setWeight(QFont::Bold);
+    font.setPixelSize(12);
+    ui->search_lineEdit->setFont(font);
+
+    QToolButton *searchButton = nullptr;
+    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
+    {
+        if (btn->defaultAction() == this->m_searchAction)
+        {
+            searchButton = btn;
+            auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建提示
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置提示文本
+            break;
+        }
+    }
+
+    if (searchButton)
+        searchButton->installEventFilter(this); ///< 安装事件过滤器
+
+    ui->pushButton5->hide(); ///< 隐藏按钮
+    ui->pushButton6->hide();
+    ui->pushButton7->hide();
+    ui->pushButton8->hide();
+    ui->pushButton5->setFixedSize(105, 30); ///< 设置按钮大小
+    ui->pushButton6->setFixedSize(105, 30);
+    ui->pushButton7->setFixedSize(105, 30);
+    ui->pushButton8->setFixedSize(105, 30);
+
+    ui->recommend_pushButton->clicked(); ///< 默认触发推荐按钮
 
     initAdvertiseWidget();     ///< 初始化滑动广告
 }

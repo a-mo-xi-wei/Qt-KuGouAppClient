@@ -41,12 +41,8 @@ Video::Video(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    QTimer::singleShot(100,this,[this] {
-        initUi();
-    });
-    QTimer::singleShot(200,this,[this] {
-        initStackedWidget();
-    });
+    initUi();
+    initStackedWidget();
 
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
@@ -212,6 +208,8 @@ void Video::initStackedWidget()
             ui->stackedWidget->update();
         });
     });
+
+    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
 
     ui->video_channel_pushButton->click();
 }

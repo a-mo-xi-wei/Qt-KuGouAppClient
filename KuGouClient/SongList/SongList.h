@@ -9,6 +9,8 @@
 #ifndef SONGLIST_H
 #define SONGLIST_H
 
+#include <QTimer>
+
 #include "ListOptionMenu/ListOptionMenu.h"
 #include <QWidget>
 #include <vector>
@@ -50,24 +52,6 @@ private:
      */
     void initUi();
 
-    /**
-     * @brief 初始化封面库
-     * @note 加载封面图片
-     */
-    void initCoverVector();
-
-    /**
-     * @brief 初始化描述库
-     * @note 加载描述文本
-     */
-    void initDescVector();
-
-    /**
-     * @brief 打乱数据
-     * @note 随机打乱封面和描述列表
-     */
-    void shuffleVector();
-
 private slots:
     /**
      * @brief 全部按钮点击槽函数
@@ -86,6 +70,12 @@ protected:
     void showEvent(QShowEvent *event) override;
 
     void resizeEvent(QResizeEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::SongList *ui;                   ///< UI 界面指针

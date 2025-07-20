@@ -18,6 +18,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QPropertyAnimation>
+#include <QQueue>
 #include <QScrollBar>
 #include <QTimer>
 #include <random>
@@ -211,40 +212,64 @@ void VideoWidget::initUi()
     });
 
     Async::onResultReady(future, this, [this](bool flag) {
-        for (int i = 0; i < 2; ++i)
-        {
-            for (int j = 1; j <= 3; ++j)
-            {
-                const QString tipText[] = {
-                    "", "音乐现场", "综艺制作形式", "舞蹈", "创意", "演奏", "舞蹈"
-                };
-                auto block = new VideoBlockWidget(this);            ///< 创建视频块
-                auto idx = i * 3 + j;
-                block->setCoverPix(this->m_pixPathVector[idx]);      ///< 设置封面
-                block->setShowTip();                               ///< 显示提示
-                block->setTipText(tipText[idx]);                   ///< 设置提示文本
-                block->setVideoName(m_videoAuthorVector[idx].first);               ///< 设置视频名称
-                block->setAuthor(m_videoAuthorVector[idx].second);                     ///< 设置作者
-                block->setIconPix(this->m_pixPathVector[idx]);     ///< 设置图标
-                this->m_recommendWidget->addBlockWidget(i, j - 1, block); ///< 添加到推荐分区
+        using Task = std::function<void()>;
+        QVector<Task> tasks;
+
+        // 1. 初始化推荐分区块（固定结构的双重循环）
+        tasks << [this] {
+            const QString tipText[] = {
+                "", "音乐现场", "综艺制作形式", "舞蹈", "创意", "演奏", "舞蹈"
+            };
+            for (int i = 0; i < 2; ++i) {
+                for (int j = 1; j <= 3; ++j) {
+                    int idx = i * 3 + j;
+                    auto block = new VideoBlockWidget(this);
+                    block->setCoverPix(m_pixPathVector[idx]);
+                    block->setShowTip();
+                    block->setTipText(tipText[idx]);
+                    block->setVideoName(m_videoAuthorVector[idx].first);
+                    block->setAuthor(m_videoAuthorVector[idx].second);
+                    block->setIconPix(m_pixPathVector[idx]);
+                    m_recommendWidget->addBlockWidget(i, j - 1, block);
+                }
             }
-        }
-        QTimer::singleShot(100, this, [this] { loadSectionBlocks(m_videoRankWidget.get(),1); });
-        QTimer::singleShot(200, this, [this] { loadSectionBlocks(m_MVWidget.get(),2); });
-        QTimer::singleShot(300, this, [this] { loadSectionBlocks(m_siteWidget.get(),3); });
-        QTimer::singleShot(400, this, [this] { loadSectionBlocks(m_coverWidget.get(),4); });
-        QTimer::singleShot(500, this, [this] { loadSectionBlocks(m_danceWidget.get(),5); });
-        QTimer::singleShot(600, this, [this] { loadSectionBlocks(m_childrenWidget.get(),6); });
-        QTimer::singleShot(700, this, [this] { loadSectionBlocks(m_liveWidget.get(),7); });
-        QTimer::singleShot(800, this, [this] { loadSectionBlocks(m_firstConcertWidget.get(),8); });
-        QTimer::singleShot(900, this, [this] { loadSectionBlocks(m_chineseLanguageWidget.get(),9); });
-        QTimer::singleShot(1000, this, [this] { loadSectionBlocks(m_southKoreaWidget.get(),10); });
-        QTimer::singleShot(1100, this, [this] { loadSectionBlocks(m_japanWidget.get(),11); });
-        QTimer::singleShot(1200, this, [this] {
-            loadSectionBlocks(m_americanWidget.get(),12);
-            m_refreshMask->hideLoading("");
-        });
+        };
+
+        // 2. 添加每个分区的 loadSectionBlocks 调用
+        tasks << [this] { loadSectionBlocks(m_videoRankWidget.get(), 1); };
+        tasks << [this] { loadSectionBlocks(m_MVWidget.get(), 2); };
+        tasks << [this] { loadSectionBlocks(m_siteWidget.get(), 3); };
+        tasks << [this] { loadSectionBlocks(m_coverWidget.get(), 4); };
+        tasks << [this] { loadSectionBlocks(m_danceWidget.get(), 5); };
+        tasks << [this] { loadSectionBlocks(m_childrenWidget.get(), 6); };
+        tasks << [this] { loadSectionBlocks(m_liveWidget.get(), 7); };
+        tasks << [this] { loadSectionBlocks(m_firstConcertWidget.get(), 8); };
+        tasks << [this] { loadSectionBlocks(m_chineseLanguageWidget.get(), 9); };
+        tasks << [this] { loadSectionBlocks(m_southKoreaWidget.get(), 10); };
+        tasks << [this] { loadSectionBlocks(m_japanWidget.get(), 11); };
+        tasks << [this] {
+            loadSectionBlocks(m_americanWidget.get(), 12);
+            m_refreshMask->hideLoading();  // 所有加载完成后再隐藏遮罩
+        };
+
+        // 3. 串行执行器
+        auto queue = std::make_shared<QQueue<Task>>();
+        for (const auto& task : tasks)
+            queue->enqueue(task);
+
+        auto runner = std::make_shared<std::function<void()>>();
+        *runner = [queue, runner]() {
+            if (queue->isEmpty()) return;
+            auto task = queue->dequeue();
+            QTimer::singleShot(0, nullptr, [task, runner]() {
+                task();
+                (*runner)();
+            });
+        };
+
+        (*runner)();  // 启动串行执行
     });
+
 
 }
 

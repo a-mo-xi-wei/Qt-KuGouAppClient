@@ -20,6 +20,7 @@
 #include <QPointer>
 #include <array>
 #include <memory>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -103,12 +104,16 @@ protected:
      */
     void mousePressEvent(QMouseEvent *event) override;
 
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
 signals:
     /**
      * @brief 搜索更多音乐的信号
      */
     void find_more_music();
 
+    void initialized();
 private:
     Ui::MyCollection                    *ui;                ///< UI 指针
     std::unique_ptr<QButtonGroup>        m_buttonGroup;     ///< 按钮组

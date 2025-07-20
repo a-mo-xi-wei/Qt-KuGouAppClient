@@ -19,6 +19,7 @@
 #include <QPointer>
 #include <array>
 #include <memory>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -119,6 +120,12 @@ protected:
      * @note 处理窗口显示逻辑
      */
     void showEvent(QShowEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::RecentlyPlayed                *ui;                 ///< UI 指针

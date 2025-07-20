@@ -70,7 +70,6 @@ QWidget* Search::createPage(int id)
     QWidget* page = nullptr;
     QLayout* lay = nullptr;
     int itemCount = 0;
-    int height = 0;
     QString objectName;
 
     switch (id) {
@@ -279,6 +278,8 @@ void Search::initStackedWidget()
         STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
     });
 
+    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+
     ui->recommend_pushButton->click();
 }
 
@@ -381,6 +382,5 @@ void Search::showEvent(QShowEvent *event)
     if (m_currentBtn) {
         m_currentBtn->click();
     }
-    resize(size());
     enableButton(true);
 }

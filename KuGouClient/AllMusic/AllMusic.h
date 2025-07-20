@@ -22,6 +22,7 @@
 #include <QPointer>
 #include <array>
 #include <memory>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -173,11 +174,16 @@ public slots:
      */
     void onRandomSort();
 
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
 signals:
     /**
      * @brief 搜索更多音乐信号
      */
     void find_more_music();
+
+    void initialized();
 
 private:
     Ui::AllMusic *ui;                                    ///< UI 指针
