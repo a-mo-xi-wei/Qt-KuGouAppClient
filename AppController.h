@@ -13,6 +13,9 @@ public:
     void start();                      // 启动应用程序
 
 private:
+    void initFontRes();
+
+private:
     AppController();                   // 私有构造函数
     ~AppController() override;
 
