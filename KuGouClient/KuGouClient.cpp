@@ -227,7 +227,8 @@ void KuGouClient::initStackedWidget() {
 void KuGouClient::onSelectedWidget(const int& id) {
     if (m_currentIdx == id) return;
     ///< 可以在此处筛选哪些界面不需要动态地创建删除
-    if (id == 3 ||  id == 4) {                    ///< 已经缓存的直接显示
+    if (id == 3 ||  id == 4 || id == 16) {
+        ///< 已经缓存的直接显示
         m_isInitialized = true;
         ///< 删除还是要正常进行
         enableButton(false);
@@ -273,12 +274,18 @@ void KuGouClient::onSelectedWidget(const int& id) {
                 }
             }
         }
-        ui->stackedWidget->slideInIdx(id);
+        if (id == 16){
+            ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+            enableButton(true);
+        }
+        else
+            ui->stackedWidget->slideInIdx(id);
+        m_currentIdx = id;
         return;
     }
     if (id == 16) {
         m_isInitialized = true;
-        ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+        m_currentIdx = id;
         return;
     }
 
