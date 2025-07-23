@@ -24,7 +24,6 @@
 VideoChannelBlock::VideoChannelBlock(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::VideoChannelBlock)
-    , m_coverTextLab(new QLabel(this))
 {
     ui->setupUi(this);
     this->setObjectName("videoblock"); ///< 设置对象名称
@@ -41,7 +40,6 @@ VideoChannelBlock::VideoChannelBlock(QWidget *parent)
             return;
         }
     }
-    initCoverTextFont(); ///< 初始化封面文本字体
     initUi();            ///< 初始化界面
 }
 
@@ -77,13 +75,14 @@ void VideoChannelBlock::setDescription(const QString &description)
  */
 void VideoChannelBlock::setCoverText(const QString &text) const
 {
-    this->m_coverTextLab->setFont(this->m_coverTextFont); ///< 设置字体
-    this->m_coverTextLab->setText(text);                  ///< 设置文本
-    int yPosition = height() - 95;                        ///< 计算 Y 位置（下方 95 像素）
-    int textWidth = this->m_coverTextLab->width();        ///< 获取文本宽度
-    int xPosition = (width() - textWidth) / 2;            ///< 计算 X 位置（水平居中）
-    this->m_coverTextLab->move(xPosition, yPosition);     ///< 移动文本标签
-    this->m_coverTextLab->raise();                        ///< 提升层级
+    auto font = QFont("YouYuan");
+    font.setPixelSize(16);                                  ///< 设置像素大小
+    ui->coverTextLab->setFont(font); ///< 设置字体
+    ui->coverTextLab->setText(text);                        ///< 设置文本
+    int yPosition = height() - 95;                          ///< 计算 Y 位置（下方 95 像素）
+    int xPosition = (width() - ui->coverTextLab->width()) / 2;            ///< 计算 X 位置（水平居中）
+    ui->coverTextLab->move(xPosition, yPosition);     ///< 移动文本标签
+    ui->coverTextLab->raise();
 }
 
 /**
@@ -100,22 +99,11 @@ void VideoChannelBlock::initUi()
     ui->cover_widget->setAspectRatio(1.5);                        ///< 设置宽高比
     ui->cover_widget->installEventFilter(this);                   ///< 安装事件过滤器
 
-    this->m_coverTextLab->setScaledContents(true);                ///< 启用缩放内容
-    this->m_coverTextLab->setAlignment(Qt::AlignCenter);          ///< 设置居中对齐
-    this->m_coverTextLab->setFixedWidth(this->width() - 20);      ///< 设置固定宽度
+    ui->coverTextLab->setFixedSize(this->width() - 20,40);      ///< 设置固定宽度
 
     ui->desc_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置工具按钮样式
     ui->desc_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/eye-gray.svg"))); ///< 设置图标
     ui->desc_toolButton->setText(QString::number(QRandomGenerator::global()->bounded(1, 500)) + "人在看"); ///< 设置随机观看人数
-}
-
-/**
- * @brief 初始化封面文本字体
- */
-void VideoChannelBlock::initCoverTextFont()
-{
-    this->m_coverTextFont = QFont("YouYuan");                     ///< 设置字体
-    this->m_coverTextFont.setPixelSize(16);                       ///< 设置像素大小
 }
 
 /**
@@ -161,12 +149,12 @@ bool VideoChannelBlock::eventFilter(QObject *watched, QEvent *event)
     {
         if (event->type() == QEvent::Enter)
         {
-            this->m_coverTextLab->hide();                         ///< 鼠标进入时隐藏文本
+            ui->coverTextLab->hide();                         ///< 鼠标进入时隐藏文本
         }
         else if (event->type() == QEvent::Leave)
         {
-            this->m_coverTextLab->show();                         ///< 鼠标离开时显示文本
-            this->m_coverTextLab->raise();                        ///< 提升层级
+            ui->coverTextLab->show();                         ///< 鼠标离开时显示文本
+            ui->coverTextLab->raise();                        ///< 提升层级
         }
     }
     return QWidget::eventFilter(watched, event);
