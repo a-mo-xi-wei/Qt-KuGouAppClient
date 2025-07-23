@@ -66,11 +66,13 @@ protected:
      */
     void resizeEvent(QResizeEvent *event) override;
 
-    signals:
-        /**
-         * @brief 加载完成信号
-         */
-        void loadingFinished(const QString&  message = "加载完成");
+    void showEvent(QShowEvent *event) override;
+
+signals:
+    /**
+     * @brief 加载完成信号
+     */
+    void loadingFinished(const QString&  message = "加载完成");
 
 private:
     QWidget*                    maskWidget{};     ///< 遮罩控件
