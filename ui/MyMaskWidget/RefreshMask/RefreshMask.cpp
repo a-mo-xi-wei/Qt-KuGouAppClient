@@ -125,3 +125,10 @@ void RefreshMask::resizeEvent(QResizeEvent *event)
     progress->move((width() - progress->width()) / 2,
                    (height() - progress->height()) / 2);
 }
+
+void RefreshMask::showEvent(QShowEvent *event) {
+    if (parentWidget()) {
+        resize(parentWidget()->size());
+    }
+    QWidget::showEvent(event);
+}
