@@ -29,4 +29,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog
-        MyMenu MySearchLineEdit MyButton MyDialog ElaWidgetTools)
+        MyMenu MySearchLineEdit MyButton MyDialog)
