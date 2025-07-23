@@ -74,6 +74,7 @@ void TitleWidget::setEnableChange(const bool &flag)
 }
 
 void TitleWidget::setEnableTitleButton(const bool &flag) {
+    ui->title_return_toolButton->setEnabled(flag);
     ui->max_toolButton->setEnabled(flag);
     ui->title_music_pushButton->setEnabled(flag);
     ui->title_live_pushButton->setEnabled(flag);
@@ -365,9 +366,6 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                         // 统一状态更新
                         this->m_lastType = nextType;
                         this->m_curType = nextType;
-                        if (!m_backTypeStack.isEmpty()) {
-                            const StackType top = m_backTypeStack.top();
-                        }
 
                         // 触发界面更新（与返回逻辑保持模式一致）s
                         switch (nextType) {
