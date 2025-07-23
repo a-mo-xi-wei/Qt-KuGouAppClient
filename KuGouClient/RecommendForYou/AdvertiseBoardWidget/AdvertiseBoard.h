@@ -41,7 +41,7 @@ public:
 
     ~AdvertiseBoard() override;
 
-    void addPoster(const QPixmap &pixmap);
+    void addPoster(const QString &pixPath);
 
     void setAspectRatio(qreal aspectRatio);
 
@@ -77,10 +77,11 @@ private:
 
     void startAnimation(int startValue, int endValue);
 
-    QList<QPixmap> m_originalPosters; // 原始海报图片
+    QList<QString> m_postersPath; // 原始海报图片
     QVector<QPixmap> m_scaledPosters; // 缩放后的海报图片
     NavButton *m_leftBtn{};
     NavButton *m_rightBtn{};
+    QTimer *m_resizeTimer{};  // 防抖
     QTimer *m_timer{};
     QPropertyAnimation *m_animation{};
 

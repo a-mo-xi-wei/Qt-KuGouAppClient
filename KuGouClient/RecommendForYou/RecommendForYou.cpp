@@ -13,9 +13,6 @@
 
 #include <QDir>
 #include <QQueue>
-#include <QResizeEvent>
-#include <QScrollBar>
-#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
@@ -93,7 +90,7 @@ void RecommendForYou::initAdvertiseBoard() const
     dir.cdUp();
     // @note 未使用，保留用于调试
     // qDebug() << "当前目录：" << dir.dirName();
-    dir.cd("Res/recommend/poster");            ///< 进入海报目录
+    dir.cd("Res_Qrc/Res/recommend/poster");            ///< 进入海报目录
     // @note 未使用，保留用于调试
     // qDebug() << "当前目录：" << dir.dirName();
 

@@ -82,20 +82,20 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
 
     // 自动播放定时器
     connect(m_timer, &QTimer::timeout, this, [this] {
-        if (!m_isAnimating && m_originalPosters.size() > 1) {
+        if (!m_isAnimating && m_postersPath.size() > 1) {
             switchToNext();
         }
     });
 
     // 导航按钮
     connect(m_leftBtn, &NavButton::clicked, this, [this] {
-        if (!m_isAnimating && m_originalPosters.size() > 1) {
+        if (!m_isAnimating && m_postersPath.size() > 1) {
             switchToPrev();
         }
     });
 
     connect(m_rightBtn, &NavButton::clicked, this, [this] {
-        if (!m_isAnimating && m_originalPosters.size() > 1) {
+        if (!m_isAnimating && m_postersPath.size() > 1) {
             switchToNext();
         }
     });
@@ -104,6 +104,16 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
     m_rightBtn->hide();
     updateButtonPosition();
     m_timer->setInterval(3000);
+
+    // 初始化防抖定时器
+    m_resizeTimer = new QTimer(this);
+    m_resizeTimer->setSingleShot(true);     // 定时器只触发一次
+    m_resizeTimer->setInterval(200);   // 设置延迟时间
+
+    connect(m_resizeTimer, &QTimer::timeout, this, [this]() {
+        // 延迟调用 updateScaledPosters
+        updateScaledPosters();
+    });
 }
 
 AdvertiseBoard::~AdvertiseBoard() {
@@ -112,9 +122,9 @@ AdvertiseBoard::~AdvertiseBoard() {
     }
 }
 
-void AdvertiseBoard::addPoster(const QPixmap &posterPix) {
-    m_originalPosters.append(posterPix);
-    if (m_originalPosters.size() == 1 && !m_timer->isActive()) {
+void AdvertiseBoard::addPoster(const QString &pixPath) {
+    m_postersPath.append(pixPath);
+    if (m_postersPath.size() == 1 && !m_timer->isActive()) {
         m_timer->start();
     }
     updateScaledPosters();
@@ -122,7 +132,6 @@ void AdvertiseBoard::addPoster(const QPixmap &posterPix) {
 
 void AdvertiseBoard::setAspectRatio(qreal ratio) {
     m_aspectRatio = ratio > 0 ? ratio : 2.0;
-    updateGeometry();
     updateScaledPosters();
 }
 
@@ -147,16 +156,35 @@ void AdvertiseBoard::startAnimation(int startValue, int endValue) {
 
 void AdvertiseBoard::switchToNext() {
     m_previousIndex = m_currentIndex;
-    m_currentIndex = (m_currentIndex + 1) % m_originalPosters.size();
+    m_currentIndex = (m_currentIndex + 1) % m_postersPath.size();
     m_slidingToNext = true;
     startAnimation(width(), 0);
 }
 
 void AdvertiseBoard::switchToPrev() {
     m_previousIndex = m_currentIndex;
-    m_currentIndex = (m_currentIndex - 1 + m_originalPosters.size()) % m_originalPosters.size();
+    m_currentIndex = (m_currentIndex - 1 + m_postersPath.size()) % m_postersPath.size();
     m_slidingToNext = false;
     startAnimation(-width(), 0);
+}
+
+void AdvertiseBoard::switchToIndex(const int &index) {
+    if (index < 0 || index >= m_postersPath.size() ||
+        index == m_currentIndex || m_isAnimating) {
+        return;
+        }
+
+    m_previousIndex = m_currentIndex;
+    m_currentIndex = index;
+
+    // 确定滑动方向
+    if (m_currentIndex > m_previousIndex) {
+        m_slidingToNext = true;
+        startAnimation(width(), 0);
+    } else {
+        m_slidingToNext = false;
+        startAnimation(-width(), 0);
+    }
 }
 
 void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
@@ -169,7 +197,7 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
     path.addRoundedRect(rect(), 10, 10);
     painter.setClipPath(path);
 
-    if (!m_originalPosters.isEmpty()) {
+    if (!m_postersPath.isEmpty()) {
         if (m_isAnimating) {
             // 动画状态：绘制两张图片（当前图片和切换中的图片）
             const QPixmap &current = m_scaledPosters[m_currentIndex];
@@ -187,12 +215,11 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
             }
         } else {
             // 非动画状态：只绘制当前图片
-            const QPixmap &scaled = m_scaledPosters[m_currentIndex];
-            painter.drawPixmap(rect(), scaled);
+            painter.drawPixmap(rect(), m_scaledPosters[m_currentIndex]);
         }
     }
 
-    if (m_originalPosters.size() > 1) {
+    if (m_postersPath.size() > 1) {
         QList<QPoint> centers;
         int totalWidth;
         calculateDotPositions(centers, totalWidth); ///< 计算导航圆点位置
@@ -217,7 +244,8 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
 void AdvertiseBoard::resizeEvent(QResizeEvent *ev) {
     updateButtonPosition();
     setFixedHeight(ev->size().width() / m_aspectRatio);
-    updateScaledPosters();
+    // 重置定时器
+    m_resizeTimer->start();
     QWidget::resizeEvent(ev);
 }
 
@@ -234,7 +262,7 @@ void AdvertiseBoard::leaveEvent(QEvent *ev) {
 }
 
 void AdvertiseBoard::mouseMoveEvent(QMouseEvent *event) {
-    if (m_originalPosters.size() <= 1) return;
+    if (m_postersPath.size() <= 1) return;
 
     QPoint mousePos = event->pos();
     // 检查鼠标是否在圆点区域内
@@ -248,7 +276,7 @@ void AdvertiseBoard::mouseMoveEvent(QMouseEvent *event) {
 }
 
 void AdvertiseBoard::mouseReleaseEvent(QMouseEvent *event) {
-    if (m_originalPosters.size() <= 1) return;
+    if (m_postersPath.size() <= 1) return;
 
     QPoint mousePos = event->pos();
     // 检查鼠标是否在圆点区域内
@@ -261,25 +289,6 @@ void AdvertiseBoard::mouseReleaseEvent(QMouseEvent *event) {
     QWidget::mouseReleaseEvent(event);
 }
 
-void AdvertiseBoard::switchToIndex(const int &index) {
-    if (index < 0 || index >= m_originalPosters.size() ||
-        index == m_currentIndex || m_isAnimating) {
-        return;
-        }
-
-    m_previousIndex = m_currentIndex;
-    m_currentIndex = index;
-
-    // 确定滑动方向
-    if (m_currentIndex > m_previousIndex) {
-        m_slidingToNext = true;
-        startAnimation(width(), 0);
-    } else {
-        m_slidingToNext = false;
-        startAnimation(-width(), 0);
-    }
-}
-
 void AdvertiseBoard::updateButtonPosition() {
     const int btnWidth = qMin(60, width() / 6);
     m_leftBtn->setFixedSize(btnWidth, height());
@@ -290,13 +299,59 @@ void AdvertiseBoard::updateButtonPosition() {
 
 void AdvertiseBoard::updateScaledPosters() {
     m_scaledPosters.clear();
-    m_scaledPosters.reserve(m_originalPosters.size());
-
-    for (const QPixmap &poster: m_originalPosters) {
-        if (!poster.isNull()) {
-            m_scaledPosters.append(poster.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
+    m_scaledPosters.reserve(m_postersPath.size());
+    ///< 无需使用异步加载，卡顿的原因呼之欲出：resizeEvent多次调用！！！
+    // if (m_isAnimating)return;
+    // if (isResize) {
+    //     // 暂停定时器，避免自动切换
+    //     m_timer->stop();
+    //     // 渲染当前显示的图片（在主线程中直接渲染）
+    //     if (!m_postersPath.isEmpty()) {
+    //         const QPixmap pix(m_postersPath[m_currentIndex]);
+    //         if (!pix.isNull()) {
+    //             m_scaledPosters.append(pix.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));  // 仅添加当前显示的图片
+    //         }
+    //     }
+    //
+    //     // 异步加载其他图片
+    //     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+    //         for (int i = 0; i < m_postersPath.size(); ++i) {
+    //             // 如果当前图片已经加载，就跳过
+    //             if (i == m_currentIndex) continue;
+    //
+    //             const QString &path = m_postersPath[i];
+    //             QImage image(path);
+    //             if (image.isNull()) {
+    //                 qWarning() << __FILE__ << " " << __LINE__ << " image is null";
+    //                 m_scaledPosters.append(QPixmap());  // 空 QPixmap
+    //                 continue;
+    //             }
+    //
+    //             // 缩放图像
+    //             QImage scaled = image.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+    //             m_scaledPosters.append(QPixmap::fromImage(scaled));
+    //         }
+    //         return true;
+    //     });
+    //
+    //     Async::onResultReady(future, this, [this](bool ok) {
+    //         qDebug()<<"后台图片加载完毕";
+    //         m_timer->start();
+    //         update();
+    //     });
+    // }
+    // else {
+    for (const QString &path: m_postersPath) {
+        QImage image(path);
+        if (image.isNull()) {
+            qWarning()<<__FILE__<<" "<< __LINE__ << " image is null";
+            return;
         }
+        // QImage 更快且线程安全
+        QImage scaled = image.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        m_scaledPosters.append(QPixmap::fromImage(scaled));
     }
+   // }
 }
 
 /**
@@ -306,7 +361,7 @@ void AdvertiseBoard::updateScaledPosters() {
  * @note 计算圆点位置并返回总宽度
  */
 void AdvertiseBoard::calculateDotPositions(QList<QPoint> &centers, int &totalWidth) {
-    const int count = m_originalPosters.size();
+    const int count = m_postersPath.size();
     const int maxRadius = DOT_RADIUS + ACTIVE_DOT_EXTRA;
     totalWidth = (count - 1) * (2 * maxRadius + DOT_SPACING) + 2 * maxRadius; ///< 计算总宽度
 
