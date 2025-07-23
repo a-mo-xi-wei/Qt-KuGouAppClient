@@ -66,11 +66,6 @@ private:
      */
     void initUi();
 
-    /**
-     * @brief 初始化封面文本字体
-     */
-    void initCoverTextFont();
-
 protected:
     /**
      * @brief 鼠标按下事件
@@ -104,9 +99,7 @@ protected:
 
 private:
     Ui::VideoChannelBlock *ui;                 ///< UI 指针
-    QLabel                *m_coverTextLab{};   ///< 封面文本标签
     QString                m_descriptionText;  ///< 描述文本
-    QFont                  m_coverTextFont;    ///< 封面文本字体
 };
 
 #endif // VIDEOCHANNELBLOCK_H
