@@ -97,6 +97,16 @@ int ElaMenu::getMenuItemHeight() const
     return d->_menuStyle->getMenuItemHeight();
 }
 
+void ElaMenu::setMenuItemHoveredBackgroundColor(const QColor &color) {
+    Q_D(ElaMenu);
+    d->_menuStyle->setMenuItemHoveredBackgroundColor(color);
+}
+
+void ElaMenu::setMenuItemHoveredFontColor(const QColor &color) {
+    Q_D(ElaMenu);
+    d->_menuStyle->setMenuItemHoveredFontColor(color);
+}
+
 /**
  * @brief 添加现有菜单
  * @param menu 菜单指针

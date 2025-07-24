@@ -70,6 +70,18 @@ public:
     int getMenuItemHeight() const;
 
     /**
+     * @brief 设置菜单项悬停时的颜色
+     * @param color 悬停时的颜色
+     */
+    void setMenuItemHoveredBackgroundColor(const QColor& color);
+
+    /**
+     * @brief 设置菜单项悬停时的字体颜色
+     * @param color 悬停时字体颜色
+     */
+    void setMenuItemHoveredFontColor(const QColor& color);
+
+    /**
      * @brief 添加现有菜单
      * @param menu 菜单指针
      * @return 菜单对应的动作

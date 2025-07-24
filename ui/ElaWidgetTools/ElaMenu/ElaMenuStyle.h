@@ -21,6 +21,8 @@ class ElaMenuStyle : public QProxyStyle
 {
     Q_OBJECT
     Q_PROPERTY_CREATE(int, MenuItemHeight)
+    Q_PROPERTY_CREATE(QColor, MenuItemHoveredBackgroundColor)  ///< 新增 悬停颜色
+    Q_PROPERTY_CREATE(QColor, MenuItemHoveredFontColor)  ///< 新增
 
 public:
     /**
