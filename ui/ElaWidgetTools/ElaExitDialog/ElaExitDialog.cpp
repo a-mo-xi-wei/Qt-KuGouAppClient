@@ -14,7 +14,6 @@
 #include "ElaExitDialogPrivate.h"
 #include "logger.hpp"
 
-#include <QApplication>
 #include <QKeyEvent>
 #include <QPainter>
 #include <QVBoxLayout>
@@ -123,11 +122,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
 /**
  * @brief 析构函数，释放退出对话框资源
  */
-ElaExitDialog::~ElaExitDialog()
-{
-    Q_D(ElaExitDialog);
-    d->_maskWidget->deleteLater();
-}
+ElaExitDialog::~ElaExitDialog() = default;
 
 /**
  * @brief 左侧按钮点击槽函数

@@ -41,7 +41,7 @@ public:
     /**
      * @brief 析构函数，释放工具提示私有资源
      */
-    ~ElaToolTipPrivate();
+    ~ElaToolTipPrivate() override;
 
 protected:
     /**

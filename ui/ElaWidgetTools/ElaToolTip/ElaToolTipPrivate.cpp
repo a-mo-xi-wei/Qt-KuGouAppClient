@@ -10,6 +10,7 @@
 #include "ElaToolTip.h"
 
 #include <QEvent>
+#include <QPointer>
 #include <QPropertyAnimation>
 #include <QTimer>
 
@@ -26,9 +27,7 @@ ElaToolTipPrivate::ElaToolTipPrivate(QObject* parent)
 /**
  * @brief 析构函数，释放工具提示私有资源
  */
-ElaToolTipPrivate::~ElaToolTipPrivate()
-{
-}
+ElaToolTipPrivate::~ElaToolTipPrivate() = default;
 
 /**
  * @brief 事件过滤器
@@ -43,8 +42,10 @@ bool ElaToolTipPrivate::eventFilter(QObject* watched, QEvent* event)
     {
     case QEvent::Enter:
     {
-        QTimer::singleShot(_pShowDelayMsec, this, [=]() {
-            _doShowAnimation();
+        QPointer<ElaToolTip> safeQ = q;
+        QTimer::singleShot(_pDisplayMsec, this, [safeQ]() {
+            if (safeQ)
+                safeQ->hide();  // 如果对象还活着，才调用
         });
         if (_pDisplayMsec > -1)
         {

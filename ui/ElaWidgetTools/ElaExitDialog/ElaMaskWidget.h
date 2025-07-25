@@ -32,7 +32,7 @@ public:
     /**
      * @brief 析构函数，释放遮罩控件资源
      */
-    ~ElaMaskWidget();
+    ~ElaMaskWidget() override;
 
     /**
      * @brief 执行遮罩透明度动画
