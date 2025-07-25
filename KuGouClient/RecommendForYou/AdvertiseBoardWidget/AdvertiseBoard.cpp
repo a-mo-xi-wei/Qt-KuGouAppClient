@@ -5,6 +5,12 @@
 #include <QPropertyAnimation>
 #include <QResizeEvent>
 
+/**
+ * @brief NavButton 构造函数
+ * @param normalImage 正常状态下的按钮图片路径
+ * @param hoverImage 悬停状态下的按钮图片路径
+ * @param parent 父控件指针，默认为 nullptr
+ */
 NavButton::NavButton(const QString &normalImage, const QString &hoverImage, QWidget *parent)
     : QLabel(parent), m_normal(normalImage), m_hover(hoverImage) {
     setAttribute(Qt::WA_Hover);
@@ -12,39 +18,48 @@ NavButton::NavButton(const QString &normalImage, const QString &hoverImage, QWid
     setPixmap(m_normal);
     setAttribute(Qt::WA_TranslucentBackground);
     setAlignment(Qt::AlignCenter);
-    // 新增延迟检查定时器
+    // 初始化延迟检查定时器
     m_checkTimer = new QTimer(this);
     m_checkTimer->setInterval(300);
     connect(m_checkTimer, &QTimer::timeout, this, &NavButton::checkHoverState);
 }
 
+/**
+ * @brief 设置按钮的悬停状态
+ * @param hover 是否为悬停状态
+ */
 void NavButton::setHoverState(bool hover) {
     setPixmap(hover ? m_hover : m_normal);
 }
 
+/**
+ * @brief 检查鼠标是否仍在按钮区域内
+ */
 void NavButton::checkHoverState() {
     QPoint globalMousePos = QCursor::pos();
     QRect globalRect = QRect(mapToGlobal(QPoint(0, 0)), size());
     bool isInside = globalRect.contains(globalMousePos);
-    //qDebug() << "Global check: mouse at" << globalMousePos << "button at" << globalRect << "is inside:" << isInside;
     if (!isInside) {
         setHoverState(false);
         m_checkTimer->stop();
     }
 }
 
+/**
+ * @brief 处理事件，响应鼠标悬停、点击等
+ * @param e 事件对象
+ * @return 如果事件被处理则返回 true，否则返回 false
+ */
 bool NavButton::event(QEvent *e) {
     switch (e->type()) {
         case QEvent::HoverEnter:
             setHoverState(true);
-            // 开始持续检查
             m_checkTimer->start();
             return true;
 
         case QEvent::HoverLeave:
         case QEvent::Leave:
             setHoverState(false);
-            // 停止检查
             m_checkTimer->stop();
             return true;
 
@@ -58,6 +73,10 @@ bool NavButton::event(QEvent *e) {
     return QLabel::event(e);
 }
 
+/**
+ * @brief AdvertiseBoard 构造函数
+ * @param parent 父控件指针，默认为 nullptr
+ */
 AdvertiseBoard::AdvertiseBoard(QWidget *parent)
     : QWidget(parent)
       , m_leftBtn(new NavButton(":/Res/window/left.svg", ":/Res/window/left-pink.svg", this))
@@ -107,21 +126,27 @@ AdvertiseBoard::AdvertiseBoard(QWidget *parent)
 
     // 初始化防抖定时器
     m_resizeTimer = new QTimer(this);
-    m_resizeTimer->setSingleShot(true);     // 定时器只触发一次
-    m_resizeTimer->setInterval(200);   // 设置延迟时间
+    m_resizeTimer->setSingleShot(true);
+    m_resizeTimer->setInterval(200);
 
     connect(m_resizeTimer, &QTimer::timeout, this, [this]() {
-        // 延迟调用 updateScaledPosters
         updateScaledPosters();
     });
 }
 
+/**
+ * @brief AdvertiseBoard 析构函数
+ */
 AdvertiseBoard::~AdvertiseBoard() {
     if (m_animation->state() == QPropertyAnimation::Running) {
         m_animation->stop();
     }
 }
 
+/**
+ * @brief 添加一张海报图片
+ * @param pixPath 海报图片的路径
+ */
 void AdvertiseBoard::addPoster(const QString &pixPath) {
     m_postersPath.append(pixPath);
     if (m_postersPath.size() == 1 && !m_timer->isActive()) {
@@ -130,16 +155,29 @@ void AdvertiseBoard::addPoster(const QString &pixPath) {
     updateScaledPosters();
 }
 
+/**
+ * @brief 设置广告牌的宽高比
+ * @param ratio 宽高比，需大于 0
+ */
 void AdvertiseBoard::setAspectRatio(qreal ratio) {
     m_aspectRatio = ratio > 0 ? ratio : 2.0;
     updateScaledPosters();
 }
 
+/**
+ * @brief 设置滑动偏移量
+ * @param offset 滑动偏移量
+ */
 void AdvertiseBoard::setSlideOffset(int offset) {
     m_slideOffset = offset;
     update();
 }
 
+/**
+ * @brief 开始滑动动画
+ * @param startValue 动画起始值
+ * @param endValue 动画结束值
+ */
 void AdvertiseBoard::startAnimation(int startValue, int endValue) {
     if (m_isAnimating) return;
 
@@ -154,6 +192,9 @@ void AdvertiseBoard::startAnimation(int startValue, int endValue) {
     }
 }
 
+/**
+ * @brief 切换到下一张海报
+ */
 void AdvertiseBoard::switchToNext() {
     m_previousIndex = m_currentIndex;
     m_currentIndex = (m_currentIndex + 1) % m_postersPath.size();
@@ -161,6 +202,9 @@ void AdvertiseBoard::switchToNext() {
     startAnimation(width(), 0);
 }
 
+/**
+ * @brief 切换到上一张海报
+ */
 void AdvertiseBoard::switchToPrev() {
     m_previousIndex = m_currentIndex;
     m_currentIndex = (m_currentIndex - 1 + m_postersPath.size()) % m_postersPath.size();
@@ -168,11 +212,15 @@ void AdvertiseBoard::switchToPrev() {
     startAnimation(-width(), 0);
 }
 
+/**
+ * @brief 切换到指定索引的海报
+ * @param index 目标海报的索引
+ */
 void AdvertiseBoard::switchToIndex(const int &index) {
     if (index < 0 || index >= m_postersPath.size() ||
         index == m_currentIndex || m_isAnimating) {
         return;
-        }
+    }
 
     m_previousIndex = m_currentIndex;
     m_currentIndex = index;
@@ -187,6 +235,10 @@ void AdvertiseBoard::switchToIndex(const int &index) {
     }
 }
 
+/**
+ * @brief 绘制事件，绘制海报图片和导航圆点
+ * @param ev 绘制事件对象
+ */
 void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
     QWidget::paintEvent(ev);
     QPainter painter(this);
@@ -222,16 +274,16 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
     if (m_postersPath.size() > 1) {
         QList<QPoint> centers;
         int totalWidth;
-        calculateDotPositions(centers, totalWidth); ///< 计算导航圆点位置
+        calculateDotPositions(centers, totalWidth);
         // 清空并重新计算圆点区域
         m_dotRects.clear();
 
-        painter.setPen(Qt::NoPen); ///< 设置无边框
+        painter.setPen(Qt::NoPen);
         for (int i = 0; i < centers.size(); ++i) {
             bool isActive = (i == m_currentIndex);
-            int radius = isActive ? DOT_RADIUS + ACTIVE_DOT_EXTRA : DOT_RADIUS; ///< 设置圆点半径
-            painter.setBrush(isActive ? QColor(80, 143, 206) : QColor(255, 255, 255, 150)); ///< 设置圆点颜色
-            painter.drawEllipse(centers[i], radius, radius); ///< 绘制圆点
+            int radius = isActive ? DOT_RADIUS + ACTIVE_DOT_EXTRA : DOT_RADIUS;
+            painter.setBrush(isActive ? QColor(80, 143, 206) : QColor(255, 255, 255, 150));
+            painter.drawEllipse(centers[i], radius, radius);
 
             // 存储圆点的矩形区域（用于鼠标检测）
             QRect dotRect(centers[i].x() - radius - 5, centers[i].y() - radius - 5,
@@ -241,6 +293,10 @@ void AdvertiseBoard::paintEvent(QPaintEvent *ev) {
     }
 }
 
+/**
+ * @brief 窗口大小调整事件，更新按钮位置和缩放图片
+ * @param ev 大小调整事件对象
+ */
 void AdvertiseBoard::resizeEvent(QResizeEvent *ev) {
     updateButtonPosition();
     setFixedHeight(ev->size().width() / m_aspectRatio);
@@ -249,18 +305,30 @@ void AdvertiseBoard::resizeEvent(QResizeEvent *ev) {
     QWidget::resizeEvent(ev);
 }
 
+/**
+ * @brief 鼠标进入事件，显示导航按钮
+ * @param ev 鼠标进入事件对象
+ */
 void AdvertiseBoard::enterEvent(QEnterEvent *ev) {
     m_leftBtn->show();
     m_rightBtn->show();
     QWidget::enterEvent(ev);
 }
 
+/**
+ * @brief 鼠标离开事件，隐藏导航按钮
+ * @param ev 鼠标离开事件对象
+ */
 void AdvertiseBoard::leaveEvent(QEvent *ev) {
     m_leftBtn->hide();
     m_rightBtn->hide();
     QWidget::leaveEvent(ev);
 }
 
+/**
+ * @brief 鼠标移动事件，处理导航圆点的交互
+ * @param event 鼠标移动事件对象
+ */
 void AdvertiseBoard::mouseMoveEvent(QMouseEvent *event) {
     if (m_postersPath.size() <= 1) return;
 
@@ -275,6 +343,10 @@ void AdvertiseBoard::mouseMoveEvent(QMouseEvent *event) {
     QWidget::mouseMoveEvent(event);
 }
 
+/**
+ * @brief 鼠标释放事件，处理导航圆点的点击
+ * @param event 鼠标释放事件对象
+ */
 void AdvertiseBoard::mouseReleaseEvent(QMouseEvent *event) {
     if (m_postersPath.size() <= 1) return;
 
@@ -289,6 +361,9 @@ void AdvertiseBoard::mouseReleaseEvent(QMouseEvent *event) {
     QWidget::mouseReleaseEvent(event);
 }
 
+/**
+ * @brief 更新导航按钮的位置
+ */
 void AdvertiseBoard::updateButtonPosition() {
     const int btnWidth = qMin(60, width() / 6);
     m_leftBtn->setFixedSize(btnWidth, height());
@@ -297,79 +372,39 @@ void AdvertiseBoard::updateButtonPosition() {
     m_rightBtn->move(width() - m_rightBtn->width(), 0);
 }
 
+/**
+ * @brief 更新缩放后的海报图片
+ */
 void AdvertiseBoard::updateScaledPosters() {
     m_scaledPosters.clear();
     m_scaledPosters.reserve(m_postersPath.size());
-    ///< 无需使用异步加载，卡顿的原因呼之欲出：resizeEvent多次调用！！！
-    // if (m_isAnimating)return;
-    // if (isResize) {
-    //     // 暂停定时器，避免自动切换
-    //     m_timer->stop();
-    //     // 渲染当前显示的图片（在主线程中直接渲染）
-    //     if (!m_postersPath.isEmpty()) {
-    //         const QPixmap pix(m_postersPath[m_currentIndex]);
-    //         if (!pix.isNull()) {
-    //             m_scaledPosters.append(pix.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));  // 仅添加当前显示的图片
-    //         }
-    //     }
-    //
-    //     // 异步加载其他图片
-    //     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
-    //         for (int i = 0; i < m_postersPath.size(); ++i) {
-    //             // 如果当前图片已经加载，就跳过
-    //             if (i == m_currentIndex) continue;
-    //
-    //             const QString &path = m_postersPath[i];
-    //             QImage image(path);
-    //             if (image.isNull()) {
-    //                 qWarning() << __FILE__ << " " << __LINE__ << " image is null";
-    //                 m_scaledPosters.append(QPixmap());  // 空 QPixmap
-    //                 continue;
-    //             }
-    //
-    //             // 缩放图像
-    //             QImage scaled = image.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
-    //             m_scaledPosters.append(QPixmap::fromImage(scaled));
-    //         }
-    //         return true;
-    //     });
-    //
-    //     Async::onResultReady(future, this, [this](bool ok) {
-    //         qDebug()<<"后台图片加载完毕";
-    //         m_timer->start();
-    //         update();
-    //     });
-    // }
-    // else {
     for (const QString &path: m_postersPath) {
         QImage image(path);
         if (image.isNull()) {
-            qWarning()<<__FILE__<<" "<< __LINE__ << " image is null";
+            qWarning() << __FILE__ << " " << __LINE__ << " image is null";
             return;
         }
         // QImage 更快且线程安全
         QImage scaled = image.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
         m_scaledPosters.append(QPixmap::fromImage(scaled));
     }
-   // }
 }
 
 /**
  * @brief 计算导航圆点位置
- * @param centers 圆点中心点列表
- * @param totalWidth 总宽度
- * @note 计算圆点位置并返回总宽度
+ * @param centers 输出参数，存储圆点中心点
+ * @param totalWidth 输出参数，存储圆点总宽度
  */
 void AdvertiseBoard::calculateDotPositions(QList<QPoint> &centers, int &totalWidth) {
     const int count = m_postersPath.size();
     const int maxRadius = DOT_RADIUS + ACTIVE_DOT_EXTRA;
-    totalWidth = (count - 1) * (2 * maxRadius + DOT_SPACING) + 2 * maxRadius; ///< 计算总宽度
+    totalWidth = (count - 1) * (2 * maxRadius + DOT_SPACING) + 2 * maxRadius;
 
-    int startX = (width() - totalWidth) / 2 + maxRadius; ///< 计算起始 X 坐标
-    int yPos = height() - 20; ///< 设置 Y 坐标
+    int startX = (width() - totalWidth) / 2 + maxRadius;
+    int yPos = height() - 20;
 
     for (int i = 0; i < count; ++i) {
-        centers.append(QPoint(startX, yPos)); ///< 添加圆点中心点
-        startX += 2 * maxRadius + DOT_SPACING; ///< 更新 X 坐标
+        centers.append(QPoint(startX, yPos));
+        startX += 2 * maxRadius + DOT_SPACING;
     }
 }
