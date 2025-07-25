@@ -205,6 +205,7 @@ void VideoChannelWidget::initUi()
         tasks << [this] {
             loadSectionBlocks(m_singerWidget.get(), 26, 77);
             m_refreshMask->hideLoading(""); // 最后一个任务执行完成后关闭加载
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
         };
 
         auto queue = std::make_shared<QQueue<Task>>();

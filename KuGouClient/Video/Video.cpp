@@ -70,6 +70,10 @@ QWidget* Video::createPage(const int& id)
                 m_videoChannelWidget = std::make_unique<VideoChannelWidget>(ui->stackedWidget);
             }
             page = m_videoChannelWidget.get();
+
+            connect(m_videoChannelWidget.get(),&VideoChannelWidget::initialized,this,[this] {
+                QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+            });
             break;
         case 1: // MV
             if (!m_MVWidget) {
@@ -208,8 +212,6 @@ void Video::initStackedWidget()
             ui->stackedWidget->update();
         });
     });
-
-    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
 
     ui->video_channel_pushButton->click();
 }
