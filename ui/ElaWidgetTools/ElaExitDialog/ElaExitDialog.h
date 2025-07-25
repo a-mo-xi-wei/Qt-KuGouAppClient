@@ -9,7 +9,6 @@
 #ifndef ELACONTENTDIALOG_H
 #define ELACONTENTDIALOG_H
 
-#include <QAbstractNativeEventFilter>
 #include <QDialog>
 
 #include "stdafx.h"
@@ -35,7 +34,7 @@ public:
     /**
      * @brief 析构函数，释放退出对话框资源
      */
-    ~ElaExitDialog();
+    ~ElaExitDialog() override;
 
     /**
      * @brief 设置中心控件
@@ -103,19 +102,19 @@ protected:
      * @brief 显示事件处理
      * @param event 显示事件
      */
-    virtual void showEvent(QShowEvent* event) override;
+    void showEvent(QShowEvent* event) override;
 
     /**
      * @brief 重绘事件，绘制对话框背景和按钮区域
      * @param event 绘图事件
      */
-    virtual void paintEvent(QPaintEvent* event) override;
+    void paintEvent(QPaintEvent* event) override;
 
     /**
      * @brief 键盘按下事件处理
      * @param event 键盘事件
      */
-    virtual void keyPressEvent(QKeyEvent* event) override;
+    void keyPressEvent(QKeyEvent* event) override;
 
 #ifdef Q_OS_WIN
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -126,7 +125,7 @@ protected:
      * @param result 事件结果
      * @return 是否处理事件
      */
-    virtual bool nativeEvent(const QByteArray& eventType, void* message, qintptr* result) override;
+    bool nativeEvent(const QByteArray& eventType, void* message, qintptr* result) override;
 #else
     /**
      * @brief 本地事件处理（Windows 平台，Qt5）

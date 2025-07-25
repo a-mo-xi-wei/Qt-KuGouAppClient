@@ -9,6 +9,8 @@
 #ifndef ELACONTENTDIALOGPRIVATE_H
 #define ELACONTENTDIALOGPRIVATE_H
 
+#include <QPointer>
+
 #include "Def.h"
 #include "stdafx.h"
 
@@ -36,7 +38,7 @@ public:
     /**
      * @brief 析构函数，释放退出对话框私有资源
      */
-    ~ElaExitDialogPrivate();
+    ~ElaExitDialogPrivate() override;
 
 private:
     /**
@@ -52,7 +54,7 @@ private:
     /**
      * @brief 遮罩控件指针
      */
-    ElaMaskWidget*             _maskWidget{nullptr};
+    QPointer<ElaMaskWidget>    _maskWidget{nullptr};
 
     /**
      * @brief 中心控件指针

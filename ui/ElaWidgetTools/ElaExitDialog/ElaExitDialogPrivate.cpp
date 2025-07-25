@@ -22,10 +22,7 @@ ElaExitDialogPrivate::ElaExitDialogPrivate(QObject* parent)
 /**
  * @brief 析构函数，释放退出对话框私有资源
  */
-ElaExitDialogPrivate::~ElaExitDialogPrivate()
-{
-}
-
+ElaExitDialogPrivate::~ElaExitDialogPrivate() = default;
 /**
  * @brief 执行关闭动画
  */

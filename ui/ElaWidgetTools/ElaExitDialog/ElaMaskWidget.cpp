@@ -26,9 +26,7 @@ ElaMaskWidget::ElaMaskWidget(QWidget* parent)
 /**
  * @brief 析构函数，释放遮罩控件资源
  */
-ElaMaskWidget::~ElaMaskWidget()
-{
-}
+ElaMaskWidget::~ElaMaskWidget() = default;
 
 /**
  * @brief 执行遮罩透明度动画
