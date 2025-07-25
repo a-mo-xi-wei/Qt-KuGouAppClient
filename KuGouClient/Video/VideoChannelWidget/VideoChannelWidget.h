@@ -9,6 +9,8 @@
 #ifndef VIDEOCHANNELWIDGET_H
 #define VIDEOCHANNELWIDGET_H
 
+#include <QTimer>
+
 #include "VideoChannelPartWidget.h"
 
 class QScrollBar;
@@ -70,6 +72,12 @@ private slots:
 
 protected:
     void showEvent(QShowEvent *event) override;
+
+public slots:
+    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+
+signals:
+    void initialized();
 
 private:
     Ui::VideoChannelWidget                  *ui;                    ///< UI 指针
