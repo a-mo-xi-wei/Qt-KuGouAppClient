@@ -10,8 +10,6 @@
 #include "ElaMenu.h"
 
 #include <QDesktopServices>
-#include <QGuiApplication>
-#include <QScreen>
 #include <QTimer>
 #include <QUrl>
 
@@ -21,14 +19,13 @@
  */
 MyTrayIcon::MyTrayIcon(QWidget *parent)
     : QSystemTrayIcon(parent)
-    , m_pParent(parent)
     , m_showIcon(false)
     , m_checkTimer(new QTimer(this))
     , m_flashTimer(new QTimer(this))
 {
-    initSysTray(); ///< 初始化托盘
-    initSysTrayMenu(); ///< 初始化托盘菜单
-    this->show(); ///< 显示托盘图标
+    initSysTray();      ///< 初始化托盘
+    initSysTrayMenu();  ///< 初始化托盘菜单
+    show();             ///< 显示托盘图标
 
     // 连接鼠标位置检测定时器
     connect(m_checkTimer, &QTimer::timeout, this, &MyTrayIcon::checkTrayIconHover);
@@ -52,8 +49,7 @@ void MyTrayIcon::initSysTray()
 
     // 连接消息框点击信号，显示主窗口
     connect(this, &MyTrayIcon::messageClicked, [this] {
-        m_pParent->activateWindow();
-        m_pParent->showNormal();
+        emit active();
     });
 
     // 连接显示消息信号
@@ -70,15 +66,17 @@ void MyTrayIcon::initSysTrayMenu()
     // this->m_trayMenu = menu->getMenu<TrayIconMenu>();
 
     this->m_trayMenu = new ElaMenu; ///< 创建托盘菜单
-    this->m_trayMenu->setOpacity(0.85); ///< 设置菜单透明度
-    this->m_trayMenu->setMenuItemHeight(27); ///< 设置菜单项高度
+    this->m_trayMenu->setOpacity(1); ///< 设置菜单透明度
+    this->m_trayMenu->setMenuItemHeight(30); ///< 设置菜单项高度
+    this->m_trayMenu->setMenuItemHoveredBackgroundColor(QColor(0x0066FF)); ///< 设置菜单项悬停时的颜色
+    this->m_trayMenu->setMenuItemHoveredFontColor(Qt::white); ///< 设置菜单项悬停时的颜色
+
     QAction *action = nullptr;
 
     // 添加“打开我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::ArrowsMaximize, tr("打开我的酷狗"));
     connect(action, &QAction::triggered, this, [this] {
-        m_pParent->activateWindow();
-        m_pParent->showNormal();
+        emit active();
     });
 
     // 添加“打开/关闭声音”菜单项
@@ -155,8 +153,7 @@ void MyTrayIcon::stopFlashingTrayIcon()
 void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if (reason == QSystemTrayIcon::Trigger) {
-        m_pParent->activateWindow();
-        m_pParent->showNormal(); ///< 点击托盘显示主窗口
+        emit active(); ///< 点击托盘显示主窗口
         // emit showTrayMessage(); ///< 调试用，测试消息显示
         // flashingTrayIcon(400); ///< 调试用，测试闪烁效果
     }

@@ -587,8 +587,6 @@ void KuGouClient::initTitleWidget() {
         this->m_refreshMask->showLoading(); ///< 显示加载遮罩
         this->m_refreshMask->raise(); ///< 提升遮罩层级
     });
-    // @note 发送退出信号
-    connect(this, &MainWindow::exit, ui->title_widget, &TitleWidget::on_close_toolButton_clicked);
 
     // @note
     connect(ui->title_widget, &TitleWidget::suggestionClicked, this, &KuGouClient::handleSuggestBoxSuggestionClicked);
@@ -681,14 +679,6 @@ void KuGouClient::initPlayWidget() {
     connect(ui->volume_toolButton, &VolumeToolBtn::volumeChange, this, [this](const int value) {
         this->m_player->setVolume(value / 100.0);                  ///< 设置播放器音量
     });                                                            ///< 连接音量变化信号
-    connect(this, &MainWindow::fromTray_noVolume, this, [this](const bool &flag) {
-        // @note 未使用，保留用于调试
-        // STREAM_INFO() << "KuGouApp 托盘图标点击: " << (flag ? "静音" : "开启声音");
-        if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
-            QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter)); ///< 触发进入事件
-            ui->volume_toolButton->clicked();                       ///< 模拟点击
-        }
-    });                                                            ///< 连接托盘音量控制信号
 
     connect(this->m_player, &VideoPlayer::positionChanged, this, [this](int position) {
         if (ui->progressSlider->isSliderDown()) return;
@@ -1471,6 +1461,19 @@ void KuGouClient::onPlayLocalMusic(const QString &localPath) {
         ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", "Failed to start playback", 2000,
                              this->window()); ///< 显示播放失败提示
     }
+}
+
+void KuGouClient::onTrayIconNoVolume(const bool &flag) {
+    // @note 未使用，保留用于调试
+    // STREAM_INFO() << "KuGouApp 托盘图标点击: " << (flag ? "静音" : "开启声音");
+    if ((flag && ui->volume_toolButton->getVolumeValue()) || (!flag && !ui->volume_toolButton->getVolumeValue())) {
+        QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter)); ///< 触发进入事件
+        ui->volume_toolButton->clicked();                       ///< 模拟点击
+    }
+}
+
+void KuGouClient::onTrayIconExit() {
+    ui->title_widget->on_close_toolButton_clicked();
 }
 
 /**

@@ -13,6 +13,8 @@ set(SOURCE_FILE
         ${BASICWINDOW_CPP}
         ${MAINWINDOW_H}
         ${MAINWINDOW_CPP}
+        MyTrayIcon/MyTrayIcon.h
+        MyTrayIcon/MyTrayIcon.cpp
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -24,7 +26,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/BasicWindow
         ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow
-        ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/MyTrayIcon
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyTrayIcon
         ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/WaterDrop
 )
 

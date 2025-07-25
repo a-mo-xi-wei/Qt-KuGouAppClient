@@ -8,7 +8,6 @@
 
 #include "MainWindow.h"
 #include "WaterDrop.h"
-#include "MyTrayIcon.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
 
@@ -35,17 +34,8 @@ constexpr int RADIUS = 12;
  */
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
-    , m_trayIcon(new MyTrayIcon(this))
     , m_aboutDialog(std::make_unique<AboutDialog>(this))
 {
-    // 连接托盘信号
-    connect(m_trayIcon, &MyTrayIcon::noVolume, this, [this](const bool &flag) {
-        // qDebug() << "MainWindow 托盘图标点击: " << (flag ? "静音" : "开启声音"); ///< 调试用
-        emit fromTray_noVolume(flag);
-    });
-    connect(m_trayIcon, &MyTrayIcon::showAboutDialog, this, &MainWindow::onShowAboutDialog);
-    connect(m_trayIcon, &MyTrayIcon::exit, this, [this] { emit exit(); });
-
     this->m_aboutDialog->hide(); ///< 隐藏关于对话框
     connect(m_aboutDialog.get(), &AboutDialog::showDialog, this, [this](const bool &flag) {
         this->m_showDialog = flag;
