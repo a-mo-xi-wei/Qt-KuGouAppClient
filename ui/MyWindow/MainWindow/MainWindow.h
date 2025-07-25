@@ -9,7 +9,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QWidget>
 #include "AboutDialog.h"
 
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
@@ -19,8 +18,6 @@
 #define MYWINDOW_EXPORT Q_DECL_IMPORT
 #endif
 
-// 前向声明
-class MyTrayIcon;
 
 /**
  * @brief 窗口区域划分命名空间
@@ -152,18 +149,6 @@ private:
      */
     int getMouseRegion(const int &x, const int &y) const;
 
-signals:
-    /**
-     * @brief 托盘音量开关信号
-     * @param flag 是否静音
-     */
-    void fromTray_noVolume(const bool &flag);
-
-    /**
-     * @brief 退出信号，通知程序退出
-     */
-    void exit();
-
 public slots:
     /**
      * @brief 显示或隐藏关于对话框
@@ -172,7 +157,6 @@ public slots:
     void onShowAboutDialog(bool flag = true);
 
 public:
-    MyTrayIcon *m_trayIcon{};                    ///< 系统托盘图标
     bool isPress = false;                        ///< 鼠标按下标志
     QPoint windowsLastPs;                        ///< 窗口上次位置
     QPoint mousePs;                              ///< 鼠标按下位置

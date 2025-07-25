@@ -382,6 +382,17 @@ public slots:
      */
     void onPlayLocalMusic(const QString& localPath);
 
+    /**
+     * @brief 连接托盘音量控制信号
+     * @param flag 是否静音
+     */
+    void onTrayIconNoVolume(const bool &flag);
+
+    /**
+     * @brief 连接托盘退出信号
+     */
+    void onTrayIconExit();
+
 signals:
     /**
      * @brief 最大化信号

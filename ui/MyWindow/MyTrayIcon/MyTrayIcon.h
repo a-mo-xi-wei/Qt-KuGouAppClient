@@ -10,7 +10,6 @@
 #define MYTRAYICON_H
 
 #include <QSystemTrayIcon>
-#include <QMenu>
 
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
 #if defined(MYWINDOW_LIBRARY)
@@ -87,6 +86,11 @@ signals:
     void showAboutDialog(const bool &flag);
 
     /**
+     * @brief 唤醒窗口
+     */
+    void active();
+
+    /**
      * @brief 退出信号，通知程序退出
      */
     void exit();
@@ -109,7 +113,6 @@ private slots:
     void onFlashingTrayIcon();
 
 private:
-    QWidget *m_pParent{};          ///< 父控件，用于显示主窗口
     ElaMenu *m_trayMenu{};         ///< 托盘菜单
     QPoint m_menuPosition;         ///< 菜单显示位置
     bool m_showIcon;               ///< 闪烁状态标志

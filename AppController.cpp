@@ -1,4 +1,5 @@
 #include "AppController.h"
+#include "MyTrayIcon.h"
 
 #include <QFontDatabase>
 
@@ -9,33 +10,61 @@ AppController& AppController::instance()
 }
 
 AppController::AppController()
-    : login(new LoginRegisterForm)
+    : m_trayIcon(new MyTrayIcon)
+    , m_login(new LoginRegisterForm)
+    , m_client(new KuGouClient)
+    , m_server(new KuGouServer)
 {
-    // @note 初始化字体资源
     initFontRes();
-    // @note 生成客户端
-    client = new KuGouClient;
-    // @note 生成服务器
-    server = new KuGouServer;
-    login->hide();
-    client->hide();
+
+    m_login->hide();
+
+    connect(m_trayIcon, &MyTrayIcon::active, this, [this] {
+        if (m_isLoginAccepted && m_client) {
+            m_client->activateWindow();
+            m_client->showNormal();
+        } else {
+            m_login->activateWindow();
+        }
+    });
+
+    connect(m_trayIcon, &MyTrayIcon::exit, this, [this] {
+        if (!m_isLoginAccepted) {
+            m_login->close();
+            qApp->quit();
+            return;
+        }
+        m_client->activateWindow();
+        m_client->showNormal();
+        m_client->onTrayIconExit();
+    });
+
 }
 
 AppController::~AppController()
 {
-    delete login;
-    delete client;
-    delete server;
+    // 可省略析构函数，QScopedPointer 自动释放资源
+    // 若需要调试输出，可保留以下代码：
+    delete m_trayIcon;
+    delete m_login;
+    delete m_client;
+    delete m_server;
+    qDebug() << "AppController destroyed.";
 }
 
 void AppController::start()
 {
-    login->show();
-    connect(login,&QDialog::accepted,this,[this] {
-        //qDebug()<<"登录界面隐藏,显示客户端";
-        client->show();  // 再启动客户端
-    });
+    m_login->show();
 
+    connect(m_login, &QDialog::accepted, this, [this] {
+        m_client->show();
+        connect(m_trayIcon, &MyTrayIcon::showAboutDialog,
+                m_client, &MainWindow::onShowAboutDialog);
+
+        connect(m_trayIcon, &MyTrayIcon::noVolume,
+                m_client, &KuGouClient::onTrayIconNoVolume);
+        m_isLoginAccepted = true;
+    });
 }
 
 void AppController::initFontRes()  {
