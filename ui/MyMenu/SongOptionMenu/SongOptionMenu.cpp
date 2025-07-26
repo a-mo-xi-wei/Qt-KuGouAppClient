@@ -8,10 +8,13 @@
 
 #include "SongOptionMenu.h"
 #include "logger.hpp"
+#include "../MyMenu.h"
 
 #include <QCoreApplication>
 #include <QHBoxLayout>
 #include <QWidgetAction>
+
+REGISTER_MENU(MyMenu::MenuKind::SongOption, SongOptionMenu)
 
 /**
  * @brief 构造函数，初始化歌曲操作选项菜单
