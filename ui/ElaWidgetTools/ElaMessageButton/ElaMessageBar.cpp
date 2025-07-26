@@ -93,8 +93,7 @@ ElaMessageBar::ElaMessageBar(ElaMessageBarType::PositionPolicy policy, ElaMessag
  * @brief 析构函数，释放消息栏资源
  */
 ElaMessageBar::~ElaMessageBar()
-{
-}
+= default;
 
 /**
  * @brief 显示成功消息

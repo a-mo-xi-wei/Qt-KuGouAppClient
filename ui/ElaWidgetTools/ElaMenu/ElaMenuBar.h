@@ -34,7 +34,7 @@ public:
     /**
      * @brief 析构函数，释放菜单栏资源
      */
-    ~ElaMenuBar();
+    ~ElaMenuBar() override;
 
     /**
      * @brief 添加现有菜单

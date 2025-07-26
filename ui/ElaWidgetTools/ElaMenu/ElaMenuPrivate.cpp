@@ -22,5 +22,4 @@ ElaMenuPrivate::ElaMenuPrivate(QObject* parent)
  * @brief 析构函数，释放菜单私有资源
  */
 ElaMenuPrivate::~ElaMenuPrivate()
-{
-}
+= default;

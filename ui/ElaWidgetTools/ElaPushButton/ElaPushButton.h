@@ -48,7 +48,7 @@ public:
     /**
      * @brief 析构函数，释放按钮资源
      */
-    ~ElaPushButton();
+    ~ElaPushButton() override;
 
     /**
      * @brief 设置亮色主题文本颜色

@@ -41,7 +41,7 @@ public:
     /**
      * @brief 析构函数，释放滚动条私有资源
      */
-    ~ElaScrollBarPrivate();
+    ~ElaScrollBarPrivate() override;
 
     /**
      * @brief 范围变化事件处理

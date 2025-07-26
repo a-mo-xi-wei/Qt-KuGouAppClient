@@ -21,9 +21,7 @@ ElaEventPrivate::ElaEventPrivate(QObject* parent)
 /**
  * @brief 析构函数，释放事件私有资源
  */
-ElaEventPrivate::~ElaEventPrivate()
-{
-}
+ElaEventPrivate::~ElaEventPrivate() = default;
 
 /**
  * @brief 构造函数，初始化事件总线私有对象

@@ -43,7 +43,7 @@ public:
     /**
      * @brief 析构函数，释放菜单资源
      */
-    ~ElaMenu();
+    ~ElaMenu() override;
 
     /**
      * @brief 设置菜单透明度

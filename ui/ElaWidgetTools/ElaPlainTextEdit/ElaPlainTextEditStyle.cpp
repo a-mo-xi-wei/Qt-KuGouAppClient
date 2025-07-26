@@ -28,8 +28,7 @@ ElaPlainTextEditStyle::ElaPlainTextEditStyle(QStyle* style)
  * @brief 析构函数，释放自定义样式资源
  */
 ElaPlainTextEditStyle::~ElaPlainTextEditStyle()
-{
-}
+= default;
 
 /**
  * @brief 绘制控件元素

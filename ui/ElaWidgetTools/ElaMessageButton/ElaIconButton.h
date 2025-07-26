@@ -69,7 +69,7 @@ public:
     /**
      * @brief 析构函数，释放图标按钮资源
      */
-    ~ElaIconButton();
+    ~ElaIconButton() override;
 
     /**
      * @brief 设置 Ela 图标

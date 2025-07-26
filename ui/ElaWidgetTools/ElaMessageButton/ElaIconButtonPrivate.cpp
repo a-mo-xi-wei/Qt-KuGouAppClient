@@ -21,5 +21,4 @@ ElaIconButtonPrivate::ElaIconButtonPrivate(QObject* parent)
  * @brief 析构函数，释放图标按钮私有资源
  */
 ElaIconButtonPrivate::~ElaIconButtonPrivate()
-{
-}
+= default;

@@ -42,7 +42,7 @@ public:
     /**
      * @brief 析构函数，释放按钮私有资源
      */
-    ~ElaPushButtonPrivate();
+    ~ElaPushButtonPrivate() override;
 
 private:
     /**

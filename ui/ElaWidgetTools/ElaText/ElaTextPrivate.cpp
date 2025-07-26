@@ -24,8 +24,7 @@ ElaTextPrivate::ElaTextPrivate(QObject* parent)
  * @brief 析构函数，释放文本标签私有资源
  */
 ElaTextPrivate::~ElaTextPrivate()
-{
-}
+= default;
 
 /**
  * @brief 主题切换事件处理

@@ -220,7 +220,6 @@ void ElaSuggestBox::removeAllSuggestion()
     });
 }
 
-
 /**
  * @brief 设置搜索编辑框
  * @param lineEdit 编辑框指针

@@ -38,7 +38,7 @@ public:
     /**
      * @brief 析构函数，释放事件私有资源
      */
-    ~ElaEventPrivate();
+    ~ElaEventPrivate() override;
 };
 
 class ElaEventBus;

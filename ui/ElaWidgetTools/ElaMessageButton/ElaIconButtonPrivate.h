@@ -45,7 +45,7 @@ public:
     /**
      * @brief 析构函数，释放图标按钮私有资源
      */
-    ~ElaIconButtonPrivate();
+    ~ElaIconButtonPrivate() override;
 
 private:
     /**

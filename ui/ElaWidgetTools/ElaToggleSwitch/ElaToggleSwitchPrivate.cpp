@@ -24,8 +24,7 @@ ElaToggleSwitchPrivate::ElaToggleSwitchPrivate(QObject *parent)
  * @brief 析构函数
  */
 ElaToggleSwitchPrivate::~ElaToggleSwitchPrivate()
-{
-}
+= default;
 
 /**
  * @brief 启动位置动画

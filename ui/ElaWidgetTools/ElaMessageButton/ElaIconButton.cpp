@@ -186,8 +186,7 @@ ElaIconButton::ElaIconButton(ElaIconType::IconName awesome, int pixelSize, int f
  * @brief 析构函数，释放图标按钮资源
  */
 ElaIconButton::~ElaIconButton()
-{
-}
+= default;
 
 /**
  * @brief 设置 Ela 图标
