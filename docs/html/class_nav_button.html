@@ -109,13 +109,16 @@ $(function(){initNavTree('class_nav_button.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>自定义导航按钮类，用于广告牌的左右导航  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_advertise_board_8h_source.html">AdvertiseBoard.h</a>&gt;</code></p>
 <div class="dynheader">
 类 NavButton 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button__inherit__graph.png" border="0" usemap="#a_nav_button_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_nav_button_inherit__map" id="a_nav_button_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,89,107"/>
+<area shape="rect" title="自定义导航按钮类，用于广告牌的左右导航" alt="" coords="5,80,89,107"/>
 <area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="16,5,78,32"/>
 <area shape="poly" title=" " alt="" coords="50,48,50,80,44,80,44,48"/>
 </map>
@@ -125,7 +128,7 @@ NavButton 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button__coll__graph.png" border="0" usemap="#a_nav_button_coll__map" alt="Collaboration graph"/></div>
 <map name="a_nav_button_coll__map" id="a_nav_button_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,89,107"/>
+<area shape="rect" title="自定义导航按钮类，用于广告牌的左右导航" alt="" coords="5,80,89,107"/>
 <area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="16,5,78,32"/>
 <area shape="poly" title=" " alt="" coords="50,48,50,80,44,80,44,48"/>
 </map>
@@ -134,35 +137,46 @@ NavButton 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 信号</h2></td></tr>
 <tr class="memitem:a263c24e31a1115d0b7b016189a710cb8" id="r_a263c24e31a1115d0b7b016189a710cb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a263c24e31a1115d0b7b016189a710cb8">clicked</a> ()</td></tr>
+<tr class="memdesc:a263c24e31a1115d0b7b016189a710cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">信号：当按钮被点击时发出  <br /></td></tr>
 <tr class="separator:a263c24e31a1115d0b7b016189a710cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:aed2b96bba6aae3e8a660f41ff20e5d3e" id="r_aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed2b96bba6aae3e8a660f41ff20e5d3e">NavButton</a> (const QString &amp;normal, const QString &amp;hover, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
 <tr class="separator:aed2b96bba6aae3e8a660f41ff20e5d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cd5647ab518a1dde8b7dfcaaa4ed446" id="r_a8cd5647ab518a1dde8b7dfcaaa4ed446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cd5647ab518a1dde8b7dfcaaa4ed446">setHoverState</a> (bool hover)</td></tr>
+<tr class="memdesc:a8cd5647ab518a1dde8b7dfcaaa4ed446"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置按钮的悬停状态  <br /></td></tr>
 <tr class="separator:a8cd5647ab518a1dde8b7dfcaaa4ed446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
 <tr class="memitem:a4df57dfac7a608de1ed3dc7bceda487e" id="r_a4df57dfac7a608de1ed3dc7bceda487e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df57dfac7a608de1ed3dc7bceda487e">event</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a4df57dfac7a608de1ed3dc7bceda487e"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写事件处理函数，处理鼠标悬停、点击等事件  <br /></td></tr>
 <tr class="separator:a4df57dfac7a608de1ed3dc7bceda487e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private 槽</h2></td></tr>
 <tr class="memitem:a46ed2122db70ac26531740f3b73307f2" id="r_a46ed2122db70ac26531740f3b73307f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ed2122db70ac26531740f3b73307f2">checkHoverState</a> ()</td></tr>
+<tr class="memdesc:a46ed2122db70ac26531740f3b73307f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查鼠标是否仍在按钮区域内  <br /></td></tr>
 <tr class="separator:a46ed2122db70ac26531740f3b73307f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
 <tr class="memitem:ad1664973748ceacfc4ff8f75c72ae6a6" id="r_ad1664973748ceacfc4ff8f75c72ae6a6"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1664973748ceacfc4ff8f75c72ae6a6">m_normal</a></td></tr>
+<tr class="memdesc:ad1664973748ceacfc4ff8f75c72ae6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">正常状态下的按钮图片  <br /></td></tr>
 <tr class="separator:ad1664973748ceacfc4ff8f75c72ae6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347b73f652bda0199c8d89d1d7133612" id="r_a347b73f652bda0199c8d89d1d7133612"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347b73f652bda0199c8d89d1d7133612">m_hover</a></td></tr>
+<tr class="memdesc:a347b73f652bda0199c8d89d1d7133612"><td class="mdescLeft">&#160;</td><td class="mdescRight">悬停状态下的按钮图片  <br /></td></tr>
 <tr class="separator:a347b73f652bda0199c8d89d1d7133612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26c288fd1b337441eac116e41703fdc8" id="r_a26c288fd1b337441eac116e41703fdc8"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c288fd1b337441eac116e41703fdc8">m_checkTimer</a></td></tr>
+<tr class="memdesc:a26c288fd1b337441eac116e41703fdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">延迟检查鼠标位置的定时器  <br /></td></tr>
 <tr class="separator:a26c288fd1b337441eac116e41703fdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>自定义导航按钮类，用于广告牌的左右导航 </p>
+<p>该类继承自 QLabel，用于显示导航按钮的正常和悬停状态图片，并处理鼠标事件。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="aed2b96bba6aae3e8a660f41ff20e5d3e" name="aed2b96bba6aae3e8a660f41ff20e5d3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed2b96bba6aae3e8a660f41ff20e5d3e">&#9670;&#160;</a></span>NavButton()</h2>
 
@@ -175,12 +189,12 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a> </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>normal</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>normalImage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>hover</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>hoverImage</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -194,15 +208,29 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数 </p>
+<p><a class="el" href="class_nav_button.html" title="自定义导航按钮类，用于广告牌的左右导航">NavButton</a> 构造函数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">normal</td><td>正常状态下的按钮图片路径 </td></tr>
+    <tr><td class="paramname">hover</td><td>悬停状态下的按钮图片路径 </td></tr>
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr</td></tr>
+    <tr><td class="paramname">normalImage</td><td>正常状态下的按钮图片路径 </td></tr>
+    <tr><td class="paramname">hoverImage</td><td>悬停状态下的按钮图片路径 </td></tr>
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph.png" border="0" usemap="#aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph" alt=""/></div>
 <map name="aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph" id="aclass_nav_button_aed2b96bba6aae3e8a660f41ff20e5d3e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,89,32"/>
-<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title=" " alt="" coords="137,5,259,32"/>
+<area shape="rect" title="构造函数" alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title="检查鼠标是否仍在按钮区域内" alt="" coords="137,5,259,32"/>
 <area shape="poly" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
-<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="307,5,412,32"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title="设置按钮的悬停状态" alt="" coords="307,5,412,32"/>
 <area shape="poly" title=" " alt="" coords="259,16,291,16,291,21,259,21"/>
 </map>
 </div>
@@ -232,13 +260,15 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>检查鼠标是否仍在按钮区域内 </p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph.png" border="0" usemap="#aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph" alt=""/></div>
 <map name="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph" id="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,128,32"/>
-<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="176,5,281,32"/>
+<area shape="rect" title="检查鼠标是否仍在按钮区域内" alt="" coords="5,5,128,32"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title="设置按钮的悬停状态" alt="" coords="176,5,281,32"/>
 <area shape="poly" title=" " alt="" coords="128,16,160,16,160,21,128,21"/>
 </map>
 </div>
@@ -247,8 +277,8 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph.png" border="0" usemap="#aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph" alt=""/></div>
 <map name="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph" id="aclass_nav_button_a46ed2122db70ac26531740f3b73307f2_icgraph">
-<area shape="rect" title=" " alt="" coords="137,5,259,32"/>
-<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" title="检查鼠标是否仍在按钮区域内" alt="" coords="137,5,259,32"/>
+<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title="构造函数" alt="" coords="5,5,89,32"/>
 <area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
 </map>
 </div>
@@ -277,16 +307,32 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>信号：当按钮被点击时发出 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a263c24e31a1115d0b7b016189a710cb8_cgraph.png" border="0" usemap="#aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_cgraph" alt=""/></div>
+<map name="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_cgraph" id="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_cgraph">
+<area shape="rect" title="信号：当按钮被点击时发出" alt="" coords="5,5,68,32"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="116,5,169,32"/>
+<area shape="poly" title=" " alt="" coords="68,24,100,25,100,30,68,30"/>
+<area shape="poly" title=" " alt="" coords="115,13,83,12,84,7,115,8"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title="设置按钮的悬停状态" alt="" coords="217,5,322,32"/>
+<area shape="poly" title=" " alt="" coords="169,16,202,16,202,21,169,21"/>
+</map>
+</div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph.png" border="0" usemap="#aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph" alt=""/></div>
 <map name="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph" id="aclass_nav_button_a263c24e31a1115d0b7b016189a710cb8_icgraph">
-<area shape="rect" title=" " alt="" coords="227,43,289,69"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="5,5,179,48"/>
-<area shape="poly" title=" " alt="" coords="211,51,179,45,180,39,212,45"/>
-<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title=" " alt="" coords="65,72,119,99"/>
-<area shape="poly" title=" " alt="" coords="212,67,120,83,119,78,211,62"/>
+<area shape="rect" title="信号：当按钮被点击时发出" alt="" coords="227,72,289,99"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,179,48"/>
+<area shape="poly" title=" " alt="" coords="211,72,153,51,155,46,213,67"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="65,72,119,99"/>
+<area shape="poly" title=" " alt="" coords="211,96,119,95,119,89,211,91"/>
+<area shape="poly" title=" " alt="" coords="134,75,226,75,226,81,134,80"/>
 </map>
 </div>
 
@@ -304,7 +350,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">bool event </td>
           <td>(</td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -314,16 +360,47 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写事件处理函数，处理鼠标悬停、点击等事件 </p>
+<p>处理事件，响应鼠标悬停、点击等</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果事件被处理则返回 true，否则返回 false</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果事件被处理则返回 true，否则返回 false </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph.png" border="0" usemap="#aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph" alt=""/></div>
 <map name="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph" id="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,59,57"/>
-<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title=" " alt="" coords="128,5,190,32"/>
-<area shape="poly" title=" " alt="" coords="59,36,113,25,114,30,60,41"/>
-<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title=" " alt="" coords="107,56,212,83"/>
-<area shape="poly" title=" " alt="" coords="60,47,92,53,91,58,59,52"/>
+<area shape="rect" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="5,5,59,32"/>
+<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title="信号：当按钮被点击时发出" alt="" coords="128,5,190,32"/>
+<area shape="poly" title=" " alt="" coords="59,23,113,25,113,30,59,29"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title="设置按钮的悬停状态" alt="" coords="107,56,212,83"/>
+<area shape="poly" title=" " alt="" coords="60,27,111,47,109,52,58,32"/>
+<area shape="poly" title=" " alt="" coords="128,13,74,13,74,7,128,8"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_icgraph.png" border="0" usemap="#aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_icgraph" alt=""/></div>
+<map name="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_icgraph" id="aclass_nav_button_a4df57dfac7a608de1ed3dc7bceda487e_icgraph">
+<area shape="rect" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="337,13,390,40"/>
+<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title="信号：当按钮被点击时发出" alt="" coords="227,13,289,40"/>
+<area shape="poly" title=" " alt="" coords="322,38,289,38,290,32,322,33"/>
+<area shape="poly" title=" " alt="" coords="305,15,337,16,337,21,305,20"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,179,48"/>
+<area shape="poly" title=" " alt="" coords="211,29,179,29,179,24,211,24"/>
 </map>
 </div>
 
@@ -343,18 +420,31 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置按钮的悬停状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hover</td><td>是否为悬停状态 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph.png" border="0" usemap="#aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph" alt=""/></div>
 <map name="aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph" id="aclass_nav_button_a8cd5647ab518a1dde8b7dfcaaa4ed446_icgraph">
-<area shape="rect" title=" " alt="" coords="307,31,412,57"/>
-<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title=" " alt="" coords="137,5,259,32"/>
-<area shape="poly" title=" " alt="" coords="291,36,259,31,260,26,292,31"/>
-<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title=" " alt="" coords="171,56,224,83"/>
-<area shape="poly" title=" " alt="" coords="292,57,225,68,224,63,291,52"/>
-<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title=" " alt="" coords="5,5,89,32"/>
-<area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+<area shape="rect" title="设置按钮的悬停状态" alt="" coords="528,31,634,57"/>
+<area shape="rect" href="class_nav_button.html#a46ed2122db70ac26531740f3b73307f2" title="检查鼠标是否仍在按钮区域内" alt="" coords="358,5,480,32"/>
+<area shape="poly" title=" " alt="" coords="513,36,480,31,481,26,514,31"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="392,56,446,83"/>
+<area shape="poly" title=" " alt="" coords="514,57,446,68,446,63,513,52"/>
+<area shape="rect" href="class_nav_button.html#aed2b96bba6aae3e8a660f41ff20e5d3e" title="构造函数" alt="" coords="227,5,310,32"/>
+<area shape="poly" title=" " alt="" coords="343,21,310,21,310,16,343,16"/>
+<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title="信号：当按钮被点击时发出" alt="" coords="237,56,300,83"/>
+<area shape="poly" title=" " alt="" coords="377,80,300,79,300,74,377,75"/>
+<area shape="poly" title=" " alt="" coords="315,58,392,60,392,65,315,64"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,48,179,91"/>
+<area shape="poly" title=" " alt="" coords="222,72,179,72,179,67,222,67"/>
 </map>
 </div>
 
@@ -381,6 +471,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>延迟检查鼠标位置的定时器 </p>
+
 </div>
 </div>
 <a id="a347b73f652bda0199c8d89d1d7133612" name="a347b73f652bda0199c8d89d1d7133612"></a>
@@ -402,6 +494,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>悬停状态下的按钮图片 </p>
 
 </div>
 </div>
@@ -425,11 +519,12 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>正常状态下的按钮图片 </p>
+
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li><a class="el" href="_advertise_board_8h_source.html">AdvertiseBoard.h</a></li>
-<li><a class="el" href="moc___advertise_board_8cpp_source.html">moc_AdvertiseBoard.cpp</a></li>
 <li><a class="el" href="_advertise_board_8cpp.html">AdvertiseBoard.cpp</a></li>
 </ul>
 </div><!-- contents -->

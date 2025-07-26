@@ -101,6 +101,8 @@ $(function(){initNavTree('class_my_menu.html',''); initResizable(true); });
   <div class="summary">
 <a href="#pub-types">Public 类型</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
 <a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_my_menu-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">MyMenu类 参考</div></div>
@@ -112,60 +114,64 @@ $(function(){initNavTree('class_my_menu.html',''); initResizable(true); });
 
 <p><code>#include &lt;<a class="el" href="_my_menu_8h_source.html">MyMenu.h</a>&gt;</code></p>
 <div class="dynheader">
-类 MyMenu 继承关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_my_menu__inherit__graph.png" border="0" usemap="#a_my_menu_inherit__map" alt="Inheritance graph"/></div>
-<map name="a_my_menu_inherit__map" id="a_my_menu_inherit__map">
-<area shape="rect" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单" alt="" coords="6,80,77,107"/>
-<area shape="rect" title=" " alt="" coords="5,5,78,32"/>
-<area shape="poly" title=" " alt="" coords="44,48,44,80,39,80,39,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
-<div class="dynheader">
 MyMenu 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_my_menu__coll__graph.png" border="0" usemap="#a_my_menu_coll__map" alt="Collaboration graph"/></div>
 <map name="a_my_menu_coll__map" id="a_my_menu_coll__map">
-<area shape="rect" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单" alt="" coords="27,279,98,305"/>
-<area shape="rect" title=" " alt="" coords="5,188,78,215"/>
-<area shape="poly" title=" " alt="" coords="51,229,62,277,57,279,45,230"/>
-<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="101,188,184,215"/>
-<area shape="poly" title=" " alt="" coords="123,228,76,280,72,276,119,225"/>
-<area shape="rect" title=" " alt="" coords="19,81,82,108"/>
-<area shape="poly" title=" " alt="" coords="74,118,134,186,130,189,70,121"/>
-<area shape="rect" href="class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="106,81,180,108"/>
-<area shape="poly" title=" " alt="" coords="146,123,146,188,140,188,140,123"/>
-<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="96,5,190,32"/>
-<area shape="poly" title=" " alt="" coords="146,47,146,81,140,81,140,47"/>
-<area shape="rect" href="class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="203,81,365,108"/>
-<area shape="poly" title=" " alt="" coords="269,123,250,145,227,166,183,190,180,185,224,162,246,141,265,119"/>
+<area shape="rect" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单" alt="" coords="93,279,165,305"/>
+<area shape="rect" href="class_base_menu.html" title="菜单基类，继承自 QMenu，提供阴影、动画和悬停状态管理功能" alt="" coords="87,188,171,215"/>
+<area shape="poly" title=" " alt="" coords="132,230,132,278,126,278,126,230"/>
+<area shape="rect" title=" " alt="" coords="5,81,69,108"/>
+<area shape="poly" title=" " alt="" coords="60,118,120,186,116,189,56,121"/>
+<area shape="rect" href="class_menu_btn.html" title="自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤" alt="" coords="92,81,166,108"/>
+<area shape="poly" title=" " alt="" coords="132,123,132,188,126,188,126,123"/>
+<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="82,5,176,32"/>
+<area shape="poly" title=" " alt="" coords="132,47,132,81,126,81,126,47"/>
+<area shape="rect" href="class_q_graphics_opacity_effect.html" title="图形透明效果类" alt="" coords="189,81,352,108"/>
+<area shape="poly" title=" " alt="" coords="255,123,236,145,213,166,169,190,166,185,210,162,233,141,251,119"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:a906558615f71f64d377dbc869bae1f5f" id="r_a906558615f71f64d377dbc869bae1f5f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a> { <br />
-&#160;&#160;<a class="el" href="#a906558615f71f64d377dbc869bae1f5fac2c87627ce06729276bb5139c354a4d0">SongOption</a>
-, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fa594c036033e571e58c3c397a190f6e0b">SortOption</a>
-, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fab875eae089e1177fb3c11f5cf5a3c8d5">TitleOption</a>
-, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fa1139ef2d7facf8823770d91e20145ec7">ListOption</a>
+<tr class="memitem:a906558615f71f64d377dbc869bae1f5f" id="r_a906558615f71f64d377dbc869bae1f5f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a> { <br />
+&#160;&#160;<a class="el" href="#a906558615f71f64d377dbc869bae1f5faf78946ee76b8f792fc4261cb29095204">SongOption</a>
+, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fa4d4723d33486eb57b212c431cc170d6a">SortOption</a>
+, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fa1762ba17c291a1a0221de08bacae0d38">TitleOption</a>
+, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fac367bed2715133388851b531f5b6e5ed">ListOption</a>
 , <br />
-&#160;&#160;<a class="el" href="#a906558615f71f64d377dbc869bae1f5fa8b0edbbab3fc3f9ebad0fda505464b5e">ListenOption</a>
-, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fac9d3e887722f2bc482bcca9d41c512af">None</a>
+&#160;&#160;<a class="el" href="#a906558615f71f64d377dbc869bae1f5faa9a8501cb59139c3ea5db7d5389ea8c7">ListenOption</a>
+, <a class="el" href="#a906558615f71f64d377dbc869bae1f5fa6adf97f83acf6453d4a6a4b1070f3754">None</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a906558615f71f64d377dbc869bae1f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单类型枚举  <a href="#a906558615f71f64d377dbc869bae1f5f">更多...</a><br /></td></tr>
 <tr class="separator:a906558615f71f64d377dbc869bae1f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9837cfaf324f5f7c5f75a2a6b82f0f" id="r_adf9837cfaf324f5f7c5f75a2a6b82f0f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a> = std::function&lt;<a class="el" href="class_base_menu.html">BaseMenu</a>*(QWidget*)&gt;</td></tr>
+<tr class="memdesc:adf9837cfaf324f5f7c5f75a2a6b82f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">菜单注册函数  <br /></td></tr>
+<tr class="separator:adf9837cfaf324f5f7c5f75a2a6b82f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a097fefc10eb4b5ae869e50b0e22b1537" id="r_a097fefc10eb4b5ae869e50b0e22b1537"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a097fefc10eb4b5ae869e50b0e22b1537">MyMenu</a> (const <a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a> &amp;kind, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a097fefc10eb4b5ae869e50b0e22b1537"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，根据菜单类型初始化菜单  <br /></td></tr>
 <tr class="separator:a097fefc10eb4b5ae869e50b0e22b1537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ab283a1d7ea3f688859061be53428f" id="r_a05ab283a1d7ea3f688859061be53428f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05ab283a1d7ea3f688859061be53428f">~MyMenu</a> ()</td></tr>
+<tr class="separator:a05ab283a1d7ea3f688859061be53428f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551baf7bda5682ad0685cb16378f7d71" id="r_a551baf7bda5682ad0685cb16378f7d71"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a>&gt; </td></tr>
 <tr class="memitem:a551baf7bda5682ad0685cb16378f7d71"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe44001e9ca21f40778b7db9343a6ca75ec2c41ccce">T</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a551baf7bda5682ad0685cb16378f7d71">getMenu</a> () const</td></tr>
 <tr class="memdesc:a551baf7bda5682ad0685cb16378f7d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">模板方法，获取具体类型的菜单对象  <br /></td></tr>
 <tr class="separator:a551baf7bda5682ad0685cb16378f7d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a2705053526ef6a2aa2e603c66c11911c" id="r_a2705053526ef6a2aa2e603c66c11911c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2705053526ef6a2aa2e603c66c11911c">registerMenu</a> (<a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a> kind, const <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a> &amp;creator)</td></tr>
+<tr class="separator:a2705053526ef6a2aa2e603c66c11911c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a6159580919b1198e423c8bf8dcda879f" id="r_a6159580919b1198e423c8bf8dcda879f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6159580919b1198e423c8bf8dcda879f">registry</a> () -&gt; QMap&lt; <a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a>, <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a> &gt; &amp;</td></tr>
+<tr class="memdesc:a6159580919b1198e423c8bf8dcda879f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取菜单注册表  <br /></td></tr>
+<tr class="separator:a6159580919b1198e423c8bf8dcda879f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
@@ -178,32 +184,57 @@ Private 属性</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>菜单管理类，使用策略模式动态创建和初始化不同类型的菜单 </p>
-</div><h2 class="groupheader">成员枚举类型说明</h2>
-<a id="a906558615f71f64d377dbc869bae1f5f" name="a906558615f71f64d377dbc869bae1f5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a906558615f71f64d377dbc869bae1f5f">&#9670;&#160;</a></span>MenuKind</h2>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="adf9837cfaf324f5f7c5f75a2a6b82f0f" name="adf9837cfaf324f5f7c5f75a2a6b82f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">&#9670;&#160;</a></span>MenuCreator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a></td>
+          <td class="memname">using <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a> = std::function&lt;<a class="el" href="class_base_menu.html">BaseMenu</a>*(QWidget*)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>菜单注册函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a906558615f71f64d377dbc869bae1f5f" name="a906558615f71f64d377dbc869bae1f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906558615f71f64d377dbc869bae1f5f">&#9670;&#160;</a></span>MenuKind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>菜单类型枚举 </p>
 <table class="fieldtable">
-<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fac2c87627ce06729276bb5139c354a4d0" name="a906558615f71f64d377dbc869bae1f5fac2c87627ce06729276bb5139c354a4d0"></a>SongOption&#160;</td><td class="fielddoc"><p>歌曲选项菜单 </p>
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5faf78946ee76b8f792fc4261cb29095204" name="a906558615f71f64d377dbc869bae1f5faf78946ee76b8f792fc4261cb29095204"></a>SongOption&#160;</td><td class="fielddoc"><p>歌曲选项菜单 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa594c036033e571e58c3c397a190f6e0b" name="a906558615f71f64d377dbc869bae1f5fa594c036033e571e58c3c397a190f6e0b"></a>SortOption&#160;</td><td class="fielddoc"><p>排序选项菜单 </p>
+<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa4d4723d33486eb57b212c431cc170d6a" name="a906558615f71f64d377dbc869bae1f5fa4d4723d33486eb57b212c431cc170d6a"></a>SortOption&#160;</td><td class="fielddoc"><p>排序选项菜单 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fab875eae089e1177fb3c11f5cf5a3c8d5" name="a906558615f71f64d377dbc869bae1f5fab875eae089e1177fb3c11f5cf5a3c8d5"></a>TitleOption&#160;</td><td class="fielddoc"><p>标题栏选项菜单 </p>
+<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa1762ba17c291a1a0221de08bacae0d38" name="a906558615f71f64d377dbc869bae1f5fa1762ba17c291a1a0221de08bacae0d38"></a>TitleOption&#160;</td><td class="fielddoc"><p>标题栏选项菜单 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa1139ef2d7facf8823770d91e20145ec7" name="a906558615f71f64d377dbc869bae1f5fa1139ef2d7facf8823770d91e20145ec7"></a>ListOption&#160;</td><td class="fielddoc"><p>列表选项菜单 </p>
+<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fac367bed2715133388851b531f5b6e5ed" name="a906558615f71f64d377dbc869bae1f5fac367bed2715133388851b531f5b6e5ed"></a>ListOption&#160;</td><td class="fielddoc"><p>列表选项菜单 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa8b0edbbab3fc3f9ebad0fda505464b5e" name="a906558615f71f64d377dbc869bae1f5fa8b0edbbab3fc3f9ebad0fda505464b5e"></a>ListenOption&#160;</td><td class="fielddoc"><p>收听选项菜单 </p>
+<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5faa9a8501cb59139c3ea5db7d5389ea8c7" name="a906558615f71f64d377dbc869bae1f5faa9a8501cb59139c3ea5db7d5389ea8c7"></a>ListenOption&#160;</td><td class="fielddoc"><p>收听选项菜单 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fac9d3e887722f2bc482bcca9d41c512af" name="a906558615f71f64d377dbc869bae1f5fac9d3e887722f2bc482bcca9d41c512af"></a>None&#160;</td><td class="fielddoc"><p>无类型 </p>
+<tr><td class="fieldname"><a id="a906558615f71f64d377dbc869bae1f5fa6adf97f83acf6453d4a6a4b1070f3754" name="a906558615f71f64d377dbc869bae1f5fa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p>无类型 </p>
 </td></tr>
 </table>
 
@@ -245,6 +276,35 @@ Private 属性</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>&lt; 升级版 &mdash;*&gt; 注册式菜单工厂</p>
+<p>&lt; 如果菜单类型在注册表中,则菜单指针指向被创建的对应的菜单</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_menu_a097fefc10eb4b5ae869e50b0e22b1537_cgraph.png" border="0" usemap="#aclass_my_menu_a097fefc10eb4b5ae869e50b0e22b1537_cgraph" alt=""/></div>
+<map name="aclass_my_menu_a097fefc10eb4b5ae869e50b0e22b1537_cgraph" id="aclass_my_menu_a097fefc10eb4b5ae869e50b0e22b1537_cgraph">
+<area shape="rect" title="构造函数，根据菜单类型初始化菜单" alt="" coords="5,5,77,32"/>
+<area shape="rect" href="class_my_menu.html#a6159580919b1198e423c8bf8dcda879f" title="获取菜单注册表" alt="" coords="125,5,189,32"/>
+<area shape="poly" title=" " alt="" coords="77,16,109,16,109,21,77,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05ab283a1d7ea3f688859061be53428f" name="a05ab283a1d7ea3f688859061be53428f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ab283a1d7ea3f688859061be53428f">&#9670;&#160;</a></span>~MyMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="class_my_menu.html">MyMenu</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -282,6 +342,84 @@ template&lt;typename <a class="el" href="_def_8h.html#ac402dbf9ecaebcd4f7e57afe4
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>指向具体菜单对象的指针 </dd></dl>
+
+</div>
+</div>
+<a id="a2705053526ef6a2aa2e603c66c11911c" name="a2705053526ef6a2aa2e603c66c11911c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2705053526ef6a2aa2e603c66c11911c">&#9670;&#160;</a></span>registerMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void registerMenu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a></td>          <td class="paramname"><span class="paramname"><em>kind</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>creator</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_menu_a2705053526ef6a2aa2e603c66c11911c_cgraph.png" border="0" usemap="#aclass_my_menu_a2705053526ef6a2aa2e603c66c11911c_cgraph" alt=""/></div>
+<map name="aclass_my_menu_a2705053526ef6a2aa2e603c66c11911c_cgraph" id="aclass_my_menu_a2705053526ef6a2aa2e603c66c11911c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,102,32"/>
+<area shape="rect" href="class_my_menu.html#a6159580919b1198e423c8bf8dcda879f" title="获取菜单注册表" alt="" coords="150,5,214,32"/>
+<area shape="poly" title=" " alt="" coords="102,16,134,16,134,21,102,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6159580919b1198e423c8bf8dcda879f" name="a6159580919b1198e423c8bf8dcda879f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6159580919b1198e423c8bf8dcda879f">&#9670;&#160;</a></span>registry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; <a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MyMenu::MenuKind</a>, <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MyMenu::MenuCreator</a> &gt; &amp; registry </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; QMap&lt;<a class="el" href="#a906558615f71f64d377dbc869bae1f5f">MenuKind</a>, <a class="el" href="#adf9837cfaf324f5f7c5f75a2a6b82f0f">MenuCreator</a>&gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取菜单注册表 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_menu_a6159580919b1198e423c8bf8dcda879f_icgraph.png" border="0" usemap="#aclass_my_menu_a6159580919b1198e423c8bf8dcda879f_icgraph" alt=""/></div>
+<map name="aclass_my_menu_a6159580919b1198e423c8bf8dcda879f_icgraph" id="aclass_my_menu_a6159580919b1198e423c8bf8dcda879f_icgraph">
+<area shape="rect" title="获取菜单注册表" alt="" coords="150,31,214,57"/>
+<area shape="rect" href="class_my_menu.html#a097fefc10eb4b5ae869e50b0e22b1537" title="构造函数，根据菜单类型初始化菜单" alt="" coords="18,5,89,32"/>
+<area shape="poly" title=" " alt="" coords="134,37,89,28,90,23,135,32"/>
+<area shape="rect" href="class_my_menu.html#a2705053526ef6a2aa2e603c66c11911c" title=" " alt="" coords="5,56,102,83"/>
+<area shape="poly" title=" " alt="" coords="135,56,103,62,102,57,134,51"/>
+</map>
+</div>
 
 </div>
 </div>

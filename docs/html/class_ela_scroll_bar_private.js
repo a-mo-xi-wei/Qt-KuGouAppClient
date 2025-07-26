@@ -1,7 +1,7 @@
 var class_ela_scroll_bar_private =
 [
     [ "ElaScrollBarPrivate", "class_ela_scroll_bar_private.html#ac75e5d40f9dedc7dc3cab9013b55cb2b", null ],
-    [ "~ElaScrollBarPrivate", "class_ela_scroll_bar_private.html#aea6155e8c2d38326b1dba3d10c04bf56", null ],
+    [ "~ElaScrollBarPrivate", "class_ela_scroll_bar_private.html#a5da9ce77aee590f0ef9e2777df73c4fe", null ],
     [ "_handleScrollBarGeometry", "class_ela_scroll_bar_private.html#a5fdf1740c0f55a2f4fabbdd1469c2163", null ],
     [ "_handleScrollBarRangeChanged", "class_ela_scroll_bar_private.html#a6654f97ba5160f18eb0d8216d5a8c168", null ],
     [ "_handleScrollBarValueChanged", "class_ela_scroll_bar_private.html#a4f1a7752bfaff05d090e4a7df38e531f", null ],

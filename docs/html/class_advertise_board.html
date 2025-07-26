@@ -109,13 +109,16 @@ $(function(){initNavTree('class_advertise_board.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
+<p>广告牌控件类，用于展示轮播图片  
+ <a href="#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_advertise_board_8h_source.html">AdvertiseBoard.h</a>&gt;</code></p>
 <div class="dynheader">
 类 AdvertiseBoard 继承关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board__inherit__graph.png" border="0" usemap="#a_advertise_board_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_advertise_board_inherit__map" id="a_advertise_board_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" title="广告牌控件类，用于展示轮播图片" alt="" coords="5,80,116,107"/>
 <area shape="rect" title=" " alt="" coords="24,5,97,32"/>
 <area shape="poly" title=" " alt="" coords="63,48,63,80,58,80,58,48"/>
 </map>
@@ -125,10 +128,10 @@ AdvertiseBoard 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board__coll__graph.png" border="0" usemap="#a_advertise_board_coll__map" alt="Collaboration graph"/></div>
 <map name="a_advertise_board_coll__map" id="a_advertise_board_coll__map">
-<area shape="rect" title=" " alt="" coords="88,188,198,215"/>
+<area shape="rect" title="广告牌控件类，用于展示轮播图片" alt="" coords="88,188,198,215"/>
 <area shape="rect" title=" " alt="" coords="5,81,78,108"/>
 <area shape="poly" title=" " alt="" coords="66,117,133,186,129,190,62,121"/>
-<area shape="rect" href="class_nav_button.html" title=" " alt="" coords="101,81,184,108"/>
+<area shape="rect" href="class_nav_button.html" title="自定义导航按钮类，用于广告牌的左右导航" alt="" coords="101,81,184,108"/>
 <area shape="poly" title=" " alt="" coords="146,123,146,188,140,188,140,123"/>
 <area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="112,5,174,32"/>
 <area shape="poly" title=" " alt="" coords="146,47,146,81,140,81,140,47"/>
@@ -140,31 +143,43 @@ AdvertiseBoard 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:aaa35abd3865158d084c97a2558c5d1bc" id="r_aaa35abd3865158d084c97a2558c5d1bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa35abd3865158d084c97a2558c5d1bc">AdvertiseBoard</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aaa35abd3865158d084c97a2558c5d1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
 <tr class="separator:aaa35abd3865158d084c97a2558c5d1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62e368f7981bb59ec1e4b6c46ae1a5c" id="r_aa62e368f7981bb59ec1e4b6c46ae1a5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa62e368f7981bb59ec1e4b6c46ae1a5c">~AdvertiseBoard</a> () override</td></tr>
+<tr class="memdesc:aa62e368f7981bb59ec1e4b6c46ae1a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
 <tr class="separator:aa62e368f7981bb59ec1e4b6c46ae1a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adddee2669d172e00ceb268e3c88dbc6c" id="r_adddee2669d172e00ceb268e3c88dbc6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adddee2669d172e00ceb268e3c88dbc6c">addPoster</a> (const QPixmap &amp;pixmap)</td></tr>
-<tr class="separator:adddee2669d172e00ceb268e3c88dbc6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29551279036876cb89a8905029537d1" id="r_ad29551279036876cb89a8905029537d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad29551279036876cb89a8905029537d1">addPoster</a> (const QString &amp;pixPath)</td></tr>
+<tr class="memdesc:ad29551279036876cb89a8905029537d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加一张海报图片  <br /></td></tr>
+<tr class="separator:ad29551279036876cb89a8905029537d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a356342798703f1f14771271ab013718a" id="r_a356342798703f1f14771271ab013718a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a356342798703f1f14771271ab013718a">setAspectRatio</a> (qreal aspectRatio)</td></tr>
+<tr class="memdesc:a356342798703f1f14771271ab013718a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置广告牌的宽高比  <br /></td></tr>
 <tr class="separator:a356342798703f1f14771271ab013718a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a647d0d1369764ac8f7fab73c10ea82fd" id="r_a647d0d1369764ac8f7fab73c10ea82fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a647d0d1369764ac8f7fab73c10ea82fd">slideOffset</a> () const</td></tr>
+<tr class="memdesc:a647d0d1369764ac8f7fab73c10ea82fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前滑动偏移量  <br /></td></tr>
 <tr class="separator:a647d0d1369764ac8f7fab73c10ea82fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ce8975ab1b4d895d23227f2fca0ba0e" id="r_a1ce8975ab1b4d895d23227f2fca0ba0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce8975ab1b4d895d23227f2fca0ba0e">setSlideOffset</a> (int offset)</td></tr>
+<tr class="memdesc:a1ce8975ab1b4d895d23227f2fca0ba0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置滑动偏移量  <br /></td></tr>
 <tr class="separator:a1ce8975ab1b4d895d23227f2fca0ba0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
 <tr class="memitem:aa71936647c7e332ab07cbec003a8c9a2" id="r_aa71936647c7e332ab07cbec003a8c9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71936647c7e332ab07cbec003a8c9a2">paintEvent</a> (<a class="el" href="class_q_paint_event.html">QPaintEvent</a> *event) override</td></tr>
+<tr class="memdesc:aa71936647c7e332ab07cbec003a8c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写绘制事件，绘制海报图片和导航圆点  <br /></td></tr>
 <tr class="separator:aa71936647c7e332ab07cbec003a8c9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a27ed4ceb22d2a19bdb88ed785085a1" id="r_a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a27ed4ceb22d2a19bdb88ed785085a1">resizeEvent</a> (QResizeEvent *event) override</td></tr>
+<tr class="memdesc:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写窗口大小调整事件，更新按钮位置和缩放图片  <br /></td></tr>
 <tr class="separator:a9a27ed4ceb22d2a19bdb88ed785085a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae30868492e047dc485c73e92d33a0b1d" id="r_ae30868492e047dc485c73e92d33a0b1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30868492e047dc485c73e92d33a0b1d">enterEvent</a> (QEnterEvent *event) override</td></tr>
+<tr class="memdesc:ae30868492e047dc485c73e92d33a0b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标进入事件，显示导航按钮  <br /></td></tr>
 <tr class="separator:ae30868492e047dc485c73e92d33a0b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5389554336d47de8a8249cf2aaf682a2" id="r_a5389554336d47de8a8249cf2aaf682a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5389554336d47de8a8249cf2aaf682a2">leaveEvent</a> (QEvent *event) override</td></tr>
+<tr class="memdesc:a5389554336d47de8a8249cf2aaf682a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标离开事件，隐藏导航按钮  <br /></td></tr>
 <tr class="separator:a5389554336d47de8a8249cf2aaf682a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d538d95963e25c7a27250e441321d72" id="r_a4d538d95963e25c7a27250e441321d72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d538d95963e25c7a27250e441321d72">mouseMoveEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a4d538d95963e25c7a27250e441321d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标移动事件，处理导航圆点的交互  <br /></td></tr>
 <tr class="separator:a4d538d95963e25c7a27250e441321d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2de3e1806dc8e5d659fc1f35545a5b87" id="r_a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2de3e1806dc8e5d659fc1f35545a5b87">mouseReleaseEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">重写鼠标释放事件，处理导航圆点的点击  <br /></td></tr>
 <tr class="separator:a2de3e1806dc8e5d659fc1f35545a5b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -175,53 +190,76 @@ Protected 成员函数</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private 成员函数</h2></td></tr>
 <tr class="memitem:a3c77b2f5c8096844f1ee3e320d426b42" id="r_a3c77b2f5c8096844f1ee3e320d426b42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c77b2f5c8096844f1ee3e320d426b42">updateButtonPosition</a> ()</td></tr>
+<tr class="memdesc:a3c77b2f5c8096844f1ee3e320d426b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新导航按钮的位置  <br /></td></tr>
 <tr class="separator:a3c77b2f5c8096844f1ee3e320d426b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2ff777f8bdf44bda7ea97732f8fe93f" id="r_af2ff777f8bdf44bda7ea97732f8fe93f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2ff777f8bdf44bda7ea97732f8fe93f">updateScaledPosters</a> ()</td></tr>
+<tr class="memdesc:af2ff777f8bdf44bda7ea97732f8fe93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新缩放后的海报图片  <br /></td></tr>
 <tr class="separator:af2ff777f8bdf44bda7ea97732f8fe93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca7a3f1b846e31d431fc6d964625badc" id="r_aca7a3f1b846e31d431fc6d964625badc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca7a3f1b846e31d431fc6d964625badc">calculateDotPositions</a> (QList&lt; QPoint &gt; &amp;centers, int &amp;totalWidth)</td></tr>
-<tr class="memdesc:aca7a3f1b846e31d431fc6d964625badc"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算导航圆点位置  <br /></td></tr>
+<tr class="memdesc:aca7a3f1b846e31d431fc6d964625badc"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算导航圆点的位置  <br /></td></tr>
 <tr class="separator:aca7a3f1b846e31d431fc6d964625badc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3db5107419d842361b476e37342be5e5" id="r_a3db5107419d842361b476e37342be5e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3db5107419d842361b476e37342be5e5">switchToNext</a> ()</td></tr>
+<tr class="memdesc:a3db5107419d842361b476e37342be5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到下一张海报  <br /></td></tr>
 <tr class="separator:a3db5107419d842361b476e37342be5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858a1489c0988be6ed12347da39c0e84" id="r_a858a1489c0988be6ed12347da39c0e84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a858a1489c0988be6ed12347da39c0e84">switchToPrev</a> ()</td></tr>
+<tr class="memdesc:a858a1489c0988be6ed12347da39c0e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到上一张海报  <br /></td></tr>
 <tr class="separator:a858a1489c0988be6ed12347da39c0e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be87bceb99bcf150dcb16f37afdb339" id="r_a4be87bceb99bcf150dcb16f37afdb339"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be87bceb99bcf150dcb16f37afdb339">switchToIndex</a> (const int &amp;<a class="el" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>)</td></tr>
+<tr class="memdesc:a4be87bceb99bcf150dcb16f37afdb339"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到指定索引的海报  <br /></td></tr>
 <tr class="separator:a4be87bceb99bcf150dcb16f37afdb339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a693fec7c84077547ae5ec8a771ad0645" id="r_a693fec7c84077547ae5ec8a771ad0645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a693fec7c84077547ae5ec8a771ad0645">startAnimation</a> (int startValue, int endValue)</td></tr>
+<tr class="memdesc:a693fec7c84077547ae5ec8a771ad0645"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始滑动动画  <br /></td></tr>
 <tr class="separator:a693fec7c84077547ae5ec8a771ad0645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:aca6d13c2d04c94690437018b61e19e67" id="r_aca6d13c2d04c94690437018b61e19e67"><td class="memItemLeft" align="right" valign="top">QList&lt; QPixmap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca6d13c2d04c94690437018b61e19e67">m_originalPosters</a></td></tr>
-<tr class="separator:aca6d13c2d04c94690437018b61e19e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a24a70790696584a7f0b8acced7391" id="r_a45a24a70790696584a7f0b8acced7391"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a24a70790696584a7f0b8acced7391">m_postersPath</a></td></tr>
+<tr class="memdesc:a45a24a70790696584a7f0b8acced7391"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始海报图片路径列表  <br /></td></tr>
+<tr class="separator:a45a24a70790696584a7f0b8acced7391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7edd5cc4e217ea3f2304363822e26ff4" id="r_a7edd5cc4e217ea3f2304363822e26ff4"><td class="memItemLeft" align="right" valign="top">QVector&lt; QPixmap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7edd5cc4e217ea3f2304363822e26ff4">m_scaledPosters</a></td></tr>
+<tr class="memdesc:a7edd5cc4e217ea3f2304363822e26ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">缩放后的海报图片列表  <br /></td></tr>
 <tr class="separator:a7edd5cc4e217ea3f2304363822e26ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc70ac98813c829c5343f411b4bb940" id="r_a3bc70ac98813c829c5343f411b4bb940"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_nav_button.html">NavButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bc70ac98813c829c5343f411b4bb940">m_leftBtn</a> {}</td></tr>
+<tr class="memitem:a3bc70ac98813c829c5343f411b4bb940" id="r_a3bc70ac98813c829c5343f411b4bb940"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_nav_button.html">NavButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bc70ac98813c829c5343f411b4bb940">m_leftBtn</a></td></tr>
+<tr class="memdesc:a3bc70ac98813c829c5343f411b4bb940"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧导航按钮  <br /></td></tr>
 <tr class="separator:a3bc70ac98813c829c5343f411b4bb940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93feca20ae5b00b39773a9bf0cb311dc" id="r_a93feca20ae5b00b39773a9bf0cb311dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_nav_button.html">NavButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93feca20ae5b00b39773a9bf0cb311dc">m_rightBtn</a> {}</td></tr>
+<tr class="memitem:a93feca20ae5b00b39773a9bf0cb311dc" id="r_a93feca20ae5b00b39773a9bf0cb311dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_nav_button.html">NavButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93feca20ae5b00b39773a9bf0cb311dc">m_rightBtn</a></td></tr>
+<tr class="memdesc:a93feca20ae5b00b39773a9bf0cb311dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">右侧导航按钮  <br /></td></tr>
 <tr class="separator:a93feca20ae5b00b39773a9bf0cb311dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a289233df7b591f1d7ea09ad486bb6889" id="r_a289233df7b591f1d7ea09ad486bb6889"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a289233df7b591f1d7ea09ad486bb6889">m_timer</a> {}</td></tr>
+<tr class="memitem:a8413a32c5847a30ff82eee7af680abbb" id="r_a8413a32c5847a30ff82eee7af680abbb"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8413a32c5847a30ff82eee7af680abbb">m_resizeTimer</a></td></tr>
+<tr class="memdesc:a8413a32c5847a30ff82eee7af680abbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">防抖定时器  <br /></td></tr>
+<tr class="separator:a8413a32c5847a30ff82eee7af680abbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289233df7b591f1d7ea09ad486bb6889" id="r_a289233df7b591f1d7ea09ad486bb6889"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a289233df7b591f1d7ea09ad486bb6889">m_timer</a></td></tr>
+<tr class="memdesc:a289233df7b591f1d7ea09ad486bb6889"><td class="mdescLeft">&#160;</td><td class="mdescRight">自动播放定时器  <br /></td></tr>
 <tr class="separator:a289233df7b591f1d7ea09ad486bb6889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81267bc8f66aeca14f17c491a9feac25" id="r_a81267bc8f66aeca14f17c491a9feac25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81267bc8f66aeca14f17c491a9feac25">m_animation</a> {}</td></tr>
+<tr class="memitem:a81267bc8f66aeca14f17c491a9feac25" id="r_a81267bc8f66aeca14f17c491a9feac25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81267bc8f66aeca14f17c491a9feac25">m_animation</a></td></tr>
+<tr class="memdesc:a81267bc8f66aeca14f17c491a9feac25"><td class="mdescLeft">&#160;</td><td class="mdescRight">滑动动画对象  <br /></td></tr>
 <tr class="separator:a81267bc8f66aeca14f17c491a9feac25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5696a3a4b2231e76b2ef9231ea43cea0" id="r_a5696a3a4b2231e76b2ef9231ea43cea0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5696a3a4b2231e76b2ef9231ea43cea0">m_currentIndex</a> = 0</td></tr>
+<tr class="memdesc:a5696a3a4b2231e76b2ef9231ea43cea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前显示的海报索引  <br /></td></tr>
 <tr class="separator:a5696a3a4b2231e76b2ef9231ea43cea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35feb75fc509e74c85eca70e28c7bc63" id="r_a35feb75fc509e74c85eca70e28c7bc63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35feb75fc509e74c85eca70e28c7bc63">m_previousIndex</a> = 0</td></tr>
+<tr class="memdesc:a35feb75fc509e74c85eca70e28c7bc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次显示的海报索引  <br /></td></tr>
 <tr class="separator:a35feb75fc509e74c85eca70e28c7bc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad59c6ccb6662144b1bbcbef059211db1" id="r_ad59c6ccb6662144b1bbcbef059211db1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad59c6ccb6662144b1bbcbef059211db1">m_slideOffset</a> = 0</td></tr>
+<tr class="memdesc:ad59c6ccb6662144b1bbcbef059211db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前滑动偏移量  <br /></td></tr>
 <tr class="separator:ad59c6ccb6662144b1bbcbef059211db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f4166223ebf62a47b31014ed2fbbb76" id="r_a3f4166223ebf62a47b31014ed2fbbb76"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4166223ebf62a47b31014ed2fbbb76">m_aspectRatio</a> = 2.0</td></tr>
+<tr class="memdesc:a3f4166223ebf62a47b31014ed2fbbb76"><td class="mdescLeft">&#160;</td><td class="mdescRight">广告牌宽高比  <br /></td></tr>
 <tr class="separator:a3f4166223ebf62a47b31014ed2fbbb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1221926def37b429ca89f2394342c5dd" id="r_a1221926def37b429ca89f2394342c5dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1221926def37b429ca89f2394342c5dd">m_isAnimating</a> = false</td></tr>
+<tr class="memdesc:a1221926def37b429ca89f2394342c5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否正在执行动画  <br /></td></tr>
 <tr class="separator:a1221926def37b429ca89f2394342c5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af62c2efadad3e9b55a6dd7e98b03d8ad" id="r_af62c2efadad3e9b55a6dd7e98b03d8ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af62c2efadad3e9b55a6dd7e98b03d8ad">m_slidingToNext</a> = true</td></tr>
+<tr class="memdesc:af62c2efadad3e9b55a6dd7e98b03d8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否向右滑动  <br /></td></tr>
 <tr class="separator:af62c2efadad3e9b55a6dd7e98b03d8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fd2596ecfa1fcc2451563b6fd2858d7" id="r_a9fd2596ecfa1fcc2451563b6fd2858d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fd2596ecfa1fcc2451563b6fd2858d7">m_isResizing</a> = false</td></tr>
-<tr class="separator:a9fd2596ecfa1fcc2451563b6fd2858d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3b012c2c1921fcdb7bbf79befe03ec8" id="r_ad3b012c2c1921fcdb7bbf79befe03ec8"><td class="memItemLeft" align="right" valign="top">QList&lt; QRect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3b012c2c1921fcdb7bbf79befe03ec8">m_dotRects</a></td></tr>
+<tr class="memdesc:ad3b012c2c1921fcdb7bbf79befe03ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">导航圆点的矩形区域列表  <br /></td></tr>
 <tr class="separator:ad3b012c2c1921fcdb7bbf79befe03ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>广告牌控件类，用于展示轮播图片 </p>
+<p>该类实现了一个支持图片轮播的广告牌控件，包含自动播放、导航按钮和指示圆点。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="aaa35abd3865158d084c97a2558c5d1bc" name="aaa35abd3865158d084c97a2558c5d1bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa35abd3865158d084c97a2558c5d1bc">&#9670;&#160;</a></span>AdvertiseBoard()</h2>
 
@@ -244,23 +282,39 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数 </p>
+<p><a class="el" href="class_advertise_board.html" title="广告牌控件类，用于展示轮播图片">AdvertiseBoard</a> 构造函数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>父控件指针，默认为 nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_aaa35abd3865158d084c97a2558c5d1bc_cgraph.png" border="0" usemap="#aclass_advertise_board_aaa35abd3865158d084c97a2558c5d1bc_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_aaa35abd3865158d084c97a2558c5d1bc_cgraph" id="aclass_advertise_board_aaa35abd3865158d084c97a2558c5d1bc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,116,108"/>
-<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title=" " alt="" coords="170,5,302,32"/>
-<area shape="poly" title=" " alt="" coords="86,78,163,42,178,35,180,40,165,46,89,83"/>
-<area shape="rect" href="class_advertise_board.html#a3db5107419d842361b476e37342be5e5" title=" " alt="" coords="186,56,287,83"/>
-<area shape="poly" title=" " alt="" coords="116,84,170,76,171,81,117,89"/>
-<area shape="rect" href="class_advertise_board.html#a858a1489c0988be6ed12347da39c0e84" title=" " alt="" coords="186,107,286,133"/>
-<area shape="poly" title=" " alt="" coords="117,100,171,108,170,113,116,105"/>
-<area shape="rect" href="class_advertise_board.html#a3c77b2f5c8096844f1ee3e320d426b42" title=" " alt="" coords="164,157,309,184"/>
-<area shape="poly" title=" " alt="" coords="89,106,165,143,180,149,178,154,163,148,86,111"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="357,81,462,108"/>
-<area shape="poly" title=" " alt="" coords="288,74,342,82,341,87,287,79"/>
-<area shape="poly" title=" " alt="" coords="287,110,341,102,342,107,287,115"/>
+<area shape="rect" title="构造函数" alt="" coords="5,107,116,133"/>
+<area shape="rect" href="class_nav_button.html#a263c24e31a1115d0b7b016189a710cb8" title="信号：当按钮被点击时发出" alt="" coords="170,5,302,32"/>
+<area shape="poly" title=" " alt="" coords="76,104,114,73,162,42,174,36,177,41,165,46,117,78,79,108"/>
+<area shape="rect" href="class_advertise_board.html#a3db5107419d842361b476e37342be5e5" title="切换到下一张海报" alt="" coords="186,56,287,83"/>
+<area shape="poly" title=" " alt="" coords="109,103,172,85,173,90,110,109"/>
+<area shape="rect" href="class_advertise_board.html#a858a1489c0988be6ed12347da39c0e84" title="切换到上一张海报" alt="" coords="186,107,286,133"/>
+<area shape="poly" title=" " alt="" coords="116,117,170,117,170,123,116,123"/>
+<area shape="rect" href="class_advertise_board.html#a3c77b2f5c8096844f1ee3e320d426b42" title="更新导航按钮的位置" alt="" coords="164,157,309,184"/>
+<area shape="poly" title=" " alt="" coords="110,131,173,150,172,155,109,137"/>
+<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title="更新缩放后的海报图片" alt="" coords="164,208,309,235"/>
+<area shape="poly" title=" " alt="" coords="79,132,117,162,165,194,177,199,174,204,162,198,114,167,76,136"/>
+<area shape="rect" href="class_nav_button.html#a4df57dfac7a608de1ed3dc7bceda487e" title="重写事件处理函数，处理鼠标悬停、点击等事件" alt="" coords="357,5,480,32"/>
+<area shape="poly" title=" " alt="" coords="303,25,341,25,341,30,303,30"/>
+<area shape="poly" title=" " alt="" coords="356,13,318,12,318,7,357,7"/>
+<area shape="rect" href="class_nav_button.html#a8cd5647ab518a1dde8b7dfcaaa4ed446" title="设置按钮的悬停状态" alt="" coords="528,5,704,32"/>
+<area shape="poly" title=" " alt="" coords="481,16,513,16,513,21,481,21"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="366,81,471,108"/>
+<area shape="poly" title=" " alt="" coords="288,74,351,83,350,88,287,79"/>
+<area shape="poly" title=" " alt="" coords="286,110,350,101,351,107,287,116"/>
 </map>
 </div>
 
@@ -289,11 +343,14 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>析构函数 </p>
+<p><a class="el" href="class_advertise_board.html" title="广告牌控件类，用于展示轮播图片">AdvertiseBoard</a> 析构函数 </p>
+
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="adddee2669d172e00ceb268e3c88dbc6c" name="adddee2669d172e00ceb268e3c88dbc6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adddee2669d172e00ceb268e3c88dbc6c">&#9670;&#160;</a></span>addPoster()</h2>
+<a id="ad29551279036876cb89a8905029537d1" name="ad29551279036876cb89a8905029537d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad29551279036876cb89a8905029537d1">&#9670;&#160;</a></span>addPoster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,18 +358,26 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void addPoster </td>
           <td>(</td>
-          <td class="paramtype">const QPixmap &amp;</td>          <td class="paramname"><span class="paramname"><em>pixmap</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pixPath</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>添加一张海报图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixPath</td><td>海报图片的路径 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_advertise_board_adddee2669d172e00ceb268e3c88dbc6c_cgraph.png" border="0" usemap="#aclass_advertise_board_adddee2669d172e00ceb268e3c88dbc6c_cgraph" alt=""/></div>
-<map name="aclass_advertise_board_adddee2669d172e00ceb268e3c88dbc6c_cgraph" id="aclass_advertise_board_adddee2669d172e00ceb268e3c88dbc6c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,86,32"/>
-<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title=" " alt="" coords="134,5,279,32"/>
+<div class="center"><img src="class_advertise_board_ad29551279036876cb89a8905029537d1_cgraph.png" border="0" usemap="#aclass_advertise_board_ad29551279036876cb89a8905029537d1_cgraph" alt=""/></div>
+<map name="aclass_advertise_board_ad29551279036876cb89a8905029537d1_cgraph" id="aclass_advertise_board_ad29551279036876cb89a8905029537d1_cgraph">
+<area shape="rect" title="添加一张海报图片" alt="" coords="5,5,86,32"/>
+<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title="更新缩放后的海报图片" alt="" coords="134,5,279,32"/>
 <area shape="poly" title=" " alt="" coords="86,16,118,16,118,21,86,21"/>
 </map>
 </div>
@@ -346,27 +411,22 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>计算导航圆点位置 </p>
+<p>计算导航圆点的位置 </p>
+<p>计算导航圆点位置</p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">centers</td><td>圆点中心点列表 </td></tr>
-    <tr><td class="paramname">totalWidth</td><td>总宽度 </td></tr>
+    <tr><td class="paramname">centers</td><td>输出参数，存储圆点中心点 </td></tr>
+    <tr><td class="paramname">totalWidth</td><td>输出参数，存储圆点总宽度 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>注解</dt><dd>计算圆点位置并返回总宽度 </dd></dl>
-<p>&lt; 计算总宽度</p>
-<p>&lt; 计算起始 X 坐标</p>
-<p>&lt; 设置 Y 坐标</p>
-<p>&lt; 添加圆点中心点</p>
-<p>&lt; 更新 X 坐标</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_aca7a3f1b846e31d431fc6d964625badc_icgraph.png" border="0" usemap="#aclass_advertise_board_aca7a3f1b846e31d431fc6d964625badc_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_aca7a3f1b846e31d431fc6d964625badc_icgraph" id="aclass_advertise_board_aca7a3f1b846e31d431fc6d964625badc_icgraph">
-<area shape="rect" title="计算导航圆点位置" alt="" coords="137,5,285,32"/>
-<area shape="rect" href="class_advertise_board.html#aa71936647c7e332ab07cbec003a8c9a2" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" title="计算导航圆点的位置" alt="" coords="137,5,285,32"/>
+<area shape="rect" href="class_advertise_board.html#aa71936647c7e332ab07cbec003a8c9a2" title="重写绘制事件，绘制海报图片和导航圆点" alt="" coords="5,5,89,32"/>
 <area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
 </map>
 </div>
@@ -385,7 +445,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void enterEvent </td>
           <td>(</td>
-          <td class="paramtype">QEnterEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype">QEnterEvent *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -395,6 +455,16 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写鼠标进入事件，显示导航按钮 </p>
+<p>鼠标进入事件，显示导航按钮</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标进入事件对象</td></tr>
+    <tr><td class="paramname">ev</td><td>鼠标进入事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -410,7 +480,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void leaveEvent </td>
           <td>(</td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -420,6 +490,16 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写鼠标离开事件，隐藏导航按钮 </p>
+<p>鼠标离开事件，隐藏导航按钮</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标离开事件对象</td></tr>
+    <tr><td class="paramname">ev</td><td>鼠标离开事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -445,15 +525,24 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写鼠标移动事件，处理导航圆点的交互 </p>
+<p>鼠标移动事件，处理导航圆点的交互</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标移动事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a4d538d95963e25c7a27250e441321d72_cgraph.png" border="0" usemap="#aclass_advertise_board_a4d538d95963e25c7a27250e441321d72_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a4d538d95963e25c7a27250e441321d72_cgraph" id="aclass_advertise_board_a4d538d95963e25c7a27250e441321d72_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,132,32"/>
-<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title=" " alt="" coords="180,5,285,32"/>
+<area shape="rect" title="重写鼠标移动事件，处理导航圆点的交互" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title="切换到指定索引的海报" alt="" coords="180,5,285,32"/>
 <area shape="poly" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="333,5,438,32"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="333,5,438,32"/>
 <area shape="poly" title=" " alt="" coords="286,16,317,16,317,21,286,21"/>
 </map>
 </div>
@@ -482,15 +571,24 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写鼠标释放事件，处理导航圆点的点击 </p>
+<p>鼠标释放事件，处理导航圆点的点击</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>鼠标释放事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a2de3e1806dc8e5d659fc1f35545a5b87_cgraph.png" border="0" usemap="#aclass_advertise_board_a2de3e1806dc8e5d659fc1f35545a5b87_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a2de3e1806dc8e5d659fc1f35545a5b87_cgraph" id="aclass_advertise_board_a2de3e1806dc8e5d659fc1f35545a5b87_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,32"/>
-<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title=" " alt="" coords="196,5,301,32"/>
+<area shape="rect" title="重写鼠标释放事件，处理导航圆点的点击" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title="切换到指定索引的海报" alt="" coords="196,5,301,32"/>
 <area shape="poly" title=" " alt="" coords="148,16,180,16,180,21,148,21"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="349,5,454,32"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="349,5,454,32"/>
 <area shape="poly" title=" " alt="" coords="302,16,333,16,333,21,302,21"/>
 </map>
 </div>
@@ -509,7 +607,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void paintEvent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_q_paint_event.html">QPaintEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -519,18 +617,23 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>&lt; 计算导航圆点位置</p>
-<p>&lt; 设置无边框</p>
-<p>&lt; 设置圆点半径</p>
-<p>&lt; 设置圆点颜色</p>
-<p>&lt; 绘制圆点</p>
+
+<p>重写绘制事件，绘制海报图片和导航圆点 </p>
+<p>绘制事件，绘制海报图片和导航圆点</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>绘制事件对象</td></tr>
+    <tr><td class="paramname">ev</td><td>绘制事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_aa71936647c7e332ab07cbec003a8c9a2_cgraph.png" border="0" usemap="#aclass_advertise_board_aa71936647c7e332ab07cbec003a8c9a2_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_aa71936647c7e332ab07cbec003a8c9a2_cgraph" id="aclass_advertise_board_aa71936647c7e332ab07cbec003a8c9a2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,89,32"/>
-<area shape="rect" href="class_advertise_board.html#aca7a3f1b846e31d431fc6d964625badc" title="计算导航圆点位置" alt="" coords="137,5,285,32"/>
+<area shape="rect" title="重写绘制事件，绘制海报图片和导航圆点" alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_advertise_board.html#aca7a3f1b846e31d431fc6d964625badc" title="计算导航圆点的位置" alt="" coords="137,5,285,32"/>
 <area shape="poly" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
 </map>
 </div>
@@ -549,7 +652,7 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void resizeEvent </td>
           <td>(</td>
-          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>ev</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -559,16 +662,24 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>重写窗口大小调整事件，更新按钮位置和缩放图片 </p>
+<p>窗口大小调整事件，更新按钮位置和缩放图片</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>大小调整事件对象</td></tr>
+    <tr><td class="paramname">ev</td><td>大小调整事件对象 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph.png" border="0" usemap="#aclass_advertise_board_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph" id="aclass_advertise_board_a9a27ed4ceb22d2a19bdb88ed785085a1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,96,57"/>
-<area shape="rect" href="class_advertise_board.html#a3c77b2f5c8096844f1ee3e320d426b42" title=" " alt="" coords="144,5,289,32"/>
-<area shape="poly" title=" " alt="" coords="96,35,128,30,128,35,96,40"/>
-<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title=" " alt="" coords="144,56,289,83"/>
-<area shape="poly" title=" " alt="" coords="96,48,128,53,128,58,96,53"/>
+<area shape="rect" title="重写窗口大小调整事件，更新按钮位置和缩放图片" alt="" coords="5,5,96,32"/>
+<area shape="rect" href="class_advertise_board.html#a3c77b2f5c8096844f1ee3e320d426b42" title="更新导航按钮的位置" alt="" coords="144,5,289,32"/>
+<area shape="poly" title=" " alt="" coords="96,16,128,16,128,21,96,21"/>
 </map>
 </div>
 
@@ -583,18 +694,27 @@ Private 属性</h2></td></tr>
         <tr>
           <td class="memname">void setAspectRatio </td>
           <td>(</td>
-          <td class="paramtype">qreal</td>          <td class="paramname"><span class="paramname"><em>aspectRatio</em></span></td><td>)</td>
+          <td class="paramtype">qreal</td>          <td class="paramname"><span class="paramname"><em>ratio</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置广告牌的宽高比 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aspectRatio</td><td>宽高比，需大于 0</td></tr>
+    <tr><td class="paramname">ratio</td><td>宽高比，需大于 0 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a356342798703f1f14771271ab013718a_cgraph.png" border="0" usemap="#aclass_advertise_board_a356342798703f1f14771271ab013718a_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a356342798703f1f14771271ab013718a_cgraph" id="aclass_advertise_board_a356342798703f1f14771271ab013718a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title=" " alt="" coords="165,5,310,32"/>
+<area shape="rect" title="设置广告牌的宽高比" alt="" coords="5,5,117,32"/>
+<area shape="rect" href="class_advertise_board.html#af2ff777f8bdf44bda7ea97732f8fe93f" title="更新缩放后的海报图片" alt="" coords="165,5,310,32"/>
 <area shape="poly" title=" " alt="" coords="117,16,149,16,149,21,117,21"/>
 </map>
 </div>
@@ -615,6 +735,14 @@ Private 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>设置滑动偏移量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>滑动偏移量 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -640,6 +768,9 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>获取当前滑动偏移量 </p>
+<dl class="section return"><dt>返回</dt><dd>当前的滑动偏移量 </dd></dl>
 
 </div>
 </div>
@@ -669,23 +800,32 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>开始滑动动画 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startValue</td><td>动画起始值 </td></tr>
+    <tr><td class="paramname">endValue</td><td>动画结束值 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a693fec7c84077547ae5ec8a771ad0645_icgraph.png" border="0" usemap="#aclass_advertise_board_a693fec7c84077547ae5ec8a771ad0645_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_a693fec7c84077547ae5ec8a771ad0645_icgraph" id="aclass_advertise_board_a693fec7c84077547ae5ec8a771ad0645_icgraph">
-<area shape="rect" title=" " alt="" coords="349,81,454,108"/>
-<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title=" " alt="" coords="196,31,301,57"/>
+<area shape="rect" title="开始滑动动画" alt="" coords="349,81,454,108"/>
+<area shape="rect" href="class_advertise_board.html#a4be87bceb99bcf150dcb16f37afdb339" title="切换到指定索引的海报" alt="" coords="196,31,301,57"/>
 <area shape="poly" title=" " alt="" coords="344,78,290,60,292,55,345,73"/>
-<area shape="rect" href="class_advertise_board.html#a3db5107419d842361b476e37342be5e5" title=" " alt="" coords="198,81,299,108"/>
+<area shape="rect" href="class_advertise_board.html#a3db5107419d842361b476e37342be5e5" title="切换到下一张海报" alt="" coords="198,81,299,108"/>
 <area shape="poly" title=" " alt="" coords="333,97,300,97,300,92,333,92"/>
-<area shape="rect" href="class_advertise_board.html#a858a1489c0988be6ed12347da39c0e84" title=" " alt="" coords="198,132,298,159"/>
+<area shape="rect" href="class_advertise_board.html#a858a1489c0988be6ed12347da39c0e84" title="切换到上一张海报" alt="" coords="198,132,298,159"/>
 <area shape="poly" title=" " alt="" coords="345,116,292,134,290,129,344,111"/>
-<area shape="rect" href="class_advertise_board.html#a4d538d95963e25c7a27250e441321d72" title=" " alt="" coords="13,5,140,32"/>
+<area shape="rect" href="class_advertise_board.html#a4d538d95963e25c7a27250e441321d72" title="重写鼠标移动事件，处理导航圆点的交互" alt="" coords="13,5,140,32"/>
 <area shape="poly" title=" " alt="" coords="180,37,140,31,140,25,181,31"/>
-<area shape="rect" href="class_advertise_board.html#a2de3e1806dc8e5d659fc1f35545a5b87" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="class_advertise_board.html#a2de3e1806dc8e5d659fc1f35545a5b87" title="重写鼠标释放事件，处理导航圆点的点击" alt="" coords="5,56,148,83"/>
 <area shape="poly" title=" " alt="" coords="181,57,148,61,147,56,180,51"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="21,119,132,145"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="21,119,132,145"/>
 <area shape="poly" title=" " alt="" coords="183,112,133,123,131,117,182,106"/>
 <area shape="poly" title=" " alt="" coords="183,143,132,139,133,134,183,138"/>
 </map>
@@ -715,13 +855,21 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>切换到指定索引的海报 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>目标海报的索引 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_cgraph.png" border="0" usemap="#aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_cgraph" id="aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,111,32"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="159,5,264,32"/>
+<area shape="rect" title="切换到指定索引的海报" alt="" coords="5,5,111,32"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="159,5,264,32"/>
 <area shape="poly" title=" " alt="" coords="111,16,143,16,143,21,111,21"/>
 </map>
 </div>
@@ -730,10 +878,10 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_icgraph.png" border="0" usemap="#aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_icgraph" id="aclass_advertise_board_a4be87bceb99bcf150dcb16f37afdb339_icgraph">
-<area shape="rect" title=" " alt="" coords="196,31,301,57"/>
-<area shape="rect" href="class_advertise_board.html#a4d538d95963e25c7a27250e441321d72" title=" " alt="" coords="13,5,140,32"/>
+<area shape="rect" title="切换到指定索引的海报" alt="" coords="196,31,301,57"/>
+<area shape="rect" href="class_advertise_board.html#a4d538d95963e25c7a27250e441321d72" title="重写鼠标移动事件，处理导航圆点的交互" alt="" coords="13,5,140,32"/>
 <area shape="poly" title=" " alt="" coords="180,37,140,31,140,25,181,31"/>
-<area shape="rect" href="class_advertise_board.html#a2de3e1806dc8e5d659fc1f35545a5b87" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="class_advertise_board.html#a2de3e1806dc8e5d659fc1f35545a5b87" title="重写鼠标释放事件，处理导航圆点的点击" alt="" coords="5,56,148,83"/>
 <area shape="poly" title=" " alt="" coords="181,57,148,61,147,56,180,51"/>
 </map>
 </div>
@@ -762,13 +910,15 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>切换到下一张海报 </p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a3db5107419d842361b476e37342be5e5_cgraph.png" border="0" usemap="#aclass_advertise_board_a3db5107419d842361b476e37342be5e5_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a3db5107419d842361b476e37342be5e5_cgraph" id="aclass_advertise_board_a3db5107419d842361b476e37342be5e5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="155,5,260,32"/>
+<area shape="rect" title="切换到下一张海报" alt="" coords="5,5,107,32"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="155,5,260,32"/>
 <area shape="poly" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
 </map>
 </div>
@@ -777,8 +927,8 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a3db5107419d842361b476e37342be5e5_icgraph.png" border="0" usemap="#aclass_advertise_board_a3db5107419d842361b476e37342be5e5_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_a3db5107419d842361b476e37342be5e5_icgraph" id="aclass_advertise_board_a3db5107419d842361b476e37342be5e5_icgraph">
-<area shape="rect" title=" " alt="" coords="164,5,265,32"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" title="切换到下一张海报" alt="" coords="164,5,265,32"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,116,32"/>
 <area shape="poly" title=" " alt="" coords="148,21,116,21,116,16,148,16"/>
 </map>
 </div>
@@ -807,13 +957,15 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>切换到上一张海报 </p>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a858a1489c0988be6ed12347da39c0e84_cgraph.png" border="0" usemap="#aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_cgraph" alt=""/></div>
 <map name="aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_cgraph" id="aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,106,32"/>
-<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title=" " alt="" coords="154,5,259,32"/>
+<area shape="rect" title="切换到上一张海报" alt="" coords="5,5,106,32"/>
+<area shape="rect" href="class_advertise_board.html#a693fec7c84077547ae5ec8a771ad0645" title="开始滑动动画" alt="" coords="154,5,259,32"/>
 <area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
 </map>
 </div>
@@ -822,8 +974,8 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a858a1489c0988be6ed12347da39c0e84_icgraph.png" border="0" usemap="#aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_icgraph" id="aclass_advertise_board_a858a1489c0988be6ed12347da39c0e84_icgraph">
-<area shape="rect" title=" " alt="" coords="164,5,264,32"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" title="切换到上一张海报" alt="" coords="164,5,264,32"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,116,32"/>
 <area shape="poly" title=" " alt="" coords="148,21,116,21,116,16,148,16"/>
 </map>
 </div>
@@ -852,15 +1004,17 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>更新导航按钮的位置 </p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_a3c77b2f5c8096844f1ee3e320d426b42_icgraph.png" border="0" usemap="#aclass_advertise_board_a3c77b2f5c8096844f1ee3e320d426b42_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_a3c77b2f5c8096844f1ee3e320d426b42_icgraph" id="aclass_advertise_board_a3c77b2f5c8096844f1ee3e320d426b42_icgraph">
-<area shape="rect" title=" " alt="" coords="164,31,309,57"/>
-<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" title="更新导航按钮的位置" alt="" coords="164,31,309,57"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="5,5,116,32"/>
 <area shape="poly" title=" " alt="" coords="148,34,115,29,116,24,149,29"/>
-<area shape="rect" href="class_advertise_board.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title=" " alt="" coords="15,56,106,83"/>
+<area shape="rect" href="class_advertise_board.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title="重写窗口大小调整事件，更新按钮位置和缩放图片" alt="" coords="15,56,106,83"/>
 <area shape="poly" title=" " alt="" coords="148,59,106,65,106,60,148,54"/>
 </map>
 </div>
@@ -889,17 +1043,19 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>更新缩放后的海报图片 </p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_advertise_board_af2ff777f8bdf44bda7ea97732f8fe93f_icgraph.png" border="0" usemap="#aclass_advertise_board_af2ff777f8bdf44bda7ea97732f8fe93f_icgraph" alt=""/></div>
 <map name="aclass_advertise_board_af2ff777f8bdf44bda7ea97732f8fe93f_icgraph" id="aclass_advertise_board_af2ff777f8bdf44bda7ea97732f8fe93f_icgraph">
-<area shape="rect" title=" " alt="" coords="165,56,310,83"/>
-<area shape="rect" href="class_advertise_board.html#adddee2669d172e00ceb268e3c88dbc6c" title=" " alt="" coords="21,5,101,32"/>
+<area shape="rect" title="更新缩放后的海报图片" alt="" coords="165,56,310,83"/>
+<area shape="rect" href="class_advertise_board.html#ad29551279036876cb89a8905029537d1" title="添加一张海报图片" alt="" coords="21,5,101,32"/>
 <area shape="poly" title=" " alt="" coords="173,54,101,33,102,27,174,49"/>
-<area shape="rect" href="class_advertise_board.html#a9a27ed4ceb22d2a19bdb88ed785085a1" title=" " alt="" coords="16,56,106,83"/>
-<area shape="poly" title=" " alt="" coords="149,72,106,72,106,67,149,67"/>
-<area shape="rect" href="class_advertise_board.html#a356342798703f1f14771271ab013718a" title=" " alt="" coords="5,107,117,133"/>
+<area shape="rect" href="class_advertise_board.html#aaa35abd3865158d084c97a2558c5d1bc" title="构造函数" alt="" coords="6,56,116,83"/>
+<area shape="poly" title=" " alt="" coords="149,72,117,72,117,67,149,67"/>
+<area shape="rect" href="class_advertise_board.html#a356342798703f1f14771271ab013718a" title="设置广告牌的宽高比" alt="" coords="5,107,117,133"/>
 <area shape="poly" title=" " alt="" coords="175,90,111,109,109,104,173,85"/>
 </map>
 </div>
@@ -917,7 +1073,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a>* m_animation {}</td>
+          <td class="memname"><a class="el" href="class_q_property_animation.html">QPropertyAnimation</a>* m_animation</td>
         </tr>
       </table>
   </td>
@@ -926,6 +1082,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>滑动动画对象 </p>
 
 </div>
 </div>
@@ -949,6 +1107,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>广告牌宽高比 </p>
+
 </div>
 </div>
 <a id="a5696a3a4b2231e76b2ef9231ea43cea0" name="a5696a3a4b2231e76b2ef9231ea43cea0"></a>
@@ -970,6 +1130,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>当前显示的海报索引 </p>
 
 </div>
 </div>
@@ -993,6 +1155,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>导航圆点的矩形区域列表 </p>
+
 </div>
 </div>
 <a id="a1221926def37b429ca89f2394342c5dd" name="a1221926def37b429ca89f2394342c5dd"></a>
@@ -1015,27 +1179,7 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a9fd2596ecfa1fcc2451563b6fd2858d7" name="a9fd2596ecfa1fcc2451563b6fd2858d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fd2596ecfa1fcc2451563b6fd2858d7">&#9670;&#160;</a></span>m_isResizing</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool m_isResizing = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>是否正在执行动画 </p>
 
 </div>
 </div>
@@ -1049,7 +1193,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a>* m_leftBtn {}</td>
+          <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a>* m_leftBtn</td>
         </tr>
       </table>
   </td>
@@ -1059,10 +1203,12 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>左侧导航按钮 </p>
+
 </div>
 </div>
-<a id="aca6d13c2d04c94690437018b61e19e67" name="aca6d13c2d04c94690437018b61e19e67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca6d13c2d04c94690437018b61e19e67">&#9670;&#160;</a></span>m_originalPosters</h2>
+<a id="a45a24a70790696584a7f0b8acced7391" name="a45a24a70790696584a7f0b8acced7391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a24a70790696584a7f0b8acced7391">&#9670;&#160;</a></span>m_postersPath</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1071,7 +1217,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;QPixmap&gt; m_originalPosters</td>
+          <td class="memname">QList&lt;QString&gt; m_postersPath</td>
         </tr>
       </table>
   </td>
@@ -1080,6 +1226,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>原始海报图片路径列表 </p>
 
 </div>
 </div>
@@ -1103,6 +1251,32 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>上一次显示的海报索引 </p>
+
+</div>
+</div>
+<a id="a8413a32c5847a30ff82eee7af680abbb" name="a8413a32c5847a30ff82eee7af680abbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8413a32c5847a30ff82eee7af680abbb">&#9670;&#160;</a></span>m_resizeTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* m_resizeTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>防抖定时器 </p>
+
 </div>
 </div>
 <a id="a93feca20ae5b00b39773a9bf0cb311dc" name="a93feca20ae5b00b39773a9bf0cb311dc"></a>
@@ -1115,7 +1289,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a>* m_rightBtn {}</td>
+          <td class="memname"><a class="el" href="class_nav_button.html">NavButton</a>* m_rightBtn</td>
         </tr>
       </table>
   </td>
@@ -1124,6 +1298,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>右侧导航按钮 </p>
 
 </div>
 </div>
@@ -1147,6 +1323,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>缩放后的海报图片列表 </p>
+
 </div>
 </div>
 <a id="ad59c6ccb6662144b1bbcbef059211db1" name="ad59c6ccb6662144b1bbcbef059211db1"></a>
@@ -1168,6 +1346,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>当前滑动偏移量 </p>
 
 </div>
 </div>
@@ -1191,6 +1371,8 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>是否向右滑动 </p>
+
 </div>
 </div>
 <a id="a289233df7b591f1d7ea09ad486bb6889" name="a289233df7b591f1d7ea09ad486bb6889"></a>
@@ -1203,7 +1385,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QTimer* m_timer {}</td>
+          <td class="memname">QTimer* m_timer</td>
         </tr>
       </table>
   </td>
@@ -1212,6 +1394,8 @@ Private 属性</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>自动播放定时器 </p>
 
 </div>
 </div>

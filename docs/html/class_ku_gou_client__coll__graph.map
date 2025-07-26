@@ -1,27 +1,19 @@
 <map id="KuGouClient" name="KuGouClient">
-<area shape="rect" id="Node000001" title="酷狗音乐应用主窗口类，管理音乐播放和界面切换" alt="" coords="267,353,362,380"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html" title="自定义主窗口类，继承自 QWidget，支持窗口拉伸、托盘交互和关闭动画" alt="" coords="142,263,238,289"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,297,259,327,295,351,292,355,255,332,216,301"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="160,172,232,199"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,214,194,262,188,262,191,214"/>
-<area shape="rect" id="Node000004" href="$class_my_tray_icon.html" title="自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示" alt="" coords="45,172,136,199"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="103,212,121,237,138,250,156,260,154,264,135,254,117,241,99,215"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,81,133,108"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="78,123,90,171,85,172,73,124"/>
-<area shape="rect" id="Node000006" href="$class_ela_menu.html" title="自定义菜单类，支持动画、图标和子菜单" alt="" coords="157,81,229,108"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="169,120,107,173,103,169,165,116"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="161,5,225,32"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="196,47,196,81,190,81,190,47"/>
-<area shape="rect" id="Node000008" href="$class_video_player_1_1_event_handle.html" title="事件处理接口" alt="" coords="266,172,362,199"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="309,214,308,223,306,260,307,296,315,352,309,353,302,296,300,260,302,222,304,213"/>
-<area shape="rect" id="Node000009" href="$class_video_player.html" title="多媒体播放器类" alt="" coords="341,263,432,289"/>
-<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="312,214,313,226,318,237,330,250,345,260,342,264,326,254,313,240,308,227,307,214"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="369,303,327,354,323,351,365,300"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="490,172,560,199"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="494,210,408,264,405,260,491,205"/>
-<area shape="rect" id="Node000012" href="$class_c_libhttp.html" title=" " alt="" coords="471,263,542,289"/>
-<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="522,214,512,263,506,262,517,213"/>
-<area shape="rect" id="Node000011" href="$class_util_1_1_thread.html" title="线程管理类" alt="" coords="405,172,466,199"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="432,215,422,240,403,264,399,260,417,237,427,213"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="477,300,421,332,359,355,357,350,419,327,475,295"/>
+<area shape="rect" id="Node000001" title="酷狗音乐应用主窗口类，管理音乐播放和界面切换" alt="" coords="130,187,225,213"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html" title="自定义主窗口类，继承自 QWidget，支持窗口拉伸、托盘交互和关闭动画" alt="" coords="5,96,102,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,131,122,160,158,184,155,188,119,165,79,135"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="17,5,90,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="56,48,56,95,51,95,51,48"/>
+<area shape="rect" id="Node000004" href="$class_video_player_1_1_event_handle.html" title="事件处理接口" alt="" coords="124,5,220,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,48,169,56,171,130,178,186,173,186,166,130,164,56,165,47"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html" title="多媒体播放器类" alt="" coords="190,96,282,123"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="174,47,181,71,192,83,207,93,204,98,189,87,176,73,169,48"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="222,137,188,188,184,185,217,134"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="354,5,423,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="358,43,307,74,263,98,260,93,304,70,355,39"/>
+<area shape="rect" id="Node000008" href="$class_c_libhttp.html" title=" " alt="" coords="334,96,405,123"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="385,48,375,96,370,95,380,47"/>
+<area shape="rect" id="Node000007" href="$class_util_1_1_thread.html" title="线程管理类" alt="" coords="268,5,330,32"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="296,48,285,74,259,98,256,94,281,70,291,46"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="337,133,276,165,216,189,214,184,274,160,334,128"/>
 </map>

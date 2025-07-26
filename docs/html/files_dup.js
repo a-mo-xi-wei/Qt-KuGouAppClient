@@ -1,6 +1,5 @@
 var files_dup =
 [
-    [ "build", "dir_4fef79e7177ba769987a8da36c892c5f.html", "dir_4fef79e7177ba769987a8da36c892c5f" ],
     [ "KuGouClient", "dir_4f2e4108869dca1a6cdf796f54ed578a.html", "dir_4f2e4108869dca1a6cdf796f54ed578a" ],
     [ "KuGouServer", "dir_e72918b9f0e93adee7ec62635d44a38d.html", "dir_e72918b9f0e93adee7ec62635d44a38d" ],
     [ "ui", "dir_1788f8309b1a812dcb800a185471cf6c.html", "dir_1788f8309b1a812dcb800a185471cf6c" ],

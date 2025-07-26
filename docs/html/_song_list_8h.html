@@ -107,7 +107,8 @@ $(function(){initNavTree('_song_list_8h.html',''); initResizable(true); });
 
 <p>歌曲列表界面的头文件，定义 <a class="el" href="class_song_list.html" title="歌曲列表界面类，管理歌曲块和菜单">SongList</a> 类  
 <a href="#details">更多...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_list_option_menu_8h_source.html">ListOptionMenu/ListOptionMenu.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;QTimer&gt;</code><br />
+<code>#include &quot;<a class="el" href="_list_option_menu_8h_source.html">ListOptionMenu/ListOptionMenu.h</a>&quot;</code><br />
 <code>#include &lt;QWidget&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -115,23 +116,25 @@ SongList.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_song_list_8h__incl.png" border="0" usemap="#a_song_list_8h" alt=""/></div>
 <map name="a_song_list_8h" id="a_song_list_8h">
-<area shape="rect" title="歌曲列表界面的头文件，定义 SongList 类" alt="" coords="262,5,346,32"/>
-<area shape="rect" href="_list_option_menu_8h.html" title="定义 ListOptionMenu 类，提供歌曲分类选项菜单功能" alt="" coords="68,80,244,123"/>
-<area shape="poly" title=" " alt="" coords="282,35,209,75,206,70,280,30"/>
-<area shape="rect" title=" " alt="" coords="268,88,340,115"/>
-<area shape="poly" title=" " alt="" coords="307,32,307,73,301,73,301,32"/>
-<area shape="rect" title=" " alt="" coords="365,88,422,115"/>
-<area shape="poly" title=" " alt="" coords="320,31,370,76,367,80,316,34"/>
-<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="103,171,209,197"/>
-<area shape="poly" title=" " alt="" coords="159,123,159,155,153,155,153,123"/>
-<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="55,245,153,272"/>
-<area shape="poly" title=" " alt="" coords="149,199,124,234,120,231,145,196"/>
-<area shape="rect" title=" " alt="" coords="178,245,241,272"/>
-<area shape="poly" title=" " alt="" coords="167,196,193,231,189,234,163,199"/>
-<area shape="rect" title=" " alt="" coords="5,320,99,347"/>
-<area shape="poly" title=" " alt="" coords="97,274,72,309,68,306,93,271"/>
-<area shape="rect" title=" " alt="" coords="123,320,189,347"/>
-<area shape="poly" title=" " alt="" coords="115,271,140,306,136,309,111,274"/>
+<area shape="rect" title="歌曲列表界面的头文件，定义 SongList 类" alt="" coords="213,5,296,32"/>
+<area shape="rect" title=" " alt="" coords="5,88,70,115"/>
+<area shape="poly" title=" " alt="" coords="216,35,82,82,79,84,77,79,81,78,214,30"/>
+<area shape="rect" href="_list_option_menu_8h.html" title="定义 ListOptionMenu 类，提供歌曲分类选项菜单功能" alt="" coords="94,80,269,123"/>
+<area shape="poly" title=" " alt="" coords="245,34,212,70,208,67,241,31"/>
+<area shape="rect" title=" " alt="" coords="293,88,366,115"/>
+<area shape="poly" title=" " alt="" coords="268,31,310,75,306,79,265,34"/>
+<area shape="rect" title=" " alt="" coords="390,88,448,115"/>
+<area shape="poly" title=" " alt="" coords="282,30,381,79,379,83,279,35"/>
+<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="128,171,235,197"/>
+<area shape="poly" title=" " alt="" coords="184,123,184,155,179,155,179,123"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="80,245,179,272"/>
+<area shape="poly" title=" " alt="" coords="175,199,149,234,145,231,170,196"/>
+<area shape="rect" title=" " alt="" coords="203,245,266,272"/>
+<area shape="poly" title=" " alt="" coords="193,196,219,231,214,234,189,199"/>
+<area shape="rect" title=" " alt="" coords="31,320,124,347"/>
+<area shape="poly" title=" " alt="" coords="123,274,97,309,93,306,118,271"/>
+<area shape="rect" title=" " alt="" coords="149,320,214,347"/>
+<area shape="poly" title=" " alt="" coords="141,271,166,306,162,309,136,274"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -140,7 +143,7 @@ SongList.h 的引用(Include)关系图:</div>
 <div class="center"><img src="_song_list_8h__dep__incl.png" border="0" usemap="#a_song_list_8hdep" alt=""/></div>
 <map name="a_song_list_8hdep" id="a_song_list_8hdep">
 <area shape="rect" title="歌曲列表界面的头文件，定义 SongList 类" alt="" coords="220,5,303,32"/>
-<area shape="rect" href="_ku_gou_client_8h.html" title=" " alt="" coords="146,80,252,107"/>
+<area shape="rect" href="_ku_gou_client_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouClient 类" alt="" coords="146,80,252,107"/>
 <area shape="poly" title=" " alt="" coords="242,46,211,81,207,78,238,42"/>
 <area shape="rect" href="_song_list_8cpp.html" title="实现 SongList 类，管理歌曲列表界面" alt="" coords="275,80,373,107"/>
 <area shape="poly" title=" " alt="" coords="284,42,315,78,311,81,280,46"/>

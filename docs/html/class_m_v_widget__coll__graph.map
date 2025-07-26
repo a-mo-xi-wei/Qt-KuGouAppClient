@@ -1,35 +1,5 @@
 <map id="MVWidget" name="MVWidget">
-<area shape="rect" id="Node000001" title="音乐视频分类界面类，支持推荐、华语、欧美等分类" alt="" coords="5,887,88,913"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="185,5,257,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,27,125,37,83,58,58,76,41,94,31,114,28,143,28,810,34,852,44,886,39,887,28,853,23,811,23,143,26,113,37,91,55,72,80,54,124,32,169,21"/>
-<area shape="rect" id="Node000007" href="$class_slide_show.html" title="轮播图控件类，支持图片滑动、自动轮播和指示器" alt="" coords="388,224,471,251"/>
-<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="273,19,320,29,343,40,363,54,382,79,389,103,393,129,401,159,427,223,422,225,396,161,388,130,384,104,377,81,359,58,340,44,318,35,272,24"/>
-<area shape="rect" id="Node000010" href="$class_m_v_block_widget.html" title="音乐视频块控件类，显示封面、标题和描述" alt="" coords="238,469,354,496"/>
-<area shape="poly" id="edge12_Node000010_Node000002" title=" " alt="" coords="216,47,201,112,193,191,193,393,200,418,216,438,238,454,262,466,260,471,235,459,212,442,195,420,188,394,188,191,196,112,211,46"/>
-<area shape="rect" id="Node000013" href="$class_my_block_widget.html" title="块状控件类，支持遮罩、提示标签和流行度按钮" alt="" coords="228,131,342,157"/>
-<area shape="poly" id="edge16_Node000013_Node000002" title=" " alt="" coords="237,45,281,129,276,131,232,47"/>
-<area shape="rect" id="Node000003" href="$class_ui_1_1_m_v_widget.html" title=" " alt="" coords="216,796,298,823"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,832,78,889,76,884,212,827"/>
-<area shape="rect" id="Node000004" href="$class_ui___m_v_widget.html" title=" " alt="" coords="359,720,462,747"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="372,756,284,798,282,793,369,751"/>
-<area shape="rect" id="Node000005" href="$class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="466,469,566,496"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="508,512,476,595,432,697,420,721,415,718,427,695,471,593,503,510"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="488,379,579,405"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="530,421,521,469,516,468,525,420"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="429,266,418,429,414,602,413,720,408,720,408,602,413,429,424,266"/>
-<area shape="rect" id="Node000008" href="$class_side_hide_label.html" title="标签控件类，支持图片偏移和圆角裁剪" alt="" coords="531,131,636,157"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="551,168,452,226,449,221,548,163"/>
-<area shape="rect" id="Node000009" href="$class_q_label.html" title="标签控件类" alt="" coords="454,5,516,32"/>
-<area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="533,26,579,40,626,63,646,79,662,97,673,118,677,142,677,484,672,553,665,581,655,606,640,630,621,652,569,698,545,713,517,724,463,734,462,729,515,719,542,709,566,694,618,648,636,627,650,604,660,579,667,552,672,484,672,143,668,120,658,100,642,82,623,68,577,45,531,31"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="507,43,576,129,572,132,503,46"/>
-<area shape="rect" id="Node000012" href="$class_ui___m_v_block_widget.html" title=" " alt="" coords="228,224,364,251"/>
-<area shape="poly" id="edge19_Node000012_Node000009" title=" " alt="" coords="476,47,434,122,404,164,368,202,330,226,328,221,365,198,400,161,430,119,471,45"/>
-<area shape="poly" id="edge17_Node000013_Node000009" title=" " alt="" coords="440,30,403,41,367,58,344,75,325,95,296,132,291,128,321,92,341,71,364,54,401,36,438,25"/>
-<area shape="poly" id="edge11_Node000004_Node000010" title=" " alt="" coords="295,512,293,551,296,599,307,650,317,673,331,694,345,708,362,717,360,722,342,712,327,698,313,675,302,651,291,600,288,551,290,511"/>
-<area shape="rect" id="Node000011" href="$class_ui_1_1_m_v_block_widget.html" title=" " alt="" coords="238,379,354,405"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="298,421,298,469,293,469,293,421"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="298,266,298,378,293,378,293,266"/>
-<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="282,172,283,199,292,223,287,225,278,201,277,173"/>
-<area shape="rect" id="Node000014" href="$class_q_tool_button.html" title="工具按钮类" alt="" coords="22,5,116,32"/>
-<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="83,45,102,75,129,102,152,115,178,125,228,136,227,141,176,130,150,120,126,106,98,78,79,47"/>
+<area shape="rect" id="Node000001" title="音乐视频分类界面类，支持推荐、华语、欧美等分类" alt="" coords="5,80,88,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,83,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,48,49,80,44,80,44,48"/>
 </map>

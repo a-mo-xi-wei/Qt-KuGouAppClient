@@ -1,7 +1,7 @@
 var class_ela_tool_tip_private =
 [
     [ "ElaToolTipPrivate", "class_ela_tool_tip_private.html#a27d3d405c7db98ca22165f2493ba8bd7", null ],
-    [ "~ElaToolTipPrivate", "class_ela_tool_tip_private.html#aa77c63c36a1f91fb27801469b4c47914", null ],
+    [ "~ElaToolTipPrivate", "class_ela_tool_tip_private.html#abf9fe6a164d58e2715520f814aa55222", null ],
     [ "_doShowAnimation", "class_ela_tool_tip_private.html#a9ec3c4410ba479ad4280b241151d9172", null ],
     [ "_updatePos", "class_ela_tool_tip_private.html#ab51dc4c04c0c41164eae11d113d07521", null ],
     [ "eventFilter", "class_ela_tool_tip_private.html#a7eb87a6d4464680c455d278d1d32eba6", null ],

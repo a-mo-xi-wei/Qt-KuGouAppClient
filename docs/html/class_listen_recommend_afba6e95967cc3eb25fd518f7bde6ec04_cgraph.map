@@ -1,39 +1,26 @@
 <map id="initUi" name="initUi">
-<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,143,57,169"/>
-<area shape="rect" id="Node000002" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="660,29,699,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,140,104,112,179,88,258,70,337,56,414,47,549,39,645,39,645,44,550,45,414,53,338,62,259,75,181,93,106,117,54,145"/>
-<area shape="rect" id="Node000003" href="$class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="105,293,290,320"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="49,168,172,281,168,285,46,172"/>
-<area shape="rect" id="Node000006" href="$class_listen_recommend.html#a72f993c574c50f5f5787728feedc9577" title="初始化每日推荐画廊" alt="" coords="353,80,536,123"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="56,150,338,113,338,118,57,155"/>
-<area shape="rect" id="Node000009" href="$class_listen_recommend.html#a9917a30d9178a4353dfb73248b253fac" title="初始化表格控件" alt="" coords="139,172,256,199"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="58,158,124,170,123,175,57,163"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="658,39,639,28,636,15,651,6,679,3,705,5,720,11,723,22,715,32,711,28,718,21,716,15,703,10,680,8,652,11,641,17,644,25,661,34"/>
-<area shape="rect" id="Node000004" href="$class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="338,356,551,383"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="254,318,375,349,373,354,252,323"/>
-<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="405,357,398,347,403,337,419,331,445,329,473,332,488,339,485,344,472,337,445,335,420,337,406,341,403,347,409,354"/>
-<area shape="rect" id="Node000005" href="$class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="600,365,759,408"/>
-<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="552,375,584,377,584,382,552,380"/>
-<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="532,77,644,48,646,54,533,82"/>
-<area shape="rect" id="Node000007" href="$namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="601,131,758,157"/>
-<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="537,115,588,125,587,130,536,121"/>
-<area shape="rect" id="Node000008" href="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="619,80,740,107"/>
-<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="536,96,603,93,603,99,537,101"/>
-<area shape="rect" id="Node000010" href="$class_listen_recommend.html#a95a991169c83590b1eb0132626c7ecb3" title="初始化其他分类画廊" alt="" coords="368,147,521,173"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="256,177,353,167,353,172,257,182"/>
-<area shape="rect" id="Node000015" href="$class_listen_recommend.html#ad6d2bd176b7fe2407b08ebabf34dc9bf" title="刷新按钮点击槽函数" alt="" coords="374,197,515,224"/>
-<area shape="poly" id="edge20_Node000009_Node000015" title=" " alt="" coords="257,189,359,199,358,205,256,194"/>
-<area shape="rect" id="Node000016" href="$class_listen_table_widget.html#a1c01d0d9f50ce4f07b7b16680687abc8" title="刷新按钮点击信号" alt="" coords="376,248,513,291"/>
-<area shape="poly" id="edge21_Node000009_Node000016" title=" " alt="" coords="237,197,339,233,363,241,361,246,337,239,235,202"/>
-<area shape="poly" id="edge15_Node000010_Node000002" title=" " alt="" coords="520,146,550,132,565,117,573,101,581,83,598,66,621,53,644,46,646,51,623,58,601,70,586,86,578,103,570,120,553,137,522,151"/>
-<area shape="poly" id="edge18_Node000010_Node000007" title=" " alt="" coords="521,152,585,148,586,153,522,157"/>
-<area shape="poly" id="edge19_Node000010_Node000008" title=" " alt="" coords="507,143,551,132,598,116,619,109,621,114,600,121,552,137,509,149"/>
-<area shape="rect" id="Node000011" href="$class_gallery_widget.html#a1b13e44c140af2d138baad92e751b413" title="添加照片卡片数据" alt="" coords="599,181,760,208"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="522,169,584,178,583,183,521,174"/>
-<area shape="rect" id="Node000013" href="$class_listen_table_widget.html#aec03768a7c40300f362e75f4a6c8a6db" title="获取计数" alt="" coords="611,232,748,275"/>
-<area shape="poly" id="edge16_Node000010_Node000013" title=" " alt="" coords="521,171,553,183,577,200,601,218,610,222,607,227,598,222,574,204,550,188,519,176"/>
-<area shape="rect" id="Node000014" href="$class_listen_table_widget.html#a161fffd85148656deb802327129d459b" title="获取画廊控件" alt="" coords="611,299,748,341"/>
-<area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="523,167,553,183,565,196,573,209,579,234,585,260,591,272,601,285,604,287,601,291,597,289,586,275,580,262,574,235,568,211,561,199,550,187,520,172"/>
-<area shape="rect" id="Node000012" href="$class_gallery_widget.html#a5e07b253cf65269f4696d0d903c3fef8" title="调整画廊布局" alt="" coords="808,181,995,208"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="760,192,792,192,792,197,760,197"/>
+<area shape="rect" id="Node000001" title="初始化界面" alt="" coords="5,129,57,156"/>
+<area shape="rect" id="Node000002" href="$base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="425,104,464,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,138,409,117,410,122,57,144"/>
+<area shape="rect" id="Node000003" href="$class_ela_message_bar.html#ab24ce7687973932e525786dd44ec0288" title="显示信息消息" alt="" coords="105,40,290,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="50,127,103,92,147,71,149,76,106,97,53,131"/>
+<area shape="rect" id="Node000006" href="$class_listen_recommend.html#a72f993c574c50f5f5787728feedc9577" title="初始化每日推荐画廊" alt="" coords="106,151,289,193"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="58,144,91,150,90,156,57,150"/>
+<area shape="rect" id="Node000009" href="$class_listen_recommend.html#a9917a30d9178a4353dfb73248b253fac" title="初始化表格控件" alt="" coords="139,256,256,283"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="49,155,106,203,164,245,161,249,103,207,46,159"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="423,114,403,103,399,90,414,81,445,77,472,80,488,87,491,97,480,108,477,104,486,96,484,90,470,85,445,83,416,86,404,92,407,100,426,109"/>
+<area shape="rect" id="Node000004" href="$class_ela_message_bar.html#a1722699abf44f445a31b469f224ab7ca" title="构造函数，初始化消息栏" alt="" coords="338,29,551,56"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="290,47,322,45,322,51,291,52"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="405,31,398,21,403,11,419,5,445,3,473,5,488,12,485,17,472,10,445,8,420,10,407,15,403,20,410,27"/>
+<area shape="rect" id="Node000005" href="$class_ela_message_bar_private.html#a826ca8fdb2ca90af2c67cebd15f19bae" title="关闭按钮点击事件处理" alt="" coords="599,21,759,64"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="552,40,584,40,584,45,552,45"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="289,149,409,122,410,127,290,154"/>
+<area shape="rect" id="Node000007" href="$namespace_async.html#aa546dd398e11dcb564e4abdd6fd0ec81" title="执行结果读取函数 创建一个QFutureWatcher读取相应结果传递相应函数中， 如果有更复杂操作就不要使用" alt="" coords="366,155,523,181"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="289,168,351,167,351,172,289,173"/>
+<area shape="rect" id="Node000008" href="$namespace_async.html#a06a076edc2f7af2cc0ecdc6545d55e79" title="runAsync类似于 std::thread和std::invoke 函数参数可以是成员函数 操作符 可以是 lambda表达式 QFutureInterface&lt;ResultType&gt;&amp;作为第一个参..." alt="" coords="384,205,505,232"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="290,187,369,202,368,207,289,192"/>
+<area shape="rect" id="Node000010" href="$class_listen_recommend.html#ad6d2bd176b7fe2407b08ebabf34dc9bf" title="刷新按钮点击槽函数" alt="" coords="374,256,515,283"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="257,267,358,267,358,272,257,272"/>
+<area shape="rect" id="Node000011" href="$class_listen_table_widget.html#a1c01d0d9f50ce4f07b7b16680687abc8" title="刷新按钮点击信号" alt="" coords="376,307,513,349"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="257,281,362,306,361,311,256,286"/>
 </map>

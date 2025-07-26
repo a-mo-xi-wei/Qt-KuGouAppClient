@@ -1,38 +1,41 @@
 <map id="MusicCloudDisk.h" name="MusicCloudDisk.h">
-<area shape="rect" id="Node000001" title="定义 MusicCloudDisk 类，管理云端歌曲（已上传和正在上传）界面" alt="" coords="580,5,708,32"/>
-<area shape="rect" id="Node000002" href="$_uploaded_song_8h.html" title="定义 UploadedSong 类，管理已上传云端歌曲界面" alt="" coords="46,80,252,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="580,32,251,80,250,75,579,27"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="253,155,326,181"/>
-<area shape="poly" id="edge16_Node000001_Node000009" title=" " alt="" coords="580,26,508,33,430,44,361,60,335,70,316,82,306,94,299,109,293,140,287,139,294,107,302,91,313,78,332,66,359,55,429,39,507,28,579,21"/>
-<area shape="rect" id="Node000010" href="$_uploading_song_8h.html" title="定义 UploadingSong 类，管理正在上传歌曲界面" alt="" coords="327,80,540,107"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="608,35,486,77,484,72,606,30"/>
-<area shape="rect" id="Node000011" href="$slidingstackedwidget_8h.html" title="定义 SlidingStackedWidget 类，提供带滑动动画的堆栈窗口" alt="" coords="564,80,724,107"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="647,33,647,64,641,64,641,33"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="748,80,817,107"/>
-<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="669,30,746,70,744,75,667,35"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="842,80,892,107"/>
-<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="684,30,828,77,826,82,682,35"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="916,80,988,107"/>
-<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="700,30,901,77,900,82,699,35"/>
-<area shape="rect" id="Node000003" href="$_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="86,155,212,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,107,152,139,147,139,147,107"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="175,105,252,145,250,149,172,110"/>
-<area shape="rect" id="Node000004" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="142,229,248,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="159,180,181,215,176,217,155,183"/>
-<area shape="rect" id="Node000005" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="55,304,153,331"/>
-<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="148,183,132,230,114,290,109,288,127,229,143,181"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="181,259,133,296,130,292,177,254"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="178,304,241,331"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="200,256,206,288,201,289,195,257"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="5,379,99,405"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="97,333,72,368,68,365,93,330"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="123,379,189,405"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="115,330,140,365,136,368,111,333"/>
-<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="409,110,329,150,327,145,407,105"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="446,155,567,181"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="621,110,545,149,543,145,619,105"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="591,155,697,181"/>
-<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="647,107,647,139,641,139,641,107"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="722,155,889,181"/>
-<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="673,105,764,145,762,150,671,110"/>
+<area shape="rect" id="Node000001" title="定义 MusicCloudDisk 类，管理云端歌曲（已上传和正在上传）界面" alt="" coords="531,5,659,32"/>
+<area shape="rect" id="Node000002" href="$_uploaded_song_8h.html" title="定义 UploadedSong 类，管理已上传云端歌曲界面" alt="" coords="5,80,212,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="531,32,209,80,209,75,530,27"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="350,229,422,256"/>
+<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="585,34,410,220,406,216,581,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="212,155,285,181"/>
+<area shape="poly" id="edge17_Node000001_Node000010" title=" " alt="" coords="531,27,461,34,385,45,319,61,293,71,276,82,266,94,259,109,252,140,247,139,254,107,261,91,272,78,291,66,317,56,384,39,460,28,530,22"/>
+<area shape="rect" id="Node000011" href="$_uploading_song_8h.html" title="定义 UploadingSong 类，管理正在上传歌曲界面" alt="" coords="286,80,499,107"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="561,35,443,77,441,72,559,30"/>
+<area shape="rect" id="Node000012" href="$slidingstackedwidget_8h.html" title="定义 SlidingStackedWidget 类，提供带滑动动画的堆栈窗口" alt="" coords="574,80,734,107"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="607,31,636,66,632,69,603,34"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="758,80,827,107"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="630,30,744,72,743,77,629,35"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="851,80,902,107"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="652,30,837,77,836,82,651,35"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="926,80,990,107"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="660,28,773,48,911,77,910,82,772,54,659,33"/>
+<area shape="rect" id="Node000003" href="$_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="53,155,180,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,107,116,139,111,139,107,108"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="134,105,212,145,209,149,132,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="164,179,336,225,334,230,163,184"/>
+<area shape="rect" id="Node000005" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="18,229,124,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="111,183,89,217,85,215,106,180"/>
+<area shape="rect" id="Node000006" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="113,304,211,331"/>
+<area shape="poly" id="edge9_Node000003_Node000006" title=" " alt="" coords="123,181,139,229,157,288,152,290,134,230,118,183"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="89,254,136,292,133,296,85,259"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="25,304,88,331"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="71,257,65,289,59,288,66,256"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="63,379,156,405"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="155,333,130,368,125,365,151,330"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="181,379,246,405"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="173,330,198,365,194,368,169,333"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="369,110,289,150,286,145,366,105"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="574,155,694,181"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="653,108,644,141,639,139,648,106"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="718,155,824,181"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="676,105,739,144,737,149,673,109"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="849,155,1016,181"/>
+<area shape="poly" id="edge16_Node000012_Node000015" title=" " alt="" coords="703,105,870,148,869,153,702,110"/>
 </map>

@@ -1,9 +1,20 @@
 <map id="initSysTrayMenu" name="initSysTrayMenu">
-<area shape="rect" id="Node000001" title="初始化系统托盘菜单" alt="" coords="5,56,125,83"/>
-<area shape="rect" id="Node000002" href="$class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="213,5,256,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,53,197,27,199,32,113,58"/>
-<area shape="rect" id="Node000003" href="$class_my_tray_icon.html#a6e14961f3e60024b82639178d7c95af1" title="音量开关信号" alt="" coords="195,56,274,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,67,179,67,179,72,125,72"/>
-<area shape="rect" id="Node000004" href="$class_my_tray_icon.html#ab65bff687e0edbf81a648e97c897a250" title="显示关于对话框信号" alt="" coords="173,107,296,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="113,81,174,99,172,104,112,86"/>
+<area shape="rect" id="Node000001" title="初始化系统托盘菜单" alt="" coords="5,81,125,108"/>
+<area shape="rect" id="Node000002" href="$class_my_tray_icon.html#a5ae83ccea424bca98fcddfbf1806ae46" title="唤醒窗口" alt="" coords="579,5,636,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,78,127,59,172,41,225,28,281,18,391,9,489,8,564,12,564,17,489,13,391,14,281,23,227,33,173,47,129,64,91,83"/>
+<area shape="rect" id="Node000003" href="$class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="213,56,256,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,83,198,72,198,77,125,88"/>
+<area shape="rect" id="Node000008" href="$class_my_tray_icon.html#a6e14961f3e60024b82639178d7c95af1" title="音量开关信号" alt="" coords="195,107,274,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="125,101,180,109,179,115,125,106"/>
+<area shape="rect" id="Node000009" href="$class_my_tray_icon.html#ab65bff687e0edbf81a648e97c897a250" title="显示关于对话框信号" alt="" coords="173,157,296,184"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="96,106,174,143,186,148,184,153,172,148,93,111"/>
+<area shape="rect" id="Node000004" href="$class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="344,81,486,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,70,329,80,328,85,256,75"/>
+<area shape="rect" id="Node000006" href="$class_my_tray_icon.html#a7782db0bb28d0eb69bda3843afbf5592" title="处理托盘图标闪烁逻辑" alt="" coords="348,132,483,159"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="257,75,297,92,345,118,360,124,358,129,343,122,295,97,255,80"/>
+<area shape="rect" id="Node000007" href="$class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="358,31,473,57"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="256,64,342,52,343,57,256,69"/>
+<area shape="rect" id="Node000005" href="$class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="534,81,681,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="487,92,519,92,519,97,487,97"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="473,34,563,22,564,27,474,39"/>
 </map>

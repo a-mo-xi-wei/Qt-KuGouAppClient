@@ -10,8 +10,11 @@ var class_listen_recommend =
     [ "onMenuFuncClicked", "class_listen_recommend.html#a3376021aaa9cfd16e6cb0c4692df187d", null ],
     [ "onRefreshTimeout", "class_listen_recommend.html#aaa3e3244dedf688b9b748be52817b433", null ],
     [ "onToolButtonClicked", "class_listen_recommend.html#ad6d2bd176b7fe2407b08ebabf34dc9bf", null ],
+    [ "resizeEvent", "class_listen_recommend.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
+    [ "showEvent", "class_listen_recommend.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf", null ],
     [ "m_galleryVector", "class_listen_recommend.html#a0373b873e663d594d62d3c58977a6041", null ],
     [ "m_menu", "class_listen_recommend.html#ad8a469190484f0f73db35e9f87cfafde", null ],
+    [ "m_refreshMask", "class_listen_recommend.html#ad7216f3c40bfdc4ac8bd12c1f101f6c0", null ],
     [ "m_refreshTimer", "class_listen_recommend.html#a50fa904a76720ab53f12c8e658b6da51", null ],
     [ "ui", "class_listen_recommend.html#a30cb67801e628a4d4d922943afb11875", null ]
 ];

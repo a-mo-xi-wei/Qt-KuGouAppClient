@@ -334,7 +334,6 @@ var namespaces_dup =
     ] ],
     [ "mylog", "namespacemylog.html", "namespacemylog" ],
     [ "QsLogging", "namespace_qs_logging.html", "namespace_qs_logging" ],
-    [ "QT_WARNING_DISABLE_DEPRECATED", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d.html", "namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d" ],
     [ "safe_duration_cast", "namespacesafe__duration__cast.html", [
       [ "lossless_integral_conversion", "namespacesafe__duration__cast.html#aeb329dc4be0bab60f163b3c8625baac0", null ],
       [ "safe_duration_cast", "namespacesafe__duration__cast.html#a8a653f2a1cc545ab18e52d93e1227caa", null ],
@@ -343,7 +342,7 @@ var namespaces_dup =
     [ "SJwt", "namespace_s_jwt.html", "namespace_s_jwt" ],
     [ "spdlog", "namespacespdlog.html", "namespacespdlog" ],
     [ "std", "namespacestd.html", "namespacestd" ],
-    [ "Ui", "namespace_ui.html", "namespace_ui" ],
+    [ "Ui", "namespace_ui.html", null ],
     [ "UnixFileAttributes", "namespace_unix_file_attributes.html", null ],
     [ "Util", "namespace_util.html", "namespace_util" ],
     [ "WindowEffect", "namespace_window_effect.html", [

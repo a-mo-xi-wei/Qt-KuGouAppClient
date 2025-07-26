@@ -10,5 +10,5 @@ var class_ela_toggle_switch =
     [ "paintEvent", "class_ela_toggle_switch.html#aa71936647c7e332ab07cbec003a8c9a2", null ],
     [ "Q_Q_CREATE", "class_ela_toggle_switch.html#a385f779555d071b0c2d796d553d401a3", null ],
     [ "setIsToggled", "class_ela_toggle_switch.html#a31fe20167f4546e6a68d95a07532692d", null ],
-    [ "toggled", "class_ela_toggle_switch.html#a528e3c561e4e73d9053d67301a25072c", null ]
+    [ "toggled", "class_ela_toggle_switch.html#a45a5ff15b8069475f1eb134aa00ed3e0", null ]
 ];

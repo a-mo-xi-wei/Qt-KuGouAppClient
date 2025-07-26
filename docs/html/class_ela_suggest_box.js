@@ -13,5 +13,5 @@ var class_ela_suggest_box =
     [ "setLineEdit", "class_ela_suggest_box.html#a3a1979e9a91786a372ef65f799160517", null ],
     [ "setPlaceholderText", "class_ela_suggest_box.html#af7e59fb643e69dd6e97f55fd3a3b376a", null ],
     [ "suggestBoxPositionChanged", "class_ela_suggest_box.html#aaae4c802233b120dc13fb6abd02b8daf", null ],
-    [ "suggestionClicked", "class_ela_suggest_box.html#a07bab45c7aa4c49e3534926e4451b5a7", null ]
+    [ "suggestionClicked", "class_ela_suggest_box.html#ae997f1efce033c2748a5201a32d70147", null ]
 ];

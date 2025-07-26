@@ -1,7 +1,7 @@
 var class_ela_exit_dialog =
 [
     [ "ElaExitDialog", "class_ela_exit_dialog.html#a7e42279a906937fc42f9e9b4a15a6897", null ],
-    [ "~ElaExitDialog", "class_ela_exit_dialog.html#aacbd11f0c5785789a7e7ac36efa68fbf", null ],
+    [ "~ElaExitDialog", "class_ela_exit_dialog.html#ae631ef7a402fe6e2a9957eaffb5b1341", null ],
     [ "close", "class_ela_exit_dialog.html#a5ae591df94fc66ccb85cbb6565368bca", null ],
     [ "keyPressEvent", "class_ela_exit_dialog.html#a5e746c6f6066156d91dbe54b89acebf0", null ],
     [ "leftButtonClicked", "class_ela_exit_dialog.html#a5f87c500934bce70f111e7c4107c218b", null ],

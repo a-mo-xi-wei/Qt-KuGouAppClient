@@ -107,38 +107,39 @@ $(function(){initNavTree('_daily_recommend_8h.html',''); initResizable(true); })
 
 <p>定义 <a class="el" href="class_daily_recommend.html" title="每日推荐界面类，显示日期、歌曲列表和操作按钮">DailyRecommend</a> 类，提供每日推荐界面  
 <a href="#details">更多...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_music_item_widget_8h_source.html">MusicItemWidget.h</a>&quot;</code><br />
-<code>#include &lt;QWidget&gt;</code><br />
+<div class="textblock"><code>#include &lt;QTimer&gt;</code><br />
+<code>#include &quot;<a class="el" href="_music_item_widget_8h_source.html">MusicItemWidget.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 DailyRecommend.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_daily_recommend_8h__incl.png" border="0" usemap="#a_daily_recommend_8h" alt=""/></div>
 <map name="a_daily_recommend_8h" id="a_daily_recommend_8h">
-<area shape="rect" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="391,5,528,32"/>
-<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="306,80,440,107"/>
-<area shape="poly" title=" " alt="" coords="446,35,401,72,397,68,443,30"/>
-<area shape="rect" title=" " alt="" coords="294,245,366,272"/>
-<area shape="poly" title=" " alt="" coords="473,31,498,62,524,105,533,129,537,153,535,177,524,199,494,227,458,245,419,255,382,260,381,254,418,250,456,240,491,222,520,196,530,175,532,153,528,130,519,107,494,65,469,34"/>
-<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="222,163,304,189"/>
-<area shape="poly" title=" " alt="" coords="357,109,294,155,291,151,354,105"/>
-<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="5,155,199,197"/>
-<area shape="poly" title=" " alt="" coords="331,110,187,152,186,147,330,105"/>
-<area shape="rect" title=" " alt="" coords="328,163,417,189"/>
-<area shape="poly" title=" " alt="" coords="375,107,375,147,370,147,370,107"/>
-<area shape="rect" title=" " alt="" coords="441,163,510,189"/>
-<area shape="poly" title=" " alt="" coords="390,105,449,151,446,155,387,109"/>
-<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="148,245,242,272"/>
-<area shape="poly" title=" " alt="" coords="255,192,217,235,213,232,251,188"/>
-<area shape="poly" title=" " alt="" coords="276,188,312,232,308,235,272,192"/>
-<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="94,320,192,347"/>
-<area shape="poly" title=" " alt="" coords="188,274,163,309,159,306,184,271"/>
-<area shape="rect" title=" " alt="" coords="217,320,280,347"/>
-<area shape="poly" title=" " alt="" coords="207,271,233,306,228,309,202,274"/>
-<area shape="rect" title=" " alt="" coords="45,395,138,421"/>
-<area shape="poly" title=" " alt="" coords="136,349,111,384,107,381,132,346"/>
-<area shape="rect" title=" " alt="" coords="163,395,228,421"/>
-<area shape="poly" title=" " alt="" coords="155,346,180,381,175,384,150,349"/>
-<area shape="poly" title=" " alt="" coords="128,196,171,233,168,237,124,200"/>
+<area shape="rect" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="214,5,351,32"/>
+<area shape="rect" title=" " alt="" coords="189,80,254,107"/>
+<area shape="poly" title=" " alt="" coords="274,34,244,70,240,66,270,31"/>
+<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="278,80,412,107"/>
+<area shape="poly" title=" " alt="" coords="296,31,327,66,323,70,292,34"/>
+<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="250,163,332,189"/>
+<area shape="poly" title=" " alt="" coords="339,109,310,152,305,149,335,106"/>
+<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="33,155,226,197"/>
+<area shape="poly" title=" " alt="" coords="313,110,200,151,198,146,311,105"/>
+<area shape="rect" title=" " alt="" coords="356,163,444,189"/>
+<area shape="poly" title=" " alt="" coords="356,106,385,149,381,152,352,109"/>
+<area shape="rect" title=" " alt="" coords="468,163,537,189"/>
+<area shape="poly" title=" " alt="" coords="371,105,466,153,464,158,369,110"/>
+<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="109,245,203,272"/>
+<area shape="poly" title=" " alt="" coords="271,192,191,240,188,235,268,188"/>
+<area shape="rect" title=" " alt="" coords="254,245,327,272"/>
+<area shape="poly" title=" " alt="" coords="293,190,293,230,288,230,288,190"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="55,320,153,347"/>
+<area shape="poly" title=" " alt="" coords="149,274,124,309,120,306,145,271"/>
+<area shape="rect" title=" " alt="" coords="178,320,241,347"/>
+<area shape="poly" title=" " alt="" coords="167,271,193,306,189,309,163,274"/>
+<area shape="rect" title=" " alt="" coords="5,395,99,421"/>
+<area shape="poly" title=" " alt="" coords="97,349,72,384,68,381,93,346"/>
+<area shape="rect" title=" " alt="" coords="123,395,189,421"/>
+<area shape="poly" title=" " alt="" coords="115,346,140,381,136,384,111,349"/>
+<area shape="poly" title=" " alt="" coords="139,197,149,229,144,231,134,199"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -149,7 +150,7 @@ DailyRecommend.h 的引用(Include)关系图:</div>
 <area shape="rect" title="定义 DailyRecommend 类，提供每日推荐界面" alt="" coords="88,5,225,32"/>
 <area shape="rect" href="_daily_recommend_8cpp.html" title="实现 DailyRecommend 类，提供每日推荐界面功能" alt="" coords="5,80,156,107"/>
 <area shape="poly" title=" " alt="" coords="134,45,95,82,92,78,131,41"/>
-<area shape="rect" href="_ku_gou_client_8h.html" title=" " alt="" coords="179,80,286,107"/>
+<area shape="rect" href="_ku_gou_client_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouClient 类" alt="" coords="179,80,286,107"/>
 <area shape="poly" title=" " alt="" coords="182,41,221,78,218,82,179,45"/>
 <area shape="rect" href="_app_controller_8h.html" title=" " alt="" coords="106,155,218,181"/>
 <area shape="poly" title=" " alt="" coords="212,120,176,156,172,152,208,116"/>

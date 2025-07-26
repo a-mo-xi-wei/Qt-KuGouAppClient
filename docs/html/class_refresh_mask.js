@@ -7,6 +7,7 @@ var class_refresh_mask =
     [ "keepLoading", "class_refresh_mask.html#ac5cd5ebc346ecd266b7e3ee48c845a0e", null ],
     [ "loadingFinished", "class_refresh_mask.html#aae77a4b1088dec9ac9f40e03a42f4cde", null ],
     [ "resizeEvent", "class_refresh_mask.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
+    [ "showEvent", "class_refresh_mask.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf", null ],
     [ "showLoading", "class_refresh_mask.html#a81aa30b1937bc9826747d664534094e5", null ],
     [ "m_timer", "class_refresh_mask.html#a289233df7b591f1d7ea09ad486bb6889", null ],
     [ "maskWidget", "class_refresh_mask.html#ae7d2d58f54c7d7e83a338f943c05fa07", null ],

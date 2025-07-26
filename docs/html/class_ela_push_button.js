@@ -2,7 +2,7 @@ var class_ela_push_button =
 [
     [ "ElaPushButton", "class_ela_push_button.html#aa96d543684d5c101e9556339dd03e519", null ],
     [ "ElaPushButton", "class_ela_push_button.html#aa0e3b9f43856fdab49765a963704e963", null ],
-    [ "~ElaPushButton", "class_ela_push_button.html#a722e012de83b923516668d69da542f49", null ],
+    [ "~ElaPushButton", "class_ela_push_button.html#aede5637785591dfc6662f52568e9b7d7", null ],
     [ "getDarkTextColor", "class_ela_push_button.html#a7eecbbc72b2ed0a03df0bb9b08f25f94", null ],
     [ "getLightTextColor", "class_ela_push_button.html#ac1561eadb1c56e3315a7ea7d3445b989", null ],
     [ "mousePressEvent", "class_ela_push_button.html#a7523c71b2bf60975302287ec8923f80e", null ],

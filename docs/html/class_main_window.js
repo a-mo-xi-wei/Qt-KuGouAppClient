@@ -2,8 +2,6 @@ var class_main_window =
 [
     [ "MainWindow", "class_main_window.html#ac3df08a4bc0438931d73601110c9267e", null ],
     [ "closeEvent", "class_main_window.html#a734e48502f247ab4495ae832e4c2ae2e", null ],
-    [ "exit", "class_main_window.html#a358d2e2397ca11ccd17553e3c40e7901", null ],
-    [ "fromTray_noVolume", "class_main_window.html#aec9684090a34891bc7dc46738b873753", null ],
     [ "getMouseRegion", "class_main_window.html#a0b390c3fea1da11078ff69dd033b39c2", null ],
     [ "mouseMoveEvent", "class_main_window.html#a4d538d95963e25c7a27250e441321d72", null ],
     [ "mousePressEvent", "class_main_window.html#a1d503cae5c70e07ca4abd92e9c9108b3", null ],
@@ -17,7 +15,6 @@ var class_main_window =
     [ "isPress", "class_main_window.html#a906a028efbd9793f48afa05f8eb647a1", null ],
     [ "m_aboutDialog", "class_main_window.html#acd538ce4c060afbb2a81636e42a1d08e", null ],
     [ "m_showDialog", "class_main_window.html#aa0e892212c056496150b9ce8710b9603", null ],
-    [ "m_trayIcon", "class_main_window.html#a4a33301b4fe957c43860c8de303b029d", null ],
     [ "mouse_press_region", "class_main_window.html#a98a8513896d7305bd44b8c0c3f3a046c", null ],
     [ "mousePs", "class_main_window.html#a1a29626156107bc0e03d33b96631677a", null ],
     [ "point_offset", "class_main_window.html#acd9bd126516b434bc77d1305d2debeb6", null ],

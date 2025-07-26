@@ -1,7 +1,7 @@
 var class_ela_menu_bar_style =
 [
     [ "ElaMenuBarStyle", "class_ela_menu_bar_style.html#a0292e0987b3746b16fce31cbee139ff9", null ],
-    [ "~ElaMenuBarStyle", "class_ela_menu_bar_style.html#a336fdcb25c421f289c71f70cdb86b7bf", null ],
+    [ "~ElaMenuBarStyle", "class_ela_menu_bar_style.html#a930173e5a3203e58d88c82a95ea1c462", null ],
     [ "drawControl", "class_ela_menu_bar_style.html#aa0e1b67c7d6a4d7837b9d87bf50a5271", null ],
     [ "drawPrimitive", "class_ela_menu_bar_style.html#ab3e24991fc884dee39ac873b0fad9ee1", null ],
     [ "pixelMetric", "class_ela_menu_bar_style.html#aac1893b82de01e3ff8e685236eca706c", null ],

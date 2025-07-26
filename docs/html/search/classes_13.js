@@ -40,7 +40,7 @@ var searchData=
   ['threadhandle_37',['ThreadHandle',['../class_thread_handle.html',1,'']]],
   ['time_5fzone_38',['time_zone',['../structfmt__detail_1_1time__zone.html',1,'fmt_detail']]],
   ['titleoptionmenu_39',['TitleOptionMenu',['../class_title_option_menu.html',1,'']]],
-  ['titlewidget_40',['TitleWidget',['../class_title_widget.html',1,'TitleWidget'],['../class_ui_1_1_title_widget.html',1,'TitleWidget']]],
+  ['titlewidget_40',['TitleWidget',['../class_title_widget.html',1,'']]],
   ['tm_5fformat_5fchecker_41',['tm_format_checker',['../structdetail_1_1tm__format__checker.html',1,'detail']]],
   ['tm_5fwriter_42',['tm_writer',['../classdetail_1_1tm__writer.html',1,'detail']]],
   ['tm_5fwriter_3c_20outputit_2c_20char_5ftype_20_3e_43',['tm_writer&lt; OutputIt, char_type &gt;',['../classdetail_1_1tm__writer.html',1,'detail']]],

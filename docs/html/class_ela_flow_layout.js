@@ -2,7 +2,7 @@ var class_ela_flow_layout =
 [
     [ "ElaFlowLayout", "class_ela_flow_layout.html#a002d1082f8931eab5756a607fe6bc558", null ],
     [ "ElaFlowLayout", "class_ela_flow_layout.html#abfdc3646149e565d2958f3a4c0632795", null ],
-    [ "~ElaFlowLayout", "class_ela_flow_layout.html#a16f9206dabdb3e83e4105c8a01f9a7c2", null ],
+    [ "~ElaFlowLayout", "class_ela_flow_layout.html#a785666c2dfe5b5c4797b40fc1b0d609f", null ],
     [ "addItem", "class_ela_flow_layout.html#a187dec72deaedb2af5f42b4d15040f5e", null ],
     [ "count", "class_ela_flow_layout.html#a5c9b1832bebd50f8d8f6f1bd5fb5fb93", null ],
     [ "expandingDirections", "class_ela_flow_layout.html#a20851665474915bd82cf1b676242e7f6", null ],

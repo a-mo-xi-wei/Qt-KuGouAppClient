@@ -1,35 +1,38 @@
 <map id="PurchasedMusic.h" name="PurchasedMusic.h">
-<area shape="rect" id="Node000001" title="定义 PurchasedMusic 类，管理付费音乐界面" alt="" coords="598,5,727,32"/>
-<area shape="rect" id="Node000002" href="$_paid_single_8h.html" title="定义 PaidSingle 类，管理付费单曲界面" alt="" coords="114,88,275,115"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="598,32,294,83,271,87,270,82,293,77,597,27"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="365,171,438,197"/>
-<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="598,25,526,31,449,41,382,58,357,69,341,82,335,91,334,100,340,121,355,141,374,159,370,163,351,144,336,123,329,101,330,89,337,78,354,64,380,53,448,36,526,25,597,20"/>
-<area shape="rect" id="Node000011" href="$_purchased_albums_8h.html" title="定义 PurchasedAlbums 类，管理已购专辑界面" alt="" coords="350,80,543,123"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="630,35,517,77,516,72,628,30"/>
-<area shape="rect" id="Node000012" href="$_purchased_videos_8h.html" title="定义 PurchasedVideos 类，管理已购视频界面" alt="" coords="568,80,757,123"/>
-<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="665,32,665,65,660,65,660,32"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="781,88,854,115"/>
-<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="688,30,781,78,779,83,686,35"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="878,88,928,115"/>
-<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="717,30,789,50,866,78,868,78,866,83,864,82,787,55,715,35"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="952,88,1021,115"/>
-<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="728,28,829,48,941,77,946,79,945,84,939,83,828,53,727,33"/>
-<area shape="rect" id="Node000003" href="$_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="86,171,212,197"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="190,116,166,159,161,156,185,114"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="228,113,356,162,354,167,226,118"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="236,171,297,197"/>
-<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="208,113,248,158,244,161,204,117"/>
-<area shape="rect" id="Node000004" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="142,245,248,272"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="159,196,181,231,176,233,155,199"/>
-<area shape="rect" id="Node000005" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="55,320,153,347"/>
-<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="148,199,132,246,114,306,109,304,127,245,143,197"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="181,275,133,312,130,308,177,270"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="178,320,241,347"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="200,272,206,304,201,305,195,273"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="5,395,99,421"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="97,349,72,384,68,381,93,346"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="123,395,189,421"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="115,346,140,381,136,384,111,349"/>
-<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="437,125,418,158,414,156,433,122"/>
-<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="596,126,453,170,451,165,595,121"/>
+<area shape="rect" id="Node000001" title="定义 PurchasedMusic 类，管理付费音乐界面" alt="" coords="572,5,702,32"/>
+<area shape="rect" id="Node000002" href="$_paid_single_8h.html" title="定义 PaidSingle 类，管理付费单曲界面" alt="" coords="24,88,184,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="573,30,405,52,203,83,178,87,177,82,202,77,404,47,572,25"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="426,245,499,272"/>
+<area shape="poly" id="edge17_Node000001_Node000004" title=" " alt="" coords="651,31,666,49,679,72,686,98,681,124,666,147,647,167,604,201,557,227,514,244,512,239,555,222,601,197,643,163,661,143,676,122,681,98,674,74,661,52,647,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="298,171,371,197"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="572,23,485,26,388,36,303,53,271,66,250,82,244,91,243,100,250,121,268,144,291,161,288,165,264,147,246,124,237,101,239,89,246,78,268,61,301,48,388,30,485,21,572,18"/>
+<area shape="rect" id="Node000012" href="$_purchased_albums_8h.html" title="定义 PurchasedAlbums 类，管理已购专辑界面" alt="" coords="259,80,452,123"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="594,35,444,78,442,73,592,30"/>
+<area shape="rect" id="Node000013" href="$_purchased_videos_8h.html" title="定义 PurchasedVideos 类，管理已购视频界面" alt="" coords="477,80,666,123"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="629,34,600,70,596,67,625,31"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="741,88,792,115"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="659,30,735,77,732,82,656,35"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="816,88,885,115"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="675,30,805,78,809,79,807,84,803,82,673,35"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="909,88,973,115"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="703,29,796,49,898,77,903,79,901,84,896,83,795,54,702,34"/>
+<area shape="rect" id="Node000003" href="$_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="41,171,167,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,115,106,155,101,155,101,115"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="141,113,285,163,283,168,139,118"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="190,171,252,197"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="124,113,192,160,189,164,121,117"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="167,195,412,244,411,250,166,201"/>
+<area shape="rect" id="Node000005" href="$_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="5,245,112,272"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="98,199,77,233,72,231,94,196"/>
+<area shape="rect" id="Node000006" href="$_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="100,320,198,347"/>
+<area shape="poly" id="edge9_Node000003_Node000006" title=" " alt="" coords="111,197,126,245,144,304,139,306,121,246,106,199"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="76,270,124,308,120,312,73,275"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="12,320,76,347"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="59,273,52,305,47,304,53,272"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="50,395,144,421"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="142,349,117,384,113,381,138,346"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="168,395,234,421"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="160,346,186,381,181,384,156,349"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="353,124,344,156,339,155,348,123"/>
+<area shape="poly" id="edge15_Node000013_Node000010" title=" " alt="" coords="512,126,386,168,385,163,510,121"/>
 </map>

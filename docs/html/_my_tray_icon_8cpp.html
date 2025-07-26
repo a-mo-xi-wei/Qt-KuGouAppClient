@@ -107,8 +107,6 @@ $(function(){initNavTree('_my_tray_icon_8cpp.html',''); initResizable(true); });
 <div class="textblock"><code>#include &quot;<a class="el" href="_my_tray_icon_8h_source.html">MyTrayIcon.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_ela_menu_8h_source.html">ElaMenu.h</a>&quot;</code><br />
 <code>#include &lt;QDesktopServices&gt;</code><br />
-<code>#include &lt;QGuiApplication&gt;</code><br />
-<code>#include &lt;QScreen&gt;</code><br />
 <code>#include &lt;QTimer&gt;</code><br />
 <code>#include &lt;QUrl&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -116,32 +114,27 @@ MyTrayIcon.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_my_tray_icon_8cpp__incl.png" border="0" usemap="#a_my_tray_icon_8cpp" alt=""/></div>
 <map name="a_my_tray_icon_8cpp" id="a_my_tray_icon_8cpp">
-<area shape="rect" title="实现 MyTrayIcon 类，提供系统托盘图标功能" alt="" coords="515,5,631,32"/>
-<area shape="rect" href="_my_tray_icon_8h.html" title="定义 MyTrayIcon 类，提供系统托盘图标功能" alt="" coords="126,80,228,107"/>
-<area shape="poly" title=" " alt="" coords="516,33,243,82,242,77,515,28"/>
-<area shape="rect" href="_ela_menu_8h.html" title="定义 ElaMenu 类，提供自定义菜单功能" alt="" coords="251,80,335,107"/>
-<area shape="poly" title=" " alt="" coords="525,35,350,80,349,75,524,30"/>
-<area shape="rect" title=" " alt="" coords="359,80,491,107"/>
-<area shape="poly" title=" " alt="" coords="548,35,466,75,463,70,546,30"/>
-<area shape="rect" title=" " alt="" coords="515,80,631,107"/>
-<area shape="poly" title=" " alt="" coords="576,33,576,64,570,64,570,33"/>
-<area shape="rect" title=" " alt="" coords="654,80,726,107"/>
-<area shape="poly" title=" " alt="" coords="595,30,659,69,656,74,592,35"/>
-<area shape="rect" title=" " alt="" coords="750,80,814,107"/>
-<area shape="poly" title=" " alt="" coords="610,30,736,73,735,78,609,35"/>
-<area shape="rect" title=" " alt="" coords="838,80,886,107"/>
-<area shape="poly" title=" " alt="" coords="632,30,824,77,822,82,631,35"/>
+<area shape="rect" title="实现 MyTrayIcon 类，提供系统托盘图标功能" alt="" coords="355,5,471,32"/>
+<area shape="rect" href="_my_tray_icon_8h.html" title="定义 MyTrayIcon 类，提供系统托盘图标功能" alt="" coords="66,80,168,107"/>
+<area shape="poly" title=" " alt="" coords="362,35,183,79,182,73,360,30"/>
+<area shape="rect" href="_ela_menu_8h.html" title="定义 ElaMenu 类，提供自定义菜单功能" alt="" coords="239,80,323,107"/>
+<area shape="poly" title=" " alt="" coords="391,35,318,75,316,70,389,30"/>
+<area shape="rect" title=" " alt="" coords="347,80,479,107"/>
+<area shape="poly" title=" " alt="" coords="416,33,416,64,410,64,410,33"/>
+<area shape="rect" title=" " alt="" coords="502,80,566,107"/>
+<area shape="poly" title=" " alt="" coords="435,30,501,69,499,74,433,35"/>
+<area shape="rect" title=" " alt="" coords="590,80,638,107"/>
+<area shape="poly" title=" " alt="" coords="449,30,577,76,575,81,447,35"/>
 <area shape="rect" title=" " alt="" coords="5,155,133,181"/>
-<area shape="poly" title=" " alt="" coords="160,109,102,148,99,143,157,105"/>
+<area shape="poly" title=" " alt="" coords="111,109,88,143,83,140,106,106"/>
 <area shape="rect" title=" " alt="" coords="157,155,221,181"/>
-<area shape="poly" title=" " alt="" coords="182,107,187,139,182,140,176,108"/>
-<area shape="poly" title=" " alt="" coords="276,109,221,148,218,143,273,105"/>
+<area shape="poly" title=" " alt="" coords="267,109,218,147,215,143,263,105"/>
 <area shape="rect" title=" " alt="" coords="245,155,317,181"/>
-<area shape="poly" title=" " alt="" coords="294,108,288,140,283,139,288,107"/>
+<area shape="poly" title=" " alt="" coords="284,107,284,139,278,139,278,107"/>
 <area shape="rect" href="_def_8h.html" title=" " alt="" coords="341,155,394,181"/>
-<area shape="poly" title=" " alt="" coords="308,105,346,142,342,146,304,109"/>
+<area shape="poly" title=" " alt="" coords="298,105,343,143,340,147,294,109"/>
 <area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="398,229,466,256"/>
-<area shape="poly" title=" " alt="" coords="335,105,374,124,392,137,408,153,424,183,432,213,427,214,419,184,404,156,389,141,371,128,333,110"/>
+<area shape="poly" title=" " alt="" coords="324,103,368,121,390,135,408,153,425,183,432,213,427,215,420,185,404,156,387,140,366,126,322,108"/>
 <area shape="rect" title=" " alt="" coords="304,229,373,256"/>
 <area shape="poly" title=" " alt="" coords="365,183,352,216,347,214,360,181"/>
 <area shape="poly" title=" " alt="" coords="381,180,412,216,409,219,377,184"/>
@@ -159,7 +152,7 @@ MyTrayIcon.cpp 的引用(Include)关系图:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_4b9cab5655b1fb428a6082722224fbe8.html">MyWindow</a></li><li class="navelem"><a class="el" href="dir_d44605aa5f483c8bab0517372e776b6f.html">MainWindow</a></li><li class="navelem"><a class="el" href="dir_57ba8d8bf3e1cdefeefad286d97da5bc.html">MyTrayIcon</a></li><li class="navelem"><a class="el" href="_my_tray_icon_8cpp.html">MyTrayIcon.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a class="el" href="dir_4b9cab5655b1fb428a6082722224fbe8.html">MyWindow</a></li><li class="navelem"><a class="el" href="dir_611fb5d5029c9c9502d43fe08a3eca17.html">MyTrayIcon</a></li><li class="navelem"><a class="el" href="_my_tray_icon_8cpp.html">MyTrayIcon.cpp</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

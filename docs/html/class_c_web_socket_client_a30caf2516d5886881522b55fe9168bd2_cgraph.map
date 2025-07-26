@@ -1,11 +1,31 @@
 <map id="Open" name="Open">
-<area shape="rect" id="Node000001" title="打开指定地址的网络连接" alt="" coords="5,31,58,57"/>
-<area shape="rect" id="Node000002" href="$class_c_web_socket_client.html#a683f5665bf529328a56ade89e73c40b7" title="处理连接成功" alt="" coords="114,5,212,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,36,98,28,99,34,58,42"/>
-<area shape="rect" id="Node000004" href="$class_c_web_socket_client.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="106,56,221,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="58,46,91,53,90,58,57,52"/>
-<area shape="rect" id="Node000003" href="$class_c_web_socket_client.html#a6a634ccecde2f4a4e7903df0624d7879" title="处理一个新的连接到达" alt="" coords="278,5,449,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="213,16,262,16,262,21,213,21"/>
-<area shape="rect" id="Node000005" href="$class_c_web_socket_client.html#a5f2cc7cfcec32f6b7685d312dc87b86c" title="处理一个连接关闭" alt="" coords="269,56,457,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="221,67,253,67,253,72,221,72"/>
+<area shape="rect" id="Node000001" title="打开指定地址的网络连接" alt="" coords="5,107,58,133"/>
+<area shape="rect" id="Node000002" href="$class_c_web_socket_client.html#a683f5665bf529328a56ade89e73c40b7" title="处理连接成功" alt="" coords="560,5,659,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,113,545,27,545,32,59,118"/>
+<area shape="rect" id="Node000004" href="$class_c_web_socket_client.html#a29aeafb7a1d3ec392788d1ccf4c12794" title="处理连接关闭" alt="" coords="106,132,221,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="58,122,91,129,90,134,57,128"/>
+<area shape="rect" id="Node000003" href="$class_c_web_socket_client.html#a6a634ccecde2f4a4e7903df0624d7879" title="处理一个新的连接到达" alt="" coords="762,5,934,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="659,16,746,16,746,21,659,21"/>
+<area shape="rect" id="Node000005" href="$class_c_web_socket_client.html#a5f2cc7cfcec32f6b7685d312dc87b86c" title="处理一个连接关闭" alt="" coords="269,132,457,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="221,151,253,152,253,157,221,156"/>
+<area shape="poly" id="edge11_Node000005_Node000002" title=" " alt="" coords="378,130,431,86,466,62,504,42,544,28,546,33,506,46,469,67,434,91,381,134"/>
+<area shape="poly" id="edge12_Node000005_Node000004" title=" " alt="" coords="268,139,236,139,236,134,268,134"/>
+<area shape="rect" id="Node000006" href="$class_c_web_socket_client.html#a5023b21dbe54ec5cc49a649e50e313c8" title="处理心跳" alt="" coords="505,56,714,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="399,129,505,92,532,84,533,90,506,97,401,134"/>
+<area shape="rect" id="Node000007" href="$class_c_web_socket_client.html#aacf8f280cb6087a3817f5d20895fe0b4" title="处理断开重连" alt="" coords="515,107,704,133"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="457,133,499,129,500,134,458,138"/>
+<area shape="rect" id="Node000008" href="$class_c_web_socket_client.html#aa75c243c731be20fa959acf445b9f86a" title="处理二进制消息" alt="" coords="546,208,673,235"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="410,157,506,187,550,200,548,206,505,192,408,162"/>
+<area shape="rect" id="Node000009" href="$class_c_web_socket_client.html#a816c87b64b3034b519b4d9b5d981e49e" title="处理二进制数据接收" alt="" coords="762,169,934,196"/>
+<area shape="poly" id="edge13_Node000005_Node000009" title=" " alt="" coords="458,150,746,172,746,178,457,155"/>
+<area shape="rect" id="Node000011" href="$class_c_web_socket_client.html#a361e4338cded968ceb7a9643fc3b7d0c" title="处理文件接收" alt="" coords="784,233,912,260"/>
+<area shape="poly" id="edge14_Node000005_Node000011" title=" " alt="" coords="379,157,432,203,467,227,506,244,573,259,643,265,709,263,768,257,768,263,710,268,643,270,573,264,504,249,465,231,428,207,376,161"/>
+<area shape="rect" id="Node000012" href="$class_c_web_socket_client.html#a17b2663f2b812c0e249b1173ee9fe60a" title="处理字符串消息" alt="" coords="525,309,694,336"/>
+<area shape="poly" id="edge15_Node000005_Node000012" title=" " alt="" coords="376,157,427,220,465,257,507,288,533,301,530,306,504,293,461,261,423,224,372,161"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="673,208,746,196,747,202,674,214"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="674,225,768,236,768,241,673,231"/>
+<area shape="rect" id="Node000010" href="$class_c_web_socket_client.html#afb41c93b8bc86309597870de1de8e670" title="处理网络二进制消息" alt="" coords="982,169,1102,196"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="934,180,967,180,967,185,934,185"/>
+<area shape="rect" id="Node000013" href="$class_c_web_socket_client.html#a06c29bb7134269ee237d988efca6fc12" title="处理网络字符串消息" alt="" coords="794,309,902,336"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="694,320,778,320,778,325,694,325"/>
 </map>

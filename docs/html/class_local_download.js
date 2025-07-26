@@ -5,9 +5,11 @@ var class_local_download =
     [ "audioFinished", "class_local_download.html#acd7d736f48de793eca2fccf2a27c8048", null ],
     [ "cancelLoopPlay", "class_local_download.html#a2aa22f3ffe26bfd91ada08e52fc8633d", null ],
     [ "createPage", "class_local_download.html#afc90cde235e776bd014aebedff7f9e70", null ],
+    [ "emitInitialized", "class_local_download.html#a99836dfc3d5a62f743bcd92e8447cc6e", null ],
     [ "enableButton", "class_local_download.html#ab868524a9562cda1f7b60b4220e2248e", null ],
     [ "eventFilter", "class_local_download.html#a7eb87a6d4464680c455d278d1d32eba6", null ],
     [ "find_more_music", "class_local_download.html#aa23356daca3ed71116d6ae55df2991f4", null ],
+    [ "initialized", "class_local_download.html#a4a60e1a6f7c85389e07d2cd1b50ff6bd", null ],
     [ "initIndexLab", "class_local_download.html#aebc31945fa34b123ada488d5710cce62", null ],
     [ "initStackedWidget", "class_local_download.html#a0880fc715278119401b0b218adc8ade6", null ],
     [ "initUi", "class_local_download.html#afba6e95967cc3eb25fd518f7bde6ec04", null ],
@@ -18,8 +20,6 @@ var class_local_download =
     [ "playLocalSongNextSong", "class_local_download.html#a79f5ddec10cda38c2d45e9c1791916ac", null ],
     [ "playLocalSongPrevSong", "class_local_download.html#a12603ffd147f0f3acb18794968447115", null ],
     [ "playMusic", "class_local_download.html#a510995dc883818ca17b4108a74da7b52", null ],
-    [ "resizeEvent", "class_local_download.html#a9a27ed4ceb22d2a19bdb88ed785085a1", null ],
-    [ "showEvent", "class_local_download.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf", null ],
     [ "m_buttonGroup", "class_local_download.html#ad47442fcf7db8bd0dab09d79ad4c1d47", null ],
     [ "m_currentIdx", "class_local_download.html#a9e17cb202ac6e6ab1395d94e85bc23dc", null ],
     [ "m_downloadedSong", "class_local_download.html#a17e35a57f75d60be778c982e0ef8e331", null ],
@@ -27,6 +27,5 @@ var class_local_download =
     [ "m_downloading", "class_local_download.html#ac524118c69e75dd66ea22269290ed2e8", null ],
     [ "m_localSong", "class_local_download.html#a747c6a12d6c16a99d47ce844de546e13", null ],
     [ "m_pages", "class_local_download.html#abc92321c634afb9ba8f9186364b93a62", null ],
-    [ "m_refreshMask", "class_local_download.html#ad7216f3c40bfdc4ac8bd12c1f101f6c0", null ],
     [ "ui", "class_local_download.html#ae35edb80d0089b108944edc55bbe35b9", null ]
 ];

@@ -144,133 +144,134 @@ $(function(){initNavTree('_title_widget_8h_source.html',''); initResizable(true)
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff">   53</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff">MusicCloudDisk</a> = 12,  </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520">   54</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520">PurchasedMusic</a> = 13,  </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76">   55</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76">RecentlyPlayed</a> = 14,  </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">   56</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">AllMusic</a> = 15         </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">   56</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">AllMusic</a> = 15,        </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a7aeac1f731ddf8cf20b74c735878a173">   57</a></span>        <a class="code hl_enumvalue" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a7aeac1f731ddf8cf20b74c735878a173">SearchResult</a> = 16     </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_title_widget.html">TitleWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> showMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_class" href="class_ripple_button.html">RippleButton</a> *max_toolButton() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_class" href="class_title_widget.html">~TitleWidget</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> setEnableChange(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> setEnableTitleButton(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> initUi();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> setMenuPosition(<span class="keyword">const</span> QPoint &amp;pos);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">static</span> QPixmap getRoundedPixmap(<span class="keyword">const</span> QPixmap &amp;src, QSize size, <span class="keywordtype">int</span> radius);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> setTitleIndex(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_title_widget.html">TitleWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> showMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_class" href="class_ripple_button.html">RippleButton</a> *max_toolButton() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_class" href="class_title_widget.html">~TitleWidget</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> setEnableChange(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> setEnableTitleButton(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> initUi();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> setMenuPosition(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">static</span> QPixmap getRoundedPixmap(<span class="keyword">const</span> QPixmap &amp;src, QSize size, <span class="keywordtype">int</span> radius);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> setTitleIndex(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">void</span> paintEvent(<a class="code hl_class" href="class_q_paint_event.html">QPaintEvent</a> *ev) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">bool</span> eventFilter(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> resizeEvent(QResizeEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> on_title_return_toolButton_clicked();</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> on_title_refresh_toolButton_clicked();</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> on_title_music_pushButton_clicked();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">void</span> on_title_live_pushButton_clicked();</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">void</span> on_title_listen_book_pushButton_clicked();</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordtype">void</span> on_title_search_pushButton_clicked();</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> on_listen_toolButton_clicked();</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">void</span> on_theme_toolButton_clicked();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">void</span> on_message_toolButton_clicked();</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">void</span> on_menu_toolButton_clicked();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">void</span> on_min_toolButton_clicked();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordtype">void</span> on_max_toolButton_clicked();</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordtype">void</span> on_close_toolButton_clicked();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordtype">void</span> onLeftMenu_recommend_clicked();</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordtype">void</span> onLeftMenu_musicRepository_clicked();</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">void</span> onLeftMenu_channel_clicked();</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">void</span> onLeftMenu_video_clicked();</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">void</span> onLeftMenu_live_clicked();</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">void</span> onLeftMenu_ai_chat_clicked();</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordtype">void</span> onLeftMenu_songList_clicked();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> onLeftMenu_dailyRecommend_clicked();</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordtype">void</span> onLeftMenu_collection_clicked();</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordtype">void</span> onLeftMenu_localDownload_clicked();</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordtype">void</span> onLeftMenu_musicCloudDisk_clicked();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordtype">void</span> onLeftMenu_purchasedMusic_clicked();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordtype">void</span> onLeftMenu_recentlyPlayed_clicked();</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordtype">void</span> onLeftMenu_allMusic_clicked();</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>signals:</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordtype">void</span> currentStackChange(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;slide = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordtype">void</span> leftMenuShow(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordtype">void</span> doubleClicked();</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordtype">void</span> showAboutDialog();</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keywordtype">void</span> exit();</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keywordtype">void</span> maxScreen();</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordtype">void</span> refresh();</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="class_title_widget.html#a07bab45c7aa4c49e3534926e4451b5a7">  330</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a07bab45c7aa4c49e3534926e4451b5a7">suggestionClicked</a>(<span class="keyword">const</span> QString &amp;suggestText, <span class="keyword">const</span> QVariantMap &amp;suggestData);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1">  335</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1">searchTextReturnPressed</a>(<span class="keyword">const</span> QString &amp;searchText, <span class="keyword">const</span> QVariantMap &amp;suggestData = {});</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">  338</a></span>    <a class="code hl_class" href="class_ui_1_1_title_widget.html">Ui::TitleWidget</a> *<a class="code hl_variable" href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">ui</a>;                        </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">  339</a></span>    QStack&lt;StackType&gt; <a class="code hl_variable" href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">m_backTypeStack</a>;          </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">  340</a></span>    QStack&lt;StackType&gt; <a class="code hl_variable" href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">m_frontTypeStack</a>;         </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">  341</a></span>    <a class="code hl_enumeration" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4">StackType</a> <a class="code hl_variable" href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">m_lastType</a>;                       </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">  342</a></span>    <a class="code hl_enumeration" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4">StackType</a> <a class="code hl_variable" href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">m_curType</a>;                        </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">  343</a></span>    std::unique_ptr&lt;ElaExitDialog&gt; <a class="code hl_variable" href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">m_closeDialog</a>; </div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">  344</a></span>    QPixmap <a class="code hl_variable" href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">m_originalCover</a>;                    </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">  345</a></span>    <a class="code hl_class" href="class_title_option_menu.html">TitleOptionMenu</a> *<a class="code hl_variable" href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">m_titleOptMenu</a>{};          </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">  346</a></span>    QPoint <a class="code hl_variable" href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a>;                      </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno"><a class="line" href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">  347</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">m_enableChange</a> = <span class="keyword">true</span>;                 </div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> paintEvent(<a class="code hl_class" href="class_q_paint_event.html">QPaintEvent</a> *ev) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">bool</span> eventFilter(QObject *watched, QEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> resizeEvent(QResizeEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">void</span> on_title_return_toolButton_clicked();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordtype">void</span> on_title_refresh_toolButton_clicked();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> on_title_music_pushButton_clicked();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">void</span> on_title_live_pushButton_clicked();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> on_title_listen_book_pushButton_clicked();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> on_title_search_pushButton_clicked();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordtype">void</span> on_listen_toolButton_clicked();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">void</span> on_theme_toolButton_clicked();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">void</span> on_message_toolButton_clicked();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">void</span> on_menu_toolButton_clicked();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">void</span> on_min_toolButton_clicked();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> on_max_toolButton_clicked();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">void</span> on_close_toolButton_clicked();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordtype">void</span> onLeftMenu_recommend_clicked();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordtype">void</span> onLeftMenu_musicRepository_clicked();</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordtype">void</span> onLeftMenu_channel_clicked();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordtype">void</span> onLeftMenu_video_clicked();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordtype">void</span> onLeftMenu_live_clicked();</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">void</span> onLeftMenu_ai_chat_clicked();</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">void</span> onLeftMenu_songList_clicked();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordtype">void</span> onLeftMenu_dailyRecommend_clicked();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">void</span> onLeftMenu_collection_clicked();</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keywordtype">void</span> onLeftMenu_localDownload_clicked();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordtype">void</span> onLeftMenu_musicCloudDisk_clicked();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordtype">void</span> onLeftMenu_purchasedMusic_clicked();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordtype">void</span> onLeftMenu_recentlyPlayed_clicked();</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordtype">void</span> onLeftMenu_allMusic_clicked();</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>signals:</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="class_title_widget.html#a1d5ec2302525b7fecb5da536d1e3de09">  295</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a1d5ec2302525b7fecb5da536d1e3de09">currentStackChange</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code hl_enumvalue" href="base_8h.html#a7fc0249f0f8ba720115d2430f5b86cbaa6a992d5529f459a44fee58c733255e86">index</a>);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838">  301</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838">leftMenuShow</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;<a class="code hl_variable" href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a>);</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac788a1e254cb7f54fb21e3648d929f39">  306</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#ac788a1e254cb7f54fb21e3648d929f39">doubleClicked</a>();</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b">  311</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b">showAboutDialog</a>();</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="class_title_widget.html#a358d2e2397ca11ccd17553e3c40e7901">  316</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a358d2e2397ca11ccd17553e3c40e7901">exit</a>();</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_title_widget.html#a992988d596e79194a707af831db3f4ea">  321</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a992988d596e79194a707af831db3f4ea">maxScreen</a>();</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno"><a class="line" href="class_title_widget.html#a5f2e190b8261a98c97c2ea4e86670d54">  326</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a5f2e190b8261a98c97c2ea4e86670d54">refresh</a>();</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="class_title_widget.html#a07bab45c7aa4c49e3534926e4451b5a7">  331</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#a07bab45c7aa4c49e3534926e4451b5a7">suggestionClicked</a>(<span class="keyword">const</span> QString &amp;suggestText, <span class="keyword">const</span> QVariantMap &amp;suggestData);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1">  336</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1">searchTextReturnPressed</a>(<span class="keyword">const</span> QString &amp;searchText, <span class="keyword">const</span> QVariantMap &amp;suggestData = {});</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">  339</a></span>    Ui::TitleWidget *<a class="code hl_variable" href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">ui</a>;                        </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">  340</a></span>    QStack&lt;StackType&gt; <a class="code hl_variable" href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">m_backTypeStack</a>;          </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno"><a class="line" href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">  341</a></span>    QStack&lt;StackType&gt; <a class="code hl_variable" href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">m_frontTypeStack</a>;         </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">  342</a></span>    <a class="code hl_enumeration" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4">StackType</a> <a class="code hl_variable" href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">m_lastType</a>;                       </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">  343</a></span>    <a class="code hl_enumeration" href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4">StackType</a> <a class="code hl_variable" href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">m_curType</a>;                        </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">  344</a></span>    std::unique_ptr&lt;ElaExitDialog&gt; <a class="code hl_variable" href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">m_closeDialog</a>; </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">  345</a></span>    QPixmap <a class="code hl_variable" href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">m_originalCover</a>;                    </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">  346</a></span>    <a class="code hl_class" href="class_title_option_menu.html">TitleOptionMenu</a> *<a class="code hl_variable" href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">m_titleOptMenu</a>{};          </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno"><a class="line" href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">  347</a></span>    QPoint <a class="code hl_variable" href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">m_menuPosition</a>;                      </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">  348</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">m_enableChange</a> = <span class="keyword">true</span>;                 </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>};</div>
 </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">#endif </span><span class="comment">// TITLEWIDGET_H</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#endif </span><span class="comment">// TITLEWIDGET_H</span></div>
 <div class="ttc" id="a_ela_exit_dialog_8h_html"><div class="ttname"><a href="_ela_exit_dialog_8h.html">ElaExitDialog.h</a></div><div class="ttdoc">定义 ElaExitDialog 类，提供退出对话框功能</div></div>
 <div class="ttc" id="a_ela_line_edit_8cpp_html_aa12d082c0f752ab7313a2cf16522a3df"><div class="ttname"><a href="_ela_line_edit_8cpp.html#aa12d082c0f752ab7313a2cf16522a3df">flag</a></div><div class="ttdeci">std::once_flag flag</div><div class="ttdoc">单次初始化标志，确保原始宽度只设置一次</div><div class="ttdef"><b>定义</b> ElaLineEdit.cpp:20</div></div>
 <div class="ttc" id="a_title_option_menu_8h_html"><div class="ttname"><a href="_title_option_menu_8h.html">TitleOptionMenu.h</a></div><div class="ttdoc">定义 TitleOptionMenu 类，提供标题栏选项菜单功能</div></div>
@@ -290,6 +291,7 @@ $(function(){initNavTree('_title_widget_8h_source.html',''); initResizable(true)
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a6c058febb7cab0d26de46931dbd5aa9f"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a6c058febb7cab0d26de46931dbd5aa9f">TitleWidget::RecommendForYou</a></div><div class="ttdeci">@ RecommendForYou</div><div class="ttdoc">为你推荐界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:44</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a707163a037108f74af3e2d00fc730e4a"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a707163a037108f74af3e2d00fc730e4a">TitleWidget::MusicRepository</a></div><div class="ttdeci">@ MusicRepository</div><div class="ttdoc">乐库界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:45</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a7426a5f2c3c9cb0d6da53c0b5e07cb14"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a7426a5f2c3c9cb0d6da53c0b5e07cb14">TitleWidget::ListenBook</a></div><div class="ttdeci">@ ListenBook</div><div class="ttdoc">听书界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:42</div></div>
+<div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a7aeac1f731ddf8cf20b74c735878a173"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a7aeac1f731ddf8cf20b74c735878a173">TitleWidget::SearchResult</a></div><div class="ttdeci">@ SearchResult</div><div class="ttdoc">搜索结果界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:57</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520">TitleWidget::PurchasedMusic</a></div><div class="ttdeci">@ PurchasedMusic</div><div class="ttdoc">已购音乐界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:54</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878">TitleWidget::AllMusic</a></div><div class="ttdeci">@ AllMusic</div><div class="ttdoc">全部音乐界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:56</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4abaaa63df740b4a19f9ff680c85e861fd"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4abaaa63df740b4a19f9ff680c85e861fd">TitleWidget::AiChat</a></div><div class="ttdeci">@ AiChat</div><div class="ttdoc">AI对话界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:48</div></div>
@@ -298,20 +300,26 @@ $(function(){initNavTree('_title_widget_8h_source.html',''); initResizable(true)
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4af42dd3bc2be56354d2fbf529a3141416"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4af42dd3bc2be56354d2fbf529a3141416">TitleWidget::Search</a></div><div class="ttdeci">@ Search</div><div class="ttdoc">探索界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:43</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4af4cb697e99657b668fc54cbb9730b400"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4af4cb697e99657b668fc54cbb9730b400">TitleWidget::LocalDownload</a></div><div class="ttdeci">@ LocalDownload</div><div class="ttdoc">本地下载界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:52</div></div>
 <div class="ttc" id="aclass_title_widget_html_a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec"><div class="ttname"><a href="class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4aff13e87d7cbbe18fface435a5b84aaec">TitleWidget::Video</a></div><div class="ttdeci">@ Video</div><div class="ttdoc">视频界面</div><div class="ttdef"><b>定义</b> TitleWidget.h:47</div></div>
-<div class="ttc" id="aclass_title_widget_html_a0ad01133cc2454a1422b78115d8078bc"><div class="ttname"><a href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">TitleWidget::m_originalCover</a></div><div class="ttdeci">QPixmap m_originalCover</div><div class="ttdoc">原始头像图片</div><div class="ttdef"><b>定义</b> TitleWidget.h:344</div></div>
-<div class="ttc" id="aclass_title_widget_html_a1172ed5c1d1373a716484e23308a3edf"><div class="ttname"><a href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">TitleWidget::m_closeDialog</a></div><div class="ttdeci">std::unique_ptr&lt; ElaExitDialog &gt; m_closeDialog</div><div class="ttdoc">退出对话框</div><div class="ttdef"><b>定义</b> TitleWidget.h:343</div></div>
-<div class="ttc" id="aclass_title_widget_html_a5c86b1a014b0170f56fe1d5a380bcde3"><div class="ttname"><a href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">TitleWidget::m_enableChange</a></div><div class="ttdeci">bool m_enableChange</div><div class="ttdoc">是否允许界面切换</div><div class="ttdef"><b>定义</b> TitleWidget.h:347</div></div>
+<div class="ttc" id="aclass_title_widget_html_a0ad01133cc2454a1422b78115d8078bc"><div class="ttname"><a href="class_title_widget.html#a0ad01133cc2454a1422b78115d8078bc">TitleWidget::m_originalCover</a></div><div class="ttdeci">QPixmap m_originalCover</div><div class="ttdoc">原始头像图片</div><div class="ttdef"><b>定义</b> TitleWidget.h:345</div></div>
+<div class="ttc" id="aclass_title_widget_html_a1172ed5c1d1373a716484e23308a3edf"><div class="ttname"><a href="class_title_widget.html#a1172ed5c1d1373a716484e23308a3edf">TitleWidget::m_closeDialog</a></div><div class="ttdeci">std::unique_ptr&lt; ElaExitDialog &gt; m_closeDialog</div><div class="ttdoc">退出对话框</div><div class="ttdef"><b>定义</b> TitleWidget.h:344</div></div>
+<div class="ttc" id="aclass_title_widget_html_a1d5ec2302525b7fecb5da536d1e3de09"><div class="ttname"><a href="class_title_widget.html#a1d5ec2302525b7fecb5da536d1e3de09">TitleWidget::currentStackChange</a></div><div class="ttdeci">void currentStackChange(const int &amp;index)</div><div class="ttdoc">界面切换信号，通知界面索引和是否滑动</div></div>
+<div class="ttc" id="aclass_title_widget_html_a358d2e2397ca11ccd17553e3c40e7901"><div class="ttname"><a href="class_title_widget.html#a358d2e2397ca11ccd17553e3c40e7901">TitleWidget::exit</a></div><div class="ttdeci">void exit()</div><div class="ttdoc">退出信号，通知程序退出</div></div>
+<div class="ttc" id="aclass_title_widget_html_a5586d80493f09e7305a487525f0ac838"><div class="ttname"><a href="class_title_widget.html#a5586d80493f09e7305a487525f0ac838">TitleWidget::leftMenuShow</a></div><div class="ttdeci">void leftMenuShow(const bool &amp;flag)</div><div class="ttdoc">左侧菜单显示信号，控制菜单显示状态</div></div>
+<div class="ttc" id="aclass_title_widget_html_a5c86b1a014b0170f56fe1d5a380bcde3"><div class="ttname"><a href="class_title_widget.html#a5c86b1a014b0170f56fe1d5a380bcde3">TitleWidget::m_enableChange</a></div><div class="ttdeci">bool m_enableChange</div><div class="ttdoc">是否允许界面切换</div><div class="ttdef"><b>定义</b> TitleWidget.h:348</div></div>
+<div class="ttc" id="aclass_title_widget_html_a5f2e190b8261a98c97c2ea4e86670d54"><div class="ttname"><a href="class_title_widget.html#a5f2e190b8261a98c97c2ea4e86670d54">TitleWidget::refresh</a></div><div class="ttdeci">void refresh()</div><div class="ttdoc">刷新信号，通知界面刷新</div></div>
 <div class="ttc" id="aclass_title_widget_html_a60213ec72a7b8093c5acf83bf7e359c0"><div class="ttname"><a href="class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0">TitleWidget::TitleWidget</a></div><div class="ttdeci">TitleWidget(QWidget *parent=nullptr)</div><div class="ttdoc">构造函数，初始化标题栏控件</div><div class="ttdef"><b>定义</b> TitleWidget.cpp:35</div></div>
-<div class="ttc" id="aclass_title_widget_html_a6948bf62b5c296ac6ef9fc3733f4f4aa"><div class="ttname"><a href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">TitleWidget::m_frontTypeStack</a></div><div class="ttdeci">QStack&lt; StackType &gt; m_frontTypeStack</div><div class="ttdoc">前进导航栈</div><div class="ttdef"><b>定义</b> TitleWidget.h:340</div></div>
-<div class="ttc" id="aclass_title_widget_html_a75b61709efacdeb4b9b337132b7fbb7f"><div class="ttname"><a href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">TitleWidget::m_menuPosition</a></div><div class="ttdeci">QPoint m_menuPosition</div><div class="ttdoc">菜单显示位置</div><div class="ttdef"><b>定义</b> TitleWidget.h:346</div></div>
-<div class="ttc" id="aclass_title_widget_html_a7f5ccb80bdf4e4913576c18899f23178"><div class="ttname"><a href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">TitleWidget::m_curType</a></div><div class="ttdeci">StackType m_curType</div><div class="ttdoc">当前界面类型</div><div class="ttdef"><b>定义</b> TitleWidget.h:342</div></div>
-<div class="ttc" id="aclass_title_widget_html_a84377a5b91861b1b32842b501f1bfe01"><div class="ttname"><a href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">TitleWidget::ui</a></div><div class="ttdeci">Ui::TitleWidget * ui</div><div class="ttdoc">UI 界面对象</div><div class="ttdef"><b>定义</b> TitleWidget.h:338</div></div>
+<div class="ttc" id="aclass_title_widget_html_a6948bf62b5c296ac6ef9fc3733f4f4aa"><div class="ttname"><a href="class_title_widget.html#a6948bf62b5c296ac6ef9fc3733f4f4aa">TitleWidget::m_frontTypeStack</a></div><div class="ttdeci">QStack&lt; StackType &gt; m_frontTypeStack</div><div class="ttdoc">前进导航栈</div><div class="ttdef"><b>定义</b> TitleWidget.h:341</div></div>
+<div class="ttc" id="aclass_title_widget_html_a75b61709efacdeb4b9b337132b7fbb7f"><div class="ttname"><a href="class_title_widget.html#a75b61709efacdeb4b9b337132b7fbb7f">TitleWidget::m_menuPosition</a></div><div class="ttdeci">QPoint m_menuPosition</div><div class="ttdoc">菜单显示位置</div><div class="ttdef"><b>定义</b> TitleWidget.h:347</div></div>
+<div class="ttc" id="aclass_title_widget_html_a7f5ccb80bdf4e4913576c18899f23178"><div class="ttname"><a href="class_title_widget.html#a7f5ccb80bdf4e4913576c18899f23178">TitleWidget::m_curType</a></div><div class="ttdeci">StackType m_curType</div><div class="ttdoc">当前界面类型</div><div class="ttdef"><b>定义</b> TitleWidget.h:343</div></div>
+<div class="ttc" id="aclass_title_widget_html_a84377a5b91861b1b32842b501f1bfe01"><div class="ttname"><a href="class_title_widget.html#a84377a5b91861b1b32842b501f1bfe01">TitleWidget::ui</a></div><div class="ttdeci">Ui::TitleWidget * ui</div><div class="ttdoc">UI 界面对象</div><div class="ttdef"><b>定义</b> TitleWidget.h:339</div></div>
+<div class="ttc" id="aclass_title_widget_html_a992988d596e79194a707af831db3f4ea"><div class="ttname"><a href="class_title_widget.html#a992988d596e79194a707af831db3f4ea">TitleWidget::maxScreen</a></div><div class="ttdeci">void maxScreen()</div><div class="ttdoc">最大化信号，通知窗口最大化</div></div>
 <div class="ttc" id="aclass_title_widget_html_ac4fe945e5c574bb9f844bb23a258b1c1"><div class="ttname"><a href="class_title_widget.html#ac4fe945e5c574bb9f844bb23a258b1c1">TitleWidget::searchTextReturnPressed</a></div><div class="ttdeci">void searchTextReturnPressed(const QString &amp;searchText, const QVariantMap &amp;suggestData={})</div><div class="ttdoc">输入框回车</div></div>
-<div class="ttc" id="aclass_title_widget_html_ac7d1a5420e6d1ea504a19c1c7a990e85"><div class="ttname"><a href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">TitleWidget::m_lastType</a></div><div class="ttdeci">StackType m_lastType</div><div class="ttdoc">上一次界面类型</div><div class="ttdef"><b>定义</b> TitleWidget.h:341</div></div>
-<div class="ttc" id="aclass_title_widget_html_ad7a374426b71206da6b372805d68674d"><div class="ttname"><a href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">TitleWidget::m_titleOptMenu</a></div><div class="ttdeci">TitleOptionMenu * m_titleOptMenu</div><div class="ttdoc">标题选项菜单</div><div class="ttdef"><b>定义</b> TitleWidget.h:345</div></div>
-<div class="ttc" id="aclass_title_widget_html_ad7d31911407d117e9d536ea145e8f11b"><div class="ttname"><a href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">TitleWidget::m_backTypeStack</a></div><div class="ttdeci">QStack&lt; StackType &gt; m_backTypeStack</div><div class="ttdoc">后退导航栈</div><div class="ttdef"><b>定义</b> TitleWidget.h:339</div></div>
-<div class="ttc" id="aclass_ui_1_1_title_widget_html"><div class="ttname"><a href="class_ui_1_1_title_widget.html">Ui::TitleWidget</a></div><div class="ttdef"><b>定义</b> ui_TitleWidget.h:419</div></div>
-<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div><div class="ttdef"><b>定义</b> ui_AiChat.h:139</div></div>
+<div class="ttc" id="aclass_title_widget_html_ac63a90a3b880d5e9cfd47b54b336be8b"><div class="ttname"><a href="class_title_widget.html#ac63a90a3b880d5e9cfd47b54b336be8b">TitleWidget::showAboutDialog</a></div><div class="ttdeci">void showAboutDialog()</div><div class="ttdoc">显示关于对话框信号</div></div>
+<div class="ttc" id="aclass_title_widget_html_ac788a1e254cb7f54fb21e3648d929f39"><div class="ttname"><a href="class_title_widget.html#ac788a1e254cb7f54fb21e3648d929f39">TitleWidget::doubleClicked</a></div><div class="ttdeci">void doubleClicked()</div><div class="ttdoc">双击信号，当标题栏被双击时触发</div></div>
+<div class="ttc" id="aclass_title_widget_html_ac7d1a5420e6d1ea504a19c1c7a990e85"><div class="ttname"><a href="class_title_widget.html#ac7d1a5420e6d1ea504a19c1c7a990e85">TitleWidget::m_lastType</a></div><div class="ttdeci">StackType m_lastType</div><div class="ttdoc">上一次界面类型</div><div class="ttdef"><b>定义</b> TitleWidget.h:342</div></div>
+<div class="ttc" id="aclass_title_widget_html_ad7a374426b71206da6b372805d68674d"><div class="ttname"><a href="class_title_widget.html#ad7a374426b71206da6b372805d68674d">TitleWidget::m_titleOptMenu</a></div><div class="ttdeci">TitleOptionMenu * m_titleOptMenu</div><div class="ttdoc">标题选项菜单</div><div class="ttdef"><b>定义</b> TitleWidget.h:346</div></div>
+<div class="ttc" id="aclass_title_widget_html_ad7d31911407d117e9d536ea145e8f11b"><div class="ttname"><a href="class_title_widget.html#ad7d31911407d117e9d536ea145e8f11b">TitleWidget::m_backTypeStack</a></div><div class="ttdeci">QStack&lt; StackType &gt; m_backTypeStack</div><div class="ttdoc">后退导航栈</div><div class="ttdef"><b>定义</b> TitleWidget.h:340</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

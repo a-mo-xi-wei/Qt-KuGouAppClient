@@ -1,11 +1,28 @@
 <map id="clearAudioQuene" name="clearAudioQuene">
-<area shape="rect" id="Node000001" title="清空音频队列" alt="" coords="329,56,449,83"/>
-<area shape="rect" id="Node000002" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="145,5,281,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,54,261,35,263,30,327,49"/>
-<area shape="rect" id="Node000004" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="193,56,232,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="313,72,233,72,233,67,313,67"/>
-<area shape="rect" id="Node000005" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="190,107,236,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,90,237,116,236,111,325,85"/>
-<area shape="rect" id="Node000003" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,5,97,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
+<area shape="rect" id="Node000001" title="清空音频队列" alt="" coords="1078,220,1199,247"/>
+<area shape="rect" id="Node000002" href="$class_video_player.html#a2ba33c6ddac0c818dd97209894fb9c09" title="音频解码线程函数" alt="" coords="894,144,1030,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1091,216,994,174,996,169,1093,211"/>
+<area shape="rect" id="Node000003" href="$class_video_player.html#a126a100faafb6f0e8a26cc3f0f530f9e" title="错误发生信号" alt="" coords="764,144,846,171"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="1063,222,893,185,846,172,847,167,895,180,1064,217"/>
+<area shape="rect" id="Node000009" href="$class_video_player.html#a13a43e6d814de94978c515cb084873b1" title="读取视频文件线程函数" alt="" coords="385,220,424,247"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="1063,236,425,236,425,231,1063,231"/>
+<area shape="rect" id="Node000011" href="$class_video_player.html#af116cf31ffdcae8c9cd5bb184d339a77" title="停止播放" alt="" coords="939,296,985,323"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="1093,256,987,302,985,297,1090,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="878,160,847,160,847,155,878,155"/>
+<area shape="rect" id="Node000007" href="$class_video_player.html#a9f13805a2a52cdaa95bd96248941e89b" title="构造函数" alt="" coords="5,17,97,44"/>
+<area shape="poly" id="edge12_Node000002_Node000007" title=" " alt="" coords="931,137,877,99,802,56,760,38,716,22,670,12,623,8,403,8,234,15,97,28,97,23,234,10,403,3,623,3,670,7,717,17,762,33,805,52,880,94,934,132"/>
+<area shape="rect" id="Node000004" href="$class_video_player.html#a0ba68b0afb69d9ce73f19e64db5f3636" title="打开 SDL 失败回调" alt="" coords="562,144,682,171"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="748,160,683,160,683,155,748,155"/>
+<area shape="rect" id="Node000008" href="$class_video_player.html#a5fff8eb62b6d1a16f6b307d4e2bf4f07" title="打开视频文件失败回调" alt="" coords="544,195,700,221"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="750,176,716,185,675,197,674,191,715,180,748,171"/>
+<area shape="rect" id="Node000010" href="$class_ku_gou_client.html#a2e4eb5d5318b90a8bae4d99ea263e8d4" title="初始化播放控件" alt="" coords="528,93,716,120"/>
+<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="748,144,715,135,674,123,675,118,716,129,750,139"/>
+<area shape="rect" id="Node000005" href="$class_video_player.html#aed20f78ebe0b43d0e204e06be360f606" title="配置视频滤镜" alt="" coords="329,144,480,171"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="546,160,481,160,481,155,546,155"/>
+<area shape="rect" id="Node000006" href="$class_video_player.html#a3dc80fcbdb85689f912b45f6eb534028" title="视频解码线程函数" alt="" coords="145,43,281,69"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="363,139,239,72,241,67,365,134"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="297,42,386,35,493,35,549,40,607,48,663,61,717,79,741,92,763,109,795,142,791,145,759,113,738,96,715,84,661,66,606,53,549,45,492,40,386,40,297,47"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="129,46,97,40,98,35,130,40"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="546,193,464,174,466,169,547,188"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="529,221,425,234,424,228,529,216"/>
 </map>

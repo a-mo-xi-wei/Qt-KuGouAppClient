@@ -111,46 +111,50 @@ $(function(){initNavTree('_video_8h.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="_video_widget_8h_source.html">VideoWidget/VideoWidget.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_m_v_widget_8h_source.html">MVWidget/MVWidget.h</a>&quot;</code><br />
 <code>#include &lt;QWidget&gt;</code><br />
+<code>#include &lt;QPointer&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Video.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_video_8h__incl.png" border="0" usemap="#a_video_8h" alt=""/></div>
 <map name="a_video_8h" id="a_video_8h">
-<area shape="rect" title="定义 Video 类，提供视频界面管理" alt="" coords="503,5,568,32"/>
-<area shape="rect" href="_video_channel_widget_8h.html" title="定义 VideoChannelWidget 类，提供视频频道分类界面" alt="" coords="163,80,322,123"/>
-<area shape="poly" title=" " alt="" coords="503,32,334,78,332,73,502,26"/>
-<area shape="rect" title=" " alt="" coords="437,320,509,347"/>
-<area shape="poly" title=" " alt="" coords="550,31,566,52,578,79,581,101,578,123,568,201,558,234,538,273,522,294,504,312,501,308,518,291,534,271,553,232,563,200,573,122,576,101,573,81,561,55,545,34"/>
-<area shape="rect" href="_video_widget_8h.html" title="视频界面的头文件，定义 VideoWidget 类" alt="" coords="380,88,564,115"/>
-<area shape="poly" title=" " alt="" coords="528,34,493,78,489,74,524,31"/>
-<area shape="rect" href="_m_v_widget_8h.html" title=" " alt="" coords="642,88,800,115"/>
-<area shape="poly" title=" " alt="" coords="566,30,679,79,677,84,564,35"/>
-<area shape="rect" href="_video_channel_part_widget_8h.html" title="定义 VideoChannelPartWidget 类，提供视频频道分类部件" alt="" coords="5,171,184,197"/>
-<area shape="poly" title=" " alt="" coords="206,126,132,165,129,161,203,121"/>
-<area shape="rect" title=" " alt="" coords="208,171,277,197"/>
-<area shape="poly" title=" " alt="" coords="245,123,245,155,240,155,240,123"/>
-<area shape="rect" href="_video_channel_block_8h.html" title="定义 VideoChannelBlock 类，提供视频频道块控件" alt="" coords="76,245,222,272"/>
-<area shape="poly" title=" " alt="" coords="106,196,133,231,128,234,102,199"/>
-<area shape="poly" title=" " alt="" coords="127,196,236,243,286,270,357,296,423,316,421,321,355,301,284,274,233,248,125,200"/>
-<area shape="poly" title=" " alt="" coords="207,270,422,318,421,323,205,275"/>
-<area shape="rect" title=" " alt="" coords="204,320,308,347"/>
-<area shape="poly" title=" " alt="" coords="169,270,226,309,223,313,166,275"/>
-<area shape="poly" title=" " alt="" coords="488,113,510,138,528,170,532,208,525,246,510,280,494,308,489,306,505,278,520,244,527,208,523,172,505,141,484,117"/>
-<area shape="poly" title=" " alt="" coords="437,118,293,168,291,163,435,113"/>
-<area shape="rect" href="_video_part_widget_8h.html" title="视频分区界面的头文件，定义 VideoPartWidget 类" alt="" coords="301,171,432,197"/>
-<area shape="poly" title=" " alt="" coords="457,117,396,163,393,159,454,113"/>
-<area shape="rect" title=" " alt="" coords="455,171,512,197"/>
-<area shape="poly" title=" " alt="" coords="476,115,482,155,477,156,471,116"/>
-<area shape="poly" title=" " alt="" coords="393,196,423,216,450,244,465,274,472,304,467,306,460,276,446,247,419,220,390,200"/>
-<area shape="rect" href="_video_block_widget_8h.html" title="视频块界面的头文件，定义 VideoBlockWidget 类" alt="" coords="297,245,436,272"/>
-<area shape="poly" title=" " alt="" coords="369,198,369,230,364,230,364,198"/>
-<area shape="poly" title=" " alt="" coords="387,270,443,309,440,313,384,275"/>
-<area shape="poly" title=" " alt="" coords="349,275,289,314,286,309,346,270"/>
-<area shape="poly" title=" " alt="" coords="715,116,679,172,665,201,655,226,644,249,622,274,599,291,575,304,526,323,524,318,572,299,596,286,618,270,639,246,651,224,660,199,675,169,711,114"/>
-<area shape="rect" title=" " alt="" coords="689,171,761,197"/>
-<area shape="poly" title=" " alt="" coords="724,115,726,155,721,156,719,115"/>
-<area shape="rect" title=" " alt="" coords="785,171,836,197"/>
-<area shape="poly" title=" " alt="" coords="737,113,787,158,784,162,733,117"/>
+<area shape="rect" title="定义 Video 类，提供视频界面管理" alt="" coords="473,5,538,32"/>
+<area shape="rect" href="_video_channel_widget_8h.html" title="定义 VideoChannelWidget 类，提供视频频道分类界面" alt="" coords="280,80,438,123"/>
+<area shape="poly" title=" " alt="" coords="484,35,411,75,408,70,481,30"/>
+<area shape="rect" title=" " alt="" coords="181,171,246,197"/>
+<area shape="poly" title=" " alt="" coords="473,23,428,26,375,36,320,53,294,66,270,82,254,98,241,118,223,157,219,155,236,115,250,95,266,78,291,62,318,48,374,30,428,21,472,18"/>
+<area shape="rect" title=" " alt="" coords="399,320,471,347"/>
+<area shape="poly" title=" " alt="" coords="505,33,444,305,438,304,500,32"/>
+<area shape="rect" href="_video_widget_8h.html" title="视频界面的头文件，定义 VideoWidget 类" alt="" coords="5,88,190,115"/>
+<area shape="poly" title=" " alt="" coords="473,29,177,87,176,82,472,24"/>
+<area shape="rect" href="_m_v_widget_8h.html" title=" " alt="" coords="568,88,726,115"/>
+<area shape="poly" title=" " alt="" coords="529,30,613,78,610,82,526,35"/>
+<area shape="rect" title=" " alt="" coords="527,171,599,197"/>
+<area shape="poly" title=" " alt="" coords="512,31,556,155,551,157,507,33"/>
+<area shape="rect" title=" " alt="" coords="707,171,757,197"/>
+<area shape="poly" title=" " alt="" coords="539,21,651,40,705,56,726,67,740,78,749,97,751,117,745,156,740,155,746,117,744,98,735,82,723,71,703,61,650,45,538,26"/>
+<area shape="rect" title=" " alt="" coords="801,88,869,115"/>
+<area shape="poly" title=" " alt="" coords="539,23,648,44,782,77,790,80,788,85,781,83,647,49,538,28"/>
+<area shape="poly" title=" " alt="" coords="323,126,251,165,248,160,320,121"/>
+<area shape="rect" href="_video_channel_part_widget_8h.html" title="定义 VideoChannelPartWidget 类，提供视频频道分类部件" alt="" coords="270,171,448,197"/>
+<area shape="poly" title=" " alt="" coords="362,123,362,155,356,155,356,123"/>
+<area shape="rect" href="_video_channel_block_8h.html" title="定义 VideoChannelBlock 类，提供视频频道块控件" alt="" coords="251,245,397,272"/>
+<area shape="poly" title=" " alt="" coords="355,199,339,232,334,230,350,197"/>
+<area shape="poly" title=" " alt="" coords="374,196,394,217,412,244,425,275,432,304,427,305,419,276,407,247,389,221,370,200"/>
+<area shape="poly" title=" " alt="" coords="345,270,404,309,402,314,342,275"/>
+<area shape="rect" title=" " alt="" coords="188,320,292,347"/>
+<area shape="poly" title=" " alt="" coords="311,275,268,312,264,308,308,271"/>
+<area shape="rect" href="_video_part_widget_8h.html" title="视频分区界面的头文件，定义 VideoPartWidget 类" alt="" coords="27,171,157,197"/>
+<area shape="poly" title=" " alt="" coords="99,115,97,156,91,155,94,115"/>
+<area shape="rect" href="_video_block_widget_8h.html" title="视频块界面的头文件，定义 VideoBlockWidget 类" alt="" coords="88,245,227,272"/>
+<area shape="poly" title=" " alt="" coords="106,196,138,232,134,236,102,200"/>
+<area shape="poly" title=" " alt="" coords="206,270,385,316,383,321,205,275"/>
+<area shape="poly" title=" " alt="" coords="174,271,216,308,213,312,170,275"/>
+<area shape="poly" title=" " alt="" coords="647,116,636,154,626,177,613,199,581,235,543,267,473,314,470,310,540,263,577,232,609,196,621,175,631,153,642,114"/>
+<area shape="poly" title=" " alt="" coords="636,117,588,162,584,158,632,113"/>
+<area shape="poly" title=" " alt="" coords="662,113,710,158,706,162,658,117"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -159,7 +163,7 @@ Video.h 的引用(Include)关系图:</div>
 <div class="center"><img src="_video_8h__dep__incl.png" border="0" usemap="#a_video_8hdep" alt=""/></div>
 <map name="a_video_8hdep" id="a_video_8hdep">
 <area shape="rect" title="定义 Video 类，提供视频界面管理" alt="" coords="225,5,290,32"/>
-<area shape="rect" href="_ku_gou_client_8h.html" title=" " alt="" coords="146,80,252,107"/>
+<area shape="rect" href="_ku_gou_client_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouClient 类" alt="" coords="146,80,252,107"/>
 <area shape="poly" title=" " alt="" coords="240,46,211,81,207,78,235,43"/>
 <area shape="rect" href="_video_8cpp.html" title="实现 Video 类，提供视频界面管理功能" alt="" coords="276,80,356,107"/>
 <area shape="poly" title=" " alt="" coords="279,43,308,78,304,81,275,46"/>

@@ -16,11 +16,12 @@ var class_title_widget =
       [ "MusicCloudDisk", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a521a73130a589be0cc55bbfdc22b56ff", null ],
       [ "PurchasedMusic", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a8dba913eadc46dce09b53359c299a520", null ],
       [ "RecentlyPlayed", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4acf7ecc8c51ebabd5b5edca2ea5837d76", null ],
-      [ "AllMusic", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878", null ]
+      [ "AllMusic", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a9503ed158e2d3619ac1153a7e2db1878", null ],
+      [ "SearchResult", "class_title_widget.html#a09061c58c857313317835bcdbd3bc0e4a7aeac1f731ddf8cf20b74c735878a173", null ]
     ] ],
     [ "TitleWidget", "class_title_widget.html#a60213ec72a7b8093c5acf83bf7e359c0", null ],
     [ "~TitleWidget", "class_title_widget.html#ac51c4c7d1987d94b3d3f28af94ee3b65", null ],
-    [ "currentStackChange", "class_title_widget.html#a607c0c78292a519369fac4a60638f9ee", null ],
+    [ "currentStackChange", "class_title_widget.html#a1d5ec2302525b7fecb5da536d1e3de09", null ],
     [ "doubleClicked", "class_title_widget.html#ac788a1e254cb7f54fb21e3648d929f39", null ],
     [ "eventFilter", "class_title_widget.html#a7eb87a6d4464680c455d278d1d32eba6", null ],
     [ "exit", "class_title_widget.html#a358d2e2397ca11ccd17553e3c40e7901", null ],

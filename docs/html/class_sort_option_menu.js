@@ -13,5 +13,5 @@ var class_sort_option_menu =
     [ "selected", "class_sort_option_menu.html#aa84baa4d0eb43cb69e26d5f6ec6f309e", null ],
     [ "singerSort", "class_sort_option_menu.html#a8dfbd3ceedab5c9e1c73fcdd16f3681f", null ],
     [ "songNameSort", "class_sort_option_menu.html#aaab3a5460c247a8f4ae3fa7e964c620e", null ],
-    [ "m_sortBtn", "class_sort_option_menu.html#aae699596e90c09db04bfb0d1bf3d1c68", null ]
+    [ "m_sortBtn", "class_sort_option_menu.html#a4c9aea2b640a020ae940fbb1c6853c3b", null ]
 ];

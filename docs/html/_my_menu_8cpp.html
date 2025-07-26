@@ -102,7 +102,7 @@ $(function(){initNavTree('_my_menu_8cpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>实现 <a class="el" href="class_my_menu.html" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单">MyMenu</a> 类，使用策略模式管理不同类型的菜单  
+<p>实现 <a class="el" href="class_my_menu.html" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单">MyMenu</a> 类，使用注册型工厂模式管理不同类型的菜单  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_my_menu_8h_source.html">MyMenu.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_song_option_menu_8h_source.html">SongOptionMenu/SongOptionMenu.h</a>&quot;</code><br />
@@ -115,7 +115,7 @@ MyMenu.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_my_menu_8cpp__incl.png" border="0" usemap="#a_my_menu_8cpp" alt=""/></div>
 <map name="a_my_menu_8cpp" id="a_my_menu_8cpp">
-<area shape="rect" title="实现 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="473,5,569,32"/>
+<area shape="rect" title="实现 MyMenu 类，使用注册型工厂模式管理不同类型的菜单" alt="" coords="473,5,569,32"/>
 <area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="5,88,88,115"/>
 <area shape="poly" title=" " alt="" coords="473,26,306,44,202,60,99,83,91,85,90,80,98,77,202,55,306,38,473,21"/>
 <area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="111,80,304,123"/>
@@ -132,24 +132,26 @@ MyMenu.cpp 的引用(Include)关系图:</div>
 <area shape="poly" title=" " alt="" coords="76,113,99,120,226,145,354,162,470,173,561,178,561,183,470,178,354,168,225,151,98,125,74,118"/>
 <area shape="rect" title=" " alt="" coords="10,171,83,197"/>
 <area shape="poly" title=" " alt="" coords="49,115,49,155,44,155,44,115"/>
-<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="841,245,940,272"/>
-<area shape="poly" title=" " alt="" coords="671,195,830,238,829,243,670,200"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="805,245,904,272"/>
+<area shape="poly" title=" " alt="" coords="665,195,800,238,799,243,663,200"/>
 <area shape="rect" title=" " alt="" coords="592,245,656,272"/>
 <area shape="poly" title=" " alt="" coords="626,198,626,230,621,230,621,198"/>
-<area shape="rect" title=" " alt="" coords="792,320,885,347"/>
-<area shape="poly" title=" " alt="" coords="884,274,858,309,854,306,879,271"/>
-<area shape="rect" title=" " alt="" coords="910,320,975,347"/>
-<area shape="poly" title=" " alt="" coords="902,271,927,306,923,309,897,274"/>
+<area shape="rect" title=" " alt="" coords="756,320,849,347"/>
+<area shape="poly" title=" " alt="" coords="848,274,822,309,818,306,843,271"/>
+<area shape="rect" title=" " alt="" coords="874,320,939,347"/>
+<area shape="poly" title=" " alt="" coords="866,271,891,306,887,309,861,274"/>
 <area shape="poly" title=" " alt="" coords="305,119,562,168,561,173,304,124"/>
 <area shape="poly" title=" " alt="" coords="962,123,951,125,687,174,686,169,950,120,961,118"/>
-<area shape="poly" title=" " alt="" coords="1033,125,916,236,913,233,1030,121"/>
+<area shape="poly" title=" " alt="" coords="1028,125,884,238,881,234,1025,121"/>
+<area shape="rect" title=" " alt="" coords="1017,171,1089,197"/>
+<area shape="poly" title=" " alt="" coords="1056,123,1056,155,1050,155,1050,123"/>
 <area shape="poly" title=" " alt="" coords="473,121,579,162,577,167,471,126"/>
 <area shape="poly" title=" " alt="" coords="626,123,626,155,621,155,621,123"/>
 <area shape="poly" title=" " alt="" coords="783,126,672,167,671,162,781,121"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>实现 <a class="el" href="class_my_menu.html" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单">MyMenu</a> 类，使用策略模式管理不同类型的菜单 </p>
+<div class="textblock"><p>实现 <a class="el" href="class_my_menu.html" title="菜单管理类，使用策略模式动态创建和初始化不同类型的菜单">MyMenu</a> 类，使用注册型工厂模式管理不同类型的菜单 </p>
 <dl class="section author"><dt>作者</dt><dd>WeiWang </dd></dl>
 <dl class="section date"><dt>日期</dt><dd>2024-10-19 </dd></dl>
 <dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>

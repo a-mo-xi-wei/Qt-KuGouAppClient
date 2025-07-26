@@ -2,12 +2,14 @@ var class_live =
 [
     [ "Live", "class_live.html#a7a85b4c036d306838552743d84666d47", null ],
     [ "~Live", "class_live.html#aa9103a1c3130df66b3f019aa08687b39", null ],
+    [ "emitInitialized", "class_live.html#a99836dfc3d5a62f743bcd92e8447cc6e", null ],
     [ "handleWheelValue", "class_live.html#a6ef54bde0283ca9a6b5060253ec1b8a6", null ],
     [ "initAppearanceWidget", "class_live.html#a548f4432cb50d71db879a3761cf8cf29", null ],
     [ "initAttentionWidget", "class_live.html#a938225792709e21cfaf5094707b112c5", null ],
     [ "initButtonGroup", "class_live.html#a9437cac5c81c06f98ff94541bf7da588", null ],
     [ "initDanceWidget", "class_live.html#aee5a8ef3b3dc97fbae5e83428502d536", null ],
     [ "initGameWidget", "class_live.html#acc309d53a8263b0a2e26a52653168d6e", null ],
+    [ "initialized", "class_live.html#a4a60e1a6f7c85389e07d2cd1b50ff6bd", null ],
     [ "initMusicWidget", "class_live.html#a36e81b27036fd79bc02f5ce244fe8547", null ],
     [ "initNewStarWidget", "class_live.html#a424f9a0113b9ae5b44f5ef1d78bdaa44", null ],
     [ "initPopularWidget", "class_live.html#a56e054d6814b4f83fc3a77a488339418", null ],
@@ -24,6 +26,6 @@ var class_live =
     [ "m_musicWidget", "class_live.html#a4ebbc763ac1899bae343a8bfaf5d1192", null ],
     [ "m_newStarWidget", "class_live.html#a82b61b1d7dff59900664a05c6b2ba14a", null ],
     [ "m_recommendWidget", "class_live.html#ad442d58c70cd5d1c247fee1774756109", null ],
-    [ "m_vScrollBar", "class_live.html#a5cd20ec8edf7d3af0f64fd52bd13110f", null ],
+    [ "m_refreshMask", "class_live.html#ad7216f3c40bfdc4ac8bd12c1f101f6c0", null ],
     [ "ui", "class_live.html#a8c47548765fba05e111f3754e0ead776", null ]
 ];

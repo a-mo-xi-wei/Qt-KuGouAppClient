@@ -107,7 +107,8 @@ $(function(){initNavTree('_live_8h.html',''); initResizable(true); });
 
 <p>定义 <a class="el" href="class_live.html" title="直播主界面类，整合多个直播控件">Live</a> 类，提供直播主界面  
 <a href="#details">更多...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_live_common_part_widget_8h_source.html">LiveCommonPartWidget/LiveCommonPartWidget.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;QTimer&gt;</code><br />
+<code>#include &quot;<a class="el" href="_live_common_part_widget_8h_source.html">LiveCommonPartWidget/LiveCommonPartWidget.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_live_music_part_widget_8h_source.html">LiveMusicPartWidget/LiveMusicPartWidget.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_live_big_left_widget_8h_source.html">LiveBigLeftWidget/LiveBigLeftWidget.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -115,17 +116,19 @@ Live.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_live_8h__incl.png" border="0" usemap="#a_live_8h" alt=""/></div>
 <map name="a_live_8h" id="a_live_8h">
-<area shape="rect" title="定义 Live 类，提供直播主界面" alt="" coords="260,5,316,32"/>
-<area shape="rect" href="_live_common_part_widget_8h.html" title="定义 LiveCommonPartWidget 类，提供直播通用部分控件" alt="" coords="5,80,184,123"/>
-<area shape="poly" title=" " alt="" coords="260,34,159,76,157,71,258,29"/>
-<area shape="rect" href="_live_music_part_widget_8h.html" title="定义 LiveMusicPartWidget 类，提供直播音乐部分控件" alt="" coords="208,80,368,123"/>
-<area shape="poly" title=" " alt="" coords="290,32,290,65,285,65,285,32"/>
-<area shape="rect" href="_live_big_left_widget_8h.html" title="定义 LiveBigLeftWidget 类，提供直播左侧大控件" alt="" coords="393,80,567,123"/>
-<area shape="poly" title=" " alt="" coords="318,30,417,71,415,76,316,34"/>
-<area shape="rect" title=" " alt="" coords="252,171,324,197"/>
-<area shape="poly" title=" " alt="" coords="145,121,244,162,242,167,143,126"/>
-<area shape="poly" title=" " alt="" coords="290,123,290,155,285,155,285,123"/>
-<area shape="poly" title=" " alt="" coords="431,126,333,167,331,162,429,121"/>
+<area shape="rect" title="定义 Live 类，提供直播主界面" alt="" coords="251,5,307,32"/>
+<area shape="rect" title=" " alt="" coords="5,88,70,115"/>
+<area shape="poly" title=" " alt="" coords="251,30,174,52,82,83,79,84,77,79,81,77,172,47,249,25"/>
+<area shape="rect" href="_live_common_part_widget_8h.html" title="定义 LiveCommonPartWidget 类，提供直播通用部分控件" alt="" coords="94,80,272,123"/>
+<area shape="poly" title=" " alt="" coords="266,35,221,72,217,68,262,30"/>
+<area shape="rect" href="_live_music_part_widget_8h.html" title="定义 LiveMusicPartWidget 类，提供直播音乐部分控件" alt="" coords="296,80,456,123"/>
+<area shape="poly" title=" " alt="" coords="296,30,341,68,338,72,292,35"/>
+<area shape="rect" href="_live_big_left_widget_8h.html" title="定义 LiveBigLeftWidget 类，提供直播左侧大控件" alt="" coords="481,80,655,123"/>
+<area shape="poly" title=" " alt="" coords="308,25,480,73,479,78,307,31"/>
+<area shape="rect" title=" " alt="" coords="340,171,412,197"/>
+<area shape="poly" title=" " alt="" coords="234,121,333,162,331,167,232,126"/>
+<area shape="poly" title=" " alt="" coords="379,123,379,155,374,155,374,123"/>
+<area shape="poly" title=" " alt="" coords="520,126,421,167,419,162,518,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -134,7 +137,7 @@ Live.h 的引用(Include)关系图:</div>
 <div class="center"><img src="_live_8h__dep__incl.png" border="0" usemap="#a_live_8hdep" alt=""/></div>
 <map name="a_live_8hdep" id="a_live_8hdep">
 <area shape="rect" title="定义 Live 类，提供直播主界面" alt="" coords="226,5,283,32"/>
-<area shape="rect" href="_ku_gou_client_8h.html" title=" " alt="" coords="146,80,252,107"/>
+<area shape="rect" href="_ku_gou_client_8h.html" title="酷狗音乐应用主窗口的头文件，定义 KuGouClient 类" alt="" coords="146,80,252,107"/>
 <area shape="poly" title=" " alt="" coords="238,46,210,81,206,78,234,43"/>
 <area shape="rect" href="_live_8cpp.html" title="实现 Live 类，提供直播主界面功能" alt="" coords="276,80,346,107"/>
 <area shape="poly" title=" " alt="" coords="276,43,303,78,299,81,272,46"/>

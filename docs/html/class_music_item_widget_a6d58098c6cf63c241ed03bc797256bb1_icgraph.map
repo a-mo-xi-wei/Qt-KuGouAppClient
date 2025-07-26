@@ -1,26 +1,29 @@
 <map id="play" name="play">
-<area shape="rect" id="Node000001" title="播放信号" alt="" coords="1154,121,1199,148"/>
-<area shape="rect" id="Node000002" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="938,71,1106,97"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1138,124,1105,112,1069,100,1071,95,1107,107,1140,119"/>
-<area shape="rect" id="Node000009" href="$class_music_item_widget.html#a1d28ca2a9a560fb537c6b93071c70dfd" title="播放菜单项处理" alt="" coords="991,121,1052,148"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1138,137,1053,137,1053,132,1138,132"/>
-<area shape="rect" id="Node000011" href="$class_music_item_widget.html#ae21b351f287b5d0040692cebea9b6872" title="播放按钮点击处理" alt="" coords="947,172,1096,199"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1140,151,1107,163,1071,174,1069,169,1105,157,1138,146"/>
-<area shape="rect" id="Node000003" href="$class_local_song.html#a97a0739f99953381d5aecf97d7776609" title="从服务器同步歌曲列表" alt="" coords="679,17,890,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="933,70,890,61,891,56,934,65"/>
-<area shape="rect" id="Node000005" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="702,84,867,111"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="922,92,868,95,868,90,922,87"/>
-<area shape="rect" id="Node000004" href="$class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="470,29,621,56"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="664,43,621,44,621,39,664,38"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="585,17,572,10,545,8,521,10,508,15,505,20,511,27,506,31,499,21,504,11,520,5,545,3,573,5,588,12"/>
-<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="708,83,606,59,607,54,709,77"/>
-<area shape="rect" id="Node000006" href="$class_local_song.html#a6219ec9f188d024275d4f70f10278df7" title="加载下一首歌曲" alt="" coords="459,84,631,111"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="687,100,632,100,632,95,687,95"/>
-<area shape="rect" id="Node000007" href="$class_local_song.html#a1535a02c1a76094119209356430261e4" title="开始串行加载歌曲" alt="" coords="217,84,411,111"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="443,100,412,100,412,95,443,95"/>
-<area shape="rect" id="Node000008" href="$class_local_song.html#a68489f65dbe7c54ff6e049f3473e0e45" title="添加歌曲按钮点击槽函数" alt="" coords="5,76,169,119"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="201,100,169,100,169,95,201,95"/>
-<area shape="rect" id="Node000010" href="$class_music_item_widget.html#a25d0faf4d08a1a383154e48f122db1dd" title="构造函数，初始化音乐条目控件" alt="" coords="723,147,846,173"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="976,142,847,156,846,151,975,137"/>
-<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="932,178,846,169,847,164,932,173"/>
+<area shape="rect" id="Node000001" title="播放信号" alt="" coords="1185,164,1230,191"/>
+<area shape="rect" id="Node000002" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="969,113,1137,140"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1169,166,1136,155,1100,143,1102,138,1138,149,1171,161"/>
+<area shape="rect" id="Node000011" href="$class_music_item_widget.html#a1d28ca2a9a560fb537c6b93071c70dfd" title="播放菜单项处理" alt="" coords="1022,164,1084,191"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1169,180,1084,180,1084,175,1169,175"/>
+<area shape="rect" id="Node000013" href="$class_music_item_widget.html#ae21b351f287b5d0040692cebea9b6872" title="播放按钮点击处理" alt="" coords="978,215,1128,241"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="1171,193,1138,205,1102,217,1100,212,1136,200,1169,188"/>
+<area shape="rect" id="Node000003" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="736,88,902,115"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="953,119,902,113,902,108,954,113"/>
+<area shape="rect" id="Node000008" href="$class_local_song.html#a388fdcfba9e86b6bca1fbf44fe9f9d79" title=" " alt="" coords="717,143,921,169"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="954,142,921,146,921,141,953,136"/>
+<area shape="rect" id="Node000004" href="$class_local_song.html#a6219ec9f188d024275d4f70f10278df7" title="加载下一首歌曲" alt="" coords="478,13,650,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="764,85,669,55,625,43,627,38,670,49,765,80"/>
+<area shape="rect" id="Node000007" href="$class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="488,88,640,115"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="721,104,640,104,640,99,721,99"/>
+<area shape="rect" id="Node000005" href="$class_local_song.html#a1535a02c1a76094119209356430261e4" title="开始串行加载歌曲" alt="" coords="217,13,411,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="462,29,412,29,412,24,462,24"/>
+<area shape="rect" id="Node000006" href="$class_local_song.html#a68489f65dbe7c54ff6e049f3473e0e45" title="添加歌曲按钮点击槽函数" alt="" coords="5,5,169,48"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="201,29,169,29,169,24,201,24"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="608,76,593,69,564,67,538,69,523,74,520,79,526,86,522,89,515,79,520,69,537,63,564,61,594,64,610,71"/>
+<area shape="rect" id="Node000009" href="$class_local_song.html#a97a0739f99953381d5aecf97d7776609" title="从服务器同步歌曲列表" alt="" coords="459,139,669,181"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="702,161,670,161,670,156,702,155"/>
+<area shape="rect" id="Node000010" href="$class_local_song.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title=" " alt="" coords="236,147,392,173"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="443,163,392,163,392,157,443,157"/>
+<area shape="rect" id="Node000012" href="$class_music_item_widget.html#a25d0faf4d08a1a383154e48f122db1dd" title="构造函数，初始化音乐条目控件" alt="" coords="757,204,881,231"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1007,188,882,209,881,204,1006,182"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="962,227,881,223,881,217,963,221"/>
 </map>

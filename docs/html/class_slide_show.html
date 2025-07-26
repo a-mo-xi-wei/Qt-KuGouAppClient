@@ -201,6 +201,8 @@ Protected 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private 成员函数</h2></td></tr>
+<tr class="memitem:aa60ab006016a3c081419ce398752a0a3" id="r_aa60ab006016a3c081419ce398752a0a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa60ab006016a3c081419ce398752a0a3">updateButtonColor</a> (QPushButton *btn, const QColor &amp;normal, const QColor &amp;hover)</td></tr>
+<tr class="separator:aa60ab006016a3c081419ce398752a0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90c5ff2d99784bc1f4b031220446cb12" id="r_a90c5ff2d99784bc1f4b031220446cb12"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c5ff2d99784bc1f4b031220446cb12">getScaledRoundedPixmap</a> (QPixmap pixmap) const</td></tr>
 <tr class="memdesc:a90c5ff2d99784bc1f4b031220446cb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缩放和圆角处理的图片  <br /></td></tr>
 <tr class="separator:a90c5ff2d99784bc1f4b031220446cb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,9 +221,9 @@ Private 属性</h2></td></tr>
 <tr class="memitem:a3f7a2d384d2f4d0e5173464dea43dcea" id="r_a3f7a2d384d2f4d0e5173464dea43dcea"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7a2d384d2f4d0e5173464dea43dcea">texts</a></td></tr>
 <tr class="memdesc:a3f7a2d384d2f4d0e5173464dea43dcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片关联文本列表  <br /></td></tr>
 <tr class="separator:a3f7a2d384d2f4d0e5173464dea43dcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6877a6b61f9e0645b284dd8cffc0d329" id="r_a6877a6b61f9e0645b284dd8cffc0d329"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_interactive_button_base.html">InteractiveButtonBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6877a6b61f9e0645b284dd8cffc0d329">indications</a></td></tr>
-<tr class="memdesc:a6877a6b61f9e0645b284dd8cffc0d329"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器按钮列表  <br /></td></tr>
-<tr class="separator:a6877a6b61f9e0645b284dd8cffc0d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b6461a514ee823eb4484575d05b264" id="r_ac4b6461a514ee823eb4484575d05b264"><td class="memItemLeft" align="right" valign="top">QList&lt; QPushButton * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b6461a514ee823eb4484575d05b264">indications</a></td></tr>
+<tr class="memdesc:ac4b6461a514ee823eb4484575d05b264"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器按钮列表  <br /></td></tr>
+<tr class="separator:ac4b6461a514ee823eb4484575d05b264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b41910066b877c9effd739880b6b15e" id="r_a8b41910066b877c9effd739880b6b15e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b41910066b877c9effd739880b6b15e">currentIndex</a> = -1</td></tr>
 <tr class="memdesc:a8b41910066b877c9effd739880b6b15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前图片索引  <br /></td></tr>
 <tr class="separator:a8b41910066b877c9effd739880b6b15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,21 +254,12 @@ Private 属性</h2></td></tr>
 <tr class="memitem:a53c6d7e99ee13d9c72acc0127af6efa7" id="r_a53c6d7e99ee13d9c72acc0127af6efa7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53c6d7e99ee13d9c72acc0127af6efa7">scalePixmap</a> = false</td></tr>
 <tr class="memdesc:a53c6d7e99ee13d9c72acc0127af6efa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片缩放标志（已废弃）  <br /></td></tr>
 <tr class="separator:a53c6d7e99ee13d9c72acc0127af6efa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af76973b5ee7906b48e381391ebc863c4" id="r_af76973b5ee7906b48e381391ebc863c4"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af76973b5ee7906b48e381391ebc863c4">indicationLayout</a> {}</td></tr>
-<tr class="memdesc:af76973b5ee7906b48e381391ebc863c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示器布局  <br /></td></tr>
-<tr class="separator:af76973b5ee7906b48e381391ebc863c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e19e2d85b025398c8addc554f0f1456" id="r_a7e19e2d85b025398c8addc554f0f1456"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e19e2d85b025398c8addc554f0f1456">centerRect</a></td></tr>
-<tr class="memdesc:a7e19e2d85b025398c8addc554f0f1456"><td class="mdescLeft">&#160;</td><td class="mdescRight">中心卡片区域  <br /></td></tr>
-<tr class="separator:a7e19e2d85b025398c8addc554f0f1456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e26497efd4298f1d8f6a86a9587de9" id="r_af1e26497efd4298f1d8f6a86a9587de9"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1e26497efd4298f1d8f6a86a9587de9">leftRect</a></td></tr>
 <tr class="memdesc:af1e26497efd4298f1d8f6a86a9587de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">左侧卡片区域  <br /></td></tr>
 <tr class="separator:af1e26497efd4298f1d8f6a86a9587de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f126ad5f6f95e819a74e476c7e4f448" id="r_a3f126ad5f6f95e819a74e476c7e4f448"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f126ad5f6f95e819a74e476c7e4f448">rightRect</a></td></tr>
 <tr class="memdesc:a3f126ad5f6f95e819a74e476c7e4f448"><td class="mdescLeft">&#160;</td><td class="mdescRight">右侧卡片区域  <br /></td></tr>
 <tr class="separator:a3f126ad5f6f95e819a74e476c7e4f448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c0c56981a057dc0e6af79f5fc615d9" id="r_a27c0c56981a057dc0e6af79f5fc615d9"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c0c56981a057dc0e6af79f5fc615d9">backRect</a></td></tr>
-<tr class="memdesc:a27c0c56981a057dc0e6af79f5fc615d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏卡片区域  <br /></td></tr>
-<tr class="separator:a27c0c56981a057dc0e6af79f5fc615d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>轮播图控件类，支持图片滑动、自动轮播和指示器 </p>
@@ -315,27 +308,32 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph.png" border="0" usemap="#aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph" alt=""/></div>
 <map name="aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph" id="aclass_slide_show_ad6938b5225068a022f2e0fc79553d370_cgraph">
-<area shape="rect" title="构造函数，初始化轮播图控件" alt="" coords="5,31,89,57"/>
-<area shape="rect" href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036" title="设置图片大小" alt="" coords="137,5,246,32"/>
-<area shape="poly" title=" " alt="" coords="89,34,121,28,122,34,90,39"/>
-<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="145,56,238,83"/>
-<area shape="poly" title=" " alt="" coords="90,49,130,56,129,61,89,54"/>
-<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="294,5,469,32"/>
-<area shape="poly" title=" " alt="" coords="246,16,279,16,279,21,246,21"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="324,56,439,83"/>
-<area shape="poly" title=" " alt="" coords="239,67,309,67,309,72,239,72"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="517,56,612,83"/>
-<area shape="poly" title=" " alt="" coords="439,67,502,67,502,72,439,72"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="660,31,801,57"/>
-<area shape="poly" title=" " alt="" coords="612,60,644,55,645,60,613,65"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="697,81,764,108"/>
-<area shape="poly" title=" " alt="" coords="613,74,681,85,681,90,612,79"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="849,31,1046,57"/>
-<area shape="poly" title=" " alt="" coords="801,41,833,41,833,47,801,47"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="852,81,1043,108"/>
-<area shape="poly" title=" " alt="" coords="764,92,836,92,836,97,764,97"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="852,132,1044,159"/>
-<area shape="poly" title=" " alt="" coords="765,100,873,125,872,131,764,105"/>
+<area shape="rect" title="构造函数，初始化轮播图控件" alt="" coords="5,68,89,95"/>
+<area shape="rect" href="class_slide_show.html#a4d8a0615d839f371b9aa5c8c98e90036" title="设置图片大小" alt="" coords="137,43,246,69"/>
+<area shape="poly" title=" " alt="" coords="89,71,121,66,122,71,90,77"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="145,93,238,120"/>
+<area shape="poly" title=" " alt="" coords="90,86,130,93,129,98,89,91"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="294,43,469,69"/>
+<area shape="poly" title=" " alt="" coords="246,53,279,53,279,59,246,59"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="324,93,439,120"/>
+<area shape="poly" title=" " alt="" coords="239,104,309,104,309,109,239,109"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="535,56,629,83"/>
+<area shape="poly" title=" " alt="" coords="439,93,519,78,520,84,440,99"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="517,119,647,145"/>
+<area shape="poly" title=" " alt="" coords="439,111,502,119,501,125,439,117"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="695,5,836,32"/>
+<area shape="poly" title=" " alt="" coords="629,54,699,34,701,39,630,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="732,56,799,83"/>
+<area shape="poly" title=" " alt="" coords="629,67,716,67,716,72,629,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="884,5,1081,32"/>
+<area shape="poly" title=" " alt="" coords="836,16,868,16,868,21,836,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="887,56,1078,83"/>
+<area shape="poly" title=" " alt="" coords="799,67,871,67,871,72,799,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="886,107,1079,133"/>
+<area shape="poly" title=" " alt="" coords="800,74,908,100,907,105,799,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="746,131,785,157"/>
+<area shape="poly" title=" " alt="" coords="647,134,731,139,730,144,647,139"/>
+<area shape="poly" title=" " alt="" coords="743,138,730,127,730,115,742,107,765,104,784,106,797,111,802,119,800,128,795,126,797,120,793,115,783,111,765,109,744,112,734,118,735,125,747,134"/>
 </map>
 </div>
 
@@ -383,27 +381,31 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph.png" border="0" usemap="#aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph" alt=""/></div>
 <map name="aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph" id="aclass_slide_show_a4f192b96ac5c37010bd4fc620221cdfb_cgraph">
-<area shape="rect" title="添加图片" alt="" coords="5,56,84,83"/>
-<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="132,56,221,83"/>
-<area shape="poly" title=" " alt="" coords="84,67,116,67,116,72,84,72"/>
-<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="269,5,444,32"/>
-<area shape="poly" title=" " alt="" coords="221,54,291,34,293,39,222,59"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="300,56,414,83"/>
-<area shape="poly" title=" " alt="" coords="222,67,284,67,284,72,222,72"/>
-<area shape="rect" href="class_interactive_button_base.html#a6fba9534db8d777139949b6270cf665a" title="鼠标进入" alt="" coords="282,107,432,149"/>
-<area shape="poly" title=" " alt="" coords="221,81,275,99,274,104,219,86"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="492,56,587,83"/>
-<area shape="poly" title=" " alt="" coords="414,67,477,67,477,72,414,72"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="635,31,776,57"/>
-<area shape="poly" title=" " alt="" coords="587,60,619,55,620,60,588,65"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="672,81,739,108"/>
-<area shape="poly" title=" " alt="" coords="588,74,656,85,656,90,587,79"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="824,31,1021,57"/>
-<area shape="poly" title=" " alt="" coords="776,41,808,41,808,47,776,47"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="827,81,1018,108"/>
-<area shape="poly" title=" " alt="" coords="739,92,811,92,811,97,739,97"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="826,132,1019,159"/>
-<area shape="poly" title=" " alt="" coords="740,100,848,125,847,131,739,105"/>
+<area shape="rect" title="添加图片" alt="" coords="5,68,84,95"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="132,68,221,95"/>
+<area shape="poly" title=" " alt="" coords="84,79,116,79,116,84,84,84"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="269,17,444,44"/>
+<area shape="poly" title=" " alt="" coords="221,66,291,46,293,51,222,71"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="300,68,414,95"/>
+<area shape="poly" title=" " alt="" coords="222,79,284,79,284,84,222,84"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="492,119,622,145"/>
+<area shape="poly" title=" " alt="" coords="222,93,269,104,378,119,477,126,476,132,377,124,269,109,221,98"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="510,56,604,83"/>
+<area shape="poly" title=" " alt="" coords="414,75,494,70,495,76,414,81"/>
+<area shape="poly" title=" " alt="" coords="413,93,487,112,486,117,412,98"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="670,5,811,32"/>
+<area shape="poly" title=" " alt="" coords="604,54,674,34,676,39,605,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="707,56,774,83"/>
+<area shape="poly" title=" " alt="" coords="604,67,691,67,691,72,604,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="859,5,1056,32"/>
+<area shape="poly" title=" " alt="" coords="811,16,843,16,843,21,811,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="862,56,1053,83"/>
+<area shape="poly" title=" " alt="" coords="774,67,846,67,846,72,774,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="862,107,1054,133"/>
+<area shape="poly" title=" " alt="" coords="775,74,883,100,882,105,774,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="721,131,760,157"/>
+<area shape="poly" title=" " alt="" coords="622,134,706,139,705,144,622,139"/>
+<area shape="poly" title=" " alt="" coords="718,138,705,127,705,115,717,107,740,104,759,106,772,111,777,119,775,128,770,126,772,120,768,115,758,111,740,109,719,112,709,118,710,125,722,134"/>
 </map>
 </div>
 
@@ -551,25 +553,30 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph.png" border="0" usemap="#aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph" alt=""/></div>
 <map name="aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph" id="aclass_slide_show_aa8f242b451f8b90c2bf758c631f72e21_cgraph">
-<area shape="rect" title="事件过滤器" alt="" coords="5,81,88,108"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="146,31,260,57"/>
-<area shape="poly" title=" " alt="" coords="87,79,145,60,147,65,89,84"/>
-<area shape="rect" href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c" title="图片被点击信号" alt="" coords="136,81,271,108"/>
-<area shape="poly" title=" " alt="" coords="88,92,120,92,120,97,88,97"/>
-<area shape="rect" href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a" title="文本被激活信号" alt="" coords="136,132,271,159"/>
-<area shape="poly" title=" " alt="" coords="89,105,147,124,145,129,87,110"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="319,31,413,57"/>
-<area shape="poly" title=" " alt="" coords="261,41,303,41,303,47,261,47"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="461,5,603,32"/>
-<area shape="poly" title=" " alt="" coords="413,34,446,29,446,34,414,39"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="498,56,566,83"/>
-<area shape="poly" title=" " alt="" coords="414,49,483,59,482,65,413,54"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="651,5,848,32"/>
-<area shape="poly" title=" " alt="" coords="603,16,635,16,635,21,603,21"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="654,56,845,83"/>
-<area shape="poly" title=" " alt="" coords="566,67,638,67,638,72,566,72"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="653,107,846,133"/>
-<area shape="poly" title=" " alt="" coords="567,74,675,100,674,105,565,80"/>
+<area shape="rect" title="事件过滤器" alt="" coords="5,137,88,164"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="146,87,260,113"/>
+<area shape="poly" title=" " alt="" coords="87,135,145,116,147,121,89,140"/>
+<area shape="rect" href="class_slide_show.html#a7d3b33a535a29aaa3531ee7234184c9c" title="图片被点击信号" alt="" coords="136,137,271,164"/>
+<area shape="poly" title=" " alt="" coords="88,148,120,148,120,153,88,153"/>
+<area shape="rect" href="class_slide_show.html#a7a1359375202ace0d839e59d1928712a" title="文本被激活信号" alt="" coords="136,188,271,215"/>
+<area shape="poly" title=" " alt="" coords="89,161,147,180,145,185,87,166"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="336,56,431,83"/>
+<area shape="poly" title=" " alt="" coords="260,88,320,77,321,83,261,93"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="319,119,448,145"/>
+<area shape="poly" title=" " alt="" coords="261,108,304,115,303,120,260,113"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="496,5,638,32"/>
+<area shape="poly" title=" " alt="" coords="430,54,501,34,502,39,432,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="533,56,601,83"/>
+<area shape="poly" title=" " alt="" coords="431,67,517,67,517,72,431,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="686,5,883,32"/>
+<area shape="poly" title=" " alt="" coords="638,16,670,16,670,21,638,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="689,56,880,83"/>
+<area shape="poly" title=" " alt="" coords="601,67,673,67,673,72,601,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="688,107,880,133"/>
+<area shape="poly" title=" " alt="" coords="602,74,710,100,709,105,600,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="547,131,587,157"/>
+<area shape="poly" title=" " alt="" coords="449,134,532,139,532,144,449,139"/>
+<area shape="poly" title=" " alt="" coords="545,138,532,127,531,115,544,107,567,104,586,106,598,111,604,119,602,128,597,126,599,120,595,115,585,111,567,109,546,112,536,118,537,125,548,134"/>
 </map>
 </div>
 
@@ -705,12 +712,8 @@ Private 属性</h2></td></tr>
 <p>&lt; 安装事件过滤器</p>
 <p>&lt; 创建指示器按钮</p>
 <p>&lt; 设置按钮大小</p>
-<p>&lt; 设置圆角半径</p>
-<p>&lt; 设置默认颜色</p>
-<p>&lt; 设置悬停颜色</p>
 <p>&lt; 插入指示器</p>
 <p>&lt; 添加到布局</p>
-<p>&lt; 鼠标悬停时切换索引</p>
 <p>&lt; 提升指示器层级</p>
 <p>&lt; 更新当前索引</p>
 <div class="dynheader">
@@ -718,25 +721,29 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph.png" border="0" usemap="#aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph" alt=""/></div>
 <map name="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph" id="aclass_slide_show_a7f477b9e72be27892e5e3bef86d5687e_cgraph">
-<area shape="rect" title="插入图片" alt="" coords="5,56,95,83"/>
-<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="143,5,318,32"/>
-<area shape="poly" title=" " alt="" coords="95,54,165,34,167,39,96,59"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="173,56,288,83"/>
-<area shape="poly" title=" " alt="" coords="95,67,158,67,158,72,95,72"/>
-<area shape="rect" href="class_interactive_button_base.html#a6fba9534db8d777139949b6270cf665a" title="鼠标进入" alt="" coords="155,107,306,149"/>
-<area shape="poly" title=" " alt="" coords="94,81,149,99,147,104,93,86"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="366,56,460,83"/>
-<area shape="poly" title=" " alt="" coords="288,67,350,67,350,72,288,72"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="508,31,650,57"/>
-<area shape="poly" title=" " alt="" coords="460,60,493,55,493,60,461,65"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="545,81,613,108"/>
-<area shape="poly" title=" " alt="" coords="461,74,530,85,529,90,460,79"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="698,31,895,57"/>
-<area shape="poly" title=" " alt="" coords="650,41,682,41,682,47,650,47"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="701,81,892,108"/>
-<area shape="poly" title=" " alt="" coords="613,92,685,92,685,97,613,97"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="700,132,892,159"/>
-<area shape="poly" title=" " alt="" coords="614,100,722,125,721,131,612,105"/>
+<area shape="rect" title="插入图片" alt="" coords="5,68,95,95"/>
+<area shape="rect" href="class_slide_show.html#a90c5ff2d99784bc1f4b031220446cb12" title="获取缩放和圆角处理的图片" alt="" coords="143,17,318,44"/>
+<area shape="poly" title=" " alt="" coords="95,66,165,46,167,51,96,71"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="173,68,288,95"/>
+<area shape="poly" title=" " alt="" coords="95,79,158,79,158,84,95,84"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="366,119,495,145"/>
+<area shape="poly" title=" " alt="" coords="96,93,143,104,251,119,351,126,350,132,251,124,142,109,94,98"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="384,56,478,83"/>
+<area shape="poly" title=" " alt="" coords="288,75,368,70,368,76,288,81"/>
+<area shape="poly" title=" " alt="" coords="287,93,361,112,360,117,286,98"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="543,5,685,32"/>
+<area shape="poly" title=" " alt="" coords="477,54,548,34,549,39,479,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="580,56,648,83"/>
+<area shape="poly" title=" " alt="" coords="478,67,564,67,564,72,478,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="733,5,930,32"/>
+<area shape="poly" title=" " alt="" coords="685,16,717,16,717,21,685,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="736,56,927,83"/>
+<area shape="poly" title=" " alt="" coords="648,67,720,67,720,72,648,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="735,107,928,133"/>
+<area shape="poly" title=" " alt="" coords="649,74,757,100,756,105,647,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="594,131,634,157"/>
+<area shape="poly" title=" " alt="" coords="496,134,579,139,579,144,496,139"/>
+<area shape="poly" title=" " alt="" coords="592,138,579,127,578,115,591,107,614,104,633,106,645,111,651,119,649,128,644,126,646,120,642,115,632,111,614,109,593,112,583,118,584,125,595,134"/>
 </map>
 </div>
 <div class="dynheader">
@@ -886,21 +893,26 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph.png" border="0" usemap="#aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph" alt=""/></div>
 <map name="aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph" id="aclass_slide_show_a29d6ac6048afaf373116f2aa99326b4e_cgraph">
-<area shape="rect" title="移除图片" alt="" coords="5,31,106,57"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="154,31,268,57"/>
-<area shape="poly" title=" " alt="" coords="106,41,138,41,138,47,106,47"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="316,31,410,57"/>
-<area shape="poly" title=" " alt="" coords="268,41,300,41,300,47,268,47"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="458,5,600,32"/>
-<area shape="poly" title=" " alt="" coords="410,34,443,29,443,34,411,39"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="495,56,563,83"/>
-<area shape="poly" title=" " alt="" coords="411,49,480,59,479,65,410,54"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="648,5,845,32"/>
-<area shape="poly" title=" " alt="" coords="600,16,632,16,632,21,600,21"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="651,56,842,83"/>
-<area shape="poly" title=" " alt="" coords="563,67,635,67,635,72,563,72"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="650,107,842,133"/>
-<area shape="poly" title=" " alt="" coords="564,74,672,100,671,105,562,80"/>
+<area shape="rect" title="移除图片" alt="" coords="5,93,106,120"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="154,93,268,120"/>
+<area shape="poly" title=" " alt="" coords="106,104,138,104,138,109,106,109"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="334,56,428,83"/>
+<area shape="poly" title=" " alt="" coords="268,92,318,80,319,86,269,97"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="316,119,445,145"/>
+<area shape="poly" title=" " alt="" coords="269,113,301,117,300,123,268,118"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="493,5,635,32"/>
+<area shape="poly" title=" " alt="" coords="427,54,498,34,499,39,429,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="530,56,598,83"/>
+<area shape="poly" title=" " alt="" coords="428,67,514,67,514,72,428,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="683,5,880,32"/>
+<area shape="poly" title=" " alt="" coords="635,16,667,16,667,21,635,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="686,56,877,83"/>
+<area shape="poly" title=" " alt="" coords="598,67,670,67,670,72,598,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="685,107,878,133"/>
+<area shape="poly" title=" " alt="" coords="599,74,707,100,706,105,597,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="544,131,584,157"/>
+<area shape="poly" title=" " alt="" coords="446,134,529,139,529,144,446,139"/>
+<area shape="poly" title=" " alt="" coords="542,138,529,127,528,115,541,107,564,104,583,106,595,111,601,119,599,128,594,126,596,120,592,115,582,111,564,109,543,112,533,118,534,125,545,134"/>
 </map>
 </div>
 
@@ -1043,19 +1055,24 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph.png" border="0" usemap="#aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph" alt=""/></div>
 <map name="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph" id="aclass_slide_show_a0962bc84f032b51b712a16dd0541039b_cgraph">
-<area shape="rect" title="设置当前图片索引" alt="" coords="5,31,120,57"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="168,31,262,57"/>
-<area shape="poly" title=" " alt="" coords="120,41,152,41,152,47,120,47"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="310,5,451,32"/>
-<area shape="poly" title=" " alt="" coords="262,34,294,29,295,34,263,39"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="347,56,414,83"/>
-<area shape="poly" title=" " alt="" coords="263,49,332,59,331,65,262,54"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="499,5,697,32"/>
-<area shape="poly" title=" " alt="" coords="452,16,484,16,484,21,452,21"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="502,56,694,83"/>
-<area shape="poly" title=" " alt="" coords="415,67,487,67,487,72,415,72"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="502,107,694,133"/>
-<area shape="poly" title=" " alt="" coords="415,74,524,100,522,105,414,80"/>
+<area shape="rect" title="设置当前图片索引" alt="" coords="5,93,120,120"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="185,56,280,83"/>
+<area shape="poly" title=" " alt="" coords="119,92,170,80,171,86,121,97"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="168,119,297,145"/>
+<area shape="poly" title=" " alt="" coords="120,113,152,117,152,123,120,118"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="345,5,486,32"/>
+<area shape="poly" title=" " alt="" coords="279,54,350,34,351,39,280,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="382,56,449,83"/>
+<area shape="poly" title=" " alt="" coords="280,67,366,67,366,72,280,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="534,5,732,32"/>
+<area shape="poly" title=" " alt="" coords="487,16,519,16,519,21,487,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="537,56,729,83"/>
+<area shape="poly" title=" " alt="" coords="450,67,522,67,522,72,450,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="537,107,729,133"/>
+<area shape="poly" title=" " alt="" coords="450,74,559,100,557,105,449,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="396,131,435,157"/>
+<area shape="poly" title=" " alt="" coords="298,134,381,139,381,144,297,139"/>
+<area shape="poly" title=" " alt="" coords="394,138,381,127,380,115,392,107,416,104,434,106,447,111,453,119,450,128,445,126,447,120,444,115,433,111,416,109,394,112,385,118,385,125,397,134"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1285,21 +1302,26 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph.png" border="0" usemap="#aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph" alt=""/></div>
 <map name="aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph" id="aclass_slide_show_af921bfc4064f75274b08809ce4f31ad1_cgraph">
-<area shape="rect" title="向左滑动" alt="" coords="5,31,90,57"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="138,31,252,57"/>
-<area shape="poly" title=" " alt="" coords="90,41,122,41,122,47,90,47"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="300,31,394,57"/>
-<area shape="poly" title=" " alt="" coords="252,41,284,41,284,47,252,47"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="442,5,584,32"/>
-<area shape="poly" title=" " alt="" coords="394,34,427,29,427,34,395,39"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="479,56,547,83"/>
-<area shape="poly" title=" " alt="" coords="395,49,464,59,463,65,394,54"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="632,5,829,32"/>
-<area shape="poly" title=" " alt="" coords="584,16,616,16,616,21,584,21"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="635,56,826,83"/>
-<area shape="poly" title=" " alt="" coords="547,67,619,67,619,72,547,72"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="634,107,826,133"/>
-<area shape="poly" title=" " alt="" coords="548,74,656,100,655,105,546,80"/>
+<area shape="rect" title="向左滑动" alt="" coords="5,93,90,120"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="138,93,252,120"/>
+<area shape="poly" title=" " alt="" coords="90,104,122,104,122,109,90,109"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="318,56,412,83"/>
+<area shape="poly" title=" " alt="" coords="252,92,302,80,303,86,253,97"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="300,119,429,145"/>
+<area shape="poly" title=" " alt="" coords="253,113,285,117,284,123,252,118"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="477,5,619,32"/>
+<area shape="poly" title=" " alt="" coords="411,54,482,34,483,39,413,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="514,56,582,83"/>
+<area shape="poly" title=" " alt="" coords="412,67,498,67,498,72,412,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="667,5,864,32"/>
+<area shape="poly" title=" " alt="" coords="619,16,651,16,651,21,619,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="670,56,861,83"/>
+<area shape="poly" title=" " alt="" coords="582,67,654,67,654,72,582,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="669,107,862,133"/>
+<area shape="poly" title=" " alt="" coords="583,74,691,100,690,105,581,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="528,131,568,157"/>
+<area shape="poly" title=" " alt="" coords="430,134,513,139,513,144,430,139"/>
+<area shape="poly" title=" " alt="" coords="526,138,513,127,512,115,525,107,548,104,567,106,579,111,585,119,583,128,578,126,580,120,576,115,566,111,548,109,527,112,517,118,518,125,529,134"/>
 </map>
 </div>
 
@@ -1335,21 +1357,26 @@ Private 属性</h2></td></tr>
 <div class="dyncontent">
 <div class="center"><img src="class_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph.png" border="0" usemap="#aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph" alt=""/></div>
 <map name="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph" id="aclass_slide_show_a469ff243de6ef5b640555ea01097e7fe_cgraph">
-<area shape="rect" title="向右滑动" alt="" coords="5,31,99,57"/>
-<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="147,31,261,57"/>
-<area shape="poly" title=" " alt="" coords="99,41,131,41,131,47,99,47"/>
-<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="309,31,403,57"/>
-<area shape="poly" title=" " alt="" coords="261,41,293,41,293,47,261,47"/>
-<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="451,5,593,32"/>
-<area shape="poly" title=" " alt="" coords="403,34,436,29,436,34,404,39"/>
-<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="488,56,556,83"/>
-<area shape="poly" title=" " alt="" coords="404,49,473,59,472,65,403,54"/>
-<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="641,5,838,32"/>
-<area shape="poly" title=" " alt="" coords="593,16,625,16,625,21,593,21"/>
-<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="644,56,835,83"/>
-<area shape="poly" title=" " alt="" coords="556,67,628,67,628,72,556,72"/>
-<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="643,107,836,133"/>
-<area shape="poly" title=" " alt="" coords="557,74,665,100,664,105,555,80"/>
+<area shape="rect" title="向右滑动" alt="" coords="5,93,99,120"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="147,93,261,120"/>
+<area shape="poly" title=" " alt="" coords="99,104,131,104,131,109,99,109"/>
+<area shape="rect" href="class_slide_show.html#a96cd1558566d8017528e0c0e2f33110f" title="调整标签布局" alt="" coords="326,56,421,83"/>
+<area shape="poly" title=" " alt="" coords="261,92,311,80,312,86,262,97"/>
+<area shape="rect" href="class_slide_show.html#aa60ab006016a3c081419ce398752a0a3" title=" " alt="" coords="309,119,438,145"/>
+<area shape="poly" title=" " alt="" coords="262,113,294,117,293,123,261,118"/>
+<area shape="rect" href="class_side_hide_label.html#aa1c5e2ba6a6363a62a2aea56818f010c" title="复制标签控件" alt="" coords="486,5,628,32"/>
+<area shape="poly" title=" " alt="" coords="420,54,491,34,492,39,422,59"/>
+<area shape="rect" href="class_slide_show.html#a2861b58df00fe1ef9279ac4d3bfb8369" title="移动标签到指定位置" alt="" coords="523,56,591,83"/>
+<area shape="poly" title=" " alt="" coords="421,67,507,67,507,72,421,72"/>
+<area shape="rect" href="class_side_hide_label.html#a418ae88ea2277ee852fc3038f9808565" title="构造函数，初始化标签控件" alt="" coords="676,5,873,32"/>
+<area shape="poly" title=" " alt="" coords="628,16,660,16,660,21,628,21"/>
+<area shape="rect" href="class_side_hide_label.html#ab9cfa6e1371a69129601f204c28684f0" title="获取最大偏移量" alt="" coords="679,56,870,83"/>
+<area shape="poly" title=" " alt="" coords="591,67,663,67,663,72,591,72"/>
+<area shape="rect" href="class_side_hide_label.html#ade2db9a02b3c5be7a48f1fbc9aaf7be8" title="获取侧边偏移量" alt="" coords="678,107,870,133"/>
+<area shape="poly" title=" " alt="" coords="592,74,700,100,699,105,590,80"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="537,131,577,157"/>
+<area shape="poly" title=" " alt="" coords="439,134,522,139,522,144,439,139"/>
+<area shape="poly" title=" " alt="" coords="535,138,522,127,521,115,534,107,557,104,576,106,588,111,594,119,592,128,587,126,589,120,585,115,575,111,557,109,536,112,526,118,527,125,538,134"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1360,6 +1387,76 @@ Private 属性</h2></td></tr>
 <area shape="rect" title="向右滑动" alt="" coords="137,5,230,32"/>
 <area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,5,89,32"/>
 <area shape="poly" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa60ab006016a3c081419ce398752a0a3" name="aa60ab006016a3c081419ce398752a0a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60ab006016a3c081419ce398752a0a3">&#9670;&#160;</a></span>updateButtonColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateButtonColor </td>
+          <td>(</td>
+          <td class="paramtype">QPushButton *</td>          <td class="paramname"><span class="paramname"><em>btn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;</td>          <td class="paramname"><span class="paramname"><em>normal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QColor &amp;</td>          <td class="paramname"><span class="paramname"><em>hover</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_aa60ab006016a3c081419ce398752a0a3_cgraph.png" border="0" usemap="#aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_cgraph" alt=""/></div>
+<map name="aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_cgraph" id="aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,135,56"/>
+<area shape="rect" href="base_8h.html#a2c8e80c1b1c8b7747e99b8e9a24a0429" title="Returns a named argument to be used in a formatting function." alt="" coords="183,29,222,56"/>
+<area shape="poly" title=" " alt="" coords="135,40,167,40,167,45,135,45"/>
+<area shape="poly" title=" " alt="" coords="180,31,175,22,177,12,187,5,202,3,220,6,228,14,225,17,217,11,202,8,189,10,182,15,180,21,185,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_slide_show_aa60ab006016a3c081419ce398752a0a3_icgraph.png" border="0" usemap="#aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_icgraph" alt=""/></div>
+<map name="aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_icgraph" id="aclass_slide_show_aa60ab006016a3c081419ce398752a0a3_icgraph">
+<area shape="rect" title=" " alt="" coords="447,56,577,83"/>
+<area shape="rect" href="class_slide_show.html#a7f477b9e72be27892e5e3bef86d5687e" title="插入图片" alt="" coords="142,5,232,32"/>
+<area shape="poly" title=" " alt="" coords="431,60,232,28,233,23,432,54"/>
+<area shape="rect" href="class_slide_show.html#a0962bc84f032b51b712a16dd0541039b" title="设置当前图片索引" alt="" coords="285,81,399,108"/>
+<area shape="poly" title=" " alt="" coords="432,84,400,89,399,83,431,79"/>
+<area shape="rect" href="class_slide_show.html#a4f192b96ac5c37010bd4fc620221cdfb" title="添加图片" alt="" coords="8,5,86,32"/>
+<area shape="poly" title=" " alt="" coords="127,21,87,21,87,16,127,16"/>
+<area shape="poly" title=" " alt="" coords="298,76,215,35,217,30,301,72"/>
+<area shape="rect" href="class_slide_show.html#aa8f242b451f8b90c2bf758c631f72e21" title="事件过滤器" alt="" coords="146,56,228,83"/>
+<area shape="poly" title=" " alt="" coords="269,85,228,79,229,73,270,80"/>
+<area shape="rect" href="class_slide_show.html#a29d6ac6048afaf373116f2aa99326b4e" title="移除图片" alt="" coords="137,107,237,133"/>
+<area shape="poly" title=" " alt="" coords="270,109,238,114,237,109,269,104"/>
+<area shape="rect" href="class_slide_show.html#af921bfc4064f75274b08809ce4f31ad1" title="向左滑动" alt="" coords="145,157,229,184"/>
+<area shape="poly" title=" " alt="" coords="301,118,217,159,215,154,298,113"/>
+<area shape="rect" href="class_slide_show.html#a469ff243de6ef5b640555ea01097e7fe" title="向右滑动" alt="" coords="140,208,234,235"/>
+<area shape="poly" title=" " alt="" coords="321,121,284,159,239,198,220,210,217,205,235,194,281,156,317,118"/>
+<area shape="rect" href="class_slide_show.html#ad6938b5225068a022f2e0fc79553d370" title="构造函数，初始化轮播图控件" alt="" coords="5,208,89,235"/>
+<area shape="poly" title=" " alt="" coords="125,224,89,224,89,219,125,219"/>
 </map>
 </div>
 
@@ -1390,30 +1487,6 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a27c0c56981a057dc0e6af79f5fc615d9" name="a27c0c56981a057dc0e6af79f5fc615d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27c0c56981a057dc0e6af79f5fc615d9">&#9670;&#160;</a></span>backRect</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QRect backRect</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>隐藏卡片区域 </p>
-
-</div>
-</div>
 <a id="aedc9db87691c80dd429465f89f522db8" name="aedc9db87691c80dd429465f89f522db8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedc9db87691c80dd429465f89f522db8">&#9670;&#160;</a></span>backScale</h2>
 
@@ -1435,30 +1508,6 @@ Private 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>两侧卡片缩放比例 </p>
-
-</div>
-</div>
-<a id="a7e19e2d85b025398c8addc554f0f1456" name="a7e19e2d85b025398c8addc554f0f1456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e19e2d85b025398c8addc554f0f1456">&#9670;&#160;</a></span>centerRect</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QRect centerRect</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>中心卡片区域 </p>
 
 </div>
 </div>
@@ -1534,8 +1583,8 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="af76973b5ee7906b48e381391ebc863c4" name="af76973b5ee7906b48e381391ebc863c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af76973b5ee7906b48e381391ebc863c4">&#9670;&#160;</a></span>indicationLayout</h2>
+<a id="ac4b6461a514ee823eb4484575d05b264" name="ac4b6461a514ee823eb4484575d05b264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b6461a514ee823eb4484575d05b264">&#9670;&#160;</a></span>indications</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1544,31 +1593,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QHBoxLayout* indicationLayout {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>指示器布局 </p>
-
-</div>
-</div>
-<a id="a6877a6b61f9e0645b284dd8cffc0d329" name="a6877a6b61f9e0645b284dd8cffc0d329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6877a6b61f9e0645b284dd8cffc0d329">&#9670;&#160;</a></span>indications</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_interactive_button_base.html">InteractiveButtonBase</a> *&gt; indications</td>
+          <td class="memname">QList&lt;QPushButton *&gt; indications</td>
         </tr>
       </table>
   </td>
@@ -1824,7 +1849,6 @@ Private 属性</h2></td></tr>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li><a class="el" href="_slide_show_8h_source.html">SlideShow.h</a></li>
-<li><a class="el" href="moc___slide_show_8cpp_source.html">moc_SlideShow.cpp</a></li>
 <li><a class="el" href="_slide_show_8cpp.html">SlideShow.cpp</a></li>
 </ul>
 </div><!-- contents -->

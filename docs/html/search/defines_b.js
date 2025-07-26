@@ -16,7 +16,5 @@ var searchData=
   ['log_5ftrace_13',['LOG_TRACE',['../logger_8hpp.html#a20f022b1b58ba62e014b624fdd13572c',1,'logger.hpp']]],
   ['log_5fwarn_14',['LOG_WARN',['../logger_8hpp.html#adba1363ea408060eab75cb5a48dcb907',1,'logger.hpp']]],
   ['login_5fregister_5fexport_15',['LOGIN_REGISTER_EXPORT',['../input__box_8h.html#a15dbeeac2763b1c39ea0b982393fde95',1,'LOGIN_REGISTER_EXPORT:&#160;input_box.h'],['../login__register__form_8h.html#a15dbeeac2763b1c39ea0b982393fde95',1,'LOGIN_REGISTER_EXPORT:&#160;login_register_form.h']]],
-  ['login_5fregister_5flibrary_16',['LOGIN_REGISTER_LIBRARY',['../ui_2_login_interface_2_login_interface__autogen_2moc__predefs_8h.html#a4c259744deb331b53cb5099ae6bb0c72',1,'moc_predefs.h']]],
-  ['logininterface_5fexports_17',['LoginInterface_EXPORTS',['../ui_2_login_interface_2_login_interface__autogen_2moc__predefs_8h.html#a531713eea6d74553378b0dd177f3aae6',1,'moc_predefs.h']]],
-  ['loword_18',['LOWORD',['../_pcm_volume_control_8cpp.html#a00be6c40bc7a1297ada4d47a028066b8',1,'PcmVolumeControl.cpp']]]
+  ['loword_16',['LOWORD',['../_pcm_volume_control_8cpp.html#a00be6c40bc7a1297ada4d47a028066b8',1,'PcmVolumeControl.cpp']]]
 ];

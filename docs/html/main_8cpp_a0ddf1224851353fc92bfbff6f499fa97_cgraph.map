@@ -1,10 +1,33 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,55,81"/>
-<area shape="rect" id="Node000002" href="$class_app_controller.html#aba134b91be69555ac972000867537013" title=" " alt="" coords="103,29,260,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,61,87,56,88,61,56,67"/>
-<area shape="rect" id="Node000004" href="$class_app_controller.html#a60de64d75454385b23995437f1d72669" title=" " alt="" coords="114,80,248,107"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="56,69,100,77,99,82,55,75"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="155,30,150,21,154,11,164,5,181,3,200,5,210,12,207,16,198,10,181,8,166,10,158,14,156,20,160,28"/>
-<area shape="rect" id="Node000003" href="$class_app_controller.html#acfd4ac2d03eb579d4ed327f98c4e5f59" title=" " alt="" coords="308,29,495,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,40,293,40,293,45,261,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,136,55,163"/>
+<area shape="rect" id="Node000002" href="$class_app_controller.html#aba134b91be69555ac972000867537013" title="单例模式" alt="" coords="103,85,260,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,139,124,115,126,120,56,144"/>
+<area shape="rect" id="Node000011" href="$class_app_controller.html#a60de64d75454385b23995437f1d72669" title="启动应用程序" alt="" coords="114,161,248,188"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="56,151,100,158,99,164,55,156"/>
+<area shape="poly" id="edge11_Node000002_Node000002" title=" " alt="" coords="155,86,150,77,154,67,164,61,181,59,200,61,210,68,207,72,198,66,181,64,166,66,158,70,156,76,160,84"/>
+<area shape="rect" id="Node000003" href="$class_app_controller.html#acfd4ac2d03eb579d4ed327f98c4e5f59" title="私有构造函数" alt="" coords="326,60,513,87"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,88,310,82,310,88,261,93"/>
+<area shape="rect" id="Node000004" href="$class_my_tray_icon.html#a5ae83ccea424bca98fcddfbf1806ae46" title="唤醒窗口" alt="" coords="1082,5,1215,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="504,57,578,45,689,28,801,16,941,12,1066,13,1066,18,941,17,802,21,690,33,579,51,505,62"/>
+<area shape="rect" id="Node000005" href="$class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901" title="退出信号，通知程序退出" alt="" coords="606,60,726,87"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="513,71,591,71,591,76,513,76"/>
+<area shape="rect" id="Node000010" href="$class_app_controller.html#a8f19c3fc29577db021660850a1ee87e4" title=" " alt="" coords="578,111,754,137"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="488,85,583,104,582,110,487,90"/>
+<area shape="rect" id="Node000006" href="$class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708" title="检查鼠标是否悬停在托盘图标上" alt="" coords="816,81,1000,124"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="726,78,800,87,800,92,726,83"/>
+<area shape="rect" id="Node000008" href="$class_my_tray_icon.html#a7782db0bb28d0eb69bda3843afbf5592" title="处理托盘图标闪烁逻辑" alt="" coords="802,148,1014,175"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="727,85,755,96,779,116,789,125,803,134,818,140,816,145,800,138,786,129,776,120,752,101,725,90"/>
+<area shape="rect" id="Node000009" href="$class_my_tray_icon.html#ab30bcc2302aa259d4423286f363fe7cb" title="处理托盘图标激活事件" alt="" coords="812,31,1004,57"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="726,64,796,55,797,60,726,69"/>
+<area shape="rect" id="Node000007" href="$class_my_tray_icon.html#a08fef395b5141b2c62afda74babfc567" title="停止托盘图标闪烁" alt="" coords="1062,81,1234,124"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1000,100,1046,100,1046,105,1000,105"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="1004,31,1066,25,1067,30,1005,36"/>
+<area shape="rect" id="Node000012" href="$class_my_tray_icon.html#a6e14961f3e60024b82639178d7c95af1" title="音量开关信号" alt="" coords="342,161,497,188"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="249,172,326,172,326,177,249,177"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#a5bdac35564b1bdde314651293f59246e" title="显示或隐藏关于对话框" alt="" coords="308,212,530,239"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="248,186,339,206,338,211,247,191"/>
+<area shape="rect" id="Node000014" href="$class_ku_gou_client.html#a02fc50a7d7d88af2b70408274e98529e" title="连接托盘音量控制信号" alt="" coords="326,263,512,305"/>
+<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="204,186,251,217,309,248,324,254,322,259,307,253,248,222,201,191"/>
+<area shape="rect" id="Node000015" href="$class_my_tray_icon.html#ab65bff687e0edbf81a648e97c897a250" title="显示关于对话框信号" alt="" coords="319,111,519,137"/>
+<area shape="poly" id="edge16_Node000011_Node000015" title=" " alt="" coords="247,158,338,138,339,144,248,163"/>
 </map>

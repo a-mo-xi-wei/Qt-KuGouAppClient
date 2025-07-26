@@ -99,6 +99,8 @@ $(function(){initNavTree('class_ai_chat.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pro-methods">Protected 成员函数</a> &#124;
 <a href="#pri-slots">Private 槽</a> &#124;
@@ -128,52 +130,45 @@ AiChat 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ai_chat__coll__graph.png" border="0" usemap="#a_ai_chat_coll__map" alt="Collaboration graph"/></div>
 <map name="a_ai_chat_coll__map" id="a_ai_chat_coll__map">
-<area shape="rect" title="AI 聊天界面类，集成问题输入、聊天视图和流式回答" alt="" coords="352,492,413,519"/>
-<area shape="rect" title=" " alt="" coords="60,81,132,108"/>
-<area shape="poly" title=" " alt="" coords="68,119,47,138,28,161,14,187,8,216,8,408,11,420,18,430,48,450,92,466,145,478,260,493,352,500,352,505,259,499,144,483,90,471,46,455,15,434,6,422,3,408,3,216,9,185,24,158,43,134,64,116"/>
-<area shape="rect" href="class_chat_view.html" title="聊天视图类，支持聊天项动态管理、居中初始化部件和动画效果" alt="" coords="160,204,238,231"/>
-<area shape="poly" title=" " alt="" coords="118,118,190,202,186,205,114,122"/>
-<area shape="rect" href="class_chat_item_base.html" title="聊天项基类，包含用户名、头像、气泡和加载动画" alt="" coords="403,204,509,231"/>
-<area shape="poly" title=" " alt="" coords="148,106,221,115,252,119,290,129,374,165,438,201,435,206,371,170,288,135,251,125,220,120,147,111"/>
-<area shape="rect" href="class_ui_1_1_ai_chat.html" title=" " alt="" coords="205,393,267,420"/>
-<area shape="poly" title=" " alt="" coords="263,428,311,466,355,489,352,494,309,470,259,433"/>
-<area shape="rect" href="class_ui___ai_chat.html" title=" " alt="" coords="185,295,266,321"/>
-<area shape="poly" title=" " alt="" coords="231,337,237,393,232,393,226,337"/>
-<area shape="poly" title=" " alt="" coords="209,245,224,293,219,295,204,247"/>
-<area shape="rect" href="class_my_scroll_area.html" title="自定义滚动区域类，继承自 QScrollArea，支持平滑滚动和返回顶部功能" alt="" coords="156,81,255,108"/>
-<area shape="poly" title=" " alt="" coords="206,124,202,204,197,203,201,123"/>
-<area shape="rect" title=" " alt="" coords="160,5,251,32"/>
-<area shape="poly" title=" " alt="" coords="208,47,208,81,203,81,203,47"/>
-<area shape="rect" href="class_q_tool_button.html" title="工具按钮类" alt="" coords="43,204,136,231"/>
-<area shape="poly" title=" " alt="" coords="95,245,100,258,108,269,125,282,144,291,185,301,184,306,143,296,122,286,104,273,95,260,90,247"/>
-<area shape="rect" href="class_ela_plain_text_edit.html" title="自定义纯文本编辑框类，支持主题切换和上下文菜单" alt="" coords="261,204,379,231"/>
-<area shape="poly" title=" " alt="" coords="305,244,279,273,248,296,244,292,276,269,301,241"/>
-<area shape="rect" title=" " alt="" coords="287,81,396,108"/>
-<area shape="poly" title=" " alt="" coords="339,124,325,204,320,203,334,123"/>
-<area shape="rect" href="class_chat.html" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="309,393,358,420"/>
-<area shape="poly" title=" " alt="" coords="332,435,332,452,337,467,347,479,359,489,356,494,343,483,332,469,327,452,326,436"/>
-<area shape="rect" title=" " alt="" coords="299,295,368,321"/>
-<area shape="poly" title=" " alt="" coords="336,337,336,393,331,393,331,337"/>
-<area shape="rect" href="class_qt_material_floating_action_button.html" title="浮动动作按钮类，继承自 QtMaterialRaisedButton，支持 Material Design 风格" alt="" coords="644,385,809,428"/>
-<area shape="poly" title=" " alt="" coords="698,440,676,457,652,470,588,491,522,502,461,507,414,508,414,502,461,502,521,497,586,486,650,466,673,452,695,436"/>
-<area shape="rect" href="class_qt_material_raised_button.html" title="凸起按钮类，继承自 QtMaterialFlatButton，支持 Material Design 风格" alt="" coords="656,295,816,321"/>
-<area shape="poly" title=" " alt="" coords="736,337,731,385,726,384,731,336"/>
-<area shape="rect" href="class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格" alt="" coords="665,204,807,231"/>
-<area shape="poly" title=" " alt="" coords="739,246,739,294,733,294,733,246"/>
-<area shape="rect" title=" " alt="" coords="686,81,786,108"/>
-<area shape="poly" title=" " alt="" coords="739,124,739,203,733,203,733,124"/>
-<area shape="rect" href="class_text_bubble.html" title="文本气泡类，支持流式显示和动态尺寸调整" alt="" coords="532,393,618,420"/>
-<area shape="poly" title=" " alt="" coords="537,430,409,494,407,489,535,425"/>
-<area shape="rect" href="class_bubble_frame.html" title="聊天气泡框架类，支持自己、他人和时间角色" alt="" coords="534,295,632,321"/>
-<area shape="poly" title=" " alt="" coords="585,337,584,362,580,393,574,392,579,361,580,336"/>
-<area shape="rect" title=" " alt="" coords="548,204,617,231"/>
-<area shape="poly" title=" " alt="" coords="585,246,585,294,580,294,580,246"/>
-<area shape="poly" title=" " alt="" coords="452,246,432,346,429,380,430,408,428,436,417,469,399,493,395,490,412,467,423,435,424,408,423,380,426,345,447,245"/>
-<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="425,81,487,108"/>
-<area shape="poly" title=" " alt="" coords="459,124,459,203,453,203,453,124"/>
+<area shape="rect" title="AI 聊天界面类，集成问题输入、聊天视图和流式回答" alt="" coords="260,387,322,413"/>
+<area shape="rect" title=" " alt="" coords="5,157,78,184"/>
+<area shape="poly" title=" " alt="" coords="43,200,48,258,56,291,69,321,86,343,107,361,132,374,159,384,213,394,260,397,260,402,213,400,157,389,130,379,104,365,82,347,65,324,51,293,43,259,38,200"/>
+<area shape="rect" href="class_chat_item_base.html" title="聊天项基类，包含用户名、头像、气泡和加载动画" alt="" coords="80,288,185,315"/>
+<area shape="poly" title=" " alt="" coords="61,195,126,286,121,289,57,198"/>
+<area shape="rect" href="class_chat.html" title="聊天类，与硅基流动 API 交互，支持流式响应" alt="" coords="242,288,292,315"/>
+<area shape="poly" title=" " alt="" coords="276,329,290,386,285,387,271,331"/>
+<area shape="rect" title=" " alt="" coords="228,157,298,184"/>
+<area shape="poly" title=" " alt="" coords="266,200,269,287,264,288,261,200"/>
+<area shape="rect" href="class_qt_material_floating_action_button.html" title="浮动动作按钮类，继承自 QtMaterialRaisedButton，支持 Material Design 风格" alt="" coords="319,280,484,323"/>
+<area shape="poly" title=" " alt="" coords="389,338,369,365,346,380,323,391,321,386,344,376,365,361,385,335"/>
+<area shape="rect" href="class_qt_material_raised_button.html" title="凸起按钮类，继承自 QtMaterialFlatButton，支持 Material Design 风格" alt="" coords="321,157,482,184"/>
+<area shape="poly" title=" " alt="" coords="404,199,404,280,399,280,399,199"/>
+<area shape="rect" href="class_qt_material_flat_button.html" title="扁平按钮类，继承自 QPushButton，支持 Material Design 风格" alt="" coords="331,81,472,108"/>
+<area shape="poly" title=" " alt="" coords="404,123,404,157,399,157,399,123"/>
+<area shape="rect" title=" " alt="" coords="352,5,451,32"/>
+<area shape="poly" title=" " alt="" coords="404,47,404,81,399,81,399,47"/>
+<area shape="rect" href="class_text_bubble.html" title="文本气泡类，支持流式显示和动态尺寸调整" alt="" coords="509,288,595,315"/>
+<area shape="poly" title=" " alt="" coords="525,326,494,347,457,365,385,387,322,398,321,393,384,381,455,360,491,342,523,322"/>
+<area shape="rect" href="class_bubble_frame.html" title="聊天气泡框架类，支持自己、他人和时间角色" alt="" coords="506,157,604,184"/>
+<area shape="poly" title=" " alt="" coords="557,200,555,288,550,288,552,200"/>
+<area shape="rect" title=" " alt="" coords="521,81,589,108"/>
+<area shape="poly" title=" " alt="" coords="558,123,558,157,552,157,552,123"/>
+<area shape="poly" title=" " alt="" coords="124,330,122,346,127,361,148,374,183,383,260,394,259,399,182,388,146,379,123,364,117,347,118,329"/>
+<area shape="rect" href="class_q_label.html" title="标签控件类" alt="" coords="102,157,165,184"/>
+<area shape="poly" title=" " alt="" coords="136,200,135,288,130,288,131,200"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a99836dfc3d5a62f743bcd92e8447cc6e" id="r_a99836dfc3d5a62f743bcd92e8447cc6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99836dfc3d5a62f743bcd92e8447cc6e">emitInitialized</a> ()</td></tr>
+<tr class="separator:a99836dfc3d5a62f743bcd92e8447cc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a4a60e1a6f7c85389e07d2cd1b50ff6bd" id="r_a4a60e1a6f7c85389e07d2cd1b50ff6bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a60e1a6f7c85389e07d2cd1b50ff6bd">initialized</a> ()</td></tr>
+<tr class="separator:a4a60e1a6f7c85389e07d2cd1b50ff6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:aa81ad890a1cfb2189b3fa29fea2fb3e4" id="r_aa81ad890a1cfb2189b3fa29fea2fb3e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa81ad890a1cfb2189b3fa29fea2fb3e4">AiChat</a> (QWidget *parent=nullptr)</td></tr>
@@ -215,7 +210,7 @@ Private 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:a97cf87062d8c8d9913d8066278cb46a8" id="r_a97cf87062d8c8d9913d8066278cb46a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ui_1_1_ai_chat.html">Ui::AiChat</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97cf87062d8c8d9913d8066278cb46a8">ui</a></td></tr>
+<tr class="memitem:a97cf87062d8c8d9913d8066278cb46a8" id="r_a97cf87062d8c8d9913d8066278cb46a8"><td class="memItemLeft" align="right" valign="top">Ui::AiChat *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97cf87062d8c8d9913d8066278cb46a8">ui</a></td></tr>
 <tr class="memdesc:a97cf87062d8c8d9913d8066278cb46a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI 指针  <br /></td></tr>
 <tr class="separator:a97cf87062d8c8d9913d8066278cb46a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8299aba31c30b0a40515ab2f0370fc52" id="r_a8299aba31c30b0a40515ab2f0370fc52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_chat.html">Chat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8299aba31c30b0a40515ab2f0370fc52">m_deepSeek</a></td></tr>
@@ -385,6 +380,41 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
+<a id="a99836dfc3d5a62f743bcd92e8447cc6e" name="a99836dfc3d5a62f743bcd92e8447cc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99836dfc3d5a62f743bcd92e8447cc6e">&#9670;&#160;</a></span>emitInitialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emitInitialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ai_chat_a99836dfc3d5a62f743bcd92e8447cc6e_cgraph.png" border="0" usemap="#aclass_ai_chat_a99836dfc3d5a62f743bcd92e8447cc6e_cgraph" alt=""/></div>
+<map name="aclass_ai_chat_a99836dfc3d5a62f743bcd92e8447cc6e_cgraph" id="aclass_ai_chat_a99836dfc3d5a62f743bcd92e8447cc6e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,107,32"/>
+<area shape="rect" href="class_ai_chat.html#a4a60e1a6f7c85389e07d2cd1b50ff6bd" title=" " alt="" coords="155,5,230,32"/>
+<area shape="poly" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7eb87a6d4464680c455d278d1d32eba6" name="a7eb87a6d4464680c455d278d1d32eba6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7eb87a6d4464680c455d278d1d32eba6">&#9670;&#160;</a></span>eventFilter()</h2>
 
@@ -545,6 +575,54 @@ Private 属性</h2></td></tr>
 <area shape="rect" href="class_ai_chat.html#afba6e95967cc3eb25fd518f7bde6ec04" title="初始化界面" alt="" coords="115,55,166,81"/>
 <area shape="poly" title=" " alt="" coords="198,71,166,71,166,65,198,65"/>
 <area shape="poly" title=" " alt="" coords="99,61,67,53,68,48,100,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a60e1a6f7c85389e07d2cd1b50ff6bd" name="a4a60e1a6f7c85389e07d2cd1b50ff6bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a60e1a6f7c85389e07d2cd1b50ff6bd">&#9670;&#160;</a></span>initialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ai_chat_a4a60e1a6f7c85389e07d2cd1b50ff6bd_icgraph.png" border="0" usemap="#aclass_ai_chat_a4a60e1a6f7c85389e07d2cd1b50ff6bd_icgraph" alt=""/></div>
+<map name="aclass_ai_chat_a4a60e1a6f7c85389e07d2cd1b50ff6bd_icgraph" id="aclass_ai_chat_a4a60e1a6f7c85389e07d2cd1b50ff6bd_icgraph">
+<area shape="rect" title=" " alt="" coords="952,68,1027,95"/>
+<area shape="rect" href="class_ku_gou_client.html#afc90cde235e776bd014aebedff7f9e70" title="动态创建删除页面" alt="" coords="734,43,904,69"/>
+<area shape="poly" title=" " alt="" coords="936,76,904,71,905,66,937,71"/>
+<area shape="rect" href="class_ai_chat.html#a99836dfc3d5a62f743bcd92e8447cc6e" title=" " alt="" coords="768,93,870,120"/>
+<area shape="poly" title=" " alt="" coords="937,92,870,102,869,97,936,86"/>
+<area shape="rect" href="class_ku_gou_client.html#a0880fc715278119401b0b218adc8ade6" title="初始化堆栈窗口" alt="" coords="498,5,666,48"/>
+<area shape="poly" title=" " alt="" coords="719,46,666,40,666,34,720,41"/>
+<area shape="rect" href="class_ku_gou_client.html#a57c9d4dc7126765bc106dd3014851b21" title=" " alt="" coords="477,72,686,99"/>
+<area shape="poly" title=" " alt="" coords="720,71,687,75,686,70,719,66"/>
+<area shape="rect" href="class_ku_gou_client.html#afd928c0268a021fbb05d4357f3c2de66" title="处理suggestBox选中项槽函数" alt="" coords="240,31,429,73"/>
+<area shape="poly" title=" " alt="" coords="462,72,429,67,430,62,463,67"/>
+<area shape="rect" href="class_ku_gou_client.html#ad13783729bf6df29cddbb1809b15db7b" title="标题栏堆栈窗口切换槽函数" alt="" coords="242,97,427,140"/>
+<area shape="poly" title=" " alt="" coords="463,104,428,109,427,104,462,99"/>
+<area shape="rect" href="class_ku_gou_client.html#a94fc5073f204939937996ae86cd18b18" title="初始化标题栏" alt="" coords="5,72,192,99"/>
+<area shape="poly" title=" " alt="" coords="224,70,192,75,192,70,224,65"/>
+<area shape="poly" title=" " alt="" coords="226,106,192,101,192,96,227,101"/>
 </map>
 </div>
 
@@ -897,7 +975,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_ui_1_1_ai_chat.html">Ui::AiChat</a>* const ui</td>
+          <td class="memname">Ui::AiChat* const ui</td>
         </tr>
       </table>
   </td>

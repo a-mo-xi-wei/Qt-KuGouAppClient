@@ -1,7 +1,7 @@
 var class_ela_scroll_bar_style =
 [
     [ "ElaScrollBarStyle", "class_ela_scroll_bar_style.html#a73de6a1a7915ace29938795e3f3e2e1a", null ],
-    [ "~ElaScrollBarStyle", "class_ela_scroll_bar_style.html#acc476c11274468f47a472f99fa311446", null ],
+    [ "~ElaScrollBarStyle", "class_ela_scroll_bar_style.html#a61b2349d8cd71fab5da9f3e5aabb3dea", null ],
     [ "drawComplexControl", "class_ela_scroll_bar_style.html#a15df717305543df6a8e31b7ae9bcb543", null ],
     [ "pixelMetric", "class_ela_scroll_bar_style.html#aac1893b82de01e3ff8e685236eca706c", null ],
     [ "startExpandAnimation", "class_ela_scroll_bar_style.html#a50bfa605bbdc25c4fad58843802339e1", null ],

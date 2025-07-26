@@ -113,7 +113,7 @@ $(function(){initNavTree('_channel_block_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>QT_BEGIN_NAMESPACE</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">class </span><a class="code hl_class" href="class_ui_1_1_channel_block.html">ChannelBlock</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">class </span>ChannelBlock;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>QT_END_NAMESPACE</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
@@ -152,7 +152,7 @@ $(function(){initNavTree('_channel_block_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_channel_block.html#aa7cbd844218ae8d806339f58a33a3699">mouseDoubleClickEvent</a>(QMouseEvent *event) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_channel_block.html#a40e0db88e9b817b9e850575f59c169bf">  113</a></span>    <a class="code hl_class" href="class_ui_1_1_channel_block.html">Ui::ChannelBlock</a> *<a class="code hl_variable" href="class_channel_block.html#a40e0db88e9b817b9e850575f59c169bf">ui</a>;              </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_channel_block.html#a40e0db88e9b817b9e850575f59c169bf">  113</a></span>    Ui::ChannelBlock *<a class="code hl_variable" href="class_channel_block.html#a40e0db88e9b817b9e850575f59c169bf">ui</a>;              </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_channel_block.html#a489a719ac6f17c2baf5d3f7429041fad">  114</a></span>    QString           <a class="code hl_variable" href="class_channel_block.html#a489a719ac6f17c2baf5d3f7429041fad">m_titleText</a>;      </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_channel_block.html#af32605d77c60b646168cd72ce7202b84">  115</a></span>    QString           <a class="code hl_variable" href="class_channel_block.html#af32605d77c60b646168cd72ce7202b84">m_singerSongText</a>; </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
@@ -175,9 +175,8 @@ $(function(){initNavTree('_channel_block_8h_source.html',''); initResizable(true
 <div class="ttc" id="aclass_channel_block_html_ae30868492e047dc485c73e92d33a0b1d"><div class="ttname"><a href="class_channel_block.html#ae30868492e047dc485c73e92d33a0b1d">ChannelBlock::enterEvent</a></div><div class="ttdeci">void enterEvent(QEnterEvent *event) override</div><div class="ttdoc">鼠标进入事件，显示遮罩和更改标题颜色</div><div class="ttdef"><b>定义</b> ChannelBlock.cpp:132</div></div>
 <div class="ttc" id="aclass_channel_block_html_ae8b452d73f5f20058f2e45cfb603eb2e"><div class="ttname"><a href="class_channel_block.html#ae8b452d73f5f20058f2e45cfb603eb2e">ChannelBlock::updateSingerSongText</a></div><div class="ttdeci">void updateSingerSongText() const</div><div class="ttdoc">更新歌手歌曲文本，处理文本截断</div><div class="ttdef"><b>定义</b> ChannelBlock.cpp:120</div></div>
 <div class="ttc" id="aclass_channel_block_html_af32605d77c60b646168cd72ce7202b84"><div class="ttname"><a href="class_channel_block.html#af32605d77c60b646168cd72ce7202b84">ChannelBlock::m_singerSongText</a></div><div class="ttdeci">QString m_singerSongText</div><div class="ttdoc">歌手歌曲文本</div><div class="ttdef"><b>定义</b> ChannelBlock.h:115</div></div>
-<div class="ttc" id="aclass_ui_1_1_channel_block_html"><div class="ttname"><a href="class_ui_1_1_channel_block.html">Ui::ChannelBlock</a></div><div class="ttdef"><b>定义</b> ui_ChannelBlock.h:92</div></div>
 <div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
-<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div><div class="ttdef"><b>定义</b> ui_AiChat.h:139</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdoc">包含 UI 类的命名空间</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

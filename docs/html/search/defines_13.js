@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['videoencodedframeptr_0',['VideoEncodedFramePtr',['../_video_encoded_frame_8h.html#abef69b2356d6e817327a28b2aa30e85e',1,'VideoEncodedFrame.h']]],
-  ['videoframeptr_1',['VideoFramePtr',['../_video_frame_8h.html#a7601a66a9b0be38c38d602250b80f2f9',1,'VideoFrame.h']]],
-  ['videorawframeptr_2',['VideoRawFramePtr',['../_video_raw_frame_8h.html#a08da9a7e91ea8592a519581ee228c24d',1,'VideoRawFrame.h']]]
+  ['water_5fdrop_5fradius_0',['WATER_DROP_RADIUS',['../_water_drop_8cpp.html#adb60af649df6b575c85bf6bab2d5923a',1,'WaterDrop.cpp']]],
+  ['win32_5flean_5fand_5fmean_1',['WIN32_LEAN_AND_MEAN',['../tcp__client-windows_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'WIN32_LEAN_AND_MEAN:&#160;tcp_client-windows.h'],['../windows__include_8h.html#ac7bef5d85e3dcd73eef56ad39ffc84a9',1,'WIN32_LEAN_AND_MEAN:&#160;windows_include.h']]]
 ];

@@ -100,7 +100,8 @@ $(function(){initNavTree('_local_song_8cpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">宏定义</a> &#124;
-<a href="#func-members">函数</a>  </div>
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
   <div class="headertitle"><div class="title">LocalSong.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,12 +109,13 @@ $(function(){initNavTree('_local_song_8cpp.html',''); initResizable(true); });
 <p>实现 <a class="el" href="class_local_song.html" title="本地歌曲管理界面类，支持播放、排序、搜索、上传和服务器同步">LocalSong</a> 类，提供本地歌曲管理界面功能  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_local_song_8h_source.html">LocalSong.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ui___local_song_8h_source.html">ui_LocalSong.h</a>&quot;</code><br />
+<code>#include &quot;ui_LocalSong.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_ela_message_bar_8h_source.html">ElaMessageBar.h</a>&quot;</code><br />
 <code>#include &quot;Async.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_ela_tool_tip_8h_source.html">ElaToolTip.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_my_search_line_edit_8h_source.html">MySearchLineEdit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_refresh_mask_8h_source.html">RefreshMask.h</a>&quot;</code><br />
 <code>#include &lt;QFileDialog&gt;</code><br />
 <code>#include &lt;QJsonArray&gt;</code><br />
 <code>#include &lt;QJsonDocument&gt;</code><br />
@@ -130,114 +132,118 @@ LocalSong.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_local_song_8cpp__incl.png" border="0" usemap="#a_local_song_8cpp" alt=""/></div>
 <map name="a_local_song_8cpp" id="a_local_song_8cpp">
-<area shape="rect" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="2589,5,2696,32"/>
-<area shape="rect" href="_local_song_8h.html" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="489,80,583,107"/>
-<area shape="poly" title=" " alt="" coords="2589,25,599,93,598,87,2588,19"/>
-<area shape="rect" href="ui___local_song_8h.html" title=" " alt="" coords="2086,80,2196,107"/>
-<area shape="poly" title=" " alt="" coords="2589,29,2212,82,2211,77,2588,24"/>
-<area shape="rect" href="_my_search_line_edit_8h.html" title="定义 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="1246,155,1384,181"/>
-<area shape="poly" title=" " alt="" coords="2589,28,2106,76,1759,114,1400,157,1399,152,1758,108,2105,71,2588,22"/>
-<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="2221,80,2302,107"/>
-<area shape="poly" title=" " alt="" coords="2589,32,2318,82,2317,77,2588,27"/>
-<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="1046,155,1170,181"/>
-<area shape="poly" title=" " alt="" coords="2588,22,2283,23,1844,30,1623,38,1428,48,1277,63,1224,72,1190,82,1170,94,1153,110,1125,144,1121,140,1149,106,1167,90,1188,78,1223,67,1276,58,1427,43,1623,32,1844,25,2283,18,2588,17"/>
-<area shape="rect" title=" " alt="" coords="2327,80,2396,107"/>
-<area shape="poly" title=" " alt="" coords="2594,35,2411,82,2410,77,2593,30"/>
-<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="1161,237,1255,264"/>
-<area shape="poly" title=" " alt="" coords="2589,24,2288,35,1858,59,1643,77,1455,99,1312,126,1264,141,1235,157,1224,171,1216,187,1210,222,1205,222,1211,186,1219,168,1232,153,1262,136,1311,121,1454,94,1643,72,1857,54,2288,30,2589,19"/>
-<area shape="rect" title=" " alt="" coords="2421,80,2510,107"/>
-<area shape="poly" title=" " alt="" coords="2613,35,2511,76,2509,71,2611,30"/>
-<area shape="rect" title=" " alt="" coords="2534,80,2624,107"/>
-<area shape="poly" title=" " alt="" coords="2634,34,2602,70,2598,66,2630,31"/>
-<area shape="rect" title=" " alt="" coords="2648,80,2768,107"/>
-<area shape="poly" title=" " alt="" coords="2656,31,2689,67,2685,70,2652,34"/>
-<area shape="rect" title=" " alt="" coords="2792,80,2915,107"/>
-<area shape="poly" title=" " alt="" coords="2680,30,2803,72,2801,77,2678,35"/>
-<area shape="rect" title=" " alt="" coords="2939,80,3042,107"/>
-<area shape="poly" title=" " alt="" coords="2697,29,2925,76,2923,81,2696,34"/>
-<area shape="rect" title=" " alt="" coords="3066,80,3203,107"/>
-<area shape="poly" title=" " alt="" coords="2697,25,3051,77,3050,82,2696,30"/>
-<area shape="rect" title=" " alt="" coords="3228,80,3369,107"/>
-<area shape="poly" title=" " alt="" coords="2697,22,2918,44,3213,77,3212,82,2917,49,2697,28"/>
-<area shape="rect" title=" " alt="" coords="3393,80,3466,107"/>
-<area shape="poly" title=" " alt="" coords="2697,19,2984,34,3178,51,3378,77,3378,82,3178,56,2984,39,2697,24"/>
-<area shape="rect" title=" " alt="" coords="3489,80,3607,107"/>
-<area shape="poly" title=" " alt="" coords="2697,19,3021,37,3244,54,3474,77,3473,82,3243,59,3021,42,2696,25"/>
-<area shape="rect" title=" " alt="" coords="3630,80,3695,107"/>
-<area shape="poly" title=" " alt="" coords="2697,17,2852,18,3077,25,3342,43,3480,58,3616,77,3615,83,3479,63,3342,49,3077,31,2852,23,2697,22"/>
-<area shape="rect" title=" " alt="" coords="3719,80,3785,107"/>
-<area shape="poly" title=" " alt="" coords="2697,17,2864,17,3111,24,3403,42,3555,57,3704,77,3704,83,3554,63,3403,47,3111,29,2864,22,2697,22"/>
-<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="645,155,779,181"/>
-<area shape="poly" title=" " alt="" coords="568,105,668,146,666,151,566,110"/>
-<area shape="rect" title=" " alt="" coords="985,320,1058,347"/>
-<area shape="poly" title=" " alt="" coords="583,94,666,102,769,123,823,141,877,163,927,192,973,227,988,245,1000,265,1016,304,1011,306,995,267,983,248,969,231,924,196,875,168,822,146,768,129,665,107,583,99"/>
+<area shape="rect" title="实现 LocalSong 类，提供本地歌曲管理界面功能" alt="" coords="1938,5,2046,32"/>
+<area shape="rect" href="_local_song_8h.html" title="定义 LocalSong 类，提供本地歌曲管理界面" alt="" coords="732,80,825,107"/>
+<area shape="poly" title=" " alt="" coords="1938,26,841,91,840,86,1938,21"/>
+<area shape="rect" title=" " alt="" coords="1366,80,1476,107"/>
+<area shape="poly" title=" " alt="" coords="1938,28,1746,49,1492,82,1492,77,1745,44,1938,23"/>
+<area shape="rect" href="logger_8hpp.html" title=" " alt="" coords="1501,80,1582,107"/>
+<area shape="poly" title=" " alt="" coords="1938,30,1789,51,1598,82,1597,77,1788,45,1937,24"/>
+<area shape="rect" href="_ela_message_bar_8h.html" title="定义 ElaMessageBar 类，提供消息通知栏功能" alt="" coords="1004,80,1129,107"/>
+<area shape="poly" title=" " alt="" coords="1938,25,1607,43,1380,59,1145,82,1144,77,1380,54,1607,37,1938,19"/>
+<area shape="rect" title=" " alt="" coords="1607,80,1676,107"/>
+<area shape="poly" title=" " alt="" coords="1939,32,1691,82,1690,77,1937,27"/>
+<area shape="rect" href="_ela_tool_tip_8h.html" title="定义 ElaToolTip 类，提供自定义工具提示功能" alt="" coords="1283,155,1376,181"/>
+<area shape="poly" title=" " alt="" coords="1938,24,1792,30,1609,42,1444,59,1387,70,1356,82,1346,94,1339,109,1332,140,1327,139,1334,107,1341,91,1353,78,1386,65,1444,53,1608,36,1791,25,1938,19"/>
+<area shape="rect" href="_my_search_line_edit_8h.html" title="定义 MySearchLineEdit 类，提供带动画效果的搜索输入框" alt="" coords="1154,80,1292,107"/>
+<area shape="poly" title=" " alt="" coords="1938,27,1669,48,1311,83,1308,83,1307,78,1310,77,1668,43,1938,21"/>
+<area shape="rect" href="_refresh_mask_8h.html" title="定义 RefreshMask 类，提供加载遮罩功能" alt="" coords="1700,80,1810,107"/>
+<area shape="poly" title=" " alt="" coords="1951,35,1812,78,1810,72,1950,30"/>
+<area shape="rect" title=" " alt="" coords="1834,80,1923,107"/>
+<area shape="poly" title=" " alt="" coords="1974,35,1913,74,1910,69,1971,30"/>
+<area shape="rect" title=" " alt="" coords="1947,80,2037,107"/>
+<area shape="poly" title=" " alt="" coords="1995,33,1995,64,1989,64,1989,33"/>
+<area shape="rect" title=" " alt="" coords="2062,80,2181,107"/>
+<area shape="poly" title=" " alt="" coords="2016,30,2087,70,2084,74,2013,35"/>
+<area shape="rect" title=" " alt="" coords="2205,80,2328,107"/>
+<area shape="poly" title=" " alt="" coords="2041,30,2204,73,2203,78,2039,35"/>
+<area shape="rect" title=" " alt="" coords="2352,80,2456,107"/>
+<area shape="poly" title=" " alt="" coords="2047,26,2337,77,2337,82,2046,32"/>
+<area shape="rect" title=" " alt="" coords="2479,80,2617,107"/>
+<area shape="poly" title=" " alt="" coords="2047,24,2464,77,2464,82,2046,29"/>
+<area shape="rect" title=" " alt="" coords="2641,80,2783,107"/>
+<area shape="poly" title=" " alt="" coords="2046,22,2293,43,2626,77,2626,82,2292,48,2046,27"/>
+<area shape="rect" title=" " alt="" coords="2806,80,2879,107"/>
+<area shape="poly" title=" " alt="" coords="2046,18,2176,22,2359,32,2572,49,2791,77,2791,82,2571,55,2358,37,2176,28,2046,24"/>
+<area shape="rect" title=" " alt="" coords="2903,80,3020,107"/>
+<area shape="poly" title=" " alt="" coords="2046,19,2396,36,2637,53,2887,77,2887,82,2637,58,2395,41,2046,24"/>
+<area shape="rect" title=" " alt="" coords="3044,80,3108,107"/>
+<area shape="poly" title=" " alt="" coords="2046,17,2210,17,2452,23,2736,42,2884,57,3029,77,3028,83,2883,62,2735,47,2451,29,2210,22,2046,22"/>
+<area shape="rect" title=" " alt="" coords="3133,80,3198,107"/>
+<area shape="poly" title=" " alt="" coords="2046,19,2565,37,2877,55,3011,65,3118,78,3117,83,3011,71,2877,60,2565,43,2046,24"/>
+<area shape="rect" href="_music_item_widget_8h.html" title="定义 MusicItemWidget 类，提供音乐条目控件功能" alt="" coords="445,155,579,181"/>
+<area shape="poly" title=" " alt="" coords="733,110,574,153,573,148,732,105"/>
+<area shape="rect" title=" " alt="" coords="984,320,1056,347"/>
+<area shape="poly" title=" " alt="" coords="827,102,881,120,908,134,932,153,964,189,987,230,1005,270,1016,304,1011,306,1000,272,983,232,959,192,929,157,905,139,878,125,825,107"/>
 <area shape="rect" href="_sort_option_menu_8h.html" title="定义 SortOptionMenu 类，提供歌曲排序选项菜单功能" alt="" coords="5,229,187,272"/>
-<area shape="poly" title=" " alt="" coords="490,104,390,124,332,139,276,157,204,189,142,224,140,219,202,184,274,152,331,134,389,119,489,99"/>
-<area shape="rect" href="libhttp_8h.html" title=" " alt="" coords="502,155,570,181"/>
-<area shape="poly" title=" " alt="" coords="539,107,539,139,533,139,533,107"/>
-<area shape="rect" title=" " alt="" coords="287,155,356,181"/>
-<area shape="poly" title=" " alt="" coords="499,110,372,153,370,148,498,105"/>
-<area shape="rect" title=" " alt="" coords="381,155,478,181"/>
-<area shape="poly" title=" " alt="" coords="519,109,462,148,459,143,516,105"/>
-<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="671,237,753,264"/>
-<area shape="poly" title=" " alt="" coords="715,182,715,222,709,222,709,182"/>
-<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="454,229,647,272"/>
-<area shape="poly" title=" " alt="" coords="688,184,607,225,604,220,686,179"/>
-<area shape="rect" title=" " alt="" coords="777,237,866,264"/>
-<area shape="poly" title=" " alt="" coords="731,180,794,226,791,230,728,184"/>
-<area shape="rect" title=" " alt="" coords="890,237,958,264"/>
-<area shape="poly" title=" " alt="" coords="749,179,878,227,883,229,881,234,876,232,747,184"/>
-<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="318,320,412,347"/>
-<area shape="poly" title=" " alt="" coords="682,267,659,275,537,304,428,325,428,319,536,299,658,269,680,262"/>
-<area shape="poly" title=" " alt="" coords="744,262,766,269,875,298,971,319,970,325,874,304,765,275,742,267"/>
-<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="182,395,280,421"/>
-<area shape="poly" title=" " alt="" coords="343,350,269,389,266,384,341,345"/>
-<area shape="poly" title=" " alt="" coords="504,275,409,316,407,311,502,270"/>
-<area shape="poly" title=" " alt="" coords="166,270,309,312,307,318,165,275"/>
-<area shape="poly" title=" " alt="" coords="116,270,212,381,208,385,112,274"/>
-<area shape="rect" title=" " alt="" coords="211,237,325,264"/>
-<area shape="poly" title=" " alt="" coords="503,182,325,235,324,230,501,177"/>
-<area shape="rect" title=" " alt="" coords="349,237,430,264"/>
-<area shape="poly" title=" " alt="" coords="514,184,427,232,424,227,512,179"/>
-<area shape="rect" title=" " alt="" coords="2457,155,2575,181"/>
-<area shape="poly" title=" " alt="" coords="2198,103,2443,150,2442,155,2197,108"/>
-<area shape="rect" title=" " alt="" coords="2599,155,2761,181"/>
-<area shape="poly" title=" " alt="" coords="2197,102,2210,104,2395,129,2584,152,2584,157,2394,134,2209,109,2197,107"/>
-<area shape="rect" title=" " alt="" coords="2785,155,2919,181"/>
-<area shape="poly" title=" " alt="" coords="2197,102,2210,104,2365,121,2488,129,2612,137,2769,152,2769,157,2611,142,2488,134,2365,126,2209,109,2197,108"/>
-<area shape="rect" title=" " alt="" coords="2944,155,3104,181"/>
-<area shape="poly" title=" " alt="" coords="2197,102,2210,104,2409,123,2567,131,2725,137,2929,152,2928,157,2725,142,2567,136,2409,129,2209,109,2197,108"/>
-<area shape="rect" title=" " alt="" coords="3129,155,3298,181"/>
-<area shape="poly" title=" " alt="" coords="2197,102,2210,104,2346,118,2461,126,2659,132,2858,136,3114,152,3113,157,2858,142,2659,137,2461,131,2345,123,2209,109,2197,108"/>
-<area shape="rect" title=" " alt="" coords="3322,155,3451,181"/>
-<area shape="poly" title=" " alt="" coords="2197,102,2210,104,2375,119,2516,127,2757,130,2998,132,3140,138,3307,152,3307,157,3140,144,2998,137,2756,135,2516,132,2375,125,2209,109,2197,108"/>
-<area shape="rect" title=" " alt="" coords="1408,155,1573,181"/>
-<area shape="poly" title=" " alt="" coords="2086,103,1589,157,1588,152,2085,98"/>
-<area shape="rect" title=" " alt="" coords="1598,155,1762,181"/>
-<area shape="poly" title=" " alt="" coords="2086,106,1776,154,1775,149,2085,101"/>
-<area shape="rect" title=" " alt="" coords="1786,155,1945,181"/>
-<area shape="poly" title=" " alt="" coords="2094,110,1929,153,1927,148,2093,105"/>
-<area shape="rect" title=" " alt="" coords="1969,155,2138,181"/>
-<area shape="poly" title=" " alt="" coords="2128,109,2082,147,2078,143,2124,105"/>
-<area shape="rect" title=" " alt="" coords="2162,155,2300,181"/>
-<area shape="poly" title=" " alt="" coords="2159,105,2205,143,2202,147,2155,109"/>
-<area shape="rect" href="_my_scroll_area_8h.html" title="定义 MyScrollArea 类，提供带平滑滚动和返回顶部按钮的滚动区域" alt="" coords="2324,155,2434,181"/>
-<area shape="poly" title=" " alt="" coords="2183,105,2323,147,2322,152,2182,110"/>
-<area shape="poly" title=" " alt="" coords="2086,101,1796,120,1400,157,1399,152,1796,115,2085,95"/>
-<area shape="rect" href="_up_tool_button_8h.html" title="定义 UpToolButton 类，提供上移按钮功能" alt="" coords="2323,237,2434,264"/>
-<area shape="poly" title=" " alt="" coords="2381,182,2381,222,2376,222,2376,182"/>
-<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="1279,237,1377,264"/>
-<area shape="poly" title=" " alt="" coords="1319,181,1326,222,1321,223,1314,182"/>
-<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="1174,320,1242,347"/>
-<area shape="poly" title=" " alt="" coords="1311,267,1240,314,1237,309,1308,262"/>
-<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="3474,155,3542,181"/>
-<area shape="poly" title=" " alt="" coords="2303,102,2315,104,2487,122,2634,129,2764,129,2886,125,3008,121,3138,122,3286,131,3459,152,3459,157,3285,136,3138,128,3008,127,2886,130,2764,134,2634,134,2487,127,2314,109,2302,107"/>
-<area shape="poly" title=" " alt="" coords="1103,183,1074,231,1036,308,1031,305,1070,228,1098,180"/>
-<area shape="rect" href="_def_8h.html" title=" " alt="" coords="1084,237,1137,264"/>
-<area shape="poly" title=" " alt="" coords="1111,182,1112,222,1107,222,1106,182"/>
-<area shape="poly" title=" " alt="" coords="1128,262,1184,308,1180,313,1124,267"/>
-<area shape="poly" title=" " alt="" coords="1180,267,1065,316,1063,311,1178,262"/>
-<area shape="poly" title=" " alt="" coords="1211,264,1211,305,1205,305,1205,264"/>
+<area shape="poly" title=" " alt="" coords="732,104,597,125,434,157,297,192,177,227,175,222,296,187,433,152,596,120,731,99"/>
+<area shape="rect" href="libhttp_8h.html" title=" " alt="" coords="852,155,919,181"/>
+<area shape="poly" title=" " alt="" coords="799,105,856,143,853,148,796,109"/>
+<area shape="rect" title=" " alt="" coords="636,155,705,181"/>
+<area shape="poly" title=" " alt="" coords="761,109,704,148,701,143,758,105"/>
+<area shape="rect" title=" " alt="" coords="730,155,827,181"/>
+<area shape="poly" title=" " alt="" coords="781,107,781,139,776,139,776,107"/>
+<area shape="rect" href="_my_menu_8h.html" title="定义 MyMenu 类，使用策略模式管理不同类型的菜单" alt="" coords="632,237,714,264"/>
+<area shape="poly" title=" " alt="" coords="538,179,636,228,634,233,536,184"/>
+<area shape="rect" href="_song_option_menu_8h.html" title="定义 SongOptionMenu 类，提供歌曲操作选项菜单功能" alt="" coords="415,229,609,272"/>
+<area shape="poly" title=" " alt="" coords="515,182,515,214,509,214,509,182"/>
+<area shape="rect" title=" " alt="" coords="210,237,299,264"/>
+<area shape="poly" title=" " alt="" coords="468,185,311,232,304,234,302,229,310,227,466,179"/>
+<area shape="rect" title=" " alt="" coords="323,237,392,264"/>
+<area shape="poly" title=" " alt="" coords="489,184,396,232,393,228,487,179"/>
+<area shape="rect" href="_base_menu_8h.html" title="定义 BaseMenu 类，提供菜单基类功能" alt="" coords="361,320,455,347"/>
+<area shape="poly" title=" " alt="" coords="642,267,621,275,471,319,469,313,619,269,640,262"/>
+<area shape="poly" title=" " alt="" coords="705,262,727,269,857,301,969,321,968,327,856,306,726,275,703,267"/>
+<area shape="rect" href="_menu_btn_8hpp.html" title="定义 MenuBtn 类，提供自定义菜单按钮功能" alt="" coords="255,395,353,421"/>
+<area shape="poly" title=" " alt="" coords="391,349,336,388,333,383,388,345"/>
+<area shape="poly" title=" " alt="" coords="487,275,438,312,435,308,484,270"/>
+<area shape="poly" title=" " alt="" coords="177,270,347,314,345,319,176,275"/>
+<area shape="poly" title=" " alt="" coords="99,272,105,309,112,328,123,345,149,366,178,381,209,391,240,398,239,403,208,397,176,386,146,370,119,348,107,331,99,311,93,273"/>
+<area shape="rect" title=" " alt="" coords="133,320,206,347"/>
+<area shape="poly" title=" " alt="" coords="117,271,149,306,146,310,113,274"/>
+<area shape="rect" title=" " alt="" coords="739,237,853,264"/>
+<area shape="poly" title=" " alt="" coords="873,184,823,229,819,225,870,180"/>
+<area shape="rect" title=" " alt="" coords="877,237,958,264"/>
+<area shape="poly" title=" " alt="" coords="893,181,909,222,904,224,888,183"/>
+<area shape="rect" href="mylog_8h.html" title=" " alt="" coords="1581,155,1648,181"/>
+<area shape="poly" title=" " alt="" coords="1556,105,1593,142,1589,145,1552,109"/>
+<area shape="rect" title=" " alt="" coords="2157,237,2238,264"/>
+<area shape="poly" title=" " alt="" coords="1649,176,1660,179,1734,190,1796,195,1904,198,2011,203,2073,212,2146,227,2155,229,2153,234,2145,232,2072,217,2010,209,1903,204,1796,201,1733,195,1660,184,1648,182"/>
+<area shape="rect" title=" " alt="" coords="1227,320,1296,347"/>
+<area shape="poly" title=" " alt="" coords="1581,173,1504,176,1409,186,1321,203,1289,216,1267,231,1258,247,1254,266,1257,305,1251,305,1249,266,1253,245,1263,228,1286,211,1320,198,1408,180,1503,171,1581,167"/>
+<area shape="rect" title=" " alt="" coords="1590,320,1658,347"/>
+<area shape="poly" title=" " alt="" coords="1618,181,1625,304,1620,304,1613,182"/>
+<area shape="rect" href="spdlog_8h.html" title=" " alt="" coords="1661,237,1774,264"/>
+<area shape="poly" title=" " alt="" coords="1632,180,1691,225,1688,230,1629,184"/>
+<area shape="rect" href="logger_8h.html" title=" " alt="" coords="1719,320,1828,347"/>
+<area shape="poly" title=" " alt="" coords="1649,176,1733,203,1768,216,1787,228,1796,247,1797,268,1788,307,1783,306,1792,268,1791,248,1783,231,1766,221,1731,208,1648,182"/>
+<area shape="rect" href="_my_spdlog_2spdlog_2_async_8h.html" title=" " alt="" coords="1477,237,1587,264"/>
+<area shape="poly" title=" " alt="" coords="1604,184,1557,228,1554,225,1600,180"/>
+<area shape="rect" href="fmt_8h.html" title=" " alt="" coords="1340,320,1457,347"/>
+<area shape="poly" title=" " alt="" coords="1582,179,1525,198,1495,213,1467,231,1434,268,1412,307,1408,305,1430,265,1464,227,1492,208,1523,193,1580,174"/>
+<area shape="rect" href="printf_8h.html" title=" " alt="" coords="1848,229,1979,272"/>
+<area shape="poly" title=" " alt="" coords="1650,176,1834,225,1832,230,1648,181"/>
+<area shape="rect" href="basic__file__sink_8h.html" title=" " alt="" coords="2003,229,2133,272"/>
+<area shape="poly" title=" " alt="" coords="1649,176,1661,179,1751,194,1822,203,1895,211,1988,226,1987,232,1895,216,1822,208,1750,200,1659,184,1648,181"/>
+<area shape="rect" href="daily__file__sink_8h.html" title=" " alt="" coords="1277,229,1403,272"/>
+<area shape="poly" title=" " alt="" coords="1581,182,1418,229,1417,224,1580,177"/>
+<area shape="poly" title=" " alt="" coords="1704,267,1651,312,1648,308,1701,262"/>
+<area shape="poly" title=" " alt="" coords="1728,263,1758,306,1754,309,1724,266"/>
+<area shape="poly" title=" " alt="" coords="1548,262,1601,308,1597,312,1545,267"/>
+<area shape="poly" title=" " alt="" coords="1322,274,1286,310,1282,307,1318,271"/>
+<area shape="poly" title=" " alt="" coords="1357,271,1383,306,1378,309,1353,274"/>
+<area shape="poly" title=" " alt="" coords="1067,107,1028,305,1023,304,1062,106"/>
+<area shape="rect" href="_def_8h.html" title=" " alt="" coords="1083,155,1136,181"/>
+<area shape="poly" title=" " alt="" coords="1076,106,1097,140,1092,143,1072,109"/>
+<area shape="rect" href="stdafx_8h.html" title=" " alt="" coords="1083,237,1152,264"/>
+<area shape="poly" title=" " alt="" coords="1113,182,1117,222,1112,222,1108,182"/>
+<area shape="poly" title=" " alt="" coords="1306,184,1223,232,1195,253,1165,274,1118,298,1072,317,1070,312,1116,293,1163,270,1191,249,1220,227,1303,179"/>
+<area shape="poly" title=" " alt="" coords="1297,184,1165,234,1164,229,1295,179"/>
+<area shape="rect" href="_ela_line_edit_8h.html" title=" " alt="" coords="1160,155,1258,181"/>
+<area shape="poly" title=" " alt="" coords="1223,108,1217,140,1212,139,1218,107"/>
+<area shape="poly" title=" " alt="" coords="1197,184,1144,229,1141,225,1193,180"/>
+<area shape="rect" href="qtmaterialcircularprogress_8h.html" title="定义 QtMaterialCircularProgress 类，提供 Material Design 圆形进度条" alt="" coords="1672,155,1853,181"/>
+<area shape="poly" title=" " alt="" coords="1759,107,1762,139,1757,139,1753,108"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -252,6 +258,11 @@ LocalSong.cpp 的引用(Include)关系图:</div>
 <tr class="memitem:af1c2af478725817de5781ab35232b4da" id="r_af1c2af478725817de5781ab35232b4da"><td class="memItemLeft" align="right" valign="top">static QRegularExpression&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1c2af478725817de5781ab35232b4da">re</a> (QStringLiteral(&quot;^[A-Za-z0-9\\p{Han}\\\\/\\-_\\*]+$&quot;))</td></tr>
 <tr class="memdesc:af1c2af478725817de5781ab35232b4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">匹配非乱码字符的正则表达式  <br /></td></tr>
 <tr class="separator:af1c2af478725817de5781ab35232b4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a70338d658ed3b396493755010f3fc24b" id="r_a70338d658ed3b396493755010f3fc24b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70338d658ed3b396493755010f3fc24b">firstShow</a> = true</td></tr>
+<tr class="separator:a70338d658ed3b396493755010f3fc24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>实现 <a class="el" href="class_local_song.html" title="本地歌曲管理界面类，支持播放、排序、搜索、上传和服务器同步">LocalSong</a> 类，提供本地歌曲管理界面功能 </p>
@@ -319,6 +330,29 @@ LocalSong.cpp 的引用(Include)关系图:</div>
 <area shape="poly" title=" " alt="" coords="582,75,569,69,545,67,522,69,510,73,507,79,513,86,509,89,502,79,506,70,521,63,545,61,571,64,585,70"/>
 </map>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a70338d658ed3b396493755010f3fc24b" name="a70338d658ed3b396493755010f3fc24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70338d658ed3b396493755010f3fc24b">&#9670;&#160;</a></span>firstShow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool firstShow = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

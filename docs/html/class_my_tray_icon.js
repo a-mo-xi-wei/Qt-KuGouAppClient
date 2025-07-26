@@ -1,6 +1,7 @@
 var class_my_tray_icon =
 [
     [ "MyTrayIcon", "class_my_tray_icon.html#ac6f87c55cfd184f2b9ab8905b6fbd710", null ],
+    [ "active", "class_my_tray_icon.html#a5ae83ccea424bca98fcddfbf1806ae46", null ],
     [ "checkTrayIconHover", "class_my_tray_icon.html#a5126fc9ad7ea27324d6cbd6f514f2708", null ],
     [ "exit", "class_my_tray_icon.html#a358d2e2397ca11ccd17553e3c40e7901", null ],
     [ "flashingTrayIcon", "class_my_tray_icon.html#ac4c0bb28df09e788a087d452c90cc7a3", null ],
@@ -19,7 +20,6 @@ var class_my_tray_icon =
     [ "m_flagVolume", "class_my_tray_icon.html#afcca52c63b646bdc711c1b19ec88ccf6", null ],
     [ "m_flashTimer", "class_my_tray_icon.html#a4ed398c4db64e1a90cc83209ec6c1554", null ],
     [ "m_menuPosition", "class_my_tray_icon.html#a75b61709efacdeb4b9b337132b7fbb7f", null ],
-    [ "m_pParent", "class_my_tray_icon.html#ac340988e31e168394f5b80b450bc9073", null ],
     [ "m_showIcon", "class_my_tray_icon.html#ac4f53ed40044d3d28b55f3476715cc4c", null ],
     [ "m_trayIcon", "class_my_tray_icon.html#a0b17f807a5987af79f34fa578719fa28", null ],
     [ "m_trayMenu", "class_my_tray_icon.html#a0f50f1c974b2a230969afa595599349a", null ]

@@ -5,7 +5,6 @@ var searchData=
   ['kafka_5fsink_3c_20std_3a_3amutex_20_3e_2',['kafka_sink&lt; std::mutex &gt;',['../classspdlog_1_1sinks_1_1kafka__sink.html',1,'spdlog::sinks']]],
   ['kafka_5fsink_5fconfig_3',['kafka_sink_config',['../structspdlog_1_1sinks_1_1kafka__sink__config.html',1,'spdlog::sinks']]],
   ['kcpobj_4',['KcpObj',['../class_h_y_k_t_1_1_kcp_obj.html',1,'HYKT']]],
-  ['kugouapp_5',['KuGouApp',['../class_ui_1_1_ku_gou_app.html',1,'Ui']]],
-  ['kugouclient_6',['KuGouClient',['../class_ku_gou_client.html',1,'']]],
-  ['kugouserver_7',['KuGouServer',['../class_ku_gou_server.html',1,'']]]
+  ['kugouclient_5',['KuGouClient',['../class_ku_gou_client.html',1,'']]],
+  ['kugouserver_6',['KuGouServer',['../class_ku_gou_server.html',1,'']]]
 ];

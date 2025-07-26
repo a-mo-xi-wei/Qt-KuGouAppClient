@@ -1,19 +1,22 @@
 <map id="onItemDeleteSong" name="onItemDeleteSong">
-<area shape="rect" id="Node000001" title="删除歌曲槽函数" alt="" coords="929,55,1058,81"/>
-<area shape="rect" id="Node000002" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="782,55,881,81"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="914,71,881,71,881,65,914,65"/>
-<area shape="rect" id="Node000003" href="$class_local_song.html#a97a0739f99953381d5aecf97d7776609" title="从服务器同步歌曲列表" alt="" coords="541,29,734,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="766,62,734,58,734,53,766,57"/>
-<area shape="rect" id="Node000005" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="589,80,686,107"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="767,79,687,90,686,84,766,74"/>
-<area shape="rect" id="Node000004" href="$class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="400,29,483,56"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="526,45,483,45,483,40,526,40"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="469,16,460,10,442,8,425,10,416,15,414,20,418,28,414,30,409,21,412,11,423,5,442,3,461,5,472,12"/>
-<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="574,80,483,56,484,51,575,75"/>
-<area shape="rect" id="Node000006" href="$class_local_song.html#a6219ec9f188d024275d4f70f10278df7" title="加载下一首歌曲" alt="" coords="390,80,493,107"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="574,96,494,96,494,91,574,91"/>
-<area shape="rect" id="Node000007" href="$class_local_song.html#a1535a02c1a76094119209356430261e4" title="开始串行加载歌曲" alt="" coords="217,80,342,107"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="374,96,342,96,342,91,374,91"/>
-<area shape="rect" id="Node000008" href="$class_local_song.html#a68489f65dbe7c54ff6e049f3473e0e45" title="添加歌曲按钮点击槽函数" alt="" coords="5,72,169,115"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="201,96,169,96,169,91,201,91"/>
+<area shape="rect" id="Node000001" title="删除歌曲槽函数" alt="" coords="960,113,1089,140"/>
+<area shape="rect" id="Node000002" href="$class_local_song.html#a4c31fa17ce6a5cc8533d92486ed88966" title="初始化音乐项" alt="" coords="813,113,912,140"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="945,129,912,129,912,124,945,124"/>
+<area shape="rect" id="Node000003" href="$class_local_song.html#ac8878f7731a414cdea15e292e1abb1c6" title="获取媒体元数据" alt="" coords="649,88,746,115"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="797,119,745,111,746,106,798,114"/>
+<area shape="rect" id="Node000008" href="$class_local_song.html#a388fdcfba9e86b6bca1fbf44fe9f9d79" title=" " alt="" coords="630,139,765,165"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="798,139,765,144,764,139,797,134"/>
+<area shape="rect" id="Node000004" href="$class_local_song.html#a6219ec9f188d024275d4f70f10278df7" title="加载下一首歌曲" alt="" coords="434,13,538,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="652,83,581,55,537,41,539,36,583,49,654,79"/>
+<area shape="rect" id="Node000007" href="$class_local_song.html#a9375f55dd6d49239d63d3c19eaef2237" title="构造函数，初始化本地歌曲界面" alt="" coords="445,88,527,115"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="634,104,528,104,528,99,634,99"/>
+<area shape="rect" id="Node000005" href="$class_local_song.html#a1535a02c1a76094119209356430261e4" title="开始串行加载歌曲" alt="" coords="217,13,342,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="419,29,343,29,343,24,419,24"/>
+<area shape="rect" id="Node000006" href="$class_local_song.html#a68489f65dbe7c54ff6e049f3473e0e45" title="添加歌曲按钮点击槽函数" alt="" coords="5,5,169,48"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="201,29,169,29,169,24,201,24"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="522,75,509,69,486,67,465,69,453,73,450,79,456,86,451,89,445,79,449,70,463,63,486,61,511,64,524,70"/>
+<area shape="rect" id="Node000009" href="$class_local_song.html#a97a0739f99953381d5aecf97d7776609" title="从服务器同步歌曲列表" alt="" coords="390,139,582,165"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="615,155,583,155,583,149,615,149"/>
+<area shape="rect" id="Node000010" href="$class_local_song.html#a26eb1890b4d4dfb7bf76fb7c44cbdebf" title=" " alt="" coords="236,139,322,165"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="375,155,323,155,323,149,375,149"/>
 </map>
