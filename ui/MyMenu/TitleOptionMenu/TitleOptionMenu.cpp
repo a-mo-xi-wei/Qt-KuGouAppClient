@@ -8,10 +8,13 @@
 
 #include "TitleOptionMenu.h"
 #include "logger.hpp"
+#include "../MyMenu.h"
 
 #include <QCoreApplication>
 #include <QHBoxLayout>
 #include <QWidgetAction>
+
+REGISTER_MENU(MyMenu::MenuKind::TitleOption, TitleOptionMenu)
 
 /**
  * @brief 构造函数，初始化标题栏选项菜单

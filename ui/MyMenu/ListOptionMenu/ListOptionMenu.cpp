@@ -9,6 +9,8 @@
 #include "ListOptionMenu.h"
 #include "logger.hpp"
 #include "MyScrollArea.h"
+#include "ElaScrollBar.h"
+#include "../MyMenu.h"
 
 #include <QFile>
 #include <QLabel>
@@ -16,7 +18,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
-#include "ElaScrollBar.h"
+REGISTER_MENU(MyMenu::MenuKind::ListOption, ListOptionMenu)
 
 /** @brief 获取当前文件目录的宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))

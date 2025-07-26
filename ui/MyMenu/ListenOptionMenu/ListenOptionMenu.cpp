@@ -9,11 +9,14 @@
 #include "ListenOptionMenu.h"
 #include "logger.hpp"
 #include "MyScrollArea.h"
+#include "../MyMenu.h"
 
 #include <QFile>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QVBoxLayout>
+
+REGISTER_MENU(MyMenu::MenuKind::ListenOption, ListenOptionMenu)
 
 /** @brief 获取当前文件目录的宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))

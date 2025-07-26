@@ -19,18 +19,27 @@
 #define MYMENU_EXPORT Q_DECL_IMPORT
 #endif
 
+#define REGISTER_MENU(menuKind, menuClass)        \
+namespace {                                    \
+const bool menuClass##_registered = [](){      \
+MyMenu::registerMenu(menuKind,             \
+[](QWidget* parent){ return new menuClass(parent); }); \
+return true;                               \
+}();                                           \
+}
+
+
 /**
  * @class MyMenu
  * @brief 菜单管理类，使用策略模式动态创建和初始化不同类型的菜单
  */
-class MYMENU_EXPORT MyMenu : public QWidget {
-    Q_OBJECT
+class MYMENU_EXPORT MyMenu {
 
 public:
     /**
      * @brief 菜单类型枚举
      */
-    enum MenuKind {
+    enum class MenuKind {
         SongOption,   ///< 歌曲选项菜单
         SortOption,   ///< 排序选项菜单
         TitleOption,  ///< 标题栏选项菜单
@@ -39,6 +48,12 @@ public:
         None          ///< 无类型
     };
 
+    ///< 菜单创建函数
+    using MenuCreator = std::function<BaseMenu*(QWidget*)>;
+
+    ///< 菜单注册函数
+    static void registerMenu(MenuKind kind, const MenuCreator& creator);
+
     /**
      * @brief 构造函数，根据菜单类型初始化菜单
      * @param kind 菜单类型
@@ -46,6 +61,7 @@ public:
      */
     explicit MyMenu(const MenuKind &kind, QWidget *parent = nullptr);
 
+    ~MyMenu();
     /**
      * @brief 模板方法，获取具体类型的菜单对象
      * @tparam T 菜单类型
@@ -53,12 +69,14 @@ public:
      */
     template <typename T>
     T* getMenu() const {
-        return static_cast<T*>(this->m_menu);
+        return qobject_cast<T*>(this->m_menu);
     }
 
 private:
     BaseMenu *m_menu{}; ///< 指向具体菜单的指针
     MenuKind m_kind;    ///< 菜单类型
+
+    static auto registry() -> QMap<MenuKind, MenuCreator> &;    ///< 获取菜单注册表
 };
 
 #endif // MYWIDGETMENU_H

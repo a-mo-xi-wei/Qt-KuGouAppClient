@@ -7,11 +7,13 @@
  */
 
 #include "SortOptionMenu.h"
+#include "logger.hpp"
+#include "../MyMenu.h"
 
 #include <QButtonGroup>
 #include <QWidgetAction>
 
-#include "logger.hpp"
+REGISTER_MENU(MyMenu::MenuKind::SortOption, SortOptionMenu)
 
 /**
  * @brief 构造函数，初始化歌曲排序选项菜单
