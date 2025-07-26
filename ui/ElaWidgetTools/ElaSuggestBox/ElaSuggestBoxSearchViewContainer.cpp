@@ -32,8 +32,7 @@ ElaSuggestBoxSearchViewContainer::ElaSuggestBoxSearchViewContainer(QWidget *pare
  * @brief 析构函数
  */
 ElaSuggestBoxSearchViewContainer::~ElaSuggestBoxSearchViewContainer()
-{
-}
+= default;
 
 /**
  * @brief 绘制事件

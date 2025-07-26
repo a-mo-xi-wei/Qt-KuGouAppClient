@@ -28,9 +28,7 @@ ElaMenuBarStyle::ElaMenuBarStyle(QStyle* style)
 /**
  * @brief 析构函数，释放菜单栏样式资源
  */
-ElaMenuBarStyle::~ElaMenuBarStyle()
-{
-}
+ElaMenuBarStyle::~ElaMenuBarStyle() = default;
 
 /**
  * @brief 绘制基本图形元素

@@ -124,8 +124,7 @@ ElaMessageButton::ElaMessageButton(const QString& text, QWidget* parent)
  * @brief 析构函数，释放消息按钮资源
  */
 ElaMessageButton::~ElaMessageButton()
-{
-}
+= default;
 
 /**
  * @brief 鼠标按下事件处理

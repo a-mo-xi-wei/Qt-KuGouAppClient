@@ -124,6 +124,8 @@ protected:
     MenuBtn *m_lastSelect{};               ///< 上一次选中的按钮
     MenuBtn *m_curSelect{};                ///< 当前选中的按钮
     int      m_curIndex = -1;              ///< 当前响应项的索引
+
+private:
     int      m_shadowWidth = 4;            ///< 阴影宽度
     int      m_shadowRadius = 12;          ///< 阴影圆角半径
     QColor   m_shadowColor = QColor(150, 150, 150, 55); ///< 阴影颜色

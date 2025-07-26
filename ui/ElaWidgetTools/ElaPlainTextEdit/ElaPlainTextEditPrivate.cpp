@@ -24,8 +24,7 @@ ElaPlainTextEditPrivate::ElaPlainTextEditPrivate(QObject* parent)
  * @brief 析构函数，释放纯文本编辑框私有资源
  */
 ElaPlainTextEditPrivate::~ElaPlainTextEditPrivate()
-{
-}
+= default;
 
 /**
  * @brief 处理窗口点击事件

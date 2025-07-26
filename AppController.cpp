@@ -12,12 +12,14 @@ AppController& AppController::instance()
 AppController::AppController()
     : m_trayIcon(new MyTrayIcon)
     , m_login(new LoginRegisterForm)
-    , m_client(new KuGouClient)
-    , m_server(new KuGouServer)
 {
     initFontRes();
-
+    // @note 生成客户端
+    m_client = new KuGouClient;
+    // @note 生成服务器
+    m_server = new KuGouServer;
     m_login->hide();
+    m_client->hide();
 
     connect(m_trayIcon, &MyTrayIcon::active, this, [this] {
         if (m_isLoginAccepted && m_client) {

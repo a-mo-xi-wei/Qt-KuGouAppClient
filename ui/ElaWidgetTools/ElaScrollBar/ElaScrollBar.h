@@ -51,7 +51,7 @@ public:
     /**
      * @brief 析构函数，释放滚动条资源
      */
-    ~ElaScrollBar();
+    ~ElaScrollBar() override;
 
 Q_SIGNALS:
     /**

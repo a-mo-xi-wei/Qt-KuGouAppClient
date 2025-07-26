@@ -39,7 +39,7 @@ public:
     /**
      * @brief 析构函数，释放消息按钮私有资源
      */
-    ~ElaMessageButtonPrivate();
+    ~ElaMessageButtonPrivate() override;
 
 private:
     /**

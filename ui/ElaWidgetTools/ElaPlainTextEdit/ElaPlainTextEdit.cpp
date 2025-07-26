@@ -59,8 +59,7 @@ ElaPlainTextEdit::ElaPlainTextEdit(const QString& text, QWidget* parent)
  * @brief 析构函数，释放纯文本编辑框资源
  */
 ElaPlainTextEdit::~ElaPlainTextEdit()
-{
-}
+= default;
 
 /**
  * @brief 焦点进入事件处理

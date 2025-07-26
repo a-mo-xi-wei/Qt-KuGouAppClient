@@ -37,7 +37,7 @@ public:
     /**
      * @brief 析构函数，释放流式布局私有资源
      */
-    ~ElaFlowLayoutPrivate();
+    ~ElaFlowLayoutPrivate() override;
 
 private:
     /**

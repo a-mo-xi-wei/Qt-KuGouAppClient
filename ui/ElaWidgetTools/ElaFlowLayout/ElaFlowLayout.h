@@ -46,7 +46,7 @@ public:
     /**
      * @brief 析构函数，释放流式布局资源
      */
-    ~ElaFlowLayout();
+    ~ElaFlowLayout() override;
 
     /**
      * @brief 添加布局项

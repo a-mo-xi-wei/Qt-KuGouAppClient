@@ -9,6 +9,8 @@
 #ifndef SORTOPTIONMENU_H
 #define SORTOPTIONMENU_H
 
+#include <QPointer>
+
 #include "../BaseMenu.h"
 #include "../MenuBtn.hpp"
 
@@ -102,7 +104,7 @@ public:
     void randomSort();
 
 private:
-    MenuBtn* m_sortBtn{}; ///< 记录当前选中的排序按钮
+    QPointer<MenuBtn> m_sortBtn;; ///< 记录当前选中的排序按钮
 };
 
 #endif // SORTOPTIONMENU_H

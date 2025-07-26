@@ -26,8 +26,7 @@ ElaScrollBarPrivate::ElaScrollBarPrivate(QObject* parent)
  * @brief 析构函数，释放滚动条私有资源
  */
 ElaScrollBarPrivate::~ElaScrollBarPrivate()
-{
-}
+= default;
 
 /**
  * @brief 范围变化事件处理

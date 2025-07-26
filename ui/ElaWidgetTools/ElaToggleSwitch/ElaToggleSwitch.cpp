@@ -42,8 +42,7 @@ ElaToggleSwitch::ElaToggleSwitch(QWidget* parent)
  * @brief 析构函数
  */
 ElaToggleSwitch::~ElaToggleSwitch()
-{
-}
+= default;
 
 /**
  * @brief 设置开关状态

@@ -39,8 +39,7 @@ ElaMessageBarManager::ElaMessageBarManager(QObject* parent)
  * @brief 析构函数，释放消息栏管理器资源
  */
 ElaMessageBarManager::~ElaMessageBarManager()
-{
-}
+= default;
 
 /**
  * @brief 请求消息栏事件

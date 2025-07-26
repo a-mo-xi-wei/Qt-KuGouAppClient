@@ -15,13 +15,12 @@
 #include "stdafx.h"
 #include "libhttp.h"
 
-class ElaSuggestion : public QObject
-{
+class ElaSuggestion : public QObject {
     Q_OBJECT
-    Q_PROPERTY_CREATE(ElaIconType::IconName, ElaIcon)        ///< 建议项图标
-    Q_PROPERTY_CREATE(QString, SuggestText)                  ///< 建议项文本
-    Q_PROPERTY_CREATE(QString, SuggestKey)                   ///< 建议项唯一键
-    Q_PROPERTY_CREATE(QVariantMap, SuggestData)              ///< 建议项数据
+    Q_PROPERTY_CREATE(ElaIconType::IconName, ElaIcon) ///< 建议项图标
+    Q_PROPERTY_CREATE(QString, SuggestText)           ///< 建议项文本
+    Q_PROPERTY_CREATE(QString, SuggestKey)            ///< 建议项唯一键
+    Q_PROPERTY_CREATE(QVariantMap, SuggestData)       ///< 建议项数据
 
 public:
     /**
@@ -29,6 +28,7 @@ public:
      * @param parent 父对象指针，默认为 nullptr
      */
     explicit ElaSuggestion(QObject *parent = nullptr);
+
     ~ElaSuggestion() override;
 };
 
@@ -45,13 +45,12 @@ class ElaSuggestBoxSearchViewContainer;
  * @class ElaSuggestBoxPrivate
  * @brief 搜索建议框的私有实现，管理建议项和界面
  */
-class ElaSuggestBoxPrivate : public QObject
-{
+class ElaSuggestBoxPrivate : public QObject {
     Q_OBJECT
-    Q_D_CREATE(ElaSuggestBox)                                ///< 声明控件指针
+    Q_D_CREATE(ElaSuggestBox) ///< 声明控件指针
 
-    Q_PROPERTY_CREATE_D(int, BorderRadius)                   ///< 边框圆角半径
-    Q_PROPERTY_CREATE_D(Qt::CaseSensitivity, CaseSensitivity)///< 搜索大小写敏感性
+    Q_PROPERTY_CREATE_D(int, BorderRadius)                    ///< 边框圆角半径
+    Q_PROPERTY_CREATE_D(Qt::CaseSensitivity, CaseSensitivity) ///< 搜索大小写敏感性
 
 public:
     /**
@@ -94,19 +93,19 @@ private slots:
     void onSearchEditWidthChanged();
 
 private:
-    ElaThemeType::ThemeMode _themeMode;                      ///< 当前主题模式
-    QAction *_lightSearchAction{nullptr};                    ///< 亮色搜索图标动作
-    QAction *_darkSearchAction{nullptr};                     ///< 暗色搜索图标动作
-    QVector<QSharedPointer<ElaSuggestion>> _suggestionVector;         ///< 建议项列表
+    ElaThemeType::ThemeMode _themeMode;                               ///< 当前主题模式
+    QAction *_lightSearchAction{nullptr};                             ///< 亮色搜索图标动作
+    QAction *_darkSearchAction{nullptr};                              ///< 暗色搜索图标动作
+    QVector<QSharedPointer<ElaSuggestion> > _suggestionVector;        ///< 建议项列表
     ElaSuggestBoxSearchViewContainer *_searchViewBaseWidget{nullptr}; ///< 建议框容器
-    ElaLineEdit *_searchEdit{nullptr};                       ///< 搜索编辑框
-    ElaSuggestModel *_searchModel{nullptr};                  ///< 建议项模型
-    ElaBaseListView *_searchView{nullptr};                   ///< 建议项视图
-    ElaSuggestDelegate *_searchDelegate{nullptr};            ///< 建议项委托
-    QVBoxLayout *_shadowLayout{nullptr};                     ///< 阴影布局
-    QSize _lastSize;                                         ///< 上次尺寸
-    bool _isExpandAnimationFinished{true};                   ///< 展开动画完成标志
-    bool _isCloseAnimationFinished{true};                    ///< 关闭动画完成标志
+    ElaLineEdit *_searchEdit{nullptr};                                ///< 搜索编辑框
+    ElaSuggestModel *_searchModel{nullptr};                           ///< 建议项模型
+    ElaBaseListView *_searchView{nullptr};                            ///< 建议项视图
+    ElaSuggestDelegate *_searchDelegate{nullptr};                     ///< 建议项委托
+    QVBoxLayout *_shadowLayout{nullptr};                              ///< 阴影布局
+    QSize _lastSize;                                                  ///< 上次尺寸
+    bool _isExpandAnimationFinished{true};                            ///< 展开动画完成标志
+    bool _isCloseAnimationFinished{true};                             ///< 关闭动画完成标志
 
     /**
      * @brief 启动尺寸动画
@@ -131,10 +130,10 @@ private:
     void _doStartSizeAnimation();
 
     /*---------------*/
-    QSize _pendingSize;                                      ///< 待处理的目标尺寸
-    QTimer* _animationTimer;                                 ///< 延迟启动动画的定时器
+    QSize _pendingSize;      ///< 待处理的目标尺寸
+    QTimer *_animationTimer; ///< 延迟启动动画的定时器
 
-    CLibhttp                             m_libHttp;                 ///< HTTP 请求库
+    CLibhttp m_libHttp; ///< HTTP 请求库
 };
 
 #endif // ELASUGGESTBOXPRIVATE_H

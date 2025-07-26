@@ -97,7 +97,7 @@ private:
     /**
      * @brief 析构函数，释放消息栏资源
      */
-    ~ElaMessageBar();
+    ~ElaMessageBar() override;
 };
 
 #endif // ELAMESSAGEBAR_H

@@ -48,7 +48,7 @@ public:
     /**
      * @brief 析构函数，释放事件对象资源
      */
-    ~ElaEvent();
+    ~ElaEvent() override;
 
     /**
      * @brief 注册并初始化事件

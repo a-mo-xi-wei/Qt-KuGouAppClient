@@ -24,9 +24,7 @@ ElaFlowLayoutPrivate::ElaFlowLayoutPrivate(QObject* parent)
 /**
  * @brief 析构函数，释放流式布局私有资源
  */
-ElaFlowLayoutPrivate::~ElaFlowLayoutPrivate()
-{
-}
+ElaFlowLayoutPrivate::~ElaFlowLayoutPrivate() = default;
 
 /**
  * @brief 执行布局计算

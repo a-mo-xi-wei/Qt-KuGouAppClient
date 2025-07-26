@@ -38,8 +38,7 @@ ElaBaseListView::ElaBaseListView(QWidget *parent)
  * @brief 析构函数
  */
 ElaBaseListView::~ElaBaseListView()
-{
-}
+= default;
 
 /**
  * @brief 鼠标按下事件

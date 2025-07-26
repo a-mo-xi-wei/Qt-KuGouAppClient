@@ -52,9 +52,7 @@ ElaMenu::ElaMenu(const QString& title, QWidget* parent)
 /**
  * @brief 析构函数，释放菜单资源
  */
-ElaMenu::~ElaMenu()
-{
-}
+ElaMenu::~ElaMenu() = default;
 
 /**
  * @brief 设置菜单透明度

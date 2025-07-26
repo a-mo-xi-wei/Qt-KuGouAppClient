@@ -37,7 +37,7 @@ public:
     /**
      * @brief 析构函数，释放自定义样式资源
      */
-    ~ElaScrollBarStyle();
+    ~ElaScrollBarStyle() override;
 
     /**
      * @brief 绘制复杂控件

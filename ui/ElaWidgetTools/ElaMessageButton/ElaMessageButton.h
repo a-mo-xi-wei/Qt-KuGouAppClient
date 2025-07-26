@@ -49,7 +49,7 @@ public:
     /**
      * @brief 析构函数，释放消息按钮资源
      */
-    ~ElaMessageButton();
+    ~ElaMessageButton() override;
 
 protected:
     /**

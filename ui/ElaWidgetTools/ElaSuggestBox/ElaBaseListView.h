@@ -34,12 +34,12 @@ public:
      */
     ~ElaBaseListView() override;
 
-    Q_SIGNALS:
-        /**
-         * @brief 鼠标按下信号
-         * @param index 模型索引
-         */
-        Q_SIGNAL void mousePress(const QModelIndex &index);
+Q_SIGNALS:
+    /**
+     * @brief 鼠标按下信号
+     * @param index 模型索引
+     */
+    Q_SIGNAL void mousePress(const QModelIndex &index);
 
     /**
      * @brief 鼠标释放信号

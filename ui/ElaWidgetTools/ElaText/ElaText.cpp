@@ -65,8 +65,7 @@ ElaText::ElaText(QString text, int pixelSize, QWidget* parent)
  * @brief 析构函数，释放文本标签资源
  */
 ElaText::~ElaText()
-{
-}
+= default;
 
 /**
  * @brief 设置是否任意换行

@@ -44,9 +44,7 @@ ElaMenuBar::ElaMenuBar(QWidget* parent)
 /**
  * @brief 析构函数，释放菜单栏资源
  */
-ElaMenuBar::~ElaMenuBar()
-{
-}
+ElaMenuBar::~ElaMenuBar() = default;
 
 /**
  * @brief 添加现有菜单
