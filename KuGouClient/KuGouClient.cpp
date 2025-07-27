@@ -1143,6 +1143,7 @@ bool KuGouClient::eventFilter(QObject *watched, QEvent *event) {
  * @note 切换搜索结果界面
  */
 void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
+    if (suggestData.isEmpty() || suggestText.trimmed().isEmpty() || suggestText.isNull()) return;
     ///< 之前的还没有加载完成就等候
     if (this->m_refreshMask->isLoading())return;
     ///< 切换到音乐界面
