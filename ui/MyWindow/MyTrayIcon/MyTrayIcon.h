@@ -95,6 +95,11 @@ signals:
      */
     void exit();
 
+    /**
+     * @brief 固定窗口
+     */
+    void pinTheWindow(bool flag);
+
 private slots:
     /**
      * @brief 处理托盘图标激活事件
@@ -121,7 +126,8 @@ private:
     QTimer *m_checkTimer;          ///< 鼠标位置检测定时器
     QTimer *m_flashTimer{};        ///< 闪烁定时器
     bool m_flagDialogShow = false; ///< 关于对话框显示标志
-    bool m_flagVolume = false;     ///< 音量开关标志
+    bool m_flagVolume     = false; ///< 音量开关标志
+    bool m_flagPin        = false; ///< 固定窗口标志
 };
 
 #endif // MYTRAYICON_H

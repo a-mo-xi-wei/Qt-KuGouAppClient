@@ -10,6 +10,7 @@
 #include "ElaMenu.h"
 
 #include <QDesktopServices>
+#include <QPainter>
 #include <QTimer>
 #include <QUrl>
 
@@ -74,7 +75,7 @@ void MyTrayIcon::initSysTrayMenu()
     QAction *action = nullptr;
 
     // 添加“打开我的酷狗”菜单项
-    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::ArrowsMaximize, tr("打开我的酷狗"));
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::House, tr("打开我的酷狗"));
     connect(action, &QAction::triggered, this, [this] {
         emit active();
     });
@@ -87,6 +88,8 @@ void MyTrayIcon::initSysTrayMenu()
         this->m_flagVolume = !this->m_flagVolume;
         emit noVolume(this->m_flagVolume);
     });
+
+    this->m_trayMenu->addSeparator();
 
     // 添加“关于我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleInfo, tr("关于我的酷狗"));
@@ -102,6 +105,45 @@ void MyTrayIcon::initSysTrayMenu()
     connect(action, &QAction::triggered, this, [this] {
         QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
     });
+
+    this->m_trayMenu->addSeparator();
+
+    // 添加“帮助”菜单项
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleQuestion, tr("帮助"));
+    connect(action, &QAction::triggered, this, [this] {
+        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+    });
+
+    // 添加“意见反馈”菜单选项
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::FileSignature, tr("意见反馈"));
+    connect(action, &QAction::triggered, this, [this] {
+        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+    });
+    // 添加“检查更新”菜单项
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Rotate, QString("检查更新"));
+    connect(action, &QAction::triggered, this, [this] {
+        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+    });
+
+    this->m_trayMenu->addSeparator();
+
+    // 添加“锁定酷狗”菜单项
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Thumbtack, tr("锁定酷狗"));
+    connect(action, &QAction::triggered, this, [this,action] {
+        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+        m_flagPin = !m_flagPin;
+        if (m_flagPin) action->setText("解锁酷狗");
+        else action->setText("锁定酷狗");
+        emit pinTheWindow(m_flagPin);
+    });
+
+    // 添加“切换账号”菜单项
+    action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::UserGear, tr("切换账号"));
+    connect(action, &QAction::triggered, this, [this] {
+        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+    });
+
+    this->m_trayMenu->addSeparator();
 
     // 添加“退出我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::PowerOff, tr("退出我的酷狗"));

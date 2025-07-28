@@ -798,7 +798,8 @@ void TitleWidget::on_max_toolButton_clicked()
 void TitleWidget::on_close_toolButton_clicked()
 {
     STREAM_INFO() << "显示closeDialog";
-    m_closeDialog->show(); ///< 显示退出对话框
+    m_closeDialog->exec(); ///< 显示退出对话框
+    m_closeDialog->raise(); ///< 显示退出对话框
 }
 
 /**

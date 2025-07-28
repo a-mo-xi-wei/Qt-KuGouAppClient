@@ -311,11 +311,6 @@ signals:
     void showAboutDialog();
 
     /**
-     * @brief 退出信号，通知程序退出
-     */
-    void exit();
-
-    /**
      * @brief 最大化信号，通知窗口最大化
      */
     void maxScreen();

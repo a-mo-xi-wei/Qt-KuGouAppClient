@@ -22,7 +22,7 @@ AppController::AppController()
     m_client->hide();
 
     connect(m_trayIcon, &MyTrayIcon::active, this, [this] {
-        if (m_isLoginAccepted && m_client) {
+        if (m_isLoginAccepted) {
             m_client->activateWindow();
             m_client->showNormal();
         } else {
@@ -41,6 +41,20 @@ AppController::AppController()
         m_client->onTrayIconExit();
     });
 
+    connect(m_trayIcon, &MyTrayIcon::pinTheWindow, this, [this](bool flag) {
+        auto applyPin = [this,flag](QWidget* w) {
+            if (!w) return;
+            w->setWindowFlag(Qt::WindowStaysOnTopHint, flag);
+            w->show(); ///< 更新 flag 后需重新 show
+        };
+
+        if (m_isLoginAccepted) {
+            applyPin(m_client);
+        }
+        else {
+            applyPin(m_login);
+        }
+    });
 }
 
 AppController::~AppController()
@@ -59,6 +73,10 @@ void AppController::start()
     m_login->show();
 
     connect(m_login, &QDialog::accepted, this, [this] {
+        // ✅ 关键：继承置顶状态
+        if (m_login->windowFlags() & Qt::WindowStaysOnTopHint) {
+            m_client->setWindowFlag(Qt::WindowStaysOnTopHint, true);
+        }
         m_client->show();
         connect(m_trayIcon, &MyTrayIcon::showAboutDialog,
                 m_client, &MainWindow::onShowAboutDialog);
@@ -130,3 +148,4 @@ void AppController::initFontRes()  {
     // auto families = QFontDatabase::applicationFontFamilies(fontId);
     // qDebug() << "Loaded font families:" << families; // 输出实际字体名称    //dingliehuobanfont
 }
+

@@ -34,6 +34,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_maskWidget->setVisible(false);
 
     resize(400, height());
+    setWindowFlag(Qt::WindowStaysOnTopHint, true);
     setWindowModality(Qt::ApplicationModal);
 #ifdef Q_OS_WIN
     createWinId();
