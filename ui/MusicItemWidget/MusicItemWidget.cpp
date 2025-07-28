@@ -148,11 +148,12 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
 }
 
 void MusicItemWidget::setCover(const QPixmap &pix) {
-    this->m_cover = pix;
+    this->m_cover = roundedPix(pix, m_coverLab->size(), PIX_RADIUS);
     // 更新封面标签的显示
     if (m_coverLab && !pix.isNull()) {
-        m_coverLab->setPixmap(roundedPix(pix, m_coverLab->size(), PIX_RADIUS));
+        m_coverLab->setPixmap(this->m_cover);
     }
+    this->m_information.cover = m_cover;
     update();
 }
 

@@ -137,6 +137,7 @@ void KuGouClient::initPlayer() {
     m_player->setAbility(false, false, true, false);               ///< 设置播放器能力
     m_player->setVolume(0.3);                                      ///< 设置音量为 0.3
     m_player->setMute(false);                                      ///< 取消静音
+    /*
     connect(m_player, &VideoPlayer::albumFound, this, [this](const QString &album) {
         // @note 未使用，保留用于调试
         // qDebug() << "albumFound : " << album;
@@ -153,6 +154,7 @@ void KuGouClient::initPlayer() {
         // @note 未使用，保留用于调试
         // qDebug() << "pictureFound : " << picture;
     });                                                            ///< 连接图片发现信号
+    */
 }
 
 /**
@@ -476,8 +478,17 @@ void KuGouClient::initSearchResultWidget() {
  */
 void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl) {
     auto watcher = new QFutureWatcher<QPixmap>(this);
-    connect(watcher, &QFutureWatcher<QPixmap>::finished, [item, watcher] {
+    connect(watcher, &QFutureWatcher<QPixmap>::finished, [this,item, watcher] {
         item->setCover(watcher->result());
+        connect(item, &MusicItemWidget::play, [this,item] {
+            if (!m_player->startPlay(item->m_information.netUrl.toStdString())) {
+                ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", "Failed to start playback", 2000,
+                                     this->window()); ///< 显示播放失败提示
+            }
+            // qDebug()<<"设置封面："<<item->m_information.cover;
+            ui->cover_label->removeEventFilter(this);
+            ui->cover_label->setPixmap(item->m_information.cover);
+        });
         watcher->deleteLater();
     });
     //qDebug()<<"客户端发出图片请求："<<imageUrl;
@@ -524,7 +535,7 @@ void KuGouClient::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl)
  */
 void KuGouClient::loadSongUrlAsync(MusicItemWidget *item, const QString &songHash) {
     auto watcher = new QFutureWatcher<QString>(this);
-    connect(watcher, &QFutureWatcher<QString>::finished, [item, watcher] {
+    connect(watcher, &QFutureWatcher<QString>::finished, [this,item, watcher] {
         item->setNetUrl(watcher->result());
         //qDebug()<<"成功设置网络路径 :"<<watcher->result();
         watcher->deleteLater();
@@ -688,6 +699,8 @@ void KuGouClient::initPlayWidget() {
     connect(this->m_player, &VideoPlayer::durationChanged, this, &KuGouClient::updateSliderRange); ///< 连接时长变化信号
 
     connect(this->m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap &pix) {
+        if (!QUrl(m_player->getMusicPath()).isLocalFile())
+            return;
         if (pix.isNull()) {
             ui->cover_label->installEventFilter(this);             ///< 安装事件过滤器
             ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover-gray.svg"), ui->cover_label->size(), 8)); ///< 设置默认封面
@@ -1143,7 +1156,11 @@ bool KuGouClient::eventFilter(QObject *watched, QEvent *event) {
  * @note 切换搜索结果界面
  */
 void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData) {
-    if (suggestData.isEmpty() || suggestText.trimmed().isEmpty() || suggestText.isNull()) return;
+    if (suggestText.isEmpty() || suggestText.trimmed().isEmpty() || suggestText.isNull()) {
+        ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", "Empty Suggestion", 2000,
+                             this->window()); ///< 显示播放失败提示
+        return;
+    }
     ///< 之前的还没有加载完成就等候
     if (this->m_refreshMask->isLoading())return;
     ///< 切换到音乐界面
