@@ -83,6 +83,9 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
     {
     case QStyle::CE_MenuItem:
     {
+        // 提升 menu 变量到外层作用域
+        const ElaMenu* menu = widget ? qobject_cast<const ElaMenu*>(widget) : nullptr;
+
         //内容绘制 区分类型
         if (const QStyleOptionMenuItem* mopt = qstyleoption_cast<const QStyleOptionMenuItem*>(option))
         {
@@ -137,7 +140,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                 else
                 {
                     QString iconText;
-                    const ElaMenu* menu = dynamic_cast<const ElaMenu*>(widget);
+                    // const ElaMenu* menu = dynamic_cast<const ElaMenu*>(widget);
                     if (menu)
                     {
                         QAction* action = menu->actionAt(menuRect.center());
@@ -170,6 +173,41 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                     QStringList textList = mopt->text.split("\t");
                     painter->setPen(isHovered ? _pMenuItemHoveredFontColor : (!mopt->state.testFlag(QStyle::State_Enabled) ? Qt::gray : _themeMode == ElaThemeType::Light ? Qt::black : Qt::white));
                     painter->drawText(QRectF(menuRect.x() + (_isAnyoneItemHasIcon ? contentPadding + textLeftSpacing : 0) + _iconWidth, menuRect.y(), menuRect.width(), menuRect.height()), Qt::AlignLeft | Qt::AlignVCenter | Qt::TextSingleLine, textList[0]);
+                    // ====== 新增：绘制红色小圆点 ======
+                    bool showRedDot = false;
+                    if (menu) {
+                        // 通过位置获取对应的 Action
+                        QAction* action = menu->actionAt(menuRect.center());
+                        if (action) {
+                            showRedDot = action->property("showRedDot").toBool();
+                        }
+                    }
+
+                    if (showRedDot) {
+                        painter->save();
+                        painter->setRenderHint(QPainter::Antialiasing);
+                        painter->setPen(Qt::NoPen);
+
+                        // 使用主题色或固定红色
+                        QColor redDotColor = QColor(0xFA4E32);
+
+                        painter->setBrush(redDotColor);
+
+                        // 计算文本宽度
+                        QFontMetrics fm(painter->font());
+                        int textWidth = fm.horizontalAdvance(textList[0]);
+
+                        // 计算红点位置（文本右侧）
+                        int dotSize = 8; // 红点直径
+                        int baseX = menuRect.x() + (_isAnyoneItemHasIcon ? contentPadding + textLeftSpacing : 0) + _iconWidth;
+                        int dotX = baseX + textWidth + 10; // 文本右侧5像素处
+                        int dotY = menuRect.y() + (menuRect.height() - dotSize) / 2;
+
+                        // 绘制红点
+                        painter->drawEllipse(dotX, dotY, dotSize, dotSize);
+                        painter->restore();
+                    }
+                    // ====== 结束新增 ======
                     if (textList.count() > 1)
                     {
                         painter->drawText(QRectF(menuRect.x() + contentPadding + _iconWidth + textLeftSpacing, menuRect.y(), menuRect.width() - (contentPadding * 2 + _iconWidth + textLeftSpacing), menuRect.height()), Qt::AlignRight | Qt::AlignVCenter | Qt::TextSingleLine, textList[1]);

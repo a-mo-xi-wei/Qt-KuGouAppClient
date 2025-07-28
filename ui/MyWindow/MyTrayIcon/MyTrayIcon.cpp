@@ -121,6 +121,7 @@ void MyTrayIcon::initSysTrayMenu()
     });
     // 添加“检查更新”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Rotate, QString("检查更新"));
+    action->setProperty("showRedDot", true);  // 标记显示红点
     connect(action, &QAction::triggered, this, [this] {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
     });
