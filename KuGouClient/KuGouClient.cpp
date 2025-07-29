@@ -699,9 +699,9 @@ void KuGouClient::initPlayWidget() {
     connect(this->m_player, &VideoPlayer::durationChanged, this, &KuGouClient::updateSliderRange); ///< 连接时长变化信号
 
     connect(this->m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap &pix) {
-        if (!QUrl(m_player->getMusicPath()).isLocalFile())
-            return;
         if (pix.isNull()) {
+            if (!QUrl(m_player->getMusicPath()).isLocalFile())
+                return;
             ui->cover_label->installEventFilter(this);             ///< 安装事件过滤器
             ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover-gray.svg"), ui->cover_label->size(), 8)); ///< 设置默认封面
         } else {
@@ -733,7 +733,7 @@ void KuGouClient::initPlayWidget() {
         // @note 未使用，保留用于调试
         // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
         ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg"))); ///< 设置暂停图标
-        this->m_localDownload->audioFinished();                    ///< 通知本地下载组件
+        if (m_localDownload) this->m_localDownload->audioFinished();                    ///< 通知本地下载组件
     });                                                            ///< 连接音频播放结束信号
     connect(this->m_player, &VideoPlayer::errorOccur, this, [this](const QString &msg) {
         ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", msg, 2000, this->window()); ///< 显示错误提示
@@ -1621,7 +1621,7 @@ void KuGouClient::on_circle_toolButton_clicked() {
                 ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg"))); ///< 设置暂停图标
                 // @note 未使用，保留用于调试
                 // qDebug() << "正常结束";
-                this->m_localDownload->audioFinished(); ///< 通知本地下载组件
+                if (this->m_localDownload) this->m_localDownload->audioFinished(); ///< 通知本地下载组件
             }); ///< 连接正常播放结束信号
         } else {
             // @note 未使用，保留用于调试
@@ -1644,7 +1644,7 @@ void KuGouClient::on_pre_toolButton_clicked() {
                                this->window()); ///< 显示无音乐提示
         return;
     }
-    this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
+    if (this->m_localDownload) this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
 }
 
 /**
@@ -1657,7 +1657,7 @@ void KuGouClient::on_next_toolButton_clicked() {
                                this->window()); ///< 显示无音乐提示
         return;
     }
-    this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
+    if (this->m_localDownload) this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
 }
 
 /**
