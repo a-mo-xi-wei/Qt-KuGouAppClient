@@ -9,6 +9,7 @@ VideoPlayer - 多媒体播放器类实现
 #endif
 
 #include <QFileInfo>
+#include <QUrl>
 #include <unistd.h>
 #include <libavutil/error.h>
 
@@ -1156,25 +1157,40 @@ void VideoPlayer::parseMetadata(AVFormatContext *pFormatCtx) {
     m_musicAlbum = albumValue;
     emit albumFound(m_musicAlbum);
 
+    const QString path = QString::fromStdString(m_file_path);
+
     // 提取标题信息
     tag = av_dict_get(pFormatCtx->metadata, "title", nullptr, 0);
     const QString titleValue = tag ? (isGarbled(tryDecode(tag->value)) ? "" : tryDecode(tag->value)) : "";
-    if (!titleValue.isEmpty()) {
-        m_musicTitle = titleValue;
-    } else {
-        m_musicTitle = parseArtistAndTitleFromFilename(m_file_path.c_str()).second;
+    ///< 如果是网络歌曲的话，就不必发送信号了，网络歌曲自带的信息不一定能够解析出来，但是可以通过网络数据获得并存入item,通过item获取
+    // qDebug()<<m_file_path.c_str()<<" 是本地歌曲 ："<<QUrl::fromLocalFile(m_file_path.c_str()).isLocalFile();
+    // 使用isLocalFile()判断是否是本地歌曲没有效果，到头来还是只能用下面的判断
+    if (!path.startsWith("http://") && !path.startsWith("https://")) {
+        //qDebug()<<"是本地歌曲";
+        if (!titleValue.isEmpty()) {
+            m_musicTitle = titleValue;
+            //qDebug()<<"标题信息不为空："<<m_musicTitle;
+            emit titleFound(m_musicTitle);
+        } else {
+            m_musicTitle = parseArtistAndTitleFromFilename(m_file_path.c_str()).second;
+            emit titleFound(m_musicTitle);
+        }
     }
-    emit titleFound(m_musicTitle);
 
     // 提取艺术家信息
     tag = av_dict_get(pFormatCtx->metadata, "artist", nullptr, 0);
     const QString artistValue = tag ? (isGarbled(tryDecode(tag->value)) ? "" : tryDecode(tag->value)) : "";
-    if (!artistValue.isEmpty()) {
-        m_musicArtist = artistValue;
-    } else {
-        m_musicArtist = parseArtistAndTitleFromFilename(m_file_path.c_str()).first;
+    if (!path.startsWith("http://") && !path.startsWith("https://")) {
+        //qDebug()<<"是本地歌曲";
+        if (!artistValue.isEmpty()) {
+            //qDebug()<<"歌手信息不为空："<<artistValue;
+            m_musicArtist = artistValue;
+            emit artistFound(m_musicArtist);
+        } else {
+            m_musicArtist = parseArtistAndTitleFromFilename(m_file_path.c_str()).first;
+            emit artistFound(m_musicArtist);
+        }
     }
-    emit artistFound(m_musicArtist);
 
     // 提取专辑图片
     m_musicPicture = QPixmap(); // 初始化为空 QPixmap

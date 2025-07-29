@@ -356,7 +356,7 @@ public slots:
      */
     void onPlayLocalMusic(const QString& localPath);
 
-    void onSearchResultMusic(const MusicItemWidget* item);
+    void onSearchResultMusicPlay(const MusicItemWidget* item);
 
     /**
      * @brief 连接托盘音量控制信号

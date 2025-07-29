@@ -47,6 +47,7 @@ private:
     QVector<MusicItemWidget *> m_searchMusicItemVector; ///< 音乐项容器
     std::unique_ptr<RefreshMask> m_refreshMask;         ///< 刷新遮罩
     CLibhttp m_libHttp;                                 ///< HTTP 请求库
+    MusicItemWidget *m_playingItem = nullptr;           ///< 正在播放的音乐项
 };
 
 

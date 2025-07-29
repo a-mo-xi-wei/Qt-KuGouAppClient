@@ -293,6 +293,9 @@ void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &im
     connect(watcher, &QFutureWatcher<QPixmap>::finished, [this,item, watcher] {
         item->setCover(watcher->result());
         connect(item, &MusicItemWidget::play, [this,item] {
+            if (m_playingItem)m_playingItem->setPlayState(false);
+            item->setPlayState(true);
+            m_playingItem = item;
             emit playMusic(item);
         });
         watcher->deleteLater();

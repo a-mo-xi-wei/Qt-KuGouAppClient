@@ -199,7 +199,7 @@ void KuGouClient::initUi() {
     // 初始化搜索结果界面并添加到堆栈窗口
     this->m_searchResultWidget = std::make_unique<SearchResultWidget>(ui->stackedWidget);
     ui->stackedWidget->addWidget(this->m_searchResultWidget.get()); ///< 将搜索结果界面添加到堆栈窗口
-    connect(m_searchResultWidget.get(), &SearchResultWidget::playMusic, this, &KuGouClient::onSearchResultMusic); ///< 连接查找更多音乐信号
+    connect(m_searchResultWidget.get(), &SearchResultWidget::playMusic, this, &KuGouClient::onSearchResultMusicPlay); ///< 连接查找更多音乐信号
 
     this->m_sizeGrip->setFixedSize(11, 11);                       ///< 设置角标大小
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip"));  ///< 设置对象名称
@@ -480,7 +480,7 @@ void KuGouClient::initPlayWidget() {
 
     connect(this->m_player, &VideoPlayer::pictureFound, this, [this](const QPixmap &pix) {
         if (pix.isNull()) {
-            if (!QUrl(m_player->getMusicPath()).isLocalFile())
+            if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().startsWith("https://"))
                 return;
             ui->cover_label->installEventFilter(this);             ///< 安装事件过滤器
             ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover-gray.svg"), ui->cover_label->size(), 8)); ///< 设置默认封面
@@ -491,13 +491,13 @@ void KuGouClient::initPlayWidget() {
     });                                                            ///< 连接封面图片发现信号
     connect(this->m_player, &VideoPlayer::titleFound, this, [this](const QString &song) {
         // @note 未使用，保留用于调试
-        // qDebug() << "歌曲：" << song;
+        //qDebug() << "歌曲：" << song;
         m_musicTitle = song;                                       ///< 存储歌曲标题
         emit curPlaySongNameChange(song);                          ///< 发射歌曲名称变化信号
     });                                                            ///< 连接歌曲标题发现信号
     connect(this->m_player, &VideoPlayer::artistFound, this, [this](const QString &singer) {
         // @note 未使用，保留用于调试
-        // qDebug() << "歌手：" << singer;
+        //qDebug() << "歌手：" << singer;
         m_musicArtist = singer;                                    ///< 存储歌手名称
         emit curPlaySingerChange(singer);                          ///< 发射歌手名称变化信号
     });                                                            ///< 连接歌手名称发现信号
@@ -1140,7 +1140,7 @@ void KuGouClient::onPlayLocalMusic(const QString &localPath) {
     }
 }
 
-void KuGouClient::onSearchResultMusic(const MusicItemWidget *item) {
+void KuGouClient::onSearchResultMusicPlay(const MusicItemWidget *item) {
     if (!m_player->startPlay(item->m_information.netUrl.toStdString())) {
         ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", "Failed to start playback", 2000,
                              this->window()); ///< 显示播放失败提示
@@ -1148,6 +1148,11 @@ void KuGouClient::onSearchResultMusic(const MusicItemWidget *item) {
     // qDebug()<<"设置封面："<<item->m_information.cover;
     ui->cover_label->removeEventFilter(this);
     ui->cover_label->setPixmap(item->m_information.cover);
+    m_musicTitle = item->m_information.songName;
+    emit curPlaySongNameChange(m_musicTitle);
+    m_musicArtist = item->m_information.singer;
+    emit curPlaySingerChange(m_musicArtist);
+
 }
 
 void KuGouClient::onTrayIconNoVolume(const bool &flag) {
@@ -1308,12 +1313,16 @@ void KuGouClient::on_circle_toolButton_clicked() {
  * @note 播放上一首本地歌曲
  */
 void KuGouClient::on_pre_toolButton_clicked() {
+    ///< 点击下一首/上一首时需要判断当前是否播放过音乐，如果没有播放过音乐，需要显示无音乐提示
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight, "Warning", QStringLiteral("暂无可播放音乐"), 1000,
                                this->window()); ///< 显示无音乐提示
         return;
     }
-    if (this->m_localDownload) this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
+    if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().startsWith("https://")) {
+
+    }
+    else if (m_localDownload) this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
 }
 
 /**
@@ -1326,7 +1335,10 @@ void KuGouClient::on_next_toolButton_clicked() {
                                this->window()); ///< 显示无音乐提示
         return;
     }
-    if (this->m_localDownload) this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
+    if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().startsWith("https://")) {
+
+    }
+    else if (m_localDownload) this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
 }
 
 /**
