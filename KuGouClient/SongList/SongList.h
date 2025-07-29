@@ -13,7 +13,6 @@
 
 #include "ListOptionMenu/ListOptionMenu.h"
 #include <QWidget>
-#include <vector>
 
 class RefreshMask;
 /**
