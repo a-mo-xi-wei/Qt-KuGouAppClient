@@ -1,0 +1,40 @@
+/*--------------------SearchResultWidget-operationWidget------------------------------*/
+QToolButton#SearchResultWidget-playAllBtn ,
+QToolButton#SearchResultWidget-highListenBtn {
+    background-color: qlineargradient(x1: 0, y1: 0,x2: 1, y2: 0,stop: 0 #67BDFF,stop: 1 #29A2FF);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    padding-left: 14px;
+}
+QToolButton#SearchResultWidget-playAllBtn:hover ,
+QToolButton#SearchResultWidget-highListenBtn:hover {
+    background-color: #29A2FF;
+}
+QToolButton#SearchResultWidget-downloadAllBtn ,
+QToolButton#SearchResultWidget-batchOperationBtn {
+    background-color: #E8EDF5;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-size: 13px;
+    padding-left: 14px;
+}
+QLabel#searchResultTopLabel{
+    font-size: 13px;
+}
+/* 只作用于 #SearchResultWidgetScrollArea 里的纵向滚动条 */
+QScrollArea#SearchResultWidgetScrollArea {
+    background-color: transparent;
+}
+
+/* 单独设置视口（viewport）透明 */
+QScrollArea#SearchResultWidgetScrollArea::viewport {
+    background-color: transparent;
+}
+
+/* 设置内容区域透明（scrollAreaWidgetContents） */
+QScrollArea#SearchResultWidgetScrollArea > QWidget > QWidget#SearchResultWidgetScrollWidget {
+    background-color: transparent;
+}

@@ -33,10 +33,13 @@
 #include "Search.h"
 #include "SpeedDialogState.h"
 #include "TitleWidget.h"
+// 其他
+#include "SearchResultWidget.h"
 
 #include <QPointer>
 #include <memory>
 #include <array>
+
 
 /**
  * @class QButtonGroup
@@ -118,35 +121,6 @@ private:
     void initStackedWidget();
 
     void onSelectedWidget(const int &id);
-
-    /**
-     * @brief 初始化搜索结果界面
-     */
-    void initSearchResultWidget();
-
-    /**
-     * @brief 异步加载搜索结果里面的封面图片
-     * @param item 音乐项
-     * @param imageUrl 封面图片的网络路径
-     */
-    void loadCoverAsync(MusicItemWidget *item, const QString &imageUrl);
-
-    /**
-     * @brief 异步加载搜索结果里的音乐路径
-     * @param item 音乐项
-     * @param songHash 歌曲的网络哈希
-     */
-    void loadSongUrlAsync(MusicItemWidget *item, const QString &songHash);
-
-    /**
-     * @brief 模板函数，初始化堆栈窗口组件
-     * @tparam T 组件类型
-     * @param component 组件智能指针
-     * @param index 插入索引
-     * @note 将组件插入到堆栈窗口的指定位置
-     */
-    template<typename T>
-    void initComponent(std::unique_ptr<T>& component, const int& index);
 
     /**
      * @brief 初始化标题栏
@@ -382,6 +356,8 @@ public slots:
      */
     void onPlayLocalMusic(const QString& localPath);
 
+    void onSearchResultMusic(const MusicItemWidget* item);
+
     /**
      * @brief 连接托盘音量控制信号
      * @param flag 是否静音
@@ -486,11 +462,10 @@ private:
     std::unique_ptr<AllMusic>           m_allMusic;        ///< 全部音乐界面
     std::unique_ptr<ListenBook>         m_listenBook;      ///< 听书界面
     std::unique_ptr<Search>             m_search;          ///< 搜索界面
-    std::unique_ptr<QWidget>            m_searchResultWidget;///< 搜索结果界面
+    std::unique_ptr<SearchResultWidget> m_searchResultWidget;///< 搜索结果界面
 
     std::array<QPointer<QWidget>, 17>   m_pages{};               ///< 16 components + search result
     int                                 m_currentIdx{3};         ///< 当前页面索引
-    QVector<MusicItemWidget *>          m_searchMusicItemVector; ///< 音乐项容器
     // 窗口缩放相关
     bool m_isTransForming = false;                      ///< 是否正在执行缩放动画
     bool m_isSingleCircle = false;                      ///< 是否单曲循环

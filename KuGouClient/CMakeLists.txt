@@ -43,6 +43,8 @@ add_subdirectory(AllMusic)
 add_subdirectory(ListenBook)
 #包含搜索模块
 add_subdirectory(Search)
+###        网络歌曲     ####
+add_subdirectory(SearchResultWidget)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
@@ -51,5 +53,5 @@ target_link_libraries(${PROJECT_NAME}
         Qt6::Widgets Qt6::Multimedia MyWindow MyPlayer
         AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo
+        Search SongList StartVideo SearchResultWidget
 )
