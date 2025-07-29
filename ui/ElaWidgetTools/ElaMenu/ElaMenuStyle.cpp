@@ -198,7 +198,7 @@ void ElaMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                         int textWidth = fm.horizontalAdvance(textList[0]);
 
                         // 计算红点位置（文本右侧）
-                        int dotSize = 8; // 红点直径
+                        int dotSize = 6; // 红点直径
                         int baseX = menuRect.x() + (_isAnyoneItemHasIcon ? contentPadding + textLeftSpacing : 0) + _iconWidth;
                         int dotX = baseX + textWidth + 10; // 文本右侧5像素处
                         int dotY = menuRect.y() + (menuRect.height() - dotSize) / 2;
