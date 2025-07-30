@@ -339,6 +339,10 @@ void MusicItemWidget::getMenuPosition(const QPoint &pos)
 
 }
 
+/**
+ * @brief 设置item是否高亮闪烁
+ * @param highlight 是否高亮闪烁
+ */
 void MusicItemWidget::setHighlight(bool highlight) {
     if (highlight) {
         m_highlightAlpha = 0;       // 从完全透明开始
