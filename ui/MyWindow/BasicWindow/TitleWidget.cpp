@@ -206,8 +206,8 @@ void TitleWidget::initUi()
     ui->max_toolButton->setRadius(6);
     ui->close_toolButton->setRadius(6);
 
-    ui->min_toolButton->setFillColor(QColor(QStringLiteral("#969696")));
-    ui->max_toolButton->setFillColor(QColor(QStringLiteral("#969696")));
+    ui->min_toolButton->setFillColor(QColor(QStringLiteral("#93b5cf")));
+    ui->max_toolButton->setFillColor(QColor(QStringLiteral("#93b5cf")));
     ui->close_toolButton->setFillColor(QColor(QStringLiteral("#FF0066")));
 
     ui->min_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));

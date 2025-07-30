@@ -129,7 +129,7 @@ void AboutDialog::initDialog(QVBoxLayout *lay)
 
         goToGiteeButton->setCursor(Qt::PointingHandCursor);
         goToGiteeButton->setText("前往Gitee");
-        goToGiteeButton->setFillColor(QColor(QStringLiteral("#969696")));
+        goToGiteeButton->setFillColor(QColor(QStringLiteral("#93B5CF")));
         goToGiteeButton->setStyleSheet("background: transparent; border: none;");
         goToGiteeButton->setRadius(10);
         goToGiteeButton->setSpeed(5);
