@@ -18,6 +18,10 @@ public:
 
     void handleSuggestion(const QString &suggestText);
 
+    void playNextMusic();
+
+    void playPreviousMusic();
+
 private:
     void initUi();
 

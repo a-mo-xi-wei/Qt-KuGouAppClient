@@ -174,6 +174,34 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
     });
 }
 
+void SearchResultWidget::playNextMusic() {
+    if (m_searchMusicItemVector.isEmpty())
+        return;
+
+    int nextIndex = 0;
+    if (m_playingItem) {
+        int currentIndex = m_searchMusicItemVector.indexOf(m_playingItem);
+        nextIndex = (currentIndex + 1) % m_searchMusicItemVector.size();
+    }
+
+    emit m_searchMusicItemVector[nextIndex]->play();  // 直接发送 play 信号
+}
+
+void SearchResultWidget::playPreviousMusic() {
+    if (m_searchMusicItemVector.isEmpty())
+        return;
+
+    int prevIndex = 0;
+    if (m_playingItem) {
+        int currentIndex = m_searchMusicItemVector.indexOf(m_playingItem);
+        prevIndex = (currentIndex - 1 + m_searchMusicItemVector.size()) % m_searchMusicItemVector.size();
+    } else {
+        prevIndex = m_searchMusicItemVector.size() - 1;
+    }
+
+    emit m_searchMusicItemVector[prevIndex]->play();  // 同样直接发送
+}
+
 void SearchResultWidget::initUi() {
     // 创建顶部水平布局，显示搜索结果标题
     auto hlay1 = new QHBoxLayout; ///< 搜索结果顶部水平布局
@@ -294,8 +322,8 @@ void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &im
         item->setCover(watcher->result());
         connect(item, &MusicItemWidget::play, [this,item] {
             if (m_playingItem)m_playingItem->setPlayState(false);
-            item->setPlayState(true);
             m_playingItem = item;
+            m_playingItem->setPlayState(true);
             emit playMusic(item);
         });
         watcher->deleteLater();
