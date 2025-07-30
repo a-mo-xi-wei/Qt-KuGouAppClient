@@ -222,7 +222,7 @@ void KuGouClient::initStackedWidget() {
 
     ///< 默认构造下面两个界面的原因：由于图片解码后占用内存过高，导致切换时动态申请内存会造成卡顿，因此不采用懒加载
     m_pages[3]->layout()->addWidget(createPage(3)); // Default to RecommendForYou
-    m_pages[4]->layout()->addWidget(createPage(4));
+    m_pages[11]->layout()->addWidget(createPage(11));
 
     ui->stackedWidget->setCurrentIndex(3);
 
@@ -233,13 +233,13 @@ void KuGouClient::initStackedWidget() {
 void KuGouClient::onSelectedWidget(const int& id) {
     if (m_currentIdx == id) return;
     ///< 可以在此处筛选哪些界面不需要动态地创建删除
-    if (id == 3 ||  id == 4 || id == 16) {
+    if (id == 3 || id == 16 || id == 11) {
         ///< 已经缓存的直接显示
         m_isInitialized = true;
         ///< 删除还是要正常进行
         enableButton(false);
         QWidget* placeholder = m_pages[m_currentIdx];
-        if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 4) {
+        if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 11) {
             if (!placeholder) {
                 qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
                 enableButton(true);
@@ -263,8 +263,8 @@ void KuGouClient::onSelectedWidget(const int& id) {
                     case 0: m_live.reset(); break;
                     case 1: m_listenBook.reset(); break;
                     case 2: m_search.reset(); break;
-                        // case 3: m_recommendForYou.reset();break;
-                        // case 4: m_musicRepository.reset(); break;
+                    // case 3: m_recommendForYou.reset();break;
+                    case 4: m_musicRepository.reset(); break;
                     case 5: m_channel.reset(); break;
                     case 6: m_video.reset(); break;
                     case 7: m_aiChat.reset(); break;
@@ -301,7 +301,7 @@ void KuGouClient::onSelectedWidget(const int& id) {
     /// qDebug()<<__LINE__ << " 设置按钮状态为禁用";
     enableButton(false);
     QWidget* placeholder = m_pages[m_currentIdx];
-    if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 4) {
+    if ( m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 11) {
         if (!placeholder) {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
@@ -326,14 +326,14 @@ void KuGouClient::onSelectedWidget(const int& id) {
                 case 1: m_listenBook.reset(); break;
                 case 2: m_search.reset(); break;
                 // case 3: m_recommendForYou.reset();break;
-                // case 4: m_musicRepository.reset(); break;
+                case 4: m_musicRepository.reset(); break;
                 case 5: m_channel.reset(); break;
                 case 6: m_video.reset(); break;
                 case 7: m_aiChat.reset(); break;
                 case 8: m_songList.reset(); break;
                 case 9: m_dailyRecommend.reset(); break;
                 case 10: m_collection.reset(); break;
-                case 11: m_localDownload.reset();break;
+                // case 11: m_localDownload.reset();break;
                 case 12: m_musicCloudDisk.reset(); break;
                 case 13: m_purchasedMusic.reset(); break;
                 case 14: m_recentlyPlayed.reset(); break;
@@ -591,84 +591,104 @@ QWidget* KuGouClient::createPage(int id) {
     QWidget* page = nullptr;
     switch (id) {
         case 0: // Live
-            if (!m_live) m_live = std::make_unique<Live>(ui->stackedWidget);
+            if (!m_live) {
+                m_live = std::make_unique<Live>(ui->stackedWidget);
+                connect(m_live.get(), &Live::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_live.get();
             page = m_live.get();
-            connect(m_live.get(),&Live::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 1: // ListenBook
-            if (!m_listenBook) m_listenBook = std::make_unique<ListenBook>(ui->stackedWidget);
+            if (!m_listenBook) {
+                m_listenBook = std::make_unique<ListenBook>(ui->stackedWidget);
+                connect(m_listenBook.get(), &ListenBook::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_listenBook.get();
             page = m_listenBook.get();
-            connect(m_listenBook.get(),&ListenBook::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 2: // Search
-            if (!m_search) m_search = std::make_unique<Search>(ui->stackedWidget);
+            if (!m_search) {
+                m_search = std::make_unique<Search>(ui->stackedWidget);
+                connect(m_search.get(), &Search::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_search.get();
             page = m_search.get();
-            connect(m_search.get(),&Search::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 3: // RecommendForYou
-            if (!m_recommendForYou) m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
+            if (!m_recommendForYou) {
+                m_recommendForYou = std::make_unique<RecommendForYou>(ui->stackedWidget);
+                connect(m_recommendForYou.get(), &RecommendForYou::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_recommendForYou.get();
             page = m_recommendForYou.get();
-            connect(m_recommendForYou.get(),&RecommendForYou::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 4: // MusicRepository
-            if (!m_musicRepository) m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
+            if (!m_musicRepository) {
+                m_musicRepository = std::make_unique<MusicRepository>(ui->stackedWidget);
+                connect(m_musicRepository.get(), &MusicRepository::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_musicRepository.get();
             page = m_musicRepository.get();
-            connect(m_musicRepository.get(),&MusicRepository::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 5: // Channel
-            if (!m_channel) m_channel = std::make_unique<Channel>(ui->stackedWidget);
+            if (!m_channel) {
+                m_channel = std::make_unique<Channel>(ui->stackedWidget);
+                connect(m_channel.get(), &Channel::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_channel.get();
             page = m_channel.get();
-            connect(m_channel.get(),&Channel::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 6: // Video
-            if (!m_video) m_video = std::make_unique<Video>(ui->stackedWidget);
+            if (!m_video) {
+                m_video = std::make_unique<Video>(ui->stackedWidget);
+                connect(m_video.get(), &Video::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_video.get();
             page = m_video.get();
-            connect(m_video.get(),&Video::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 7: // AiChat
-            if (!m_aiChat) m_aiChat = std::make_unique<AiChat>(ui->stackedWidget);
+            if (!m_aiChat) {
+                m_aiChat = std::make_unique<AiChat>(ui->stackedWidget);
+                connect(m_aiChat.get(), &AiChat::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_aiChat.get();
             page = m_aiChat.get();
-            connect(m_aiChat.get(),&AiChat::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 8: // SongList
-            if (!m_songList) m_songList = std::make_unique<SongList>(ui->stackedWidget);
+            if (!m_songList) {
+                m_songList = std::make_unique<SongList>(ui->stackedWidget);
+                connect(m_songList.get(), &SongList::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_songList.get();
             page = m_songList.get();
-            connect(m_songList.get(),&SongList::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 9: // DailyRecommend
-            if (!m_dailyRecommend) m_dailyRecommend = std::make_unique<DailyRecommend>(ui->stackedWidget);
+            if (!m_dailyRecommend) {
+                m_dailyRecommend = std::make_unique<DailyRecommend>(ui->stackedWidget);
+                connect(m_dailyRecommend.get(), &DailyRecommend::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_dailyRecommend.get();
             page = m_dailyRecommend.get();
-            connect(m_dailyRecommend.get(),&DailyRecommend::initialized,this,[this] {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 10: // MyCollection
             if (!m_collection) {
@@ -676,12 +696,12 @@ QWidget* KuGouClient::createPage(int id) {
                 connect(m_collection.get(), &MyCollection::find_more_music, this, [this] {
                     ui->music_repository_toolButton->click();
                 });
-            }
+                connect(m_collection.get(), &MyCollection::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_collection.get();
             page = m_collection.get();
-            connect(m_collection.get(),&MyCollection::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 11: // LocalDownload
             if (!m_localDownload) {
@@ -694,12 +714,12 @@ QWidget* KuGouClient::createPage(int id) {
                     if (m_isSingleCircle) ui->circle_toolButton->click();
                 });
                 connect(this, &KuGouClient::maxScreen, m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
-            }
+                connect(m_localDownload.get(), &LocalDownload::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_localDownload.get();
             page = m_localDownload.get();
-            connect(m_localDownload.get(),&LocalDownload::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 12: // MusicCloudDisk
             if (!m_musicCloudDisk) {
@@ -707,12 +727,12 @@ QWidget* KuGouClient::createPage(int id) {
                 connect(m_musicCloudDisk.get(), &MusicCloudDisk::find_more_music, this, [this] {
                     ui->music_repository_toolButton->click();
                 });
-            }
+                connect(m_musicCloudDisk.get(), &MusicCloudDisk::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_musicCloudDisk.get();
             page = m_musicCloudDisk.get();
-            connect(m_musicCloudDisk.get(), &MusicCloudDisk::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 13: // PurchasedMusic
             if (!m_purchasedMusic) {
@@ -720,12 +740,12 @@ QWidget* KuGouClient::createPage(int id) {
                 connect(m_purchasedMusic.get(), &PurchasedMusic::find_more_music, this, [this] {
                     ui->music_repository_toolButton->click();
                 });
-            }
+                connect(m_purchasedMusic.get(), &PurchasedMusic::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_purchasedMusic.get();
             page = m_purchasedMusic.get();
-            connect(m_purchasedMusic.get(), &PurchasedMusic::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 14: // RecentlyPlayed
             if (!m_recentlyPlayed) {
@@ -736,12 +756,12 @@ QWidget* KuGouClient::createPage(int id) {
                 connect(m_recentlyPlayed.get(), &RecentlyPlayed::find_more_channel, this, [this] {
                     ui->channel_toolButton->click();
                 });
-            }
+                connect(m_recentlyPlayed.get(), &RecentlyPlayed::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_recentlyPlayed.get();
             page = m_recentlyPlayed.get();
-            connect(m_recentlyPlayed.get(), &RecentlyPlayed::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         case 15: // AllMusic
             if (!m_allMusic) {
@@ -749,12 +769,12 @@ QWidget* KuGouClient::createPage(int id) {
                 connect(m_allMusic.get(), &AllMusic::find_more_music, this, [this] {
                     ui->music_repository_toolButton->click();
                 });
-            }
+                connect(m_allMusic.get(), &AllMusic::initialized, this, [this] {
+                    this->m_isInitialized = true;
+                    enableButton(true);
+                }, Qt::QueuedConnection);
+            } else return m_allMusic.get();
             page = m_allMusic.get();
-            connect(m_allMusic.get(), &AllMusic::initialized, this, [this]  {
-                this->m_isInitialized = true;
-                enableButton(true);
-            },Qt::QueuedConnection);
             break;
         default:
             qWarning() << "[WARNING] Invalid page ID:" << id;
@@ -1320,9 +1340,11 @@ void KuGouClient::on_pre_toolButton_clicked() {
         return;
     }
     if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().startsWith("https://")) {
-
+        m_searchResultWidget->playPreviousMusic();
     }
-    else if (m_localDownload) this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
+    else if (m_localDownload) {
+        this->m_localDownload->playLocalSongPrevSong(); ///< 播放上一首
+    }
 }
 
 /**
@@ -1336,9 +1358,11 @@ void KuGouClient::on_next_toolButton_clicked() {
         return;
     }
     if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().startsWith("https://")) {
-
+        m_searchResultWidget->playNextMusic();
     }
-    else if (m_localDownload) this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
+    else if (m_localDownload) {
+        this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
+    }
 }
 
 /**
