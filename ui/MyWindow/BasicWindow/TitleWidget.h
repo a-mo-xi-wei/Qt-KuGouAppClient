@@ -64,12 +64,6 @@ public:
     explicit TitleWidget(QWidget *parent = nullptr);
 
     /**
-     * @brief 显示标题选项菜单
-     * @param pos 菜单显示的全局位置
-     */
-    void showMenu(const QPoint &pos);
-
-    /**
      * @brief 获取最大化按钮
      * @return 最大化按钮指针
      */
@@ -93,12 +87,6 @@ private:
      * @brief 初始化界面元素
      */
     void initUi();
-
-    /**
-     * @brief 设置菜单显示位置，确保在屏幕范围内
-     * @param pos 菜单的全局位置
-     */
-    void setMenuPosition(const QPoint &pos);
 
     /**
      * @brief 生成圆角图片

@@ -123,28 +123,6 @@ void PaidSingle::initUi()
 }
 
 /**
- * @brief 获取排序菜单位置
- * @param pos 鼠标位置
- * @note 调整菜单位置以适应屏幕边界
- */
-void PaidSingle::getMenuPosition(const QPoint &pos)
-{
-    this->m_menuPosition = pos;
-    const QScreen *screen = QGuiApplication::primaryScreen(); ///< 获取主屏幕
-    const QRect screenGeometry = screen->geometry();     ///< 获取屏幕尺寸
-    const int menuRightPos = pos.x() + m_sortOptMenu->width(); ///< 计算菜单右侧位置
-    const int menuBottomPos = pos.y() + m_sortOptMenu->height(); ///< 计算菜单底部位置
-    if (menuRightPos > screenGeometry.right()) {
-        const int offset = menuRightPos - screenGeometry.right() + 5; ///< 计算右侧偏移
-        m_menuPosition.setX(pos.x() - offset);           ///< 调整X坐标
-    }
-    if (menuBottomPos > screenGeometry.bottom()) {
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5; ///< 计算底部偏移
-        m_menuPosition.setY(pos.y() - offset);           ///< 调整Y坐标
-    }
-}
-
-/**
  * @brief 播放按钮点击槽函数
  * @note 显示无音乐提示
  */
@@ -159,8 +137,7 @@ void PaidSingle::on_single_play_toolButton_clicked()
  */
 void PaidSingle::on_single_sort_toolButton_clicked()
 {
-    getMenuPosition(QCursor::pos());                    ///< 获取菜单位置
-    this->m_sortOptMenu->popup(this->m_menuPosition);   ///< 弹出排序菜单
+    this->m_sortOptMenu->exec(QCursor::pos());
 }
 
 /**

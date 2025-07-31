@@ -232,18 +232,6 @@ void TitleWidget::initUi()
 }
 
 /**
- * @brief 显示标题选项菜单
- * @param pos 菜单显示的全局位置
- */
-void TitleWidget::showMenu(const QPoint &pos)
-{
-    setMenuPosition(pos);
-    // qDebug() << "当前Menu位置: " << pos << " 显示菜单"; ///< 调试用，记录菜单位置
-    this->m_titleOptMenu->popup(this->m_menuPosition); ///< 显示菜单
-    // qDebug() << "显示菜单成功"; ///< 调试用，记录菜单显示
-}
-
-/**
  * @brief 获取最大化按钮
  * @return 最大化按钮指针
  */
@@ -271,7 +259,7 @@ void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event)
 void TitleWidget::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::RightButton) {
-        showMenu(this->mapToGlobal(event->pos())); ///< 右键显示菜单
+        this->m_titleOptMenu->exec(QCursor::pos());
     } else {
         QWidget::mousePressEvent(event);
     }
@@ -761,7 +749,7 @@ void TitleWidget::on_message_toolButton_clicked()
  */
 void TitleWidget::on_menu_toolButton_clicked()
 {
-    showMenu(QCursor::pos());
+    this->m_titleOptMenu->exec(QCursor::pos());
 }
 
 /**
@@ -991,47 +979,6 @@ void TitleWidget::onLeftMenu_allMusic_clicked()
     this->m_curType = AllMusic;
     qDebug()<<"点击全部音乐";
     STREAM_INFO()<<"切换全部音乐界面";
-}
-
-/**
- * @brief 设置菜单显示位置，确保在屏幕范围内
- * @param pos 菜单的全局位置
- */
-void TitleWidget::setMenuPosition(const QPoint &pos)
-{
-    this->m_menuPosition = pos;
-    // 获取屏幕的尺寸
-    QScreen *screen = QGuiApplication::primaryScreen();
-    QRect screenGeometry = screen->geometry();
-
-    // 计算菜单右侧的全局位置
-    //int menuLeftPos = pos.x() - m_menu->width();
-    //qDebug() << "Menu width:" << m_titleOptMenu->width();
-    int menuRightPos  = pos.x() + m_titleOptMenu->width();
-    int menuBottomPos = pos.y() + m_titleOptMenu->height();
-    //int menuTopPos = pos.y() - m_menu->height();
-    // 若菜单左侧超出屏幕左侧 (不存在)
-    //if(menuLeftPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setX(10);
-    //}
-    // 如果菜单右侧超出屏幕右侧
-    if (menuRightPos > screenGeometry.right()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        int offset = menuRightPos - screenGeometry.right() + 5;
-        m_menuPosition.setX(pos.x() - offset);
-    }
-    // 如果菜单下侧超出屏幕下侧
-    if (menuBottomPos > screenGeometry.bottom()) {
-        // 动态调整菜单位置，使其在屏幕内显示
-        int offset = menuBottomPos - screenGeometry.bottom() + 5;
-        m_menuPosition.setY(pos.y() - offset);
-    }
-    // 如果菜单下侧超出屏幕下侧（不存在）
-    //if(menuTopPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setY(10);
-    //}
 }
 
 /**

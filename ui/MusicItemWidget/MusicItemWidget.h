@@ -131,12 +131,6 @@ public:
     void setPlayState(const bool &state);
 
     /**
-     * @brief 获取菜单显示位置
-     * @param pos 鼠标位置
-     */
-    void getMenuPosition(const QPoint &pos);
-
-    /**
      * @brief 设置高亮提示
      * @param highlight 是否高亮
      * @note 高亮item项

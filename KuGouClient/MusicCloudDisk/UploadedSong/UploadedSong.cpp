@@ -57,8 +57,7 @@ UploadedSong::~UploadedSong()
  * @brief 初始化界面
  * @note 设置工具提示、图标、搜索动作和排序连接
  */
-void UploadedSong::initUi()
-{
+void UploadedSong::initUi() {
     auto cloud_share_toolButton_toolTip = new ElaToolTip(ui->cloud_share_toolButton); ///< 创建分享按钮工具提示
     cloud_share_toolButton_toolTip->setToolTip(QStringLiteral("分享")); ///< 设置分享提示
     auto cloud_sort_toolButton_toolTip = new ElaToolTip(ui->cloud_sort_toolButton); ///< 创建排序按钮工具提示
@@ -124,37 +123,12 @@ void UploadedSong::initUi()
 }
 
 /**
- * @brief 获取菜单位置
- * @param pos 鼠标位置
- * @note 动态调整菜单位置以适应屏幕
- */
-void UploadedSong::getMenuPosition(const QPoint &pos)
-{
-    this->m_menuPosition = pos;                          ///< 设置菜单位置
-    const QScreen *screen = QGuiApplication::primaryScreen(); ///< 获取主屏幕
-    const QRect screenGeometry = screen->geometry();      ///< 获取屏幕几何
-    const int menuRightPos = pos.x() + m_sortOptMenu->width(); ///< 计算菜单右侧
-    const int menuBottomPos = pos.y() + m_sortOptMenu->height(); ///< 计算菜单底部
-    if (menuRightPos > screenGeometry.right())
-    {
-        const int offset = menuRightPos - screenGeometry.right() + 5; ///< 计算右侧偏移
-        m_menuPosition.setX(pos.x() - offset);           ///< 调整 X 坐标
-    }
-    if (menuBottomPos > screenGeometry.bottom())
-    {
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5; ///< 计算底部偏移
-        m_menuPosition.setY(pos.y() - offset);           ///< 调整 Y 坐标
-    }
-}
-
-/**
  * @brief 排序按钮点击槽函数
  * @note 显示排序菜单
  */
 void UploadedSong::on_cloud_sort_toolButton_clicked()
 {
-    getMenuPosition(QCursor::pos());                     ///< 获取菜单位置
-    this->m_sortOptMenu->popup(this->m_menuPosition);    ///< 显示排序菜单
+    this->m_sortOptMenu->exec(QCursor::pos());           ///< 显示菜单
 }
 
 /**

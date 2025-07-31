@@ -52,13 +52,6 @@ private:
      */
     void initUi();
 
-    /**
-     * @brief 获取排序菜单位置
-     * @param pos 鼠标位置
-     * @note 调整菜单位置以适应屏幕边界
-     */
-    void getMenuPosition(const QPoint &pos);
-
 private slots:
     /**
      * @brief 播放按钮点击槽函数

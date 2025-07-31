@@ -451,30 +451,6 @@ void LocalSong::finishLoading()
 }
 
 /**
- * @brief 获取菜单位置
- * @param pos 鼠标位置
- * @note 动态调整菜单位置以适应屏幕
- */
-void LocalSong::getMenuPosition(const QPoint &pos)
-{
-    this->m_menuPosition = pos;                          ///< 设置菜单位置
-    const QScreen *screen = QGuiApplication::primaryScreen(); ///< 获取主屏幕
-    const QRect screenGeometry = screen->geometry();      ///< 获取屏幕几何
-    const int menuRightPos = pos.x() + m_sortOptMenu->width(); ///< 计算菜单右侧
-    const int menuBottomPos = pos.y() + m_sortOptMenu->height(); ///< 计算菜单底部
-    if (menuRightPos > screenGeometry.right())
-    {
-        const int offset = menuRightPos - screenGeometry.right() + 5; ///< 计算右侧偏移
-        m_menuPosition.setX(pos.x() - offset);           ///< 调整 X 坐标
-    }
-    if (menuBottomPos > screenGeometry.bottom())
-    {
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5; ///< 计算底部偏移
-        m_menuPosition.setY(pos.y() - offset);           ///< 调整 Y 坐标
-    }
-}
-
-/**
  * @brief 自定义排序
  * @param comparator 比较器函数
  * @note 根据比较器重新排列歌曲
@@ -829,8 +805,7 @@ void LocalSong::on_search_pushButton_clicked()
  */
 void LocalSong::on_local_sort_toolButton_clicked()
 {
-    getMenuPosition(QCursor::pos());                     ///< 获取菜单位置
-    this->m_sortOptMenu->popup(this->m_menuPosition);    ///< 显示排序菜单
+    this->m_sortOptMenu->exec(QCursor::pos());           ///< 显示菜单
 }
 
 /**

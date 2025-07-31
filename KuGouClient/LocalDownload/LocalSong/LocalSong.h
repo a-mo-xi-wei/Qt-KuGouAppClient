@@ -104,13 +104,6 @@ private:
     void finishLoading();
 
     /**
-     * @brief 获取菜单位置
-     * @param pos 鼠标位置
-     * @note 动态调整菜单位置以适应屏幕
-     */
-    void getMenuPosition(const QPoint &pos);
-
-    /**
      * @brief 自定义排序
      * @param comparator 比较器函数
      * @note 根据比较器重新排列歌曲

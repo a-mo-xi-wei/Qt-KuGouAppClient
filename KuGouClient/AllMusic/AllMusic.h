@@ -81,12 +81,6 @@ private:
     QWidget* createPage(int id);
 
     /**
-     * @brief 获取菜单显示位置
-     * @param pos 鼠标位置
-     */
-    void getMenuPosition(const QPoint &pos);
-
-    /**
      * @brief 启用或禁用按钮
      * @param flag 是否启用
      */

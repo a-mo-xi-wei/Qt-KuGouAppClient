@@ -298,48 +298,6 @@ void MusicItemWidget::setPlayState(const bool &state)
 }
 
 /**
- * @brief 获取菜单显示位置
- * @param pos 鼠标位置
- */
-void MusicItemWidget::getMenuPosition(const QPoint &pos)
-{
-    m_menuPosition = pos;
-    // 获取屏幕的尺寸
-    const QScreen *screen = QGuiApplication::primaryScreen();
-    const QRect screenGeometry = screen->geometry();
-
-    // 计算菜单右侧的全局位置
-    const int menuRightPos = pos.x() + m_songOptMenu->width();
-    const int menuBottomPos = pos.y() + m_songOptMenu->height();
-    //int menuTopPos = pos.y() - m_menu->height();
-    // 若菜单左侧超出屏幕左侧 (不存在)
-    //if(menuLeftPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setX(10);
-    //}
-    // 如果菜单右侧超出屏幕右侧
-    if (menuRightPos > screenGeometry.right())
-    {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuRightPos - screenGeometry.right() + 5;
-        m_menuPosition.setX(pos.x() - offset);
-    }
-    // 如果菜单下侧超出屏幕下侧
-    if (menuBottomPos > screenGeometry.bottom())
-    {
-        // 动态调整菜单位置，使其在屏幕内显示
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
-        m_menuPosition.setY(pos.y() - offset);
-    }
-    // 如果菜单下侧超出屏幕下侧（不存在）
-    //if(menuTopPos < 0) {
-    //    // 动态调整菜单位置，使其在屏幕内显示
-    //    m_menuPosition.setY(10);
-    //}
-
-}
-
-/**
  * @brief 设置item是否高亮闪烁
  * @param highlight 是否高亮闪烁
  */
@@ -473,8 +431,7 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event)
     // 判断是否为右键点击
     if (event->button() == Qt::RightButton)
     {
-        getMenuPosition(mapToGlobal(event->pos()));
-        m_songOptMenu->popup(m_menuPosition);
+        m_songOptMenu->exec(QCursor::pos());
         m_songOptMenu->setCurIndex(m_information.index);
     }
     else {
@@ -518,9 +475,7 @@ void MusicItemWidget::onCollectToolBtnClicked()
  */
 void MusicItemWidget::onMoreToolBtnClicked()
 {
-    // 获取当前鼠标的全局位置
-    getMenuPosition(QCursor::pos());
-    m_songOptMenu->popup(m_menuPosition);
+    m_songOptMenu->exec(QCursor::pos());
     m_songOptMenu->setCurIndex(m_information.index);
 }
 

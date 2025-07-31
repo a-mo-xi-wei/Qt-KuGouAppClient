@@ -315,28 +315,6 @@ void AllMusic::initStackedWidget()
 }
 
 /**
- * @brief 获取菜单显示位置
- * @param pos 鼠标位置
- */
-void AllMusic::getMenuPosition(const QPoint &pos)
-{
-    m_menuPosition = pos;
-    const QScreen *screen = QGuiApplication::primaryScreen();
-    const QRect screenGeometry = screen->geometry();
-
-    const int menuRightPos = pos.x() + m_sortOptMenu->width();
-    const int menuBottomPos = pos.y() + m_sortOptMenu->height();
-    if (menuRightPos > screenGeometry.right()) {
-        const int offset = menuRightPos - screenGeometry.right() + 5;
-        m_menuPosition.setX(pos.x() - offset);
-    }
-    if (menuBottomPos > screenGeometry.bottom()) {
-        const int offset = menuBottomPos - screenGeometry.bottom() + 5;
-        m_menuPosition.setY(pos.y() - offset);
-    }
-}
-
-/**
  * @brief 启用或禁用按钮
  * @param flag 是否启用
  */
@@ -482,8 +460,7 @@ void AllMusic::on_all_batch_toolButton_clicked()
  */
 void AllMusic::on_all_sort_toolButton_clicked()
 {
-    getMenuPosition(QCursor::pos());
-    m_sortOptMenu->popup(m_menuPosition);
+    m_sortOptMenu->exec(QCursor::pos());
 }
 
 /**
