@@ -11,12 +11,9 @@
 #include "MyScrollArea.h"
 
 #include <QScrollBar>
-#include <QEvent>
 #include <QGraphicsOpacityEffect>
 #include <QLabel>
 #include <QTimer>
-#include <QStyleOption>
-#include <QPainter>
 #include <QPropertyAnimation>
 
 /**

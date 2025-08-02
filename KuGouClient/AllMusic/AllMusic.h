@@ -18,7 +18,6 @@
 #include "AllCloudDisk/AllCloudDisk.h"
 #include "SortOptionMenu.h"
 
-#include <QWidget>
 #include <QPointer>
 #include <array>
 #include <memory>

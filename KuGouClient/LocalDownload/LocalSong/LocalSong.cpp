@@ -22,7 +22,6 @@
 #include <QMediaPlayer>
 #include <QRandomGenerator>
 #include <QRegularExpression>
-#include <QScreen>
 #include <QStandardPaths>
 #include <QTimer>
 #include <QBuffer>

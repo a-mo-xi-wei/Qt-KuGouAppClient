@@ -12,7 +12,6 @@
 #include <QWidget>
 #include <QPointer>
 #include <memory>
-#include <vector>
 #include <array>
 #include <QTimer>
 

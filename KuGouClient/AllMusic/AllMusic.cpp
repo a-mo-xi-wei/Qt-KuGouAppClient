@@ -16,8 +16,6 @@
 #include <QButtonGroup>
 #include <QFile>
 #include <QMouseEvent>
-#include <QGuiApplication>
-#include <QScreen>
 #include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */

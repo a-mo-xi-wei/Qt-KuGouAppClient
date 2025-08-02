@@ -14,7 +14,6 @@
 #include "ElaMessageBar.h"
 
 #include <QFile>
-#include <QScreen>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))

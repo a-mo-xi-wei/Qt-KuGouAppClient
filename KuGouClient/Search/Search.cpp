@@ -14,7 +14,6 @@
 
 #include <QFile>
 #include <QButtonGroup>
-#include <chrono>
 #include <random>
 
 /** @brief 获取当前文件所在目录宏 */
