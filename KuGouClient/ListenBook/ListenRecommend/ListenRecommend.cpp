@@ -96,6 +96,9 @@ void ListenRecommend::initUi()
     for (const auto &button : buttons)
     {
         connect(button, &QToolButton::clicked, this, [this, button] {
+            // qDebug()<<"当前选中："<<button->text();
+            ///<特判
+            if (button->text() == "全部分类") return;
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
                                        QString("%1 功能未实现 敬请期待").arg(button->text()), 1000, this->window()); ///< 显示未实现提示
         });
