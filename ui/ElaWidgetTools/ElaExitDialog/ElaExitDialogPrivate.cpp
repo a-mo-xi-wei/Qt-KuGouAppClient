@@ -26,9 +26,10 @@ ElaExitDialogPrivate::~ElaExitDialogPrivate() = default;
 /**
  * @brief 执行关闭动画
  */
-void ElaExitDialogPrivate::_doCloseAnimation()
+void ElaExitDialogPrivate::_doCloseAnimation(bool isAccept)
 {
     Q_Q(ElaExitDialog);
     _maskWidget->doMaskAnimation(0);
     q->QDialog::close();
+    isAccept ? q->accept() : q->reject();
 }

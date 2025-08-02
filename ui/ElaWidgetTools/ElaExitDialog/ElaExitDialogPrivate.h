@@ -104,7 +104,7 @@ private:
     /**
      * @brief 执行关闭动画
      */
-    void _doCloseAnimation();
+    void _doCloseAnimation(bool isAccept);
 };
 
 #endif // ELACONTENTDIALOGPRIVATE_H

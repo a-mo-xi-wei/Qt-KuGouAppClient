@@ -49,7 +49,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
         Q_EMIT leftButtonClicked();
         onLeftButtonClicked();
         d->_maskWidget->doMaskAnimation(0);
-        d->_doCloseAnimation();
+        d->_doCloseAnimation(false);
     });
     d->_leftButton->setMinimumSize(0, 0);
     d->_leftButton->setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
@@ -72,7 +72,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     connect(d->_rightButton, &ElaPushButton::clicked, this, [=]() {
         Q_EMIT rightButtonClicked();
         onRightButtonClicked();
-        d->_doCloseAnimation();
+        d->_doCloseAnimation(true);
     });
     d->_rightButton->setLightDefaultColor(ElaThemeColor(ElaThemeType::Light, PrimaryNormal));
     d->_rightButton->setLightHoverColor(ElaThemeColor(ElaThemeType::Light, PrimaryHover));
@@ -199,7 +199,7 @@ void ElaExitDialog::setRightButtonText(QString text)
 void ElaExitDialog::close()
 {
     Q_D(ElaExitDialog);
-    d->_doCloseAnimation();
+    d->_doCloseAnimation(false);
 }
 
 /**
@@ -216,7 +216,7 @@ void ElaExitDialog::showEvent(QShowEvent* event)
 #ifdef Q_OS_WIN
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 3) && QT_VERSION <= QT_VERSION_CHECK(6, 6, 1))
     HWND hwnd = (HWND)d->_currentWinID;
-    setShadow(hwnd);
+    ElaWinShadowHelper::getInstance()->setWindowShadow(d->_currentWinID);
     DWORD style = ::GetWindowLongPtr(hwnd, GWL_STYLE);
     bool hasCaption = (style & WS_CAPTION) == WS_CAPTION;
     if (!hasCaption)
