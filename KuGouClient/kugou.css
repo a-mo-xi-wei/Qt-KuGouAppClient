@@ -93,29 +93,70 @@ QSizeGrip#sizegrip{
 }
 
 /*--------------------QSlider------------------------------*/
-QSlider {
-    background-color: rgba(0, 255, 190, 30);
-}
+/*QSlider {*/
+/*    background-color: rgba(0, 255, 190, 30);*/
+/*}*/
+/*QSlider::groove:horizontal {*/
+/*    border: 1px inset #c3e0c3;*/
+/*    height: 8px;*/
+/*    !*background-color: qlineargradient(spread:reflect, x1:0.500364, y1:0.0561364, x2:0.5, y2:0.517045, stop:0 rgba(168, 164, 168, 250), stop:1 rgba(232, 232, 232, 255));*!*/
+/*    background-color: #eafffa;*/
+/*    border-radius: 4px;*/
+/*}*/
+/*QSlider::handle:horizontal {*/
+/*    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.50565, fy:0.500409, stop:0 rgba(0, 0, 0, 255), stop:0.361582 rgba(0, 146, 146, 255), stop:0.649718 rgba(255, 255, 255, 255), stop:1 rgba(0, 177, 181, 255));*/
+/*    border: 1px solid #5c5c5c;*/
+/*    width: 14px;*/
+/*    margin: -4px 0;!* top and bottom | left and right *!*/
+/*    border-radius: 8px;*/
+/*}*/
+/*QSlider::sub-page:horizontal {*/
+/*    border: 1px solid #999999;*/
+/*    border-radius: 4px;*/
+/*    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(7,208,255, 255), stop:1 rgba(231,80,229, 255));*/
+/*}*/
+/*滑块的样式*/
 QSlider::groove:horizontal {
-    border: 1px inset #c3e0c3;
-    height: 8px;
-    /*background-color: qlineargradient(spread:reflect, x1:0.500364, y1:0.0561364, x2:0.5, y2:0.517045, stop:0 rgba(168, 164, 168, 250), stop:1 rgba(232, 232, 232, 255));*/
-    background-color: #eafffa;
-    border-radius: 4px;
-}
-QSlider::handle:horizontal {
-    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.50565, fy:0.500409, stop:0 rgba(0, 0, 0, 255), stop:0.361582 rgba(0, 146, 146, 255), stop:0.649718 rgba(255, 255, 255, 255), stop:1 rgba(0, 177, 181, 255));
-    border: 1px solid #5c5c5c;
-    width: 14px;
-    margin: -4px 0;/* top and bottom | left and right */
-    border-radius: 8px;
-}
-QSlider::sub-page:horizontal {
-    border: 1px solid #999999;
-    border-radius: 4px;
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(7,208,255, 255), stop:1 rgba(231,80,229, 255));
+    border: 1px solid #AEE1FD;
+    background: #AEE1FD;
+    height: 4px;
+    border-radius: 2px;
+    padding-left:0px;
+    padding-right:0px;
 }
 
+/*滑块经过的颜色:前面的颜色*/
+QSlider::sub-page:horizontal {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 pink, stop:1 rgba(176,226,249, 255));
+    border: 1px solid #AEE1FD;
+    height: 4px;
+    border-radius: 2px;
+}
+
+QSlider::add-page:horizontal {
+    background: #EAEAEA;
+    border: 0px solid #EAEAEA;
+    height: 4px;
+    border-radius: 2px;
+}
+QSlider::handle:horizontal
+{
+    background: #AEE1FD;
+
+    width: 10px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    border-radius: 5px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #AEE1FD;
+
+    width: 12px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    border-radius: 5px;
+}
 /*-------------------滚动区域滚动条----------------------*/
 .QScrollBar:vertical {
     border: 0px solid rgb(173,216,230);
