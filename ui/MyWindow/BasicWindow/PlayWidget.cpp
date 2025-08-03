@@ -18,7 +18,8 @@
 PlayWidget::PlayWidget(QWidget *parent)
     : QWidget(parent)
 {
-    this->setAttribute(Qt::WA_StyledBackground, true); ///< 启用样式背景
+    setAttribute(Qt::WA_TranslucentBackground);
+    setAutoFillBackground(false);
     this->setObjectName("PlayWidget");
     this->setStyleSheet("QWidget#PlayWidget{margin:5px;}"); ///< 设置外边距
 }
@@ -46,10 +47,11 @@ void PlayWidget::paintEvent(QPaintEvent *ev)
     p.setPen(Qt::NoPen); ///< 无边框
 
     QRect shadowRect = rect().adjusted(5, 0, -4, -5); ///< 调整阴影区域
-    QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
-    gradient.setColorAt(0, QColor(QStringLiteral("#eef2ff"))); ///< 起始颜色
-    gradient.setColorAt(1, QColor(QStringLiteral("#87CEFA"))); ///< 结束颜色
-    p.setBrush(gradient);
+
+    // QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
+    // gradient.setColorAt(0, QColor(QStringLiteral("#eef2ff"))); ///< 起始颜色
+    // gradient.setColorAt(1, QColor(QStringLiteral("#87CEFA"))); ///< 结束颜色
+    // p.setBrush(gradient);
 
     QPainterPath path;
     int radius = 8; ///< 圆角半径
@@ -64,5 +66,6 @@ void PlayWidget::paintEvent(QPaintEvent *ev)
     path.lineTo(shadowRect.topLeft());
     path.closeSubpath();
 
+    p.setClipPath(path);               // 限制绘制范围为圆角区域
     p.drawPath(path); ///< 绘制路径
 }

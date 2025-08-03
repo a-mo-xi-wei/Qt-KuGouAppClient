@@ -24,6 +24,7 @@
 #include "QtMaterialSlider/qtmaterialslider.h"
 #include "SpeedDialogState.h"
 
+class DynamicBackgroundInterface;
 class ElaToggleSwitch;
 class QLabel;
 class QPushButton;
@@ -240,6 +241,7 @@ private:
     QString m_preText = "倍速";                                ///< 前缀文本
     QString m_adjustmentText = "";                            ///< 升降调文本
     QString m_speedText = "";                                 ///< 倍速文本
+    DynamicBackgroundInterface *dm_bg;           ///< 动态背景
 };
 
 #endif //SPEEDDIALOG_H

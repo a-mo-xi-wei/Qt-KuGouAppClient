@@ -24,11 +24,11 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE MYWINDOW_LIBRARY)
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/BasicWindow
-        ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow
-        ${CMAKE_CURRENT_SOURCE_DIR}/MyTrayIcon
-        ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/WaterDrop
+        BasicWindow
+        MyTrayIcon
+        MainWindow
+        MainWindow/WaterDrop
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core MySpdlog
-        MyMenu MySearchLineEdit MyButton MyDialog)
+        MyMenu MySearchLineEdit MyButton MyDialog DynamicBackground)

@@ -27,4 +27,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Network QtMaterialWidget
-        MySpdlog MyButton ElaWidgetTools MyAsyncThread MyHttpClient)
+        MySpdlog MyButton ElaWidgetTools MyAsyncThread MyHttpClient DynamicBackground)

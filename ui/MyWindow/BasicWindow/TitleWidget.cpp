@@ -38,6 +38,8 @@ TitleWidget::TitleWidget(QWidget *parent)
     , m_closeDialog(std::make_unique<ElaExitDialog>(this->window()))
 {
     ui->setupUi(this);
+    setAttribute(Qt::WA_TranslucentBackground);
+    setAutoFillBackground(false);
     initUi();
     qApp->installEventFilter(this); ///< 安装应用程序级事件过滤器
 
@@ -206,9 +208,9 @@ void TitleWidget::initUi()
     ui->max_toolButton->setRadius(6);
     ui->close_toolButton->setRadius(6);
 
-    ui->min_toolButton->setFillColor(QColor(QStringLiteral("#93b5cf")));
-    ui->max_toolButton->setFillColor(QColor(QStringLiteral("#93b5cf")));
-    ui->close_toolButton->setFillColor(QColor(QStringLiteral("#FF0066")));
+    ui->min_toolButton->setFillColor(QColor(QStringLiteral("#93D2FB")));
+    ui->max_toolButton->setFillColor(QColor(QStringLiteral("#93D2FB")));
+    ui->close_toolButton->setFillColor(QColor(QStringLiteral("#E63946")));
 
     ui->min_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));
     ui->max_toolButton->setMyIcon(QIcon(QStringLiteral(":/Res/titlebar/maximize-black.svg")));
@@ -277,14 +279,14 @@ void TitleWidget::paintEvent(QPaintEvent *ev)
     p.setPen(Qt::NoPen); ///< 无边框
 
     QRect shadowRect = rect().adjusted(5, 5, -4, 2); ///< 调整阴影区域
-    QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
-    gradient.setColorAt(0, QColor(QStringLiteral("#87CEFA"))); ///< 起始颜色
-    gradient.setColorAt(1, QColor(QStringLiteral("#eef2ff"))); ///< 结束颜色
-    p.setBrush(gradient);
+    // QLinearGradient gradient(shadowRect.topLeft(), shadowRect.bottomLeft());
+    // gradient.setColorAt(0, QColor(QStringLiteral("#87CEFA"))); ///< 起始颜色
+    // gradient.setColorAt(1, QColor(QStringLiteral("#eef2ff"))); ///< 结束颜色
+    // p.setBrush(gradient);
 
     // 创建一个 QPainterPath，只在左上和右上角有圆角
     QPainterPath path;
-    int radius = 8; ///< 圆角半径
+    constexpr int radius = 8;
     path.moveTo(shadowRect.topLeft() + QPoint(radius, 0));
     path.lineTo(shadowRect.topRight() - QPoint(radius, 0));
     path.quadTo(shadowRect.topRight(), shadowRect.topRight() + QPoint(0, radius));
@@ -294,7 +296,9 @@ void TitleWidget::paintEvent(QPaintEvent *ev)
     path.quadTo(shadowRect.topLeft(), shadowRect.topLeft() + QPoint(radius, 0));
     path.closeSubpath();
 
-    p.drawPath(path); ///< 绘制路径
+    p.setClipPath(path);               // 限制绘制范围为圆角区域
+    p.drawPath(path);                  // 如果需要边缘描边
+
 }
 
 /**

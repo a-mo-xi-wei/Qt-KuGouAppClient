@@ -9,6 +9,7 @@
 #include "SpeedDialog.h"
 #include "ElaToggleSwitch.h"
 #include "ElaPushButton.h"
+#include "dynamicbackgroundgradient.h"
 
 #include <QCoreApplication>
 #include <QButtonGroup>
@@ -18,7 +19,6 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
-#include <QStyleOption>
 #include <QTimer>
 #include <QVBoxLayout>
 
@@ -33,33 +33,38 @@
  * @brief 构造函数
  * @param parent 父控件指针，默认为 nullptr
  */
-SpeedDialog::SpeedDialog(QWidget *parent)
+SpeedDialog::SpeedDialog(QWidget* parent)
     : QWidget(parent, Qt::Popup)
     , m_effect(std::make_unique<QGraphicsDropShadowEffect>(this))
+    , dm_bg(new DynamicBackgroundGradient(this))
 {
-    this->setContentsMargins(0, 10, 0, 20);                   ///< 设置边距
-    setFixedSize(280, 295);                                   ///< 设置固定尺寸
-    setWindowFlags(Qt::FramelessWindowHint);                  ///< 无边框窗口
-    setAttribute(Qt::WA_TranslucentBackground);               ///< 透明背景
-    setAttribute(Qt::WA_DeleteOnClose);                       ///< 关闭时自动删除
+    this->setContentsMargins(0, 10, 0, 20); ///< 设置边距
+    setFixedSize(280, 295); ///< 设置固定尺寸
+    setWindowFlags(Qt::FramelessWindowHint); ///< 无边框窗口
+    setAttribute(Qt::WA_DeleteOnClose); ///< 关闭时自动删除
 
-    initUi();                                                 ///< 初始化界面
+    initUi(); ///< 初始化界面
 
     // @note 设置样式表
     QFile file(GET_CURRENT_DIR + QStringLiteral("/speed.css"));
     if (file.open(QIODevice::ReadOnly))
     {
-        this->setStyleSheet(file.readAll());                  ///< 应用样式表
+        this->setStyleSheet(file.readAll());
     }
     else
     {
-        qDebug() << "样式表打开失败QAQ";                     ///< 调试输出
+        qDebug() << "样式表打开失败QAQ";
     }
-    this->m_effect->setColor(QColor(80, 80, 80));             ///< 设置阴影颜色
-    this->m_effect->setOffset(0, 0);                          ///< 设置阴影偏移
-    this->m_effect->setBlurRadius(30);                        ///< 设置阴影模糊半径
-    this->setGraphicsEffect(this->m_effect.get());            ///< 应用阴影效果
-    qApp->installEventFilter(this);                           ///< 安装事件过滤器
+    this->m_effect->setColor(QColor(80, 80, 80)); ///< 设置阴影颜色
+    this->m_effect->setOffset(0, 0); ///< 设置阴影偏移
+    this->m_effect->setBlurRadius(30); ///< 设置阴影模糊半径
+    this->setGraphicsEffect(this->m_effect.get()); ///< 应用阴影效果
+    qApp->installEventFilter(this); ///< 安装事件过滤器
+
+    ///< 动态背景设置
+    dm_bg->setInterval(20);
+    dm_bg->showAni();
+    connect(dm_bg, &DynamicBackgroundInterface::signalRedraw, this, [this] { update(); });
 }
 
 /**
@@ -67,7 +72,7 @@ SpeedDialog::SpeedDialog(QWidget *parent)
  */
 SpeedDialog::~SpeedDialog()
 {
-    qApp->removeEventFilter(this);                            ///< 移除事件过滤器
+    qApp->removeEventFilter(this); ///< 移除事件过滤器
 }
 
 /**
@@ -79,16 +84,21 @@ void SpeedDialog::setState(const SpeedDialogState& state)
     // @note 恢复 DJ 按钮选择
     if (!state.selectedDJButton.isEmpty())
     {
-        if (state.selectedDJButton == "劲爆") m_btn1->clicked();
-        else if (state.selectedDJButton == "社会摇") m_btn2->clicked();
-        else if (state.selectedDJButton == "慢摇") m_btn3->clicked();
-        else if (state.selectedDJButton == "抖腿") m_btn4->clicked();
+        if (state.selectedDJButton == "劲爆")
+            m_btn1->clicked();
+        else if (state.selectedDJButton == "社会摇")
+            m_btn2->clicked();
+        else if (state.selectedDJButton == "慢摇")
+            m_btn3->clicked();
+        else if (state.selectedDJButton == "抖腿")
+            m_btn4->clicked();
     }
 
     // @note 恢复滑块值
-    QTimer::singleShot(50, [this, state] {
-        m_adjustmentSlider->setValue(state.adjustmentValue);  ///< 设置升降调值
-        m_speedSlider->setValue(state.speedValue);            ///< 设置倍速值
+    QTimer::singleShot(50, [this, state]
+    {
+        m_adjustmentSlider->setValue(state.adjustmentValue); ///< 设置升降调值
+        m_speedSlider->setValue(state.speedValue); ///< 设置倍速值
 
         m_adjustmentSlider->snapToPosition();
         m_speedSlider->snapToPosition();
@@ -107,16 +117,20 @@ SpeedDialogState SpeedDialog::getState() const
 {
     SpeedDialogState state;
 
-    state.isDJMode = m_switchBtn->getIsToggled();              ///< 获取 DJ 模式状态
+    state.isDJMode = m_switchBtn->getIsToggled(); ///< 获取 DJ 模式状态
 
     // @note 获取选中的 DJ 按钮
-    if (m_btn1->isChecked()) state.selectedDJButton = "劲爆";
-    else if (m_btn2->isChecked()) state.selectedDJButton = "社会摇";
-    else if (m_btn3->isChecked()) state.selectedDJButton = "慢摇";
-    else if (m_btn4->isChecked()) state.selectedDJButton = "抖腿";
+    if (m_btn1->isChecked())
+        state.selectedDJButton = "劲爆";
+    else if (m_btn2->isChecked())
+        state.selectedDJButton = "社会摇";
+    else if (m_btn3->isChecked())
+        state.selectedDJButton = "慢摇";
+    else if (m_btn4->isChecked())
+        state.selectedDJButton = "抖腿";
 
-    state.adjustmentValue = m_adjustmentSlider->value();       ///< 获取升降调值
-    state.speedValue = m_speedSlider->value();                 ///< 获取倍速值
+    state.adjustmentValue = m_adjustmentSlider->value(); ///< 获取升降调值
+    state.speedValue = m_speedSlider->value(); ///< 获取倍速值
     // qDebug()<<"当前获取到adjustmentValue: "<<m_adjustmentSlider->value()<< " speedValue : "<<m_speedSlider->value();
     return state;
 }
@@ -216,12 +230,13 @@ void SpeedDialog::initUi()
     m_adjustmentSlider->setDisabledColor(QColor("#29A2FF"));
     m_adjustmentSlider->setTrackColor(QColor("#29A2FF"));
     m_adjustmentSlider->setThumbColor(QColor("#29A2FF"));
-    m_adjustmentSlider->setMaximum(100);                       ///< 设置最大值
+    m_adjustmentSlider->setMaximum(100); ///< 设置最大值
     m_adjustmentSlider->setDisabled(false);
     // @note 延迟设置初始值
-    QTimer::singleShot(0, this, [this]() {
+    QTimer::singleShot(0, this, [this]()
+    {
         m_adjustmentSlider->setFocus();
-        m_adjustmentSlider->clearFocus();                     ///< 避免永久聚焦
+        m_adjustmentSlider->clearFocus(); ///< 避免永久聚焦
     });
     hlay4->addWidget(m_adjustmentSlider);
 
@@ -267,12 +282,13 @@ void SpeedDialog::initUi()
     m_speedSlider->setDisabledColor(QColor("#29A2FF"));
     m_speedSlider->setTrackColor(QColor("#29A2FF"));
     m_speedSlider->setThumbColor(QColor("#29A2FF"));
-    m_speedSlider->setMaximum(100);                           ///< 设置最大值
+    m_speedSlider->setMaximum(100); ///< 设置最大值
     m_speedSlider->setDisabled(false);
     // @note 延迟设置初始值
-    QTimer::singleShot(0, this, [this]() {
+    QTimer::singleShot(0, this, [this]()
+    {
         m_speedSlider->setFocus();
-        m_speedSlider->clearFocus();                         ///< 避免永久聚焦
+        m_speedSlider->clearFocus(); ///< 避免永久聚焦
     });
     hlay7->addWidget(m_speedSlider);
 
@@ -312,17 +328,18 @@ void SpeedDialog::initUi()
     mainLay->addStretch();
 
     // @note 更新按钮文本的 lambda 函数
-    auto changeText = [this] {
+    auto changeText = [this]
+    {
         if (m_speedText.isEmpty())
         {
             if (m_adjustmentText.isEmpty())
             {
-                emit btnTextChanged(m_preText);               ///< 默认文本
+                emit btnTextChanged(m_preText); ///< 默认文本
             }
             else
             {
                 if (m_preText == "倍速")
-                    emit btnTextChanged(m_adjustmentText);    ///< 仅升降调
+                    emit btnTextChanged(m_adjustmentText); ///< 仅升降调
                 else
                     emit btnTextChanged(m_preText + "/" + m_adjustmentText); ///< DJ+升降调
             }
@@ -331,7 +348,7 @@ void SpeedDialog::initUi()
         {
             if (m_preText == "倍速")
             {
-                emit btnTextChanged(m_speedText);             ///< 仅倍速
+                emit btnTextChanged(m_speedText); ///< 仅倍速
             }
             else
                 emit btnTextChanged(m_preText + "/" + m_speedText); ///< DJ+倍速
@@ -339,28 +356,32 @@ void SpeedDialog::initUi()
     };
 
     // @note DJ 按钮信号连接
-    connect(m_btn1, &QPushButton::clicked, this, [=] {
+    connect(m_btn1, &QPushButton::clicked, this, [ = ]
+    {
         m_lastBtn = m_btn1;
         m_preText = "DJ";
         changeText();
         m_switchBtn->setEnabled(true);
         m_switchBtn->setIsToggled(true);
     });
-    connect(m_btn2, &QPushButton::clicked, this, [=] {
+    connect(m_btn2, &QPushButton::clicked, this, [ = ]
+    {
         m_lastBtn = m_btn2;
         m_preText = "DJ";
         changeText();
         m_switchBtn->setEnabled(true);
         m_switchBtn->setIsToggled(true);
     });
-    connect(m_btn3, &QPushButton::clicked, this, [=] {
+    connect(m_btn3, &QPushButton::clicked, this, [ = ]
+    {
         m_lastBtn = m_btn3;
         m_preText = "DJ";
         changeText();
         m_switchBtn->setEnabled(true);
         m_switchBtn->setIsToggled(true);
     });
-    connect(m_btn4, &QPushButton::clicked, this, [=] {
+    connect(m_btn4, &QPushButton::clicked, this, [ = ]
+    {
         m_lastBtn = m_btn4;
         m_preText = "DJ";
         changeText();
@@ -369,7 +390,8 @@ void SpeedDialog::initUi()
     });
 
     // @note 升降调滑块信号连接
-    connect(m_adjustmentSlider, &SnapSlider::numChanged, this, [this, adjustmentLab, changeText](int num) {
+    connect(m_adjustmentSlider, &SnapSlider::numChanged, this, [this, adjustmentLab, changeText](int num)
+    {
         if (num != abs(num - 5) % 10)
         {
             if (num > 5)
@@ -386,7 +408,7 @@ void SpeedDialog::initUi()
             }
             else
             {
-                adjustmentLab->setText("升降调播放");        ///< 正常显示
+                adjustmentLab->setText("升降调播放"); ///< 正常显示
                 m_adjustmentText = "";
             }
             changeText();
@@ -394,7 +416,8 @@ void SpeedDialog::initUi()
     });
 
     // @note 倍速滑块信号连接
-    connect(m_speedSlider, &SnapSlider::numChanged, this, [this, speedLab, changeText](int num) {
+    connect(m_speedSlider, &SnapSlider::numChanged, this, [this, speedLab, changeText](int num)
+    {
         if (num != abs(num - 5) % 10)
         {
             float speed = 1.0;
@@ -412,7 +435,7 @@ void SpeedDialog::initUi()
             }
             else
             {
-                speedLab->setText("倍速播放");                ///< 正常显示
+                speedLab->setText("倍速播放"); ///< 正常显示
                 m_speedText = "";
             }
             emit speedChanged(speed);
@@ -421,23 +444,24 @@ void SpeedDialog::initUi()
     });
 
     // @note DJ 模式开关信号连接
-    connect(m_switchBtn, &ElaToggleSwitch::toggled, this, [=](bool checked) {
+    connect(m_switchBtn, &ElaToggleSwitch::toggled, this, [ = ](bool checked)
+    {
         if (!m_lastBtn)
         {
-            qWarning() << "重大错误，应该无法点击";         ///< 调试输出
+            qWarning() << "重大错误，应该无法点击"; ///< 调试输出
             return;
         }
 
         if (checked)
         {
-            btnGroup->setExclusive(true);                     ///< 恢复排他性
+            btnGroup->setExclusive(true); ///< 恢复排他性
             m_lastBtn->setChecked(true);
             m_preText = "DJ";
             changeText();
         }
         else
         {
-            btnGroup->setExclusive(false);                    ///< 取消排他性
+            btnGroup->setExclusive(false); ///< 取消排他性
             m_lastBtn->setChecked(false);
             m_preText = "倍速";
             changeText();
@@ -452,28 +476,28 @@ void SpeedDialog::initUi()
  * @return 是否处理事件
  * @note 点击弹窗外关闭
  */
-bool SpeedDialog::eventFilter(QObject *obj, QEvent *event)
+bool SpeedDialog::eventFilter(QObject* obj, QEvent* event)
 {
     if (event->type() == QEvent::MouseButtonPress)
     {
-        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+        QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
         if (!this->rect().contains(this->mapFromGlobal(mouseEvent->globalPosition()).toPoint()))
         {
-            this->close();                                    ///< 触发关闭
+            this->close(); ///< 触发关闭
             return true;
         }
     }
-    return QWidget::eventFilter(obj, event);                  ///< 调用父类处理
+    return QWidget::eventFilter(obj, event); ///< 调用父类处理
 }
 
 /**
  * @brief 关闭事件
  * @param event 关闭事件
  */
-void SpeedDialog::closeEvent(QCloseEvent *event)
+void SpeedDialog::closeEvent(QCloseEvent* event)
 {
-    emit aboutToClose();                                      ///< 触发关闭信号
-    QWidget::closeEvent(event);                               ///< 调用父类处理
+    emit aboutToClose(); ///< 触发关闭信号
+    QWidget::closeEvent(event); ///< 调用父类处理
 }
 
 /**
@@ -481,19 +505,32 @@ void SpeedDialog::closeEvent(QCloseEvent *event)
  * @param ev 绘制事件
  * @note 绘制圆角背景和小三角形底部
  */
-void SpeedDialog::paintEvent(QPaintEvent *ev)
+void SpeedDialog::paintEvent(QPaintEvent* ev)
 {
-    QStyleOption opt;
-    opt.initFrom(this);
+    Q_UNUSED(ev);
     QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-    p.setRenderHint(QPainter::Antialiasing);                  ///< 启用抗锯齿
-    p.setPen(QColor(Qt::transparent));
-    p.setBrush(QColor(QStringLiteral("#edf2ff")));            ///< 设置背景颜色
-    p.drawRoundedRect(rect().x(), rect().y(), 280, 287, 8, 8); ///< 绘制圆角矩形
-    QPainterPath path;
-    path.moveTo(rect().x() + 130, rect().bottom() - 8);
-    path.lineTo(rect().x() + 140, rect().bottom());
-    path.lineTo(rect().x() + 150, rect().bottom() - 8);
-    p.drawPath(path);                                         ///< 绘制底部三角形
+    p.setRenderHint(QPainter::Antialiasing, true);
+    p.setPen(Qt::NoPen);
+
+    // 构造圆角矩形路径
+    QPainterPath rectPath;
+    rectPath.addRoundedRect(rect().x(), rect().y(), 280, 287, 8, 8);
+
+    // 构造三角形路径（不绘制底边，只绘制两条边）
+    QPainterPath trianglePath;
+    QPointF p1(rect().x() + 130, rect().bottom() - 8);
+    QPointF p2(rect().x() + 140, rect().bottom());
+    QPointF p3(rect().x() + 150, rect().bottom() - 8);
+    trianglePath.moveTo(p1);
+    trianglePath.lineTo(p2);
+    trianglePath.lineTo(p3);
+
+    // 合并路径：避免底边重合
+    QPainterPath finalPath = rectPath.united(trianglePath);  // 逻辑上是矩形和三角形上面部分的并集
+
+    // 设置剪裁路径
+    p.setClipPath(finalPath);
+
+    // 背景绘制
+    dm_bg->draw(p, finalPath);
 }

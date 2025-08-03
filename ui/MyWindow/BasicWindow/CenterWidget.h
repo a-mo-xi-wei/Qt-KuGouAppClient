@@ -38,6 +38,9 @@ protected:
      * @param ev 绘制事件
      */
     void paintEvent(QPaintEvent *ev) override;
+
+private:
+
 };
 
 #endif // CENTERWIDGET_H

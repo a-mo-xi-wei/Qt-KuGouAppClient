@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(Ui VERSION 1.0 LANGUAGES CXX)
 
+#DynamicBackground模块
+add_subdirectory(DynamicBackground)
+
 #Material模块
 add_subdirectory(QtMaterialWidget)
 

@@ -18,6 +18,7 @@
 #define MYWINDOW_EXPORT Q_DECL_IMPORT
 #endif
 
+class DynamicBackgroundInterface;
 
 /**
  * @brief 窗口区域划分命名空间
@@ -164,6 +165,7 @@ public:
     QPoint point_offset;                         ///< 鼠标移动偏移
     std::unique_ptr<AboutDialog> m_aboutDialog{};///< 关于对话框
     bool m_showDialog = false;                   ///< 关于对话框显示标志
+    DynamicBackgroundInterface *dm_bg;           ///< 动态背景
 };
 
 #endif // MAINWINDOW_H

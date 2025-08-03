@@ -10,6 +10,7 @@
 #include "WaterDrop.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "dynamicbackgroundgradient.h"
 
 #include <QMouseEvent>
 #include <QPainter>
@@ -35,11 +36,17 @@ constexpr int RADIUS = 12;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , m_aboutDialog(std::make_unique<AboutDialog>(this))
+    , dm_bg(new DynamicBackgroundGradient(this))
 {
     this->m_aboutDialog->hide(); ///< 隐藏关于对话框
     connect(m_aboutDialog.get(), &AboutDialog::showDialog, this, [this](const bool &flag) {
         this->m_showDialog = flag;
     });
+
+    ///< 动态背景设置
+    dm_bg->setInterval(20);
+    dm_bg->showAni();
+    connect(dm_bg, &DynamicBackgroundInterface::signalRedraw, this,[this]{update();});
 }
 
 /**
@@ -74,6 +81,8 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.drawPath(path);
     }
     */
+
+    ///< 边框
     // 绘制阴影（从外向内，黑色渐变为透明）
     for (int i = 0; i != SHADOW_WIDTH; ++i) {
         QPainterPath path;
@@ -93,14 +102,16 @@ void MainWindow::paintEvent(QPaintEvent *event)
     }
 
     // 绘制背景（在阴影上方）
-    QBrush brush(QColor(QStringLiteral("#eef2ff")));
-    painter.setBrush(brush);
+    //QBrush brush(QColor(QStringLiteral("#eef2ff")));
+    //painter.setBrush(brush);
     painter.setPen(Qt::NoPen);
     QPainterPath bgPath;
     bgPath.addRoundedRect(SHADOW_WIDTH, SHADOW_WIDTH,
                           this->width() - SHADOW_WIDTH * 2,
                           this->height() - SHADOW_WIDTH * 2,
                           RADIUS, RADIUS);
+    painter.setClipPath(bgPath);
+    dm_bg->draw(painter);
     painter.drawPath(bgPath);
 }
 
