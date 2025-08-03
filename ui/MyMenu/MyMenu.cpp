@@ -7,18 +7,15 @@
  */
 
 #include "MyMenu.h"
-#include "SongOptionMenu/SongOptionMenu.h"
-#include "SortOptionMenu/SortOptionMenu.h"
-#include "TitleOptionMenu/TitleOptionMenu.h"
-#include "ListOptionMenu/ListOptionMenu.h"
-#include "ListenOptionMenu/ListenOptionMenu.h"
 
-QMap<MyMenu::MenuKind, MyMenu::MenuCreator>& MyMenu::registry() {
+QMap<MyMenu::MenuKind, MyMenu::MenuCreator>& MyMenu::registry()
+{
     static QMap<MenuKind, MenuCreator> instance;
     return instance;
 }
 
-void MyMenu::registerMenu(MenuKind kind, const MenuCreator& creator) {
+void MyMenu::registerMenu(MenuKind kind, const MenuCreator& creator)
+{
     registry()[kind] = creator;
 }
 
@@ -61,13 +58,15 @@ MyMenu::MyMenu(const MenuKind &kind, QWidget *parent)
     */
 
     ///< 升级版  ---*>  注册式菜单工厂
-    if (registry().contains(kind)) {        ///< 如果菜单类型在注册表中,则菜单指针指向被创建的对应的菜单
+    if (registry().contains(kind))          ///< 如果菜单类型在注册表中,则菜单指针指向被创建的对应的菜单
+    {
         m_menu = registry()[kind](parent);
         if (m_menu)
             m_menu->initMenu();
     }
 }
 
-MyMenu::~MyMenu() {
+MyMenu::~MyMenu()
+{
     m_menu = nullptr;
 }

@@ -7,10 +7,10 @@ file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
 set(SOURCE_FILE
-    MenuBtn.hpp
-    ${SRC_CPP}
-    ${SRC_H}
-    menu.css
+        MenuBtn.hpp
+        ${SRC_CPP}
+        ${SRC_H}
+        menu.css
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -25,4 +25,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/SongOptionMenu
         ${CMAKE_CURRENT_SOURCE_DIR}/TitleOptionMenu)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog MyScrollArea ElaWidgetTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySpdlog MyScrollArea DynamicBackground)

@@ -1,19 +1,26 @@
-#Channel{
+#Channel {
     background-color: transparent;
 }
-QPushButton{
+
+QPushButton {
     font-size: 13px;
-    color:#808080;
+    color: #808080;
     border: none;
     background-color: transparent;
 }
-QPushButton:hover{
+
+QPushButton:hover {
     color: #3AA1FF;
 }
-QPushButton:checked{
+
+QPushButton:checked {
     font-size: 15px;
     font-weight: bold;
     border-radius: 15px;
     background-color: #b6d7e5;
     color: #333333;
+}
+
+QLabel#title_music_label {
+    color: #c4bdbe;
 }

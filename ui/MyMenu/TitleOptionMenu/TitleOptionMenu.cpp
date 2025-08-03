@@ -1,10 +1,10 @@
-    /**
- * @file TitleOptionMenu.cpp
- * @brief 实现 TitleOptionMenu 类，提供标题栏选项菜单功能
- * @author WeiWang
- * @date 2025-01-12
- * @version 1.0
- */
+/**
+* @file TitleOptionMenu.cpp
+* @brief 实现 TitleOptionMenu 类，提供标题栏选项菜单功能
+* @author WeiWang
+* @date 2025-01-12
+* @version 1.0
+*/
 
 #include "TitleOptionMenu.h"
 #include "logger.hpp"
@@ -28,11 +28,13 @@ TitleOptionMenu::TitleOptionMenu(QWidget *parent)
 /**
  * @brief 初始化菜单布局和内容
  */
-void TitleOptionMenu::initMenu() {
+void TitleOptionMenu::initMenu()
+{
     this->setFixedSize(380, 600);
     //顶部按钮
     //auto a_topListWidgetAction = new QWidgetAction(this);
-    auto a_topListWidgetAction = new QWidgetAction(this); {
+    auto a_topListWidgetAction = new QWidgetAction(this);
+    {
         //动态壁纸按钮
         auto a_dynamicWallPaperBtn = new MenuBtn(this);
         a_dynamicWallPaperBtn->setMouseTracking(true);
@@ -45,7 +47,8 @@ void TitleOptionMenu::initMenu() {
             a_dynamicWallPaperBtn->setText(QStringLiteral("动态壁纸"));
             a_dynamicWallPaperBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/wallpaper.png")));
             a_dynamicWallPaperBtn->setIconSize(QSize(35, 35));
-            connect(a_dynamicWallPaperBtn, &QToolButton::clicked, this, [this] {
+            connect(a_dynamicWallPaperBtn, &QToolButton::clicked, this, [this]
+            {
                 emit wallpaper(); ///< 发出设置动态壁纸信号
                 this->hide();
             });
@@ -63,7 +66,8 @@ void TitleOptionMenu::initMenu() {
             a_phonePlayBtn->setText(QStringLiteral("手机play"));
             a_phonePlayBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/phonePlay.png")));
             a_phonePlayBtn->setIconSize(QSize(35, 35));
-            connect(a_phonePlayBtn, &QToolButton::clicked, this, [this] {
+            connect(a_phonePlayBtn, &QToolButton::clicked, this, [this]
+            {
                 emit phonePlay(); ///< 发出手机播放信号
                 this->hide();
             });
@@ -81,7 +85,8 @@ void TitleOptionMenu::initMenu() {
             a_uploadToDeviceBtn->setText(QStringLiteral("传歌到设备"));
             a_uploadToDeviceBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/uploadToDevice.png")));
             a_uploadToDeviceBtn->setIconSize(QSize(35, 35));
-            connect(a_uploadToDeviceBtn, &QToolButton::clicked, this, [this] {
+            connect(a_uploadToDeviceBtn, &QToolButton::clicked, this, [this]
+            {
                 emit uploadToDevice(); ///< 发出传歌到设备信号
                 this->hide();
             });
@@ -99,7 +104,8 @@ void TitleOptionMenu::initMenu() {
             a_earnCoinBtn->setText(QStringLiteral("听歌赚金币"));
             a_earnCoinBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/earnCoin.png")));
             a_earnCoinBtn->setIconSize(QSize(35, 35));
-            connect(a_earnCoinBtn, &QToolButton::clicked, this, [this] {
+            connect(a_earnCoinBtn, &QToolButton::clicked, this, [this]
+            {
                 emit earnCoin(); ///< 发出听歌赚金币信号
                 this->hide();
             });
@@ -136,7 +142,8 @@ void TitleOptionMenu::initMenu() {
                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/controller-blue.svg"))); ///< 设置正常和悬停图标
         a_controlToolBtn->setText(QStringLiteral("   音乐遥控器"));
         a_controlAction->setDefaultWidget(a_controlToolBtn);
-        connect(a_controlToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_controlToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit controller(); ///< 发出音乐遥控器信号
             this->hide();
         });
@@ -163,7 +170,8 @@ void TitleOptionMenu::initMenu() {
                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/balance-blue.svg")));
         a_balanceToolBtn->setText(QStringLiteral("   均衡器"));
         a_balanceAction->setDefaultWidget(a_balanceToolBtn);
-        connect(a_balanceToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_balanceToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit balance(); ///< 发出均衡器信号
             this->hide();
         });
@@ -190,7 +198,8 @@ void TitleOptionMenu::initMenu() {
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/aihelp-blue.svg")));
         a_aiHelpToolBtn->setText(QStringLiteral("   AI帮你唱"));
         a_aiHelpAction->setDefaultWidget(a_aiHelpToolBtn);
-        connect(a_aiHelpToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_aiHelpToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit aiHelpYou(); ///< 发出 AI 帮你唱信号
             this->hide();
         });
@@ -217,7 +226,8 @@ void TitleOptionMenu::initMenu() {
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/soundPlugin-blue.svg")));
         a_pluginToolBtn->setText(QStringLiteral("   音效插件"));
         a_pluginAction->setDefaultWidget(a_pluginToolBtn);
-        connect(a_pluginToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_pluginToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit soundPlugin(); ///< 发出音效插件信号
             this->hide();
         });
@@ -244,7 +254,8 @@ void TitleOptionMenu::initMenu() {
                                        QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/timeSetting-blue.svg")));
         a_timeSettingToolBtn->setText(QStringLiteral("   定时设置"));
         a_timeSettingAction->setDefaultWidget(a_timeSettingToolBtn);
-        connect(a_timeSettingToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_timeSettingToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit timeSetting(); ///< 发出定时设置信号
             this->hide();
         });
@@ -271,7 +282,8 @@ void TitleOptionMenu::initMenu() {
                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/appTool-blue.svg")));
         a_appToolToolBtn->setText(QStringLiteral("   应用工具"));
         a_appToolAction->setDefaultWidget(a_appToolToolBtn);
-        connect(a_appToolToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_appToolToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit appTool(); ///< 发出应用工具信号
             this->hide();
         });
@@ -298,7 +310,8 @@ void TitleOptionMenu::initMenu() {
                                      QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/restoreWindow-blue.svg")));
         a_restoreWindowBtn->setText(QStringLiteral("   恢复窗口"));
         a_restoreWindowAction->setDefaultWidget(a_restoreWindowBtn);
-        connect(a_restoreWindowBtn, &QToolButton::clicked, this, [this] {
+        connect(a_restoreWindowBtn, &QToolButton::clicked, this, [this]
+        {
             emit restoreWindow(); ///< 发出恢复窗口信号
             this->hide();
         });
@@ -325,7 +338,8 @@ void TitleOptionMenu::initMenu() {
                                        QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/checkUpdate-blue.svg")));
         a_checkUpdateToolBtn->setText(QStringLiteral("   检查更新"));
         a_checkUpdateAction->setDefaultWidget(a_checkUpdateToolBtn);
-        connect(a_checkUpdateToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_checkUpdateToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit checkUpdate(); ///< 发出检查更新信号
             this->hide();
         });
@@ -376,7 +390,8 @@ void TitleOptionMenu::initMenu() {
         layout->addWidget(a_helpRightBtn);
         a_helpFacebackAction->setDefaultWidget(widget);
 
-        connect(a_helpFacebackAction, &QWidgetAction::hovered, this, [widget, a_helpFacebackToolBtn, a_helpRightBtn, this] {
+        connect(a_helpFacebackAction, &QWidgetAction::hovered, this, [widget, a_helpFacebackToolBtn, a_helpRightBtn, this]
+        {
             checkHover();
             this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_helpFacebackToolBtn);
@@ -400,7 +415,8 @@ void TitleOptionMenu::initMenu() {
                                        QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/useHelp-blue.svg")));
             a_useHelpToolBtn->setText(QStringLiteral("  使用帮助"));
             a_useHelpAction->setDefaultWidget(a_useHelpToolBtn);
-            connect(a_useHelpToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_useHelpToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit useHelp(); ///< 发出使用帮助信号
                 this->hide();
             });
@@ -426,7 +442,8 @@ void TitleOptionMenu::initMenu() {
                                         QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/feedback-blue.svg")));
             a_feedbackToolBtn->setText(QStringLiteral("  意见反馈"));
             a_feedbackAction->setDefaultWidget(a_feedbackToolBtn);
-            connect(a_feedbackToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_feedbackToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit feedback(); ///< 发出意见反馈信号
                 this->hide();
             });
@@ -452,7 +469,8 @@ void TitleOptionMenu::initMenu() {
                                          QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/community-blue.svg")));
             a_communityToolBtn->setText(QStringLiteral("  用户反馈社区"));
             a_communityAction->setDefaultWidget(a_communityToolBtn);
-            connect(a_communityToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_communityToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit community(); ///< 发出用户反馈社区信号
                 this->hide();
             });
@@ -478,7 +496,8 @@ void TitleOptionMenu::initMenu() {
                                           QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/updateInfo-blue.svg")));
             a_updateInfoToolBtn->setText(QStringLiteral("  更新信息"));
             a_updateInfoAction->setDefaultWidget(a_updateInfoToolBtn);
-            connect(a_updateInfoToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_updateInfoToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit updateInfo(); ///< 发出更新信息信号
                 this->hide();
             });
@@ -504,7 +523,8 @@ void TitleOptionMenu::initMenu() {
                                      QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/about-blue.svg")));
             a_aboutToolBtn->setText(QStringLiteral("  关于应用"));
             a_aboutAction->setDefaultWidget(a_aboutToolBtn);
-            connect(a_aboutToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_aboutToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit about(); ///< 发出关于应用信号
                 this->hide();
             });
@@ -543,7 +563,8 @@ void TitleOptionMenu::initMenu() {
                                     QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/settings-blue.svg")));
         a_settingsToolBtn->setText(QStringLiteral("   设置"));
         a_settingsAction->setDefaultWidget(a_settingsToolBtn);
-        connect(a_settingsToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_settingsToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit settings(); ///< 发出设置信号
             this->hide();
         });
@@ -570,7 +591,8 @@ void TitleOptionMenu::initMenu() {
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/logOut-blue.svg")));
         a_logOutToolBtn->setText(QStringLiteral("   退出登录"));
         a_logOutAction->setDefaultWidget(a_logOutToolBtn);
-        connect(a_logOutToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_logOutToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit logOut(); ///< 发出退出登录信号
             this->hide();
         });
@@ -597,7 +619,8 @@ void TitleOptionMenu::initMenu() {
                                 QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/exit-blue.svg")));
         a_exitToolBtn->setText(QStringLiteral("   退出酷狗音乐"));
         a_exitAction->setDefaultWidget(a_exitToolBtn);
-        connect(a_exitToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_exitToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit exit(); ///< 发出退出应用信号
             this->hide();
         });
@@ -638,6 +661,7 @@ void TitleOptionMenu::initMenu() {
  * @brief 获取当前菜单对象
  * @return 当前菜单对象指针
  */
-const TitleOptionMenu *TitleOptionMenu::getMenu() const {
+const TitleOptionMenu* TitleOptionMenu::getMenu() const
+{
     return this;
 }

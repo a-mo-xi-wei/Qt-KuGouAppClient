@@ -1,47 +1,37 @@
-QToolButton{
+QToolButton {
     border-radius: 6px;
     background-color: transparent;
     font-size: 13px;
     padding-left: 10px;
 }
-QToolButton:hover{
+
+QToolButton:hover {
     background-color: rgb(229, 232, 232);
     color: #268cff;
 }
-QToolButton:checked{
+
+QToolButton:checked {
     color: #268cff;
 }
-QToolButton#wallPaperBtn,QToolButton#phonePlayBtn,QToolButton#uploadToDeviceBtn,QToolButton#earnCoinBtn {
+
+QToolButton#wallPaperBtn, QToolButton#phonePlayBtn, QToolButton#uploadToDeviceBtn, QToolButton#earnCoinBtn {
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0);
     font-size: 12px;
     padding: 5px;
 }
-QToolButton#wallPaperBtn:hover,QToolButton#phonePlayBtn:hover,QToolButton#uploadToDeviceBtn:hover,QToolButton#earnCoinBtn:hover{
+
+QToolButton#wallPaperBtn:hover, QToolButton#phonePlayBtn:hover, QToolButton#uploadToDeviceBtn:hover, QToolButton#earnCoinBtn:hover {
     background-color: rgb(229, 232, 232);
     color: #268cff;
 }
 
-QWidget{
-    border-radius: 6px;
-    background-color: transparent;
-}
-QWidget:hover{
-    background-color: rgb(229, 232, 232);
-    color: #268cff;
-}
-QWidget#listWidget{
-    background-color: transparent;
-}
-QWidget#listWidget:hover {
-    background-color: transparent;
-}
-QMenu{
-    border-radius: 9px;
-    background-color: rgba(240, 250, 255, 0.96);
+QMenu {
+    border-radius: 10px;
     margin: 4px;
     padding: 10px 5px 10px 5px;
 }
+
 QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
     height: 1px;
     background: #dedede;
