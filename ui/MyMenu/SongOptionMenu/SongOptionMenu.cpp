@@ -28,7 +28,8 @@ SongOptionMenu::SongOptionMenu(QWidget *parent)
 /**
  * @brief 初始化菜单布局和内容
  */
-void SongOptionMenu::initMenu() {
+void SongOptionMenu::initMenu()
+{
     this->setFixedSize(200, 470);
 
     // 播放按钮
@@ -41,7 +42,8 @@ void SongOptionMenu::initMenu() {
                                 QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/play-blue.svg")));
         a_playToolBtn->setText(QStringLiteral("  播放"));
         a_playAction->setDefaultWidget(a_playToolBtn);
-        connect(a_playToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_playToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit play();
             this->hide();
         });
@@ -67,7 +69,8 @@ void SongOptionMenu::initMenu() {
                                     QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/nextplay-blue.svg")));
         a_nextPlayToolBtn->setText(QStringLiteral("  下一首播放"));
         a_nextPlayAction->setDefaultWidget(a_nextPlayToolBtn);
-        connect(a_nextPlayToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_nextPlayToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit nextPlay();
             this->hide();
         });
@@ -101,6 +104,7 @@ void SongOptionMenu::initMenu() {
         a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
         a_addToToolBtn->setText(QStringLiteral("  添加到"));
+        a_addToToolBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         // 右侧箭头按钮
         auto a_addToRightBtn = new MenuBtn(widget);
@@ -111,12 +115,15 @@ void SongOptionMenu::initMenu() {
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+        a_addToRightBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         layout->addWidget(a_addToToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_addToAction->setDefaultWidget(widget);
+        widget->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-        connect(a_addToAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_addToToolBtn, this] {
+        connect(a_addToAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_addToToolBtn, this]
+        {
             checkHover();
             this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_addToToolBtn);
@@ -140,7 +147,8 @@ void SongOptionMenu::initMenu() {
                                          QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/playqueue-blue.svg")));
             a_playQueueToolBtn->setText(QStringLiteral("  播放队列"));
             a_playQueueAction->setDefaultWidget(a_playQueueToolBtn);
-            connect(a_playQueueToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_playQueueToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit addToPlayQueue();
                 this->hide();
             });
@@ -166,7 +174,8 @@ void SongOptionMenu::initMenu() {
                                            QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-blue.svg")));
             a_newPlayListToolBtn->setText(QStringLiteral("  新建歌单"));
             a_newPlayListAction->setDefaultWidget(a_newPlayListToolBtn);
-            connect(a_newPlayListToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_newPlayListToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit addToNewSongList();
                 this->hide();
             });
@@ -192,7 +201,8 @@ void SongOptionMenu::initMenu() {
                                     QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/like-blue.svg")));
             a_likeToolBtn->setText(QStringLiteral("  我喜欢"));
             a_likeAction->setDefaultWidget(a_likeToolBtn);
-            connect(a_likeToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_likeToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit addToLove();
                 this->hide();
             });
@@ -218,7 +228,8 @@ void SongOptionMenu::initMenu() {
                                               QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/collect-blue.svg")));
             a_defaultCollectToolBtn->setText(QStringLiteral("  默认收藏"));
             a_defaultCollectAction->setDefaultWidget(a_defaultCollectToolBtn);
-            connect(a_defaultCollectToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_defaultCollectToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit addToCollect();
                 this->hide();
             });
@@ -244,7 +255,8 @@ void SongOptionMenu::initMenu() {
                                            QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/defaultlist-blue.svg")));
             a_defaultListToolBtn->setText(QStringLiteral("  默认列表"));
             a_defaultListAction->setDefaultWidget(a_defaultListToolBtn);
-            connect(a_defaultListToolBtn, &QToolButton::clicked, this, [this] {
+            connect(a_defaultListToolBtn, &QToolButton::clicked, this, [this]
+            {
                 emit addToPlayList();
                 this->hide();
             });
@@ -282,7 +294,8 @@ void SongOptionMenu::initMenu() {
                                     QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/download-blue.svg")));
         a_downloadToolBtn->setText(QStringLiteral("  下载"));
         a_downloadAction->setDefaultWidget(a_downloadToolBtn);
-        connect(a_downloadToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_downloadToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit download();
             this->hide();
         });
@@ -308,7 +321,8 @@ void SongOptionMenu::initMenu() {
                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/share-blue.svg")));
         a_shareToolBtn->setText(QStringLiteral("  分享"));
         a_shareAction->setDefaultWidget(a_shareToolBtn);
-        connect(a_shareToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_shareToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit share();
             this->hide();
         });
@@ -334,7 +348,8 @@ void SongOptionMenu::initMenu() {
                                    QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/comment-blue.svg")));
         a_commentToolBtn->setText(QStringLiteral("  查看评论"));
         a_commentAction->setDefaultWidget(a_commentToolBtn);
-        connect(a_commentToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_commentToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit comment();
             this->hide();
         });
@@ -360,7 +375,8 @@ void SongOptionMenu::initMenu() {
                                     QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/same-blue.svg")));
         a_sameSongToolBtn->setText(QStringLiteral("  相似歌曲"));
         a_sameSongAction->setDefaultWidget(a_sameSongToolBtn);
-        connect(a_sameSongToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_sameSongToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit sameSong();
             this->hide();
         });
@@ -386,7 +402,8 @@ void SongOptionMenu::initMenu() {
                                         QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/songinfo-blue.svg")));
         a_songInfoSongToolBtn->setText(QStringLiteral("  查看歌曲信息"));
         a_songInfoAction->setDefaultWidget(a_songInfoSongToolBtn);
-        connect(a_songInfoSongToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_songInfoSongToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit songInfo();
             this->hide();
         });
@@ -412,7 +429,8 @@ void SongOptionMenu::initMenu() {
                                       QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-blue.svg")));
         a_deleteSongToolBtn->setText(QStringLiteral("  从列表中删除"));
         a_deleteAction->setDefaultWidget(a_deleteSongToolBtn);
-        connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_deleteSongToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit deleteSong(this->m_curIndex);
             this->hide();
         });
@@ -438,7 +456,8 @@ void SongOptionMenu::initMenu() {
                                         QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-blue.svg")));
         a_openFileSongToolBtn->setText(QStringLiteral("  打开文件所在目录"));
         a_openFileAction->setDefaultWidget(a_openFileSongToolBtn);
-        connect(a_openFileSongToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_openFileSongToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit openInFile();
             this->hide();
         });
@@ -472,7 +491,7 @@ void SongOptionMenu::initMenu() {
         a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg")));
         a_searchToolBtn->setText(QStringLiteral("  搜索"));
-
+        a_searchToolBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
         // 右侧箭头按钮
         auto a_addToRightBtn = new MenuBtn(widget);
         a_addToRightBtn->setObjectName("addToRightBtn");
@@ -482,12 +501,15 @@ void SongOptionMenu::initMenu() {
         a_addToRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_addToRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
                                   QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+        a_addToRightBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         layout->addWidget(a_searchToolBtn);
         layout->addWidget(a_addToRightBtn);
         a_searchAction->setDefaultWidget(widget);
+        widget->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-        connect(a_searchAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_searchToolBtn, this] {
+        connect(a_searchAction, &QWidgetAction::hovered, this, [widget, a_addToRightBtn, a_searchToolBtn, this]
+        {
             checkHover();
             this->m_currentHover.emplace_back(widget);
             this->m_currentHover.emplace_back(a_searchToolBtn);
@@ -508,11 +530,13 @@ void SongOptionMenu::initMenu() {
             a_searchTitleBtn->setFixedSize(120, 35);
             a_searchTitleBtn->setText(QStringLiteral("搜索本歌曲"));
             a_searchTitleAction->setDefaultWidget(a_searchTitleBtn);
-            connect(a_searchTitleBtn, &QToolButton::clicked, this, [this] {
+            connect(a_searchTitleBtn, &QToolButton::clicked, this, [this]
+            {
                 emit search();
                 this->hide();
             });
-            connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn, this] {
+            connect(a_searchTitleAction, &QWidgetAction::hovered, this, [a_searchTitleBtn, this]
+            {
                 checkHover();
                 this->m_currentHover.emplace_back(a_searchTitleBtn);
                 this->m_lastHover = this->m_currentHover;
@@ -539,7 +563,8 @@ void SongOptionMenu::initMenu() {
                                       QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-blue.svg")));
         a_uploadSongToolBtn->setText(QStringLiteral("  上传到音乐云盘"));
         a_uploadAction->setDefaultWidget(a_uploadSongToolBtn);
-        connect(a_uploadSongToolBtn, &QToolButton::clicked, this, [this] {
+        connect(a_uploadSongToolBtn, &QToolButton::clicked, this, [this]
+        {
             emit upload();
             this->hide();
         });
@@ -578,6 +603,7 @@ void SongOptionMenu::initMenu() {
  * @brief 获取当前菜单对象
  * @return 当前菜单对象指针
  */
-const SongOptionMenu *SongOptionMenu::getMenu() const {
+const SongOptionMenu* SongOptionMenu::getMenu() const
+{
     return this;
 }

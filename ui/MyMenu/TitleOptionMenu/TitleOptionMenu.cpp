@@ -114,8 +114,8 @@ void TitleOptionMenu::initMenu()
         // 顶部按钮容器
         auto a_listWidget = new QWidget(this);
         a_listWidget->setMouseTracking(true);
-        a_listWidget->setAttribute(Qt::WA_Hover);        // 启用悬停检测
-        a_listWidget->setFocusPolicy(Qt::NoFocus);        // 避免抢夺焦点
+        a_listWidget->setAttribute(Qt::WA_Hover);  // 启用悬停检测
+        a_listWidget->setFocusPolicy(Qt::NoFocus); // 避免抢夺焦点
         a_listWidget->setObjectName(QStringLiteral("listWidget"));
         a_listWidget->setFixedSize(365, 100);
         a_listWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -356,9 +356,10 @@ void TitleOptionMenu::initMenu()
     }
 
     // 帮助与意见反馈子菜单
-    auto a_helpFacebackAction = new QWidgetAction(this);
+    auto a_helpFaceBackAction = new QWidgetAction(this);
     {
         auto widget = new QWidget(this);
+        widget->setObjectName("helpFaceBackWidget");
         widget->setFixedWidth(360);
         widget->setContentsMargins(0, 0, 0, 0);
         auto layout = new QHBoxLayout(widget);
@@ -366,15 +367,17 @@ void TitleOptionMenu::initMenu()
         layout->setSpacing(0);
 
         // 主按钮
-        auto a_helpFacebackToolBtn = new MenuBtn(this);
-        a_helpFacebackToolBtn->setObjectName("helpFacebackToolBtn");
-        a_helpFacebackToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
-        a_helpFacebackToolBtn->setFixedSize(325, 37);
-        a_helpFacebackToolBtn->setIconSize(QSize(20, 20));
-        a_helpFacebackToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")));
-        a_helpFacebackToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")),
+        auto a_helpFaceBackToolBtn = new MenuBtn(this);
+        a_helpFaceBackToolBtn->setObjectName("helpFaceBackToolBtn");
+        a_helpFaceBackToolBtn->setStyleSheet(
+            "border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
+        a_helpFaceBackToolBtn->setFixedSize(325, 37);
+        a_helpFaceBackToolBtn->setIconSize(QSize(20, 20));
+        a_helpFaceBackToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")));
+        a_helpFaceBackToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")),
                                         QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-blue.svg")));
-        a_helpFacebackToolBtn->setText(QStringLiteral("   帮助与意见反馈"));
+        a_helpFaceBackToolBtn->setText(QStringLiteral("   帮助与意见反馈"));
+        a_helpFaceBackToolBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         // 右侧箭头按钮
         auto a_helpRightBtn = new MenuBtn(this);
@@ -385,25 +388,30 @@ void TitleOptionMenu::initMenu()
         a_helpRightBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")));
         a_helpRightBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-black.svg")),
                                  QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/right-blue.svg")));
+        a_helpRightBtn->setAttribute(Qt::WA_TransparentForMouseEvents);
 
-        layout->addWidget(a_helpFacebackToolBtn);
+        layout->addWidget(a_helpFaceBackToolBtn);
         layout->addWidget(a_helpRightBtn);
-        a_helpFacebackAction->setDefaultWidget(widget);
-
-        connect(a_helpFacebackAction, &QWidgetAction::hovered, this, [widget, a_helpFacebackToolBtn, a_helpRightBtn, this]
+        a_helpFaceBackAction->setDefaultWidget(widget);
+        widget->setAttribute(Qt::WA_TransparentForMouseEvents);
+        connect(a_helpFaceBackAction, &QWidgetAction::hovered, this,
+                [widget, a_helpFaceBackToolBtn, a_helpRightBtn, this]
         {
             checkHover();
             this->m_currentHover.emplace_back(widget);
-            this->m_currentHover.emplace_back(a_helpFacebackToolBtn);
+            this->m_currentHover.emplace_back(a_helpFaceBackToolBtn);
             this->m_currentHover.emplace_back(a_helpRightBtn);
             this->m_lastHover = this->m_currentHover;
             QEvent enterEvent(QEvent::Enter);
-            QCoreApplication::sendEvent(a_helpFacebackToolBtn, &enterEvent);
+            QCoreApplication::sendEvent(a_helpFaceBackToolBtn, &enterEvent);
             QCoreApplication::sendEvent(a_helpRightBtn, &enterEvent);
             widget->setAttribute(Qt::WA_UnderMouse, true);
-            a_helpFacebackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
+            a_helpFaceBackToolBtn->setAttribute(Qt::WA_UnderMouse, true);
             a_helpRightBtn->setAttribute(Qt::WA_UnderMouse, true); ///< 模拟控件进入悬停状态
         });
+
+        // 事件过滤器：监听父组件悬停状态
+        //widget->installEventFilter(this);
 
         // 子菜单项 - 使用帮助
         auto a_useHelpAction = new QWidgetAction(this);
@@ -549,7 +557,7 @@ void TitleOptionMenu::initMenu()
         a_helpFacebackMenu->addSeparator();
         a_helpFacebackMenu->addAction(a_updateInfoAction);
         a_helpFacebackMenu->addAction(a_aboutAction);
-        a_helpFacebackAction->setMenu(a_helpFacebackMenu); ///< 设置帮助与意见反馈子菜单
+        a_helpFaceBackAction->setMenu(a_helpFacebackMenu); ///< 设置帮助与意见反馈子菜单
     }
 
     // 设置按钮
@@ -649,7 +657,7 @@ void TitleOptionMenu::initMenu()
     this->addSeparator();
     this->addAction(a_restoreWindowAction);
     this->addAction(a_checkUpdateAction);
-    this->addAction(a_helpFacebackAction);
+    this->addAction(a_helpFaceBackAction);
     this->addAction(a_settingsAction);
     this->addSeparator();
     this->addAction(a_logOutAction);
