@@ -26,7 +26,7 @@ RecommendForYou::RecommendForYou(QWidget *parent)
     , ui(new Ui::RecommendForYou)                        ///< 初始化 UI 界面
 {
     ui->setupUi(this);                                   ///< 设置 UI 布局
-
+    setFont(QFont("TaiwanPearl"));
     QFile file(GET_CURRENT_DIR + QStringLiteral("/recommend.css")); ///< 加载样式表
     if (file.open(QIODevice::ReadOnly))
     {
@@ -46,7 +46,8 @@ RecommendForYou::RecommendForYou(QWidget *parent)
 
         tasks << [this] { initAdvertiseBoard(); };
         tasks << [this] { initClassifyWidget(); };
-        tasks << [this] {
+        tasks << [this]
+        {
             initTabWidget();
             QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
         };
@@ -56,11 +57,13 @@ RecommendForYou::RecommendForYou(QWidget *parent)
             queue->enqueue(task);
 
         auto runner = std::make_shared<std::function<void()>>();
-        *runner = [queue, runner]() {
+        *runner = [queue, runner]()
+        {
             if (queue->isEmpty()) return;
 
             auto task = queue->dequeue();
-            QTimer::singleShot(100, nullptr, [task, runner]() { // 100ms 延时可调整
+            QTimer::singleShot(100, nullptr, [task, runner]()   // 100ms 延时可调整
+            {
                 task();
                 (*runner)();
             });
@@ -152,26 +155,31 @@ void RecommendForYou::initClassifyWidget() const
  * @brief 初始化推荐表格
  * @note 添加推荐表格到布局
  */
-void RecommendForYou::initTabWidget() {
-    const auto layout = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取垂直布局
+void RecommendForYou::initTabWidget()
+{
+    const auto layout = dynamic_cast<QVBoxLayout*>(ui->table_widget->layout());  ///< 获取垂直布局
     if (!layout)
     {
         return;                                          ///< 空指针保护
     }
-    QTimer::singleShot(100,this,[this,layout] {
+    QTimer::singleShot(100, this, [this, layout]
+    {
         layout->insertWidget(layout->count(),
                              new TableWidget(QStringLiteral(" 今日专属推荐"), TableWidget::KIND::BlockList, this)); ///< 添加今日专属推荐
     });
-    QTimer::singleShot(200,this,[this,layout] {
+    QTimer::singleShot(200, this, [this, layout]
+    {
         layout->insertWidget(layout->count(),
                              new TableWidget(QStringLiteral("潮流音乐站 "), TableWidget::KIND::ItemList, this)); ///< 添加潮流音乐站
     });
-    QTimer::singleShot(300,this,[this,layout] {
+    QTimer::singleShot(300, this, [this, layout]
+    {
         layout->insertWidget(layout->count(),
                              new TableWidget(QStringLiteral("热门好歌精选 "), TableWidget::KIND::ItemList, this)); ///< 添加热门好歌精选
     });
-    QTimer::singleShot(400,this,[this,layout] {
-    layout->insertWidget(layout->count(),
-                         new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this)); ///< 添加私人专属好歌
+    QTimer::singleShot(400, this, [this, layout]
+    {
+        layout->insertWidget(layout->count(),
+                             new TableWidget(QStringLiteral("私人专属好歌 "), TableWidget::KIND::ItemList, this)); ///< 添加私人专属好歌
     });
 }
