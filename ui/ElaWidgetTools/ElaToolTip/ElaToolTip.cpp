@@ -42,30 +42,33 @@ ElaToolTip::ElaToolTip(QWidget* parent)
     : QWidget{parent}, d_ptr(new ElaToolTipPrivate())
 {
     Q_D(ElaToolTip);
-    d->q_ptr = this;
-    d->_pBorderRadius = 5;
-    d->_pDisplayMsec = 2000;
+    d->q_ptr           = this;
+    d->_pBorderRadius  = 5;
+    d->_pDisplayMsec   = 2000;
     d->_pShowDelayMsec = 0;
     d->_pHideDelayMsec = 0;
-    d->_pCustomWidget = nullptr;
+    d->_pCustomWidget  = nullptr;
     setObjectName("ElaToolTip");
-    parent->installEventFilter(d);
+    if (parent)
+    {
+        parent->installEventFilter(d);
+    }
 
     setAttribute(Qt::WA_TransparentForMouseEvents);
     setAttribute(Qt::WA_TranslucentBackground);
     setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
-    parent->setAttribute(Qt::WA_Hover, true);
-    this->setAttribute(Qt::WA_Hover, true);
 
     d->_toolTipText = new ElaText(this);
     d->_toolTipText->setWordWrap(false);
     d->_toolTipText->setTextPixelSize(12);
     d->_mainLayout = new QVBoxLayout(this);
-    d->_mainLayout->setContentsMargins(d->_shadowBorderWidth * 2, d->_shadowBorderWidth * 2, d->_shadowBorderWidth * 2, d->_shadowBorderWidth * 2);
+    d->_mainLayout->setContentsMargins(d->_shadowBorderWidth * 2, d->_shadowBorderWidth * 2, d->_shadowBorderWidth * 2,
+                                       d->_shadowBorderWidth * 2);
     d->_mainLayout->addWidget(d->_toolTipText);
 
     d->_themeMode = eTheme->getThemeMode();
-    connect(eTheme, &ElaTheme::themeModeChanged, this, [=](ElaThemeType::ThemeMode themeMode) {
+    connect(eTheme, &ElaTheme::themeModeChanged, this, [ = ](ElaThemeType::ThemeMode themeMode)
+    {
         d->_themeMode = themeMode;
         update();
     });
