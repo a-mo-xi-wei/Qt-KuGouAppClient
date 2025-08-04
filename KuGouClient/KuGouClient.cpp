@@ -211,7 +211,7 @@ void KuGouClient::initUi()
     connect(m_searchResultWidget.get(), &SearchResultWidget::playMusic, this,
             &KuGouClient::onSearchResultMusicPlay); ///< 连接查找更多音乐信号
 
-    this->m_sizeGrip->setFixedSize(11, 11);                      ///< 设置角标大小
+    this->m_sizeGrip->setFixedSize(15, 15);                      ///< 设置角标大小
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip")); ///< 设置对象名称
 }
 
@@ -1087,8 +1087,8 @@ void KuGouClient::resizeEvent(QResizeEvent* event)
     MainWindow::resizeEvent(event); ///< 调用父类处理
     m_isMaxScreen = (this->geometry() == this->screen()->availableGeometry());
     // @note 移动角标
-    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 10,
-                           this->height() - this->m_sizeGrip->height() - 10);
+    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
+                           this->height() - this->m_sizeGrip->height() - 8);
     this->m_sizeGrip->raise();          ///< 提升角标层级
     this->m_sizeGrip->setVisible(true); ///< 显示角标
     // @note 调整歌曲信息宽度
