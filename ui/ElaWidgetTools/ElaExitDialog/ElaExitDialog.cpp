@@ -28,9 +28,15 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     Q_D(ElaExitDialog);
     d->q_ptr = this;
 
+    // 准确设置遮罩区域，只遮住内容，不遮住阴影
+    const int shadow = 5;
+    QRect contentRect(shadow, shadow,
+                      parent->width() - shadow * 2,
+                      parent->height() - shadow * 2);
+
     d->_maskWidget = new ElaMaskWidget(parent);
     d->_maskWidget->move(0, 0);
-    d->_maskWidget->setFixedSize(parent->size());
+    d->_maskWidget->setGeometry(contentRect); // 只覆盖内容区域
     d->_maskWidget->setVisible(false);
 
     resize(400, height());
@@ -45,7 +51,8 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     window()->setWindowFlags((window()->windowFlags()) | Qt::FramelessWindowHint);
 #endif
     d->_leftButton = new ElaPushButton("cancel", this);
-    connect(d->_leftButton, &ElaPushButton::clicked, this, [=]() {
+    connect(d->_leftButton, &ElaPushButton::clicked, this, [ = ]()
+    {
         Q_EMIT leftButtonClicked();
         onLeftButtonClicked();
         d->_maskWidget->doMaskAnimation(0);
@@ -54,12 +61,13 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_leftButton->setMinimumSize(0, 0);
     d->_leftButton->setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
     d->_leftButton->setFixedHeight(38);
-    d->_leftButton->setBorderRadius(6);//JetBrainsMono NF
+    d->_leftButton->setBorderRadius(6); //JetBrainsMono NF
     auto font = d->_leftButton->font();
     font.setFamily("JetBrainsMono NF");
     d->_leftButton->setFont(font);
     d->_middleButton = new ElaPushButton("minimum", this);
-    connect(d->_middleButton, &ElaPushButton::clicked, this, [=]() {
+    connect(d->_middleButton, &ElaPushButton::clicked, this, [ = ]()
+    {
         Q_EMIT middleButtonClicked();
         onMiddleButtonClicked();
     });
@@ -69,7 +77,8 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_middleButton->setBorderRadius(6);
     d->_middleButton->setFont(font);
     d->_rightButton = new ElaPushButton("exit", this);
-    connect(d->_rightButton, &ElaPushButton::clicked, this, [=]() {
+    connect(d->_rightButton, &ElaPushButton::clicked, this, [ = ]()
+    {
         Q_EMIT rightButtonClicked();
         onRightButtonClicked();
         d->_doCloseAnimation(true);
@@ -88,14 +97,14 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_rightButton->setBorderRadius(6);
     d->_rightButton->setFont(font);
 
-    d->_centralWidget = new QWidget(this);
+    d->_centralWidget           = new QWidget(this);
     QVBoxLayout* centralVLayout = new QVBoxLayout(d->_centralWidget);
     centralVLayout->setContentsMargins(15, 25, 15, 10);
     ElaText* title = new ElaText("退出", this);
     title->setTextStyle(ElaTextType::Title);
     ElaText* subTitle = new ElaText("确定要退出程序吗", this);
     subTitle->setTextStyle(ElaTextType::BodyStrong);
-    font = QFont("AaSongLiuKaiTi");//需要通过KuGouClient::initFontRes()打印得知真实字体名
+    font = QFont("AaSongLiuKaiTi"); //需要通过KuGouClient::initFontRes()打印得知真实字体名
     font.setPixelSize(15);
     subTitle->setFont(font);
     centralVLayout->addWidget(title);
@@ -115,7 +124,8 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     d->_mainLayout->addWidget(d->_buttonWidget);
 
     d->_themeMode = eTheme->getThemeMode();
-    connect(eTheme, &ElaTheme::themeModeChanged, this, [=](ElaThemeType::ThemeMode themeMode) {
+    connect(eTheme, &ElaTheme::themeModeChanged, this, [ = ](ElaThemeType::ThemeMode themeMode)
+    {
         d->_themeMode = themeMode;
     });
 }
@@ -211,7 +221,11 @@ void ElaExitDialog::showEvent(QShowEvent* event)
     Q_D(ElaExitDialog);
     d->_maskWidget->setVisible(true);
     d->_maskWidget->raise();
-    d->_maskWidget->setFixedSize(parentWidget()->size());
+
+    // d->_maskWidget->setFixedSize(parentWidget()->size());
+    QRect contentRect = parentWidget()->rect().adjusted(5, 5, -5, -5);
+    d->_maskWidget->setGeometry(contentRect);
+
     d->_maskWidget->doMaskAnimation(90);
 #ifdef Q_OS_WIN
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 3) && QT_VERSION <= QT_VERSION_CHECK(6, 6, 1))
@@ -258,8 +272,8 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
     painter.setPen(Qt::NoPen);
 
     // 定义渐变的起止颜色
-    QColor startColor(105, 225, 255, 200);      // 淡蓝色
-    QColor endColor(255, 182, 193, 200);        // 淡粉色
+    QColor startColor(105, 225, 255, 200); // 淡蓝色
+    QColor endColor(255, 182, 193, 200);   // 淡粉色
 
     // 上半部分背景 - 对角线渐变（左上到右下）
     QLinearGradient gradient(0, 0, width(), height());
@@ -269,12 +283,8 @@ void ElaExitDialog::paintEvent(QPaintEvent* event)
     painter.drawRect(rect());
 
     // 计算渐变的中间色（50%位置的颜色）
-    QColor midColor(
-        (startColor.red() + endColor.red()) / 2,
-        (startColor.green() + endColor.green()) / 2,
-        (startColor.blue() + endColor.blue()) / 2,
-        (startColor.alpha() + endColor.alpha()) / 2
-    );
+    QColor midColor((startColor.red() + endColor.red()) / 2, (startColor.green() + endColor.green()) / 2,
+                    (startColor.blue() + endColor.blue()) / 2, (startColor.alpha() + endColor.alpha()) / 2);
 
     // 按钮栏背景 - 使用渐变中间色
     painter.setBrush(midColor);
@@ -318,14 +328,14 @@ bool ElaExitDialog::nativeEvent(const QByteArray& eventType, void* message, long
     {
         return false;
     }
-    const auto msg = static_cast<const MSG*>(message);
+    const auto msg  = static_cast<const MSG*>(message);
     const HWND hwnd = msg->hwnd;
     if (!hwnd || !msg)
     {
         return false;
     }
-    d->_currentWinID = (qint64)hwnd;
-    const UINT uMsg = msg->message;
+    d->_currentWinID    = (qint64)hwnd;
+    const UINT uMsg     = msg->message;
     const WPARAM wParam = msg->wParam;
     const LPARAM lParam = msg->lParam;
     switch (uMsg)

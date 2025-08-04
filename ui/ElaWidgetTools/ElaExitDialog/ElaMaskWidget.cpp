@@ -35,10 +35,12 @@ ElaMaskWidget::~ElaMaskWidget() = default;
 void ElaMaskWidget::doMaskAnimation(int endValue)
 {
     QPropertyAnimation* opacityAnimation = new QPropertyAnimation(this, "pMaskAlpha");
-    connect(opacityAnimation, &QPropertyAnimation::valueChanged, this, [=](const QVariant& value) {
+    connect(opacityAnimation, &QPropertyAnimation::valueChanged, this, [ = ](const QVariant & value)
+    {
         update();
     });
-    connect(opacityAnimation, &QPropertyAnimation::finished, this, [=]() {
+    connect(opacityAnimation, &QPropertyAnimation::finished, this, [ = ]()
+    {
         if (endValue == 0)
         {
             setVisible(false);
@@ -62,6 +64,6 @@ void ElaMaskWidget::paintEvent(QPaintEvent* event)
     painter.setPen(Qt::NoPen);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(QColor(0x00, 0x00, 0x00, _pMaskAlpha));
-    painter.drawRect(rect());
+    painter.drawRoundedRect(rect(), 10, 10);
     painter.restore();
 }
