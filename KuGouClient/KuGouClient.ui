@@ -141,7 +141,7 @@
           </rect>
          </property>
          <property name="autoFillBackground">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <property name="topMargin">
@@ -1054,7 +1054,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="progressSlider">
+         <widget class="ElaSlider" name="progressSlider">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -1671,6 +1671,11 @@
    <extends>QStackedWidget</extends>
    <header>slidingstackedwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ElaSlider</class>
+   <extends>QSlider</extends>
+   <header>ElaSlider.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

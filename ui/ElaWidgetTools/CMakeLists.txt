@@ -44,6 +44,9 @@ file(GLOB ELATOGGLESWITCH_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch/*.cpp)
 file(GLOB ELASUGGESTBOX_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox/*.h)
 file(GLOB ELASUGGESTBOX_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox/*.cpp)
 
+file(GLOB ELASLIDER_H ${CMAKE_CURRENT_SOURCE_DIR}/ElaSlider/*.h)
+file(GLOB ELASLIDER_CPP ${CMAKE_CURRENT_SOURCE_DIR}/ElaSlider/*.cpp)
+
 set(SOURCE_FILE
         ${COMMON_H}
         ${COMMON_CPP}
@@ -73,6 +76,8 @@ set(SOURCE_FILE
         ${ELATOGGLESWITCH_CPP}
         ${ELASUGGESTBOX_H}
         ${ELASUGGESTBOX_CPP}
+        ${ELASLIDER_H}
+        ${ELASLIDER_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -96,6 +101,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaScrollBar
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaToggleSwitch
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaSuggestBox
+        ${CMAKE_CURRENT_SOURCE_DIR}/ElaSlider
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog MyAsyncThread MyHttpClient)
