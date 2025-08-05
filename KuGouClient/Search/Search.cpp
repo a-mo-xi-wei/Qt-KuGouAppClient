@@ -9,7 +9,6 @@
 #include "Search.h"
 #include "ui_Search.h"
 #include "ElaFlowLayout.h"
-#include "MyFlowLayout.h"
 #include "logger.hpp"
 
 #include <QFile>
@@ -71,55 +70,63 @@ QWidget* Search::createPage(int id)
     int itemCount = 0;
     QString objectName;
 
-    switch (id) {
-        case 0: // Recommend
-            if (!m_recommendWidget) {
-                m_recommendWidget = std::make_unique<QWidget>(ui->stackedWidget);
-                lay = new MyFlowLayout(m_recommendWidget.get(), 10, -1, 2);
-                m_recommendWidget->setLayout(lay);
-                itemCount = 54;
-            }
-            page = m_recommendWidget.get();
-            break;
-        case 1: // Rank
-            if (!m_rankWidget) {
-                m_rankWidget = std::make_unique<QWidget>(ui->stackedWidget);
-                lay = new ElaFlowLayout(m_rankWidget.get(), 5, 8, 6);
-                static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
-                m_rankWidget->setLayout(lay);
-                itemCount = 19;
-            }
-            page = m_rankWidget.get();
-            break;
-        case 2: // Special
-            if (!m_specialWidget) {
-                m_specialWidget = std::make_unique<QWidget>(ui->stackedWidget);
-                lay = new ElaFlowLayout(m_specialWidget.get(), 5, 8, 6);
-                static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
-                m_specialWidget->setLayout(lay);
-                itemCount = 27;
-            }
-            page = m_specialWidget.get();
-            break;
-        case 3: // Channel
-            if (!m_channelWidget) {
-                m_channelWidget = std::make_unique<QWidget>(ui->stackedWidget);
-                lay = new ElaFlowLayout(m_channelWidget.get(), 5, 8, 6);
-                static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
-                m_channelWidget->setLayout(lay);
-                m_channelWidget->setObjectName("channelWidget");
-                itemCount = 7;
-            }
-            page = m_channelWidget.get();
-            break;
-        default:
-            qWarning() << "[WARNING] Invalid page ID:" << id;
-            return nullptr;
+    switch (id)
+    {
+    case 0: // Recommend
+        if (!m_recommendWidget)
+        {
+            m_recommendWidget = std::make_unique<QWidget>(ui->stackedWidget);
+            lay = new ElaFlowLayout(m_rankWidget.get(), 5, 8, 6);
+            static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
+            m_recommendWidget->setLayout(lay);
+            itemCount = 54;
+        }
+        page = m_recommendWidget.get();
+        break;
+    case 1: // Rank
+        if (!m_rankWidget)
+        {
+            m_rankWidget = std::make_unique<QWidget>(ui->stackedWidget);
+            lay = new ElaFlowLayout(m_rankWidget.get(), 5, 8, 6);
+            static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
+            m_rankWidget->setLayout(lay);
+            itemCount = 19;
+        }
+        page = m_rankWidget.get();
+        break;
+    case 2: // Special
+        if (!m_specialWidget)
+        {
+            m_specialWidget = std::make_unique<QWidget>(ui->stackedWidget);
+            lay = new ElaFlowLayout(m_specialWidget.get(), 5, 8, 6);
+            static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
+            m_specialWidget->setLayout(lay);
+            itemCount = 27;
+        }
+        page = m_specialWidget.get();
+        break;
+    case 3: // Channel
+        if (!m_channelWidget)
+        {
+            m_channelWidget = std::make_unique<QWidget>(ui->stackedWidget);
+            lay = new ElaFlowLayout(m_channelWidget.get(), 5, 8, 6);
+            static_cast<ElaFlowLayout*>(lay)->setIsAnimation(true);
+            m_channelWidget->setLayout(lay);
+            m_channelWidget->setObjectName("channelWidget");
+            itemCount = 7;
+        }
+        page = m_channelWidget.get();
+        break;
+    default:
+        qWarning() << "[WARNING] Invalid page ID:" << id;
+        return nullptr;
     }
 
-    if (lay && itemCount > 0) {
+    if (lay && itemCount > 0)
+    {
         refresh();
-        for (int i = 0; i < itemCount; ++i) {
+        for (int i = 0; i < itemCount; ++i)
+        {
             auto btn = new QToolButton(page);
             btn->setCursor(Qt::PointingHandCursor);
             btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
@@ -129,7 +136,8 @@ QWidget* Search::createPage(int id)
             QFontMetrics fm(font);
             auto text = m_descVector[i];
             auto elidedText = fm.elidedText(text, Qt::ElideRight, IMAGE_WIDTH);
-            if (elidedText != text) {
+            if (elidedText != text)
+            {
                 btn->setToolTip(text);
             }
             btn->setText(elidedText);
@@ -146,13 +154,15 @@ QWidget* Search::createPage(int id)
  */
 void Search::initUi()
 {
-    QToolButton* toolButtons[] = {
+    QToolButton* toolButtons[] =
+    {
         ui->toolButton1, ui->toolButton2, ui->toolButton3, ui->toolButton4,
         ui->toolButton5, ui->toolButton6, ui->toolButton7, ui->toolButton8,
         ui->toolButton9, ui->toolButton10, ui->toolButton11, ui->toolButton12,
         ui->toolButton13, ui->toolButton14, ui->toolButton15, ui->toolButton16
     };
-    const QString iconPaths[] = {
+    const QString iconPaths[] =
+    {
         ":/Search/Res/search/phonePlay.png",
         ":/Search/Res/search/kugou-live.png",
         ":/Search/Res/search/wallpaper.png",
@@ -171,7 +181,8 @@ void Search::initUi()
         ":/Search/Res/search/earnCoin.png"
     };
 
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < 16; ++i)
+    {
         toolButtons[i]->setIcon(QIcon(iconPaths[i]));
     }
 
@@ -182,7 +193,8 @@ void Search::initUi()
     m_buttonGroup->setExclusive(true);
 
     QLabel* idxLabels[] = { ui->index_label1, ui->index_label2, ui->index_label3, ui->index_label4 };
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 4; ++i)
+    {
         idxLabels[i]->setPixmap(QPixmap(":/Search/Res/search/index_lab.svg"));
         idxLabels[i]->setVisible(i == 0);
     }
@@ -201,7 +213,8 @@ void Search::initUi()
  */
 void Search::initStackedWidget()
 {
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 4; ++i)
+    {
         auto* placeholder = new QWidget;
         auto* layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -214,38 +227,56 @@ void Search::initStackedWidget()
     ui->stackedWidget->setCurrentIndex(0);
     m_currentBtn = ui->recommend_pushButton;
 
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
-        if (m_currentIdx == id) {
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id)
+    {
+        if (m_currentIdx == id)
+        {
             return;
         }
 
         enableButton(false);
 
         QWidget* placeholder = m_pages[m_currentIdx];
-        if (!placeholder) {
+        if (!placeholder)
+        {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
             return;
         }
 
         QLayout* layout = placeholder->layout();
-        if (!layout) {
+        if (!layout)
+        {
             layout = new QVBoxLayout(placeholder);
             layout->setContentsMargins(0, 0, 0, 0);
             layout->setSpacing(0);
-        } else {
-            while (QLayoutItem* item = layout->takeAt(0)) {
-                if (QWidget* widget = item->widget()) {
+        }
+        else
+        {
+            while (QLayoutItem* item = layout->takeAt(0))
+            {
+                if (QWidget* widget = item->widget())
+                {
                     widget->deleteLater();
                 }
                 delete item;
             }
-            switch (m_currentIdx) {
-                case 0: m_recommendWidget.reset();break;
-                case 1: m_rankWidget.reset();break;
-                case 2: m_specialWidget.reset();break;
-                case 3: m_channelWidget.reset();break;
-                default: break;
+            switch (m_currentIdx)
+            {
+            case 0:
+                m_recommendWidget.reset();
+                break;
+            case 1:
+                m_rankWidget.reset();
+                break;
+            case 2:
+                m_specialWidget.reset();
+                break;
+            case 3:
+                m_channelWidget.reset();
+                break;
+            default:
+                break;
             }
         }
 
@@ -253,18 +284,22 @@ void Search::initStackedWidget()
         layout = placeholder->layout();
 
         QWidget* realPage = createPage(id);
-        if (!realPage) {
+        if (!realPage)
+        {
             qWarning() << "[WARNING] Failed to create page at index:" << id;
-        } else {
+        }
+        else
+        {
             layout->addWidget(realPage);
         }
 
         ui->stackedWidget->slideInIdx(id);
         m_currentIdx = id;
-        m_currentBtn = static_cast<QPushButton *>(m_buttonGroup->button(id));
+        m_currentBtn = static_cast<QPushButton*>(m_buttonGroup->button(id));
 
         QLabel* idxLabels[] = { ui->index_label1, ui->index_label2, ui->index_label3, ui->index_label4 };
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < 4; ++i)
+        {
             idxLabels[i]->setVisible(i == id);
         }
 
@@ -282,10 +317,12 @@ void Search::initStackedWidget()
  */
 void Search::initCoverVector()
 {
-    for (int i = 1; i <= 9; ++i) {
+    for (int i = 1; i <= 9; ++i)
+    {
         m_coverVector.emplace_back(QString(":/Search/Res/search/block0%1.png").arg(i));
     }
-    for (int i = 10; i <= 60; ++i) {
+    for (int i = 10; i <= 60; ++i)
+    {
         m_coverVector.emplace_back(QString(":/Search/Res/search/block%1.png").arg(i));
     }
 }
@@ -296,7 +333,8 @@ void Search::initCoverVector()
  */
 void Search::initDescVector()
 {
-    QStringList list = {
+    QStringList list =
+    {
         "酷歌词", "抖音潮流区", "开车必备歌曲专区", "抖音DJ", "2021抖音最火歌曲", "DJ必备歌曲",
         "伤感音乐", "车载DJ", "植物大战僵尸", "抖音热歌", "刀郎老歌合集", "魔道祖师",
         "邓丽君老歌合集", "学生党专区", "夜听伤感频道", "纯音乐路的尽头会是温柔和月光",
@@ -309,7 +347,8 @@ void Search::initDescVector()
         "民谣聚集地", "私藏歌单等你来听", "古风亦可DJ-中国风也能蹦迪", "朴彩英专区",
         "AW经典电影", "电子音乐", "BLACKPINK", "每日必听的粤语歌单", "薛之谦热歌榜"
     };
-    for (const auto &str : list) {
+    for (const auto &str : list)
+    {
         m_descVector.emplace_back(str);
     }
 }
@@ -346,19 +385,22 @@ void Search::enableButton(bool flag) const
 void Search::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
-    if (!window()) {
+    if (!window())
+    {
         qWarning() << "无法获取顶级窗口！";
         STREAM_WARN() << "无法获取顶级窗口！";
         return;
     }
 
     const int topLevelWidth = window()->width();
-    if (width() > topLevelWidth) {
+    if (width() > topLevelWidth)
+    {
         auto geo = geometry();
         geo.setWidth(topLevelWidth - 10);
         setGeometry(geo);
     }
-    if (m_currentBtn) {
+    if (m_currentBtn)
+    {
         m_currentBtn->click();
     }
     enableButton(true);
@@ -372,7 +414,8 @@ void Search::resizeEvent(QResizeEvent *event)
 void Search::showEvent(QShowEvent *event)
 {
     QWidget::showEvent(event);
-    if (m_currentBtn) {
+    if (m_currentBtn)
+    {
         m_currentBtn->click();
     }
     enableButton(true);
