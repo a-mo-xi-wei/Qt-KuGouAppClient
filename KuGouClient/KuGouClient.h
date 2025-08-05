@@ -76,16 +76,20 @@ class QtMaterialSnackbar;
  * @brief UI 命名空间，包含酷狗应用界面的 UI 类
  */
 QT_BEGIN_NAMESPACE
-namespace Ui {
+
+namespace Ui
+{
     class KuGouClient;
 }
+
 QT_END_NAMESPACE
 
 /**
  * @class KuGouClient
  * @brief 酷狗音乐应用主窗口类，管理音乐播放和界面切换
  */
-class KuGouClient : public MainWindow, public VideoPlayer::EventHandle {
+class KuGouClient : public MainWindow, public VideoPlayer::EventHandle
+{
     Q_OBJECT
 
 public:
@@ -93,7 +97,7 @@ public:
      * @brief 构造函数
      * @param parent 父窗口指针，默认为 nullptr
      */
-    explicit KuGouClient(MainWindow *parent = nullptr);
+    explicit KuGouClient(MainWindow* parent = nullptr);
 
     /**
      * @brief 析构函数
@@ -120,7 +124,7 @@ private:
      */
     void initStackedWidget();
 
-    void onSelectedWidget(const int &id);
+    void onSelectedWidget(const int& id);
 
     /**
      * @brief 初始化标题栏
@@ -165,21 +169,21 @@ protected:
      * @param ev 鼠标事件
      * @note 处理窗口拖动
      */
-    void mousePressEvent(QMouseEvent *ev) override;
+    void mousePressEvent(QMouseEvent* ev) override;
 
     /**
      * @brief 鼠标移动事件
      * @param event 鼠标事件
      * @note 处理窗口拖动和最大化恢复
      */
-    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
 
     /**
      * @brief 调整大小事件
      * @param event 调整大小事件
      * @note 更新角标位置和控件大小
      */
-    void resizeEvent(QResizeEvent *event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
     /**
      * @brief 事件处理
@@ -187,7 +191,7 @@ protected:
      * @return 是否处理事件
      * @note 处理鼠标移动事件
      */
-    bool event(QEvent *event) override;
+    bool event(QEvent* event) override;
 
     /**
      * @brief 事件过滤器
@@ -196,14 +200,14 @@ protected:
      * @return 是否处理事件
      * @note 处理进度条和封面标签的事件
      */
-    bool eventFilter(QObject *watched, QEvent *event) override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private slots:
     /**
     * @brief 处理suggestBox选中项槽函数
      * @note 切换搜索结果界面
      */
-    void handleSuggestBoxSuggestionClicked(const QString &suggestText, const QVariantMap &suggestData);
+    void handleSuggestBoxSuggestionClicked(const QString& suggestText, const QVariantMap& suggestData);
 
     // 播放控件槽函数
     /**
@@ -362,7 +366,7 @@ public slots:
      * @brief 连接托盘音量控制信号
      * @param flag 是否静音
      */
-    void onTrayIconNoVolume(const bool &flag);
+    void onTrayIconNoVolume(const bool& flag);
 
     /**
      * @brief 连接托盘退出信号
@@ -390,13 +394,19 @@ signals:
      */
     void curPlaySingerChange(const QString& singer);
 
+    /**
+     * @brief 切换账号
+     */
+    void logOut();
+
 protected:
     /**
      * @brief 视频文件打开失败回调
      * @param code 错误码
      * @note 输出错误信息
      */
-    void onOpenVideoFileFailed(const int &code) override {
+    void onOpenVideoFileFailed(const int& code) override
+    {
         qWarning() << "Open video file failed with code: " << code;
     }
 
@@ -405,7 +415,8 @@ protected:
      * @param code 错误码
      * @note 输出错误信息
      */
-    void onOpenSdlFailed(const int &code) override {
+    void onOpenSdlFailed(const int& code) override
+    {
         qWarning() << "Open SDL failed with code: " << code;
     }
 
@@ -414,7 +425,8 @@ protected:
      * @param uSec 总时长（微秒）
      * @note 输出时长信息
      */
-    void onTotalTimeChanged(const int64_t &uSec) override {
+    void onTotalTimeChanged(const int64_t& uSec) override
+    {
         qDebug() << "Total time: " << uSec / 1000000 << " seconds";
     }
 
@@ -425,7 +437,8 @@ protected:
      * @param hasAudio 是否有音频
      * @note 输出状态信息
      */
-    void onPlayerStateChanged(const VideoPlayer::State &state, const bool &hasVideo, const bool &hasAudio) override {
+    void onPlayerStateChanged(const VideoPlayer::State& state, const bool& hasVideo, const bool& hasAudio) override
+    {
         qDebug() << "Player state changed to: " << state << " (Has audio: " << hasAudio << ")";
     }
 
@@ -434,55 +447,56 @@ protected:
      * @param videoFrame 视频帧指针
      * @note 未实现，仅支持音频播放
      */
-    void onDisplayVideo(VideoRawFramePtr videoFrame) override {
+    void onDisplayVideo(VideoRawFramePtr videoFrame) override
+    {
         // 不播放视频，无需实现
     }
 
 private:
-    Ui::KuGouClient *ui;                                     ///< UI 界面指针
-    VideoPlayer* m_player;                                   ///< 音频播放器实例
-    std::unique_ptr<QButtonGroup>       m_menuBtnGroup;      ///< 菜单按钮组
-    std::unique_ptr<QSizeGrip>          m_sizeGrip;          ///< 窗口大小调整控件
-    std::unique_ptr<RefreshMask>        m_refreshMask;       ///< 刷新遮罩
-    std::unique_ptr<QtMaterialSnackbar> m_snackbar;          ///< 消息提示条
+    Ui::KuGouClient* ui;                            ///< UI 界面指针
+    VideoPlayer* m_player;                          ///< 音频播放器实例
+    std::unique_ptr<QButtonGroup> m_menuBtnGroup;   ///< 菜单按钮组
+    std::unique_ptr<QSizeGrip> m_sizeGrip;          ///< 窗口大小调整控件
+    std::unique_ptr<RefreshMask> m_refreshMask;     ///< 刷新遮罩
+    std::unique_ptr<QtMaterialSnackbar> m_snackbar; ///< 消息提示条
     // 堆栈窗口组件
-    std::unique_ptr<RecommendForYou>    m_recommendForYou; ///< 推荐界面
-    std::unique_ptr<MusicRepository>    m_musicRepository; ///< 音乐库界面
-    std::unique_ptr<Channel>            m_channel;         ///< 频道界面
-    std::unique_ptr<Video>              m_video;           ///< 视频界面
-    std::unique_ptr<Live>               m_live;            ///< 直播界面
-    std::unique_ptr<AiChat>             m_aiChat;          ///< AI 聊天界面
-    std::unique_ptr<SongList>           m_songList;        ///< 歌单界面
-    std::unique_ptr<DailyRecommend>     m_dailyRecommend;  ///< 每日推荐界面
-    std::unique_ptr<MyCollection>       m_collection;      ///< 我的收藏界面
-    std::unique_ptr<LocalDownload>      m_localDownload;   ///< 本地下载界面
-    std::unique_ptr<MusicCloudDisk>     m_musicCloudDisk;  ///< 音乐云盘界面
-    std::unique_ptr<PurchasedMusic>     m_purchasedMusic;  ///< 已购音乐界面
-    std::unique_ptr<RecentlyPlayed>     m_recentlyPlayed;  ///< 最近播放界面
-    std::unique_ptr<AllMusic>           m_allMusic;        ///< 全部音乐界面
-    std::unique_ptr<ListenBook>         m_listenBook;      ///< 听书界面
-    std::unique_ptr<Search>             m_search;          ///< 搜索界面
-    std::unique_ptr<SearchResultWidget> m_searchResultWidget;///< 搜索结果界面
+    std::unique_ptr<RecommendForYou> m_recommendForYou;       ///< 推荐界面
+    std::unique_ptr<MusicRepository> m_musicRepository;       ///< 音乐库界面
+    std::unique_ptr<Channel> m_channel;                       ///< 频道界面
+    std::unique_ptr<Video> m_video;                           ///< 视频界面
+    std::unique_ptr<Live> m_live;                             ///< 直播界面
+    std::unique_ptr<AiChat> m_aiChat;                         ///< AI 聊天界面
+    std::unique_ptr<SongList> m_songList;                     ///< 歌单界面
+    std::unique_ptr<DailyRecommend> m_dailyRecommend;         ///< 每日推荐界面
+    std::unique_ptr<MyCollection> m_collection;               ///< 我的收藏界面
+    std::unique_ptr<LocalDownload> m_localDownload;           ///< 本地下载界面
+    std::unique_ptr<MusicCloudDisk> m_musicCloudDisk;         ///< 音乐云盘界面
+    std::unique_ptr<PurchasedMusic> m_purchasedMusic;         ///< 已购音乐界面
+    std::unique_ptr<RecentlyPlayed> m_recentlyPlayed;         ///< 最近播放界面
+    std::unique_ptr<AllMusic> m_allMusic;                     ///< 全部音乐界面
+    std::unique_ptr<ListenBook> m_listenBook;                 ///< 听书界面
+    std::unique_ptr<Search> m_search;                         ///< 搜索界面
+    std::unique_ptr<SearchResultWidget> m_searchResultWidget; ///< 搜索结果界面
 
-    std::array<QPointer<QWidget>, 17>   m_pages{};               ///< 16 components + search result
-    int                                 m_currentIdx{3};         ///< 当前页面索引
+    std::array<QPointer<QWidget>, 17> m_pages{}; ///< 16 components + search result
+    int m_currentIdx{3};                         ///< 当前页面索引
     // 窗口缩放相关
-    bool m_isTransForming = false;                      ///< 是否正在执行缩放动画
-    bool m_isSingleCircle = false;                      ///< 是否单曲循环
-    bool m_isMaxScreen = false;                         ///< 是否最大化
-    QMetaObject::Connection mediaStatusConnection;      ///< 播放结束信号连接
-    QPoint m_pressPos;                                  ///< 鼠标按下位置
-    QString m_maxBtnStyle;                              ///< 最大化按钮样式
-    QRect m_startGeometry;                              ///< 动画起始几何形状
-    QRect m_endGeometry;                                ///< 动画结束几何形状
-    QRect m_normalGeometry;                             ///< 正常窗口几何形状
+    bool m_isTransForming = false;                 ///< 是否正在执行缩放动画
+    bool m_isSingleCircle = false;                 ///< 是否单曲循环
+    bool m_isMaxScreen    = false;                 ///< 是否最大化
+    QMetaObject::Connection mediaStatusConnection; ///< 播放结束信号连接
+    QPoint m_pressPos;                             ///< 鼠标按下位置
+    QString m_maxBtnStyle;                         ///< 最大化按钮样式
+    QRect m_startGeometry;                         ///< 动画起始几何形状
+    QRect m_endGeometry;                           ///< 动画结束几何形状
+    QRect m_normalGeometry;                        ///< 正常窗口几何形状
     // 播放信息
-    QString m_musicTitle;                               ///< 当前歌曲标题
-    QString m_musicArtist;                              ///< 当前歌曲艺术家
+    QString m_musicTitle;  ///< 当前歌曲标题
+    QString m_musicArtist; ///< 当前歌曲艺术家
     // 服务器交互
-    CLibhttp   m_libHttp;                               ///< HTTP 请求库
+    CLibhttp m_libHttp; ///< HTTP 请求库
     // 窗口创建相关
-    bool    m_isInitialized = false;                    ///< 是否初始化完成
+    bool m_isInitialized = false; ///< 是否初始化完成
 };
 
 #endif // KUGOUCLIENT_H

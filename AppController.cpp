@@ -130,6 +130,7 @@ void AppController::start()
 {
     m_login->show();
 
+    // 连接登录成功的信号
     connect(m_login, &QDialog::accepted, this, [this]
     {
         showSystemLoginInfo();
@@ -146,6 +147,29 @@ void AppController::start()
                 m_client, &KuGouClient::onTrayIconNoVolume);
         m_isLoginAccepted = true;
     });
+
+    // 连接切换账号信号
+    auto handleChangeAccount = [this]
+    {
+        // 隐藏客户端窗口
+        m_client->hide();
+        // 重置登录状态
+        m_isLoginAccepted = false;
+        // 断开与当前客户端相关的信号（避免重复连接）
+        disconnect(m_trayIcon, &MyTrayIcon::showAboutDialog,
+                   m_client, &MainWindow::onShowAboutDialog);
+        disconnect(m_trayIcon, &MyTrayIcon::noVolume,
+                   m_client, &KuGouClient::onTrayIconNoVolume);
+
+        // 显示登录窗口
+        m_login->show();
+
+        // 显示切换账号提示
+        emit m_trayIcon->showTrayMessage("切换账号", "请重新登录。");
+    };
+    connect(m_trayIcon, &MyTrayIcon::switchAccount, this, handleChangeAccount);
+    connect(m_client, &KuGouClient::logOut, this, handleChangeAccount);
+
 }
 
 void AppController::initFontRes()

@@ -478,10 +478,17 @@ void KuGouClient::initTitleWidget()
         this->m_refreshMask->raise();       ///< 提升遮罩层级
     });
 
-    // @note
+    // @note 搜索项触发
     connect(ui->title_widget, &TitleWidget::suggestionClicked, this, &KuGouClient::handleSuggestBoxSuggestionClicked);
     connect(ui->title_widget, &TitleWidget::searchTextReturnPressed, this,
             &KuGouClient::handleSuggestBoxSuggestionClicked);
+    // @note 退出当前账号，即切换账户
+    connect(ui->title_widget, &TitleWidget::logOut, this, &KuGouClient::logOut);
+    // @note 恢复窗口
+    connect(ui->title_widget, &TitleWidget::restoreWindow, this, [this]
+    {
+        this->resize(this->minimumSize());
+    });
 }
 
 /**

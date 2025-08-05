@@ -22,7 +22,8 @@
  * @class TitleOptionMenu
  * @brief 标题栏选项菜单类，继承自 BaseMenu，提供壁纸、设置、退出等功能
  */
-class MYMENU_EXPORT TitleOptionMenu : public BaseMenu {
+class MYMENU_EXPORT TitleOptionMenu : public BaseMenu
+{
     Q_OBJECT
 
 public:
@@ -98,26 +99,6 @@ signals:
      * @brief 恢复窗口信号
      */
     void restoreWindow();
-
-    /**
-     * @brief 检查更新信号
-     */
-    void checkUpdate();
-
-    /**
-     * @brief 使用帮助信号
-     */
-    void useHelp();
-
-    /**
-     * @brief 意见反馈信号
-     */
-    void feedback();
-
-    /**
-     * @brief 用户反馈社区信号
-     */
-    void community();
 
     /**
      * @brief 更新信息信号

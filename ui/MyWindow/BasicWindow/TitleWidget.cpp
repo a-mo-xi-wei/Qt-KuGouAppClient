@@ -164,7 +164,8 @@ void TitleWidget::initUi()
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
     connect(m_titleOptMenu, &TitleOptionMenu::about, this, [this] { emit showAboutDialog(); });
     connect(m_titleOptMenu, &TitleOptionMenu::exit, this, &TitleWidget::on_close_toolButton_clicked);
-
+    connect(m_titleOptMenu, &TitleOptionMenu::logOut, this, &TitleWidget::logOut);
+    connect(m_titleOptMenu, &TitleOptionMenu::restoreWindow, this, &TitleWidget::restoreWindow);
     // 设置标题索引指示器
     ui->title_index_label1->setPixmap(
         QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));

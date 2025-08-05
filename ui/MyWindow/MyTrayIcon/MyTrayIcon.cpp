@@ -117,21 +117,21 @@ void MyTrayIcon::initSysTrayMenu()
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleQuestion, tr("帮助"));
     connect(action, &QAction::triggered, this, [this]
     {
-        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+        QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp/blob/master/README.md"));
     });
 
     // 添加“意见反馈”菜单选项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::FileSignature, tr("意见反馈"));
     connect(action, &QAction::triggered, this, [this]
     {
-        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+        QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp/issues"));
     });
     // 添加“检查更新”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Rotate, QString("检查更新"));
     action->setProperty("showRedDot", true);  // 标记显示红点
     connect(action, &QAction::triggered, this, [this]
     {
-        this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+        QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
     });
 
     this->m_trayMenu->addSeparator();
@@ -152,6 +152,7 @@ void MyTrayIcon::initSysTrayMenu()
     connect(action, &QAction::triggered, this, [this]
     {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
+        emit switchAccount();
     });
 
     this->m_trayMenu->addSeparator();

@@ -26,7 +26,8 @@ class QTimer;
  * @class MyTrayIcon
  * @brief 自定义系统托盘图标类，继承自 QSystemTrayIcon，支持闪烁、菜单和消息显示
  */
-class MYWINDOW_EXPORT MyTrayIcon final : public QSystemTrayIcon {
+class MYWINDOW_EXPORT MyTrayIcon final : public QSystemTrayIcon
+{
     Q_OBJECT
 
 public:
@@ -34,7 +35,7 @@ public:
      * @brief 构造函数，初始化系统托盘图标
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit MyTrayIcon(QWidget *parent = nullptr);
+    explicit MyTrayIcon(QWidget* parent = nullptr);
 
 private:
     /**
@@ -52,13 +53,13 @@ private:
      * @param title 消息标题
      * @param content 消息内容
      */
-    void showMessage(const QString &title, const QString &content);
+    void showMessage(const QString& title, const QString& content);
 
     /**
      * @brief 启动托盘图标闪烁
      * @param msec 闪烁间隔（毫秒）
      */
-    void flashingTrayIcon(const int &msec);
+    void flashingTrayIcon(const int& msec);
 
     /**
      * @brief 停止托盘图标闪烁
@@ -77,13 +78,13 @@ signals:
      * @brief 音量开关信号
      * @param flag 是否静音
      */
-    void noVolume(const bool &flag);
+    void noVolume(const bool& flag);
 
     /**
      * @brief 显示关于对话框信号
      * @param flag 是否显示
      */
-    void showAboutDialog(const bool &flag);
+    void showAboutDialog(const bool& flag);
 
     /**
      * @brief 唤醒窗口
@@ -99,6 +100,11 @@ signals:
      * @brief 固定窗口
      */
     void pinTheWindow(bool flag);
+
+    /**
+     * 切换账号信号
+     */
+    void switchAccount();
 
 private slots:
     /**
@@ -118,13 +124,13 @@ private slots:
     void onFlashingTrayIcon();
 
 private:
-    ElaMenu *m_trayMenu{};         ///< 托盘菜单
+    ElaMenu* m_trayMenu{};         ///< 托盘菜单
     QPoint m_menuPosition;         ///< 菜单显示位置
     bool m_showIcon;               ///< 闪烁状态标志
     QIcon m_emptyIcon{};           ///< 空图标，用于闪烁
     QIcon m_trayIcon{};            ///< 托盘图标
-    QTimer *m_checkTimer;          ///< 鼠标位置检测定时器
-    QTimer *m_flashTimer{};        ///< 闪烁定时器
+    QTimer* m_checkTimer;          ///< 鼠标位置检测定时器
+    QTimer* m_flashTimer{};        ///< 闪烁定时器
     bool m_flagDialogShow = false; ///< 关于对话框显示标志
     bool m_flagVolume     = false; ///< 音量开关标志
     bool m_flagPin        = false; ///< 固定窗口标志

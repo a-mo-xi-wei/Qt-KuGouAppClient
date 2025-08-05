@@ -11,7 +11,9 @@
 #include "../MyMenu.h"
 
 #include <QCoreApplication>
+#include <QDesktopServices>
 #include <QHBoxLayout>
+#include <QUrl>
 #include <QWidgetAction>
 
 REGISTER_MENU(MyMenu::MenuKind::TitleOption, TitleOptionMenu)
@@ -344,7 +346,8 @@ void TitleOptionMenu::initMenu()
         a_checkUpdateAction->setDefaultWidget(a_checkUpdateToolBtn);
         connect(a_checkUpdateToolBtn, &QToolButton::clicked, this, [this]
         {
-            emit checkUpdate(); ///< 发出检查更新信号
+            // emit checkUpdate(); ///< 发出检查更新信号
+            QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
             this->hide();
         });
         // 以下为注释掉的悬停事件处理代码，保留以供调试
@@ -429,7 +432,7 @@ void TitleOptionMenu::initMenu()
             a_useHelpAction->setDefaultWidget(a_useHelpToolBtn);
             connect(a_useHelpToolBtn, &QToolButton::clicked, this, [this]
             {
-                emit useHelp(); ///< 发出使用帮助信号
+                QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp/blob/master/README.md"));
                 this->hide();
             });
             // 以下为注释掉的悬停事件处理代码，保留以供调试
@@ -456,7 +459,7 @@ void TitleOptionMenu::initMenu()
             a_feedbackAction->setDefaultWidget(a_feedbackToolBtn);
             connect(a_feedbackToolBtn, &QToolButton::clicked, this, [this]
             {
-                emit feedback(); ///< 发出意见反馈信号
+                QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp/issues"));
                 this->hide();
             });
             // 以下为注释掉的悬停事件处理代码，保留以供调试
@@ -483,7 +486,7 @@ void TitleOptionMenu::initMenu()
             a_communityAction->setDefaultWidget(a_communityToolBtn);
             connect(a_communityToolBtn, &QToolButton::clicked, this, [this]
             {
-                emit community(); ///< 发出用户反馈社区信号
+                QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp/issues"));
                 this->hide();
             });
             // 以下为注释掉的悬停事件处理代码，保留以供调试
