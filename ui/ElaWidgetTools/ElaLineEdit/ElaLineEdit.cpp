@@ -22,7 +22,8 @@ std::once_flag flag;
 Q_PROPERTY_CREATE_Q_CPP(ElaLineEdit, int, BorderRadius)
 
 ElaLineEdit::ElaLineEdit(QWidget *parent)
-    : QLineEdit(parent), d_ptr(new ElaLineEditPrivate()) {
+    : QLineEdit(parent), d_ptr(new ElaLineEditPrivate())
+{
     Q_D(ElaLineEdit);
     d->q_ptr = this;
     setObjectName("ElaLineEdit");
@@ -47,45 +48,54 @@ ElaLineEdit::ElaLineEdit(QWidget *parent)
 
 ElaLineEdit::~ElaLineEdit() = default;
 
-int ElaLineEdit::expandMarkWidth() const {
+int ElaLineEdit::expandMarkWidth() const
+{
     Q_D(const ElaLineEdit);
     return d->_pExpandMarkWidth;
 }
 
-void ElaLineEdit::setExpandMarkWidth(int width) {
+void ElaLineEdit::setExpandMarkWidth(int width)
+{
     Q_D(ElaLineEdit);
     d->_pExpandMarkWidth = width;
     update();
 }
 
-int ElaLineEdit::getOriginalWidth() {
+int ElaLineEdit::getOriginalWidth()
+{
     Q_D(ElaLineEdit);
     return d->_originalWidth;
 }
 
-void ElaLineEdit::setIsClearButtonEnable(bool isClearButtonEnable) {
+void ElaLineEdit::setIsClearButtonEnable(bool isClearButtonEnable)
+{
     Q_D(ElaLineEdit);
     d->_pIsClearButtonEnable = isClearButtonEnable;
     setClearButtonEnabled(isClearButtonEnable);
     Q_EMIT pIsClearButtonEnableChanged();
 }
 
-bool ElaLineEdit::getIsClearButtonEnable() const {
+bool ElaLineEdit::getIsClearButtonEnable() const
+{
     Q_D(const ElaLineEdit);
     return d->_pIsClearButtonEnable;
 }
 
-void ElaLineEdit::focusInEvent(QFocusEvent *event) {
+void ElaLineEdit::focusInEvent(QFocusEvent *event)
+{
     Q_D(ElaLineEdit);
     Q_EMIT textChanged(this->text());
     // 设置初始值
     std::call_once(flag, [d, this] { d->_originalWidth = width(); });
-    if (event->reason() == Qt::MouseFocusReason) {
-        if (d->_pIsClearButtonEnable) {
+    if (event->reason() == Qt::MouseFocusReason || event->reason() == Qt::ActiveWindowFocusReason)
+    {
+        if (d->_pIsClearButtonEnable)
+        {
             setClearButtonEnabled(true);
         }
         QPropertyAnimation *markAnimation = new QPropertyAnimation(d, "pExpandMarkWidth");
-        connect(markAnimation, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
+        connect(markAnimation, &QPropertyAnimation::valueChanged, this, [ = ](const QVariant & value)
+        {
             update();
         });
         markAnimation->setDuration(300);
@@ -97,15 +107,19 @@ void ElaLineEdit::focusInEvent(QFocusEvent *event) {
     QLineEdit::focusInEvent(event);
 }
 
-void ElaLineEdit::focusOutEvent(QFocusEvent *event) {
+void ElaLineEdit::focusOutEvent(QFocusEvent *event)
+{
     Q_D(ElaLineEdit);
     Q_EMIT focusOut(this->text());
-    if (event->reason() != Qt::PopupFocusReason) {
-        if (d->_pIsClearButtonEnable) {
+    if (event->reason() != Qt::PopupFocusReason)
+    {
+        if (d->_pIsClearButtonEnable)
+        {
             setClearButtonEnabled(false);
         }
         QPropertyAnimation *markAnimation = new QPropertyAnimation(d, "pExpandMarkWidth");
-        connect(markAnimation, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
+        connect(markAnimation, &QPropertyAnimation::valueChanged, this, [ = ](const QVariant & value)
+        {
             update();
         });
         markAnimation->setDuration(300);
@@ -118,7 +132,8 @@ void ElaLineEdit::focusOutEvent(QFocusEvent *event) {
     QLineEdit::focusOutEvent(event);
 }
 
-void ElaLineEdit::paintEvent(QPaintEvent *event) {
+void ElaLineEdit::paintEvent(QPaintEvent *event)
+{
     Q_D(ElaLineEdit);
     QLineEdit::paintEvent(event);
     QPainter painter(this);
@@ -131,12 +146,14 @@ void ElaLineEdit::paintEvent(QPaintEvent *event) {
     painter.restore();
 }
 
-void ElaLineEdit::contextMenuEvent(QContextMenuEvent *event) {
+void ElaLineEdit::contextMenuEvent(QContextMenuEvent *event)
+{
     ElaMenu *menu = new ElaMenu(this);
     menu->setMenuItemHeight(27);
     menu->setAttribute(Qt::WA_DeleteOnClose);
     QAction *action = nullptr;
-    if (!isReadOnly()) {
+    if (!isReadOnly())
+    {
         action = menu->addElaIconAction(ElaIconType::ArrowRotateLeft, tr("撤销"), QKeySequence::Undo);
         action->setEnabled(isUndoAvailable());
         connect(action, &QAction::triggered, this, &ElaLineEdit::undo);
@@ -147,7 +164,8 @@ void ElaLineEdit::contextMenuEvent(QContextMenuEvent *event) {
         menu->addSeparator();
     }
 #ifndef QT_NO_CLIPBOARD
-    if (!isReadOnly()) {
+    if (!isReadOnly())
+    {
         action = menu->addElaIconAction(ElaIconType::KnifeKitchen, tr("剪切"), QKeySequence::Cut);
         action->setEnabled(!isReadOnly() && hasSelectedText() && echoMode() == QLineEdit::Normal);
         connect(action, &QAction::triggered, this, &ElaLineEdit::cut);
@@ -157,24 +175,29 @@ void ElaLineEdit::contextMenuEvent(QContextMenuEvent *event) {
     action->setEnabled(hasSelectedText() && echoMode() == QLineEdit::Normal);
     connect(action, &QAction::triggered, this, &ElaLineEdit::copy);
 
-    if (!isReadOnly()) {
+    if (!isReadOnly())
+    {
         action = menu->addElaIconAction(ElaIconType::Paste, tr("粘贴"), QKeySequence::Paste);
         action->setEnabled(!isReadOnly() && !QGuiApplication::clipboard()->text().isEmpty());
         connect(action, &QAction::triggered, this, &ElaLineEdit::paste);
     }
 #endif
-    if (!isReadOnly()) {
+    if (!isReadOnly())
+    {
         action = menu->addElaIconAction(ElaIconType::DeleteLeft, tr("删除"));
         action->setEnabled(!isReadOnly() && !text().isEmpty() && hasSelectedText());
-        connect(action, &QAction::triggered, this, [=](bool checked) {
-            if (hasSelectedText()) {
+        connect(action, &QAction::triggered, this, [ = ](bool checked)
+        {
+            if (hasSelectedText())
+            {
                 int startIndex = selectionStart();
                 int endIndex = selectionEnd();
                 setText(text().remove(startIndex, endIndex - startIndex));
             }
         });
     }
-    if (!menu->isEmpty()) {
+    if (!menu->isEmpty())
+    {
         menu->addSeparator();
     }
     action = menu->addAction(tr("全选"));
