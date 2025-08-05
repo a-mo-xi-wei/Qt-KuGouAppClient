@@ -1,22 +1,30 @@
-QWidget#window{
-    border:none;
+QWidget#MusicItemWidget {
+    border: none;
     background-color: transparent;
     border-radius: 12px;
 }
-QLabel#coverLab{
-    border:none;
+
+QLabel {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
+}
+
+QLabel#coverLab {
+    border: none;
     background-color: transparent;
     border-radius: 10px;
 }
-QLabel#indexLab,QLabel#durationLab{
-    border:none;
+
+QLabel#indexLab, QLabel#durationLab {
+    border: none;
     background-color: transparent;
-    color:#8c8d8d;
+    color: #8c8d8d;
 }
-QToolButton{
-    border:none;
+
+QToolButton {
+    border: none;
     background-color: transparent;
-    icon-size:18px;
-    margin-left:3px;
-    margin-right:3px;
+    icon-size: 18px;
+    margin-left: 3px;
+    margin-right: 3px;
 }

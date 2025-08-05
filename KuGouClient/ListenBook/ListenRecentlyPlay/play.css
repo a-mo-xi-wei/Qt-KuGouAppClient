@@ -1,8 +1,12 @@
 /**************content_widget*************/
-QLabel#prompt_label{
+QLabel#prompt_label {
+    font-family: 'TaiwanPearl';
     color: #afafaf;
 }
-QPushButton#search_pushButton{
+
+QPushButton#search_pushButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     border: 1px solid #1eb8ff;
     border-radius: 17px;
     color: #1eb8ff;

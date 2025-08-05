@@ -39,9 +39,8 @@ ChatView::ChatView(QWidget *parent)
         hlay->addWidget(logoLab);                   ///< 添加 Logo
         hlay->addWidget(helloTextLab);              ///< 添加欢迎文本
         auto funcTextLab = new QLabel(this);           ///< 功能描述标签
-        
         funcTextLab->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~"); ///< 设置功能描述
-        funcTextLab->setStyleSheet("color: #404040;font-size: 13px;"); ///< 设置功能描述样式
+        funcTextLab->setStyleSheet("color: #404040;font-family: 'TaiwanPearl';font-size: 12px;"); ///< 设置功能描述样式
         auto vlay = new QVBoxLayout(this->m_centerInitWidget); ///< 创建垂直布局
         vlay->setAlignment(Qt::AlignCenter);             ///< 设置居中对齐
         vlay->setSpacing(20);                            ///< 设置间距
@@ -159,7 +158,7 @@ void ChatView::removeAllItem()
         return;
     if (layout->count() == 1)
         return;                                          ///< 仅包含拉伸项时跳过
-    QList<QLayoutItem *> itemsToRemove;
+    QList<QLayoutItem*> itemsToRemove;
     for (int i = 0; i < layout->count(); ++i)
     {
         QLayoutItem *item = layout->itemAt(i);
@@ -189,7 +188,7 @@ void ChatView::removeAllItem()
  * @brief 获取垂直布局
  * @return 垂直布局指针
  */
-QVBoxLayout *ChatView::getLayout() const
+QVBoxLayout* ChatView::getLayout() const
 {
     if (!m_pScrollArea || !m_pScrollArea->widget())
     {
@@ -197,7 +196,7 @@ QVBoxLayout *ChatView::getLayout() const
         STREAM_WARN() << "ChatView::getLayout(): m_pScrollArea or its widget is null."; ///< 记录警告日志
         return nullptr;
     }
-    auto layout = qobject_cast<QVBoxLayout *>(m_pScrollArea->widget()->layout());
+    auto layout = qobject_cast<QVBoxLayout*>(m_pScrollArea->widget()->layout());
     if (!layout)
     {
         qWarning() << "ChatView::getLayout(): Layout is not a QVBoxLayout.";
@@ -226,13 +225,14 @@ void ChatView::updateCenterWidgetPosition()
 void ChatView::startFadeOutAnimation()
 {
     m_centerInitWidget->show();                          ///< 确保可见
-    auto *effect = qobject_cast<QGraphicsOpacityEffect *>(m_centerInitWidget->graphicsEffect()); ///< 获取透明度效果
+    auto *effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());  ///< 获取透明度效果
     QPropertyAnimation *anim = new QPropertyAnimation(effect, "opacity"); ///< 创建动画
     anim->setDuration(300);                              ///< 设置持续时间
     anim->setStartValue(1.0);                            ///< 设置起始透明度
     anim->setEndValue(0.0);                              ///< 设置结束透明度
     anim->setEasingCurve(QEasingCurve::OutQuad);         ///< 设置缓动曲线
-    connect(anim, &QPropertyAnimation::finished, [this]() {
+    connect(anim, &QPropertyAnimation::finished, [this]()
+    {
         m_centerInitWidget->hide();                      ///< 动画完成时隐藏
     });
     anim->start(QAbstractAnimation::DeleteWhenStopped);  ///< 启动动画并自动删除
@@ -245,7 +245,7 @@ void ChatView::startFadeInAnimation()
 {
     updateCenterWidgetPosition();                        ///< 更新位置
     m_centerInitWidget->show();                          ///< 确保可见
-    auto *effect = qobject_cast<QGraphicsOpacityEffect *>(m_centerInitWidget->graphicsEffect()); ///< 获取透明度效果
+    auto *effect = qobject_cast<QGraphicsOpacityEffect*>(m_centerInitWidget->graphicsEffect());  ///< 获取透明度效果
     effect->setOpacity(0.0);                             ///< 设置初始透明度
     QPropertyAnimation *anim = new QPropertyAnimation(effect, "opacity"); ///< 创建动画
     anim->setDuration(300);                              ///< 设置持续时间
@@ -265,7 +265,8 @@ void ChatView::resizeEvent(QResizeEvent *event)
     updateCenterWidgetPosition();                        ///< 更新居中部件位置
 }
 
-void ChatView::showEvent(QShowEvent *event) {
+void ChatView::showEvent(QShowEvent *event)
+{
     QWidget::showEvent(event);
     updateCenterWidgetPosition();
 }
@@ -281,7 +282,8 @@ void ChatView::onVScrollBarMoved(int min, int max)
     {
         auto pVScrollBar = m_pScrollArea->verticalScrollBar(); ///< 获取滚动条
         pVScrollBar->setSliderPosition(pVScrollBar->maximum()); ///< 滚动到底部
-        QTimer::singleShot(500, [this]() {
+        QTimer::singleShot(500, [this]()
+        {
             isAppended = false;                          ///< 重置追加状态
         });
     }

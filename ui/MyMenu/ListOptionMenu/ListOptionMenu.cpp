@@ -63,6 +63,9 @@ void ListOptionMenu::initMenu()
     // 创建内容窗口
     auto contentWidget = new QWidget(area);
     contentWidget->setObjectName("contentWidget");
+    // contentWidget->setAttribute(Qt::WA_TranslucentBackground);
+    // contentWidget->setAttribute(Qt::WA_StyledBackground);
+    // contentWidget->setStyleSheet("background-color: red;");
 
     // 主垂直布局
     auto layout = new QVBoxLayout(contentWidget);
@@ -151,8 +154,13 @@ void ListOptionMenu::initSceneWidget(QWidget* widget)
     const auto mainLayout    = new QHBoxLayout(widget);
     const auto titleLab      = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
+
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // contentWidget->setAttribute(Qt::WA_TranslucentBackground);
+    // contentWidget->setAttribute(Qt::WA_StyledBackground);
+    // contentWidget->setStyleSheet("background-color: blue;");
+
     mainLayout->setSpacing(10);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addWidget(titleLab);
@@ -204,6 +212,8 @@ void ListOptionMenu::initSceneWidget(QWidget* widget)
             label->setMouseTracking(true);
             label->setFixedSize(75, 30);
             label->setAlignment(Qt::AlignCenter);
+            // label->setAttribute(Qt::WA_StyledBackground, true);
+            // label->setAttribute(Qt::WA_OpaquePaintEvent); // 防止透明渲染
             label->setCursor(Qt::PointingHandCursor);
             label->setText(labArr[i * 7 + j]);
             label->installEventFilter(this);
@@ -215,10 +225,12 @@ void ListOptionMenu::initSceneWidget(QWidget* widget)
     vLayout->setContentsMargins(0, 0, 0, 0);
     vLayout->addWidget(gridWidget);
     vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
+
     auto contentLayout = new QHBoxLayout(contentWidget);
     contentLayout->setContentsMargins(0, 0, 0, 0);
     contentLayout->addLayout(vLayout);
     contentLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Fixed));
+
     contentWidget->setLayout(contentLayout);
 }
 
@@ -593,14 +605,72 @@ const ListOptionMenu* ListOptionMenu::getMenu() const
  */
 bool ListOptionMenu::eventFilter(QObject* watched, QEvent* event)
 {
-    if (event->type() == QEvent::MouseButtonRelease)
+    if (QLabel* label = qobject_cast<QLabel*>(watched))
     {
-        auto* label = qobject_cast<QLabel*>(watched);
-        if (label && static_cast<QMouseEvent*>(event)->button() == Qt::LeftButton)
+        // 获取当前样式表（用于状态恢复）
+        const QString normalStyle = R"(
+            QLabel {
+                background-color: transparent;
+                font-weight: bolder;
+                border: none;
+                border-radius: 15px;
+                color: black;
+            }
+        )";
+
+        const QString hoverStyle = R"(
+            QLabel:hover {
+                background-color: #C1E4EF;
+                color: #3AA1FF;
+            }
+        )";
+
+        switch (event->type())
         {
-            emit clickedFuncName(label->text());
+        case QEvent::MouseButtonPress:
+            // 按下时添加临时按压效果
+            label->setStyleSheet(normalStyle + R"(
+                QLabel {
+                    background-color: #B4E0EE; /* 更深的红色 */
+                }
+            )");
+            return true;
+
+        case QEvent::MouseButtonRelease:
+        {
+            QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+            if (mouseEvent->button() == Qt::LeftButton &&
+                    label->rect().contains(mouseEvent->pos()))
+            {
+                // 恢复悬停状态
+                label->setStyleSheet(normalStyle + hoverStyle);
+
+                // 发送点击信号
+                emit clickedFuncName(label->text());
+                return true;
+            }
+            break;
+        }
+
+        case QEvent::Enter:
+            // 鼠标进入时应用悬停样式
+            label->setStyleSheet(normalStyle + hoverStyle);
+            return true;
+
+        case QEvent::Leave:
+            // 鼠标离开时恢复默认样式
+            label->setStyleSheet(normalStyle);
+            return true;
+
+        case QEvent::MouseMove:
+            // 实时更新悬停状态（确保在快速移动时也能正确显示）
+            if (label->rect().contains(static_cast<QMouseEvent*>(event)->pos()))
+                label->setStyleSheet(normalStyle + hoverStyle);
+            else
+                label->setStyleSheet(normalStyle);
             return true;
         }
     }
+
     return BaseMenu::eventFilter(watched, event);
 }

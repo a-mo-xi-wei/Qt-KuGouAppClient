@@ -58,34 +58,42 @@ DownloadedSong::~DownloadedSong()
  */
 void DownloadedSong::initUi()
 {
+    ui->local_play_toolButton->setFont(QFont("TaiwanPearl", 10));
     auto local_sort_toolButton_toolTip = new ElaToolTip(ui->local_sort_toolButton); ///< 创建排序按钮工具提示
     local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序")); ///< 设置默认排序提示
-    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         Q_UNUSED(down);
         onDefaultSort();                                 ///< 调用默认排序
         local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         onAddTimeSort(down);                             ///< 调用添加时间排序
         local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：添加时间降序") : QStringLiteral("当前排序方式：添加时间升序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         onSongNameSort(down);                            ///< 调用歌曲名称排序
         local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         onSingerSort(down);                              ///< 调用歌手排序
         local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         onDurationSort(down);                            ///< 调用时长排序
         local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool &down) {
+    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, local_sort_toolButton_toolTip](const bool & down)
+    {
         onPlayCountSort(down);                           ///< 调用播放次数排序
         local_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序")); ///< 更新提示
     });
-    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip] {
+    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, local_sort_toolButton_toolTip]
+    {
         onRandomSort();                                  ///< 调用随机排序
         local_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机")); ///< 更新提示
     });
@@ -102,7 +110,7 @@ void DownloadedSong::initUi()
     font.setPointSize(12);                         ///< 设置粗体
     ui->search_lineEdit->setFont(font);                  ///< 应用字体
     QToolButton *searchButton = nullptr;                 ///< 搜索按钮
-    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
+    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton*>())
     {
         if (btn->defaultAction() == this->m_searchAction)
         {
@@ -233,7 +241,7 @@ void DownloadedSong::on_search_pushButton_clicked()
  */
 bool DownloadedSong::eventFilter(QObject *watched, QEvent *event)
 {
-    const auto button = qobject_cast<QToolButton *>(watched); ///< 转换为工具按钮
+    const auto button = qobject_cast<QToolButton*>(watched);  ///< 转换为工具按钮
     if (button && button->defaultAction() == this->m_searchAction)
     {
         if (event->type() == QEvent::Enter)

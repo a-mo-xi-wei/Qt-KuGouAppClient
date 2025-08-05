@@ -490,6 +490,7 @@ void KuGouClient::initTitleWidget()
  */
 void KuGouClient::initPlayWidget()
 {
+    ui->play_widget->setStyleSheet("font-family: 'TaiwanPearl';");
     ui->love_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/collect.svg")));         ///< 设置收藏图标
     ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/download.svg")));    ///< 设置下载图标
     ui->comment_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/comment.svg")));      ///< 设置评论图标

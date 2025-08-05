@@ -98,7 +98,7 @@ void SongOptionMenu::initMenu()
         // 主按钮
         auto a_addToToolBtn = new MenuBtn(widget);
         a_addToToolBtn->setObjectName("addToToolBtn");
-        a_addToToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
+        a_addToToolBtn->setStyleSheet("font-size: 15px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
         a_addToToolBtn->setFixedSize(145, 35);
         a_addToToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")));
         a_addToToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/add-black.svg")),
@@ -450,6 +450,7 @@ void SongOptionMenu::initMenu()
     auto a_openFileAction = new QWidgetAction(this);
     {
         auto a_openFileSongToolBtn = new MenuBtn(this);
+        a_openFileSongToolBtn->setStyleSheet("font-size: 14px");
         a_openFileSongToolBtn->setFixedSize(180, 35);
         a_openFileSongToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-black.svg")));
         a_openFileSongToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/openfile-black.svg")),
@@ -485,7 +486,7 @@ void SongOptionMenu::initMenu()
         // 主按钮
         auto a_searchToolBtn = new MenuBtn(widget);
         a_searchToolBtn->setObjectName("searchToolBtn");
-        a_searchToolBtn->setStyleSheet("border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
+        a_searchToolBtn->setStyleSheet("font-size: 15px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
         a_searchToolBtn->setFixedSize(145, 35);
         a_searchToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")));
         a_searchToolBtn->initIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg")),

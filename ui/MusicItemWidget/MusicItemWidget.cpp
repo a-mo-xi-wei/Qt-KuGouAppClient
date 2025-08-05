@@ -37,7 +37,8 @@
  */
 QPixmap roundedPix(const QPixmap &src, QSize size, int radius)
 {
-    if (src.isNull()) {
+    if (src.isNull())
+    {
         return QPixmap(); // 返回空图片而不是尝试处理
     }
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
@@ -75,7 +76,7 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     //    m_index, m_name.toStdString(), m_duration.toStdString(), m_singer.toStdString());
     initUi();
     setInformation(m_information);
-    setObjectName(QStringLiteral("window"));
+    setObjectName(QStringLiteral("MusicItemWidget"));
     m_indexLab->setObjectName(QStringLiteral("indexLab"));
     m_coverLab->setObjectName(QStringLiteral("coverLab"));
     m_nameLab->setObjectName(QStringLiteral("nameLab"));
@@ -130,15 +131,19 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
 
     //跳转选中
     m_blinkTimer = new QTimer(this);
-    connect(m_blinkTimer, &QTimer::timeout, this, [this]() {
+    connect(m_blinkTimer, &QTimer::timeout, this, [this]()
+    {
         // 更新透明度
         m_highlightAlpha += (10 * m_highlightDirection);
 
         // 反转方向
-        if (m_highlightAlpha >= 255) {
+        if (m_highlightAlpha >= 255)
+        {
             m_highlightAlpha = 255;
             m_highlightDirection = -1;
-        } else if (m_highlightAlpha <= 0) {
+        }
+        else if (m_highlightAlpha <= 0)
+        {
             m_highlightAlpha = 0;
             m_highlightDirection = 1;
         }
@@ -147,21 +152,25 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     });
 }
 
-void MusicItemWidget::setCover(const QPixmap &pix) {
+void MusicItemWidget::setCover(const QPixmap &pix)
+{
     this->m_cover = roundedPix(pix, m_coverLab->size(), PIX_RADIUS);
     // 更新封面标签的显示
-    if (m_coverLab && !pix.isNull()) {
+    if (m_coverLab && !pix.isNull())
+    {
         m_coverLab->setPixmap(this->m_cover);
     }
     this->m_information.cover = m_cover;
     update();
 }
 
-void MusicItemWidget::setNetUrl(const QString &netUrl) {
+void MusicItemWidget::setNetUrl(const QString &netUrl)
+{
     this->m_information.netUrl = netUrl;
 }
 
-void MusicItemWidget::setPopular(const int &popular) const {
+void MusicItemWidget::setPopular(const int& popular) const
+{
     if (popular < 0)
         this->m_popularLab->setPixmap(QPixmap(QString(":/TabIcon/Res/tabIcon/%1-grid-popular.svg").arg(QRandomGenerator::global()->bounded(0, 7))));
     else
@@ -173,7 +182,7 @@ void MusicItemWidget::setPopular(const int &popular) const {
  * @brief 设置索引文本
  * @param index 索引值
  */
-void MusicItemWidget::setIndexText(const int &index)
+void MusicItemWidget::setIndexText(const int& index)
 {
     this->m_index = index;
     m_indexLab->setText(QString("%1").arg(index, 2, 10, QChar('0')));
@@ -183,7 +192,7 @@ void MusicItemWidget::setIndexText(const int &index)
  * @brief 设置定时器时间间隔，控制填充速度
  * @param timeInterval 时间间隔（毫秒）
  */
-void MusicItemWidget::setInterval(const int &timeInterval) const
+void MusicItemWidget::setInterval(const int& timeInterval) const
 {
     timer->setInterval(timeInterval);
 }
@@ -201,7 +210,7 @@ void MusicItemWidget::setFillColor(const QColor &fillcolor)
  * @brief 设置圆角半径
  * @param radius_ 圆角半径
  */
-void MusicItemWidget::setRadius(const int &radius_)
+void MusicItemWidget::setRadius(const int& radius_)
 {
     frame_radius = radius_;
 }
@@ -210,19 +219,23 @@ void MusicItemWidget::setRadius(const int &radius_)
  * @brief 设置歌曲信息
  * @param info 歌曲信息
  */
-void MusicItemWidget::setInformation(const SongInfor &info) {
+void MusicItemWidget::setInformation(const SongInfor &info)
+{
     this->m_index = info.index;
     this->m_name = info.songName;
     this->m_duration = info.duration;
     this->m_cover = info.cover;
     this->m_singer = info.singer;
     this->m_album = info.album;
-    this->m_indexLab->setText(QString("%1").arg(this->m_index+1, 2, 10, QChar('0')));
+    this->m_indexLab->setText(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')));
 
     // 确保初始化时设置封面
-    if (!info.cover.isNull()) {
+    if (!info.cover.isNull())
+    {
         m_coverLab->setPixmap(roundedPix(info.cover, m_coverLab->size(), PIX_RADIUS));
-    } else if (!info.coverUrl.isEmpty()) {
+    }
+    else if (!info.coverUrl.isEmpty())
+    {
         // 如果有封面URL但还没加载，可以显示占位图
         m_coverLab->setPixmap(roundedPix(QPixmap(":/Res/tablisticon/pix4.png"), m_coverLab->size(), PIX_RADIUS));
     }
@@ -267,7 +280,8 @@ void MusicItemWidget::setPlayState(const bool &state)
 
         // 启动定时器
         timer->disconnect();
-        connect(timer, &QTimer::timeout, this, [=] {
+        connect(timer, &QTimer::timeout, this, [ = ]
+        {
             radius += radius_var;
             if (radius > max_radius)
             {
@@ -284,7 +298,8 @@ void MusicItemWidget::setPlayState(const bool &state)
 
         // 断开旧连接后建立收缩动画
         timer->disconnect();
-        connect(timer, &QTimer::timeout, this, [=] {
+        connect(timer, &QTimer::timeout, this, [ = ]
+        {
             radius -= radius_var;
             if (radius < 0)
             {
@@ -301,12 +316,16 @@ void MusicItemWidget::setPlayState(const bool &state)
  * @brief 设置item是否高亮闪烁
  * @param highlight 是否高亮闪烁
  */
-void MusicItemWidget::setHighlight(bool highlight) {
-    if (highlight) {
+void MusicItemWidget::setHighlight(bool highlight)
+{
+    if (highlight)
+    {
         m_highlightAlpha = 0;       // 从完全透明开始
         m_highlightDirection = 1;   // 向不透明变化
         m_blinkTimer->start(30);    // 30ms刷新一次 (约33FPS)
-    } else {
+    }
+    else
+    {
         m_blinkTimer->stop();
         m_highlightAlpha = 0;       // 重置为透明
         update();                   // 清除高亮
@@ -322,9 +341,11 @@ void MusicItemWidget::enterEvent(QEnterEvent *event)
     //QFrame::enterEvent(event);
     mouse_point = event->position(); // 记录鼠标进入坐标
     timer->disconnect(); // 断开可能的timer的所有连接
-    connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发，半径增大
+    connect(timer, &QTimer::timeout, this, [ = ] // 定时器触发，半径增大
+    {
         radius += radius_var;
-        if (radius > max_radius) {
+        if (radius > max_radius)
+        {
             timer->stop(); // 达到最大半径，定时器停止
             return;
         }
@@ -344,9 +365,11 @@ void MusicItemWidget::leaveEvent(QEvent *event)
     {
         mouse_point = mapFromGlobal(QCursor::pos());
         timer->disconnect();
-        connect(timer, &QTimer::timeout, this, [=]{ // 定时器触发半径减小
+        connect(timer, &QTimer::timeout, this, [ = ] // 定时器触发半径减小
+        {
             radius -= radius_var;
-            if (radius < 0) {
+            if (radius < 0)
+            {
                 timer->stop(); // 减小到小于0时定时器停止
                 radius = 0; // 确保半径不为负
                 return;
@@ -377,7 +400,8 @@ void MusicItemWidget::paintEvent(QPaintEvent *event)
         painter.setClipping(false);  // 禁用剪切路径
     }
     // 添加高亮效果：闪烁动画
-    if (m_highlightAlpha > 0) {
+    if (m_highlightAlpha > 0)
+    {
         QColor highlightColor(0x8a, 0xbc, 0xd1); // 原始颜色
         highlightColor.setAlpha(m_highlightAlpha); // 应用当前透明度
         painter.setBrush(highlightColor);
@@ -434,7 +458,8 @@ void MusicItemWidget::mousePressEvent(QMouseEvent *event)
         m_songOptMenu->exec(QCursor::pos());
         m_songOptMenu->setCurIndex(m_information.index);
     }
-    else {
+    else
+    {
         QFrame::mousePressEvent(event);//要么放else里面，要么注释掉这一行，否则会不显示
     }
 }
@@ -568,7 +593,7 @@ void MusicItemWidget::onViewSongInfo()
  * @brief 删除歌曲菜单项处理
  * @param idx 歌曲索引
  */
-void MusicItemWidget::onDeleteSong(const int &idx)
+void MusicItemWidget::onDeleteSong(const int& idx)
 {
     emit deleteSong(idx);
 }
@@ -602,8 +627,8 @@ void MusicItemWidget::initUi()
     this->m_indexLab        = new QLabel(QString("%1").arg(this->m_index + 1, 2, 10, QChar('0')), this);
     this->m_coverLab        = new QLabel(this);
     this->m_coverLab->setAlignment(Qt::AlignCenter);
-    this->m_coverLab->setFixedSize(PIX_SIZE,PIX_SIZE);
-    this->m_coverLab->setPixmap(roundedPix(this->m_cover,this->m_coverLab->size(),PIX_RADIUS));
+    this->m_coverLab->setFixedSize(PIX_SIZE, PIX_SIZE);
+    this->m_coverLab->setPixmap(roundedPix(this->m_cover, this->m_coverLab->size(), PIX_RADIUS));
     this->m_nameLab         = new QLabel(this);
     this->m_singerLab       = new QLabel(this);
     this->m_albumLab        = new QLabel(this);

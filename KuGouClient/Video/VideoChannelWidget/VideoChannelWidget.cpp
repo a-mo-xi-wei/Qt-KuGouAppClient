@@ -51,8 +51,9 @@ VideoChannelWidget::VideoChannelWidget(QWidget *parent)
             return;
         }
     }
-    QTimer::singleShot(0,this,[this]{initButtonGroup();}); ///< 初始化按钮组
-    QTimer::singleShot(100,this,[this] {
+    QTimer::singleShot(0, this, [this] {initButtonGroup();}); ///< 初始化按钮组
+    QTimer::singleShot(100, this, [this]
+    {
         initTotalWidget();    ///< 初始化分类部件
         initUi();             ///< 初始化界面
     });
@@ -120,8 +121,10 @@ void VideoChannelWidget::initTotalWidget()
  */
 void VideoChannelWidget::initUi()
 {
+    ui->title_widget->setStyleSheet("font-family: 'TaiwanPearl';font-size: 14px;");
+
     m_refreshMask->keepLoading();
-    auto lay = dynamic_cast<QVBoxLayout *>(ui->table_widget->layout()); ///< 获取垂直布局
+    auto lay = dynamic_cast<QVBoxLayout*>(ui->table_widget->layout());  ///< 获取垂直布局
     lay->setSpacing(0);                                           ///< 设置间距
     if (!lay)
     {
@@ -142,8 +145,10 @@ void VideoChannelWidget::initUi()
     lay->insertWidget(lay->count(), m_singerWidget.get());    ///< 插入歌手部件
 
     auto vScrollBar = ui->scrollArea->verticalScrollBar();     ///< 获取垂直滚动条
-    auto connectButton = [this](const QPushButton *button, QWidget *targetWidget) {
-        connect(button, &QPushButton::clicked, this, [this, targetWidget] {
+    auto connectButton = [this](const QPushButton * button, QWidget * targetWidget)
+    {
+        connect(button, &QPushButton::clicked, this, [this, targetWidget]
+        {
             ui->scrollArea->smoothScrollTo(targetWidget->mapToParent(QPoint(0, 0)).y()); ///< 平滑滚动
         });
     };
@@ -163,18 +168,21 @@ void VideoChannelWidget::initUi()
     connect(vScrollBar, &QScrollBar::valueChanged, this, &VideoChannelWidget::handleWheelValue); ///< 连接滚动条信号
 
     // 异步加载 JSON 文本
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this]
+    {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/videochannel.json")); ///< 加载 JSON 文件
-        if (!file.open(QIODevice::ReadOnly)) {
-          qWarning() << "Could not open file for reading videochannel.json";
-          STREAM_WARN() << "Could not open file for reading videochannel.json"; ///< 记录警告日志
-          return true;
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            qWarning() << "Could not open file for reading videochannel.json";
+            STREAM_WARN() << "Could not open file for reading videochannel.json"; ///< 记录警告日志
+            return true;
         }
         const auto obj = QJsonDocument::fromJson(file.readAll()); ///< 解析 JSON
         auto arr       = obj.array();
-        for (const auto &item: arr) {
-          auto obj = item.toObject();
-          this->m_coverTextVector.emplace_back(obj.value(QStringLiteral("coverText")).toString());
+        for (const auto &item : arr)
+        {
+            auto obj = item.toObject();
+            this->m_coverTextVector.emplace_back(obj.value(QStringLiteral("coverText")).toString());
         }
         file.close();
 
@@ -188,7 +196,8 @@ void VideoChannelWidget::initUi()
         return true;
     });
 
-    Async::onResultReady(future, this, [this](bool flag) {
+    Async::onResultReady(future, this, [this](bool flag)
+    {
         using Task = std::function<void()>;
         QVector<Task> tasks;
 
@@ -202,7 +211,8 @@ void VideoChannelWidget::initUi()
         tasks << [this] { loadSectionBlocks(m_languageWidget.get(), 9, 51); };
         tasks << [this] { loadSectionBlocks(m_danceWidget.get(), 3, 60); };
         tasks << [this] { loadSectionBlocks(m_siteWidget.get(), 14, 63); };
-        tasks << [this] {
+        tasks << [this]
+        {
             loadSectionBlocks(m_singerWidget.get(), 26, 77);
             m_refreshMask->hideLoading(""); // 最后一个任务执行完成后关闭加载
             QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
@@ -213,11 +223,13 @@ void VideoChannelWidget::initUi()
             queue->enqueue(task);
 
         auto runner = std::make_shared<std::function<void()>>();
-        *runner = [queue, runner]() {
+        *runner = [queue, runner]()
+        {
             if (queue->isEmpty()) return;
 
             auto task = queue->dequeue();
-            QTimer::singleShot(0, nullptr, [task, runner]() {
+            QTimer::singleShot(0, nullptr, [task, runner]()
+            {
                 task();
                 (*runner)();
             });
@@ -228,7 +240,8 @@ void VideoChannelWidget::initUi()
 
 }
 
-void VideoChannelWidget::loadSectionBlocks(VideoChannelPartWidget *section, const int &cnt, const int &sum) {
+void VideoChannelWidget::loadSectionBlocks(VideoChannelPartWidget *section, const int& cnt, const int& sum)
+{
     for (int i = 1; i <= cnt; ++i)
     {
         auto block = new VideoChannelBlock(this);
@@ -238,7 +251,8 @@ void VideoChannelWidget::loadSectionBlocks(VideoChannelPartWidget *section, cons
     }
 }
 
-void VideoChannelWidget::showEvent(QShowEvent *event) {
+void VideoChannelWidget::showEvent(QShowEvent *event)
+{
     QWidget::showEvent(event);
     m_refreshMask->setGeometry(rect());
     m_refreshMask->raise();  // 确保遮罩在最上层
@@ -248,30 +262,33 @@ void VideoChannelWidget::showEvent(QShowEvent *event) {
  * @brief 处理滚动值变化
  * @param value 滚动条值
  */
-void VideoChannelWidget::handleWheelValue(const int &value)
+void VideoChannelWidget::handleWheelValue(const int& value)
 {
-    const QVector<QPair<QWidget*, QPushButton*>> sectionMappings = {
-        {m_popularWidget.get(),     ui->popular_pushButton},
-        {m_childrenWidget.get(),    ui->children_pushButton},
-        {m_themeWidget.get(),       ui->theme_pushButton},
-        {m_filmWidget.get(),        ui->film_pushButton},
-        {m_varietyWidget.get(),     ui->variety_pushButton},
-        {m_ACGNWidget.get(),        ui->ACGN_pushButton},
-        {m_sceneWidget.get(),       ui->scene_pushButton},
-        {m_languageWidget.get(),    ui->language_pushButton},
-        {m_danceWidget.get(),       ui->dance_pushButton},
-        {m_siteWidget.get(),        ui->site_pushButton},
-        {m_singerWidget.get(),      ui->singer_pushButton}
+    const QVector<QPair<QWidget*, QPushButton*>> sectionMappings =
+    {
+        {m_popularWidget.get(), ui->popular_pushButton},
+        {m_childrenWidget.get(), ui->children_pushButton},
+        {m_themeWidget.get(), ui->theme_pushButton},
+        {m_filmWidget.get(), ui->film_pushButton},
+        {m_varietyWidget.get(), ui->variety_pushButton},
+        {m_ACGNWidget.get(), ui->ACGN_pushButton},
+        {m_sceneWidget.get(), ui->scene_pushButton},
+        {m_languageWidget.get(), ui->language_pushButton},
+        {m_danceWidget.get(), ui->dance_pushButton},
+        {m_siteWidget.get(), ui->site_pushButton},
+        {m_singerWidget.get(), ui->singer_pushButton}
     };
 
-    for (int i = 0; i < sectionMappings.size(); ++i) {
+    for (int i = 0; i < sectionMappings.size(); ++i)
+    {
         QWidget* currentWidget = sectionMappings[i].first;
         QWidget* nextWidget = (i + 1 < sectionMappings.size()) ? sectionMappings[i + 1].first : nullptr;
 
         int currentY = currentWidget->mapToParent(QPoint(0, 0)).y();
         int nextY = nextWidget ? nextWidget->mapToParent(QPoint(0, 0)).y() : INT_MAX;
 
-        if (value >= currentY && value < nextY) {
+        if (value >= currentY && value < nextY)
+        {
             sectionMappings[i].second->setChecked(true);
             break;
         }

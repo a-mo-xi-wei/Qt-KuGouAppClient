@@ -1,56 +1,64 @@
 /*--------------------operation_widget------------------------------*/
-QToolButton#recently_play_toolButton{
+QToolButton#recently_play_toolButton {
+    font-family: 'TaiwanPearl';
     color: white;
     border: none;
     border-radius: 17px;
     padding-left: 13px;
-    background-color:#269dff;
+    background-color: #269dff;
 }
-QToolButton#recently_play_toolButton:hover{
-    background-color:#2085d9;
+
+QToolButton#recently_play_toolButton:hover {
+    background-color: #2085d9;
 }
+
 /*--------------------small_widget------------------------------*/
-QWidget#small_widget{
+QWidget#small_widget {
     border: 1px solid #B4DEFC;
-    border-radius:15px;
+    border-radius: 15px;
 }
-QWidget#small_widget > QFrame{
-    border:none;
-    background-color:#dadeff;
+
+QWidget#small_widget > QFrame {
+    border: none;
+    background-color: #dadeff;
 }
 
 QWidget#small_widget > QToolButton {
     background-color: transparent;
 }
+
 QToolButton#recently_share_toolButton {
-    border-image:url(":/Res/titlebar/share-gray.svg");
+    border-image: url(":/Res/titlebar/share-gray.svg");
 }
+
 QToolButton#recently_share_toolButton:hover {
-    border-image:url(":/Res/titlebar/share-blue.svg");
+    border-image: url(":/Res/titlebar/share-blue.svg");
 }
 
 QToolButton#recently_batch_toolButton {
-    border-image:url(":/Res/titlebar/batch-gray.svg");
-}
-QToolButton#recently_batch_toolButton:hover {
-    border-image:url(":/Res/titlebar/batch-blue.svg");
+    border-image: url(":/Res/titlebar/batch-gray.svg");
 }
 
-QLineEdit{
+QToolButton#recently_batch_toolButton:hover {
+    border-image: url(":/Res/titlebar/batch-blue.svg");
+}
+
+QLineEdit {
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #B4DEFC;
-    background-color:transparent;
+    border: 2px solid #B4DEFC;
+    background-color: transparent;
 }
 
 /**************content_widget*************/
-QPushButton#search_pushButton{
+QPushButton#search_pushButton {
     border: 1px solid #1eb8ff;
     border-radius: 15px;
     color: #1eb8ff;
     background-color: #f1f1ff;
     font-size: 13px;
 }
-QPushButton#search_pushButton:hover{
+
+QPushButton#search_pushButton:hover {
     background-color: #e3e3ff;
 }

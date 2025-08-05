@@ -133,6 +133,8 @@ void Channel::initTotalWidget()
  */
 void Channel::initUi()
 {
+    ui->guide_widget->setStyleSheet("font-family: 'TaiwanPearl';");
+
     m_refreshMask->keepLoading();
     {
         auto lay = dynamic_cast<QVBoxLayout*>(ui->table_widget->layout()); ///< 获取表格布局

@@ -53,6 +53,7 @@ UploadingSong::~UploadingSong()
  */
 void UploadingSong::initUi()
 {
+    ui->title_widget->setStyleSheet("font-family: 'TaiwanPearl';font-size: 13px;");
     ui->cloud_upload_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/upload-white.svg"))); ///< 设置上传按钮图标
     ui->cloud_start_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-gray.svg"))); ///< 设置开始按钮图标
     ui->cloud_pause_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/stop-gray.svg"))); ///< 设置暂停按钮图标

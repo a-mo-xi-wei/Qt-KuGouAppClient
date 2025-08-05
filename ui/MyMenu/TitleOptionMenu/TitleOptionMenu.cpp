@@ -20,7 +20,7 @@ REGISTER_MENU(MyMenu::MenuKind::TitleOption, TitleOptionMenu)
  * @brief 构造函数，初始化标题栏选项菜单
  * @param parent 父控件指针，默认为 nullptr
  */
-TitleOptionMenu::TitleOptionMenu(QWidget *parent)
+TitleOptionMenu::TitleOptionMenu(QWidget* parent)
     : BaseMenu(parent)
 {
 }
@@ -44,6 +44,7 @@ void TitleOptionMenu::initMenu()
             a_dynamicWallPaperBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             a_dynamicWallPaperBtn->setFixedSize(75, 85);
             a_dynamicWallPaperBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_dynamicWallPaperBtn->setStyleSheet("font-size: 12px;");
             a_dynamicWallPaperBtn->setText(QStringLiteral("动态壁纸"));
             a_dynamicWallPaperBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/wallpaper.png")));
             a_dynamicWallPaperBtn->setIconSize(QSize(35, 35));
@@ -63,6 +64,7 @@ void TitleOptionMenu::initMenu()
             a_phonePlayBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             a_phonePlayBtn->setFixedSize(75, 85);
             a_phonePlayBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_phonePlayBtn->setStyleSheet("font-size: 12px;");
             a_phonePlayBtn->setText(QStringLiteral("手机play"));
             a_phonePlayBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/phonePlay.png")));
             a_phonePlayBtn->setIconSize(QSize(35, 35));
@@ -82,6 +84,7 @@ void TitleOptionMenu::initMenu()
             a_uploadToDeviceBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             a_uploadToDeviceBtn->setFixedSize(75, 85);
             a_uploadToDeviceBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_uploadToDeviceBtn->setStyleSheet("font-size: 11px;");
             a_uploadToDeviceBtn->setText(QStringLiteral("传歌到设备"));
             a_uploadToDeviceBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/uploadToDevice.png")));
             a_uploadToDeviceBtn->setIconSize(QSize(35, 35));
@@ -101,6 +104,7 @@ void TitleOptionMenu::initMenu()
             a_earnCoinBtn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             a_earnCoinBtn->setFixedSize(75, 85);
             a_earnCoinBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+            a_earnCoinBtn->setStyleSheet("font-size: 11px;");
             a_earnCoinBtn->setText(QStringLiteral("听歌赚金币"));
             a_earnCoinBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/earnCoin.png")));
             a_earnCoinBtn->setIconSize(QSize(35, 35));
@@ -370,7 +374,7 @@ void TitleOptionMenu::initMenu()
         auto a_helpFaceBackToolBtn = new MenuBtn(this);
         a_helpFaceBackToolBtn->setObjectName("helpFaceBackToolBtn");
         a_helpFaceBackToolBtn->setStyleSheet(
-            "border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
+            "font-size: 15px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;margin-right: 0;");
         a_helpFaceBackToolBtn->setFixedSize(325, 37);
         a_helpFaceBackToolBtn->setIconSize(QSize(20, 20));
         a_helpFaceBackToolBtn->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/helpFaceback-black.svg")));

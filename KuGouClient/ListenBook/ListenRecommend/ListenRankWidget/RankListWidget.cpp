@@ -19,7 +19,9 @@ RankListWidget::RankListWidget(QWidget *parent)
     , ui(new Ui::RankListWidget)
 {
     ui->setupUi(this);                                   ///< 初始化 UI
-    ui->desc_label->setStyleSheet(QStringLiteral("color: black;")); ///< 设置描述标签默认颜色
+    ui ->desc_label ->setFont(QFont("TaiwanPearl", 10 ));
+    ui ->info_label ->setFont(QFont("TaiwanPearl", 9 ));
+    ui->desc_label->setStyleSheet(QStringLiteral("color: black; ")); ///< 设置描述标签默认颜色
     ui->fire_label->setStyleSheet(QStringLiteral("border-image: url(\":/ListenBook/Res/listenbook/fire.svg\");")); ///< 设置火焰图标
     ui->info_label->setStyleSheet(QStringLiteral("color: gray;")); ///< 设置信息标签颜色
 }

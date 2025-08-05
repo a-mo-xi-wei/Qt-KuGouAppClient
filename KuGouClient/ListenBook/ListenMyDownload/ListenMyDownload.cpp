@@ -59,24 +59,27 @@ ListenMyDownload::~ListenMyDownload()
 QWidget* ListenMyDownload::createPage(int id)
 {
     QWidget* page = nullptr;
-    switch (id) {
-        case 0:
-            if (!m_downloaded) {
-                m_downloaded = std::make_unique<DownloadedWidget>(ui->stackedWidget);
-                connect(m_downloaded.get(), &DownloadedWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
-            }
-            page = m_downloaded.get();
-            break;
-        case 1:
-            if (!m_downloading) {
-                m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget);
-                connect(m_downloading.get(), &DownloadingWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
-            }
-            page = m_downloading.get();
-            break;
-        default:
-            qWarning() << "[WARNING] Invalid page ID:" << id;
-            return nullptr;
+    switch (id)
+    {
+    case 0:
+        if (!m_downloaded)
+        {
+            m_downloaded = std::make_unique<DownloadedWidget>(ui->stackedWidget);
+            connect(m_downloaded.get(), &DownloadedWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
+        }
+        page = m_downloaded.get();
+        break;
+    case 1:
+        if (!m_downloading)
+        {
+            m_downloading = std::make_unique<DownloadingWidget>(ui->stackedWidget);
+            connect(m_downloading.get(), &DownloadingWidget::find_more_audio_book, this, &ListenMyDownload::switch_to_listen_recommend);
+        }
+        page = m_downloading.get();
+        break;
+    default:
+        qWarning() << "[WARNING] Invalid page ID:" << id;
+        return nullptr;
     }
     return page;
 }
@@ -87,6 +90,7 @@ QWidget* ListenMyDownload::createPage(int id)
  */
 void ListenMyDownload::initUi()
 {
+    ui->guide_widget->setStyleSheet("font-family: 'TaiwanPearl';");
     initIndexLab();
     initStackedWidget();
     ui->downloaded_pushButton->click();
@@ -105,7 +109,8 @@ void ListenMyDownload::initIndexLab()
     QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2 };
     QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 2; ++i)
+    {
         idxLabels[i]->setPixmap(QPixmap(":/Res/window/index_lab.svg"));
         guideWidgets[i]->installEventFilter(this);
         numLabels[i]->setStyleSheet(i == 0 ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
@@ -125,7 +130,8 @@ void ListenMyDownload::initStackedWidget()
     m_buttonGroup->setExclusive(true);
 
     // 初始化占位页面
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 2; ++i)
+    {
         auto* placeholder = new QWidget;
         auto* layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -139,8 +145,10 @@ void ListenMyDownload::initStackedWidget()
     ui->stackedWidget->setCurrentIndex(0);
 
     // 按钮点击处理
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
-        if (m_currentIdx == id) {
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id)
+    {
+        if (m_currentIdx == id)
+        {
             return;
         }
 
@@ -148,28 +156,40 @@ void ListenMyDownload::initStackedWidget()
 
         // 清理目标 placeholder 内旧的控件
         QWidget* placeholder = m_pages[m_currentIdx];
-        if (!placeholder) {
+        if (!placeholder)
+        {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
             return;
         }
 
         QLayout* layout = placeholder->layout();
-        if (!layout) {
+        if (!layout)
+        {
             layout = new QVBoxLayout(placeholder);
             layout->setContentsMargins(0, 0, 0, 0);
             layout->setSpacing(0);
-        } else {
-            while (QLayoutItem* item = layout->takeAt(0)) {
-                if (QWidget* widget = item->widget()) {
+        }
+        else
+        {
+            while (QLayoutItem* item = layout->takeAt(0))
+            {
+                if (QWidget* widget = item->widget())
+                {
                     widget->deleteLater();
                 }
                 delete item;
             }
-            switch (m_currentIdx) {
-                case 0: m_downloaded.reset();break;
-                case 1: m_downloading.reset();break;
-                default:break;
+            switch (m_currentIdx)
+            {
+            case 0:
+                m_downloaded.reset();
+                break;
+            case 1:
+                m_downloading.reset();
+                break;
+            default:
+                break;
             }
         }
 
@@ -177,9 +197,12 @@ void ListenMyDownload::initStackedWidget()
         layout = placeholder->layout();
         // 创建新页面
         QWidget* realPage = createPage(id);
-        if (!realPage) {
+        if (!realPage)
+        {
             qWarning() << "[WARNING] Failed to create page at index:" << id;
-        } else {
+        }
+        else
+        {
             layout->addWidget(realPage);
         }
 
@@ -189,7 +212,8 @@ void ListenMyDownload::initStackedWidget()
         // 更新标签
         QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab };
         QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 2; ++i)
+        {
             idxLabels[i]->setVisible(i == id);
             numLabels[i]->setStyleSheet(i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
         }
@@ -220,9 +244,12 @@ bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
     QPushButton* buttons[] = { ui->downloaded_pushButton, ui->downloading_pushButton };
     QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
 
-    for (int i = 0; i < 2; ++i) {
-        if (watched == guideWidgets[i]) {
-            if (event->type() == QEvent::Enter) {
+    for (int i = 0; i < 2; ++i)
+    {
+        if (watched == guideWidgets[i])
+        {
+            if (event->type() == QEvent::Enter)
+            {
                 buttons[i]->setStyleSheet(R"(
                     QPushButton {
                         color:#26a1ff;
@@ -238,9 +265,11 @@ bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
                     }
                 )");
                 numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "color:#26a1ff;");
-            } else if (event->type() == QEvent::Leave) {
+                                            "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                                            "color:#26a1ff;");
+            }
+            else if (event->type() == QEvent::Leave)
+            {
                 buttons[i]->setStyleSheet(R"(
                     QPushButton {
                         color:black;
@@ -256,8 +285,8 @@ bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
                     }
                 )");
                 numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "");
+                                            "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                                            "");
             }
             break;
         }
@@ -271,14 +300,17 @@ bool ListenMyDownload::eventFilter(QObject *watched, QEvent *event)
  */
 void ListenMyDownload::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton) {
+    if (event->button() == Qt::LeftButton)
+    {
         QLabel* numLabels[] = { ui->downloaded_number_label, ui->downloading_number_label };
         QPushButton* buttons[] = { ui->downloaded_pushButton, ui->downloading_pushButton };
 
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 2; ++i)
+        {
             const auto labelRect = numLabels[i]->geometry();
             const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
-            if (labelRect.contains(clickPos)) {
+            if (labelRect.contains(clickPos))
+            {
                 buttons[i]->click();
                 break;
             }

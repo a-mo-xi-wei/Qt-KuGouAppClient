@@ -1,25 +1,44 @@
-#Search{
+#Search {
     background-color: transparent;
 }
-QWidget#classify_widget > QPushButton{
+
+QWidget#small_widget * {
+    font-family: 'TaiwanPearl';
+}
+
+QWidget#classify_widget > QPushButton {
+    font-family: 'TaiwanPearl';
     background-color: transparent;
-    font-size: 15px;
+    font-size: 16px;
     border: none;
     padding-right: 20px;
 }
-QWidget#classify_widget > QLabel{
+
+QWidget#classify_widget > QLabel {
     background-color: transparent;
     border: none;
     padding-right: 20px;
 }
-QWidget#classify_widget > QPushButton:checked{
+
+QWidget#classify_widget > QPushButton:checked {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 19px;
     color: #26A1FF;
 }
-QStackedWidget QToolButton:hover{
+
+QWidget#classify_widget > QPushButton:hover {
     color: #26A1FF;
 }
-QToolButton{
+
+QStackedWidget QToolButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
+}
+
+QStackedWidget QToolButton:hover {
+    color: #26A1FF;
+}
+
+QToolButton {
     background-color: transparent;
 }

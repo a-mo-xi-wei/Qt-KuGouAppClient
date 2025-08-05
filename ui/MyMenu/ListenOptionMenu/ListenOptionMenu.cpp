@@ -1335,14 +1335,72 @@ const ListenOptionMenu* ListenOptionMenu::getMenu() const
  */
 bool ListenOptionMenu::eventFilter(QObject* watched, QEvent* event)
 {
-    if (event->type() == QEvent::MouseButtonRelease)
+    if (QLabel* label = qobject_cast<QLabel*>(watched))
     {
-        auto* label = qobject_cast<QLabel*>(watched);
-        if (label && static_cast<QMouseEvent*>(event)->button() == Qt::LeftButton)
+        // 获取当前样式表（用于状态恢复）
+        const QString normalStyle = R"(
+            QLabel {
+                background-color: transparent;
+                font-weight: bolder;
+                border: none;
+                border-radius: 15px;
+                color: black;
+            }
+        )";
+
+        const QString hoverStyle = R"(
+            QLabel:hover {
+                background-color: #C1E4EF;
+                color: #3AA1FF;
+            }
+        )";
+
+        switch (event->type())
         {
-            emit clickedFuncName(label->text());
+        case QEvent::MouseButtonPress:
+            // 按下时添加临时按压效果
+            label->setStyleSheet(normalStyle + R"(
+                QLabel {
+                    background-color: #B4E0EE; /* 更深的红色 */
+                }
+            )");
+            return true;
+
+        case QEvent::MouseButtonRelease:
+        {
+            QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+            if (mouseEvent->button() == Qt::LeftButton &&
+                    label->rect().contains(mouseEvent->pos()))
+            {
+                // 恢复悬停状态
+                label->setStyleSheet(normalStyle + hoverStyle);
+
+                // 发送点击信号
+                emit clickedFuncName(label->text());
+                return true;
+            }
+            break;
+        }
+
+        case QEvent::Enter:
+            // 鼠标进入时应用悬停样式
+            label->setStyleSheet(normalStyle + hoverStyle);
+            return true;
+
+        case QEvent::Leave:
+            // 鼠标离开时恢复默认样式
+            label->setStyleSheet(normalStyle);
+            return true;
+
+        case QEvent::MouseMove:
+            // 实时更新悬停状态（确保在快速移动时也能正确显示）
+            if (label->rect().contains(static_cast<QMouseEvent*>(event)->pos()))
+                label->setStyleSheet(normalStyle + hoverStyle);
+            else
+                label->setStyleSheet(normalStyle);
             return true;
         }
     }
+
     return BaseMenu::eventFilter(watched, event);
 }

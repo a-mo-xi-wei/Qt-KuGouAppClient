@@ -5,45 +5,57 @@ QToolButton {
     border-radius: 17px;
     padding-left: 15px;
 }
+
 QToolButton:hover {
     background-color: #dadeff;
 }
-QToolButton#downloading_play_toolButton{
+
+QToolButton#downloading_play_toolButton {
     color: white;
     border: none;
     border-radius: 17px;
     padding-left: 13px;
-    background-color:#269dff;
+    background-color: #269dff;
 }
-QToolButton#downloading_play_toolButton:hover{
-    background-color:#2085d9;
+
+QToolButton#downloading_play_toolButton:hover {
+    background-color: #2085d9;
 }
+
 QToolButton#downloading_clear_toolButton {
     padding-left: 27px;
 }
-QToolButton#downloading_setting_toolButton{
+
+QToolButton#downloading_setting_toolButton {
     padding-right: 15px;
     color: #696969;
 }
-QToolButton#downloading_setting_toolButton:hover{
+
+QToolButton#downloading_setting_toolButton:hover {
     color: #696969;
 }
+
 /**************property_widget*************/
-QWidget#property_widget QLabel{
+QWidget#property_widget QLabel {
     color: #696969;
     background-color: transparent;
 }
+
 /***************水平线********************/
-QFrame#HLine{
+QFrame#HLine {
     border: none;
     background-color: #b9b9b9;
 }
 
 /**************content_widget*************/
-QLabel#prompt_label{
+QLabel#prompt_label {
+    font-family: 'TaiwanPearl';
     color: #afafaf;
 }
-QPushButton#search_pushButton{
+
+QPushButton#search_pushButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     border: 1px solid #1eb8ff;
     border-radius: 17px;
     color: #1eb8ff;

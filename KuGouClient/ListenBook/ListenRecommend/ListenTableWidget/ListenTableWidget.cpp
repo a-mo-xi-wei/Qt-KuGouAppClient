@@ -42,7 +42,7 @@ void ListenTableWidget::setTitle(const QString &title) const
  * @brief 获取画廊控件
  * @return 画廊控件指针
  */
-GalleryWidget *ListenTableWidget::getGalleryWidget() const
+GalleryWidget* ListenTableWidget::getGalleryWidget() const
 {
     return ui->gallery_widget;                           ///< 返回画廊控件
 }
@@ -51,7 +51,7 @@ GalleryWidget *ListenTableWidget::getGalleryWidget() const
  * @brief 设置计数
  * @param cnt 计数值
  */
-void ListenTableWidget::setCnt(const int &cnt)
+void ListenTableWidget::setCnt(const int& cnt)
 {
     this->m_cnt = cnt;                                   ///< 设置计数值
 }
@@ -83,6 +83,8 @@ void ListenTableWidget::initUi()
     ui->toolButton->setIcon(QIcon(QStringLiteral(":/ListenBook/Res/listenbook/refresh-gray.svg"))); ///< 设置默认图标
     ui->toolButton->setStyleSheet(R"(
         QToolButton#toolButton{
+            font-family: 'TaiwanPearl';
+            font-size: 13px;
             background-color: transparent;
             color: black;
         }

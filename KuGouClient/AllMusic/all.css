@@ -1,80 +1,93 @@
-#AllMusic{
+#AllMusic {
     background-color: transparent;
 }
+
 /*--------------------guide_widget------------------------------*/
 QPushButton {
-    color:black;
-    font-size:16px;
+    color: black;
+    font-size: 16px;
     border: none;
     padding: 0px;
     margin: 0px;
 }
+
 QPushButton:checked {
-    color:#26a1ff;
-    font-size:18px;
-    font-weight:bold;
+    color: #26a1ff;
+    font-size: 18px;
+    font-weight: bold;
 }
+
 QPushButton:hover {
-    color:#26a1ff;
+    color: #26a1ff;
 }
 
 /*--------------------operation_widget------------------------------*/
-QToolButton#all_play_toolButton{
+QToolButton#all_play_toolButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     color: white;
     border: none;
     border-radius: 17px;
     padding-left: 13px;
-    background-color:#269dff;
+    background-color: #269dff;
 }
-QToolButton#all_play_toolButton:hover{
-    background-color:#2085d9;
+
+QToolButton#all_play_toolButton:hover {
+    background-color: #2085d9;
 }
-QToolButton#all_download_toolButton{
+
+QToolButton#all_download_toolButton {
     border: none;
     border-radius: 17px;
-    background-color:#e2e5ff;
+    background-color: #e2e5ff;
 }
-QToolButton#all_download_toolButton:hover{
-    background-color:#dadeff;
+
+QToolButton#all_download_toolButton:hover {
+    background-color: #dadeff;
 }
 
 /*--------------------small_widget------------------------------*/
-QWidget#small_widget{
+QWidget#small_widget {
     border: 2px solid #B4DEFC;
-    border-radius:15px;
+    border-radius: 15px;
 }
-QWidget#small_widget > QFrame{
-    border:none;
-    background-color:#dadeff;
+
+QWidget#small_widget > QFrame {
+    border: none;
+    background-color: #dadeff;
 }
 
 QWidget#small_widget > QToolButton {
     background-color: transparent;
 }
+
 QToolButton#all_share_toolButton {
-    border-image:url(":/Res/titlebar/share-gray.svg");
+    border-image: url(":/Res/titlebar/share-gray.svg");
 }
+
 QToolButton#all_share_toolButton:hover {
-    border-image:url(":/Res/titlebar/share-blue.svg");
+    border-image: url(":/Res/titlebar/share-blue.svg");
 }
 
 QToolButton#all_batch_toolButton {
-    border-image:url(":/Res/titlebar/batch-gray.svg");
+    border-image: url(":/Res/titlebar/batch-gray.svg");
 }
+
 QToolButton#all_batch_toolButton:hover {
-    border-image:url(":/Res/titlebar/batch-blue.svg");
+    border-image: url(":/Res/titlebar/batch-blue.svg");
 }
 
 QToolButton#all_sort_toolButton {
-    border-image:url(":/Res/titlebar/sort-gray.svg");
-}
-QToolButton#all_sort_toolButton:hover {
-    border-image:url(":/Res/titlebar/sort-blue.svg");
+    border-image: url(":/Res/titlebar/sort-gray.svg");
 }
 
-QLineEdit{
+QToolButton#all_sort_toolButton:hover {
+    border-image: url(":/Res/titlebar/sort-blue.svg");
+}
+
+QLineEdit {
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #B4DEFC;
-    background-color:transparent;
+    border: 2px solid #B4DEFC;
+    background-color: transparent;
 }

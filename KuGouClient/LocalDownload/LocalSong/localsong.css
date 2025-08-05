@@ -1,6 +1,7 @@
-QWidget#widget{
+QWidget#widget {
     background-color: transparent;
 }
+
 /*--------------------operation_widget------------------------------*/
 QWidget#operation_widget > QToolButton {
     background-color: #e2e5ff;
@@ -8,70 +9,83 @@ QWidget#operation_widget > QToolButton {
     border-radius: 17px;
     padding-left: 15px;
 }
+
 QWidget#operation_widget > QToolButton:hover {
     background-color: #dadeff;
 }
 
-QWidget#operation_widget QToolButton#local_all_play_toolButton{
-    color:white;
-    background-color:#269dff;
+QWidget#operation_widget QToolButton#local_all_play_toolButton {
+    color: white;
+    background-color: #269dff;
 }
-QWidget#operation_widget QToolButton#local_all_play_toolButton:hover{
-    background-color:#2085d9;
+
+QWidget#operation_widget QToolButton#local_all_play_toolButton:hover {
+    background-color: #2085d9;
 }
+
 /*--------------------small_widget------------------------------*/
-QWidget#small_widget{
+QWidget#small_widget {
     border: 2px solid #B4DEFC;
-    border-radius:15px;
+    border-radius: 15px;
 }
-QWidget#small_widget > QFrame{
-    border:none;
-    background-color:#dadeff;
+
+QWidget#small_widget > QFrame {
+    border: none;
+    background-color: #dadeff;
 }
 
 QWidget#small_widget > QToolButton {
     background-color: transparent;
 }
+
 QToolButton#local_share_toolButton {
-    border-image:url(":/Res/titlebar/share-gray.svg");
+    border-image: url(":/Res/titlebar/share-gray.svg");
 }
+
 QToolButton#local_share_toolButton:hover {
-    border-image:url(":/Res/titlebar/share-blue.svg");
+    border-image: url(":/Res/titlebar/share-blue.svg");
 }
 
 QToolButton#local_batch_toolButton {
-    border-image:url(":/Res/titlebar/batch-gray.svg");
+    border-image: url(":/Res/titlebar/batch-gray.svg");
 }
+
 QToolButton#local_batch_toolButton:hover {
-    border-image:url(":/Res/titlebar/batch-blue.svg");
+    border-image: url(":/Res/titlebar/batch-blue.svg");
 }
 
 QToolButton#local_album_toolButton {
-    border-image:url(":/Res/titlebar/album-gray.svg");
+    border-image: url(":/Res/titlebar/album-gray.svg");
 }
+
 QToolButton#local_album_toolButton:hover {
-    border-image:url(":/Res/titlebar/album-blue.svg");
+    border-image: url(":/Res/titlebar/album-blue.svg");
 }
 
 QToolButton#local_sort_toolButton {
-    border-image:url(":/Res/titlebar/sort-gray.svg");
-}
-QToolButton#local_sort_toolButton:hover {
-    border-image:url(":/Res/titlebar/sort-blue.svg");
+    border-image: url(":/Res/titlebar/sort-gray.svg");
 }
 
-QLineEdit{
+QToolButton#local_sort_toolButton:hover {
+    border-image: url(":/Res/titlebar/sort-blue.svg");
+}
+
+QLineEdit {
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #B4DEFC;
-    background-color:transparent;
+    border: 2px solid #B4DEFC;
+    background-color: transparent;
 }
 
 /**************content_widget*************/
-QLabel#prompt_label{
+QLabel#prompt_label {
+    font-family: 'TaiwanPearl';
     color: #afafaf;
 }
-QPushButton#search_pushButton{
+
+QPushButton#search_pushButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     border: 1px solid #1eb8ff;
     border-radius: 17px;
     color: #1eb8ff;

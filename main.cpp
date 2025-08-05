@@ -1,6 +1,6 @@
 #include "AppController.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     // enable dpi scale
 #if (QT_VERSION > QT_VERSION_CHECK(5, 14, 0))

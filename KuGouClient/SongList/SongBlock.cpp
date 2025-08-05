@@ -41,7 +41,7 @@ void SongBlock::initUi()
     mainLayout->addWidget(m_cover);                     ///< 添加封面控件
     mainLayout->addWidget(m_descLab);                   ///< 添加描述标签
 
-    m_descLab->setStyleSheet("QLabel{color:black;font-size:14px;}QLabel:hover{color:#3AA1FF;}"); ///< 设置描述标签样式
+    m_descLab->setStyleSheet("QLabel{color:black;font-family: 'TaiwanPearl';font-size:13px;}QLabel:hover{color:#3AA1FF;}"); ///< 设置描述标签样式
 
     auto &mask = this->m_cover->getMask();              ///< 获取遮罩
     mask.setDefaultFillCircleColor(Qt::white);          ///< 设置默认圆形填充颜色

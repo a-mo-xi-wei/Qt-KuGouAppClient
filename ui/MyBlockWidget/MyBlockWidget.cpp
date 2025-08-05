@@ -45,14 +45,17 @@ MyBlockWidget::MyBlockWidget(QWidget *parent) :
 /**
  * @brief 初始化用户界面
  */
-void MyBlockWidget::initUi() {
-    this->setFixedSize(200,200);
+void MyBlockWidget::initUi()
+{
+    setFont(QFont("TaiwanPearl"));
+    this->setFixedSize(200, 200);
     this->setCursor(Qt::PointingHandCursor);
     this->setMouseTracking(true);
     initTipArr();
+    this->m_tipLab->setFont(QFont("TaiwanPearl", 10));
     this->m_tipLab->setFixedHeight(20);
     this->m_tipLab->setScaledContents(true);
-    this->m_tipLab->setContentsMargins(5,2,5,2);
+    this->m_tipLab->setContentsMargins(5, 2, 5, 2);
     this->setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
     this->m_tipLab->setAlignment(Qt::AlignCenter);
     this->m_tipLab->setStyleSheet(QStringLiteral("border-radius:10px;background-color:black;color:white;"));
@@ -65,7 +68,7 @@ void MyBlockWidget::initUi() {
     this->setPopularBtnText(QString::number(QRandomGenerator::global()->generateDouble() * 1000, 'f', 1));
     this->m_rightPopularBtn->setContentsMargins(5, 0, 5, 0);
     this->m_rightPopularBtnStyle = "color:white;border:none;border-radius:10px;";
-    this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle+"background-color: rgba(128, 128, 128, 127);");
+    this->m_rightPopularBtn->setStyleSheet(this->m_rightPopularBtnStyle + "background-color: rgba(128, 128, 128, 127);");
 
     this->m_leftPopularBtn->setEnabled(false);
     this->m_leftPopularBtn->setFixedSize(80, 20);
@@ -76,7 +79,7 @@ void MyBlockWidget::initUi() {
     this->m_leftPopularBtn->setStyleSheet(this->m_leftPopularBtnStyle);
 
     this->m_durationBtn->setEnabled(false);
-    this->m_durationBtn->setFixedSize(50,20);
+    this->m_durationBtn->setFixedSize(50, 20);
     this->m_leftPopularBtn->setContentsMargins(8, 0, 0, 0);
     this->m_durationBtn->setStyleSheet("color:white;border:none;background-color: transparent;");
 
@@ -85,22 +88,24 @@ void MyBlockWidget::initUi() {
 /**
  * @brief 初始化提示标签数组
  */
-void MyBlockWidget::initTipArr() {
-    m_tipArr = {QStringLiteral("流行"),QStringLiteral("经典"),
-                QStringLiteral("轻音乐"),QStringLiteral("影视"),
-                QStringLiteral("爵士"),QStringLiteral("轻松"),
-                QStringLiteral("日语"),QStringLiteral("中国风"),
-                QStringLiteral("英语"),QStringLiteral("电子"),
-                QStringLiteral("80后"),QStringLiteral("90后"),
-                QStringLiteral("70后"),QStringLiteral("励志"),
-                QStringLiteral("乐器演奏"),QStringLiteral("国语"),
-                QStringLiteral("民谣"),QStringLiteral("校园"),
-                QStringLiteral("安静"),QStringLiteral("寂寞"),
-                QStringLiteral("网络"),QStringLiteral("法语"),
-                QStringLiteral("ACG"),QStringLiteral("兴奋"),
-                QStringLiteral("快乐"),QStringLiteral("金属"),
-                QStringLiteral("说唱"),QStringLiteral("DJ热碟"),
-                QStringLiteral("甜蜜"),QStringLiteral("广场舞"),};
+void MyBlockWidget::initTipArr()
+{
+    m_tipArr = {QStringLiteral("流行"), QStringLiteral("经典"),
+                QStringLiteral("轻音乐"), QStringLiteral("影视"),
+                QStringLiteral("爵士"), QStringLiteral("轻松"),
+                QStringLiteral("日语"), QStringLiteral("中国风"),
+                QStringLiteral("英语"), QStringLiteral("电子"),
+                QStringLiteral("80后"), QStringLiteral("90后"),
+                QStringLiteral("70后"), QStringLiteral("励志"),
+                QStringLiteral("乐器演奏"), QStringLiteral("国语"),
+                QStringLiteral("民谣"), QStringLiteral("校园"),
+                QStringLiteral("安静"), QStringLiteral("寂寞"),
+                QStringLiteral("网络"), QStringLiteral("法语"),
+                QStringLiteral("ACG"), QStringLiteral("兴奋"),
+                QStringLiteral("快乐"), QStringLiteral("金属"),
+                QStringLiteral("说唱"), QStringLiteral("DJ热碟"),
+                QStringLiteral("甜蜜"), QStringLiteral("广场舞"),
+               };
 }
 
 /**
@@ -108,7 +113,7 @@ void MyBlockWidget::initTipArr() {
  * @param path 图片路径
  * @param border 圆角半径，默认为 8
  */
-void MyBlockWidget::setBorderImage(const QString &path, const int &border) const
+void MyBlockWidget::setBorderImage(const QString &path, const int& border) const
 {
     QString style = QString("border-radius:%1px;border-image:url(%2);").arg(border).arg(path);
     //qDebug()<<"当前样式："<<style;
@@ -133,7 +138,7 @@ void MyBlockWidget::setTipLabText(const QString &text) const
  * @brief 设置流行度按钮方向
  * @param direction 方向（0:无，1:左，2:右）
  */
-void MyBlockWidget::setPopularDirection(const int &direction)
+void MyBlockWidget::setPopularDirection(const int& direction)
 {
     m_popularDirection = direction;
     if (direction == 1)
@@ -155,37 +160,44 @@ void MyBlockWidget::setPopularDirection(const int &direction)
  * @brief 设置流行度按钮文本
  * @param text 文本内容
  */
-void MyBlockWidget::setPopularBtnText(const QString &text)const {
-    if(!this->m_popularDirection)return;
+void MyBlockWidget::setPopularBtnText(const QString &text)const
+{
+    if (!this->m_popularDirection)return;
 
-    if(this->m_popularDirection == 1) {
+    if (this->m_popularDirection == 1)
+    {
         if (this->m_haveUnit)
             this->m_leftPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
         else
             this->m_leftPopularBtn->setText(QStringLiteral(" ") + text);
-        if (this->m_leftPopularBtn->icon().isNull()) {
+        if (this->m_leftPopularBtn->icon().isNull())
+        {
             this->m_leftPopularBtn->setFixedWidth(this->m_leftPopularBtn->fontMetrics().horizontalAdvance(m_leftPopularBtn->text()) +
-            this->m_leftPopularBtn->contentsMargins().left() + this->m_leftPopularBtn->contentsMargins().right());
+                                                  this->m_leftPopularBtn->contentsMargins().left() + this->m_leftPopularBtn->contentsMargins().right());
         }
-        else {
+        else
+        {
             this->m_leftPopularBtn->setFixedWidth(this->m_leftPopularBtn->fontMetrics().horizontalAdvance(m_leftPopularBtn->text()) +
-            this->m_leftPopularBtn->contentsMargins().left() + this->m_leftPopularBtn->contentsMargins().right() +
-            this->m_leftPopularBtn->iconSize().width());
+                                                  this->m_leftPopularBtn->contentsMargins().left() + this->m_leftPopularBtn->contentsMargins().right() +
+                                                  this->m_leftPopularBtn->iconSize().width());
         }
     }
-    else if(this->m_popularDirection == 2) {
+    else if (this->m_popularDirection == 2)
+    {
         if (this->m_haveUnit)
             this->m_rightPopularBtn->setText(QStringLiteral(" ") + text + QStringLiteral("万"));
         else
             this->m_rightPopularBtn->setText(QStringLiteral(" ") + text);
-        if (this->m_rightPopularBtn->icon().isNull()) {
+        if (this->m_rightPopularBtn->icon().isNull())
+        {
             this->m_rightPopularBtn->setFixedWidth(this->m_rightPopularBtn->fontMetrics().horizontalAdvance(this->m_rightPopularBtn->text()) +
-            this->m_rightPopularBtn->contentsMargins().left() + this->m_rightPopularBtn->contentsMargins().right());
+                                                   this->m_rightPopularBtn->contentsMargins().left() + this->m_rightPopularBtn->contentsMargins().right());
         }
-        else {
+        else
+        {
             this->m_rightPopularBtn->setFixedWidth(this->m_rightPopularBtn->fontMetrics().horizontalAdvance(this->m_rightPopularBtn->text()) +
-            this->m_rightPopularBtn->contentsMargins().left() + this->m_rightPopularBtn->contentsMargins().right() +
-            this->m_rightPopularBtn->iconSize().width() + 10);
+                                                   this->m_rightPopularBtn->contentsMargins().left() + this->m_rightPopularBtn->contentsMargins().right() +
+                                                   this->m_rightPopularBtn->iconSize().width() + 10);
         }
     }
 }
@@ -249,7 +261,7 @@ void MyBlockWidget::setLeftPopularBtnIcon(const QString &icon)
  * @brief 设置右侧流行度按钮宽度
  * @param width 宽度
  */
-void MyBlockWidget::setRightPopularBtnWidth(const int &width) const
+void MyBlockWidget::setRightPopularBtnWidth(const int& width) const
 {
     m_rightPopularBtn->setFixedWidth(width);
 }
@@ -258,7 +270,7 @@ void MyBlockWidget::setRightPopularBtnWidth(const int &width) const
  * @brief 设置左侧流行度按钮宽度
  * @param width 宽度
  */
-void MyBlockWidget::setLeftPopularBtnWidth(const int &width) const
+void MyBlockWidget::setLeftPopularBtnWidth(const int& width) const
 {
     m_leftPopularBtn->setFixedWidth(width);
 }
@@ -267,7 +279,7 @@ void MyBlockWidget::setLeftPopularBtnWidth(const int &width) const
  * @brief 设置右侧流行度按钮字体大小
  * @param size 字体大小
  */
-void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const
+void MyBlockWidget::setRightPopularBtnFontSize(const int& size) const
 {
     auto font = m_leftPopularBtn->font();
     font.setPixelSize(size);
@@ -279,7 +291,7 @@ void MyBlockWidget::setRightPopularBtnFontSize(const int &size) const
  * @param size 字体大小
  * @param isBold 是否加粗
  */
-void MyBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isBold) const
+void MyBlockWidget::setLeftPopularBtnFontSize(const int& size, const bool &isBold) const
 {
     auto font = m_leftPopularBtn->font();
     font.setPixelSize(size);
@@ -291,7 +303,7 @@ void MyBlockWidget::setLeftPopularBtnFontSize(const int &size, const bool &isBol
  * @brief 设置宽高比
  * @param aspectRatio 宽高比
  */
-void MyBlockWidget::setAspectRatio(const float &aspectRatio)
+void MyBlockWidget::setAspectRatio(const float& aspectRatio)
 {
     m_aspectRatio = aspectRatio;
 }
@@ -300,7 +312,7 @@ void MyBlockWidget::setAspectRatio(const float &aspectRatio)
  * @brief 设置流行度按钮左边距
  * @param leftPadding 左边距
  */
-void MyBlockWidget::setPopularBtnLeftPadding(const int &leftPadding)
+void MyBlockWidget::setPopularBtnLeftPadding(const int& leftPadding)
 {
     if (!m_popularDirection)
         return;
@@ -341,7 +353,7 @@ void MyBlockWidget::setHaveNumberUnit(const bool &haveNumberUnit)
  * @brief 设置提示标签数组
  * @param tipArr 提示标签数组
  */
-void MyBlockWidget::setTipArr(const QList<QString> &tipArr)
+void MyBlockWidget::setTipArr(const QList<QString>& tipArr)
 {
     m_tipArr = tipArr;
     setTipLabText(m_tipArr[QRandomGenerator::global()->bounded(0, static_cast<int>(m_tipArr.size()))]);
@@ -377,7 +389,7 @@ void MyBlockWidget::setDurationBtnText(const QString &text) const
  * @brief 获取遮罩控件
  * @return 遮罩控件引用
  */
-SMaskWidget &MyBlockWidget::getMask() const
+SMaskWidget& MyBlockWidget::getMask() const
 {
     return *m_mask;
 }

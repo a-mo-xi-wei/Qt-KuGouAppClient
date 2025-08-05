@@ -56,7 +56,8 @@ MVWidget::MVWidget(QWidget *parent)
 
     initUi(); ///< 初始化界面
 
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] {
+    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this]
+    {
         enableButton(true);                              ///< 动画结束时启用按钮
     });
     enableButton(true);
@@ -82,10 +83,12 @@ QWidget* MVWidget::createPage(const int& beg)
     mainLayout->setSpacing(10);
     mainLayout->setContentsMargins(10, 0, 10, 0);
 
-    for (int row = 0; row < 3; ++row) {
+    for (int row = 0; row < 3; ++row)
+    {
         auto rowLayout = new QHBoxLayout;
         rowLayout->setSpacing(10);
-        for (int col = 0; col < 3; ++col) {
+        for (int col = 0; col < 3; ++col)
+        {
             int index = row * 3 + col + beg;
             if (index >= 9 + beg) break;
             auto item = new MVBlockWidget;
@@ -117,7 +120,8 @@ void MVWidget::initButtonGroup()
     this->m_buttonGroup->setExclusive(true);
 
     // 初始化占位页面
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 4; ++i)
+    {
         auto *placeholder = new QWidget;
         auto *layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -130,15 +134,18 @@ void MVWidget::initButtonGroup()
     ui->stackedWidget->slideInIdx(0);
 
     // 响应按钮点击事件
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id) {
-        if (m_currentIdx == id) {
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id)
+    {
+        if (m_currentIdx == id)
+        {
             return;
         }
 
         enableButton(false);
 
         QWidget *placeholder = m_pages[m_currentIdx];
-        if (!placeholder) {
+        if (!placeholder)
+        {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
             return;
@@ -146,13 +153,18 @@ void MVWidget::initButtonGroup()
 
         // 清理目标 placeholder 内旧的控件
         QLayout *layout = placeholder->layout();
-        if (!layout) {
+        if (!layout)
+        {
             layout = new QVBoxLayout(placeholder);
             layout->setContentsMargins(0, 0, 0, 0);
             layout->setSpacing(0);
-        } else {
-            while (QLayoutItem* item = layout->takeAt(0)) {
-                if (QWidget* widget = item->widget()) {
+        }
+        else
+        {
+            while (QLayoutItem* item = layout->takeAt(0))
+            {
+                if (QWidget* widget = item->widget())
+                {
                     widget->deleteLater();
                 }
                 delete item;
@@ -164,9 +176,12 @@ void MVWidget::initButtonGroup()
         // 创建新页面
         int beginIndex = id * 10 + 1;
         QWidget *realPage = createPage(beginIndex);
-        if (!realPage) {
+        if (!realPage)
+        {
             qWarning() << "[WARNING] Failed to create repo page at index:" << id;
-        } else {
+        }
+        else
+        {
             layout->addWidget(realPage);
         }
 
@@ -182,7 +197,7 @@ void MVWidget::initButtonGroup()
  */
 void MVWidget::initLiveScene()
 {
-    const auto layout = static_cast<QGridLayout *>(ui->live_scene_grid_widget->layout());
+    const auto layout = static_cast<QGridLayout*>(ui->live_scene_grid_widget->layout());
     for (int row = 0; row < 3; ++row)
     {
         for (int col = 0; col < 3; ++col)
@@ -202,7 +217,7 @@ void MVWidget::initLiveScene()
  */
 void MVWidget::initHonorOfKings()
 {
-    const auto layout = static_cast<QGridLayout *>(ui->honor_of_kings_grid_widget->layout());
+    const auto layout = static_cast<QGridLayout*>(ui->honor_of_kings_grid_widget->layout());
     for (int row = 0; row < 2; ++row)
     {
         for (int col = 0; col < 3; ++col)
@@ -222,7 +237,7 @@ void MVWidget::initHonorOfKings()
  */
 void MVWidget::initAwardCeremony()
 {
-    const auto layout = static_cast<QGridLayout *>(ui->award_ceremony_grid_widget->layout());
+    const auto layout = static_cast<QGridLayout*>(ui->award_ceremony_grid_widget->layout());
     for (int row = 0; row < 2; ++row)
     {
         for (int col = 0; col < 3; ++col)
@@ -242,7 +257,7 @@ void MVWidget::initAwardCeremony()
  */
 void MVWidget::initHotMV()
 {
-    const auto layout = static_cast<QGridLayout *>(ui->hot_MV_grid_widget->layout());
+    const auto layout = static_cast<QGridLayout*>(ui->hot_MV_grid_widget->layout());
     for (int row = 0; row < 3; ++row)
     {
         for (int col = 0; col < 3; ++col)
@@ -269,14 +284,16 @@ const QString MVWidget::parseTitle(const QString &title)
     QString str2 = list[1];
     // 查找 '《' 字符的位置
     int indexOfParenthesis = str2.indexOf("》");
-    if (indexOfParenthesis != -1) {
+    if (indexOfParenthesis != -1)
+    {
         str2 = str2.left(indexOfParenthesis + 1);  // 截取到 '》' 以及之前的部分
         str2 += "MV上线";
         return str1 + " " + str2;
     }
     // 查找 "（" 字符的位置
     indexOfParenthesis = str2.indexOf("（");
-    if (indexOfParenthesis != -1) {
+    if (indexOfParenthesis != -1)
+    {
         str2 = str2.left(indexOfParenthesis);  // 截取到 "（" 之前的部分
         str2 = "《" + str2 + "》MV上线";
         return str1 + " " + str2;
@@ -286,14 +303,16 @@ const QString MVWidget::parseTitle(const QString &title)
     indexOfParenthesis = str2.indexOf('(');
 
     // 如果找到了 '('，则截取到 '(' 前的部分
-    if (indexOfParenthesis != -1) {
+    if (indexOfParenthesis != -1)
+    {
         str2 = str2.left(indexOfParenthesis);  // 截取到 '(' 之前的部分
     }
     str2 = "《" + str2 + "》MV上线";
     return str1 + " " + str2;
 }
 
-void MVWidget::enableButton(const bool &flag) const {
+void MVWidget::enableButton(const bool &flag) const
+{
     ui->recommend_pushButton->setEnabled(flag);
     ui->chinese_pushButton->setEnabled(flag);
     ui->koreaAndJapan_pushButton->setEnabled(flag);
@@ -305,9 +324,18 @@ void MVWidget::enableButton(const bool &flag) const {
  */
 void MVWidget::initUi()
 {
+    ///< 设置字体
+    ui->button_widget->setStyleSheet("font-family: 'TaiwanPearl';");
+    ui->title_widget->setStyleSheet("font-family: 'TaiwanPearl';");
+    ui->more_pushButton2->setStyleSheet("font-family: 'TaiwanPearl';");
+    ui->more_pushButton3->setStyleSheet("font-family: 'TaiwanPearl';");
+    ui->more_pushButton4->setStyleSheet("font-family: 'TaiwanPearl';");
+    ui->more_pushButton5->setStyleSheet("font-family: 'TaiwanPearl';");
+
     m_refreshMask->keepLoading();
 
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this] {
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this]
+    {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
         if (!file.open(QIODevice::ReadOnly))
         {
@@ -338,7 +366,8 @@ void MVWidget::initUi()
 
         return true;
     });
-    Async::onResultReady(future, this, [this](bool flag) {
+    Async::onResultReady(future, this, [this](bool flag)
+    {
         using Task = std::function<void()>;
         QVector<Task> tasks;
 
@@ -354,11 +383,13 @@ void MVWidget::initUi()
             queue->enqueue(task);
 
         auto runner = std::make_shared<std::function<void()>>();
-        *runner = [queue, runner]() {
+        *runner = [queue, runner]()
+        {
             if (queue->isEmpty()) return;
 
             auto task = queue->dequeue();
-            QTimer::singleShot(0, nullptr, [task, runner]() {
+            QTimer::singleShot(0, nullptr, [task, runner]()
+            {
                 task();
                 (*runner)();
             });
@@ -378,7 +409,7 @@ void MVWidget::initUi()
     ui->search_lineEdit->setFont(font);
 
     QToolButton *searchButton = nullptr;
-    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton *>())
+    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton*>())
     {
         if (btn->defaultAction() == this->m_searchAction)
         {
@@ -406,7 +437,8 @@ void MVWidget::initUi()
     initAdvertiseWidget();     ///< 初始化滑动广告
 }
 
-void MVWidget::initAdvertiseWidget() const {
+void MVWidget::initAdvertiseWidget() const
+{
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.jpg"))); ///< 添加广告图片
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.jpg")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.jpg")));
@@ -465,7 +497,7 @@ void MVWidget::resizeEvent(QResizeEvent *event)
  */
 bool MVWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    const auto button = qobject_cast<QToolButton *>(watched);
+    const auto button = qobject_cast<QToolButton*>(watched);
     if (button && button->defaultAction() == this->m_searchAction)
     {
         if (event->type() == QEvent::Enter)
@@ -480,7 +512,8 @@ bool MVWidget::eventFilter(QObject *watched, QEvent *event)
     return QObject::eventFilter(watched, event);
 }
 
-void MVWidget::showEvent(QShowEvent *event) {
+void MVWidget::showEvent(QShowEvent *event)
+{
     QWidget::showEvent(event);
     ui->advertise_widget->setFixedHeight(ui->advertise_widget->width() / 5 + 65); ///< 调整广告高度
     m_refreshMask->setGeometry(rect());

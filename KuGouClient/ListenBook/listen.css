@@ -1,21 +1,27 @@
 /*******menu_widget****************/
-QWidget#menu_widget > QToolButton{
+QWidget#menu_widget > QToolButton {
+    font-family: 'TaiwanPearl';
     border: none;
     border-radius: 6px;
     padding: 5px;
 
 }
-QWidget#menu_widget > QToolButton:hover{
+
+QWidget#menu_widget > QToolButton:hover {
     background-color: #E2EAF5;
 }
+
 QWidget#menu_widget > QToolButton:checked {
     background-color: #c1e1ef;
     font-weight: bold;
 }
-QToolButton#download_toolButton{
-    margin :-1px;
+
+QToolButton#download_toolButton {
+    margin: -1px;
 }
-QLabel#subscribe_label{
+
+QLabel#subscribe_label {
+    font-family: 'TaiwanPearl';
     color: gray;
     margin-bottom: 2px;
 }

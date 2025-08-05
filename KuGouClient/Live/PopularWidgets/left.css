@@ -1,11 +1,12 @@
-QWidget#leftWidget{
-    border:none;
+QWidget#leftWidget {
+    border: none;
     border-radius: 10px;
 }
+
 QToolButton#enterLiveBtn {
-    background-color: rgba(0,0,0,50%);
-    border-radius: 30px;          /* 更合理的圆角 */
-    border: 3px solid rgb(194, 194, 194);  /* 不透明边框 */
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 30px; /* 更合理的圆角 */
+    border: 3px solid rgb(194, 194, 194); /* 不透明边框 */
     color: white;
     font-size: 18px;
     padding-left: 15px;

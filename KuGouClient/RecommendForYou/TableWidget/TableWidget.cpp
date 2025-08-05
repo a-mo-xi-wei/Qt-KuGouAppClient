@@ -221,6 +221,9 @@ void TableWidget::initUi()
     this->m_refresh_ToolBtn->setObjectName(QStringLiteral("refresh_ToolBtn")); ///< 设置刷新按钮对象名
     this->m_more_Lab->setObjectName(QStringLiteral("moreLab"));                ///< 设置更多标签对象名
 
+    this->m_titleLab->setFont(QFont("TaiwanPearl"));
+    this->m_more_Lab->setFont(QFont("TaiwanPearl"));
+
     this->m_play_ToolBtn->setIconSize(QSize(20, 20)); ///< 设置播放按钮图标大小
 
     this->m_refreshTimer->setSingleShot(true); ///< 设置刷新定时器为单次触发

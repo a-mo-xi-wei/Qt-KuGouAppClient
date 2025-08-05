@@ -16,7 +16,8 @@
  * @class MenuBtn
  * @brief 自定义菜单按钮类，继承自 QToolButton，支持图标切换和事件过滤
  */
-class MenuBtn : public QToolButton {
+class MenuBtn : public QToolButton
+{
     Q_OBJECT
 
 public:
@@ -24,7 +25,13 @@ public:
      * @brief 构造函数，初始化菜单按钮
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit MenuBtn(QWidget *parent = nullptr): QToolButton(parent) {
+    explicit MenuBtn(QWidget* parent = nullptr): QToolButton(parent)
+    {
+        setFont(QFont("TaiwanPearl"));
+        setStyleSheet("font-size: 15px;");
+        QFont font = this->font();
+        font.setLetterSpacing(QFont::AbsoluteSpacing, 2); // 设置字间距为5像素
+        setFont(font);
         this->setIconSize(QSize(15, 15));
         this->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         this->installEventFilter(this);
@@ -35,7 +42,8 @@ public:
      * @param icon1 正常状态图标
      * @param icon2 悬停状态图标
      */
-    void initIcon(const QIcon &icon1, const QIcon &icon2) {
+    void initIcon(const QIcon& icon1, const QIcon& icon2)
+    {
         this->m_icon1 = icon1;
         this->m_icon2 = icon2;
     }
@@ -43,7 +51,8 @@ public:
     /**
      * @brief 移除事件过滤器
      */
-    void removeFilter() {
+    void removeFilter()
+    {
         this->removeEventFilter(this);
     }
 
@@ -54,22 +63,22 @@ protected:
      * @param event 事件对象
      * @return 是否处理事件
      */
-    bool eventFilter(QObject *watched, QEvent *event) override {
+    bool eventFilter(QObject* watched, QEvent* event) override
+    {
 
         // 确保只处理当前按钮的事件
-        if(watched != this) return QToolButton::eventFilter(watched, event);
+        if (watched != this)
+            return QToolButton::eventFilter(watched, event);
 
-        switch(event->type()) {
-            case QEvent::Enter:
-            case QEvent::HoverEnter:  // 增加Hover事件支持
-                setIcon(m_icon2);
-                return true;          // 事件已处理
-            case QEvent::Leave:
-            case QEvent::HoverLeave:
-                setIcon(m_icon1);
-                return true;          // 事件已处理
-            default:
-                return QToolButton::eventFilter(watched, event);
+        switch (event->type()) {
+        case QEvent::Enter:
+        case QEvent::HoverEnter: // 增加Hover事件支持
+            setIcon(m_icon2);
+            return true; // 事件已处理
+        case QEvent::Leave:
+        case QEvent::HoverLeave: setIcon(m_icon1);
+            return true; // 事件已处理
+        default: return QToolButton::eventFilter(watched, event);
         }
     }
 
@@ -77,7 +86,7 @@ private:
     QIcon m_icon1{}; ///< 正常状态图标
     QIcon m_icon2{}; ///< 悬停状态图标
 public:
-    int m_cnt = 0;   ///< 记录排序状态的计数器（如在 SortOptionMenu 中用于升降序切换）
+    int m_cnt = 0; ///< 记录排序状态的计数器（如在 SortOptionMenu 中用于升降序切换）
 };
 
 #endif // MENUBTN_H

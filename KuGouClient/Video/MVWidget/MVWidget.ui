@@ -32,9 +32,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-147</y>
         <width>842</width>
-        <height>770</height>
+        <height>657</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -45,7 +45,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
-        <number>20</number>
+        <number>15</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -577,13 +577,17 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_1" native="true">
+        <widget class="QWidget" name="title_widget_1" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_21">
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="font">
              <font>
               <pointsize>13</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -650,13 +654,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_11" native="true">
+        <widget class="QWidget" name="title_widget_2" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
               <pointsize>13</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -723,13 +734,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_21" native="true">
+        <widget class="QWidget" name="title_widget_3" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_23">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_4">
             <property name="font">
              <font>
               <pointsize>13</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -796,13 +814,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_37" native="true">
+        <widget class="QWidget" name="title_widget_4" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_5">
             <property name="font">
              <font>
               <pointsize>14</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">

@@ -1,14 +1,18 @@
-QToolButton{
+QToolButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     background-color: #e2e5ff;
-    border:none;
+    border: none;
     border-radius: 17px;
 }
+
 QToolButton:hover {
     background-color: #dadeff;
 }
-QToolButton#batch_toolButton{
+
+QToolButton#batch_toolButton {
     background-color: #e2e5ff;
-    border:none;
+    border: none;
     border-radius: 17px;
     padding-left: 10px;
 }
@@ -16,13 +20,15 @@ QToolButton#batch_toolButton{
 QToolButton#batch_toolButton:hover {
     background-color: #dadeff;
 }
+
 /*--------------------QLineEdit------------------------------*/
-QLineEdit{
+QLineEdit {
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #B4DEFC;
-    background-color:transparent;
+    border: 2px solid #B4DEFC;
+    background-color: transparent;
 }
-QLabel:hover{
+
+QLabel:hover {
     color: #3fb1ef;
 }

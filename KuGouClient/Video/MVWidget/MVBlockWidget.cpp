@@ -92,6 +92,8 @@ void MVBlockWidget::hideDesc()
  */
 void MVBlockWidget::initUi()
 {
+    ui->title_label->setFont(QFont("TaiwanPearl", 11));
+    ui->desc_label->setFont(QFont("TaiwanPearl", 9));
     auto &mask = ui->cover_widget->getMask(); ///< 获取遮罩
     mask.setDefaultFillCircleColor(Qt::white); ///< 设置默认圆形颜色
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#26A1FF"))); ///< 设置悬停圆形颜色

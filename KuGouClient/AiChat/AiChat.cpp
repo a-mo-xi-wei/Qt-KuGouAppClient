@@ -51,19 +51,21 @@ AiChat::AiChat(QWidget *parent)
 
     connect(&m_deepSeek, &Chat::answered, this, &AiChat::getAnswer); ///< 连接回答信号
     connect(&m_deepSeek, &Chat::streamFinished, this, &AiChat::onStreamFinished); ///< 连接流式结束信号
-    connect(&m_deepSeek, &Chat::errorOccurred, this, [this](const QString &err) {
+    connect(&m_deepSeek, &Chat::errorOccurred, this, [this](const QString & err)
+    {
         ui->chatView->removeLastItem();                  ///< 删除上一个回答
         m_currentResponseItem = new ChatItemBase(ChatRole::Other); ///< 创建新回答项
         m_currentResponseItem->setUserName("DeepSeek");  ///< 设置用户名
         m_currentResponseItem->setUserIcon(getRoundedPixmap(
-            QPixmap(":/Res/window/deepseek.png").scaled(46, 46), {46, 46}, 23)); ///< 设置头像
+                                               QPixmap(":/Res/window/deepseek.png").scaled(46, 46), {46, 46}, 23)); ///< 设置头像
         m_currentResponseBubble = new TextBubble(ChatRole::Other, err); ///< 创建错误气泡
         m_currentResponseItem->setWidget(m_currentResponseBubble); ///< 设置气泡
         ui->chatView->appendChatItem(m_currentResponseItem); ///< 追加聊天项
         onStreamFinished();                              ///< 处理流式结束
     });
 
-    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView, [this] {
+    connect(ui->clear_toolButton, &QToolButton::clicked, ui->chatView, [this]
+    {
         if (this->m_sendBtn->isEnabled())
             ui->chatView->removeAllItem();               ///< 清除历史对话
         else
@@ -87,6 +89,7 @@ AiChat::~AiChat()
  */
 void AiChat::initUi()
 {
+    ui->clear_toolButton->setFont(QFont("TaiwanPearl"));
     ui->clear_toolButton->setCursor(Qt::PointingHandCursor); ///< 设置清除按钮光标
     ui->clear_toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); ///< 设置按钮样式
     ui->clear_toolButton->setIcon(QIcon(":/Res/window/clear-black.svg")); ///< 设置清除图标
@@ -119,7 +122,7 @@ void AiChat::initUi()
  * @param radius 圆角半径
  * @return 圆角图片
  */
-QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius)
+QPixmap AiChat::getRoundedPixmap(const QPixmap &src, const QSize &size, const int& radius)
 {
     QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation); ///< 缩放图片
     QPixmap dest(size);
@@ -177,7 +180,7 @@ void AiChat::onSendBtnClicked()
     m_currentResponseItem = new ChatItemBase(ChatRole::Other); ///< 创建回答项
     m_currentResponseItem->setUserName("DeepSeek");      ///< 设置用户名
     m_currentResponseItem->setUserIcon(getRoundedPixmap(
-        QPixmap(":/Res/window/deepseek.png").scaled(46, 46), {46, 46}, 23)); ///< 设置头像
+                                           QPixmap(":/Res/window/deepseek.png").scaled(46, 46), {46, 46}, 23)); ///< 设置头像
     m_currentResponseItem->startMovie(true);             ///< 启动加载动画
     m_currentResponseBubble = new TextBubble(ChatRole::Other, ""); ///< 创建回答气泡
     m_currentResponseBubble->startStreaming();           ///< 启动流式显示
@@ -225,7 +228,7 @@ bool AiChat::eventFilter(QObject *watched, QEvent *event)
     {
         if (event->type() == QEvent::KeyPress)
         {
-            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
             if (keyEvent->key() == Qt::Key_Return || keyEvent->key() == Qt::Key_Enter)
             {
                 if (keyEvent->modifiers() & Qt::ShiftModifier)

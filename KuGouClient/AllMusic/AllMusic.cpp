@@ -47,7 +47,7 @@ AllMusic::AllMusic(QWidget *parent)
     auto menu = new MyMenu(MyMenu::MenuKind::SortOption, this);
     m_sortOptMenu = menu->getMenu<SortOptionMenu>();
 
-    QTimer::singleShot(100,this,[this] {initUi();});
+    QTimer::singleShot(0, this, [this] {initUi();});
 
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
@@ -69,59 +69,67 @@ AllMusic::~AllMusic()
 QWidget* AllMusic::createPage(int id)
 {
     QWidget* page = nullptr;
-    switch (id) {
-        case 0:
-            if (!m_allWidget) {
-                m_allWidget = std::make_unique<AllWidget>(ui->stackedWidget);
-                connect(m_allWidget.get(), &AllWidget::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allWidget.get();
-            break;
-        case 1:
-            if (!m_allLove) {
-                m_allLove = std::make_unique<AllLove>(ui->stackedWidget);
-                connect(m_allLove.get(), &AllLove::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allLove.get();
-            break;
-        case 2:
-            if (!m_allSongList) {
-                m_allSongList = std::make_unique<AllSongList>(ui->stackedWidget);
-                connect(m_allSongList.get(), &AllSongList::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allSongList.get();
-            break;
-        case 3:
-            if (!m_allRecent) {
-                m_allRecent = std::make_unique<AllRecent>(ui->stackedWidget);
-                connect(m_allRecent.get(), &AllRecent::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allRecent.get();
-            break;
-        case 4:
-            if (!m_allLocal) {
-                m_allLocal = std::make_unique<AllLocal>(ui->stackedWidget);
-                connect(m_allLocal.get(), &AllLocal::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allLocal.get();
-            break;
-        case 5:
-            if (!m_allPaid) {
-                m_allPaid = std::make_unique<AllPaid>(ui->stackedWidget);
-                connect(m_allPaid.get(), &AllPaid::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allPaid.get();
-            break;
-        case 6:
-            if (!m_allCloudDisk) {
-                m_allCloudDisk = std::make_unique<AllCloudDisk>(ui->stackedWidget);
-                connect(m_allCloudDisk.get(), &AllCloudDisk::find_more_music, this, &AllMusic::find_more_music);
-            }
-            page = m_allCloudDisk.get();
-            break;
-        default:
-            qWarning() << "[WARNING] Invalid page ID:" << id;
-            return nullptr;
+    switch (id)
+    {
+    case 0:
+        if (!m_allWidget)
+        {
+            m_allWidget = std::make_unique<AllWidget>(ui->stackedWidget);
+            connect(m_allWidget.get(), &AllWidget::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allWidget.get();
+        break;
+    case 1:
+        if (!m_allLove)
+        {
+            m_allLove = std::make_unique<AllLove>(ui->stackedWidget);
+            connect(m_allLove.get(), &AllLove::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allLove.get();
+        break;
+    case 2:
+        if (!m_allSongList)
+        {
+            m_allSongList = std::make_unique<AllSongList>(ui->stackedWidget);
+            connect(m_allSongList.get(), &AllSongList::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allSongList.get();
+        break;
+    case 3:
+        if (!m_allRecent)
+        {
+            m_allRecent = std::make_unique<AllRecent>(ui->stackedWidget);
+            connect(m_allRecent.get(), &AllRecent::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allRecent.get();
+        break;
+    case 4:
+        if (!m_allLocal)
+        {
+            m_allLocal = std::make_unique<AllLocal>(ui->stackedWidget);
+            connect(m_allLocal.get(), &AllLocal::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allLocal.get();
+        break;
+    case 5:
+        if (!m_allPaid)
+        {
+            m_allPaid = std::make_unique<AllPaid>(ui->stackedWidget);
+            connect(m_allPaid.get(), &AllPaid::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allPaid.get();
+        break;
+    case 6:
+        if (!m_allCloudDisk)
+        {
+            m_allCloudDisk = std::make_unique<AllCloudDisk>(ui->stackedWidget);
+            connect(m_allCloudDisk.get(), &AllCloudDisk::find_more_music, this, &AllMusic::find_more_music);
+        }
+        page = m_allCloudDisk.get();
+        break;
+    default:
+        qWarning() << "[WARNING] Invalid page ID:" << id;
+        return nullptr;
     }
     return page;
 }
@@ -131,6 +139,8 @@ QWidget* AllMusic::createPage(int id)
  */
 void AllMusic::initUi()
 {
+    ui->guide_widget->setStyleSheet("font-family: 'TaiwanPearl';");
+
     auto all_download_toolButton_toolTip = new ElaToolTip(ui->all_download_toolButton);
     all_download_toolButton_toolTip->setToolTip(QStringLiteral("下载"));
     auto all_share_toolButton_toolTip = new ElaToolTip(ui->all_share_toolButton);
@@ -140,32 +150,39 @@ void AllMusic::initUi()
     auto all_sort_toolButton_toolTip = new ElaToolTip(ui->all_sort_toolButton);
     all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
 
-    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::defaultSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         Q_UNUSED(down);
         onDefaultSort();
         all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：默认排序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::addTimeSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         onAddTimeSort(down);
         all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：添加时间降序") : QStringLiteral("当前排序方式：添加时间升序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::songNameSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         onSongNameSort(down);
         all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌曲名称降序") : QStringLiteral("当前排序方式：歌曲名称升序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::singerSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         onSingerSort(down);
         all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：歌手降序") : QStringLiteral("当前排序方式：歌手升序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::durationSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         onDurationSort(down);
         all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：时长降序") : QStringLiteral("当前排序方式：时长升序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, all_sort_toolButton_toolTip](bool down) {
+    connect(m_sortOptMenu, &SortOptionMenu::playCountSort, this, [this, all_sort_toolButton_toolTip](bool down)
+    {
         onPlayCountSort(down);
         all_sort_toolButton_toolTip->setToolTip(down ? QStringLiteral("当前排序方式：播放次数降序") : QStringLiteral("当前排序方式：播放次数升序"));
     });
-    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, all_sort_toolButton_toolTip] {
+    connect(m_sortOptMenu, &SortOptionMenu::randomSort, this, [this, all_sort_toolButton_toolTip]
+    {
         onRandomSort();
         all_sort_toolButton_toolTip->setToolTip(QStringLiteral("当前排序方式：随机"));
     });
@@ -184,20 +201,24 @@ void AllMusic::initUi()
     ui->search_lineEdit->setFont(font);
 
     QToolButton *searchButton = nullptr;
-    for (auto *btn : ui->search_lineEdit->findChildren<QToolButton *>()) {
-        if (btn->defaultAction() == m_searchAction) {
+    for (auto *btn : ui->search_lineEdit->findChildren<QToolButton*>())
+    {
+        if (btn->defaultAction() == m_searchAction)
+        {
             searchButton = btn;
             auto search_lineEdit_toolTip = new ElaToolTip(searchButton);
             search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));
             break;
         }
     }
-    if (searchButton) {
+    if (searchButton)
+    {
         searchButton->installEventFilter(this);
     }
 
-    QTimer::singleShot(100,this,[this]{initIndexLab();});
-    QTimer::singleShot(200,this,[this] {
+    QTimer::singleShot(100, this, [this] {initIndexLab();});
+    QTimer::singleShot(200, this, [this]
+    {
         initStackedWidget();
         ui->all_pushButton->click();
         ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
@@ -216,7 +237,8 @@ void AllMusic::initIndexLab()
     QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3, ui->guide_widget4, ui->guide_widget5, ui->guide_widget6, ui->guide_widget7 };
     QLabel* numLabels[] = { ui->all_label, ui->love_label, ui->song_list_label, ui->recent_label, ui->local_label, ui->paid_label, ui->cloud_disk_label };
 
-    for (int i = 0; i < 7; ++i) {
+    for (int i = 0; i < 7; ++i)
+    {
         idxLabels[i]->setPixmap(QPixmap(":/Res/window/index_lab.svg"));
         guideWidgets[i]->installEventFilter(this);
         numLabels[i]->setStyleSheet(i == 0 ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
@@ -238,7 +260,8 @@ void AllMusic::initStackedWidget()
     m_buttonGroup->addButton(ui->cloud_disk_pushButton, 6);
     m_buttonGroup->setExclusive(true);
 
-    for (int i = 0; i < 7; ++i) {
+    for (int i = 0; i < 7; ++i)
+    {
         auto* placeholder = new QWidget;
         auto* layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -250,41 +273,65 @@ void AllMusic::initStackedWidget()
     m_pages[0]->layout()->addWidget(createPage(0));
     ui->stackedWidget->setCurrentIndex(0);
 
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
-        if (m_currentIdx == id) {
+    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id)
+    {
+        if (m_currentIdx == id)
+        {
             return;
         }
 
         enableButton(false);
 
         QWidget* placeholder = m_pages[m_currentIdx];
-        if (!placeholder) {
+        if (!placeholder)
+        {
             qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
             enableButton(true);
             return;
         }
 
         QLayout* layout = placeholder->layout();
-        if (!layout) {
+        if (!layout)
+        {
             layout = new QVBoxLayout(placeholder);
             layout->setContentsMargins(0, 0, 0, 0);
             layout->setSpacing(0);
-        } else {
-            while (QLayoutItem* item = layout->takeAt(0)) {
-                if (QWidget* widget = item->widget()) {
+        }
+        else
+        {
+            while (QLayoutItem* item = layout->takeAt(0))
+            {
+                if (QWidget* widget = item->widget())
+                {
                     widget->deleteLater();
                 }
                 delete item;
             }
-            switch (m_currentIdx) {
-                case 0: m_allWidget.reset();break;
-                case 1: m_allLove.reset();break;
-                case 2: m_allSongList.reset();break;
-                case 3: m_allRecent.reset();break;
-                case 4: m_allLocal.reset();break;
-                case 5: m_allPaid.reset();break;
-                case 6: m_allCloudDisk.reset();break;
-                default: break;
+            switch (m_currentIdx)
+            {
+            case 0:
+                m_allWidget.reset();
+                break;
+            case 1:
+                m_allLove.reset();
+                break;
+            case 2:
+                m_allSongList.reset();
+                break;
+            case 3:
+                m_allRecent.reset();
+                break;
+            case 4:
+                m_allLocal.reset();
+                break;
+            case 5:
+                m_allPaid.reset();
+                break;
+            case 6:
+                m_allCloudDisk.reset();
+                break;
+            default:
+                break;
             }
         }
 
@@ -292,9 +339,12 @@ void AllMusic::initStackedWidget()
         layout = placeholder->layout();
 
         QWidget* realPage = createPage(id);
-        if (!realPage) {
+        if (!realPage)
+        {
             qWarning() << "[WARNING] Failed to create page at index:" << id;
-        } else {
+        }
+        else
+        {
             layout->addWidget(realPage);
         }
 
@@ -303,7 +353,8 @@ void AllMusic::initStackedWidget()
 
         QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab, ui->idx4_lab, ui->idx5_lab, ui->idx6_lab, ui->idx7_lab };
         QLabel* numLabels[] = { ui->all_label, ui->love_label, ui->song_list_label, ui->recent_label, ui->local_label, ui->paid_label, ui->cloud_disk_label };
-        for (int i = 0; i < 7; ++i) {
+        for (int i = 0; i < 7; ++i)
+        {
             idxLabels[i]->setVisible(i == id);
             numLabels[i]->setStyleSheet(i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
         }
@@ -335,17 +386,25 @@ void AllMusic::enableButton(bool flag) const
  */
 bool AllMusic::eventFilter(QObject *watched, QEvent *event)
 {
-    if (watched == ui->all_download_toolButton) {
-        if (event->type() == QEvent::Enter) {
+    if (watched == ui->all_download_toolButton)
+    {
+        if (event->type() == QEvent::Enter)
+        {
             ui->all_download_toolButton->setIcon(QIcon(":/MenuIcon/Res/menuIcon/download-blue.svg"));
-        } else if (event->type() == QEvent::Leave) {
+        }
+        else if (event->type() == QEvent::Leave)
+        {
             ui->all_download_toolButton->setIcon(QIcon(":/TabIcon/Res/tabIcon/download-gray.svg"));
         }
     }
-    if (auto button = qobject_cast<QToolButton *>(watched); button && button->defaultAction() == m_searchAction) {
-        if (event->type() == QEvent::Enter) {
+    if (auto button = qobject_cast<QToolButton*>(watched); button && button->defaultAction() == m_searchAction)
+    {
+        if (event->type() == QEvent::Enter)
+        {
             m_searchAction->setIcon(QIcon(":/MenuIcon/Res/menuIcon/search-blue.svg"));
-        } else if (event->type() == QEvent::Leave) {
+        }
+        else if (event->type() == QEvent::Leave)
+        {
             m_searchAction->setIcon(QIcon(":/MenuIcon/Res/menuIcon/search-black.svg"));
         }
     }
@@ -354,9 +413,12 @@ bool AllMusic::eventFilter(QObject *watched, QEvent *event)
     QPushButton* buttons[] = { ui->all_pushButton, ui->love_pushButton, ui->song_list_pushButton, ui->recent_pushButton, ui->local_pushButton, ui->paid_pushButton, ui->cloud_disk_pushButton };
     QLabel* numLabels[] = { ui->all_label, ui->love_label, ui->song_list_label, ui->recent_label, ui->local_label, ui->paid_label, ui->cloud_disk_label };
 
-    for (int i = 0; i < 7; ++i) {
-        if (watched == guideWidgets[i]) {
-            if (event->type() == QEvent::Enter) {
+    for (int i = 0; i < 7; ++i)
+    {
+        if (watched == guideWidgets[i])
+        {
+            if (event->type() == QEvent::Enter)
+            {
                 buttons[i]->setStyleSheet(R"(
                     QPushButton {
                         color:#26a1ff;
@@ -372,9 +434,11 @@ bool AllMusic::eventFilter(QObject *watched, QEvent *event)
                     }
                 )");
                 numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "color:#26a1ff;");
-            } else if (event->type() == QEvent::Leave) {
+                                            "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                                            "color:#26a1ff;");
+            }
+            else if (event->type() == QEvent::Leave)
+            {
                 buttons[i]->setStyleSheet(R"(
                     QPushButton {
                         color:black;
@@ -390,8 +454,8 @@ bool AllMusic::eventFilter(QObject *watched, QEvent *event)
                     }
                 )");
                 numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "");
+                                            "color:#26a1ff;font-size:16px;font-weight:bold;" :
+                                            "");
             }
             break;
         }
@@ -405,14 +469,17 @@ bool AllMusic::eventFilter(QObject *watched, QEvent *event)
  */
 void AllMusic::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton) {
+    if (event->button() == Qt::LeftButton)
+    {
         QLabel* numLabels[] = { ui->all_label, ui->love_label, ui->song_list_label, ui->recent_label, ui->local_label, ui->paid_label, ui->cloud_disk_label };
         QPushButton* buttons[] = { ui->all_pushButton, ui->love_pushButton, ui->song_list_pushButton, ui->recent_pushButton, ui->local_pushButton, ui->paid_pushButton, ui->cloud_disk_pushButton };
 
-        for (int i = 0; i < 7; ++i) {
+        for (int i = 0; i < 7; ++i)
+        {
             const auto labelRect = numLabels[i]->geometry();
             const QPoint clickPos = numLabels[i]->parentWidget()->mapFrom(this, event->pos());
-            if (labelRect.contains(clickPos)) {
+            if (labelRect.contains(clickPos))
+            {
                 buttons[i]->click();
                 break;
             }

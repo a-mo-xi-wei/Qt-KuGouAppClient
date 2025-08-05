@@ -55,6 +55,8 @@ DownloadingWidget::~DownloadingWidget()
  */
 void DownloadingWidget::initUi()
 {
+    ui ->option_widget->setStyleSheet("font-family: 'TaiwanPearl';font-size: 13px;");
+    ui ->property_widget->setStyleSheet("font-family: 'TaiwanPearl';font-size: 13px;");
     auto downloading_setting_toolButton_toolTip = new ElaToolTip(ui->downloading_setting_toolButton); ///< 创建设置按钮工具提示
     downloading_setting_toolButton_toolTip->setToolTip(ui->downloading_setting_toolButton->text()); ///< 设置工具提示内容
     ui->downloading_play_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/play3-white.svg"))); ///< 设置播放按钮图标

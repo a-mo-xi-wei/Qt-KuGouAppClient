@@ -55,9 +55,7 @@ void SongListBlockWidget::setTitleText(const QString &title) const
  */
 void SongListBlockWidget::initUi() const
 {
-    auto font = ui->title_label->font();                 ///< 获取标题字体
-    font.setWeight(QFont::DemiBold);                    ///< 设置字体半粗
-    ui->title_label->setFont(font);                     ///< 应用字体
+    ui->title_label->setFont(QFont("TaiwanPearl", 13));
     ui->cover_widget->setExpandRespond(false);          ///< 禁用扩展响应
     ui->cover_widget->setPopularDirection(1);           ///< 设置热门方向
     ui->cover_widget->setHaveNumberUnit(false);         ///< 禁用单位显示

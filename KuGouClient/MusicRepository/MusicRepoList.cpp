@@ -27,7 +27,6 @@
 MusicRepoList::MusicRepoList(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MusicRepoList)
-    , m_isEnter(false)
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/repolist.css")); ///< 加载样式表
@@ -89,6 +88,9 @@ void MusicRepoList::setSinger(const QString &singer)
  */
 void MusicRepoList::initUi()
 {
+    ui->song_label->setFont(QFont("TaiwanPearl", 11));
+    ui->singer_label->setFont(QFont("TaiwanPearl", 9));
+
     ui->play_add_toolButton->hide();                     ///< 隐藏播放添加按钮
     ui->like_toolButton->hide();                         ///< 隐藏收藏按钮
     ui->comment_toolButton->hide();                      ///< 隐藏评论按钮
@@ -105,7 +107,8 @@ void MusicRepoList::initUi()
     song_label_toolTip->setToolTip(this->m_songName);    ///< 设置歌曲提示
     auto singer_label_toolTip = new ElaToolTip(ui->singer_label); ///< 创建歌手标签工具提示
     singer_label_toolTip->setToolTip(this->m_singer);    ///< 设置歌手提示
-    connect(this, &MusicRepoList::curPlaySongNameChange, [this, song_label_toolTip](const QString &songName) {
+    connect(this, &MusicRepoList::curPlaySongNameChange, [this, song_label_toolTip](const QString & songName)
+    {
         song_label_toolTip->setToolTip(songName);        ///< 更新歌曲提示
         ui->song_label->updateGeometry();                ///< 更新几何
         const QFontMetrics fm(ui->song_label->font());   ///< 获取字体测量
@@ -113,7 +116,8 @@ void MusicRepoList::initUi()
         ui->song_label->setText(elidedText);             ///< 设置截断文本
         song_label_toolTip->adjustSize();                ///< 调整提示尺寸
     });
-    connect(this, &MusicRepoList::curPlaySingerChange, [this, singer_label_toolTip](const QString &singerName) {
+    connect(this, &MusicRepoList::curPlaySingerChange, [this, singer_label_toolTip](const QString & singerName)
+    {
         singer_label_toolTip->setToolTip(singerName);    ///< 更新歌手提示
         ui->singer_label->updateGeometry();              ///< 更新几何
         const QFontMetrics fm(ui->singer_label->font()); ///< 获取字体测量

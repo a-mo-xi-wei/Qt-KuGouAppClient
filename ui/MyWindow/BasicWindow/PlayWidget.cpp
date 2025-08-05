@@ -21,7 +21,7 @@ PlayWidget::PlayWidget(QWidget *parent)
     setAttribute(Qt::WA_TranslucentBackground);
     setAutoFillBackground(false);
     this->setObjectName("PlayWidget");
-    this->setStyleSheet("QWidget#PlayWidget{margin:5px;}"); ///< 设置外边距
+    this->setStyleSheet("QWidget#PlayWidget{font-family: 'TaiwanPearl';margin:5px;}"); ///< 设置外边距
 }
 
 /**
@@ -31,7 +31,8 @@ PlayWidget::PlayWidget(QWidget *parent)
 void PlayWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     QWidget::mouseDoubleClickEvent(event);
-    if (event->button() == Qt::LeftButton) {
+    if (event->button() == Qt::LeftButton)
+    {
         emit doubleClicked(); ///< 左键双击时发出自定义信号
     }
 }

@@ -1,87 +1,88 @@
-
 /*--------------------operation_widget------------------------------*/
-QToolButton#collect_play_toolButton{
+QToolButton#collect_play_toolButton {
+    font-family: 'TaiwanPearl';
+    font-size: 13px;
     color: white;
     border: none;
     border-radius: 17px;
     padding-left: 13px;
-    background-color:#269dff;
+    background-color: #269dff;
 }
-QToolButton#collect_play_toolButton:hover{
-    background-color:#2085d9;
+
+QToolButton#collect_play_toolButton:hover {
+    background-color: #2085d9;
 }
-QToolButton#test_toolButton{
-    color: white;
+
+QToolButton#collect_download_toolButton {
     border: none;
     border-radius: 17px;
-    padding-left: 13px;
-    background-color:#269dff;
+    background-color: #e2e5ff;
 }
-QToolButton#test_toolButton:hover{
-    background-color:#2085d9;
-}
-QToolButton#collect_download_toolButton{
-    border: none;
-    border-radius: 17px;
-    background-color:#e2e5ff;
-}
-QToolButton#collect_download_toolButton:hover{
-    background-color:#dadeff;
+
+QToolButton#collect_download_toolButton:hover {
+    background-color: #dadeff;
 }
 
 /*--------------------small_widget------------------------------*/
-QWidget#small_widget{
+QWidget#small_widget {
     border: 2px solid #B4DEFC;
-    border-radius:15px;
+    border-radius: 15px;
 }
-QWidget#small_widget > QFrame{
-    border:none;
-    background-color:#dadeff;
+
+QWidget#small_widget > QFrame {
+    border: none;
+    background-color: #dadeff;
 }
 
 QWidget#small_widget > QToolButton {
     background-color: transparent;
 }
+
 QToolButton#collect_share_toolButton {
-    border-image:url(":/Res/titlebar/share-gray.svg");
+    border-image: url(":/Res/titlebar/share-gray.svg");
 }
+
 QToolButton#collect_share_toolButton:hover {
-    border-image:url(":/Res/titlebar/share-blue.svg");
+    border-image: url(":/Res/titlebar/share-blue.svg");
 }
 
 QToolButton#collect_batch_toolButton {
-    border-image:url(":/Res/titlebar/batch-gray.svg");
+    border-image: url(":/Res/titlebar/batch-gray.svg");
 }
+
 QToolButton#collect_batch_toolButton:hover {
-    border-image:url(":/Res/titlebar/batch-blue.svg");
+    border-image: url(":/Res/titlebar/batch-blue.svg");
 }
 
 QToolButton#collect_album_toolButton {
-    border-image:url(":/Res/titlebar/album-gray.svg");
+    border-image: url(":/Res/titlebar/album-gray.svg");
 }
+
 QToolButton#collect_album_toolButton:hover {
-    border-image:url(":/Res/titlebar/album-blue.svg");
+    border-image: url(":/Res/titlebar/album-blue.svg");
 }
 
 QToolButton#collect_sort_toolButton {
-    border-image:url(":/Res/titlebar/sort-gray.svg");
+    border-image: url(":/Res/titlebar/sort-gray.svg");
 }
+
 QToolButton#collect_sort_toolButton:hover {
-    border-image:url(":/Res/titlebar/sort-blue.svg");
+    border-image: url(":/Res/titlebar/sort-blue.svg");
 }
 
 QLineEdit#search_lineEdit {
     border-radius: 8px;
     padding-left: 5px;
-    border:2px solid #B4DEFC;
-    background-color:transparent;
- }
+    border: 2px solid #B4DEFC;
+    background-color: transparent;
+}
 
 /**************content_widget*************/
-QLabel#prompt_label{
+QLabel#prompt_label {
     color: #afafaf;
 }
-QPushButton#search_pushButton{
+
+QPushButton#search_pushButton {
     border: 1px solid #1eb8ff;
     border-radius: 17px;
     color: #1eb8ff;

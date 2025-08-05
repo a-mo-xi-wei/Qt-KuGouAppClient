@@ -67,6 +67,8 @@ void ChannelBlock::setCoverPix(const QString &pixmapPath) const
  */
 void ChannelBlock::initUi() const
 {
+    ui->title_label->setFont(QFont("TaiwanPearl", 11));
+    ui->singe_song_label->setFont(QFont("TaiwanPearl", 9));
     auto &mask = ui->cover_widget->getMask();            ///< 获取遮罩对象
     mask.setDefaultFillCircleColor(Qt::white);           ///< 设置默认圆形填充颜色
     mask.setHoverFillCircleColor(QColor(QStringLiteral("#5192FE"))); ///< 设置悬停圆形填充颜色

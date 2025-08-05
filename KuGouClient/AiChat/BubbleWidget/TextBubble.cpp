@@ -29,7 +29,7 @@ TextBubble::TextBubble(const ChatRole role, const QString &text, QWidget *parent
     m_pTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); ///< 隐藏水平滚动条
     m_pTextEdit->installEventFilter(this);                  ///< 安装事件过滤器
     m_pTextEdit->setStyleSheet("QTextEdit{background:transparent;border:none}"); ///< 设置透明样式
-    auto font = QFont("AaSongLiuKaiTi");                    ///< 设置字体
+    auto font = QFont("TaiwanPearl");                    ///< 设置字体
     font.setPointSize(14);                                  ///< 设置字号
     font.setWeight(QFont::Medium);                          ///< 设置字重
     m_pTextEdit->setFont(font);
@@ -45,14 +45,16 @@ void TextBubble::startStreaming()
     m_streamBuffer.clear();                                 ///< 清空缓冲区
     m_pTextEdit->clear();                                   ///< 清空文本
     m_streamTimer.setInterval(50);                          ///< 设置定时器间隔
-    connect(&m_streamTimer, &QTimer::timeout, this, [this]() {
+    connect(&m_streamTimer, &QTimer::timeout, this, [this]()
+    {
         if (!m_streamBuffer.isEmpty())
         {
             m_pTextEdit->setPlainText(m_pTextEdit->toPlainText() + m_streamBuffer); ///< 追加内容
             setPlainText(m_pTextEdit->toPlainText());       ///< 更新文本
             adjustTextHeight();                             ///< 调整高度
             m_streamBuffer.clear();                         ///< 清空缓冲区
-            QMetaObject::invokeMethod(m_pTextEdit, [this]() {
+            QMetaObject::invokeMethod(m_pTextEdit, [this]()
+            {
                 QTextCursor c = m_pTextEdit->textCursor();
                 c.movePosition(QTextCursor::End);
                 m_pTextEdit->setTextCursor(c);              ///< 滚动到底部

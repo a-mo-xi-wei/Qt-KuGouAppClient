@@ -139,6 +139,9 @@ void VideoBlockWidget::setTipText(const QString &text) const
  */
 void VideoBlockWidget::initUi() const
 {
+    ui->video_name_label->setFont(QFont("TaiwanPearl", 11));
+    ui->video_author_label->setFont(QFont("TaiwanPearl", 9));
+
     // 设置遮罩
     auto &mask = ui->cover_widget->getMask();           ///< 获取遮罩
     mask.setDefaultFillCircleColor(Qt::white);          ///< 设置默认圆形填充颜色

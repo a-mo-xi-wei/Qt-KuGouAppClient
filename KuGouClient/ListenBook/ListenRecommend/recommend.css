@@ -1,11 +1,14 @@
 /*******classify_widget****************/
-QWidget#classify_widget > QToolButton{
+QWidget#classify_widget > QToolButton {
+    font-family: 'TaiwanPearl';
     background-color: #a0cfe3;
     border-radius: 18px;
 }
-QWidget#classify_widget > QToolButton:hover{
+
+QWidget#classify_widget > QToolButton:hover {
     color: #26A1FF;
 }
+
 /*QToolButton#all_classify_toolButton{*/
 /*    background-color: #eaeaea;*/
 /*}*/
