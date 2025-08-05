@@ -9,10 +9,10 @@ file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
 set(SOURCE_FILE
-    ${SOURCE_SMALL_H}
-    ${SOURCE_SMALL_CPP}
-    ${SOURCE_H}
-    ${SOURCE_CPP}
+        ${SOURCE_SMALL_H}
+        ${SOURCE_SMALL_CPP}
+        ${SOURCE_H}
+        ${SOURCE_CPP}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILE})
@@ -24,4 +24,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/smallWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Network Qt6::Widgets QtMaterialWidget ElaWidgetTools dwmapi)
+target_link_libraries(${PROJECT_NAME} Qt6::Network Qt6::Widgets QtMaterialWidget ElaWidgetTools dwmapi MyCheckBox)

@@ -26,7 +26,7 @@ public:
     int getOriginalWidth();
 
 Q_SIGNALS:
-    /// Q_SIGNAL void focusIn(QString text);
+    Q_SIGNAL void focusIn(QString text);
 
     Q_SIGNAL void focusOut(QString text);
 

@@ -1,76 +1,19 @@
 ﻿#include "login_form.h"
 #include "qtmaterialfab.h"
+#include "ElaToolTip.h"
+#include "CheckBox1.h"
 
 #include <QPainter>
+#include <QLabel>
 #include <QRegularExpressionValidator>
 
-#include "ElaToolTip.h"
 
-Login_form::Login_form(QWidget *parent)
+Login_form::Login_form(QWidget* parent)
     : QWidget{parent}
 {
     this->resize(477, 620);
 
-    username = new Input_box(":/Res/login/account.png", this);
-    username->move(46, 161);
-    username->setPlaceholderText("Username");
-    username->setMaxLength(20);
-    username->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
-    username->openToolTip();
-    username->setIconToolTip(QStringLiteral("用户名"));
-
-    password = new Input_box(":/Res/login/password-lock.png", this);
-    password->move(46, 253);
-    password->setPlaceholderText("Password");
-    password->setEchoMode(QLineEdit::Password);
-    password->setMaxLength(16);
-    password->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9]+$"), this));
-    password->openToolTip();
-    password->setIconToolTip(QStringLiteral("解锁"));
-
-    login_button = new Login_button(this);
-    login_button->setCenter_text("Login");
-    login_button->move(46, 371);
-
-    other_login_buttons1 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/qq.png"), this);
-    other_login_buttons1->setCursor(Qt::PointingHandCursor);         ///< 设置发送按钮光标
-    other_login_buttons1->setRippleStyle(Material::PositionedRipple);   ///< 设置涟漪效果
-    other_login_buttons1->setCorner(Qt::BottomRightCorner);             ///< 设置按钮位置
-    other_login_buttons1->setXOffset(365);                              ///< 设置 X 偏移
-    other_login_buttons1->setYOffset(115);                              ///< 设置 Y 偏移
-    other_login_buttons1->setBackgroundColor(QColor(0xa5bbe4));    ///< 设置背景色
-    auto qq_tooTip = new ElaToolTip(other_login_buttons1);
-    qq_tooTip->setToolTip(QStringLiteral("QQ登录"));
-
-    other_login_buttons2 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/wechat.png"), this);
-    other_login_buttons2->setCursor(Qt::PointingHandCursor);         ///< 设置发送按钮光标
-    other_login_buttons2->setRippleStyle(Material::PositionedRipple);   ///< 设置涟漪效果
-    other_login_buttons2->setCorner(Qt::BottomRightCorner);             ///< 设置按钮位置
-    other_login_buttons2->setXOffset(260);                              ///< 设置 X 偏移
-    other_login_buttons2->setYOffset(115);                              ///< 设置 Y 偏移
-    other_login_buttons2->setBackgroundColor(QColor(0xa5bbe4));    ///< 设置背景色
-    auto wechat_tooTip = new ElaToolTip(other_login_buttons2);
-    wechat_tooTip->setToolTip(QStringLiteral("微信登录"));
-
-    other_login_buttons3 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/logo_google.png"), this);
-    other_login_buttons3->setCursor(Qt::PointingHandCursor);         ///< 设置发送按钮光标
-    other_login_buttons3->setRippleStyle(Material::PositionedRipple);   ///< 设置涟漪效果
-    other_login_buttons3->setCorner(Qt::BottomRightCorner);             ///< 设置按钮位置
-    other_login_buttons3->setXOffset(155);                              ///< 设置 X 偏移
-    other_login_buttons3->setYOffset(115);                              ///< 设置 Y 偏移
-    other_login_buttons3->setBackgroundColor(QColor(0xa5bbe4));    ///< 设置背景色
-    auto google_tooTip = new ElaToolTip(other_login_buttons3);
-    google_tooTip->setToolTip(QStringLiteral("Google登录"));
-
-    other_login_buttons4 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/github-fill.png"), this);
-    other_login_buttons4->setCursor(Qt::PointingHandCursor);         ///< 设置发送按钮光标
-    other_login_buttons4->setRippleStyle(Material::PositionedRipple);   ///< 设置涟漪效果
-    other_login_buttons4->setCorner(Qt::BottomRightCorner);             ///< 设置按钮位置
-    other_login_buttons4->setXOffset(50);                               ///< 设置 X 偏移
-    other_login_buttons4->setYOffset(115);                              ///< 设置 Y 偏移
-    other_login_buttons4->setBackgroundColor(QColor(0xa5bbe4));    ///< 设置背景色
-    auto github_tooTip = new ElaToolTip(other_login_buttons4);
-    github_tooTip->setToolTip(QStringLiteral("Github登录"));
+    initUi();
 
     this->animations();
 
@@ -88,6 +31,123 @@ Login_form::Login_form(QWidget *parent)
         // 切换图标（需要准备两个图标）
         password->setIcon(m_isPasswordVisible ? ":/Res/login/password-unlock.png" : ":/Res/login/password-lock.png");
     });
+}
+
+void Login_form::initUi()
+{
+    ///< 两个输入框
+    username = new Input_box(":/Res/login/account.png", this);
+    username->move(46, 161);
+    username->setPlaceholderText("Username");
+    username->setMaxLength(20);
+    username->setValidator(
+        new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
+    username->openToolTip();
+    username->setIconToolTip(QStringLiteral("用户名"));
+
+    password = new Input_box(":/Res/login/password-lock.png", this);
+    password->move(46, 253);
+    password->setPlaceholderText("Password");
+    password->setEchoMode(QLineEdit::Password);
+    password->setMaxLength(16);
+    password->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9]+$"), this));
+    password->openToolTip();
+    password->setIconToolTip(QStringLiteral("解锁"));
+
+    ///< 记住密码
+    auto remember_password_checkBox = new AniCheckBox(this);
+    remember_password_checkBox->setFixedWidth(190);
+    remember_password_checkBox->setText("remember password");
+    remember_password_checkBox->setStyleSheet(
+        "color: #808897; font-size: 15px;");
+    remember_password_checkBox->move(
+        password->x(),                          // 水平对齐 password 左边
+        password->y() + password->height() + 15 // 在 password 下方留出一定间距
+    );
+
+    ///< 下次自动登录
+    auto auto_login_checkBox = new AniCheckBox(this);
+    auto_login_checkBox->setFixedWidth(160);
+    auto_login_checkBox->setText("auto login");
+    auto_login_checkBox->setStyleSheet(
+        "color: #808897; font-size: 15px;");
+    auto_login_checkBox->move(
+        remember_password_checkBox->x() + remember_password_checkBox->width() + 15,
+        remember_password_checkBox->y()
+    );
+
+    ///< 提示tip
+    {
+        auto username_cue = new QLabel(this);
+        username_cue->setPixmap(QPixmap(":/Res/window/cue-gray.svg"));
+        username_cue->setFixedSize(14, 14);
+        username_cue->move(
+            username->x() + username->width() + 4,
+            username->y() + (username->height() - username_cue->height()) / 2
+        );
+        auto username_cue_toolTip = new ElaToolTip(username_cue);
+        username_cue_toolTip->setToolTip("6~20个字符，可包含字母、数字或符号");
+
+
+        auto password_cue = new QLabel(this);
+        password_cue->setPixmap(QPixmap(":/Res/window/cue-gray.svg"));
+        password_cue->setFixedSize(14, 14);
+        password_cue->move(
+            password->x() + password->width() + 4,
+            password->y() + (password->height() - password_cue->height()) / 2
+        );
+        auto password_cue_toolTip = new ElaToolTip(password_cue);
+        password_cue_toolTip->setToolTip("必须包含6~16位数字或字母");
+    }
+
+    ///< 登录按钮
+    login_button = new Login_button(this);
+    login_button->setCenter_text("Login");
+    login_button->move(46, 371);
+
+    ///< 底部四个登录选项按钮
+    {
+        other_login_buttons1 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/qq.png"), this);
+        other_login_buttons1->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+        other_login_buttons1->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+        other_login_buttons1->setCorner(Qt::BottomRightCorner);           ///< 设置按钮位置
+        other_login_buttons1->setXOffset(365);                            ///< 设置 X 偏移
+        other_login_buttons1->setYOffset(115);                            ///< 设置 Y 偏移
+        other_login_buttons1->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+        auto qq_tooTip = new ElaToolTip(other_login_buttons1);
+        qq_tooTip->setToolTip(QStringLiteral("QQ登录"));
+
+        other_login_buttons2 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/wechat.png"), this);
+        other_login_buttons2->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+        other_login_buttons2->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+        other_login_buttons2->setCorner(Qt::BottomRightCorner);           ///< 设置按钮位置
+        other_login_buttons2->setXOffset(260);                            ///< 设置 X 偏移
+        other_login_buttons2->setYOffset(115);                            ///< 设置 Y 偏移
+        other_login_buttons2->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+        auto wechat_tooTip = new ElaToolTip(other_login_buttons2);
+        wechat_tooTip->setToolTip(QStringLiteral("微信登录"));
+
+        other_login_buttons3 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/logo_google.png"), this);
+        other_login_buttons3->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+        other_login_buttons3->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+        other_login_buttons3->setCorner(Qt::BottomRightCorner);           ///< 设置按钮位置
+        other_login_buttons3->setXOffset(155);                            ///< 设置 X 偏移
+        other_login_buttons3->setYOffset(115);                            ///< 设置 Y 偏移
+        other_login_buttons3->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+        auto google_tooTip = new ElaToolTip(other_login_buttons3);
+        google_tooTip->setToolTip(QStringLiteral("Google登录"));
+
+        other_login_buttons4 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/github-fill.png"), this);
+        other_login_buttons4->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+        other_login_buttons4->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+        other_login_buttons4->setCorner(Qt::BottomRightCorner);           ///< 设置按钮位置
+        other_login_buttons4->setXOffset(50);                             ///< 设置 X 偏移
+        other_login_buttons4->setYOffset(115);                            ///< 设置 Y 偏移
+        other_login_buttons4->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+        auto github_tooTip = new ElaToolTip(other_login_buttons4);
+        github_tooTip->setToolTip(QStringLiteral("Github登录"));
+    }
+
 }
 
 void Login_form::animations()
@@ -118,7 +178,7 @@ void Login_form::execute_animation(Login_button::AnimationState State)
     }
 }
 
-void Login_form::paintEvent(QPaintEvent *event)
+void Login_form::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -130,7 +190,7 @@ void Login_form::paintEvent(QPaintEvent *event)
     draw_text(&painter);
 }
 
-void Login_form::crop_corner(QPainter *painter)
+void Login_form::crop_corner(QPainter* painter)
 {
     painter->setPen(Qt::NoPen);
     QBrush Brush(QColor(255, 255, 255, 255));
@@ -138,7 +198,7 @@ void Login_form::crop_corner(QPainter *painter)
     painter->drawRect(0, 0, width(), height());
 }
 
-void Login_form::draw_text(QPainter *painter)
+void Login_form::draw_text(QPainter* painter)
 {
     painter->setRenderHint(QPainter::TextAntialiasing);
 
