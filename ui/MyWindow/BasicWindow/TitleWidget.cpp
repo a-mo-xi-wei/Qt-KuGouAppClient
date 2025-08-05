@@ -22,6 +22,8 @@
 #include <QSequentialAnimationGroup>
 #include <QShortcut>
 #include <QFile>
+#include <QTimer>
+#include <QWindow>
 
 /**
  * @brief 获取当前文件所在目录路径
@@ -165,7 +167,38 @@ void TitleWidget::initUi()
     connect(m_titleOptMenu, &TitleOptionMenu::about, this, [this] { emit showAboutDialog(); });
     connect(m_titleOptMenu, &TitleOptionMenu::exit, this, &TitleWidget::on_close_toolButton_clicked);
     connect(m_titleOptMenu, &TitleOptionMenu::logOut, this, &TitleWidget::logOut);
-    connect(m_titleOptMenu, &TitleOptionMenu::restoreWindow, this, &TitleWidget::restoreWindow);
+    connect(m_titleOptMenu, &TitleOptionMenu::restoreWindow, this, [this]
+    {
+        this->m_isMaxScreen = false;
+        auto parentWidget = qobject_cast <QWidget*>(this->parent());
+        // 动画恢复窗口大小（从当前几何到最小尺寸）
+        m_startGeometry = parentWidget->geometry();
+
+        QSize minSize = parentWidget->minimumSize();
+        QScreen *screen = parentWidget->windowHandle() ? parentWidget->windowHandle()->screen() : QGuiApplication::primaryScreen();
+        QRect screenGeometry = screen->availableGeometry(); // 工作区
+        QPoint screenCenter = screenGeometry.topLeft() + QPoint(screenGeometry.width() / 2, screenGeometry.height() / 2);
+
+        m_endGeometry = QRect(screenCenter.x() - minSize.width() / 2, screenCenter.y() - minSize.height() / 2, minSize.width(),
+                              minSize.height());
+
+        auto animation = new QPropertyAnimation(parentWidget, "geometry");
+        animation->setDuration(500);
+        animation->setStartValue(m_startGeometry);
+        animation->setEndValue(m_endGeometry);
+        animation->setEasingCurve(QEasingCurve::InOutQuad);
+
+        this->m_isTransForming = true;
+        animation->start(QAbstractAnimation::DeleteWhenStopped);
+
+        connect(animation, &QPropertyAnimation::finished, this, [this] {
+            QTimer::singleShot(100, this, [this] {
+                this->m_isTransForming = false;
+            });
+            ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); // 恢复最大化按钮样式
+        });
+    });
+
     // 设置标题索引指示器
     ui->title_index_label1->setPixmap(
         QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
@@ -246,15 +279,6 @@ void TitleWidget::initUi()
 }
 
 /**
- * @brief 获取最大化按钮
- * @return 最大化按钮指针
- */
-RippleButton* TitleWidget::max_toolButton() const
-{
-    return ui->max_toolButton;
-}
-
-/**
  * @brief 重写鼠标双击事件，触发最大化
  * @param event 鼠标事件
  */
@@ -273,13 +297,40 @@ void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event)
  */
 void TitleWidget::mousePressEvent(QMouseEvent *event)
 {
+    QWidget::mousePressEvent(event);
+    if (this->m_isTransForming)
+        return;
     if (event->button() == Qt::RightButton)
     {
         this->m_titleOptMenu->exec(QCursor::pos());
     }
-    else
+    else if (event->button() == Qt::LeftButton)
     {
-        QWidget::mousePressEvent(event);
+        m_isPress = true;
+        this->m_pressPos = event->pos(); ///< 记录按下位置
+    }
+}
+
+void TitleWidget::mouseReleaseEvent(QMouseEvent* event)
+{
+    QWidget::mouseReleaseEvent(event);
+    m_isPress = false; ///< 清除按下标志
+}
+
+void TitleWidget::mouseMoveEvent(QMouseEvent* event)
+{
+    QWidget::mouseMoveEvent(event);
+    if (this->m_isTransForming)
+        return;
+    if (m_isPress)
+    {
+        if (this->rect().contains(m_pressPos))// ui->play_widget->geometry().contains(m_pressPos))TODO
+        {
+            if (m_isMaxScreen)
+            {
+                qobject_cast<QWidget*>(this->parent())->resize(this->m_startGeometry.size());
+            }
+        }
     }
 }
 
@@ -540,6 +591,8 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
 void TitleWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
+    m_isMaxScreen = qobject_cast <QWidget*>(this->parent()) ->geometry() == this->screen()->availableGeometry();
+
     ui->search_song_suggest_box->suggestBoxPositionChanged();
 }
 
@@ -836,7 +889,55 @@ void TitleWidget::on_min_toolButton_clicked()
  */
 void TitleWidget::on_max_toolButton_clicked()
 {
-    emit maxScreen();
+    auto animation = new QPropertyAnimation(qobject_cast <QWidget*>(this->parent()), "geometry"); ///< 初始化窗口动画
+
+    if (m_isMaxScreen)
+    {
+        this->m_isMaxScreen = false;                                                               ///< 设置正常状态
+        m_endGeometry       = m_startGeometry;                                                     ///< 记录正常几何形状
+        m_startGeometry     = this->screen()->availableGeometry();                                 ///< 设置最大化几何形状
+        this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
+                                background-color: transparent;
+                                qproperty-icon: url(":/Res/titlebar/maximize-black.svg");
+                                border-radius: 6px;
+                                height: 30px;
+                                width: 30px;
+                                icon-size: 12px 12px;
+                            })";                                                                   ///< 设置最大化按钮样式
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
+        animation->setDuration(500);                                                               ///< 设置动画时长
+    }
+    else
+    {
+        this->m_normalGeometry = qobject_cast <QWidget*>(this->parent())->geometry();                                               ///< 记录正常几何形状
+        this->m_isMaxScreen    = true;                                                           ///< 设置最大化状态
+        m_startGeometry        = this->m_normalGeometry;                                         ///< 设置起始几何形状
+        m_endGeometry          = this->screen()->availableGeometry();                            ///< 设置目标几何形状
+        this->m_maxBtnStyle    = R"(QToolButton#max_toolButton {
+                                background-color: transparent;
+                                qproperty-icon: url(":/Res/titlebar/resume-black.svg");
+                                border-radius: 6px;
+                                height: 30px;
+                                width: 30px;
+                                icon-size: 12px 12px;
+                            })";                                                                 ///< 设置还原按钮样式
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg")); ///< 设置还原图标
+        animation->setDuration(300);                                                             ///< 设置动画时长
+    }
+    animation->setStartValue(m_startGeometry);          ///< 设置动画起始值
+    animation->setEndValue(m_endGeometry);              ///< 设置动画结束值
+    animation->setEasingCurve(QEasingCurve::InOutQuad); ///< 设置缓动曲线
+
+    this->m_isTransForming = true;                         ///< 禁用交互
+    animation->start(QAbstractAnimation::DeleteWhenStopped); ///< 开始动画
+    connect(animation, &QPropertyAnimation::finished, this, [this]
+    {
+        QTimer::singleShot(100, this, [this] {
+            this->m_isTransForming = false; ///< 启用交互
+        });
+    });                                                                                   ///< 连接动画结束信号
+
+    ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); ///< 更新按钮样式
 }
 
 /**

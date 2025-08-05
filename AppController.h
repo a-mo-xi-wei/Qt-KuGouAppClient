@@ -18,6 +18,7 @@ public:
 
 private:
     void initFontRes();
+    void onLoginAccepted();
 
     AppController(); ///< 私有构造函数
     ~AppController() override;

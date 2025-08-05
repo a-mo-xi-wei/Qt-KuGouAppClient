@@ -171,6 +171,7 @@ void MyTrayIcon::initSysTrayMenu()
  */
 void MyTrayIcon::showMessage(const QString &title, const QString &content)
 {
+    qDebug() <<  "消息：" << content;
     QSystemTrayIcon::showMessage(title, content, QSystemTrayIcon::MessageIcon::Information, 1000); ///< 显示消息
     // 注意：Windows 10 下消息显示时长可能无效
 }

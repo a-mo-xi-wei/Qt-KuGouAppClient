@@ -464,8 +464,6 @@ void KuGouClient::initTitleWidget()
     connect(ui->title_widget, &TitleWidget::leftMenuShow, this, &KuGouClient::onLeftMenuShow);
     // @note 响应堆栈窗口切换
     connect(ui->title_widget, &TitleWidget::currentStackChange, this, &KuGouClient::onTitleCurrentStackChange);
-    // @note 响应最大化窗口
-    connect(ui->title_widget, &TitleWidget::maxScreen, this, &KuGouClient::onTitleMaxScreen);
     // @note 响应关于对话框显示
     connect(ui->title_widget, &TitleWidget::showAboutDialog, this, [this]
     {
@@ -477,18 +475,13 @@ void KuGouClient::initTitleWidget()
         this->m_refreshMask->showLoading(); ///< 显示加载遮罩
         this->m_refreshMask->raise();       ///< 提升遮罩层级
     });
-
     // @note 搜索项触发
     connect(ui->title_widget, &TitleWidget::suggestionClicked, this, &KuGouClient::handleSuggestBoxSuggestionClicked);
     connect(ui->title_widget, &TitleWidget::searchTextReturnPressed, this,
             &KuGouClient::handleSuggestBoxSuggestionClicked);
     // @note 退出当前账号，即切换账户
     connect(ui->title_widget, &TitleWidget::logOut, this, &KuGouClient::logOut);
-    // @note 恢复窗口
-    connect(ui->title_widget, &TitleWidget::restoreWindow, this, [this]
-    {
-        this->resize(this->minimumSize());
-    });
+
 }
 
 /**
@@ -652,9 +645,9 @@ void KuGouClient::initPlayWidget()
         ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error", msg, 2000, this->window()); ///< 显示错误提示
     });                                                                                           ///< 连接错误信号
 
-    ui->progressSlider->installEventFilter(this);                                               ///< 安装进度条事件过滤器
-    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouClient::updateProcess);   ///< 连接进度条释放信号
-    connect(ui->play_widget, &PlayWidget::doubleClicked, this, &KuGouClient::onTitleMaxScreen); ///< 连接播放栏双击信号
+    ui->progressSlider->installEventFilter(this);                                             ///< 安装进度条事件过滤器
+    connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouClient::updateProcess); ///< 连接进度条释放信号
+    //TODO connect(ui->play_widget, &PlayWidget::doubleClicked, this, &KuGouClient::onTitleMaxScreen); ///< 连接播放栏双击信号
 }
 
 /**
@@ -908,7 +901,7 @@ QWidget* KuGouClient::createPage(int id)
                 if (m_isSingleCircle)
                     ui->circle_toolButton->click();
             });
-            connect(this, &KuGouClient::maxScreen, m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
+            //TODO connect(this, &KuGouClient::maxScreen, m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
             connect(m_localDownload.get(), &LocalDownload::initialized, this, [this]
             {
                 this->m_isInitialized = true;
@@ -1034,16 +1027,10 @@ void KuGouClient::setupButtonConnections()
     }
 }
 
-/**
- * @brief 鼠标按下事件
- * @param ev 鼠标事件
- * @note 处理窗口拖动逻辑
- */
 void KuGouClient::mousePressEvent(QMouseEvent* ev)
 {
-    MainWindow::mousePressEvent(ev); ///< 调用父类处理
-    if (this->m_isTransForming)
-        return;
+    MainWindow::mousePressEvent(ev);
+
     if (ev->button() == Qt::LeftButton)
     {
         this->m_pressPos = ev->pos(); ///< 记录按下位置
@@ -1057,9 +1044,7 @@ void KuGouClient::mousePressEvent(QMouseEvent* ev)
  */
 void KuGouClient::mouseMoveEvent(QMouseEvent* event)
 {
-    MainWindow::mouseMoveEvent(event); ///< 调用父类处理
-    if (this->m_isTransForming)
-        return;
+    MainWindow::mouseMoveEvent(event);                          ///< 调用父类处理
     point_offset = event->globalPosition().toPoint() - mousePs; ///< 计算鼠标偏移量
 
     if (isPress)
@@ -1068,17 +1053,6 @@ void KuGouClient::mouseMoveEvent(QMouseEvent* event)
         {
             if (ui->title_widget->geometry().contains(m_pressPos) || ui->play_widget->geometry().contains(m_pressPos))
             {
-                if (m_isMaxScreen)
-                {
-                    m_startGeometry.setX(event->pos().x() - m_normalGeometry.width() / 2);
-                    m_startGeometry.setY(event->pos().y() - (ui->title_widget->geometry().contains(m_pressPos) ?
-                                         20 :
-                                         m_normalGeometry.height() - 20));
-                    m_startGeometry.setWidth(m_normalGeometry.width());
-                    m_startGeometry.setHeight(m_normalGeometry.height());
-                    ui->title_widget->max_toolButton()->clicked();
-                    return;
-                }
                 move(windowsLastPs + point_offset);
             }
         }
@@ -1093,7 +1067,6 @@ void KuGouClient::mouseMoveEvent(QMouseEvent* event)
 void KuGouClient::resizeEvent(QResizeEvent* event)
 {
     MainWindow::resizeEvent(event); ///< 调用父类处理
-    m_isMaxScreen = (this->geometry() == this->screen()->availableGeometry());
     // @note 移动角标
     this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
                            this->height() - this->m_sizeGrip->height() - 8);
@@ -1378,67 +1351,6 @@ void KuGouClient::onLeftMenuShow(const bool& flag) const
     {
         ui->menu_scrollArea->hide(); ///< 隐藏菜单
     }
-}
-
-/**
- * @brief 标题栏最大化槽函数
- * @note 切换最大化/正常状态并执行动画
- */
-void KuGouClient::onTitleMaxScreen()
-{
-    // @note 未使用，保留用于调试
-    // STREAM_INFO() << "最大化窗口";
-    ///< 窗口缩放动画
-    auto animation = new QPropertyAnimation(this, "geometry"); ///< 初始化窗口动画
-
-    if (m_isMaxScreen)
-    {
-        this->m_isMaxScreen = false;                                                               ///< 设置正常状态
-        m_endGeometry       = m_startGeometry;                                                     ///< 记录正常几何形状
-        m_startGeometry     = this->screen()->availableGeometry();                                 ///< 设置最大化几何形状
-        this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
-                                background-color: transparent;
-                                qproperty-icon: url(":/Res/titlebar/maximize-black.svg");
-                                border-radius: 6px;
-                                height: 30px;
-                                width: 30px;
-                                icon-size: 12px 12px;
-                            })";                                                                   ///< 设置最大化按钮样式
-        ui->title_widget->max_toolButton()->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
-        animation->setDuration(500);                                                               ///< 设置动画时长
-    }
-    else
-    {
-        this->m_normalGeometry = this->geometry();                                               ///< 记录正常几何形状
-        this->m_isMaxScreen    = true;                                                           ///< 设置最大化状态
-        m_startGeometry        = this->m_normalGeometry;                                         ///< 设置起始几何形状
-        m_endGeometry          = this->screen()->availableGeometry();                            ///< 设置目标几何形状
-        this->m_maxBtnStyle    = R"(QToolButton#max_toolButton {
-                                background-color: transparent;
-                                qproperty-icon: url(":/Res/titlebar/resume-black.svg");
-                                border-radius: 6px;
-                                height: 30px;
-                                width: 30px;
-                                icon-size: 12px 12px;
-                            })";                                                                 ///< 设置还原按钮样式
-        ui->title_widget->max_toolButton()->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg")); ///< 设置还原图标
-        animation->setDuration(300);                                                             ///< 设置动画时长
-    }
-    animation->setStartValue(m_startGeometry);          ///< 设置动画起始值
-    animation->setEndValue(m_endGeometry);              ///< 设置动画结束值
-    animation->setEasingCurve(QEasingCurve::InOutQuad); ///< 设置缓动曲线
-
-    this->m_isTransForming = true;                           ///< 禁用交互
-    animation->start(QAbstractAnimation::DeleteWhenStopped); ///< 开始动画
-    connect(animation, &QPropertyAnimation::finished, this, [this]
-    {
-        QTimer::singleShot(100, this, [this] {
-            this->m_isTransForming = false; ///< 启用交互
-        });
-        if (this->m_endGeometry == this->screen()->availableGeometry()) emit maxScreen(); ///< 发射最大化信号
-    });                                                                                   ///< 连接动画结束信号
-
-    ui->title_widget->max_toolButton()->setStyleSheet(this->m_maxBtnStyle); ///< 更新按钮样式
 }
 
 /**

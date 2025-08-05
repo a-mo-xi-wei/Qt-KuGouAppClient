@@ -7,7 +7,8 @@
 #include "ElaToolTip.h"
 
 Login_form::Login_form(QWidget *parent)
-    : QWidget{parent} {
+    : QWidget{parent}
+{
     this->resize(477, 620);
 
     username = new Input_box(":/Res/login/account.png", this);
@@ -76,7 +77,8 @@ Login_form::Login_form(QWidget *parent)
     connect(login_button, &Login_button::execute_animation_signal, this, &Login_form::execute_animation);
 
     // 连接图标点击信号
-    connect(password, &Input_box::iconClicked, [this] {
+    connect(password, &Input_box::iconClicked, [this]
+    {
         m_isPasswordVisible = !m_isPasswordVisible;
 
         password->setIconToolTip(m_isPasswordVisible ? QStringLiteral("锁定") : QStringLiteral("解锁"));
@@ -88,7 +90,8 @@ Login_form::Login_form(QWidget *parent)
     });
 }
 
-void Login_form::animations() {
+void Login_form::animations()
+{
     animation = new QPropertyAnimation(this->login_button, "geometry");
     animation->setDuration(250);
     animation->setStartValue(this->login_button->geometry());
@@ -98,11 +101,15 @@ void Login_form::animations() {
     animation->setEasingCurve(QEasingCurve::Linear);
 }
 
-void Login_form::execute_animation(Login_button::AnimationState State) {
-    if (State == Login_button::Execute) {
+void Login_form::execute_animation(Login_button::AnimationState State)
+{
+    if (State == Login_button::Execute)
+    {
         animation->setDirection(QAbstractAnimation::Forward);
         animation->start();
-    } else if (State == Login_button::Restore) {
+    }
+    else if (State == Login_button::Restore)
+    {
         animation->setDirection(QAbstractAnimation::Backward);
         animation->start();
         ///< 松开鼠标，发送登录信号
@@ -111,7 +118,8 @@ void Login_form::execute_animation(Login_button::AnimationState State) {
     }
 }
 
-void Login_form::paintEvent(QPaintEvent *event) {
+void Login_form::paintEvent(QPaintEvent *event)
+{
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::TextAntialiasing);
@@ -122,14 +130,16 @@ void Login_form::paintEvent(QPaintEvent *event) {
     draw_text(&painter);
 }
 
-void Login_form::crop_corner(QPainter *painter) {
+void Login_form::crop_corner(QPainter *painter)
+{
     painter->setPen(Qt::NoPen);
     QBrush Brush(QColor(255, 255, 255, 255));
     painter->setBrush(Brush);
     painter->drawRect(0, 0, width(), height());
 }
 
-void Login_form::draw_text(QPainter *painter) {
+void Login_form::draw_text(QPainter *painter)
+{
     painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);

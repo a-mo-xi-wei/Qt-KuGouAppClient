@@ -346,12 +346,6 @@ private slots:
      */
     void onLeftMenuShow(const bool& flag) const;
 
-    /**
-     * @brief 最大化窗口槽函数
-     * @note 切换最大化和正常窗口状态
-     */
-    void onTitleMaxScreen();
-
 public slots:
     /**
      * @brief 播放本地音乐槽函数
@@ -374,12 +368,6 @@ public slots:
     void onTrayIconExit();
 
 signals:
-    /**
-     * @brief 最大化信号
-     * @note 通知本地下载界面调整高亮条
-     */
-    void maxScreen();
-
     /**
      * @brief 当前播放歌曲名称改变信号
      * @param songName 歌曲名称
@@ -480,16 +468,11 @@ private:
 
     std::array<QPointer<QWidget>, 17> m_pages{}; ///< 16 components + search result
     int m_currentIdx{3};                         ///< 当前页面索引
-    // 窗口缩放相关
-    bool m_isTransForming = false;                 ///< 是否正在执行缩放动画
+
     bool m_isSingleCircle = false;                 ///< 是否单曲循环
-    bool m_isMaxScreen    = false;                 ///< 是否最大化
     QMetaObject::Connection mediaStatusConnection; ///< 播放结束信号连接
     QPoint m_pressPos;                             ///< 鼠标按下位置
-    QString m_maxBtnStyle;                         ///< 最大化按钮样式
-    QRect m_startGeometry;                         ///< 动画起始几何形状
-    QRect m_endGeometry;                           ///< 动画结束几何形状
-    QRect m_normalGeometry;                        ///< 正常窗口几何形状
+
     // 播放信息
     QString m_musicTitle;  ///< 当前歌曲标题
     QString m_musicArtist; ///< 当前歌曲艺术家

@@ -68,12 +68,6 @@ public:
     explicit TitleWidget(QWidget* parent = nullptr);
 
     /**
-     * @brief 获取最大化按钮
-     * @return 最大化按钮指针
-     */
-    RippleButton* max_toolButton() const;
-
-    /**
      * @brief 析构函数，释放资源
      */
     ~TitleWidget() override;
@@ -119,6 +113,10 @@ protected:
      * @param event 鼠标事件
      */
     void mousePressEvent(QMouseEvent* event) override;
+
+    void mouseReleaseEvent(QMouseEvent* event) override;
+
+    void mouseMoveEvent(QMouseEvent* event) override;
 
     /**
      * @brief 重写绘制事件，绘制带圆角的线性渐变阴影
@@ -326,11 +324,6 @@ signals:
      */
     void logOut();
 
-    /**
-     * @brief 恢复窗口
-     */
-    void restoreWindow();
-
 private:
     Ui::TitleWidget* ui;                          ///< UI 界面对象
     QStack<StackType> m_backTypeStack;            ///< 后退导航栈
@@ -342,6 +335,16 @@ private:
     TitleOptionMenu* m_titleOptMenu{};            ///< 标题选项菜单
     QPoint m_menuPosition;                        ///< 菜单显示位置
     bool m_enableChange = true;                   ///< 是否允许界面切换
+
+    // 窗口缩放相关
+    bool m_isTransForming = false; ///< 是否正在执行缩放动画
+    bool m_isPress        = false; ///< 是否按下
+    QPoint m_pressPos;             ///< 鼠标按下位置
+    bool m_isMaxScreen = false;    ///< 是否最大化
+    QString m_maxBtnStyle;         ///< 最大化按钮样式
+    QRect m_startGeometry;         ///< 动画起始几何形状
+    QRect m_endGeometry;           ///< 动画结束几何形状
+    QRect m_normalGeometry;        ///< 正常窗口几何形状
 };
 
 #endif // TITLEWIDGET_H
