@@ -324,7 +324,7 @@ void TitleWidget::mouseMoveEvent(QMouseEvent* event)
         return;
     if (m_isPress)
     {
-        if (this->rect().contains(m_pressPos))// ui->play_widget->geometry().contains(m_pressPos))TODO
+        if (this->rect().contains(m_pressPos))
         {
             if (m_isMaxScreen)
             {

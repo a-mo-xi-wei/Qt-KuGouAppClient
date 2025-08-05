@@ -647,7 +647,6 @@ void KuGouClient::initPlayWidget()
 
     ui->progressSlider->installEventFilter(this);                                             ///< 安装进度条事件过滤器
     connect(ui->progressSlider, &QSlider::sliderReleased, this, &KuGouClient::updateProcess); ///< 连接进度条释放信号
-    //TODO connect(ui->play_widget, &PlayWidget::doubleClicked, this, &KuGouClient::onTitleMaxScreen); ///< 连接播放栏双击信号
 }
 
 /**
@@ -901,7 +900,6 @@ QWidget* KuGouClient::createPage(int id)
                 if (m_isSingleCircle)
                     ui->circle_toolButton->click();
             });
-            //TODO connect(this, &KuGouClient::maxScreen, m_localDownload.get(), &LocalDownload::onMaxScreenHandle);
             connect(m_localDownload.get(), &LocalDownload::initialized, this, [this]
             {
                 this->m_isInitialized = true;

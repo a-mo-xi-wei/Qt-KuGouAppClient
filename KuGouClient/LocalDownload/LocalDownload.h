@@ -70,12 +70,6 @@ public:
      */
     void playLocalSongPrevSong();
 
-    /**
-     * @brief 最大化屏幕处理
-     * @note 更新当前播放高亮
-     */
-    void onMaxScreenHandle();
-
 private:
     /**
      * @brief 初始化堆栈窗口

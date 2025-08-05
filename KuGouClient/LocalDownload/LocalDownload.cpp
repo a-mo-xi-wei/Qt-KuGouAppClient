@@ -87,18 +87,6 @@ void LocalDownload::playLocalSongPrevSong()
 }
 
 /**
- * @brief 最大化屏幕处理
- * @note 更新当前播放高亮
- */
-void LocalDownload::onMaxScreenHandle()
-{
-    if (m_localSong)
-    {
-        m_localSong->onMaxScreenHandle(); ///< 转发最大化处理
-    }
-}
-
-/**
  * @brief 创建页面
  * @param id 页面索引
  * @return 创建的页面控件

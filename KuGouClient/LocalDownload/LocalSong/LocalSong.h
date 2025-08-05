@@ -207,12 +207,6 @@ public slots:
      */
     void onAudioFinished();
 
-    /**
-     * @brief 最大化屏幕处理槽函数
-     * @note 更新当前播放高亮
-     */
-    void onMaxScreenHandle();
-
 public slots:
     /**
      * @brief 默认排序

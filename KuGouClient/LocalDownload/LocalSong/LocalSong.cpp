@@ -898,21 +898,6 @@ void LocalSong::onAudioFinished()
 }
 
 /**
- * @brief 最大化屏幕处理槽函数
- * @note 更新当前播放高亮
- */
-void LocalSong::onMaxScreenHandle()
-{
-    if (this->m_locationMusicVector.isEmpty())
-        return;
-    if (this->m_curPlayIndex != -1)
-    {
-        const auto widget = m_musicItemVector[this->m_curPlayIndex]; ///< 获取当前控件
-        widget->setPlayState(true);                                  ///< 设置播放状态
-    }
-}
-
-/**
  * @brief 默认排序
  * @note 按添加时间升序
  */
