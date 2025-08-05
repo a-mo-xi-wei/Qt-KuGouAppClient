@@ -5,15 +5,15 @@
 #include <QRegularExpressionValidator>
 
 Registration_form::Registration_form(QWidget *parent)
-    : QWidget{parent} {
+    : QWidget{parent}
+{
     this->resize(477, 620);
 
     username = new Input_box(":/Res/login/account.png", this);
     username->move(46, 130);
     username->setPlaceholderText("Username");
     username->setMaxLength(20);
-    username->setValidator(
-        new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
+    username->setValidator(new QRegularExpressionValidator(QRegularExpression("[a-zA-Z0-9_\\-!@#$%^&*()+=.,?:;\"'{}<>/|]{0,20}"), this));
     username->openToolTip();
     username->setIconToolTip(QStringLiteral("用户名"));
 
@@ -82,7 +82,8 @@ Registration_form::Registration_form(QWidget *parent)
     connect(login_button, &Login_button::execute_animation_signal, this, &Registration_form::execute_animation);
 
     // 连接图标点击信号
-    connect(password, &Input_box::iconClicked, [this] {
+    connect(password, &Input_box::iconClicked, [this]
+    {
         m_isPasswordVisible = !m_isPasswordVisible;
 
         password->setIconToolTip(m_isPasswordVisible ? QStringLiteral("锁定") : QStringLiteral("解锁"));
@@ -95,7 +96,8 @@ Registration_form::Registration_form(QWidget *parent)
     });
 }
 
-void Registration_form::animations() {
+void Registration_form::animations()
+{
     animation = new QPropertyAnimation(this->login_button, "geometry");
     animation->setDuration(250);
     animation->setStartValue(this->login_button->geometry());
@@ -105,17 +107,22 @@ void Registration_form::animations() {
     animation->setEasingCurve(QEasingCurve::Linear);
 }
 
-void Registration_form::execute_animation(Login_button::AnimationState State) {
-    if (State == Login_button::Execute) {
+void Registration_form::execute_animation(Login_button::AnimationState State)
+{
+    if (State == Login_button::Execute)
+    {
         animation->setDirection(QAbstractAnimation::Forward);
         animation->start();
-    } else if (State == Login_button::Restore) {
+    }
+    else if (State == Login_button::Restore)
+    {
         animation->setDirection(QAbstractAnimation::Backward);
         animation->start();
     }
 }
 
-void Registration_form::paintEvent(QPaintEvent *event) {
+void Registration_form::paintEvent(QPaintEvent *event)
+{
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::TextAntialiasing);
@@ -126,14 +133,16 @@ void Registration_form::paintEvent(QPaintEvent *event) {
     draw_text(&painter);
 }
 
-void Registration_form::crop_corner(QPainter *painter) {
+void Registration_form::crop_corner(QPainter *painter)
+{
     painter->setPen(Qt::NoPen);
     QBrush Brush(QColor(255, 255, 255, 255));
     painter->setBrush(Brush);
     painter->drawRect(0, 0, width(), height());
 }
 
-void Registration_form::draw_text(QPainter *painter) {
+void Registration_form::draw_text(QPainter *painter)
+{
     painter->setRenderHint(QPainter::TextAntialiasing);
 
     QRect rect1(0, 0, 0, 0);

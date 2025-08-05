@@ -49,7 +49,8 @@ void MyTrayIcon::initSysTray()
     connect(this, &MyTrayIcon::activated, this, &MyTrayIcon::onIconActivated);
 
     // 连接消息框点击信号，显示主窗口
-    connect(this, &MyTrayIcon::messageClicked, [this] {
+    connect(this, &MyTrayIcon::messageClicked, [this]
+    {
         emit active();
     });
 
@@ -76,13 +77,15 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“打开我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::House, tr("打开我的酷狗"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         emit active();
     });
 
     // 添加“打开/关闭声音”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Volume, tr("打开/关闭声音"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
         // qDebug() << "MyTrayIcon 托盘图标点击: " << (flag ? "静音" : "开启声音"); ///< 调试用
         this->m_flagVolume = !this->m_flagVolume;
@@ -93,7 +96,8 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“关于我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleInfo, tr("关于我的酷狗"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
         // qDebug() << "MyTrayIcon 托盘图标点击: " << (flag ? "关于我的酷狗" : "关闭关于我的酷狗"); ///< 调试用
         m_flagDialogShow = !m_flagDialogShow;
@@ -102,7 +106,8 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“前往我的酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::LocationArrow, tr("前往我的酷狗"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
     });
 
@@ -110,19 +115,22 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“帮助”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::CircleQuestion, tr("帮助"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
     });
 
     // 添加“意见反馈”菜单选项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::FileSignature, tr("意见反馈"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
     });
     // 添加“检查更新”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Rotate, QString("检查更新"));
     action->setProperty("showRedDot", true);  // 标记显示红点
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
     });
 
@@ -130,7 +138,8 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“锁定酷狗”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::Thumbtack, tr("锁定酷狗"));
-    connect(action, &QAction::triggered, this, [this,action] {
+    connect(action, &QAction::triggered, this, [this, action]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
         m_flagPin = !m_flagPin;
         if (m_flagPin) action->setText("解锁酷狗");
@@ -140,7 +149,8 @@ void MyTrayIcon::initSysTrayMenu()
 
     // 添加“切换账号”菜单项
     action = this->m_trayMenu->addElaIconAction(ElaIconType::IconName::UserGear, tr("切换账号"));
-    connect(action, &QAction::triggered, this, [this] {
+    connect(action, &QAction::triggered, this, [this]
+    {
         this->m_trayMenu->setPreventHide(true); ///< 阻止菜单关闭
     });
 
@@ -168,7 +178,7 @@ void MyTrayIcon::showMessage(const QString &title, const QString &content)
  * @brief 启动托盘图标闪烁
  * @param msec 闪烁间隔（毫秒）
  */
-void MyTrayIcon::flashingTrayIcon(const int &msec)
+void MyTrayIcon::flashingTrayIcon(const int& msec)
 {
     if (m_flashTimer->isActive())
         m_flashTimer->stop();
@@ -195,7 +205,8 @@ void MyTrayIcon::stopFlashingTrayIcon()
  */
 void MyTrayIcon::onIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-    if (reason == QSystemTrayIcon::Trigger) {
+    if (reason == QSystemTrayIcon::Trigger)
+    {
         emit active(); ///< 点击托盘显示主窗口
         // emit showTrayMessage(); ///< 调试用，测试消息显示
         // flashingTrayIcon(400); ///< 调试用，测试闪烁效果
@@ -214,7 +225,8 @@ void MyTrayIcon::checkTrayIconHover()
 {
     const QRect trayGeometry = this->geometry(); ///< 获取托盘区域
     const QPoint mousePos = QCursor::pos();
-    if (trayGeometry.contains(mousePos)) {
+    if (trayGeometry.contains(mousePos))
+    {
         stopFlashingTrayIcon(); ///< 鼠标悬停时停止闪烁
     }
 }
@@ -224,10 +236,13 @@ void MyTrayIcon::checkTrayIconHover()
  */
 void MyTrayIcon::onFlashingTrayIcon()
 {
-    if (m_showIcon) {
+    if (m_showIcon)
+    {
         this->setIcon(QIcon(m_emptyIcon)); ///< 显示空图标
         m_showIcon = false;
-    } else {
+    }
+    else
+    {
         this->setIcon(QIcon(m_trayIcon)); ///< 显示托盘图标
         m_showIcon = true;
     }

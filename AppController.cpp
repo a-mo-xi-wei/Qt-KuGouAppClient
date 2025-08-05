@@ -81,13 +81,59 @@ AppController::~AppController()
     qDebug() << "AppController destroyed.";
 }
 
+void AppController::showSystemLoginInfo()
+{
+    // 异步获取 IP 和位置
+    auto* manager = new QNetworkAccessManager(this);
+    const QNetworkRequest request(QUrl("http://api.ipify.org?format=json"));
+    QNetworkReply* reply = manager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [ = ]()
+    {
+        if (reply->error() == QNetworkReply::NoError)
+        {
+            QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            QString ip        = doc.object().value("ip").toString();
+
+            // 获取地理位置
+            const QNetworkRequest geoRequest(QUrl("http://ip-api.com/json/" + ip));
+            QNetworkReply* geoReply = manager->get(geoRequest);
+
+            connect(geoReply, &QNetworkReply::finished, this, [ = ]()
+            {
+                if (geoReply->error() == QNetworkReply::NoError)
+                {
+                    QJsonDocument geoDoc = QJsonDocument::fromJson(geoReply->readAll());
+                    QString location     = geoDoc.object().value("city").toString();
+                    QString loginTime    = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
+                    QString deviceInfo   = QSysInfo::machineHostName();
+                    bool isUnusualIp     = true; // 需实现判断逻辑
+
+                    // 构造消息
+                    QString message = QString("你的帐号于 %1 在%2IP地址 %3(%4) 登录%5，如非本人操作，建议尽快修改帐户密码。")
+                                      .arg(loginTime)
+                                      .arg(isUnusualIp ? "不常用的" : "")
+                                      .arg(ip)
+                                      .arg(location)
+                                      .arg(deviceInfo.isEmpty() ? "" : QString("，设备：%1").arg(deviceInfo));
+
+                    emit m_trayIcon->showTrayMessage("登录提示", message);
+                }
+                geoReply->deleteLater();
+            });
+        }
+        reply->deleteLater();
+    });
+}
+
 void AppController::start()
 {
     m_login->show();
 
     connect(m_login, &QDialog::accepted, this, [this]
     {
-        // ✅ 关键：继承置顶状态
+        showSystemLoginInfo();
+        // 继承置顶状态
         if (m_login->windowFlags() & Qt::WindowStaysOnTopHint)
         {
             m_client->setWindowFlag(Qt::WindowStaysOnTopHint, true);
