@@ -11,7 +11,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets StateMachine Core Network Multimedi
 
 file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/*.qrc)
 
-if(WIN32)
+if (WIN32)
     # 创建专用的资源文件目标，仅包含必要路径
     add_library(app_resources OBJECT ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc)
 
@@ -19,7 +19,7 @@ if(WIN32)
     target_include_directories(app_resources PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res
     )
-endif()
+endif ()
 
 set(SOURCE_FILE
         AppController.h
@@ -53,6 +53,6 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/KuGouServer
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer LoginInterface)
+target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer LoginInterface MySpdlog)
 
 include(cmake/build_info.cmake)

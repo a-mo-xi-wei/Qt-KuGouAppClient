@@ -116,7 +116,7 @@ void AppController::showSystemLoginInfo()
                                       .arg(ip)
                                       .arg(location)
                                       .arg(deviceInfo.isEmpty() ? "" : QString("，设备：%1").arg(deviceInfo));
-
+                    STREAM_INFO() << message.toStdString();
                     emit m_trayIcon->showTrayMessage("登录提示", message);
                 }
                 geoReply->deleteLater();
@@ -165,6 +165,8 @@ void AppController::start()
         m_login->show();
 
         // 显示切换账号提示
+        STREAM_INFO() << "切换账号";
+
         emit m_trayIcon->showTrayMessage("切换账号", "请重新登录。");
     };
     connect(m_trayIcon, &MyTrayIcon::switchAccount, this, handleChangeAccount);
