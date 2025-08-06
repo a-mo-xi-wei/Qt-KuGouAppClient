@@ -145,13 +145,10 @@ namespace SJwt {
     public:
         enum class Status {
             Ok,
-            Expired,
-            /*!>过期了*/
-            AlgorithmError,
-            /*!>算法错误*/
-            JwrFormatError,
-            Invalid,
-            /*!>无效*/
+            Expired, /*!>过期了*/
+            AlgorithmError, /*!>算法错误*/
+            JwrFormatError, /*!>JWT格式错误*/
+            Invalid, /*!>无效*/
         };
 
     public:
