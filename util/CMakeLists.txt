@@ -29,3 +29,6 @@ add_subdirectory(JQHttpServer)
 #http请求模块
 add_subdirectory(MyHttpClient)
 
+#通用配置文件处理模块
+add_subdirectory(SApp)
+

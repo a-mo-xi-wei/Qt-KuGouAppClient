@@ -30,15 +30,20 @@ ValidationHint::ValidationHint(QWidget* parent)
 
 ValidationHint::~ValidationHint() = default;
 
-void ValidationHint::setHintText(const QString& text) const
+void ValidationHint::setHintText(const QString& text)
 {
+    m_text = text;
     textLabel->setText(text);
 }
 
-void ValidationHint::setStatus(Status status)
+void ValidationHint::setStatus(Status status, const QString& text)
 {
     m_status = status;
-
+    textLabel->setText(m_text);
+    if (!text.isEmpty())
+    {
+        textLabel->setText(text);
+    }
     switch (status)
     {
     case Valid:

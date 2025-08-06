@@ -88,7 +88,7 @@ void ElaLineEdit::focusInEvent(QFocusEvent *event)
     Q_EMIT focusIn(this->text());
     // 设置初始值
     std::call_once(flag, [d, this] { d->_originalWidth = width(); });
-    if (event->reason() == Qt::MouseFocusReason || event->reason() == Qt::ActiveWindowFocusReason)
+    if (event->reason() != Qt::PopupFocusReason)
     {
         if (d->_pIsClearButtonEnable)
         {

@@ -81,7 +81,7 @@ void AboutDialog::initDialog(QVBoxLayout *lay)
     this->m_topWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->m_topWidget->setObjectName("topWidget");
     this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}")
-                                         .arg(QRandomGenerator::global()->bounded(1, 20)));
+                                     .arg(QRandomGenerator::global()->bounded(1, 20)));
 
     // 顶部布局
     auto topWidgetLayout = new QHBoxLayout(this->m_topWidget);
@@ -106,7 +106,8 @@ void AboutDialog::initDialog(QVBoxLayout *lay)
     ElaText* descTitle = new ElaText(m_dialog);
     descTitle->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     initDescText(descTitle);
-    connect(this, &AboutDialog::gotStars, this, [this, descTitle] {
+    connect(this, &AboutDialog::gotStars, this, [this, descTitle]
+    {
         initDescText(descTitle);
     });
     descTitle->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -154,7 +155,8 @@ void AboutDialog::initDialog(QVBoxLayout *lay)
         bottomHLay->addWidget(closeButton);
         bottomHLay->addSpacing(15);
 
-        connect(goToGiteeButton, &RippleButton::clicked, []() {
+        connect(goToGiteeButton, &RippleButton::clicked, []()
+        {
             QDesktopServices::openUrl(QUrl("https://gitee.com/a-mo-xi-wei/KuGouApp"));
         });
         connect(closeButton, &RippleButton::pressed, this, &AboutDialog::onHideDialog);
@@ -176,16 +178,18 @@ void AboutDialog::initDialog(QVBoxLayout *lay)
 void AboutDialog::getGiteeProjectStar(const QString &url)
 {
     const QString reply = m_libHttp.UrlRequestGet(url, "");
-    connect(&m_libHttp, &CLibhttp::httpTimeout, [=] {
+    connect(&m_libHttp, &CLibhttp::httpTimeout, [ = ]
+    {
         STREAM_ERROR() << "请求超时,请检查网络连接是否正常";
-        return 90;
+        return 130;
     });
     const QJsonDocument jsonDoc = QJsonDocument::fromJson(reply.toUtf8());
 
     QJsonObject jsonObj = jsonDoc.object();
 
     // 检查是否包含 stargazers_count 字段
-    if (!jsonObj.contains("stargazers_count")) {
+    if (!jsonObj.contains("stargazers_count"))
+    {
         qWarning() << "Invalid JSON response: stargazers_count not found";
         STREAM_WARN() << "Invalid JSON response: stargazers_count not found";
         return;
@@ -203,16 +207,16 @@ void AboutDialog::getGiteeProjectStar(const QString &url)
 void AboutDialog::initDescText(ElaText* text)
 {
     QString descText = QString(
-        "\n  My KuGou Client Version : 1.0\n"
-        " 开发环境: Windows x64 , Qt 6.6.2 , CLion , MinGW , Ninja\n\n"
-        " 本项目代码仅限研究和学习使用，资源版权归音乐平台所有\n"
-        " 代码已开源, 并无商用, 任何版权问题概不负责 No Copyright\n\n"
-        " 开发者邮箱: 1428206861@qq.com | ww1428206861@gmail.com\n\n"
-        " 本项目是临时起意所做, 许多功能有待完善, 在开发过程中本人\n 成长了很多"
-        "也突破了各种各样的项目难点, 同时也引入了各个\n 大神开源的组件, 节省了许多时间, 特此致谢\n\n"
-        " 🎁如果你喜欢该项目, 请点击左下角跳转至 Gitee项目网址, 点击\n 右上角的✨星星✨, 你的 Star 是我最大的动力\n\n"
-        " 目前该项目在Gitee上已获 %1 颗星, 撸起袖子加油干 !!! \n\n"
-    ).arg(m_stars);
+                           "\n  My KuGou Client Version : 1.0\n"
+                           " 开发环境: Windows x64 , Qt 6.6.2 , CLion , MinGW , Ninja\n\n"
+                           " 本项目代码仅限研究和学习使用，资源版权归音乐平台所有\n"
+                           " 代码已开源, 并无商用, 任何版权问题概不负责 No Copyright\n\n"
+                           " 开发者邮箱: 1428206861@qq.com | ww1428206861@gmail.com\n\n"
+                           " 本项目是临时起意所做, 许多功能有待完善, 在开发过程中本人\n 成长了很多"
+                           "也突破了各种各样的项目难点, 同时也引入了各个\n 大神开源的组件, 节省了许多时间, 特此致谢\n\n"
+                           " 🎁如果你喜欢该项目, 请点击左下角跳转至 Gitee项目网址, 点击\n 右上角的✨星星✨, 你的 Star 是我最大的动力\n\n"
+                           " 目前该项目在Gitee上已获 %1 颗星, 撸起袖子加油干 !!! \n\n"
+                       ).arg(m_stars);
     text->setText(descText);
 }
 
@@ -222,7 +226,7 @@ void AboutDialog::initDescText(ElaText* text)
 void AboutDialog::onShowDialog()
 {
     this->m_topWidget->setStyleSheet(QString("QWidget#topWidget{background-color: transparent;border-image: url(:/RectCover/Res/rectcover/music-rect-cover%1.jpg);}")
-                                         .arg(QRandomGenerator::global()->bounded(1, 20)));
+                                     .arg(QRandomGenerator::global()->bounded(1, 20)));
     m_dialog->showDialog();
     emit showDialog(true);
 }

@@ -20,8 +20,9 @@
 AniCheckBox::AniCheckBox(QWidget *parent) : QCheckBox(parent)
 {
     setCursor(Qt::PointingHandCursor);
-    connect(this, &QCheckBox::stateChanged, this, [=](int state) {
-        qDebug() << "状态改变";
+    connect(this, &QCheckBox::stateChanged, this, [ this ](int state)
+    {
+        // qDebug() << "状态改变";
         STREAM_INFO() << "选中框状态改变";
         checkStateChanged(state);
     });
@@ -40,7 +41,7 @@ void AniCheckBox::setForeColor(QColor c)
  * @brief 绘制事件，绘制复选框和文字
  * @param e 绘图事件
  */
-void AniCheckBox::paintEvent(QPaintEvent *)
+void AniCheckBox::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     // painter.setRenderHint(QPainter::Antialiasing, true);
@@ -104,7 +105,7 @@ void AniCheckBox::leaveEvent(QEvent *e)
  * @param pos 点击位置
  * @return 是否在按钮区域
  */
-bool AniCheckBox::hitButton(const QPoint &) const
+bool AniCheckBox::hitButton(const QPoint&) const
 {
     return true;
 }
@@ -115,11 +116,16 @@ bool AniCheckBox::hitButton(const QPoint &) const
  */
 void AniCheckBox::checkStateChanged(const int& state)
 {
-    if (state == Qt::Unchecked) {
+    if (state == Qt::Unchecked)
+    {
         startAnimation("check_prog", getCheckProg(), 0, 800, QEasingCurve::OutQuad);
-    } else if (state == Qt::PartiallyChecked) {
+    }
+    else if (state == Qt::PartiallyChecked)
+    {
         // 部分选中状态暂未实现
-    } else if (state == Qt::Checked) {
+    }
+    else if (state == Qt::Checked)
+    {
         startAnimation("check_prog", getCheckProg(), 1, 500, QEasingCurve::OutBack);
     }
 }
@@ -144,11 +150,11 @@ void AniCheckBox::drawBox(QPainter& painter, QRectF rect)
     double prop = 0.6;
     prop *= checkProg;
     rect = QRectF(
-        rect.left() + rect.width() * (1 - prop) / 2,
-        rect.top() + rect.height() * (1 - prop) / 2,
-        rect.width() * prop,
-        rect.height() * prop
-    );
+               rect.left() + rect.width() * (1 - prop) / 2,
+               rect.top() + rect.height() * (1 - prop) / 2,
+               rect.width() * prop,
+               rect.height() * prop
+           );
     QPainterPath path;
     path.addRoundedRect(rect, radius, radius);
     painter.fillPath(path, foreColor);
@@ -176,7 +182,7 @@ void AniCheckBox::drawBox(QPainter& painter, QRectF rect)
  * @param curve 缓动曲线，默认为 OutQuad
  * @return 动画对象
  */
-QPropertyAnimation *AniCheckBox::startAnimation(const QByteArray &property, double begin, double end, int duration, QEasingCurve curve)
+QPropertyAnimation* AniCheckBox::startAnimation(const QByteArray &property, double begin, double end, int duration, QEasingCurve curve)
 {
     const auto ani = new QPropertyAnimation(this, property);
     ani->setStartValue(begin);
@@ -184,7 +190,7 @@ QPropertyAnimation *AniCheckBox::startAnimation(const QByteArray &property, doub
     ani->setDuration(duration);
     ani->setEasingCurve(curve);
     connect(ani, &QPropertyAnimation::finished, ani, &QObject::deleteLater);
-    connect(ani, SIGNAL(valueChanged(const QVariant&)), this, SLOT(update()));
+    connect(ani, &QPropertyAnimation::valueChanged, this, [this] {update();});
     ani->start();
     return ani;
 }

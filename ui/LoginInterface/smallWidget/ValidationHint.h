@@ -19,9 +19,9 @@ public:
         Neutral
     };
 
-    void setHintText(const QString& text) const;
+    void setHintText(const QString& text);
 
-    void setStatus(Status status);
+    void setStatus(Status status, const QString& text = "");
 
     Status getStatus();
 
@@ -39,6 +39,7 @@ private:
 private:
     QLabel* iconLabel;
     QLabel* textLabel;
+    QString m_text;
     Status m_status = Neutral;
 
 private:

@@ -1,9 +1,14 @@
 ﻿#include "registration_form.h"
 #include "qtmaterialfab.h"
 #include "ValidationHint.h"
+#include "libhttp.h"
+#include "ElaMessageBar.h"
 
 #include <QPainter>
 #include <QRegularExpressionValidator>
+#include <QTimer>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 Registration_form::Registration_form(QWidget* parent)
     : QWidget{parent}
@@ -97,6 +102,83 @@ Registration_form::Registration_form(QWidget* parent)
 
     this->animations();
     connect(login_button, &Login_button::execute_animation_signal, this, &Registration_form::execute_animation);
+    connect(login_button, &Login_button::clicked, this, [ = ]
+    {
+        if (usernameHint->getStatus() == ValidationHint::Valid &&
+                emailHint->getStatus() == ValidationHint::Valid &&
+                passwordHint->getStatus() == ValidationHint::Valid) ///<满足条件，发送注册请求
+        {
+            CLibhttp libHttp;
+            auto postJson = QJsonObject ///< 创建 JSON 数据
+            {
+                {"account", username->text()},
+                {"password", password->text()},
+                {"email", email->text()},
+            };
+            QJsonDocument doc(postJson);
+            QString jsonString = doc.toJson(QJsonDocument::Compact); ///< 转换为 JSON 字符串
+            auto reply = libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/register"), jsonString);
+            ///< 发送添加请求
+            ///< 解析返回的 JSON 数据
+            QJsonParseError parseError;
+            doc = QJsonDocument::fromJson(reply.toUtf8(), &parseError);
+            if (parseError.error != QJsonParseError::NoError || !doc.isObject())
+            {
+                ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error",
+                                     QString("JSON 解析错误"), 1000, this->window());
+                qWarning() << "JSON parse error:" << parseError.errorString();
+                return;
+            }
+
+            QJsonObject obj = doc.object();
+            QString status  = obj.value("status").toString();
+
+            if (status == "success")
+            {
+                ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success",
+                                       QString("注册成功,请返回登录"), 1000, this->window());
+            }
+            else
+            {
+                QString message  = obj.value("message").toString();
+                ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error",
+                                     QString("%1").arg(message), 1000, this->window());
+
+                // qDebug() << reply;
+            }
+        }
+        else ///<判空
+        {
+            if (username->text().isEmpty())
+            {
+                username->setFocus(); // 不需要 clearFocus
+
+                QTimer::singleShot(100, [this, usernameHint]
+                {
+                    usernameHint->setStatus(ValidationHint::Invalid, "用户名不能为空");
+                    usernameHint->smoothShow();
+                });
+            }
+            else if (email->text().isEmpty())
+            {
+                email->setFocus();
+                QTimer::singleShot(100, [this, emailHint]
+                {
+                    emailHint->setStatus(ValidationHint::Invalid, "邮箱不能为空");
+                    emailHint->smoothShow();
+                });
+            }
+            else if (password->text().isEmpty())
+            {
+                password->setFocus();
+                QTimer::singleShot(100, [this, passwordHint]
+                {
+                    passwordHint->setStatus(ValidationHint::Invalid, "密码不能为空");
+                    passwordHint->smoothShow();
+                });
+            }
+        }
+    });
 
     // 连接图标点击信号
     connect(password, &Input_box::iconClicked, [this]
@@ -121,6 +203,7 @@ Registration_form::Registration_form(QWidget* parent)
         if (usernameHint->getStatus() != ValidationHint::Invalid)
             usernameHint->smoothHide();
     });
+
     connect(email, &ElaLineEdit::focusIn, [this, emailHint]
     {
         emailHint->smoothShow();
@@ -130,6 +213,7 @@ Registration_form::Registration_form(QWidget* parent)
         if (emailHint->getStatus() != ValidationHint::Invalid)
             emailHint->smoothHide();
     });
+
     connect(password, &ElaLineEdit::focusIn, [this, passwordHint]
     {
         passwordHint->smoothShow();
@@ -139,7 +223,6 @@ Registration_form::Registration_form(QWidget* parent)
         if (passwordHint->getStatus() != ValidationHint::Invalid)
             passwordHint->smoothHide();
     });
-
 
     connect(username, &QLineEdit::textChanged, [this, usernameHint ](const QString & text)
     {
@@ -158,7 +241,6 @@ Registration_form::Registration_form(QWidget* parent)
             usernameHint->setStatus(re.match(text).hasMatch() ? ValidationHint::Valid : ValidationHint::Invalid);
         }
     });
-
     connect(email, &QLineEdit::textChanged, [this, emailHint](const QString & text)
     {
         if (text.length() == 0)
@@ -176,7 +258,6 @@ Registration_form::Registration_form(QWidget* parent)
             emailHint->setStatus(re.match(text).hasMatch() ? ValidationHint::Valid : ValidationHint::Invalid);
         }
     });
-
     connect(password, &QLineEdit::textChanged, [this, passwordHint](const QString & text)
     {
         if (text.length() == 0)

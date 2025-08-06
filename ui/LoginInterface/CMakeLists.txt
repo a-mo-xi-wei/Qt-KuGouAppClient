@@ -24,4 +24,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/smallWidget
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Network Qt6::Widgets QtMaterialWidget ElaWidgetTools dwmapi MyCheckBox)
+target_link_libraries(${PROJECT_NAME} Qt6::Network Qt6::Widgets QtMaterialWidget ElaWidgetTools
+        dwmapi MyCheckBox MyHttpClient SApp)

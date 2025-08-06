@@ -1,4 +1,5 @@
 #include "AppController.h"
+#include"SApp.h"
 
 int main(int argc, char* argv[])
 {
@@ -11,7 +12,7 @@ int main(int argc, char* argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
-    QApplication a(argc, argv);
+    SApp a(argc, argv);
     AppController::instance().start();
     return a.exec();
 }

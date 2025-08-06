@@ -133,7 +133,12 @@ void AppController::start()
 
     // 连接登录成功的信号
     connect(m_login, &QDialog::accepted, this, &AppController::onLoginAccepted);
-
+    connect(m_login, &LoginRegisterForm::exit, this, [this]
+    {
+        m_login->close();
+        qApp->quit();
+        return;
+    });
     // 连接切换账号信号
     auto handleChangeAccount = [this]
     {
@@ -157,10 +162,16 @@ void AppController::start()
 
         // 重新创建登录窗口
         m_login = new LoginRegisterForm;
+        m_login->setIsFirstShow(false); ///<阻止可能有的自动登录
         m_login->show();
         m_login->activateWindow();
         connect(m_login, &QDialog::accepted, this, &AppController::onLoginAccepted);
-
+        connect(m_login, &LoginRegisterForm::exit, this, [this]
+        {
+            m_login->close();
+            qApp->quit();
+            return;
+        });
 
         // 显示切换账号提示
         emit m_trayIcon->showTrayMessage("切换账号", "请重新登录。");
@@ -254,5 +265,3 @@ void AppController::onLoginAccepted()
 
     m_isLoginAccepted = true;
 }
-
-

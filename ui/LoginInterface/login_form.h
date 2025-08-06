@@ -4,6 +4,7 @@
 #include "input_box.h"
 #include "login_button.h"
 
+class AniCheckBox;
 class QtMaterialFloatingActionButton;
 
 class Login_form : public QWidget
@@ -25,15 +26,24 @@ private:
 public slots:
     void execute_animation(Login_button::AnimationState State);
 
+    void onLogin();
+
 protected:
     void paintEvent(QPaintEvent* event) override;
 
-public:
+signals:
+    void loginSuccess();
+
+    void exit();
+
+private:
     QPropertyAnimation* animation;
     int zoom_rate            = 20;
     bool m_isPasswordVisible = false;
     Input_box* username;
     Input_box* password;
+    AniCheckBox* remember_password_checkBox;
+    AniCheckBox* auto_login_checkBox;
     Login_button* login_button;
     QtMaterialFloatingActionButton* other_login_buttons1;
     QtMaterialFloatingActionButton* other_login_buttons2;

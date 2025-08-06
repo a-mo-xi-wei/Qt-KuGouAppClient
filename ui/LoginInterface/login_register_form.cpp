@@ -1,6 +1,7 @@
 ﻿#include "login_register_form.h"
 #include "windoweffect.h"
 #include "ElaToolTip.h"
+#include "SApp.h"
 
 #include <QGraphicsDropShadowEffect>
 #include <QMouseEvent>
@@ -12,7 +13,8 @@
 #include <QTimer>
 
 LoginRegisterForm::LoginRegisterForm(QWidget *parent)
-    : QDialog{parent} {
+    : QDialog{parent}
+{
     this->setFixedSize(955, 620);
     //设置窗体透明
     setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
@@ -24,14 +26,26 @@ LoginRegisterForm::LoginRegisterForm(QWidget *parent)
 
 }
 
-void LoginRegisterForm::setRightShow() const {
+void LoginRegisterForm::setIsFirstShow(bool flag)
+{
+    isFirstShow = flag;
+}
+
+bool LoginRegisterForm::getIsFirstShow()
+{
+    return isFirstShow;
+}
+
+void LoginRegisterForm::setRightShow() const
+{
     transparent_transition_interface2->raise();
     registration_form->lower();
     transparent_transition_interface->raise();
     login_form->lower();
 }
 
-void LoginRegisterForm::build_animation() {
+void LoginRegisterForm::build_animation()
+{
     animation2 = new QPropertyAnimation(this->scroll_bar, "pos");
     animation2->setDuration(m_animation_duration);
     animation2->setStartValue(this->scroll_bar->pos());
@@ -62,15 +76,19 @@ void LoginRegisterForm::build_animation() {
     animation6->setEndValue(QPoint(-this->width() / 2, 0));
     animation6->setEasingCurve(QEasingCurve::Linear);
 
-    connect(animation2, &QPropertyAnimation::valueChanged, this, [this] {
+    connect(animation2, &QPropertyAnimation::valueChanged, this, [this]
+    {
         if (scroll_bar->pos().x() > -this->width() / 2 && animation4->state() == !QAbstractAnimation::Running &&
-            animation_execute_duration) {
+                animation_execute_duration)
+        {
             animation2->pause();
             animation3->setDirection(QAbstractAnimation::Forward);
             animation3->start();
             animation_execute_duration = false;
-        } else if (scroll_bar->pos().x() < -this->width() / 10 && animation3->state() == !QAbstractAnimation::Running &&
-                   animation_restore_duration) {
+        }
+        else if (scroll_bar->pos().x() < -this->width() / 10 && animation3->state() == !QAbstractAnimation::Running &&
+                 animation_restore_duration)
+        {
             animation2->pause();
             animation4->setDirection(QAbstractAnimation::Backward);
             animation4->start();
@@ -78,14 +96,18 @@ void LoginRegisterForm::build_animation() {
         }
     });
 
-    connect(animation3, &QPropertyAnimation::finished, this, [this] {
-    if (animation2->state() == QAbstractAnimation::Paused) {
-        animation2->resume();
-    }
-});
+    connect(animation3, &QPropertyAnimation::finished, this, [this]
+    {
+        if (animation2->state() == QAbstractAnimation::Paused)
+        {
+            animation2->resume();
+        }
+    });
 
-    connect(animation4, &QPropertyAnimation::finished, this, [this] {
-        if (animation2->state() == QAbstractAnimation::Paused) {
+    connect(animation4, &QPropertyAnimation::finished, this, [this]
+    {
+        if (animation2->state() == QAbstractAnimation::Paused)
+        {
             animation2->resume();
         }
     });
@@ -94,23 +116,28 @@ void LoginRegisterForm::build_animation() {
     connect(animation4, &QPropertyAnimation::finished, this, &LoginRegisterForm::onAnimation4Finished);
 }
 
-void LoginRegisterForm::onAnimation3Finished() {
-    if (currentSequence == 1) {
+void LoginRegisterForm::onAnimation3Finished()
+{
+    if (currentSequence == 1)
+    {
         animation4->setDirection(QAbstractAnimation::Forward);
         animation4->start();
         animation5->setDirection(QAbstractAnimation::Forward);
         animation5->start();
     }
-    for (auto btn : findChildren<QPushButton*>()) {
+    for (auto btn : findChildren<QPushButton*>())
+    {
         if (btn->objectName() == "minBtn" || btn->objectName() == "closeBtn")
             btn->raise();
     }
 }
 
-void LoginRegisterForm::onAnimation4Finished() {
+void LoginRegisterForm::onAnimation4Finished()
+{
     if (currentSequence == 1) return;
 
-    if (currentSequence == 2) {
+    if (currentSequence == 2)
+    {
         animation3->setDirection(QAbstractAnimation::Backward);
         animation3->start();
 
@@ -119,8 +146,10 @@ void LoginRegisterForm::onAnimation4Finished() {
     }
 }
 
-void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status) {
-    if (status == Hollow_button::AnimationState::ANIMATION_STATE_EXECUTING) {
+void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status)
+{
+    if (status == Hollow_button::AnimationState::ANIMATION_STATE_EXECUTING)
+    {
         animation_execute_duration = true;
         currentSequence = 1;
 
@@ -129,7 +158,9 @@ void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status) 
 
         animation6->setDirection(QAbstractAnimation::Forward);
         animation6->start();
-    } else if (status == Hollow_button::AnimationState::ANIMATION_STATE_RESET) {
+    }
+    else if (status == Hollow_button::AnimationState::ANIMATION_STATE_RESET)
+    {
         animation_restore_duration = true;
         currentSequence = 2;
 
@@ -138,7 +169,8 @@ void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status) 
     }
 }
 
-void LoginRegisterForm::paintEvent(QPaintEvent *event) {
+void LoginRegisterForm::paintEvent(QPaintEvent *event)
+{
     QDialog::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -151,50 +183,69 @@ void LoginRegisterForm::paintEvent(QPaintEvent *event) {
     painter.drawPath(path);
 }
 
-void LoginRegisterForm::mousePressEvent(QMouseEvent *event) {
-    if (event->button() == Qt::LeftButton) {
+void LoginRegisterForm::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
         m_dragStartPosition = event->globalPosition().toPoint();
         m_startWindowPosition = this->pos();
         event->accept();
-    } else {
+    }
+    else
+    {
         QDialog::mousePressEvent(event);
     }
 }
 
-void LoginRegisterForm::mouseMoveEvent(QMouseEvent *event) {
-    if (event->buttons() & Qt::LeftButton) {
+void LoginRegisterForm::mouseMoveEvent(QMouseEvent *event)
+{
+    if (event->buttons() & Qt::LeftButton)
+    {
         QPoint delta = event->globalPosition().toPoint() - m_dragStartPosition;
         this->move(m_startWindowPosition + delta);
         event->accept();
-    } else {
+    }
+    else
+    {
         QDialog::mouseMoveEvent(event);
     }
 }
 
-bool LoginRegisterForm::eventFilter(QObject *watched, QEvent *event) {  ///< 仅仅用来识别最小化和关闭按钮
+bool LoginRegisterForm::eventFilter(QObject *watched, QEvent *event)    ///< 仅仅用来识别最小化和关闭按钮
+{
     auto btn = qobject_cast<QPushButton*>(watched);
     if (!btn)
         return QDialog::eventFilter(watched, event);
 
     const QString name = btn->objectName();
 
-    if (event->type() == QEvent::Enter) {
-        if (name == "minBtn") {
+    if (event->type() == QEvent::Enter)
+    {
+        if (name == "minBtn")
+        {
             btn->setIcon(QIcon(":/Res/titlebar/minimize-blue.svg"));
-        } else if (name == "closeBtn") {
+        }
+        else if (name == "closeBtn")
+        {
             btn->setIcon(QIcon(":/Res/titlebar/close-blue.svg"));
         }
-    } else if (event->type() == QEvent::Leave) {
-        if (name == "minBtn") {
+    }
+    else if (event->type() == QEvent::Leave)
+    {
+        if (name == "minBtn")
+        {
             btn->setIcon(QIcon(":/Res/titlebar/minimize-black.svg"));
-        } else if (name == "closeBtn") {
+        }
+        else if (name == "closeBtn")
+        {
             btn->setIcon(QIcon(":/Res/titlebar/close-black.svg"));
         }
     }
     return QDialog::eventFilter(watched, event);
 }
 
-void LoginRegisterForm::showEvent(QShowEvent *event) {
+void LoginRegisterForm::showEvent(QShowEvent *event)
+{
     QDialog::showEvent(event); // 确保正常显示
 
     this->setWindowOpacity(0.0); // 从透明开始
@@ -221,15 +272,27 @@ void LoginRegisterForm::showEvent(QShowEvent *event) {
     group->addAnimation(blurAnim);
     group->addAnimation(opacityAnim);
 
-    connect(group, &QParallelAnimationGroup::finished, this, [=] {
+    connect(group, &QParallelAnimationGroup::finished, this, [ = ]
+    {
         setGraphicsEffect(nullptr); // 移除模糊
+        if (isFirstShow)
+        {
+            auto config = sApp->globalConfig();
+
+            //如果上次退出之前勾选了自动登陆，则自动点击登陆按钮
+            if (config->value("user/autoLogin").toBool())
+            {
+                qDebug() << "自动登录";
+                login_form->onLogin();
+            }
+        }
     });
 
     group->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
-
-void LoginRegisterForm::accept() {
+void LoginRegisterForm::accept()
+{
     auto blur = new QGraphicsBlurEffect(this);
     this->setGraphicsEffect(blur);
 
@@ -247,14 +310,16 @@ void LoginRegisterForm::accept() {
     group->addAnimation(blurAnim);
     group->addAnimation(opacityAnim);
 
-    connect(group, &QParallelAnimationGroup::finished, this, [=] {
+    connect(group, &QParallelAnimationGroup::finished, this, [ = ]
+    {
         setGraphicsEffect(nullptr);
         QDialog::accept();
     });
     group->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
-void LoginRegisterForm::initUi() {
+void LoginRegisterForm::initUi()
+{
     auto minBtn = new QPushButton(this);
     minBtn->setObjectName("minBtn");
     minBtn->setIcon(QIcon(QStringLiteral(":/Res/titlebar/minimize-black.svg")));
@@ -310,7 +375,7 @@ void LoginRegisterForm::initUi() {
     close_toolButton_toolTip->setToolTip(QStringLiteral("关闭"));
 
     connect(minBtn, &QPushButton::clicked, this, &QDialog::showMinimized);
-    connect(closeBtn, &QPushButton::clicked, this, &QDialog::accept);
+    connect(closeBtn, &QPushButton::clicked, this, &LoginRegisterForm::exit);
 
     transparent_transition_interface2 = new Transparent_transition_interface(
         "Welcome Back!", "Already have an account?", "Login", this);
@@ -335,13 +400,19 @@ void LoginRegisterForm::initUi() {
     connect(transparent_transition_interface2->button, &Hollow_button::page_changed, this,
             &LoginRegisterForm::execute_animation);
 
+    connect(login_form, &Login_form::loginSuccess, this, &QDialog::accept);
+
+    connect(login_form, &Login_form::exit, this, &LoginRegisterForm::exit);
+    connect(registration_form, &Registration_form::exit, this, &LoginRegisterForm::exit);
 }
 
-int LoginRegisterForm::animation_duration() const {
+int LoginRegisterForm::animation_duration() const
+{
     return m_animation_duration;
 }
 
-void LoginRegisterForm::setAnimation_duration(const int& newAnimation_duration) {
+void LoginRegisterForm::setAnimation_duration(const int& newAnimation_duration)
+{
     m_animation_duration = newAnimation_duration;
 }
 
