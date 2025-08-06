@@ -16,11 +16,13 @@
  *
  *  该类通过内部结构体 Code 定义各种操作结果码及其描述，支持转换为 JSON 格式。
  */
-class SResultCode {
+class SResultCode
+{
     /** @struct Code
      *  @brief 存储单个结果码的信息
      */
-    struct Code {
+    struct Code
+    {
         /** @brief 结果码值
          */
         int code;
@@ -42,7 +44,9 @@ class SResultCode {
          *  @param message 结果码的描述信息
          */
         Code(int code, const char* codeStr, const char* message)
-            : code(code), codeStr(codeStr), message(message) {}
+            : code(code), codeStr(codeStr), message(message)
+        {
+        }
 
         /** @brief 转换为 JSON 格式
          *
@@ -50,7 +54,8 @@ class SResultCode {
          *
          *  @return JSON 格式的字节数组
          */
-        QByteArray toJson() const {
+        QByteArray toJson() const
+        {
             QJsonObject jobj;
             jobj.insert("code", code);
             jobj.insert("message", message);
@@ -63,7 +68,8 @@ class SResultCode {
          *
          *  @return 结果码的 QJsonValue 表示
          */
-        operator QJsonValue() const {
+        operator QJsonValue() const
+        {
             return code;
         }
     };
@@ -128,21 +134,26 @@ public:
      */
     CODE(UserAccountExists, 3002, "账号已存在，换一个重试");
 
+    /**
+     * @brief 邮箱已存在
+     */
+    CODE(EmailAlreadyExists, 3003, "邮箱已存在，换一个重试");
+
     /** @brief 未认证用户
      */
-    CODE(UserUnauthorized, 3003, "未认证的用户，请先注册登录~");
+    CODE(UserUnauthorized, 3004, "未认证的用户，请先注册登录~");
 
     /** @brief 认证格式错误
      */
-    CODE(UserAuthFormatError, 3004, "认证格式错误，仅支持Bearer方法认证");
+    CODE(UserAuthFormatError, 3005, "认证格式错误，仅支持Bearer方法认证");
 
     /** @brief Token 无效
      */
-    CODE(UserAuthTokenInvalid, 3005, "token 无效~");
+    CODE(UserAuthTokenInvalid, 3006, "token 无效~");
 
     /** @brief Token 已过期
      */
-    CODE(UserAuthTokenExpired, 3006, "token 已过期，请重新登录~");
+    CODE(UserAuthTokenExpired, 3007, "token 已过期，请重新登录~");
 
 #undef CODE
 
@@ -154,7 +165,8 @@ public:
  *
  *  该类提供静态方法，用于生成基于 SResultCode 的 JSON 格式成功或失败结果。
  */
-class SResult {
+class SResult
+{
 public:
     /** @brief 生成成功结果
      *
@@ -162,7 +174,8 @@ public:
      *
      *  @return JSON 格式的成功结果
      */
-    static QByteArray success() {
+    static QByteArray success()
+    {
         return SResultCode::Success.toJson();
     }
 
@@ -173,7 +186,8 @@ public:
      *  @param code 结果码
      *  @return JSON 格式的成功结果
      */
-    static QByteArray success(const SResultCode::Code& code) {
+    static QByteArray success(const SResultCode::Code& code)
+    {
         return code.toJson();
     }
 
@@ -184,7 +198,8 @@ public:
      *  @param data 附加的数据
      *  @return JSON 格式的成功结果
      */
-    static QByteArray success(const QJsonObject& data) {
+    static QByteArray success(const QJsonObject& data)
+    {
         QJsonObject obj;
         obj.insert("code", SResultCode::Success);
         obj.insert("message", SResultCode::Success.message);
@@ -199,7 +214,8 @@ public:
      *  @param code 结果码
      *  @return JSON 格式的失败结果
      */
-    static QByteArray failure(const SResultCode::Code& code) {
+    static QByteArray failure(const SResultCode::Code& code)
+    {
         return code.toJson();
     }
 
@@ -211,7 +227,8 @@ public:
      *  @param message 自定义消息
      *  @return JSON 格式的失败结果
      */
-    static QByteArray failure(const SResultCode::Code& code, const QString& message) {
+    static QByteArray failure(const SResultCode::Code& code, const QString& message)
+    {
         QJsonObject obj;
         obj.insert("code", code.code);
         obj.insert("message", message);

@@ -8,9 +8,9 @@ file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 file(GLOB_RECURSE SRC_UI ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 
 set(SOURCE_FILE
-    ${SRC_CPP}
-    ${SRC_H}
-    ${SRC_UI}
+        ${SRC_CPP}
+        ${SRC_H}
+        ${SRC_UI}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
@@ -26,4 +26,4 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/Downloading)
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Multimedia MyHttpClient MyMaskWidget
-        MusicItemWidget MySearchLineEdit MyScrollArea MySlidingStackedWidget MyAsyncThread)
+        MusicItemWidget MySearchLineEdit MyScrollArea MySlidingStackedWidget MyAsyncThread SApp)

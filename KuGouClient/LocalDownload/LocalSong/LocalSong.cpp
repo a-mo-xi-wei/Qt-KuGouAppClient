@@ -14,6 +14,7 @@
 #include "ElaToolTip.h"
 #include "MySearchLineEdit.h"
 #include "RefreshMask.h"
+#include "SApp.h"
 
 #include <QFileDialog>
 #include <QJsonArray>
@@ -404,7 +405,9 @@ void LocalSong::getMetaData()
                 };
                 QJsonDocument doc(postJson);
                 QString jsonString = doc.toJson(QJsonDocument::Compact); ///< 转换为 JSON 字符串
-                m_libHttp.UrlRequestPost(QStringLiteral("http://127.0.0.1:8080/api/addSong"), jsonString); ///< 发送添加请求
+                m_libHttp.UrlRequestPost(
+                    QStringLiteral("http://127.0.0.1:8080/api/addSong"), jsonString,
+                    sApp->userData("user/token").toString()); ///< 发送添加请求
             }
             else
             {
@@ -617,7 +620,8 @@ void LocalSong::fetchAndSyncServerSongList()
     const auto future = Async::runAsync(QThreadPool::globalInstance(), [this]
     {
         //qDebug()<<"异步发送歌曲列表请求";
-        return m_libHttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "");
+        return m_libHttp.UrlRequestGet("http://127.0.0.1:8080/api/localSongList", "",
+                                       sApp->userData("user/token").toString());
     });
     Async::onResultReady(future, this, [this](const QString & reply)
     {
@@ -1194,6 +1198,7 @@ void LocalSong::onItemDeleteSong(const int& idx)
         return m_libHttp.UrlRequestPost(
             QString("http://127.0.0.1:8080/api/delSong"),
             QJsonDocument(delReq).toJson(QJsonDocument::Compact),
+            sApp->userData("user/token").toString(),
             1000
         );
     }); ///< 异步删除

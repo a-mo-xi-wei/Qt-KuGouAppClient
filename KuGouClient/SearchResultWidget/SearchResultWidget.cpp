@@ -9,6 +9,7 @@
 #include "MyScrollArea.h"
 #include "Async.h"
 #include "MusicItemWidget.h"
+#include "SApp.h"
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -26,44 +27,55 @@ SearchResultWidget::SearchResultWidget(QWidget *parent)
 {
     setObjectName("SearchResultWidget"); ///< 设置对象名称，便于样式管理
     QFile file(GET_CURRENT_DIR + QStringLiteral("/result.css"));   ///< 加载样式表
-    if (file.open(QIODevice::ReadOnly)) {
+    if (file.open(QIODevice::ReadOnly))
+    {
         this->setStyleSheet(file.readAll());                       ///< 应用样式表
-    } else {
+    }
+    else
+    {
         // @note 未使用，保留用于调试
         qDebug() << "样式表打开失败QAQ";
         return;
     }
     initUi();
-    connect(this->m_refreshMask.get(), &RefreshMask::loadingFinished, [this](const QString& message) {
-        if (message == "响应失败") {
+    connect(this->m_refreshMask.get(), &RefreshMask::loadingFinished, [this](const QString & message)
+    {
+        if (message == "响应失败")
+        {
             ElaMessageBar::error(ElaMessageBarType::BottomRight, "Error",
-                             QString("加载失败"),
-                             1000, this->window());
+                                 QString("加载失败"),
+                                 1000, this->window());
         }
-        else if (message == "加载完成") {
+        else if (message == "加载完成")
+        {
             ElaMessageBar::success(ElaMessageBarType::BottomRight, "Success",
-                             QString("成功加载%1首歌曲").arg(m_searchMusicItemVector.size()),
-                             1000, this->window()); ///< 显示提示信息
+                                   QString("成功加载%1首歌曲").arg(m_searchMusicItemVector.size()),
+                                   1000, this->window()); ///< 显示提示信息
         }
     });
 }
 
-void SearchResultWidget::handleSuggestion(const QString &suggestText) {
-    auto topLab = this->findChild<QLabel *>("searchResultTopLabel");
-    if (topLab) {
-        if (!suggestText.trimmed().isEmpty()){
+void SearchResultWidget::handleSuggestion(const QString &suggestText)
+{
+    auto topLab = this->findChild<QLabel*>("searchResultTopLabel");
+    if (topLab)
+    {
+        if (!suggestText.trimmed().isEmpty())
+        {
             QString htmlText = QString(
-                       R"(<span style="color:gray;">搜索到 </span><span style="color:red;">%1</span><span style="color:gray;"> 的相关歌曲</span>)")
-                   .arg(suggestText);
+                                   R"(<span style="color:gray;">搜索到 </span><span style="color:red;">%1</span><span style="color:gray;"> 的相关歌曲</span>)")
+                               .arg(suggestText);
             topLab->setText(htmlText);
         }
-        else {
+        else
+        {
             const auto htmlText = QString(R"(<span style="color:gray;">搜索到今日推荐歌曲</span>)");
             topLab->setText(htmlText);
         }
     }
     ///< 清空容器
-    for (MusicItemWidget *item: m_searchMusicItemVector) {
+    for (MusicItemWidget *item : m_searchMusicItemVector)
+    {
         item->setParent(nullptr); // 可选：脱离原父对象
         delete item; // 释放堆内存
     }
@@ -71,27 +83,32 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
     this->m_refreshMask->keepLoading();
 
     // 启动异步任务从服务端获取搜索结果
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this, suggestText] {
+    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this, suggestText]
+    {
         return m_libHttp.UrlRequestGet(
             QString("http://127.0.0.1:8080/api/searchSong"),
             "keyword=" + QUrl::toPercentEncoding(suggestText),
+            sApp->userData("user/token").toString(),
             3000 // 3秒超时
         );
     });
 
     // 结果回调（在主线程执行）
-    Async::onResultReady(future, this, [this](const QString &responseData) {
+    Async::onResultReady(future, this, [this](const QString & responseData)
+    {
         QJsonParseError err;
         QJsonDocument doc = QJsonDocument::fromJson(responseData.toUtf8(), &err);
 
-        if (err.error != QJsonParseError::NoError || !doc.isObject()) {
+        if (err.error != QJsonParseError::NoError || !doc.isObject())
+        {
             qWarning() << "搜索响应解析失败:" << err.errorString();
             this->m_refreshMask->hideLoading("响应失败");
             return;
         }
 
         QJsonObject obj = doc.object();
-        if (obj["status"].toString() != "success") {
+        if (obj["status"].toString() != "success")
+        {
             qWarning() << "搜索失败:" << obj["message"].toString();
             return;
         }
@@ -99,7 +116,8 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
         QList<SongInfor> songs;
         QJsonArray songsArray = obj["data"].toArray();
 
-        for (const auto &item : songsArray) {
+        for (const auto &item : songsArray)
+        {
             QJsonObject songObj = item.toObject();
             SongInfor song;
 
@@ -119,19 +137,22 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
 
         // 更新UI（与原始代码相同）
         auto scrollWidget = this->findChild<QWidget*>("SearchResultWidgetScrollWidget");
-        if (!scrollWidget) {
+        if (!scrollWidget)
+        {
             qWarning() << "未找到滚动窗口部件";
             return;
         }
 
         auto layout = qobject_cast<QVBoxLayout*>(scrollWidget->layout());
-        if (!layout) {
+        if (!layout)
+        {
             qWarning() << "滚动窗口布局无效";
             return;
         }
 
         // 清空现有结果
-        for (MusicItemWidget *item : m_searchMusicItemVector) {
+        for (MusicItemWidget *item : m_searchMusicItemVector)
+        {
             item->setParent(nullptr);
             delete item;
         }
@@ -141,8 +162,10 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
         int currentIndex = 0;
         QTimer* addTimer = new QTimer(this);
 
-        connect(addTimer, &QTimer::timeout, this, [=]() mutable {
-            if (currentIndex >= songs.size()) {
+        connect(addTimer, &QTimer::timeout, this, [ = ]() mutable
+        {
+            if (currentIndex >= songs.size())
+            {
                 addTimer->deleteLater();
                 this->m_refreshMask->hideLoading("加载完成");
                 return;
@@ -160,12 +183,14 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
             m_searchMusicItemVector.append(item);
 
             // 异步加载封面
-            if (!song.coverUrl.isEmpty()) {
+            if (!song.coverUrl.isEmpty())
+            {
                 loadCoverAsync(item, song.coverUrl);
             }
             // 异步加载歌曲网络路径
-            if (!song.hash.isEmpty()) {
-                loadSongUrlAsync(item,song.hash);
+            if (!song.hash.isEmpty())
+            {
+                loadSongUrlAsync(item, song.hash);
             }
             currentIndex++;
         });
@@ -174,12 +199,14 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText) {
     });
 }
 
-void SearchResultWidget::playNextMusic() {
+void SearchResultWidget::playNextMusic()
+{
     if (m_searchMusicItemVector.isEmpty())
         return;
 
     int nextIndex = 0;
-    if (m_playingItem) {
+    if (m_playingItem)
+    {
         int currentIndex = m_searchMusicItemVector.indexOf(m_playingItem);
         nextIndex = (currentIndex + 1) % m_searchMusicItemVector.size();
     }
@@ -187,22 +214,27 @@ void SearchResultWidget::playNextMusic() {
     emit m_searchMusicItemVector[nextIndex]->play();  // 直接发送 play 信号
 }
 
-void SearchResultWidget::playPreviousMusic() {
+void SearchResultWidget::playPreviousMusic()
+{
     if (m_searchMusicItemVector.isEmpty())
         return;
 
     int prevIndex = 0;
-    if (m_playingItem) {
+    if (m_playingItem)
+    {
         int currentIndex = m_searchMusicItemVector.indexOf(m_playingItem);
         prevIndex = (currentIndex - 1 + m_searchMusicItemVector.size()) % m_searchMusicItemVector.size();
-    } else {
+    }
+    else
+    {
         prevIndex = m_searchMusicItemVector.size() - 1;
     }
 
     emit m_searchMusicItemVector[prevIndex]->play();  // 同样直接发送
 }
 
-void SearchResultWidget::initUi() {
+void SearchResultWidget::initUi()
+{
     // 创建顶部水平布局，显示搜索结果标题
     auto hlay1 = new QHBoxLayout; ///< 搜索结果顶部水平布局
     {
@@ -262,25 +294,29 @@ void SearchResultWidget::initUi() {
         hlay2->addStretch(); ///< 添加弹性空间，推右对齐
 
         // 连接按钮点击信号，显示功能未实现的提示
-        connect(playAllBtn, &QToolButton::clicked, [this, playAllBtn] {
+        connect(playAllBtn, &QToolButton::clicked, [this, playAllBtn]
+        {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                             QString("%1 功能暂未实现 敬请期待").arg(playAllBtn->text()),
-                             1000, this->window()); ///< 显示提示信息
+                                       QString("%1 功能暂未实现 敬请期待").arg(playAllBtn->text()),
+                                       1000, this->window()); ///< 显示提示信息
         });
-        connect(highListenBtn, &QToolButton::clicked, [this, highListenBtn] {
+        connect(highListenBtn, &QToolButton::clicked, [this, highListenBtn]
+        {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                             QString("%1 功能暂未实现 敬请期待").arg(highListenBtn->text()),
-                             1000, this->window()); ///< 显示提示信息
+                                       QString("%1 功能暂未实现 敬请期待").arg(highListenBtn->text()),
+                                       1000, this->window()); ///< 显示提示信息
         });
-        connect(downloadAllBtn, &QToolButton::clicked, [this, downloadAllBtn] {
+        connect(downloadAllBtn, &QToolButton::clicked, [this, downloadAllBtn]
+        {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                             QString("%1 功能暂未实现 敬请期待").arg(downloadAllBtn->text()),
-                             1000, this->window()); ///< 显示提示信息
+                                       QString("%1 功能暂未实现 敬请期待").arg(downloadAllBtn->text()),
+                                       1000, this->window()); ///< 显示提示信息
         });
-        connect(batchOperationBtn, &QToolButton::clicked, [this, batchOperationBtn] {
+        connect(batchOperationBtn, &QToolButton::clicked, [this, batchOperationBtn]
+        {
             ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                             QString("%1 功能暂未实现 敬请期待").arg(batchOperationBtn->text()),
-                             1000, this->window()); ///< 显示提示信息
+                                       QString("%1 功能暂未实现 敬请期待").arg(batchOperationBtn->text()),
+                                       1000, this->window()); ///< 显示提示信息
         });
     }
 
@@ -316,11 +352,13 @@ void SearchResultWidget::initUi() {
  * @param item 音乐项
  * @param imageUrl 封面图片的网络路径
  */
-void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl) {
+void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &imageUrl)
+{
     auto watcher = new QFutureWatcher<QPixmap>(this);
-    connect(watcher, &QFutureWatcher<QPixmap>::finished, [this,item, watcher] {
+    connect(watcher, &QFutureWatcher<QPixmap>::finished, [this, item, watcher]
+    {
         item->setCover(watcher->result());
-        connect(item, &MusicItemWidget::play, [this,item] {
+        connect(item, &MusicItemWidget::play, [this, item] {
             if (m_playingItem)m_playingItem->setPlayState(false);
             m_playingItem = item;
             m_playingItem->setPlayState(true);
@@ -329,21 +367,24 @@ void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &im
         watcher->deleteLater();
     });
     //qDebug()<<"客户端发出图片请求："<<imageUrl;
-    watcher->setFuture(Async::runAsync([this,imageUrl] {
+    watcher->setFuture(Async::runAsync([this, imageUrl]
+    {
         // 通过服务器API获取图片数据
 
         const QByteArray response = m_libHttp.UrlRequestGetRaw("http://127.0.0.1:8080/api/getPicture",
             "url=" + QUrl::toPercentEncoding(imageUrl), 3000);
 
         // 检查响应是否有效
-        if (response.isEmpty()) {
+        if (response.isEmpty())
+        {
             qWarning() << "封面图片请求失败: 空响应";
             return QPixmap();
         }
 
         // 尝试直接加载为图片
         QPixmap cover;
-        if (cover.loadFromData(response)) {
+        if (cover.loadFromData(response))
+        {
             //qDebug()<<"成功加载图片："<<cover;
             return cover;
         }
@@ -352,12 +393,15 @@ void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &im
         QJsonParseError err;
         QJsonDocument doc = QJsonDocument::fromJson(response, &err);
 
-        if (err.error == QJsonParseError::NoError && doc.isObject()) {
+        if (err.error == QJsonParseError::NoError && doc.isObject())
+        {
             QJsonObject obj = doc.object();
             qWarning() << "封面图片请求失败:"
-                      << obj["message"].toString()
-                      << "状态码:" << obj["code"].toInt();
-        } else {
+                       << obj["message"].toString()
+                       << "状态码:" << obj["code"].toInt();
+        }
+        else
+        {
             qWarning() << "封面图片请求失败: 无法解析响应";
         }
 
@@ -370,14 +414,17 @@ void SearchResultWidget::loadCoverAsync(MusicItemWidget *item, const QString &im
  * @param item 音乐项控件，用于设置播放链接
  * @param songHash 歌曲的唯一标识
  */
-void SearchResultWidget::loadSongUrlAsync(MusicItemWidget *item, const QString &songHash) {
+void SearchResultWidget::loadSongUrlAsync(MusicItemWidget *item, const QString &songHash)
+{
     auto watcher = new QFutureWatcher<QString>(this);
-    connect(watcher, &QFutureWatcher<QString>::finished, [this,item, watcher] {
+    connect(watcher, &QFutureWatcher<QString>::finished, [this, item, watcher]
+    {
         item->setNetUrl(watcher->result());
         //qDebug()<<"成功设置网络路径 :"<<watcher->result();
         watcher->deleteLater();
     });
-    watcher->setFuture(Async::runAsync([this, songHash] {
+    watcher->setFuture(Async::runAsync([this, songHash]
+    {
         // 向服务端请求歌曲播放链接
         const QString response = m_libHttp.UrlRequestGet(
             "http://127.0.0.1:8080/api/getSongNetUrl",
@@ -385,20 +432,23 @@ void SearchResultWidget::loadSongUrlAsync(MusicItemWidget *item, const QString &
             3000
         );
 
-        if (response.isEmpty()) {
+        if (response.isEmpty())
+        {
             qWarning() << "播放链接请求失败: 空响应";
             return QString();
         }
 
         QJsonParseError err;
         QJsonDocument doc = QJsonDocument::fromJson(response.toUtf8(), &err);
-        if (err.error != QJsonParseError::NoError || !doc.isObject()) {
+        if (err.error != QJsonParseError::NoError || !doc.isObject())
+        {
             qWarning() << "播放链接响应无法解析: " << err.errorString();
             return QString();
         }
 
         QJsonObject obj = doc.object();
-        if (obj["code"].toInt() != 0) {
+        if (obj["code"].toInt() != 0)
+        {
             qWarning() << "播放链接请求失败:" << obj["message"].toString();
             return QString();
         }
@@ -408,12 +458,14 @@ void SearchResultWidget::loadSongUrlAsync(MusicItemWidget *item, const QString &
     }));
 }
 
-void SearchResultWidget::resizeEvent(QResizeEvent *event) {
+void SearchResultWidget::resizeEvent(QResizeEvent *event)
+{
     QWidget::resizeEvent(event);
     this->m_refreshMask->setGeometry(rect()); ///< 设置遮罩几何形状
 }
 
-void SearchResultWidget::showEvent(QShowEvent *event) {
+void SearchResultWidget::showEvent(QShowEvent *event)
+{
     QWidget::showEvent(event);
     this->m_refreshMask->setGeometry(rect()); ///< 设置遮罩几何形状
 }
