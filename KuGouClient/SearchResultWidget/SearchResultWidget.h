@@ -10,17 +10,21 @@
 
 class MusicItemWidget;
 
-class SearchResultWidget : public QWidget {
+class SearchResultWidget : public QWidget
+{
     Q_OBJECT
 
 public:
-    explicit SearchResultWidget(QWidget *parent = nullptr);
+    explicit SearchResultWidget(QWidget* parent = nullptr);
 
-    void handleSuggestion(const QString &suggestText);
+    void handleSuggestion(const QString& suggestText);
 
     void playNextMusic();
 
     void playPreviousMusic();
+
+public slots:
+    void onAudioFinished();
 
 private:
     void initUi();
@@ -30,28 +34,33 @@ private:
      * @param item 音乐项
      * @param imageUrl 封面图片的网络路径
      */
-    void loadCoverAsync(MusicItemWidget *item, const QString &imageUrl);
+    void loadCoverAsync(MusicItemWidget* item, const QString& imageUrl);
 
     /**
      * @brief 异步加载搜索结果里的音乐路径
      * @param item 音乐项
      * @param songHash 歌曲的网络哈希
      */
-    void loadSongUrlAsync(MusicItemWidget *item, const QString &songHash);
+    void loadSongUrlAsync(MusicItemWidget* item, const QString& songHash);
+
+    void setPlayMusic(MusicItemWidget* item);
 
 protected:
-    void resizeEvent(QResizeEvent *event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
-    void showEvent(QShowEvent *event) override;
+    void showEvent(QShowEvent* event) override;
 
 signals:
     void playMusic(MusicItemWidget* item);
 
+    void cancelLoopPlay();
+
 private:
-    QVector<MusicItemWidget *> m_searchMusicItemVector; ///< 音乐项容器
-    std::unique_ptr<RefreshMask> m_refreshMask;         ///< 刷新遮罩
-    CLibhttp m_libHttp;                                 ///< HTTP 请求库
-    MusicItemWidget *m_playingItem = nullptr;           ///< 正在播放的音乐项
+    QVector<MusicItemWidget*> m_searchMusicItemVector; ///< 音乐项容器
+    std::unique_ptr<RefreshMask> m_refreshMask; ///< 刷新遮罩
+    CLibhttp m_libHttp; ///< HTTP 请求库
+    MusicItemWidget* m_playingItem = nullptr; ///< 正在播放的音乐项
+    bool m_isOrderPlay = false; ///< 是否顺序播放
 };
 
 
