@@ -30,7 +30,7 @@ TextBubble::TextBubble(const ChatRole role, const QString &text, QWidget *parent
     m_pTextEdit->installEventFilter(this);                  ///< 安装事件过滤器
     m_pTextEdit->setStyleSheet("QTextEdit{background:transparent;border:none}"); ///< 设置透明样式
     auto font = QFont("TaiwanPearl");                    ///< 设置字体
-    font.setPointSize(14);                                  ///< 设置字号
+    font.setPointSize(12);                                  ///< 设置字号
     font.setWeight(QFont::Medium);                          ///< 设置字重
     m_pTextEdit->setFont(font);
     setPlainText(text);                                     ///< 设置初始文本

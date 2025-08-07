@@ -104,7 +104,7 @@ ElaExitDialog::ElaExitDialog(QWidget* parent)
     title->setTextStyle(ElaTextType::Title);
     ElaText* subTitle = new ElaText("确定要退出程序吗", this);
     font = QFont("TaiwanPearl"); //需要通过KuGouClient::initFontRes()打印得知真实字体名
-    font.setPixelSize(15);
+    font.setPixelSize(14);
     subTitle->setFont(font);
     centralVLayout->addWidget(title);
     centralVLayout->addSpacing(2);

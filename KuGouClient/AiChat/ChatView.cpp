@@ -40,7 +40,7 @@ ChatView::ChatView(QWidget *parent)
         hlay->addWidget(helloTextLab);              ///< 添加欢迎文本
         auto funcTextLab = new QLabel(this);           ///< 功能描述标签
         funcTextLab->setText("我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~"); ///< 设置功能描述
-        funcTextLab->setStyleSheet("color: #404040;font-family: 'TaiwanPearl';font-size: 12px;"); ///< 设置功能描述样式
+        funcTextLab->setStyleSheet("color: #404040;font-family: 'TaiwanPearl';font-size: 13px;"); ///< 设置功能描述样式
         auto vlay = new QVBoxLayout(this->m_centerInitWidget); ///< 创建垂直布局
         vlay->setAlignment(Qt::AlignCenter);             ///< 设置居中对齐
         vlay->setSpacing(20);                            ///< 设置间距
