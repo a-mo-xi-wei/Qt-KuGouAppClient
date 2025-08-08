@@ -25,8 +25,8 @@ class ElaLineEdit;
 class ELA_EXPORT ElaSuggestBox : public QWidget
 {
     Q_OBJECT
-    Q_Q_CREATE(ElaSuggestBox)                                ///< 声明私有类指针
-    Q_PROPERTY_CREATE_Q_H(int, BorderRadius)                 ///< 边框圆角半径
+    Q_Q_CREATE(ElaSuggestBox)                                   ///< 声明私有类指针
+    Q_PROPERTY_CREATE_Q_H(int, BorderRadius)                    ///< 边框圆角半径
     Q_PROPERTY_CREATE_Q_H(Qt::CaseSensitivity, CaseSensitivity) ///< 搜索大小写敏感性
 
 public:
@@ -62,7 +62,8 @@ public:
      * @param suggestData 建议数据
      * @return 建议项唯一键
      */
-    QString addSuggestion(ElaIconType::IconName icon, const QString &suggestText, const QVariantMap &suggestData = {});
+    QString addSuggestion(
+        ElaIconType::IconName icon, const QString &suggestText, const QVariantMap &suggestData = {});
 
     /**
      * @brief 移除建议项
@@ -86,7 +87,13 @@ public:
      * @param lineEdit 编辑框指针
      * @note 替换默认编辑框
      */
-    void setLineEdit(ElaLineEdit* lineEdit);
+    void setLineEdit(ElaLineEdit *lineEdit);
+
+    /**
+     * @brief 设置搜索图标是否启用
+     * @param enable 是否启用
+     */
+    void setSearchEnable(bool enable);
 
     /**
      * @brief 移除默认尾部动作
@@ -115,9 +122,10 @@ Q_SIGNALS:
      * @param suggestText 建议文本
      * @param suggestData 建议数据
      */
-    Q_SIGNAL void suggestionClicked(const QString& suggestText, const QVariantMap& suggestData);
+    Q_SIGNAL void suggestionClicked(const QString &suggestText, const QVariantMap &suggestData);
 
-    Q_SIGNAL void searchTextReturnPressed(const QString &searchText, const QVariantMap &suggestData = {});
+    Q_SIGNAL void searchTextReturnPressed(
+        const QString &searchText, const QVariantMap &suggestData = {});
 };
 
 #endif // ELASUGGESTBOX_H

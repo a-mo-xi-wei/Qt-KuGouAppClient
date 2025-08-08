@@ -55,6 +55,8 @@ signals:
 
     void cancelLoopPlay();
 
+    void searchEnable(bool enable);
+
 private:
     QVector<MusicItemWidget*> m_searchMusicItemVector; ///< 音乐项容器
     std::unique_ptr<RefreshMask> m_refreshMask; ///< 刷新遮罩

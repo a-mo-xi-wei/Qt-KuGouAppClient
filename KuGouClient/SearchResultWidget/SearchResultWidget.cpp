@@ -54,6 +54,7 @@ SearchResultWidget::SearchResultWidget(QWidget *parent)
 
 void SearchResultWidget::handleSuggestion(const QString &suggestText)
 {
+    emit searchEnable(false);
     auto topLab = this->findChild<QLabel *>("searchResultTopLabel");
     if (topLab) {
         if (!suggestText.trimmed().isEmpty()) {
@@ -157,6 +158,8 @@ void SearchResultWidget::handleSuggestion(const QString &suggestText)
             if (currentIndex >= songs.size()) {
                 addTimer->deleteLater();
                 this->m_refreshMask->hideLoading("加载完成");
+                ///< 此处需要发送信号，让标题栏的搜索框的搜索图标 enable
+                emit searchEnable(true);
                 return;
             }
 

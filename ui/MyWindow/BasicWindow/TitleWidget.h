@@ -9,9 +9,9 @@
 #ifndef TITLEWIDGET_H
 #define TITLEWIDGET_H
 
-#include <QStack>
-#include "TitleOptionMenu/TitleOptionMenu.h"
 #include "ElaExitDialog.h"
+#include "TitleOptionMenu/TitleOptionMenu.h"
+#include <QStack>
 
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
 #if defined(MYWINDOW_LIBRARY)
@@ -25,7 +25,7 @@ class RippleButton;
 
 namespace Ui
 {
-    class TitleWidget;
+class TitleWidget;
 }
 
 /**
@@ -36,7 +36,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
 {
     Q_OBJECT
 
-public:
+  public:
     /**
      * @brief 界面类型枚举
      */
@@ -65,7 +65,7 @@ public:
      * @brief 构造函数，初始化标题栏控件
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit TitleWidget(QWidget* parent = nullptr);
+    explicit TitleWidget(QWidget *parent = nullptr);
 
     /**
      * @brief 析构函数，释放资源
@@ -76,11 +76,11 @@ public:
      * @brief 设置是否允许界面切换
      * @param flag 是否允许切换
      */
-    void setEnableChange(const bool& flag);
+    void setEnableChange(const bool &flag);
 
-    void setEnableTitleButton(const bool& flag);
+    void setEnableTitleButton(const bool &flag);
 
-private:
+  private:
     /**
      * @brief 初始化界面元素
      */
@@ -93,36 +93,36 @@ private:
      * @param radius 圆角半径
      * @return 圆角图片
      */
-    static QPixmap getRoundedPixmap(const QPixmap& src, QSize size, int radius);
+    static QPixmap getRoundedPixmap(const QPixmap &src, QSize size, int radius);
 
     /**
      * @brief 设置标题索引，控制界面指示器显示
      * @param index 标题索引（1-4）
      */
-    void setTitleIndex(const int& index) const;
+    void setTitleIndex(const int &index) const;
 
-protected:
+  protected:
     /**
      * @brief 重写鼠标双击事件，触发最大化
      * @param event 鼠标事件
      */
-    void mouseDoubleClickEvent(QMouseEvent* event) override;
+    void mouseDoubleClickEvent(QMouseEvent *event) override;
 
     /**
      * @brief 重写鼠标按下事件，处理右键菜单
      * @param event 鼠标事件
      */
-    void mousePressEvent(QMouseEvent* event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
-    void mouseReleaseEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
-    void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
     /**
      * @brief 重写绘制事件，绘制带圆角的线性渐变阴影
      * @param ev 绘制事件
      */
-    void paintEvent(QPaintEvent* ev) override;
+    void paintEvent(QPaintEvent *ev) override;
 
     /**
      * @brief 重写事件过滤器，处理鼠标返回/前进键和头像动画
@@ -130,15 +130,15 @@ protected:
      * @param event 事件对象
      * @return 是否处理事件
      */
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
     /**
      * @brief 重写窗口大小改变事件，更新界面元素，初衷：发送信号给ElaSuggestBox，防止下拉框位置不改变
      * @param event 事件对象
      */
-    void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
-private slots:
+  private slots:
     /**
      * @brief 返回按钮点击事件，触发界面回退
      */
@@ -199,7 +199,7 @@ private slots:
      */
     void on_max_toolButton_clicked();
 
-public slots:
+  public slots:
     /**
      * @brief 关闭按钮点击事件，显示退出对话框
      */
@@ -275,19 +275,25 @@ public slots:
      */
     void onLeftMenu_allMusic_clicked();
 
-signals:
+    /**
+     * @brief 设置搜索图标是否启用
+     * @param flag 设置搜索图标是否启用
+     */
+    void onSetSearchEnable(bool flag);
+
+  signals:
     /**
      * @brief 界面切换信号，通知界面索引和是否滑动
      * @param index 目标界面索引
      * @param slide 是否使用滑动动画
      */
-    void currentStackChange(const int& index);
+    void currentStackChange(const int &index);
 
     /**
      * @brief 左侧菜单显示信号，控制菜单显示状态
      * @param flag 是否显示菜单
      */
-    void leftMenuShow(const bool& flag);
+    void leftMenuShow(const bool &flag);
 
     /**
      * @brief 双击信号，当标题栏被双击时触发
@@ -312,33 +318,33 @@ signals:
     /**
      * @brief 搜索信号，通知搜索界面显示
      */
-    void suggestionClicked(const QString& suggestText, const QVariantMap& suggestData);
+    void suggestionClicked(const QString &suggestText, const QVariantMap &suggestData);
 
     /**
      * @brief 输入框回车
      */
-    void searchTextReturnPressed(const QString& searchText, const QVariantMap& suggestData = {});
+    void searchTextReturnPressed(const QString &searchText, const QVariantMap &suggestData = {});
 
     /**
      * @ 退出登录
      */
     void logOut();
 
-private:
-    Ui::TitleWidget* ui;                          ///< UI 界面对象
+  private:
+    Ui::TitleWidget *ui;                          ///< UI 界面对象
     QStack<StackType> m_backTypeStack;            ///< 后退导航栈
     QStack<StackType> m_frontTypeStack;           ///< 前进导航栈
     StackType m_lastType;                         ///< 上一次界面类型
     StackType m_curType;                          ///< 当前界面类型
     std::unique_ptr<ElaExitDialog> m_closeDialog; ///< 退出对话框
     QPixmap m_originalCover;                      ///< 原始头像图片
-    TitleOptionMenu* m_titleOptMenu{};            ///< 标题选项菜单
+    TitleOptionMenu *m_titleOptMenu{};            ///< 标题选项菜单
     QPoint m_menuPosition;                        ///< 菜单显示位置
     bool m_enableChange = true;                   ///< 是否允许界面切换
 
     // 窗口缩放相关
     bool m_isTransForming = false; ///< 是否正在执行缩放动画
-    bool m_isPress        = false; ///< 是否按下
+    bool m_isPress = false;        ///< 是否按下
     QPoint m_pressPos;             ///< 鼠标按下位置
     bool m_isMaxScreen = false;    ///< 是否最大化
     QString m_maxBtnStyle;         ///< 最大化按钮样式
