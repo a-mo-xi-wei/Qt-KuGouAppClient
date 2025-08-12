@@ -36,7 +36,8 @@
  * @param parent 父控件指针，默认为 nullptr
  */
 TitleWidget::TitleWidget(QWidget *parent)
-    : QWidget(parent), ui(new Ui::TitleWidget), m_closeDialog(std::make_unique<ElaExitDialog>(this->window()))
+    : QWidget(parent), ui(new Ui::TitleWidget),
+      m_closeDialog(std::make_unique<ElaExitDialog>(this->window()))
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -46,12 +47,9 @@ TitleWidget::TitleWidget(QWidget *parent)
 
     // 加载样式表
     QFile file(GET_CURRENT_DIR + QStringLiteral("/title.css"));
-    if (file.open(QIODevice::ReadOnly))
-    {
+    if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
-    }
-    else
-    {
+    } else {
         // qDebug() << "样式表打开失败QAQ"; ///< 调试用，记录样式表加载失败
         return;
     }
@@ -110,7 +108,8 @@ void TitleWidget::initUi()
         title_live_pushButton_toolTip->setToolTip(QStringLiteral("直播"));
 
         // title_listen_book_pushButton
-        auto title_listen_book_pushButton_toolTip = new ElaToolTip(ui->title_listen_book_pushButton);
+        auto title_listen_book_pushButton_toolTip = new
+            ElaToolTip(ui->title_listen_book_pushButton);
         title_listen_book_pushButton_toolTip->setToolTip(QStringLiteral("听书"));
 
         // title_search_pushButton
@@ -164,38 +163,54 @@ void TitleWidget::initUi()
     const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption, this);
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
     connect(m_titleOptMenu, &TitleOptionMenu::about, this, [this] { emit showAboutDialog(); });
-    connect(m_titleOptMenu, &TitleOptionMenu::exit, this, &TitleWidget::on_close_toolButton_clicked);
+    connect(m_titleOptMenu,
+            &TitleOptionMenu::exit,
+            this,
+            &TitleWidget::on_close_toolButton_clicked);
     connect(m_titleOptMenu, &TitleOptionMenu::logOut, this, &TitleWidget::logOut);
-    connect(m_titleOptMenu, &TitleOptionMenu::restoreWindow, this, [this] {
-        this->m_isMaxScreen = false;
-        auto parentWidget = qobject_cast<QWidget *>(this->parent());
-        // 动画恢复窗口大小（从当前几何到最小尺寸）
-        m_startGeometry = parentWidget->geometry();
+    connect(m_titleOptMenu,
+            &TitleOptionMenu::restoreWindow,
+            this,
+            [this] {
+                this->m_isMaxScreen = false;
+                auto parentWidget = qobject_cast<QWidget *>(this->parent());
+                // 动画恢复窗口大小（从当前几何到最小尺寸）
+                m_startGeometry = parentWidget->geometry();
 
-        QSize minSize = parentWidget->minimumSize();
-        QScreen *screen =
-            parentWidget->windowHandle() ? parentWidget->windowHandle()->screen() : QGuiApplication::primaryScreen();
-        QRect screenGeometry = screen->availableGeometry(); // 工作区
-        QPoint screenCenter =
-            screenGeometry.topLeft() + QPoint(screenGeometry.width() / 2, screenGeometry.height() / 2);
+                QSize minSize = parentWidget->minimumSize();
+                QScreen *screen =
+                    parentWidget->windowHandle()
+                        ? parentWidget->windowHandle()->screen()
+                        : QGuiApplication::primaryScreen();
+                QRect screenGeometry = screen->availableGeometry(); // 工作区
+                QPoint screenCenter =
+                    screenGeometry.topLeft() + QPoint(screenGeometry.width() / 2,
+                                                      screenGeometry.height() / 2);
 
-        m_endGeometry = QRect(screenCenter.x() - minSize.width() / 2, screenCenter.y() - minSize.height() / 2,
-                              minSize.width(), minSize.height());
+                m_endGeometry = QRect(screenCenter.x() - minSize.width() / 2,
+                                      screenCenter.y() - minSize.height() / 2,
+                                      minSize.width(),
+                                      minSize.height());
 
-        auto animation = new QPropertyAnimation(parentWidget, "geometry");
-        animation->setDuration(500);
-        animation->setStartValue(m_startGeometry);
-        animation->setEndValue(m_endGeometry);
-        animation->setEasingCurve(QEasingCurve::InOutQuad);
+                auto animation = new QPropertyAnimation(parentWidget, "geometry");
+                animation->setDuration(500);
+                animation->setStartValue(m_startGeometry);
+                animation->setEndValue(m_endGeometry);
+                animation->setEasingCurve(QEasingCurve::InOutQuad);
 
-        this->m_isTransForming = true;
-        animation->start(QAbstractAnimation::DeleteWhenStopped);
+                this->m_isTransForming = true;
+                animation->start(QAbstractAnimation::DeleteWhenStopped);
 
-        connect(animation, &QPropertyAnimation::finished, this, [this] {
-            QTimer::singleShot(100, this, [this] { this->m_isTransForming = false; });
-            ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); // 恢复最大化按钮样式
-        });
-    });
+                connect(animation,
+                        &QPropertyAnimation::finished,
+                        this,
+                        [this] {
+                            QTimer::singleShot(100,
+                                               this,
+                                               [this] { this->m_isTransForming = false; });
+                            ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); // 恢复最大化按钮样式
+                        });
+            });
 
     // 设置标题索引指示器
     ui->title_index_label1->setPixmap(
@@ -226,8 +241,13 @@ void TitleWidget::initUi()
     ui->search_song_suggest_box->setLineEdit(searchLineEdit);
     searchLineEdit->setPlaceholderText("搜索歌曲");
 
-    connect(ui->search_song_suggest_box, &ElaSuggestBox::suggestionClicked, this, &TitleWidget::suggestionClicked);
-    connect(ui->search_song_suggest_box, &ElaSuggestBox::searchTextReturnPressed, this,
+    connect(ui->search_song_suggest_box,
+            &ElaSuggestBox::suggestionClicked,
+            this,
+            &TitleWidget::suggestionClicked);
+    connect(ui->search_song_suggest_box,
+            &ElaSuggestBox::searchTextReturnPressed,
+            this,
             &TitleWidget::searchTextReturnPressed);
     ///< qDebug()<<"当前样式："<<searchLineEdit->styleSheet();
 
@@ -235,7 +255,8 @@ void TitleWidget::initUi()
     // ui->listen_toolButton->setIcon(QIcon(":/Res/titlebar/listen-music-black.svg"));
 
     QPixmap roundedPix =
-        getRoundedPixmap(QPixmap(QStringLiteral(":/Res/window/portrait.jpg")), ui->title_portrait_label->size(),
+        getRoundedPixmap(QPixmap(QStringLiteral(":/Res/window/portrait.jpg")),
+                         ui->title_portrait_label->size(),
                          ui->title_portrait_label->size().width() / 2);
     m_originalCover.load(QStringLiteral(":/Res/window/portrait.jpg"));
 
@@ -264,13 +285,19 @@ void TitleWidget::initUi()
     m_closeDialog->setParent(this->window());
     m_closeDialog->hide();
     connect(m_closeDialog.get(), &ElaExitDialog::rightButtonClicked, this, [] { qApp->quit(); });
-    connect(m_closeDialog.get(), &ElaExitDialog::middleButtonClicked, this, [=]() {
-        m_closeDialog->close();
-        on_min_toolButton_clicked();
-    });
+    connect(m_closeDialog.get(),
+            &ElaExitDialog::middleButtonClicked,
+            this,
+            [=]() {
+                m_closeDialog->close();
+                on_min_toolButton_clicked();
+            });
 
     // 连接菜单按钮
-    connect(ui->menu_toolButton, &QToolButton::clicked, this, &TitleWidget::on_menu_toolButton_clicked);
+    connect(ui->menu_toolButton,
+            &QToolButton::clicked,
+            this,
+            &TitleWidget::on_menu_toolButton_clicked);
 
     // 创建快捷键对象，绑定 F5 到 title_refresh_toolButton 的点击事件
     const auto shortcut = new QShortcut(QKeySequence(Qt::Key_F5), this);
@@ -284,8 +311,7 @@ void TitleWidget::initUi()
 void TitleWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     QWidget::mouseDoubleClickEvent(event);
-    if (event->button() == Qt::LeftButton)
-    {
+    if (event->button() == Qt::LeftButton) {
         on_max_toolButton_clicked(); ///< 左键双击触发最大化
     }
 }
@@ -299,12 +325,9 @@ void TitleWidget::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
     if (this->m_isTransForming)
         return;
-    if (event->button() == Qt::RightButton)
-    {
+    if (event->button() == Qt::RightButton) {
         this->m_titleOptMenu->exec(QCursor::pos());
-    }
-    else if (event->button() == Qt::LeftButton)
-    {
+    } else if (event->button() == Qt::LeftButton) {
         m_isPress = true;
         this->m_pressPos = event->pos(); ///< 记录按下位置
     }
@@ -321,12 +344,9 @@ void TitleWidget::mouseMoveEvent(QMouseEvent *event)
     QWidget::mouseMoveEvent(event);
     if (this->m_isTransForming)
         return;
-    if (m_isPress)
-    {
-        if (this->rect().contains(m_pressPos))
-        {
-            if (m_isMaxScreen)
-            {
+    if (m_isPress) {
+        if (this->rect().contains(m_pressPos)) {
+            if (m_isMaxScreen) {
                 qobject_cast<QWidget *>(this->parent())->resize(this->m_startGeometry.size());
             }
         }
@@ -374,58 +394,45 @@ void TitleWidget::paintEvent(QPaintEvent *ev)
  */
 bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if (event->type() == QEvent::MouseButtonPress)
-    {
+    if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
-        if (mouseEvent->button() == Qt::BackButton)
-        {
-            if (this->m_enableChange)
-            {
+        if (mouseEvent->button() == Qt::BackButton) {
+            if (this->m_enableChange) {
                 // qDebug() << "全局监听：鼠标返回键被按下"; ///< 调试用，记录返回键
                 on_title_return_toolButton_clicked();
                 return true; // 表示事件已处理，不再继续传播
             }
         }
-        if (mouseEvent->button() == Qt::ForwardButton)
-        {
-            if (this->m_enableChange)
-            {
+        if (mouseEvent->button() == Qt::ForwardButton) {
+            if (this->m_enableChange) {
                 // qDebug() << "全局监听：鼠标前进键被按下"; ///< 调试用，记录前进键
-                if (!m_frontTypeStack.isEmpty())
-                {
+                if (!m_frontTypeStack.isEmpty()) {
                     StackType nextType = m_frontTypeStack.pop();
                     m_backTypeStack.push(this->m_curType); ///< 当前状态存入返回栈
 
                     // 更新界面状态
-                    if (nextType == TitleLive)
-                    {
+                    if (nextType == TitleLive) {
                         ui->title_live_pushButton->setChecked(true);
                         emit currentStackChange(StackType::TitleLive);
                         emit leftMenuShow(false);
                         setTitleIndex(2);
                         // qDebug() << "[前进] 直播"; ///< 调试用
                         STREAM_INFO() << "前进到直播界面";
-                    }
-                    else if (nextType == ListenBook)
-                    {
+                    } else if (nextType == ListenBook) {
                         ui->title_listen_book_pushButton->setChecked(true);
                         emit currentStackChange(StackType::ListenBook);
                         emit leftMenuShow(false);
                         setTitleIndex(3);
                         // qDebug() << "[前进] 听书"; ///< 调试用
                         STREAM_INFO() << "前进到听书界面";
-                    }
-                    else if (nextType == Search)
-                    {
+                    } else if (nextType == Search) {
                         ui->title_search_pushButton->setChecked(true);
                         emit currentStackChange(StackType::Search);
                         emit leftMenuShow(false);
                         setTitleIndex(4);
                         // qDebug() << "[前进] 探索"; ///< 调试用
                         STREAM_INFO() << "前进到探索界面";
-                    }
-                    else
-                    {
+                    } else {
                         ui->title_music_pushButton->setChecked(true);
                         setTitleIndex(1);
                         emit leftMenuShow(true);
@@ -435,8 +442,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                         this->m_curType = nextType;
 
                         // 触发界面更新（与返回逻辑保持模式一致）s
-                        switch (nextType)
-                        {
+                        switch (nextType) {
                         case RecommendForYou: {
                             emit currentStackChange(StackType::RecommendForYou);
                             qDebug() << "[前进] 为你推荐";
@@ -528,9 +534,7 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
             }
         }
     }
-    if (watched == ui->title_portrait_label && event->type() == QEvent::Enter)
-    {
-
+    if (watched == ui->title_portrait_label && event->type() == QEvent::Enter) {
         QSize originalSize = ui->title_portrait_label->size();
         // 创建动画组
         auto *group = new QSequentialAnimationGroup(this);
@@ -553,14 +557,22 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
         group->addAnimation(expand);
 
         // 连接动画的 valueChanged 信号，动态更新 pixmap
-        connect(shrink, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
-            QSize newSize = value.toSize();
-            ui->title_portrait_label->setPixmap(getRoundedPixmap(m_originalCover, newSize, newSize.width() / 2));
-        });
-        connect(expand, &QPropertyAnimation::valueChanged, this, [=](const QVariant &value) {
-            QSize newSize = value.toSize();
-            ui->title_portrait_label->setPixmap(getRoundedPixmap(m_originalCover, newSize, newSize.width() / 2));
-        });
+        connect(shrink,
+                &QPropertyAnimation::valueChanged,
+                this,
+                [=](const QVariant &value) {
+                    QSize newSize = value.toSize();
+                    ui->title_portrait_label->setPixmap(
+                        getRoundedPixmap(m_originalCover, newSize, newSize.width() / 2));
+                });
+        connect(expand,
+                &QPropertyAnimation::valueChanged,
+                this,
+                [=](const QVariant &value) {
+                    QSize newSize = value.toSize();
+                    ui->title_portrait_label->setPixmap(
+                        getRoundedPixmap(m_originalCover, newSize, newSize.width() / 2));
+                });
 
         // 启动动画并自动删除
         group->start(QAbstractAnimation::DeleteWhenStopped);
@@ -573,7 +585,8 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
 void TitleWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
-    m_isMaxScreen = qobject_cast<QWidget *>(this->parent())->geometry() == this->screen()->availableGeometry();
+    m_isMaxScreen = qobject_cast<QWidget *>(this->parent())->geometry() == this->screen()->
+                    availableGeometry();
 
     ui->search_song_suggest_box->suggestBoxPositionChanged();
 }
@@ -584,44 +597,35 @@ void TitleWidget::resizeEvent(QResizeEvent *event)
 void TitleWidget::on_title_return_toolButton_clicked()
 {
     STREAM_INFO() << "返回键被按下";
-    if (!m_backTypeStack.isEmpty())
-    {
+    if (!m_backTypeStack.isEmpty()) {
         this->m_lastType = m_backTypeStack.pop();
         m_frontTypeStack.push(this->m_curType);
-        if (this->m_lastType == TitleLive)
-        {
+        if (this->m_lastType == TitleLive) {
             ui->title_live_pushButton->setChecked(true);
             emit currentStackChange(StackType::TitleLive);
             emit leftMenuShow(false);
             setTitleIndex(2);
             // qDebug() << "[回退] 直播"; ///< 调试用
             STREAM_INFO() << "切换直播界面";
-        }
-        else if (this->m_lastType == ListenBook)
-        {
+        } else if (this->m_lastType == ListenBook) {
             ui->title_listen_book_pushButton->setChecked(true);
             emit currentStackChange(StackType::ListenBook);
             emit leftMenuShow(false);
             setTitleIndex(3);
             // qDebug() << "[回退] 听书"; ///< 调试用
             STREAM_INFO() << "切换听书界面";
-        }
-        else if (this->m_lastType == Search)
-        {
+        } else if (this->m_lastType == Search) {
             ui->title_search_pushButton->setChecked(true);
             emit currentStackChange(StackType::Search);
             emit leftMenuShow(false);
             setTitleIndex(4);
             // qDebug() << "[回退] 探索"; ///< 调试用
             STREAM_INFO() << "切换探索界面";
-        }
-        else
-        {
+        } else {
             ui->title_music_pushButton->setChecked(true);
             setTitleIndex(1);
             emit leftMenuShow(true);
-            switch (this->m_lastType)
-            {
+            switch (this->m_lastType) {
             case RecommendForYou:
                 emit currentStackChange(StackType::RecommendForYou);
                 // qDebug() << "[回退] 为你推荐"; ///< 调试用
@@ -716,49 +720,34 @@ void TitleWidget::on_title_music_pushButton_clicked()
     ui->title_music_pushButton->setChecked(true);
     setTitleIndex(1);
     emit leftMenuShow(true); ///< 显示左侧菜单
-    switch (this->m_lastType)
-    {
-    case RecommendForYou:
-        onLeftMenu_recommend_clicked();
+    switch (this->m_lastType) {
+    case RecommendForYou: onLeftMenu_recommend_clicked();
         break;
-    case MusicRepository:
-        onLeftMenu_musicRepository_clicked();
+    case MusicRepository: onLeftMenu_musicRepository_clicked();
         break;
-    case Channel:
-        onLeftMenu_channel_clicked();
+    case Channel: onLeftMenu_channel_clicked();
         break;
-    case Video:
-        onLeftMenu_video_clicked();
+    case Video: onLeftMenu_video_clicked();
         break;
-    case AiChat:
-        onLeftMenu_ai_chat_clicked();
+    case AiChat: onLeftMenu_ai_chat_clicked();
         break;
-    case SongList:
-        onLeftMenu_songList_clicked();
+    case SongList: onLeftMenu_songList_clicked();
         break;
-    case DailyRecommend:
-        onLeftMenu_dailyRecommend_clicked();
+    case DailyRecommend: onLeftMenu_dailyRecommend_clicked();
         break;
-    case Collection:
-        onLeftMenu_collection_clicked();
+    case Collection: onLeftMenu_collection_clicked();
         break;
-    case LocalDownload:
-        onLeftMenu_localDownload_clicked();
+    case LocalDownload: onLeftMenu_localDownload_clicked();
         break;
-    case MusicCloudDisk:
-        onLeftMenu_musicCloudDisk_clicked();
+    case MusicCloudDisk: onLeftMenu_musicCloudDisk_clicked();
         break;
-    case PurchasedMusic:
-        onLeftMenu_purchasedMusic_clicked();
+    case PurchasedMusic: onLeftMenu_purchasedMusic_clicked();
         break;
-    case RecentlyPlayed:
-        onLeftMenu_recentlyPlayed_clicked();
+    case RecentlyPlayed: onLeftMenu_recentlyPlayed_clicked();
         break;
-    case AllMusic:
-        onLeftMenu_allMusic_clicked();
+    case AllMusic: onLeftMenu_allMusic_clicked();
         break;
-    default:
-        onLeftMenu_recommend_clicked();
+    default: onLeftMenu_recommend_clicked();
     }
     STREAM_INFO() << "切换音乐界面";
 }
@@ -816,7 +805,10 @@ void TitleWidget::on_title_search_pushButton_clicked()
  */
 void TitleWidget::on_listen_toolButton_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "听歌识曲 功能未实现 敬请期待", 1000,
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               "听歌识曲 功能未实现 敬请期待",
+                               1000,
                                this->window());
 }
 
@@ -825,7 +817,10 @@ void TitleWidget::on_listen_toolButton_clicked()
  */
 void TitleWidget::on_theme_toolButton_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "主题 功能未实现 敬请期待", 1000,
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               "主题 功能未实现 敬请期待",
+                               1000,
                                this->window());
 }
 
@@ -834,7 +829,10 @@ void TitleWidget::on_theme_toolButton_clicked()
  */
 void TitleWidget::on_message_toolButton_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info", "消息 功能未实现 敬请期待", 1000,
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               "消息 功能未实现 敬请期待",
+                               1000,
                                this->window());
 }
 
@@ -871,10 +869,10 @@ void TitleWidget::on_min_toolButton_clicked()
  */
 void TitleWidget::on_max_toolButton_clicked()
 {
-    auto animation = new QPropertyAnimation(qobject_cast<QWidget *>(this->parent()), "geometry"); ///< 初始化窗口动画
+    auto animation = new QPropertyAnimation(qobject_cast<QWidget *>(this->parent()), "geometry");
+    ///< 初始化窗口动画
 
-    if (m_isMaxScreen)
-    {
+    if (m_isMaxScreen) {
         this->m_isMaxScreen = false;                                               ///< 设置正常状态
         m_endGeometry = m_startGeometry;                                           ///< 记录正常几何形状
         m_startGeometry = this->screen()->availableGeometry();                     ///< 设置最大化几何形状
@@ -887,10 +885,8 @@ void TitleWidget::on_max_toolButton_clicked()
                                 icon-size: 12px 12px;
                             })";                                                   ///< 设置最大化按钮样式
         ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
-        animation->setDuration(500);                                               ///< 设置动画时长
-    }
-    else
-    {
+        animation->setDuration(300);                                               ///< 设置动画时长
+    } else {
         this->m_normalGeometry = qobject_cast<QWidget *>(this->parent())->geometry(); ///< 记录正常几何形状
         this->m_isMaxScreen = true;                                                   ///< 设置最大化状态
         m_startGeometry = this->m_normalGeometry;                                     ///< 设置起始几何形状
@@ -906,17 +902,23 @@ void TitleWidget::on_max_toolButton_clicked()
         ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg"));      ///< 设置还原图标
         animation->setDuration(300);                                                  ///< 设置动画时长
     }
-    animation->setStartValue(m_startGeometry);          ///< 设置动画起始值
-    animation->setEndValue(m_endGeometry);              ///< 设置动画结束值
+    animation->setStartValue(m_startGeometry); ///< 设置动画起始值
+    animation->setEndValue(m_endGeometry);     ///< 设置动画结束值
+
     animation->setEasingCurve(QEasingCurve::InOutQuad); ///< 设置缓动曲线
 
     this->m_isTransForming = true;                           ///< 禁用交互
     animation->start(QAbstractAnimation::DeleteWhenStopped); ///< 开始动画
-    connect(animation, &QPropertyAnimation::finished, this, [this] {
-        QTimer::singleShot(100, this, [this] {
-            this->m_isTransForming = false; ///< 启用交互
-        });
-    }); ///< 连接动画结束信号
+    connect(animation,
+            &QPropertyAnimation::finished,
+            this,
+            [this] {
+                QTimer::singleShot(100,
+                                   this,
+                                   [this] {
+                                       this->m_isTransForming = false; ///< 启用交互
+                                   });
+            }); ///< 连接动画结束信号
 
     ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); ///< 更新按钮样式
 }
@@ -1145,6 +1147,7 @@ void TitleWidget::onLeftMenu_allMusic_clicked()
     qDebug() << "点击全部音乐";
     STREAM_INFO() << "切换全部音乐界面";
 }
+
 void TitleWidget::onSetSearchEnable(bool flag)
 {
     ui->search_song_suggest_box->setSearchEnable(flag);
