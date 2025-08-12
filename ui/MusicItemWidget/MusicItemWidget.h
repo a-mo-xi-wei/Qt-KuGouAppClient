@@ -33,21 +33,21 @@ class QSpacerItem;
  */
 typedef struct SongInformation
 {
-    int                     index;        ///< 音乐索引
-    QString                 coverUrl;     ///< 网络封面图片路径
-    QPixmap                 cover;        ///< 封面图片
-    QString                 songName;     ///< 歌曲名称
-    QString                 singer;       ///< 歌手名称
-    QString                 duration;     ///< 歌曲时长
-    QString                 album;        ///< 专辑名称
-    QString                 hash;         ///< 歌曲hash值
-    QString                 mediaPath;    ///< 本地媒体文件路径
-    QString                 netUrl;       ///< 网络文件路径
-    int                     fileSize;     ///< 网络文件大小
-    QString                 format;       ///< 网络文件格式
-    QDateTime               issueDate;    ///< 发行日期
-    QDateTime               addTime;      ///< 添加时间
-    int                     playCount;    ///< 播放次数
+    int index;           ///< 音乐索引
+    QString coverUrl;    ///< 网络封面图片路径
+    QPixmap cover;       ///< 封面图片
+    QString songName;    ///< 歌曲名称
+    QString singer;      ///< 歌手名称
+    QString duration;    ///< 歌曲时长
+    QString album;       ///< 专辑名称
+    QString hash;        ///< 歌曲hash值
+    QString mediaPath;   ///< 本地媒体文件路径
+    QString netUrl;      ///< 网络文件路径
+    int fileSize;        ///< 网络文件大小
+    QString format;      ///< 网络文件格式
+    QDateTime issueDate; ///< 发行日期
+    QDateTime addTime;   ///< 添加时间
+    int playCount;       ///< 播放次数
 
     /**
      * @brief 比较运算符
@@ -56,7 +56,8 @@ typedef struct SongInformation
      */
     bool operator==(const struct SongInformation &info) const
     {
-        return info.songName == this->songName && info.singer == this->singer && info.duration == this->duration;
+        return info.songName == this->songName && info.singer == this->singer && info.duration ==
+               this->duration;
     }
 } SongInfor;
 
@@ -80,19 +81,19 @@ public:
      * @brief 额外添加的设置封面图片的接口
      * @param pix 封面图片
      */
-    void setCover(const QPixmap& pix);
+    void setCover(const QPixmap &pix);
 
     /**
      * @brief 设置歌曲网络路径
      * @param netUrl 歌曲网络路径
      */
-    void setNetUrl(const QString& netUrl);
+    void setNetUrl(const QString &netUrl);
 
     /**
      * @brief 设置歌曲热度
      * @param popular 热度值
      */
-    void setPopular(const int&  popular) const;
+    void setPopular(const int &popular) const;
 
     /**
      * @brief 设置索引文本
@@ -373,50 +374,51 @@ private:
 
 private:
     //基础控件
-    QLabel*                 m_indexLab{};          ///< 索引标签
-    QLabel*                 m_coverLab{};          ///< 封面标签
-    QLabel*                 m_nameLab{};           ///< 歌曲名称标签
-    QLabel*                 m_singerLab{};         ///< 歌手名称标签
-    QLabel*                 m_albumLab{};          ///< 专辑名称标签
-    QLabel*                 m_popularLab{};        ///< 热度标签
-    QLabel*                 m_durationLab{};       ///< 时长标签
-    QToolButton*            m_playToolBtn{};       ///< 播放按钮
-    QToolButton*            m_playNextToolBtn{};   ///< 下一首按钮
-    QToolButton*            m_downloadToolBtn{};   ///< 下载按钮
-    QToolButton*            m_collectToolBtn{};    ///< 收藏按钮
-    QToolButton*            m_moreToolBtn{};       ///< 更多按钮
+    QLabel *m_indexLab{};             ///< 索引标签
+    QLabel *m_coverLab{};             ///< 封面标签
+    QLabel *m_nameLab{};              ///< 歌曲名称标签
+    QLabel *m_singerLab{};            ///< 歌手名称标签
+    QLabel *m_albumLab{};             ///< 专辑名称标签
+    QLabel *m_popularLab{};           ///< 热度标签
+    QLabel *m_durationLab{};          ///< 时长标签
+    QToolButton *m_playToolBtn{};     ///< 播放按钮
+    QToolButton *m_playNextToolBtn{}; ///< 下一首按钮
+    QToolButton *m_downloadToolBtn{}; ///< 下载按钮
+    QToolButton *m_collectToolBtn{};  ///< 收藏按钮
+    QToolButton *m_moreToolBtn{};     ///< 更多按钮
 
     //跳转选中高亮
-    bool m_isHighlighted = false;                  ///< 是否高亮
-    int m_highlightAlpha = 0;                      ///< 当前透明度 (0-255)
-    int m_highlightDirection = 1;                  ///< 透明度变化方向 (1增加, -1减少)
-    QTimer* m_blinkTimer;                          ///< 闪烁定时器
+    bool m_isHighlighted = false; ///< 是否高亮
+    int m_highlightAlpha = 0;     ///< 当前透明度 (0-255)
+    int m_highlightDirection = 1; ///< 透明度变化方向 (1增加, -1减少)
+    QTimer *m_blinkTimer;         ///< 闪烁定时器
 
-    bool                    m_isPlaying = false;   ///< 是否正在播放
+    bool m_isPlaying = false; ///< 是否正在播放
     //菜单相关
-    SongOptionMenu*         m_songOptMenu{};       ///< 歌曲选项菜单
-    QPoint                  m_menuPosition;        ///< 菜单显示位置
+    SongOptionMenu *m_songOptMenu{}; ///< 歌曲选项菜单
+    QPoint m_menuPosition;           ///< 菜单显示位置
     //歌曲信息相关
-    int                     m_index;               ///< 歌曲索引
-    QPixmap                 m_cover;               ///< 封面图片
-    QString                 m_name;                ///< 歌曲名称
-    QString                 m_singer;              ///< 歌手名称
-    QString                 m_album ;              ///< 专辑名称
-    QString                 m_duration;            ///< 歌曲时长
+    int m_index;        ///< 歌曲索引
+    QPixmap m_cover;    ///< 封面图片
+    QString m_name;     ///< 歌曲名称
+    QString m_singer;   ///< 歌手名称
+    QString m_album;    ///< 专辑名称
+    QString m_duration; ///< 歌曲时长
 
 public:
-    SongInfor               m_information;         ///< 歌曲信息
+    SongInfor m_information; ///< 歌曲信息
 
 private:
     //涟漪效果相关
-    int                     timeInterval = 5;      ///< 定时器时间间隔（毫秒）
-    QTimer*                 timer{};               ///< 定时器对象
-    QPointF                 mouse_point;           ///< 鼠标位置
-    int                     max_radius;            ///< 最大涟漪半径
-    int                     radius = 0;            ///< 当前涟漪半径
-    int                     radius_var = 10;       ///< 半径变化量
-    QColor                  fill_color;            ///< 填充颜色
-    int                     frame_radius = 0;      ///< 圆角半径
+    int timeInterval = 5;      ///< 定时器时间间隔（毫秒）
+    QTimer *timer{};           ///< 定时器对象
+    QPointF mouse_point;       ///< 鼠标位置
+    int max_radius;            ///< 最大涟漪半径
+    int radius = 0;            ///< 当前涟漪半径
+    int radius_var = 10;       ///< 半径变化量
+    QColor fill_color;         ///< 填充颜色
+    int frame_radius = 0;      ///< 圆角半径
+    bool m_forceHover = false; ///< 强制悬停状态
 };
 
 #endif // MUSICITEMWIDGET_H
