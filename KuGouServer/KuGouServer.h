@@ -14,8 +14,10 @@
 #include "chttpserver.h"
 #include "sqlitedataprovider.h"
 
-class KuGouServer : public QObject , public NetworkFrameManager {
+class KuGouServer : public QObject, public NetworkFrameManager
+{
     Q_OBJECT
+
 public:
     /**
      * @brief 构造函数。
@@ -41,7 +43,8 @@ private:
      * @param session HTTP 会话对象。
      * @return bool 是否已处理请求。
      */
-    bool OnProcessHttpAccepted(QObject *obj, const QPointer<JQHttpServer::Session> &session) override;
+    bool OnProcessHttpAccepted(QObject *obj,
+                               const QPointer<JQHttpServer::Session> &session) override;
 
     // 重排索引
     /**
@@ -67,7 +70,8 @@ private:
      * @return 安全处理后的字符串。
      */
     template<typename T>
-    static QString safeNumber(T value) {
+    static QString safeNumber(T value)
+    {
         static_assert(std::is_arithmetic<T>::value, "Numeric type required");
         return QString::number(value);
     }
@@ -112,6 +116,8 @@ private:
     bool onApiGetPicture(const QPointer<JQHttpServer::Session> &session);
     // 获取歌曲网络路径
     bool onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &session);
+    // 获取歌曲歌词
+    bool onApiGetSongLyric(const QPointer<JQHttpServer::Session> &session);
 
     // 添加歌曲
     /**

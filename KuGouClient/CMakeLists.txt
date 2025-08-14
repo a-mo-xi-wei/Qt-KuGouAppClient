@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 project(KuGouClient VERSION 1.0 LANGUAGES CXX)
 
 set(SOURCE_FILE
-    KuGouClient.h
-    KuGouClient.cpp
-    KuGouClient.ui
+        KuGouClient.h
+        KuGouClient.cpp
+        KuGouClient.ui
 )
 
 ####       发现音乐       ####
@@ -53,5 +53,5 @@ target_link_libraries(${PROJECT_NAME}
         Qt6::Widgets Qt6::Multimedia MyWindow MyPlayer
         AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo SearchResultWidget
+        Search SongList StartVideo SearchResultWidget LyricWidget
 )

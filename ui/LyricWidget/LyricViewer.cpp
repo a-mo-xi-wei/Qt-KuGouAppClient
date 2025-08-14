@@ -1,16 +1,13 @@
 ﻿#include "LyricViewer.h"
 #include "LrcProcessor.h"
-#include "ElaMessageBar.h"
-#include "ElaScrollArea.h"
-#include "ElaScrollBar.h"
 
-#include <QEvent>
+#include <QScrollArea>
+#include <QScrollBar>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPropertyAnimation>
 #include <QVBoxLayout>
 #include <QTimer>
-#include <QScrollBar>
 
 LyricPanel::LyricPanel(QWidget *parent)
     : QWidget(parent)
@@ -134,7 +131,7 @@ void LyricPanel::paintEvent(QPaintEvent *e)
     constexpr int centerFontSize = 24;
     const double fadeRadiusPx = std::max(1, viewportH);
     int highlightLine = std::max(0, (viewCenterY / m_lineH) - 1);
-
+    bool isEmptyLyric = (lrcLyrics.size() == m_headPad + m_tailPad + 1);
     for (int i = firstVisible; i <= lastVisible; ++i) {
         QRectF rect(2, i * m_lineH, width() - 4, m_lineH);
 
@@ -146,14 +143,14 @@ void LyricPanel::paintEvent(QPaintEvent *e)
         int alpha = static_cast<int>(255 * alphaRatio);
         int fontSize = baseFontSize + static_cast<int>(
                            (centerFontSize - baseFontSize) * alphaRatio);
-        fontSize = (i == highlightLine) ? fontSize : fontSize - 4;
+        fontSize = (i == highlightLine || isEmptyLyric) ? fontSize : fontSize - 4;
 
         QFont font("Microsoft YaHei");
         font.setPixelSize(fontSize);
-        font.setWeight(i == highlightLine ? QFont::Bold : QFont::Normal);
+        font.setWeight((i == highlightLine || isEmptyLyric) ? QFont::Bold : QFont::Normal);
         painter.setFont(font);
 
-        QColor color = (i == highlightLine) ? QColor(255, 255, 255) : normalColor;
+        QColor color = (i == highlightLine || isEmptyLyric) ? QColor(255, 255, 255) : normalColor;
         color.setAlpha(alpha);
         painter.setPen(color);
 
@@ -161,7 +158,7 @@ void LyricPanel::paintEvent(QPaintEvent *e)
 
         // ======= 绘制高亮行两边的渐变线 =======
         // qDebug()<<"lrcLyrics.size() : "<<lrcLyrics.size();
-        if (i == highlightLine && lrcLyrics.size() != m_headPad + m_tailPad + 1) {
+        if (i == highlightLine && !isEmptyLyric) {
             ///< 没有歌词的时候不显示
             m_highlightTimeMs = lrcLyrics[i].first; // 保存当前高亮时间
 
@@ -300,18 +297,18 @@ ScrollLyricPanel::ScrollLyricPanel(QWidget *parent)
     lyricPanel->setMinimumWidth(500);
     lyricPanel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-    scrollArea = new ElaScrollArea(this);
+    scrollArea = new QScrollArea(this);
     scrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     scrollArea->setObjectName("ScrollLyricPanelScrollArea");
     scrollArea->viewport()->setStyleSheet("background-color:transparent;");
     scrollArea->setWidget(lyricPanel);
     scrollArea->setWidgetResizable(true);
     scrollArea->setFrameShape(QFrame::NoFrame);
-    scrollArea->verticalScrollBar()->setSingleStep(10); // 每次滚轮滚动 5px
-    scrollArea->setIsAnimation(Qt::Vertical, true);
+    scrollArea->verticalScrollBar()->setSingleStep(10); // 每次滚轮滚动 10px
     scrollArea->setCursor(Qt::OpenHandCursor);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     scrollArea->installEventFilter(this);
-    scrollbar = dynamic_cast<ElaScrollBar *>(scrollArea->verticalScrollBar());
+    scrollbar = scrollArea->verticalScrollBar();
 
     scrollAnima = new QPropertyAnimation(scrollbar, "value", this);
     scrollAnima->setEasingCurve(QEasingCurve::OutSine);
@@ -526,7 +523,7 @@ void LyricViewer::initLayout()
 {
     songLab = new QLabel(this);
     songLab->setObjectName("songLab");
-    songLab->setText("");
+    songLab->setText("网络歌曲");
     songLab->setAlignment(Qt::AlignCenter);
 
     singerLab = new QLabel(this);
@@ -546,7 +543,7 @@ void LyricViewer::initLayout()
     vLayout->addWidget(songLab);
     vLayout->addWidget(singerLab);
     vLayout->addWidget(scrollLyricPanel);
-    vLayout->addSpacerItem(new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Fixed));
+    vLayout->addSpacerItem(new QSpacerItem(10, 100, QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     this->setStyleSheet("QWidget{font-family:Microsoft YaHei ;}"
         "QLabel#songLab{color: white;font-size:17pt;font-weight: DemiBold;}"
@@ -574,26 +571,17 @@ void LyricViewer::setLyricPanelHighlightLineLyricAtPos(const int &pos) const
 void LyricViewer::setMusicTitle(const QString &title) const
 {
     songLab->setText(title);
-    songLab->setToolTip(title);
 }
 
 void LyricViewer::setMusicSinger(const QString &singer) const
 {
     singerLab->setText(singer);
-    singerLab->setToolTip(singer);
 }
 
 void LyricViewer::setLyricPath(const QString &path)
 {
     //使用该路径初始化歌词预览面板
     if (!loadLyricFromFile(path)) {
-        ElaMessageBar::information(ElaMessageBarType::Top,
-                                   "提示",
-                                   tr("打开载入lrc歌词时发生错误：") + path
-                                   + "\n\n" + tr("请注意是否歌词是否存在？"),
-                                   2000,
-                                   this->window());
-
         lrcLyrics.clear();
         bIsLrcLyric = false;
     }

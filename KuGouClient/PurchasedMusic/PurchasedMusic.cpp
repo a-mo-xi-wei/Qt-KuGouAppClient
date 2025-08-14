@@ -25,23 +25,22 @@
  */
 PurchasedMusic::PurchasedMusic(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::PurchasedMusic)
-    , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+      , ui(new Ui::PurchasedMusic)
+      , m_buttonGroup(std::make_unique<QButtonGroup>(this))
 {
     ui->setupUi(this);
     QFile file(GET_CURRENT_DIR + QStringLiteral("/purchased.css"));
-    if (file.open(QIODevice::ReadOnly))
-    {
+    if (file.open(QIODevice::ReadOnly)) {
         setStyleSheet(file.readAll());
-    }
-    else
-    {
+    } else {
         qDebug() << "样式表打开失败QAQ";
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    QTimer::singleShot(100,this,[this] {initUi();});
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
+    QTimer::singleShot(100, this, [this] { initUi(); });
+    connect(ui->stackedWidget,
+            &SlidingStackedWidget::animationFinished,
+            [this] { enableButton(true); });
     enableButton(true);
 }
 
@@ -58,34 +57,40 @@ PurchasedMusic::~PurchasedMusic()
  * @param id 页面索引
  * @return 创建的页面控件
  */
-QWidget* PurchasedMusic::createPage(int id)
+QWidget *PurchasedMusic::createPage(int id)
 {
-    QWidget* page = nullptr;
+    QWidget *page = nullptr;
     switch (id) {
-        case 0:
-            if (!m_paidSingle) {
-                m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget);
-                connect(m_paidSingle.get(), &PaidSingle::find_more_music, this, &PurchasedMusic::find_more_music);
-            }
-            page = m_paidSingle.get();
-            break;
-        case 1:
-            if (!m_purchasedAlbums) {
-                m_purchasedAlbums = std::make_unique<PurchasedAlbums>(ui->stackedWidget);
-                connect(m_purchasedAlbums.get(), &PurchasedAlbums::find_more_music, this, &PurchasedMusic::find_more_music);
-            }
-            page = m_purchasedAlbums.get();
-            break;
-        case 2:
-            if (!m_purchasedVideos) {
-                m_purchasedVideos = std::make_unique<PurchasedVideos>(ui->stackedWidget);
-                connect(m_purchasedVideos.get(), &PurchasedVideos::find_more_music, this, &PurchasedMusic::find_more_music);
-            }
-            page = m_purchasedVideos.get();
-            break;
-        default:
-            qWarning() << "[WARNING] Invalid page ID:" << id;
-            return nullptr;
+    case 0: if (!m_paidSingle) {
+            m_paidSingle = std::make_unique<PaidSingle>(ui->stackedWidget);
+            connect(m_paidSingle.get(),
+                    &PaidSingle::find_more_music,
+                    this,
+                    &PurchasedMusic::find_more_music);
+        }
+        page = m_paidSingle.get();
+        break;
+    case 1: if (!m_purchasedAlbums) {
+            m_purchasedAlbums = std::make_unique<PurchasedAlbums>(ui->stackedWidget);
+            connect(m_purchasedAlbums.get(),
+                    &PurchasedAlbums::find_more_music,
+                    this,
+                    &PurchasedMusic::find_more_music);
+        }
+        page = m_purchasedAlbums.get();
+        break;
+    case 2: if (!m_purchasedVideos) {
+            m_purchasedVideos = std::make_unique<PurchasedVideos>(ui->stackedWidget);
+            connect(m_purchasedVideos.get(),
+                    &PurchasedVideos::find_more_music,
+                    this,
+                    &PurchasedMusic::find_more_music);
+        }
+        page = m_purchasedVideos.get();
+        break;
+    default:
+        qWarning() << "[WARNING] Invalid page ID:" << id;
+        return nullptr;
     }
     return page;
 }
@@ -94,16 +99,19 @@ QWidget* PurchasedMusic::createPage(int id)
  * @brief 初始化界面
  * @note 初始化索引标签、堆栈窗口和默认付费单曲界面
  */
-void PurchasedMusic::initUi() {
-    QTimer::singleShot(100,this,[this]{initIndexLab();});
-    QTimer::singleShot(200,this,[this]{
-        initStackedWidget();
-        ui->paid_single_pushButton->click();
-        ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
-        ui->stackedWidget->setSpeed(400);
-        ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
-        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
-    });
+void PurchasedMusic::initUi()
+{
+    QTimer::singleShot(0, this, [this] { initIndexLab(); });
+    QTimer::singleShot(100,
+                       this,
+                       [this] {
+                           initStackedWidget();
+                           ui->paid_single_pushButton->click();
+                           ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);
+                           ui->stackedWidget->setSpeed(400);
+                           ui->stackedWidget->setContentsMargins(0, 0, 0, 0);
+                           QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                       });
 }
 
 /**
@@ -112,9 +120,10 @@ void PurchasedMusic::initUi() {
  */
 void PurchasedMusic::initIndexLab()
 {
-    QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab };
-    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3 };
-    QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+    QLabel *idxLabels[] = {ui->idx1_lab, ui->idx2_lab, ui->idx3_lab};
+    QWidget *guideWidgets[] = {ui->guide_widget1, ui->guide_widget2, ui->guide_widget3};
+    QLabel *numLabels[] = {ui->paid_single_number_label, ui->purchased_albums_number_label,
+                           ui->purchased_video_number_label};
 
     for (int i = 0; i < 3; ++i) {
         idxLabels[i]->setPixmap(QPixmap(":/Res/window/index_lab.svg"));
@@ -138,8 +147,8 @@ void PurchasedMusic::initStackedWidget()
 
     // 初始化占位页面
     for (int i = 0; i < 3; ++i) {
-        auto* placeholder = new QWidget;
-        auto* layout = new QVBoxLayout(placeholder);
+        auto *placeholder = new QWidget;
+        auto *layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
         layout->setSpacing(0);
         m_pages[i] = placeholder;
@@ -151,65 +160,73 @@ void PurchasedMusic::initStackedWidget()
     ui->stackedWidget->setCurrentIndex(0);
 
     // 按钮点击处理
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](int id) {
-        if (m_currentIdx == id) {
-            return;
-        }
-
-        enableButton(false);
-
-        // 清理目标 placeholder 内旧的控件
-        QWidget* placeholder = m_pages[m_currentIdx];
-        if (!placeholder) {
-            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-            enableButton(true);
-            return;
-        }
-
-        QLayout* layout = placeholder->layout();
-        if (!layout) {
-            layout = new QVBoxLayout(placeholder);
-            layout->setContentsMargins(0, 0, 0, 0);
-            layout->setSpacing(0);
-        } else {
-            while (QLayoutItem* item = layout->takeAt(0)) {
-                if (QWidget* widget = item->widget()) {
-                    widget->deleteLater();
+    connect(m_buttonGroup.get(),
+            &QButtonGroup::idClicked,
+            this,
+            [this](int id) {
+                if (m_currentIdx == id) {
+                    return;
                 }
-                delete item;
-            }
-            switch (m_currentIdx) {
-                case 0: m_paidSingle.reset();break;
-                case 1: m_purchasedAlbums.reset();break;
-                case 2: m_purchasedVideos.reset();break;
-                default: break;
-            }
-        }
 
+                enableButton(false);
 
-        placeholder = m_pages[id];
-        layout = placeholder->layout();
-        // 创建新页面
-        QWidget* realPage = createPage(id);
-        if (!realPage) {
-            qWarning() << "[WARNING] Failed to create page at index:" << id;
-        } else {
-            layout->addWidget(realPage);
-        }
+                // 清理目标 placeholder 内旧的控件
+                QWidget *placeholder = m_pages[m_currentIdx];
+                if (!placeholder) {
+                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+                    enableButton(true);
+                    return;
+                }
 
-        ui->stackedWidget->slideInIdx(id);
-        m_currentIdx = id;
+                QLayout *layout = placeholder->layout();
+                if (!layout) {
+                    layout = new QVBoxLayout(placeholder);
+                    layout->setContentsMargins(0, 0, 0, 0);
+                    layout->setSpacing(0);
+                } else {
+                    while (QLayoutItem *item = layout->takeAt(0)) {
+                        if (QWidget *widget = item->widget()) {
+                            widget->deleteLater();
+                        }
+                        delete item;
+                    }
+                    switch (m_currentIdx) {
+                    case 0: m_paidSingle.reset();
+                        break;
+                    case 1: m_purchasedAlbums.reset();
+                        break;
+                    case 2: m_purchasedVideos.reset();
+                        break;
+                    default: break;
+                    }
+                }
 
-        // 更新标签
-        QLabel* idxLabels[] = { ui->idx1_lab, ui->idx2_lab, ui->idx3_lab };
-        QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
-        for (int i = 0; i < 3; ++i) {
-            idxLabels[i]->setVisible(i == id);
-            numLabels[i]->setStyleSheet(i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
-        }
+                placeholder = m_pages[id];
+                layout = placeholder->layout();
+                // 创建新页面
+                QWidget *realPage = createPage(id);
+                if (!realPage) {
+                    qWarning() << "[WARNING] Failed to create page at index:" << id;
+                } else {
+                    layout->addWidget(realPage);
+                }
 
-        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
-    });
+                ui->stackedWidget->slideInIdx(id);
+                m_currentIdx = id;
+
+                // 更新标签
+                QLabel *idxLabels[] = {ui->idx1_lab, ui->idx2_lab, ui->idx3_lab};
+                QLabel *numLabels[] = {ui->paid_single_number_label,
+                                       ui->purchased_albums_number_label,
+                                       ui->purchased_video_number_label};
+                for (int i = 0; i < 3; ++i) {
+                    idxLabels[i]->setVisible(i == id);
+                    numLabels[i]->setStyleSheet(
+                        i == id ? "color:#26a1ff;font-size:16px;font-weight:bold;" : "");
+                }
+
+                STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
+            });
 }
 
 /**
@@ -231,9 +248,11 @@ void PurchasedMusic::enableButton(bool flag) const
  */
 bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event)
 {
-    QWidget* guideWidgets[] = { ui->guide_widget1, ui->guide_widget2, ui->guide_widget3 };
-    QPushButton* buttons[] = { ui->paid_single_pushButton, ui->purchased_albums_pushButton, ui->purchased_video_pushButton };
-    QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
+    QWidget *guideWidgets[] = {ui->guide_widget1, ui->guide_widget2, ui->guide_widget3};
+    QPushButton *buttons[] = {ui->paid_single_pushButton, ui->purchased_albums_pushButton,
+                              ui->purchased_video_pushButton};
+    QLabel *numLabels[] = {ui->paid_single_number_label, ui->purchased_albums_number_label,
+                           ui->purchased_video_number_label};
 
     for (int i = 0; i < 3; ++i) {
         if (watched == guideWidgets[i]) {
@@ -252,9 +271,9 @@ bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event)
                         font-weight:bold;
                     }
                 )");
-                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "color:#26a1ff;");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked()
+                                                ? "color:#26a1ff;font-size:16px;font-weight:bold;"
+                                                : "color:#26a1ff;");
             } else if (event->type() == QEvent::Leave) {
                 buttons[i]->setStyleSheet(R"(
                     QPushButton {
@@ -270,9 +289,9 @@ bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event)
                         font-weight:bold;
                     }
                 )");
-                numLabels[i]->setStyleSheet(buttons[i]->isChecked() ?
-                    "color:#26a1ff;font-size:16px;font-weight:bold;" :
-                    "");
+                numLabels[i]->setStyleSheet(buttons[i]->isChecked()
+                                                ? "color:#26a1ff;font-size:16px;font-weight:bold;"
+                                                : "");
             }
             break;
         }
@@ -287,8 +306,10 @@ bool PurchasedMusic::eventFilter(QObject *watched, QEvent *event)
 void PurchasedMusic::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
-        QLabel* numLabels[] = { ui->paid_single_number_label, ui->purchased_albums_number_label, ui->purchased_video_number_label };
-        QPushButton* buttons[] = { ui->paid_single_pushButton, ui->purchased_albums_pushButton, ui->purchased_video_pushButton };
+        QLabel *numLabels[] = {ui->paid_single_number_label, ui->purchased_albums_number_label,
+                               ui->purchased_video_number_label};
+        QPushButton *buttons[] = {ui->paid_single_pushButton, ui->purchased_albums_pushButton,
+                                  ui->purchased_video_pushButton};
 
         for (int i = 0; i < 3; ++i) {
             const auto labelRect = numLabels[i]->geometry();

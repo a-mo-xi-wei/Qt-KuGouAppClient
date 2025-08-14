@@ -32,8 +32,14 @@ private:
     QVector<QPixmap> vecPic;
 };
 
+#if defined(LYRICWIDGET_LIBRARY)
+#define LYRICWIDGET_EXPORT Q_DECL_EXPORT
+#else
+#define LYRICWIDGET_EXPORT Q_DECL_IMPORT
+#endif
+
 //预览页面
-class LyricWidget : public QWidget
+class LYRICWIDGET_EXPORT LyricWidget : public QWidget
 {
     Q_OBJECT
 
@@ -46,11 +52,11 @@ public:
     //对lyricViewer的操作再加一层facade
     void setMusicTitle(const QString &title);
     void setMusicSinger(const QString &singer);
-    void setLyricPath(const QString& path);
-    void setWhetherToUseBlackMask(bool);         //设置是否使用黑色mask图层
+    void setLyricPath(const QString &path);
+    void setWhetherToUseBlackMask(bool); //设置是否使用黑色mask图层
 
     bool isLyricValid() const;
-    void setViewerHighlightLineLyricAtPos(const int& pos) const;
+    void setViewerHighlightLineLyricAtPos(const int &pos) const;
 
     void showWithAnimation(int duration = 300);
     void hideWithAnimation(int duration = 300);
@@ -75,7 +81,7 @@ private slots:
     void setNewBackgroundPixmap(const QPixmap &newPixmap);
 
 signals:
-    void jumpToTime(const int& time);
+    void jumpToTime(const int &time);
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
@@ -104,10 +110,10 @@ private:
     bool m_animating = false;
     bool m_visible = false;
 
-    QParallelAnimationGroup* m_animationGroup = nullptr;
+    QParallelAnimationGroup *m_animationGroup = nullptr;
 
     QRect currentTargetRect() const; // 动态计算目标矩形
-    void animateTo(const QRect& endRect, qreal endOpacity, int duration);
+    void animateTo(const QRect &endRect, qreal endOpacity, int duration);
 };
 
 #endif // LYRICWIDGET_H

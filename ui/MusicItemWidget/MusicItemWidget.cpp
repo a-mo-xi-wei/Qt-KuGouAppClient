@@ -172,6 +172,11 @@ void MusicItemWidget::setNetUrl(const QString &netUrl)
     this->m_information.netUrl = netUrl;
 }
 
+void MusicItemWidget::setLyric(const QString &lyric)
+{
+    this->m_information.lyric = lyric;
+}
+
 void MusicItemWidget::setPopular(const int &popular) const
 {
     if (popular < 0)

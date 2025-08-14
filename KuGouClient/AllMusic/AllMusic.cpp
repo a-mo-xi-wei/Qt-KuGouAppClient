@@ -216,8 +216,8 @@ void AllMusic::initUi()
         searchButton->installEventFilter(this);
     }
 
-    QTimer::singleShot(100, this, [this] {initIndexLab();});
-    QTimer::singleShot(200, this, [this]
+    QTimer::singleShot(0, this, [this] {initIndexLab();});
+    QTimer::singleShot(100, this, [this]
     {
         initStackedWidget();
         ui->all_pushButton->click();

@@ -41,6 +41,7 @@ typedef struct SongInformation
     QString duration;    ///< 歌曲时长
     QString album;       ///< 专辑名称
     QString hash;        ///< 歌曲hash值
+    QString lyric;       ///< 歌词内容
     QString mediaPath;   ///< 本地媒体文件路径
     QString netUrl;      ///< 网络文件路径
     int fileSize;        ///< 网络文件大小
@@ -88,6 +89,12 @@ public:
      * @param netUrl 歌曲网络路径
      */
     void setNetUrl(const QString &netUrl);
+
+    /**
+     * @brief 设置歌词内容
+     * @param lyric 歌词内容
+     */
+    void setLyric(const QString &lyric);
 
     /**
      * @brief 设置歌曲热度

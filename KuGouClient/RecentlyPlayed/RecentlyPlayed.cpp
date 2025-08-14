@@ -39,7 +39,7 @@ RecentlyPlayed::RecentlyPlayed(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";
         return;
     }
-    QTimer::singleShot(100,this,[this] {initUi();});
+    QTimer::singleShot(0,this,[this] {initUi();});
     connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this] { enableButton(true); });
     enableButton(true);
 }
@@ -109,8 +109,8 @@ QWidget* RecentlyPlayed::createPage(int id)
  */
 void RecentlyPlayed::initUi()
 {
-    QTimer::singleShot(100,this,[this]{initIndexLab();});
-    QTimer::singleShot(200,this,[this] {
+    QTimer::singleShot(0,this,[this]{initIndexLab();});
+    QTimer::singleShot(100,this,[this] {
         initStackedWidget();
         ui->single_song_pushButton->click();
         ui->stackedWidget->setAnimation(QEasingCurve::OutQuart);

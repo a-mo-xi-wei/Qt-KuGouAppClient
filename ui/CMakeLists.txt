@@ -49,3 +49,6 @@ add_subdirectory(MyCheckBox)
 
 #对话框模块
 add_subdirectory(MyDialog)
+
+#歌词模块
+add_subdirectory(LyricWidget)
