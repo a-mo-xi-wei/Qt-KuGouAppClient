@@ -31,7 +31,6 @@
 // 标题栏
 #include "ListenBook.h"
 #include "Search.h"
-#include "SpeedDialogState.h"
 // 其他
 #include "SearchResultWidget.h"
 #include "LyricWidget.h"
@@ -129,13 +128,13 @@ private:
      * @brief 初始化标题栏
      * @note 设置标题栏信号和交互
      */
-    void initTitleWidget();
+    void connectTitleWidget();
 
     /**
      * @brief 初始化播放控件
      * @note 设置播放按钮、进度条和快捷键
      */
-    void initPlayWidget();
+    void connectPlayWidget();
 
     /**
      * @brief 初始化菜单
@@ -192,15 +191,6 @@ protected:
      */
     bool event(QEvent *event) override;
 
-    /**
-     * @brief 事件过滤器
-     * @param watched 监控对象
-     * @param event 事件
-     * @return 是否处理事件
-     * @note 处理进度条和封面标签的事件
-     */
-    bool eventFilter(QObject *watched, QEvent *event) override;
-
 private slots:
     /**
     * @brief 处理suggestBox选中项槽函数
@@ -209,109 +199,29 @@ private slots:
     void handleSuggestBoxSuggestionClicked(const QString &suggestText,
                                            const QVariantMap &suggestData);
 
-    // 播放控件槽函数
-    /**
-     * @brief 播放/暂停按钮点击槽函数
-     * @note 切换播放或暂停状态
-     */
-    void on_play_or_pause_toolButton_clicked();
-
-    /**
-     * @brief 喜欢按钮点击槽函数
-     * @note 添加到收藏
-     */
-    void on_love_toolButton_clicked();
-
-    /**
-     * @brief 下载按钮点击槽函数
-     * @note 下载当前音乐
-     */
-    void on_download_toolButton_clicked();
-
-    /**
-     * @brief 评论按钮点击槽函数
-     * @note 打开评论界面
-     */
-    void on_comment_toolButton_clicked();
-
-    /**
-     * @brief 分享按钮点击槽函数
-     * @note 分享当前音乐
-     */
-    void on_share_toolButton_clicked();
-
-    /**
-     * @brief 更多按钮点击槽函数
-     * @note 打开更多选项
-     */
-    void on_more_toolButton_clicked();
-
     /**
      * @brief 循环播放按钮点击槽函数
      * @note 切换循环播放模式
      */
-    void on_circle_toolButton_clicked();
+    void onCircleBtnClicked();
 
     /**
      * @brief 上一首按钮点击槽函数
      * @note 播放上一首音乐
      */
-    void on_pre_toolButton_clicked();
+    void onPreBtnClicked();
 
     /**
      * @brief 下一首按钮点击槽函数
      * @note 播放下一首音乐
      */
-    void on_next_toolButton_clicked();
-
-    /**
-     * @brief 速度选择按钮点击槽函数
-     * @note 打开速度选择界面
-     */
-    void on_speed_pushButton_clicked();
-
-    /**
-     * @brief 音质选择按钮点击槽函数
-     * @note 打开音质选择界面
-     */
-    void on_stander_pushButton_clicked();
-
-    /**
-     * @brief 音效按钮点击槽函数
-     * @note 打开音效设置界面
-     */
-    void on_acoustics_pushButton_clicked();
-
-    /**
-     * @brief 一起听按钮点击槽函数
-     * @note 邀请好友一起听
-     */
-    void on_erji_toolButton_clicked();
-
-    /**
-     * @brief 桌面歌词按钮点击槽函数
-     * @note 打开桌面歌词
-     */
-    void on_lyrics_toolButton_clicked();
-
-    /**
-     * @brief 播放队列按钮点击槽函数
-     * @note 打开播放队列
-     */
-    void on_song_queue_toolButton_clicked();
+    void onNextBtnClicked();
 
     /**
      * @brief 更新播放进度
      * @note 根据进度条调整播放位置
      */
-    void updateProcess();
-
-    /**
-     * @brief 更新进度条范围
-     * @param duration 总时长（毫秒）
-     * @note 设置进度条最大值和时长标签
-     */
-    void updateSliderRange(const qint64 &duration);
+    void updateProcess(const int &sliderValue, const int &maxSliderValue);
 
     /**
      * @brief 空格键暂停/播放槽函数
@@ -334,7 +244,6 @@ private slots:
     /**
      * @brief 标题栏堆栈窗口切换槽函数
      * @param index 目标索引
-     * @param slide 是否使用滑动动画
      * @note 切换堆栈窗口并更新按钮状态
      */
     void onTitleCurrentStackChange(const int &index);
@@ -476,9 +385,6 @@ private:
     QMetaObject::Connection mediaStatusConnection; ///< 播放结束信号连接
     QPoint m_pressPos;                             ///< 鼠标按下位置
 
-    // 播放信息
-    QString m_musicTitle;  ///< 当前歌曲标题
-    QString m_musicArtist; ///< 当前歌曲艺术家
     // 服务器交互
     CLibhttp m_libHttp; ///< HTTP 请求库
     // 窗口创建相关

@@ -23,37 +23,36 @@ class DynamicBackgroundInterface;
 /**
  * @brief 窗口区域划分命名空间
  */
-namespace Area
-{
-    /* 这里我们将一个窗口划分为9个区域，分别为
-     左上角（1, 1）、中上（1，2）、右上角（1, 3）
-     左中  （2, 1）、 中间（2, 2）、右中  （2, 3）
-     左下角（3, 1）、中下（3，2）、 右下角（3, 3）*/
+namespace Area {
+/* 这里我们将一个窗口划分为9个区域，分别为
+ 左上角（1, 1）、中上（1，2）、右上角（1, 3）
+ 左中  （2, 1）、 中间（2, 2）、右中  （2, 3）
+ 左下角（3, 1）、中下（3，2）、 右下角（3, 3）*/
 
-    /**
-     * @brief 窗口边缘偏移量
-     */
-    constexpr int OFFSET = 10;
+/**
+ * @brief 窗口边缘偏移量
+ */
+constexpr int OFFSET = 10;
 
-    /**
-     * @brief 鼠标区域左边界
-     */
-    constexpr int kMouseRegionLeft = OFFSET;
+/**
+ * @brief 鼠标区域左边界
+ */
+constexpr int kMouseRegionLeft = OFFSET;
 
-    /**
-     * @brief 鼠标区域上边界
-     */
-    constexpr int kMouseRegionTop = OFFSET;
+/**
+ * @brief 鼠标区域上边界
+ */
+constexpr int kMouseRegionTop = OFFSET;
 
-    /**
-     * @brief 鼠标区域右边界
-     */
-    constexpr int kMouseRegionRight = OFFSET;
+/**
+ * @brief 鼠标区域右边界
+ */
+constexpr int kMouseRegionRight = OFFSET;
 
-    /**
-     * @brief 鼠标区域下边界
-     */
-    constexpr int kMouseRegionBottom = OFFSET;
+/**
+ * @brief 鼠标区域下边界
+ */
+constexpr int kMouseRegionBottom = OFFSET;
 }
 
 /**
@@ -85,59 +84,52 @@ public:
      * @brief 构造函数，初始化主窗口
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
 
 protected:
     /**
      * @brief 重写绘制事件，绘制窗口阴影
      * @param event 绘制事件
      */
-    void paintEvent(QPaintEvent* event) override;
+    void paintEvent(QPaintEvent *event) override;
 
     /**
      * @brief 重写窗口大小调整事件
      * @param event 大小调整事件
      */
-    void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
     /**
      * @brief 重写鼠标按下事件，处理窗口拖动和拉伸
      * @param ev 鼠标事件
      */
-    void mousePressEvent(QMouseEvent* ev) override;
+    void mousePressEvent(QMouseEvent *ev) override;
 
     /**
      * @brief 重写鼠标释放事件，结束拖动或拉伸
      * @param event 鼠标事件
      */
-    void mouseReleaseEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
     /**
      * @brief 重写鼠标移动事件，处理窗口拖动和拉伸
      * @param event 鼠标事件
      */
-    void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
     /**
      * @brief 重写显示事件，执行开场动画
      * @param event 显示事件
      */
-    void showEvent(QShowEvent* event) override;
+    void showEvent(QShowEvent *event) override;
 
     /**
      * @brief 重写关闭事件，执行渐变关闭动画
      * @param event 关闭事件
      */
-    void closeEvent(QCloseEvent* event) override;
+    void closeEvent(QCloseEvent *event) override;
 
-    /**
-     * @brief 设置控件的工具提示
-     * @param widget 目标控件
-     * @param tooltip 提示内容
-     */
-    static void setElaToolTip(QWidget* widget, const QString& tooltip);
-
-    void showSystemMessage(const QString& title, const QString& message);
+    // void showSystemMessage(const QString &title, const QString &message);
 
 private:
     /**
@@ -145,7 +137,7 @@ private:
      * @param x 鼠标 X 坐标
      * @param y 鼠标 Y 坐标
      */
-    void setMouseCursor(const int& x, const int& y);
+    void setMouseCursor(const int &x, const int &y);
 
     /**
      * @brief 获取鼠标所在区域
@@ -153,7 +145,7 @@ private:
      * @param y 鼠标 Y 坐标
      * @return 鼠标区域编号
      */
-    int getMouseRegion(const int& x, const int& y) const;
+    int getMouseRegion(const int &x, const int &y) const;
 
 public slots:
     /**
@@ -170,7 +162,7 @@ public:
     QPoint point_offset;                          ///< 鼠标移动偏移
     std::unique_ptr<AboutDialog> m_aboutDialog{}; ///< 关于对话框
     bool m_showDialog = false;                    ///< 关于对话框显示标志
-    DynamicBackgroundInterface* dm_bg;            ///< 动态背景
+    DynamicBackgroundInterface *dm_bg;            ///< 动态背景
 };
 
 #endif // MAINWINDOW_H

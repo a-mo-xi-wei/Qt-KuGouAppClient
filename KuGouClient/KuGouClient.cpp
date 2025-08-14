@@ -9,11 +9,9 @@
 #include "KuGouClient.h"
 #include "Async.h"
 #include "ElaMessageBar.h"
-#include "ElaToolTip.h"
 #include "MyScrollArea.h"
 #include "RefreshMask.h"
 #include "RippleButton.h"
-#include "SpeedDialog/SpeedDialog.h"
 #include "logger.hpp"
 #include "qtmaterialsnackbar.h"
 #include "ui_KuGouClient.h"
@@ -22,16 +20,8 @@
 #include <QDir>
 #include <QFile>
 #include <QJsonArray>
-#include <QJsonDocument>
-#include <QMouseEvent>
-#include <QPainter>
-#include <QPainterPath>
-#include <QPixmap>
-#include <QPoint>
-#include <QPropertyAnimation>
 #include <QShortcut>
 #include <QSizeGrip>
-#include <QTimer>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR                                                                                                \
@@ -45,23 +35,6 @@
  * @return 处理后的圆角图片
  * @note 使用抗锯齿和裁剪路径生成圆角效果
  */
-QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius)
-{
-    QPixmap scaled = src.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
-
-    ///< 缩放图片
-    QPixmap dest(size);
-    dest.fill(Qt::transparent); ///< 设置透明背景
-
-    QPainter painter(&dest);
-    painter.setRenderHint(QPainter::Antialiasing); ///< 启用抗锯齿
-    QPainterPath path;
-    path.addRoundedRect(0, 0, size.width(), size.height(), radius, radius); ///< 创建圆角矩形路径
-    painter.setClipPath(path);                                              ///< 设置裁剪路径
-    painter.drawPixmap(0, 0, scaled);                                       ///< 绘制图片
-
-    return dest;
-}
 
 /**
  * @brief 构造函数，初始化酷狗音乐主界面
@@ -210,12 +183,12 @@ void KuGouClient::initUi()
     this->m_sizeGrip->setFixedSize(15, 15);                      ///< 设置角标大小
     this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip")); ///< 设置对象名称
 
-    // @note 设置歌词界面
+    // @note 设置歌词界面 TODO
 
-    initTitleWidget();   ///< 初始化标题栏
-    initStackedWidget(); ///< 初始化堆栈窗口
-    initPlayWidget();    ///< 初始化播放栏
-    initMenu();          ///< 初始化菜单
+    connectTitleWidget(); ///< 初始化标题栏
+    connectPlayWidget();  ///< 初始化播放栏
+    initStackedWidget();  ///< 初始化堆栈窗口
+    initMenu();           ///< 初始化菜单
 
     // 初始化搜索结果界面并添加到堆栈窗口
     this->m_searchResultWidget = std::make_unique<SearchResultWidget>(ui->stackedWidget);
@@ -229,7 +202,7 @@ void KuGouClient::initUi()
             this,
             [this] {
                 if (m_isSingleCircle)
-                    ui->circle_toolButton->click();
+                    ui->play_widget->changeCircleToolButtonState(m_isSingleCircle);
             });
     connect(m_searchResultWidget.get(),
             &SearchResultWidget::searchEnable,
@@ -425,7 +398,7 @@ void KuGouClient::onSelectedWidget(const int &id)
  * @brief 初始化标题栏
  * @note 连接左侧菜单、堆栈切换、最大化和关于对话框信号
  */
-void KuGouClient::initTitleWidget()
+void KuGouClient::connectTitleWidget()
 {
     // @note 响应左侧菜单显示
     connect(ui->title_widget, &TitleWidget::leftMenuShow, this, &KuGouClient::onLeftMenuShow);
@@ -466,182 +439,54 @@ void KuGouClient::initTitleWidget()
  * @brief 初始化播放栏
  * @note 设置图标、快捷键、工具提示和封面事件
  */
-void KuGouClient::initPlayWidget()
+void KuGouClient::connectPlayWidget()
 {
-    ui->play_widget->setStyleSheet("font-family: 'TaiwanPearl';");
-    ui->love_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/collect.svg"))); ///< 设置收藏图标
-    ui->download_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/download.svg")));
-    ///< 设置下载图标
-    ui->comment_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/comment.svg"))); ///< 设置评论图标
-    ui->share_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/share.svg")));     ///< 设置分享图标
-    ui->more_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/more.svg")));       ///< 设置更多图标
-    ui->pre_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/previous-song.svg")));
-    ///< 设置上一首图标
-    ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
-    ///< 设置播放/暂停图标
-    ui->next_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/next-song.svg"))); ///< 设置下一首图标
-    ui->erji_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/together.svg")));  ///< 设置一起听图标
-    ui->lyrics_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/song-words.svg")));
-    ///< 设置歌词图标
-    ui->song_queue_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play-list.svg")));
-    ///< 设置播放队列图标
-
-    ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover.svg"),
-                                             ui->cover_label->size(),
-                                             8)); ///< 设置默认封面
-
     // @note 设置快捷键
     new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); ///< 空格键暂停/播放
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); ///< 右箭头快进
     new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft()));   ///< 左箭头快退
-
-    // @note 设置工具提示
-    MainWindow::setElaToolTip(ui->love_toolButton, "我喜欢");            ///< 收藏按钮提示
-    MainWindow::setElaToolTip(ui->download_toolButton, "下载");         ///< 下载按钮提示
-    MainWindow::setElaToolTip(ui->comment_toolButton, "评论");          ///< 评论按钮提示
-    MainWindow::setElaToolTip(ui->share_toolButton, "分享");            ///< 分享按钮提示
-    MainWindow::setElaToolTip(ui->more_toolButton, "更多");             ///< 更多按钮提示
-    MainWindow::setElaToolTip(ui->circle_toolButton, "循环播放");         ///< 循环播放按钮提示
-    MainWindow::setElaToolTip(ui->pre_toolButton, "上一首");             ///< 上一首按钮提示
-    MainWindow::setElaToolTip(ui->play_or_pause_toolButton, "播放/暂停"); ///< 播放/暂停按钮提示
-    MainWindow::setElaToolTip(ui->next_toolButton, "下一首");            ///< 下一首按钮提示
-    MainWindow::setElaToolTip(ui->stander_pushButton, "音质选择");        ///< 音质选择按钮提示
-    MainWindow::setElaToolTip(ui->acoustics_pushButton, "音效");        ///< 音效按钮提示
-    MainWindow::setElaToolTip(ui->erji_toolButton, "邀请好友一起听");        ///< 一起听按钮提示
-    MainWindow::setElaToolTip(ui->lyrics_toolButton, "打开桌面歌词");       ///< 歌词按钮提示
-    MainWindow::setElaToolTip(ui->song_queue_toolButton, "播放队列");     ///< 播放队列按钮提示
-    auto song_name_text_toolTip = new ElaToolTip(ui->song_name_text); ///< 创建歌曲名称提示
-    song_name_text_toolTip->setToolTip("网络歌曲");                       ///< 设置默认歌曲提示
-    auto singer_text_toolTip = new ElaToolTip(ui->singer_text);       ///< 创建歌手名称提示
-    singer_text_toolTip->setToolTip("网络歌手");                          ///< 设置默认歌手提示
-
-    auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
-    font.setPixelSize(14);
-    font.setWeight(QFont::Medium);
-    ui->song_name_text->setFont(font); ///< 应用歌曲名称字体
-    ui->singer_text->setFont(font);    ///< 应用歌手名称字体
-    ui->song_name_text->adjustSize();
-    ui->singer_text->adjustSize();
-
-    connect(this,
-            &KuGouClient::curPlaySongNameChange,
-            [this, song_name_text_toolTip](const QString &songName) {
-                song_name_text_toolTip->setToolTip(songName); ///< 更新歌曲名称提示
-                const QFontMetrics fm(ui->song_name_text->font());
-                constexpr int maxWidth = 100;
-                /// qDebug()<<"歌曲文本长度："<<fm.horizontalAdvance(songName);
-                if (fm.horizontalAdvance(songName) > 60)
-                    ui->song_name_text->setFixedWidth(
-                        fm.horizontalAdvance(songName) > maxWidth
-                            ? maxWidth
-                            : fm.horizontalAdvance(songName));
-                else
-                    ui->song_name_text->setFixedWidth(fm.horizontalAdvance(songName));
-                QString elidedText = fm.elidedText(songName,
-                                                   Qt::ElideRight,
-                                                   ui->song_name_text->width()); ///< 计算省略文本
-                /// qDebug()<<"elidedText: "<<elidedText<<" 歌曲文本长度："<<fm.horizontalAdvance(songName) << "
-                /// ui->song_name_text->width() : "<<ui->song_name_text->width();
-                ui->song_name_text->setText(elidedText); ///< 设置省略文本
-                ui->song_name_text->adjustSize();        ///< 适应文本
-                song_name_text_toolTip->adjustSize();    ///< 调整提示尺寸
-                ui->singer_song_HLayout->update();
-            }); ///< 连接歌曲名称变化信号
-
-    connect(this,
-            &KuGouClient::curPlaySingerChange,
-            [this, singer_text_toolTip](const QString &singerName) {
-                singer_text_toolTip->setToolTip(singerName); ///< 更新歌手名称提示
-                const QFontMetrics fm(ui->singer_text->font());
-                constexpr int maxWidth = 120;
-                /// qDebug()<<"歌手文本长度："<<fm.horizontalAdvance(singerName);
-                if (fm.horizontalAdvance(singerName) > 60)
-                    ui->singer_text->setFixedWidth(
-                        fm.horizontalAdvance(singerName) > maxWidth
-                            ? maxWidth
-                            : fm.horizontalAdvance(singerName));
-                else
-                    ui->singer_text->setFixedWidth(fm.horizontalAdvance(singerName));
-                ui->singer_text->setText(
-                    fm.elidedText(singerName, Qt::ElideRight, ui->singer_text->width()));
-                ///< 设置省略文本
-                ui->singer_text->adjustSize();     ///< 适应文本
-                singer_text_toolTip->adjustSize(); ///< 调整提示尺寸
-                ui->singer_song_HLayout->update();
-            }); ///< 连接歌手名称变化信号
-
-    connect(ui->volume_toolButton,
-            &VolumeToolBtn::volumeChange,
+    connect(ui->play_widget,
+            &PlayWidget::volumeChange,
             this,
-            [this](const int value) {
-                this->m_player->setVolume(value / 100.0); ///< 设置播放器音量
-            });                                           ///< 连接音量变化信号
+            [this](int value) {
+                if (this->m_player) {
+                    this->m_player->setVolume(value / 100.0); ///< 设置播放器音量
+                }
+            }); ///< 连接音量变化信号
 
     connect(this->m_player,
             &VideoPlayer::positionChanged,
-            this,
-            [this](int position) {
-                if (ui->progressSlider->isSliderDown())
-                    return;
-                ui->progressSlider->setValue(position); ///< 更新进度条
-                ui->position_label->setText(
-                    QTime::fromMSecsSinceStartOfDay(position).toString("mm:ss")); ///< 更新时间标签
-            });                                                                   ///< 连接播放位置变化信号
+            ui->play_widget,
+            &PlayWidget::onSliderPositionChanged);
+
     connect(this->m_player,
             &VideoPlayer::durationChanged,
-            this,
-            &KuGouClient::updateSliderRange); ///< 连接时长变化信号
+            ui->play_widget,
+            &PlayWidget::updateSliderRange); ///< 连接时长变化信号
 
     connect(this->m_player,
             &VideoPlayer::pictureFound,
-            this,
-            [this](const QPixmap &pix) {
-                if (pix.isNull()) {
-                    if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().
-                        startsWith("https://"))
-                        return;
-                    ui->cover_label->setPixmap(roundedPixmap(
-                        QPixmap(":/Res/playbar/default-cover.svg"),
-                        ui->cover_label->size(),
-                        8)); ///< 设置默认封面
-                } else {
-                    ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8));
-                    ///< 设置封面图片
-                }
-            }); ///< 连接封面图片发现信号
+            ui->play_widget,
+            &PlayWidget::onCoverChanged); ///< 连接封面图片发现信号
+
     connect(this->m_player,
             &VideoPlayer::titleFound,
-            this,
-            [this](const QString &song) {
-                // @note 未使用，保留用于调试
-                // qDebug() << "歌曲：" << song;
-                m_musicTitle = song;              ///< 存储歌曲标题
-                emit curPlaySongNameChange(song); ///< 发射歌曲名称变化信号
-            });                                   ///< 连接歌曲标题发现信号
+            ui->play_widget,
+            &PlayWidget::onSongNameChanged); ///< 连接歌曲标题发现信号
+
     connect(this->m_player,
             &VideoPlayer::artistFound,
-            this,
-            [this](const QString &singer) {
-                // @note 未使用，保留用于调试
-                // qDebug() << "歌手：" << singer;
-                m_musicArtist = singer;           ///< 存储歌手名称
-                emit curPlaySingerChange(singer); ///< 发射歌手名称变化信号
-            });                                   ///< 连接歌手名称发现信号
+            ui->play_widget,
+            &PlayWidget::onSingerNameChanged);
 
     connect(this->m_player,
             &VideoPlayer::audioPlay,
-            this,
-            [this] {
-                ui->play_or_pause_toolButton->setIcon(
-                    QIcon(QStringLiteral(":/Res/playbar/play.svg"))); ///< 设置播放图标
-            });                                                       ///< 连接音频播放信号
+            ui->play_widget,
+            &PlayWidget::onAudioPlay);
     connect(this->m_player,
             &VideoPlayer::audioPause,
-            this,
-            [this] {
-                ui->play_or_pause_toolButton->setIcon(
-                    QIcon(QStringLiteral(":/Res/playbar/pause.svg"))); ///< 设置暂停图标
-            });                                                        ///< 连接音频暂停信号
+            ui->play_widget,
+            &PlayWidget::onAudioPause);
 
     mediaStatusConnection = connect(this->m_player,
                                     &VideoPlayer::audioFinish,
@@ -649,8 +494,7 @@ void KuGouClient::initPlayWidget()
                                     [this] {
                                         // @note 未使用，保留用于调试
                                         // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
-                                        ui->play_or_pause_toolButton->setIcon(
-                                            QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
+                                        ui->play_widget->onAudioPause();
                                         ///< 设置暂停图标
                                         if (m_localDownload) {
                                             this->m_localDownload->audioFinished(); ///< 通知本地下载组件
@@ -670,11 +514,51 @@ void KuGouClient::initPlayWidget()
                                      this->window()); ///< 显示错误提示
             });                                       ///< 连接错误信号
 
-    ui->progressSlider->installEventFilter(this); ///< 安装进度条事件过滤器
-    connect(ui->progressSlider,
-            &QSlider::sliderReleased,
+    connect(ui->play_widget,
+            &PlayWidget::sliderPressed,
             this,
-            &KuGouClient::updateProcess); ///< 连接进度条释放信号
+            [this](const int &value) {
+                ///< 鼠标按下事件
+                if (this->m_player->state() == VideoPlayer::State::Stop) {
+                    this->m_player->replay(true); ///< 重新播放
+                }
+                this->m_player->pause();     ///< 暂停播放
+                this->m_player->seek(value); ///< 跳转到指定位置
+                this->m_player->play();      ///< 继续播放
+            });
+
+    connect(ui->play_widget,
+            &PlayWidget::sliderReleased,
+            this,
+            &KuGouClient::updateProcess);
+
+    connect(ui->play_widget,
+            &PlayWidget::clickedPlayPauseBtn,
+            this,
+            [this] {
+                if (this->m_player->state() == VideoPlayer::State::Playing) {
+                    this->m_player->pause(); ///< 暂停播放
+                    ui->play_widget->setPlayPauseIcon(false);
+                } else if (this->m_player->state() == VideoPlayer::State::Pause) {
+                    this->m_player->play(); ///< 继续播放
+                    ui->play_widget->setPlayPauseIcon(true);
+                } else if (this->m_player->state() == VideoPlayer::State::Stop) {
+                    this->m_player->replay(true);            ///< 重新播放
+                    ui->play_widget->setPlayPauseIcon(true); ///< 设置播放图标
+                }
+            });
+
+    connect(ui->play_widget,
+            &PlayWidget::clickedCircleBtn,
+            this,
+            &KuGouClient::onCircleBtnClicked);
+
+    connect(ui->play_widget, &PlayWidget::clickedPreBtn, this, &KuGouClient::onPreBtnClicked);
+
+    connect(ui->play_widget,
+            &PlayWidget::clickedNextBtn,
+            this,
+            &KuGouClient::onNextBtnClicked); ///< 连接下一首按钮点击信号
 }
 
 /**
@@ -961,7 +845,7 @@ QWidget *KuGouClient::createPage(int id)
                     this,
                     [this] {
                         if (m_isSingleCircle)
-                            ui->circle_toolButton->click();
+                            ui->play_widget->changeCircleToolButtonState(m_isSingleCircle);
                     });
             connect(
                 m_localDownload.get(),
@@ -1140,17 +1024,7 @@ void KuGouClient::resizeEvent(QResizeEvent *event)
                            this->height() - this->m_sizeGrip->height() - 8);
     this->m_sizeGrip->raise();          ///< 提升角标层级
     this->m_sizeGrip->setVisible(true); ///< 显示角标
-    // @note 调整歌曲信息宽度
-    ui->song_info_widget->setFixedWidth(this->width() / 8 + 20);
-    // @note 更新歌曲和歌手文本
-    if (!this->m_player->getMusicPath().isEmpty()) {
-        const QFontMetrics fm(ui->song_name_text->font());
-        ui->song_name_text->setText(
-            fm.elidedText(m_musicTitle, Qt::ElideRight, ui->song_name_text->width()));
-        ///< 设置歌曲省略文本
-        ui->singer_text->setText(
-            fm.elidedText(m_musicArtist, Qt::ElideRight, ui->singer_text->width())); ///< 设置歌手省略文本
-    }
+
     // @note 同步刷新遮罩大小
     auto rect = ui->stackedWidget->geometry();
     rect.setLeft(5);
@@ -1173,55 +1047,6 @@ bool KuGouClient::event(QEvent *event)
         return true;
     }
     return MainWindow::event(event); ///< 调用父类处理
-}
-
-/**
- * @brief 事件过滤器
- * @param watched 监控对象
- * @param event 事件
- * @return 是否处理事件
- * @note 处理进度条和封面标签事件
- */
-bool KuGouClient::eventFilter(QObject *watched, QEvent *event)
-{
-    if (watched == ui->progressSlider) {
-        // @note 禁用进度条拖拽
-        if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease
-            ||
-            event->type() == QEvent::MouseMove) {
-            if (this->m_player->getMusicPath().isEmpty()) {
-                return true; ///< 拦截鼠标事件
-            }
-        }
-        if (event->type() == QEvent::MouseButtonPress) {
-            ///< 鼠标按下事件
-            if (this->m_player->state() == VideoPlayer::State::Stop) {
-                this->m_player->replay(true); ///< 重新播放
-            }
-            auto mouseEvent = dynamic_cast<QMouseEvent *>(event);
-            if (mouseEvent->button() == Qt::LeftButton) {
-                ///< 左键按下
-                qint64 value = QStyle::sliderValueFromPosition(ui->progressSlider->minimum(),
-                                                               ui->progressSlider->maximum(),
-                                                               mouseEvent->pos().x(),
-                                                               ui->progressSlider->width());
-                ///< 计算进度值
-                // @note 未使用，保留用于调试
-                /*
-                auto ani = new QPropertyAnimation(ui->progressSlider, "sliderPosition");
-                ani->setDuration(100);
-                ani->setStartValue(ui->progressSlider->value());
-                ani->setEndValue(value);
-                ani->setEasingCurve(QEasingCurve::Linear);
-                ani->start(QAbstractAnimation::DeleteWhenStopped);
-                */
-                this->m_player->pause();            ///< 暂停播放
-                this->m_player->seek(value * 1000); ///< 跳转到指定位置
-                this->m_player->play();             ///< 继续播放
-            }
-        }
-    }
-    return MainWindow::eventFilter(watched, event); ///< 调用父类处理
 }
 
 /**
@@ -1255,31 +1080,16 @@ void KuGouClient::handleSuggestBoxSuggestionClicked(const QString &suggestText,
  * @brief 更新播放进度
  * @note 根据进度条位置调整播放器进度
  */
-void KuGouClient::updateProcess()
+void KuGouClient::updateProcess(const int &sliderValue, const int &maxSliderValue)
 {
-    qint64 position = ui->progressSlider->value() * this->m_player->getTotalTime() / ui->
-                      progressSlider->maximum();
+    qint64 position = sliderValue * this->m_player->getTotalTime() / maxSliderValue;
+
     ///< 计算播放位置
     // @note 未使用，保留用于调试
     // qDebug() << "position : " << position;
     this->m_player->pause();        ///< 暂停播放
     this->m_player->seek(position); ///< 跳转到指定位置
     this->m_player->play();         ///< 继续播放
-}
-
-/**
- * @brief 更新进度条范围
- * @param duration 总时长（毫秒）
- * @note 设置进度条最大值和时长标签
- */
-void KuGouClient::updateSliderRange(const qint64 &duration)
-{
-    ui->progressSlider->setMaximum(static_cast<int>(duration)); ///< 设置进度条最大值
-    // @note 未使用，保留用于调试
-    // qDebug() << "改变总时长为：" << duration;
-    ui->duration_label->setText(
-        QTime::fromMSecsSinceStartOfDay(static_cast<int>(duration)).toString("mm:ss"));
-    ///< 更新时长标签
 }
 
 /**
@@ -1422,22 +1232,14 @@ void KuGouClient::onSearchResultMusicPlay(const MusicItemWidget *item)
     }
     // qDebug()<<"设置封面："<<item->m_information.cover;
     if (!item->m_information.cover.isNull())
-        ui->cover_label->setPixmap(item->m_information.cover);
-    m_musicTitle = item->m_information.songName;
-    emit curPlaySongNameChange(m_musicTitle);
-    m_musicArtist = item->m_information.singer;
-    emit curPlaySingerChange(m_musicArtist);
+        ui->play_widget->setCover(item->m_information.cover);
+    ui->play_widget->setSongName(item->m_information.songName);
+    ui->play_widget->setSingerName(item->m_information.singer);
 }
 
 void KuGouClient::onTrayIconNoVolume(const bool &flag)
 {
-    // @note 未使用，保留用于调试
-    // STREAM_INFO() << "KuGouApp 托盘图标点击: " << (flag ? "静音" : "开启声音");
-    if ((flag && ui->volume_toolButton->getVolumeValue()) || (
-            !flag && !ui->volume_toolButton->getVolumeValue())) {
-        QCoreApplication::sendEvent(ui->volume_toolButton, new QEvent(QEvent::Enter)); ///< 触发进入事件
-        ui->volume_toolButton->clicked();                                              ///< 模拟点击
-    }
+    ui->play_widget->setNoVolume(flag);
 }
 
 void KuGouClient::onTrayIconExit()
@@ -1446,121 +1248,10 @@ void KuGouClient::onTrayIconExit()
 }
 
 /**
- * @brief 播放/暂停按钮点击槽函数
- * @note 切换播放/暂停状态
- */
-void KuGouClient::on_play_or_pause_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-        return;
-    }
-
-    if (this->m_player->state() == VideoPlayer::State::Pause) {
-        this->m_player->play(); ///< 继续播放
-        // @note 未使用，保留用于调试
-        // qDebug() << "播放";
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
-        ///< 设置播放图标
-    } else if (this->m_player->state() == VideoPlayer::State::Playing) {
-        this->m_player->pause(); ///< 暂停播放
-        // @note 未使用，保留用于调试
-        // qDebug() << "暂停";
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/pause.svg")));
-        ///< 设置暂停图标
-    } else if (this->m_player->state() == VideoPlayer::State::Stop) {
-        // @note 未使用，保留用于调试
-        // qDebug() << "当前状态：Stop,开始重新播放。。。";
-        this->m_player->replay(true); ///< 重新播放
-        ui->play_or_pause_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play.svg")));
-        ///< 设置播放图标
-    }
-}
-
-/**
- * @brief 收藏按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_love_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-    }
-}
-
-/**
- * @brief 下载按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_download_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-    }
-}
-
-/**
- * @brief 评论按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_comment_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-    }
-}
-
-/**
- * @brief 分享按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_share_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-    }
-}
-
-/**
- * @brief 更多按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_more_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-    }
-}
-
-/**
  * @brief 循环播放按钮点击槽函数
  * @note 切换单曲循环状态
  */
-void KuGouClient::on_circle_toolButton_clicked()
+void KuGouClient::onCircleBtnClicked()
 {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,
@@ -1572,11 +1263,6 @@ void KuGouClient::on_circle_toolButton_clicked()
     }
     m_isSingleCircle = !m_isSingleCircle; ///< 切换循环状态
     if (m_isSingleCircle) {
-        // @note 未使用，保留用于调试
-        // qDebug() << "单曲循环";
-        ui->circle_toolButton->setStyleSheet(
-            R"(QToolButton{border-image:url(':/Res/playbar/single-list-loop-gray.svg');}
-               QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
         ///< 设置单曲循环样式
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection); ///< 断开原有连接
@@ -1586,9 +1272,8 @@ void KuGouClient::on_circle_toolButton_clicked()
                                             [this] {
                                                 // @note 未使用，保留用于调试
                                                 // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
-                                                ui->play_or_pause_toolButton->setIcon(
-                                                    QIcon(QStringLiteral(
-                                                        ":/Res/playbar/pause.svg"))); ///< 设置暂停图标
+                                                ui->play_widget->setPlayPauseIcon(false);
+
                                                 // @note 未使用，保留用于调试
                                                 // qDebug() << __LINE__ << " 重新播放";
                                                 this->m_player->replay(true); ///< 重新播放
@@ -1599,8 +1284,6 @@ void KuGouClient::on_circle_toolButton_clicked()
             STREAM_WARN() << "mediaStatusConnection is empty"; ///< 记录警告日志
         }
     } else {
-        // @note 未使用，保留用于调试
-        // qDebug() << "播放一次";
         if (mediaStatusConnection) {
             disconnect(mediaStatusConnection); ///< 断开原有连接
             mediaStatusConnection = connect(this->m_player,
@@ -1609,9 +1292,8 @@ void KuGouClient::on_circle_toolButton_clicked()
                                             [this] {
                                                 // @note 未使用，保留用于调试
                                                 // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
-                                                ui->play_or_pause_toolButton->setIcon(
-                                                    QIcon(QStringLiteral(
-                                                        ":/Res/playbar/pause.svg"))); ///< 设置暂停图标
+                                                ui->play_widget->setPlayPauseIcon(false);
+
                                                 // @note 未使用，保留用于调试
                                                 // qDebug() << "正常结束";
                                                 if (ui->stackedWidget->currentWidget() ==
@@ -1631,10 +1313,6 @@ void KuGouClient::on_circle_toolButton_clicked()
             // qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty"; ///< 记录警告日志
         }
-        ui->circle_toolButton->setStyleSheet(
-            R"(QToolButton{border-image:url(':/Res/playbar/list-loop-gray.svg');}
-               QToolButton:hover{border-image:url(':/Res/playbar/list-loop-blue.svg');})");
-        ///< 设置列表循环样式
     }
 }
 
@@ -1642,7 +1320,7 @@ void KuGouClient::on_circle_toolButton_clicked()
  * @brief 上一首按钮点击槽函数
  * @note 播放上一首本地歌曲
  */
-void KuGouClient::on_pre_toolButton_clicked()
+void KuGouClient::onPreBtnClicked()
 {
     ///< 点击下一首/上一首时需要判断当前是否播放过音乐，如果没有播放过音乐，需要显示无音乐提示
     if (this->m_player->getMusicPath().isEmpty()) {
@@ -1665,7 +1343,7 @@ void KuGouClient::on_pre_toolButton_clicked()
  * @brief 下一首按钮点击槽函数
  * @note 播放下一首本地歌曲
  */
-void KuGouClient::on_next_toolButton_clicked()
+void KuGouClient::onNextBtnClicked()
 {
     if (this->m_player->getMusicPath().isEmpty()) {
         ElaMessageBar::warning(ElaMessageBarType::BottomRight,
@@ -1680,144 +1358,5 @@ void KuGouClient::on_next_toolButton_clicked()
         m_searchResultWidget->playNextMusic();
     } else if (m_localDownload) {
         this->m_localDownload->playLocalSongNextSong(); ///< 播放下一首
-    }
-}
-
-/**
- * @brief 速度选择按钮点击槽函数
- * @note 显示速度选择界面
- */
-void KuGouClient::on_speed_pushButton_clicked()
-{
-    /// 弹出速度相关界面，并且在隐藏的时候销毁
-    auto speedDialog = new SpeedDialog(this);
-    auto statePtr = std::make_shared<SpeedDialogState>(); ///< 使用智能指针
-    // 连接关闭信号以保存状态
-    connect(speedDialog,
-            &SpeedDialog::aboutToClose,
-            [this, speedDialog, statePtr]() {
-                // 获取当前状态并保存到文件
-                *statePtr = speedDialog->getState();
-                statePtr->save();
-            });
-
-    // 从文件加载并恢复状态
-    speedDialog->setState(*statePtr);
-    // @note 未使用，保留用于调试
-    /*
-        connect(speedDialog, &QObject::destroyed, this, [] {
-            qDebug() << "SpeedDialog destroyed";
-        });
-    */
-    auto tmpPos = ui->speed_pushButton->mapToGlobal(
-        QPoint(ui->speed_pushButton->width() / 2, ui->speed_pushButton->height() / 2));
-    tmpPos.setX(tmpPos.x() - speedDialog->width() / 2);
-    tmpPos.setY(tmpPos.y() - speedDialog->height() - 15);
-    auto pos = mapFromGlobal(tmpPos);
-    speedDialog->move(pos);
-    speedDialog->show();
-
-    /// 连接槽
-    connect(speedDialog,
-            &SpeedDialog::btnTextChanged,
-            this,
-            [this](const QString &text) {
-                ui->speed_pushButton->setText(text);
-                if (text == "倍速") {
-                    ui->speed_pushButton->setStyleSheet("background-color: transparent;");
-                } else {
-                    ui->speed_pushButton->setStyleSheet(
-                        "background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 "
-                        "rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255));");
-                }
-            });
-
-    connect(speedDialog,
-            &SpeedDialog::speedChanged,
-            this,
-            [this](const float &speed) {
-                // @note 调试用 qDebug() << "设置速度为：" << speed;
-                if (this->m_player)
-                    this->m_player->setSpeed(speed);
-            });
-}
-
-/**
- * @brief 音质选择按钮点击槽函数
- * @note 显示未实现提示
- */
-void KuGouClient::on_stander_pushButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,
-                                   "Info",
-                                   QStringLiteral("音质选择功能 暂未实现 敬请期待"),
-                                   1000,
-                                   this->window()); ///< 显示未实现提示
-        return;
-    }
-}
-
-/**
- * @brief 音效按钮点击槽函数
- * @note 显示未实现提示
- */
-void KuGouClient::on_acoustics_pushButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,
-                                   "Info",
-                                   QStringLiteral("音效功能 暂未实现 敬请期待"),
-                                   1000,
-                                   this->window()); ///< 显示未实现提示
-        return;
-    }
-}
-
-/**
- * @brief 一起听按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_erji_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-        return;
-    }
-}
-
-/**
- * @brief 歌词按钮点击槽函数
- * @note 检查音乐路径并显示提示
- */
-void KuGouClient::on_lyrics_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::warning(ElaMessageBarType::BottomRight,
-                               "Warning",
-                               QStringLiteral("暂无可播放音乐"),
-                               1000,
-                               this->window()); ///< 显示无音乐提示
-        return;
-    }
-}
-
-/**
- * @brief 播放队列按钮点击槽函数
- * @note 显示未实现提示
- */
-void KuGouClient::on_song_queue_toolButton_clicked()
-{
-    if (this->m_player->getMusicPath().isEmpty()) {
-        ElaMessageBar::information(ElaMessageBarType::BottomRight,
-                                   "Info",
-                                   QStringLiteral("播放队列功能 暂未实现 敬请期待"),
-                                   1000,
-                                   this->window()); ///< 显示未实现提示
-        return;
     }
 }
