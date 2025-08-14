@@ -9,15 +9,15 @@ project(KuGouApp VERSION 1.0 LANGUAGES CXX
 find_package(Qt6 REQUIRED COMPONENTS Widgets StateMachine Core Network Multimedia
         Core5Compat Sql Concurrent Gui)
 
-file(GLOB QRC_FILE ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/*.qrc)
+file(GLOB QRC_FILE Res_Qrc/*.qrc)
 
 if (WIN32)
     # 创建专用的资源文件目标，仅包含必要路径
-    add_library(app_resources OBJECT ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc)
+    add_library(app_resources OBJECT Res_Qrc/Res/titleIcon.rc)
 
     # 只添加资源文件需要的路径（示例，根据实际需要调整）
     target_include_directories(app_resources PRIVATE
-            ${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res
+            Res_Qrc/Res
     )
 endif ()
 
@@ -26,7 +26,7 @@ set(SOURCE_FILE
         AppController.cpp
         main.cpp
         ${QRC_FILE}
-        #${CMAKE_CURRENT_SOURCE_DIR}/KuGouClient/Res_Qrc/Res/titleIcon.rc
+        #${CMAKE_CURRENT_SOURCE_DIR}/Res_Qrc/Res/titleIcon.rc
         # 链接专用资源对象
         $<TARGET_OBJECTS:app_resources>
 )

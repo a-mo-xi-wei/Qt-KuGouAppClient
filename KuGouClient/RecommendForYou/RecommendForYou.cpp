@@ -91,6 +91,7 @@ void RecommendForYou::initAdvertiseBoard() const
     QDir dir(__FILE__);                          ///< 获取当前文件目录
     dir.cdUp();                                          ///< 向上两级目录
     dir.cdUp();
+    dir.cdUp();
     // @note 未使用，保留用于调试
     // qDebug() << "当前目录：" << dir.dirName();
     dir.cd("Res_Qrc/Res/recommend/poster");            ///< 进入海报目录
