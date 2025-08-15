@@ -106,6 +106,12 @@ QWidget *LocalDownload::createPage(int id)
                 &LocalSong::cancelLoopPlay,
                 this,
                 &LocalDownload::cancelLoopPlay);
+        connect(m_localSong.get(),
+                &LocalSong::initialized,
+                this,
+                [this] {
+                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                });
         page = m_localSong.get();
         break;
     case 1: m_downloadedSong = std::make_unique<DownloadedSong>(ui->stackedWidget);
@@ -279,7 +285,6 @@ void LocalDownload::initUi()
                            ///< 设置动画曲线
                            ui->stackedWidget->setSpeed(400);                  ///< 设置动画速度
                            ui->stackedWidget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
-                           QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
                        });
 }
 

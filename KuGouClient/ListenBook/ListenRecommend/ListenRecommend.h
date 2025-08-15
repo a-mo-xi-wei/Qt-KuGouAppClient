@@ -9,6 +9,8 @@
 #ifndef LISTENRECOMMEND_H
 #define LISTENRECOMMEND_H
 
+#include <QTimer>
+
 #include "ListenOptionMenu/ListenOptionMenu.h"
 #include "ListenTableWidget/ListenTableWidget.h"
 
@@ -20,10 +22,11 @@
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class ListenRecommend;
+
+namespace Ui {
+class ListenRecommend;
 }
+
 QT_END_NAMESPACE
 
 class QTimer;
@@ -102,17 +105,24 @@ private slots:
      */
     void onMenuFuncClicked(const QString &funcName);
 
+
+signals:
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
     void showEvent(QShowEvent *event) override;
 
 private:
-    Ui::ListenRecommend                    *ui;                 ///< UI 指针
-    ListenOptionMenu                       *m_menu{};           ///< 分类菜单
-    QList<std::pair<QString, QString>>      m_galleryVector[17];///< 画廊数据数组
-    QTimer                                 *m_refreshTimer{};   ///< 刷新定时器
-    std::unique_ptr<RefreshMask>            m_refreshMask;      ///< 刷新遮罩
+    Ui::ListenRecommend *ui;                                ///< UI 指针
+    ListenOptionMenu *m_menu{};                             ///< 分类菜单
+    QList<std::pair<QString, QString>> m_galleryVector[17]; ///< 画廊数据数组
+    QTimer *m_refreshTimer{};                               ///< 刷新定时器
+    std::unique_ptr<RefreshMask> m_refreshMask;             ///< 刷新遮罩
 };
 
 #endif // LISTENRECOMMEND_H

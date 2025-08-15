@@ -23,8 +23,7 @@
 // 前向声明
 class RippleButton;
 
-namespace Ui
-{
+namespace Ui {
 class TitleWidget;
 }
 
@@ -36,11 +35,11 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
 {
     Q_OBJECT
 
-  public:
+public:
     /**
      * @brief 界面类型枚举
      */
-    enum StackType
+    enum class StackType
     {
         TitleLive = 0,       ///< 直播界面
         ListenBook = 1,      ///< 听书界面
@@ -80,7 +79,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
 
     void setEnableTitleButton(const bool &flag);
 
-  private:
+private:
     /**
      * @brief 初始化界面元素
      */
@@ -101,7 +100,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
      */
     void setTitleIndex(const int &index) const;
 
-  protected:
+protected:
     /**
      * @brief 重写鼠标双击事件，触发最大化
      * @param event 鼠标事件
@@ -138,7 +137,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
      */
     void resizeEvent(QResizeEvent *event) override;
 
-  private slots:
+private slots:
     /**
      * @brief 返回按钮点击事件，触发界面回退
      */
@@ -199,7 +198,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
      */
     void on_max_toolButton_clicked();
 
-  public slots:
+public slots:
     /**
      * @brief 关闭按钮点击事件，显示退出对话框
      */
@@ -281,7 +280,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
      */
     void onSetSearchEnable(bool flag);
 
-  signals:
+signals:
     /**
      * @brief 界面切换信号，通知界面索引和是否滑动
      * @param index 目标界面索引
@@ -330,7 +329,7 @@ class MYWINDOW_EXPORT TitleWidget : public QWidget
      */
     void logOut();
 
-  private:
+private:
     Ui::TitleWidget *ui;                          ///< UI 界面对象
     QStack<StackType> m_backTypeStack;            ///< 后退导航栈
     QStack<StackType> m_frontTypeStack;           ///< 前进导航栈

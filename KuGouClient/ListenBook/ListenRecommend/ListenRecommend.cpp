@@ -189,6 +189,10 @@ void ListenRecommend::initTableWidgets()
                                    initOtherGalleryWidget(info.galleryName, widget);
                                    if (info.cnt == 16) {
                                        m_refreshMask->hideLoading("");
+                                       QMetaObject::invokeMethod(
+                                           this,
+                                           "emitInitialized",
+                                           Qt::QueuedConnection);
                                    }
                                });
 
@@ -202,7 +206,7 @@ void ListenRecommend::initTableWidgets()
         if (queue->isEmpty())
             return;
         auto task = queue->dequeue();
-        QTimer::singleShot(100,
+        QTimer::singleShot(0,
                            nullptr,
                            [task, runner]() {
                                task();

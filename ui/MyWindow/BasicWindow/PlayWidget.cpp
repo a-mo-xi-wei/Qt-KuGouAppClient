@@ -12,9 +12,6 @@
 #include "ElaToolTip.h"
 
 #include "PlayWidget.h"
-#include <QPainter>
-#include <QPainterPath>
-#include <QMouseEvent>
 #include <QTime>
 
 QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius)
@@ -72,6 +69,7 @@ void PlayWidget::setSingerName(const QString &singer)
 void PlayWidget::setCover(const QPixmap &pix)
 {
     if (pix.isNull()) {
+        /// 网络歌曲无法解析出图片
         /// if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().
         ///     startsWith("https://"))
         ///     return;
@@ -80,15 +78,13 @@ void PlayWidget::setCover(const QPixmap &pix)
             ui->cover_label->size(),
             8)); ///< 设置默认封面
     } else {
-        ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8));
-        ///< 设置封面图片
+        ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8)); ///< 设置封面图片
     }
 }
 
-void PlayWidget::changeCircleToolButtonState(bool isSingleCircle)
+void PlayWidget::changeCircleToolButtonState(bool singleCircle)
 {
-    isSingleCircle = !isSingleCircle; ///< 切换循环状态
-    if (isSingleCircle) {
+    if (singleCircle) {
         ui->circle_toolButton->setStyleSheet(
             R"(QToolButton{border-image:url(':/Res/playbar/single-list-loop-gray.svg');}
                QToolButton:hover{border-image:url(':/Res/playbar/single-list-loop-blue.svg');})");
@@ -231,7 +227,7 @@ void PlayWidget::initUi()
             &VolumeToolBtn::volumeChange,
             this,
             [this](const int value) {
-                emit volumeChange(value / 100.0); ///< 设置播放器音量
+                emit volumeChange(value); ///< 设置播放器音量
             });
 
     connect(ui->progressSlider,
@@ -448,10 +444,9 @@ void PlayWidget::on_next_toolButton_clicked()
  * @note 显示速度选择界面
  */
 void PlayWidget::on_speed_pushButton_clicked()
-
 {
     /// 弹出速度相关界面，并且在隐藏的时候销毁
-    auto speedDialog = new SpeedDialog(this);
+    auto speedDialog = new SpeedDialog(this->window());
     auto statePtr = std::make_shared<SpeedDialogState>(); ///< 使用智能指针
     // 连接关闭信号以保存状态
     connect(speedDialog,
@@ -474,7 +469,7 @@ void PlayWidget::on_speed_pushButton_clicked()
         QPoint(ui->speed_pushButton->width() / 2, ui->speed_pushButton->height() / 2));
     tmpPos.setX(tmpPos.x() - speedDialog->width() / 2);
     tmpPos.setY(tmpPos.y() - speedDialog->height() - 15);
-    auto pos = mapFromGlobal(tmpPos);
+    auto pos = this->window()->mapFromGlobal(tmpPos);
     speedDialog->move(pos);
     speedDialog->show();
 

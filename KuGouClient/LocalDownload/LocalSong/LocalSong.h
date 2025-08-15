@@ -17,15 +17,18 @@
 #include <QQueue>
 #include <QWidget>
 #include <QJsonObject>
+#include <QTimer>
 
-struct JsonObjectHash {
-    size_t operator()(const QJsonObject& obj) const {
+struct JsonObjectHash
+{
+    size_t operator()(const QJsonObject &obj) const
+    {
         // 使用关键字段生成哈希值
         return qHash(
             obj["song"].toString() + "|" +
             obj["singer"].toString() + "|" +
             obj["duration"].toString()
-        );
+            );
     }
 };
 
@@ -38,10 +41,11 @@ class RefreshMask;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class LocalSong;
+
+namespace Ui {
+class LocalSong;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -140,7 +144,7 @@ private:
     * @brief 滚动到指定歌曲项
      * @param mediaPath
      */
-    void scrollToItem(const QString& mediaPath);
+    void scrollToItem(const QString &mediaPath);
 
     void handleSongsResult(const QJsonArray &songs);
 
@@ -168,7 +172,8 @@ private slots:
      * @param suggestText 建议文本
      * @param suggestData 建议数据
      */
-    void handleSuggestBoxSuggestionClicked(const QString& suggestText,const  QVariantMap& suggestData);
+    void handleSuggestBoxSuggestionClicked(const QString &suggestText,
+                                           const QVariantMap &suggestData);
 
     /**
      * @brief 分享按钮点击槽函数
@@ -364,6 +369,12 @@ signals:
      */
     void cancelLoopPlay();
 
+signals:
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
 protected:
     /**
      * @brief 事件过滤器
@@ -379,29 +390,30 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private:
-    Ui::LocalSong                       *ui;                        ///< UI 指针
-    std::unique_ptr<QMediaPlayer>        m_player;                  ///< 媒体播放器
-    QVector<SongInfor>                   m_locationMusicVector;     ///< 本地歌曲信息
-    QVector<SongInfor>                   m_lastLocationMusicVector; ///< 上次歌曲信息
-    QVector<MusicItemWidget *>           m_musicItemVector;         ///< 音乐项控件
-    std::unordered_map<QJsonObject, QString, JsonObjectHash> m_songSingerToKey;         ///< 歌曲信息 --> suggestion Key
-    MusicItemWidget                     *m_curPlayItemWidget{};     ///< 当前播放控件
-    QTimer* m_loadTimer = nullptr;                                  ///< 加载定时器
-    int m_currentLoadIndex = 0;                                     ///< 当前加载索引
-    bool m_isLoading = false;                                       ///< 是否正在加载
-    std::unique_ptr<RefreshMask>        m_refreshMask;              ///< 刷新遮罩
+    Ui::LocalSong *ui;                            ///< UI 指针
+    std::unique_ptr<QMediaPlayer> m_player;       ///< 媒体播放器
+    QVector<SongInfor> m_locationMusicVector;     ///< 本地歌曲信息
+    QVector<SongInfor> m_lastLocationMusicVector; ///< 上次歌曲信息
+    QVector<MusicItemWidget *> m_musicItemVector; ///< 音乐项控件
+    std::unordered_map<QJsonObject, QString, JsonObjectHash> m_songSingerToKey;
+    ///< 歌曲信息 --> suggestion Key
+    MusicItemWidget *m_curPlayItemWidget{};     ///< 当前播放控件
+    QTimer *m_loadTimer = nullptr;              ///< 加载定时器
+    int m_currentLoadIndex = 0;                 ///< 当前加载索引
+    bool m_isLoading = false;                   ///< 是否正在加载
+    std::unique_ptr<RefreshMask> m_refreshMask; ///< 刷新遮罩
 
-    bool                                 m_isOrderPlay = false;     ///< 是否顺序播放
-    QAction                             *m_searchAction{};          ///< 搜索动作
-    QString                              m_mediaPath;               ///< 当前媒体路径
-    QQueue<QString>                      m_songQueue;               ///< 歌曲队列
-    int                                  m_curPlayIndex = -1;       ///< 当前播放索引
-    int                                  m_setPlayIndex = -1;       ///< 设置播放索引
-    bool                                 m_deleteSelf = -false;     ///< 是否删除自身
-    SortOptionMenu                      *m_sortOptMenu{};           ///< 排序选项菜单
-    bool                                 m_isSorting = false;       ///< 是否正在排序
-    QPoint                               m_menuPosition;            ///< 菜单位置
-    CLibhttp                             m_libHttp;                 ///< HTTP 请求库
+    bool m_isOrderPlay = false;      ///< 是否顺序播放
+    QAction *m_searchAction{};       ///< 搜索动作
+    QString m_mediaPath;             ///< 当前媒体路径
+    QQueue<QString> m_songQueue;     ///< 歌曲队列
+    int m_curPlayIndex = -1;         ///< 当前播放索引
+    int m_setPlayIndex = -1;         ///< 设置播放索引
+    bool m_deleteSelf = -false;      ///< 是否删除自身
+    SortOptionMenu *m_sortOptMenu{}; ///< 排序选项菜单
+    bool m_isSorting = false;        ///< 是否正在排序
+    QPoint m_menuPosition;           ///< 菜单位置
+    CLibhttp m_libHttp;              ///< HTTP 请求库
 };
 
 #endif // LOCALSONG_H

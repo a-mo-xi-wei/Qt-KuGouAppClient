@@ -185,10 +185,8 @@ void KuGouClient::initUi()
 
     // @note 设置歌词界面 TODO
 
-    connectTitleWidget(); ///< 初始化标题栏
-    connectPlayWidget();  ///< 初始化播放栏
-    initStackedWidget();  ///< 初始化堆栈窗口
-    initMenu();           ///< 初始化菜单
+    initStackedWidget(); ///< 初始化堆栈窗口
+    initMenu();          ///< 初始化菜单
 
     // 初始化搜索结果界面并添加到堆栈窗口
     this->m_searchResultWidget = std::make_unique<SearchResultWidget>(ui->stackedWidget);
@@ -201,13 +199,17 @@ void KuGouClient::initUi()
             &SearchResultWidget::cancelLoopPlay,
             this,
             [this] {
-                if (m_isSingleCircle)
-                    ui->play_widget->changeCircleToolButtonState(m_isSingleCircle);
+                if (m_isSingleCircle) {
+                    onCircleBtnClicked();
+                }
             });
     connect(m_searchResultWidget.get(),
             &SearchResultWidget::searchEnable,
             this,
             [this](bool enable) { ui->title_widget->onSetSearchEnable(enable); });
+
+    connectTitleWidget(); ///< 连接标题栏
+    connectPlayWidget();  ///< 连接播放栏
 }
 
 /**
@@ -289,8 +291,7 @@ void KuGouClient::onSelectedWidget(const int &id)
                     break;
                 case 10: m_collection.reset();
                     break;
-                case 11: m_localDownload.reset();
-                    break;
+                // case 11: m_localDownload.reset();break;
                 case 12: m_musicCloudDisk.reset();
                     break;
                 case 13: m_purchasedMusic.reset();
@@ -445,15 +446,6 @@ void KuGouClient::connectPlayWidget()
     new QShortcut(QKeySequence("Space"), this, SLOT(onKeyPause())); ///< 空格键暂停/播放
     new QShortcut(QKeySequence("Right"), this, SLOT(onKeyRight())); ///< 右箭头快进
     new QShortcut(QKeySequence("Left"), this, SLOT(onKeyLeft()));   ///< 左箭头快退
-    connect(ui->play_widget,
-            &PlayWidget::volumeChange,
-            this,
-            [this](int value) {
-                if (this->m_player) {
-                    this->m_player->setVolume(value / 100.0); ///< 设置播放器音量
-                }
-            }); ///< 连接音量变化信号
-
     connect(this->m_player,
             &VideoPlayer::positionChanged,
             ui->play_widget,
@@ -493,16 +485,30 @@ void KuGouClient::connectPlayWidget()
                                     this,
                                     [this] {
                                         // @note 未使用，保留用于调试
-                                        // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
-                                        ui->play_widget->onAudioPause();
-                                        ///< 设置暂停图标
-                                        if (m_localDownload) {
-                                            this->m_localDownload->audioFinished(); ///< 通知本地下载组件
+                                        qDebug() << __LINE__ << " ***** " << this->m_player
+                                            ->getMusicPath() << "播放结束。。。";
+                                        ui->play_widget->setPlayPauseIcon(false);
+
+                                        // @note 未使用，保留用于调试
+                                        qDebug() << __LINE__ << "正常结束";
+                                        qDebug() << __LINE__ << "当前界面下标：" << ui->stackedWidget->
+                                            currentIndex();
+                                        if (ui->stackedWidget->currentIndex() == static_cast<int>(
+                                                TitleWidget::StackType::LocalDownload) &&
+                                            this->m_localDownload) {
+                                            qDebug() << "通知本地下载界面播放结束";
+                                            ///< 通知本地下载组件
+                                            this->m_localDownload->audioFinished();
                                         }
-                                        if (m_searchResultWidget) {
+                                        if (ui->stackedWidget->currentWidget() ==
+                                            static_cast<QWidget *>(this->
+                                                m_searchResultWidget.get()) &&
+                                            this->m_searchResultWidget) {
+                                            ///< 通知搜索结果组件
+                                            qDebug() << "通知搜索结果界面播放结束";
                                             this->m_searchResultWidget->onAudioFinished();
                                         }
-                                    }); ///< 连接音频播放结束信号
+                                    }); ///< 连接正常播放结束信号
     connect(this->m_player,
             &VideoPlayer::errorOccur,
             this,
@@ -513,6 +519,16 @@ void KuGouClient::connectPlayWidget()
                                      2000,
                                      this->window()); ///< 显示错误提示
             });                                       ///< 连接错误信号
+
+    connect(ui->play_widget,
+            &PlayWidget::volumeChange,
+            this,
+            [this](int value) {
+                if (this->m_player) {
+                    //qDebug() << __LINE__ << "音量变化：" << value;
+                    this->m_player->setVolume(value / 100.0); ///< 设置播放器音量
+                }
+            }); ///< 连接音量变化信号
 
     connect(ui->play_widget,
             &PlayWidget::sliderPressed,
@@ -844,8 +860,9 @@ QWidget *KuGouClient::createPage(int id)
                     &LocalDownload::cancelLoopPlay,
                     this,
                     [this] {
-                        if (m_isSingleCircle)
-                            ui->play_widget->changeCircleToolButtonState(m_isSingleCircle);
+                        if (m_isSingleCircle) {
+                            onCircleBtnClicked();
+                        }
                     });
             connect(
                 m_localDownload.get(),
@@ -1230,7 +1247,7 @@ void KuGouClient::onSearchResultMusicPlay(const MusicItemWidget *item)
                              2000,
                              this->window()); ///< 显示播放失败提示
     }
-    // qDebug()<<"设置封面："<<item->m_information.cover;
+    qDebug() << "设置封面：" << item->m_information.cover;
     if (!item->m_information.cover.isNull())
         ui->play_widget->setCover(item->m_information.cover);
     ui->play_widget->setSongName(item->m_information.songName);
@@ -1262,6 +1279,7 @@ void KuGouClient::onCircleBtnClicked()
         return;
     }
     m_isSingleCircle = !m_isSingleCircle; ///< 切换循环状态
+    ui->play_widget->changeCircleToolButtonState(m_isSingleCircle);
     if (m_isSingleCircle) {
         ///< 设置单曲循环样式
         if (mediaStatusConnection) {
@@ -1271,16 +1289,17 @@ void KuGouClient::onCircleBtnClicked()
                                             this,
                                             [this] {
                                                 // @note 未使用，保留用于调试
-                                                // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
+                                                qDebug() << __LINE__ << " ***** " << this->m_player
+                                                    ->getMusicPath() << "播放结束。。。";
                                                 ui->play_widget->setPlayPauseIcon(false);
 
                                                 // @note 未使用，保留用于调试
-                                                // qDebug() << __LINE__ << " 重新播放";
+                                                qDebug() << __LINE__ << " 重新播放";
                                                 this->m_player->replay(true); ///< 重新播放
                                             });                               ///< 连接单曲循环信号
         } else {
             // @note 未使用，保留用于调试
-            // qDebug() << "mediaStatusConnection is empty";
+            qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty"; ///< 记录警告日志
         }
     } else {
@@ -1291,26 +1310,34 @@ void KuGouClient::onCircleBtnClicked()
                                             this,
                                             [this] {
                                                 // @note 未使用，保留用于调试
-                                                // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
+                                                qDebug() << __LINE__ << " ***** " << this->m_player
+                                                    ->getMusicPath() << "播放结束。。。";
                                                 ui->play_widget->setPlayPauseIcon(false);
 
                                                 // @note 未使用，保留用于调试
-                                                // qDebug() << "正常结束";
-                                                if (ui->stackedWidget->currentWidget() ==
-                                                    static_cast<QWidget *>(this->m_localDownload.
-                                                        get()) &&
-                                                    this->m_localDownload)
+                                                qDebug() << __LINE__ << "正常结束";
+                                                qDebug() << __LINE__ << "当前界面下标：" << ui->
+                                                    stackedWidget->currentIndex();
+                                                if (ui->stackedWidget->currentIndex() == static_cast
+                                                    <int>(
+                                                        TitleWidget::StackType::LocalDownload) &&
+                                                    this->m_localDownload) {
+                                                    qDebug() << "通知本地下载界面播放结束";
+                                                    ///< 通知本地下载组件
                                                     this->m_localDownload->audioFinished();
-                                                ///< 通知本地下载组件
+                                                }
                                                 if (ui->stackedWidget->currentWidget() ==
                                                     static_cast<QWidget *>(this->
                                                         m_searchResultWidget.get()) &&
-                                                    this->m_searchResultWidget)
+                                                    this->m_searchResultWidget) {
+                                                    ///< 通知搜索结果组件
+                                                    qDebug() << "通知搜索结果界面播放结束";
                                                     this->m_searchResultWidget->onAudioFinished();
+                                                }
                                             }); ///< 连接正常播放结束信号
         } else {
             // @note 未使用，保留用于调试
-            // qDebug() << "mediaStatusConnection is empty";
+            qDebug() << "mediaStatusConnection is empty";
             STREAM_WARN() << "mediaStatusConnection is empty"; ///< 记录警告日志
         }
     }

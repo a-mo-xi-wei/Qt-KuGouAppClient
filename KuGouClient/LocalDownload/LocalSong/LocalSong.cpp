@@ -750,6 +750,8 @@ void LocalSong::handleSongsResult(const QJsonArray &songs)
                     }
 
                     m_refreshMask->hideLoading();
+                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+
                     return;
                 }
 
