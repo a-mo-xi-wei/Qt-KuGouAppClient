@@ -14,6 +14,8 @@
 
 #include <QWidget>
 #include <QPointer>
+#include <QTimer>
+
 #include <array>
 #include <memory>
 
@@ -24,10 +26,11 @@ class QButtonGroup;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class ListenMyDownload;
+
+namespace Ui {
+class ListenMyDownload;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -74,7 +77,7 @@ private:
      * @param id 页面索引
      * @return 创建的页面控件
      */
-    QWidget* createPage(int id);
+    QWidget *createPage(int id);
 
     /**
      * @brief 启用或禁用按钮
@@ -103,13 +106,18 @@ signals:
      */
     void switch_to_listen_recommend();
 
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
 private:
-    Ui::ListenMyDownload                   *ui;                   ///< UI 指针
-    std::unique_ptr<QButtonGroup>           m_buttonGroup;        ///< 按钮组
-    std::unique_ptr<DownloadedWidget>       m_downloaded;         ///< 已下载控件
-    std::unique_ptr<DownloadingWidget>      m_downloading;        ///< 下载中控件
-    std::array<QPointer<QWidget>, 2>        m_pages{};            ///< 页面数组
-    int                                     m_currentIdx{0};      ///< 当前页面索引
+    Ui::ListenMyDownload *ui;                         ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;      ///< 按钮组
+    std::unique_ptr<DownloadedWidget> m_downloaded;   ///< 已下载控件
+    std::unique_ptr<DownloadingWidget> m_downloading; ///< 下载中控件
+    std::array<QPointer<QWidget>, 2> m_pages{};       ///< 页面数组
+    int m_currentIdx{0};                              ///< 当前页面索引
 };
 
 #endif // LISTENMYDOWNLOAD_H

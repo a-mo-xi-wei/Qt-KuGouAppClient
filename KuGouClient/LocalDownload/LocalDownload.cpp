@@ -39,7 +39,10 @@ LocalDownload::LocalDownload(QWidget *parent)
     initUi();
     connect(ui->stackedWidget,
             &SlidingStackedWidget::animationFinished,
-            [this] { enableButton(true); }); ///< 连接动画完成信号
+            [this] {
+                if (isNumberInitialized)
+                    enableButton(true);
+            }); ///< 连接动画完成信号
 
     enableButton(true); ///< 初始启用按钮
 }
@@ -111,6 +114,9 @@ QWidget *LocalDownload::createPage(int id)
                 this,
                 [this] {
                     QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
                 });
         page = m_localSong.get();
         break;
@@ -119,6 +125,15 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedSong::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
+        connect(m_downloadedSong.get(),
+                &DownloadedSong::initialized,
+                this,
+                [this] {
+                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
+                });
         page = m_downloadedSong.get();
         break;
     case 2: m_downloadedVideo = std::make_unique<DownloadedVideo>(ui->stackedWidget);
@@ -126,6 +141,15 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedVideo::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
+        connect(m_downloadedVideo.get(),
+                &DownloadedVideo::initialized,
+                this,
+                [this] {
+                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
+                });
         page = m_downloadedVideo.get();
         break;
     case 3: m_downloading = std::make_unique<Downloading>(ui->stackedWidget);
@@ -133,6 +157,15 @@ QWidget *LocalDownload::createPage(int id)
                 &Downloading::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
+        connect(m_downloading.get(),
+                &Downloading::initialized,
+                this,
+                [this] {
+                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
+                });
         page = m_downloading.get();
         break;
     default:

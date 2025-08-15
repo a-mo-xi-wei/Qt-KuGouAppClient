@@ -38,8 +38,11 @@ ListenBook::ListenBook(QWidget *parent)
     initStackedWidget();
     connect(ui->stackedWidget,
             &SlidingStackedWidget::animationFinished,
-            [this] { enableButton(true); });
-    enableButton(true);
+            [this] {
+                if (isNumberInitialized)
+                    enableButton(true);
+            });
+    enableButton(false);
 }
 
 /**
@@ -68,6 +71,9 @@ QWidget *ListenBook::createPage(int id)
                 this,
                 [this] {
                     QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
                 });
         page = m_listenRecommend.get();
         break;
@@ -81,6 +87,15 @@ QWidget *ListenBook::createPage(int id)
                         ui->listen_recommend_toolButton->click();
                         ui->listen_recommend_toolButton->setChecked(true);
                     });
+            connect(m_listenMyDownload.get(),
+                    &ListenMyDownload::initialized,
+                    this,
+                    [this] {
+                        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                        if (ui->stackedWidget->isSlideAnimationFinished()) {
+                            enableButton(true);
+                        }
+                    });
         }
         page = m_listenMyDownload.get();
         break;
@@ -93,6 +108,15 @@ QWidget *ListenBook::createPage(int id)
                     [this] {
                         ui->listen_recommend_toolButton->click();
                         ui->listen_recommend_toolButton->setChecked(true);
+                    });
+            connect(m_listenRecentlyPlay.get(),
+                    &ListenRecentlyPlay::initialized,
+                    this,
+                    [this] {
+                        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                        if (ui->stackedWidget->isSlideAnimationFinished()) {
+                            enableButton(true);
+                        }
                     });
         }
         page = m_listenRecentlyPlay.get();
@@ -205,6 +229,7 @@ void ListenBook::initStackedWidget()
                 }
 
                 enableButton(false);
+                isNumberInitialized = false;
 
                 QWidget *placeholder = m_pages[m_currentIdx];
                 if (!placeholder) {
@@ -249,7 +274,6 @@ void ListenBook::initStackedWidget()
                 ui->stackedWidget->slideInIdx(id);
                 m_currentIdx = id;
 
-                enableButton(true);
                 STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString() << " 界面";
             });
 

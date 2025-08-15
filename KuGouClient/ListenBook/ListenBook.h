@@ -26,10 +26,11 @@ class QButtonGroup;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class ListenBook;
+
+namespace Ui {
+class ListenBook;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -70,7 +71,7 @@ private:
      * @param id 页面索引
      * @return 创建的页面控件
      */
-    QWidget* createPage(int id);
+    QWidget *createPage(int id);
 
     /**
      * @brief 启用或禁用按钮
@@ -79,19 +80,28 @@ private:
     void enableButton(bool flag) const;
 
 public slots:
-    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+    void emitInitialized()
+    {
+        QTimer::singleShot(0,
+                           this,
+                           [this] {
+                               emit initialized();
+                               isNumberInitialized = true;
+                           });
+    }
 
 signals:
     void initialized();
 
 private:
-    Ui::ListenBook *ui;                                ///< UI 指针
-    std::unique_ptr<QButtonGroup> m_buttonGroup;       ///< 按钮组
-    std::unique_ptr<ListenRecommend> m_listenRecommend;   ///< 推荐页面
-    std::unique_ptr<ListenMyDownload> m_listenMyDownload;  ///< 下载页面
+    Ui::ListenBook *ui;                                       ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;              ///< 按钮组
+    std::unique_ptr<ListenRecommend> m_listenRecommend;       ///< 推荐页面
+    std::unique_ptr<ListenMyDownload> m_listenMyDownload;     ///< 下载页面
     std::unique_ptr<ListenRecentlyPlay> m_listenRecentlyPlay; ///< 最近播放页面
-    std::array<QPointer<QWidget>, 3> m_pages{};        ///< 页面数组
-    int m_currentIdx{0};                               ///< 当前页面索引
+    std::array<QPointer<QWidget>, 3> m_pages{};               ///< 页面数组
+    int m_currentIdx{0};                                      ///< 当前页面索引
+    bool isNumberInitialized{false};                          ///< 子界面是否初始化
 };
 
 #endif // LISTENBOOK_H

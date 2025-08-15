@@ -48,14 +48,15 @@ SlidingStackedWidget::SlidingStackedWidget(QWidget *parent)
 
 bool SlidingStackedWidget::isSlideAnimationFinished() const
 {
-    return m_active;
+    return !m_active;
 }
 
 /**
  * @brief 设置是否使用垂直模式
  * @param vertical 是否为垂直模式，默认为 true
  */
-void SlidingStackedWidget::setVerticalMode(const bool vertical) {
+void SlidingStackedWidget::setVerticalMode(const bool vertical)
+{
     m_vertical = vertical;
 }
 
@@ -63,7 +64,8 @@ void SlidingStackedWidget::setVerticalMode(const bool vertical) {
  * @brief 设置动画速度
  * @param speed 动画持续时间（毫秒）
  */
-void SlidingStackedWidget::setSpeed(int speed) {
+void SlidingStackedWidget::setSpeed(int speed)
+{
     m_speed = speed;
 }
 
@@ -71,7 +73,8 @@ void SlidingStackedWidget::setSpeed(int speed) {
  * @brief 设置缓动曲线
  * @param animationtype 缓动曲线类型
  */
-void SlidingStackedWidget::setAnimation(enum QEasingCurve::Type animationtype) {
+void SlidingStackedWidget::setAnimation(enum QEasingCurve::Type animationtype)
+{
     m_animationtype = animationtype;
 }
 
@@ -79,7 +82,8 @@ void SlidingStackedWidget::setAnimation(enum QEasingCurve::Type animationtype) {
  * @brief 设置是否启用页面循环
  * @param wrap 是否循环，默认为 true
  */
-void SlidingStackedWidget::setWrap(bool wrap) {
+void SlidingStackedWidget::setWrap(bool wrap)
+{
     m_wrap = wrap;
 }
 
@@ -87,7 +91,8 @@ void SlidingStackedWidget::setWrap(bool wrap) {
  * @brief 滑动到下一页
  * @return 是否成功滑动
  */
-bool SlidingStackedWidget::slideInNext() {
+bool SlidingStackedWidget::slideInNext()
+{
     int now = currentIndex();
     if (m_wrap || (now < count() - 1))
         slideInIdx(now + 1); ///< 滑动到下一页
@@ -100,7 +105,8 @@ bool SlidingStackedWidget::slideInNext() {
  * @brief 滑动到上一页
  * @return 是否成功滑动
  */
-bool SlidingStackedWidget::slideInPrev() {
+bool SlidingStackedWidget::slideInPrev()
+{
     int now = currentIndex();
     if (m_wrap || (now > 0))
         slideInIdx(now - 1); ///< 滑动到上一页
@@ -114,10 +120,11 @@ bool SlidingStackedWidget::slideInPrev() {
  * @param idx 页面索引
  * @param direction 滑动方向，默认为 AUTOMATIC
  */
-void SlidingStackedWidget::slideInIdx(int idx, enum t_direction direction) {
+void SlidingStackedWidget::slideInIdx(int idx, enum t_direction direction)
+{
     if (idx > count() - 1) {
         direction = m_vertical ? TOP2BOTTOM : RIGHT2LEFT; ///< 超出范围时选择默认方向
-        idx = (idx) % count(); ///< 循环索引
+        idx = (idx) % count();                            ///< 循环索引
     } else if (idx < 0) {
         direction = m_vertical ? BOTTOM2TOP : LEFT2RIGHT;
         idx = (idx + count()) % count();
@@ -130,18 +137,19 @@ void SlidingStackedWidget::slideInIdx(int idx, enum t_direction direction) {
  * @param newWidget 目标页面控件
  * @param direction 滑动方向，默认为 AUTOMATIC
  */
-void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direction direction) {
+void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direction direction)
+{
     if (m_active) {
         return; ///< 动画进行中，直接返回
     }
     ///< 停止当前页面中所有输入框的动画
     {
         // 停止当前页面中所有输入框的动画
-        QWidget* currentPage = currentWidget();
+        QWidget *currentPage = currentWidget();
         if (currentPage) {
             // 查找并停止所有 MySearchLineEdit 的动画
-            QList<MySearchLineEdit*> lineEdits = currentPage->findChildren<MySearchLineEdit*>();
-            for (MySearchLineEdit* edit : lineEdits) {
+            QList<MySearchLineEdit *> lineEdits = currentPage->findChildren<MySearchLineEdit *>();
+            for (MySearchLineEdit *edit : lineEdits) {
                 edit->stopAnimations();
                 edit->resetState();
             }
@@ -207,11 +215,13 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     animnow_op->setDuration(m_speed / 2);
     animnow_op->setStartValue(1);
     animnow_op->setEndValue(0);
-    connect(animnow_op, &QPropertyAnimation::finished, [=]() {
-        if (animnow_op_eff != nullptr) {
-            animnow_op_eff->deleteLater(); ///< 动画结束时清理效果
-        }
-    });
+    connect(animnow_op,
+            &QPropertyAnimation::finished,
+            [=]() {
+                if (animnow_op_eff != nullptr) {
+                    animnow_op_eff->deleteLater(); ///< 动画结束时清理效果
+                }
+            });
 
     // 下一页面透明度动画
     auto *animnext_op_eff = new QGraphicsOpacityEffect();
@@ -221,11 +231,13 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     animnext_op->setDuration(m_speed / 2);
     animnext_op->setStartValue(0);
     animnext_op->setEndValue(1);
-    connect(animnext_op, &QPropertyAnimation::finished, [=]() {
-        if (animnext_op_eff != nullptr) {
-            animnext_op_eff->deleteLater(); ///< 动画结束时清理效果
-        }
-    });
+    connect(animnext_op,
+            &QPropertyAnimation::finished,
+            [=]() {
+                if (animnext_op_eff != nullptr) {
+                    animnext_op_eff->deleteLater(); ///< 动画结束时清理效果
+                }
+            });
 
     // 下一页面动画
     auto *animnext = new QPropertyAnimation(widget(next), "pos");
@@ -241,7 +253,10 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
     animgroup->addAnimation(animnow_op);
     animgroup->addAnimation(animnext_op);
 
-    connect(animgroup, &QParallelAnimationGroup::finished, this, &SlidingStackedWidget::animationDoneSlot);
+    connect(animgroup,
+            &QParallelAnimationGroup::finished,
+            this,
+            &SlidingStackedWidget::animationDoneSlot);
     m_next = next;
     m_now = now;
     m_active = true;
@@ -251,9 +266,10 @@ void SlidingStackedWidget::slideInWidget(const QWidget *newWidget, enum t_direct
 /**
  * @brief 处理动画完成事件
  */
-void SlidingStackedWidget::animationDoneSlot() {
-    setCurrentIndex(m_next); ///< 设置当前页面
-    widget(m_now)->hide(); ///< 隐藏上一页面
+void SlidingStackedWidget::animationDoneSlot()
+{
+    setCurrentIndex(m_next);     ///< 设置当前页面
+    widget(m_now)->hide();       ///< 隐藏上一页面
     widget(m_now)->move(m_pnow); ///< 恢复上一页面位置
     m_active = false;
     emit animationFinished(); ///< 发出动画完成信号

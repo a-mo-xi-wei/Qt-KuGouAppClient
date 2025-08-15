@@ -21,22 +21,23 @@
  */
 ListenRecentlyPlay::ListenRecentlyPlay(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::ListenRecentlyPlay)
+      , ui(new Ui::ListenRecentlyPlay)
 {
-    ui->setupUi(this);                                   ///< 初始化 UI
+    ui->setupUi(this); ///< 初始化 UI
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/play.css")); ///< 加载样式表
-        if (file.open(QIODevice::ReadOnly))
-        {
-            this->setStyleSheet(file.readAll());         ///< 应用样式表
-        }
-        else
-        {
+        if (file.open(QIODevice::ReadOnly)) {
+            this->setStyleSheet(file.readAll()); ///< 应用样式表
+        } else {
             qDebug() << "样式表打开失败QAQ";
-            STREAM_ERROR() << "样式表打开失败QAQ";      ///< 记录错误日志
+            STREAM_ERROR() << "样式表打开失败QAQ"; ///< 记录错误日志
             return;
         }
     }
+    QMetaObject::invokeMethod(
+        this,
+        "emitInitialized",
+        Qt::QueuedConnection);
 }
 
 /**
@@ -53,5 +54,5 @@ ListenRecentlyPlay::~ListenRecentlyPlay()
  */
 void ListenRecentlyPlay::on_search_pushButton_clicked()
 {
-    emit switch_to_listen_recommend();                   ///< 发出切换信号
+    emit switch_to_listen_recommend(); ///< 发出切换信号
 }

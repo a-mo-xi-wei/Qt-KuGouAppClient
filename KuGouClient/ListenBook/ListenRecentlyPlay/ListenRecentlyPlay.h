@@ -9,6 +9,7 @@
 #ifndef LISTENRECENTLYPLAY_H
 #define LISTENRECENTLYPLAY_H
 
+#include <QTimer>
 #include <QWidget>
 
 /**
@@ -16,10 +17,11 @@
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class ListenRecentlyPlay;
+
+namespace Ui {
+class ListenRecentlyPlay;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -42,18 +44,23 @@ public:
      */
     ~ListenRecentlyPlay() override;
 
-    private slots:
-        /**
-         * @brief 搜索按钮点击槽函数
-         * @note 触发切换到推荐界面的信号
-         */
-        void on_search_pushButton_clicked();
+private slots:
+    /**
+     * @brief 搜索按钮点击槽函数
+     * @note 触发切换到推荐界面的信号
+     */
+    void on_search_pushButton_clicked();
 
-    signals:
-        /**
-         * @brief 切换到推荐界面的信号
-         */
-        void switch_to_listen_recommend();
+signals:
+    /**
+     * @brief 切换到推荐界面的信号
+     */
+    void switch_to_listen_recommend();
+
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
 
 private:
     Ui::ListenRecentlyPlay *ui; ///< UI 指针

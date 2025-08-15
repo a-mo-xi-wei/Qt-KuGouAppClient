@@ -28,10 +28,11 @@ class QButtonGroup;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class LocalDownload;
+
+namespace Ui {
+class LocalDownload;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -94,7 +95,7 @@ private:
      * @param id 页面索引
      * @return 创建的页面控件
      */
-    QWidget* createPage(int id);
+    QWidget *createPage(int id);
 
     /**
      * @brief 启用/禁用按钮
@@ -151,20 +152,29 @@ private slots:
     void local_music_label_changed(const int &num);
 
 public slots:
-    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+    void emitInitialized()
+    {
+        QTimer::singleShot(0,
+                           this,
+                           [this] {
+                               emit initialized();
+                               isNumberInitialized = true;
+                           });
+    }
 
 signals:
     void initialized();
 
 private:
-    Ui::LocalDownload                   *ui;                    ///< UI 指针
-    std::unique_ptr<QButtonGroup>        m_buttonGroup;         ///< 按钮组
-    std::unique_ptr<LocalSong>           m_localSong;           ///< 本地歌曲界面
-    std::unique_ptr<DownloadedSong>      m_downloadedSong;      ///< 已下载歌曲界面
-    std::unique_ptr<DownloadedVideo>     m_downloadedVideo;     ///< 已下载视频界面
-    std::unique_ptr<Downloading>         m_downloading;         ///< 正在下载界面
-    std::array<QPointer<QWidget>, 4>     m_pages{};             ///< 页面数组
-    int                                  m_currentIdx{0};       ///< 当前页面索引
+    Ui::LocalDownload *ui;                              ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;        ///< 按钮组
+    std::unique_ptr<LocalSong> m_localSong;             ///< 本地歌曲界面
+    std::unique_ptr<DownloadedSong> m_downloadedSong;   ///< 已下载歌曲界面
+    std::unique_ptr<DownloadedVideo> m_downloadedVideo; ///< 已下载视频界面
+    std::unique_ptr<Downloading> m_downloading;         ///< 正在下载界面
+    std::array<QPointer<QWidget>, 4> m_pages{};         ///< 页面数组
+    bool isNumberInitialized{false};                    ///< 子界面是否初始化
+    int m_currentIdx{0};                                ///< 当前页面索引
 };
 
 #endif // LOCALDOWNLOAD_H
