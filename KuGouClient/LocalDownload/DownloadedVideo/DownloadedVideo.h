@@ -9,6 +9,7 @@
 #ifndef DOWNLOADEDVIDEO_H
 #define DOWNLOADEDVIDEO_H
 
+#include <QTimer>
 #include <QWidget>
 
 /**
@@ -16,10 +17,11 @@
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class DownloadedVideo;
+
+namespace Ui {
+class DownloadedVideo;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -42,21 +44,26 @@ public:
      */
     ~DownloadedVideo() override;
 
-    private slots:
-        /**
-         * @brief 搜索按钮点击槽函数
-         * @note 触发搜索信号
-         */
-        void on_search_pushButton_clicked();
+private slots:
+    /**
+     * @brief 搜索按钮点击槽函数
+     * @note 触发搜索信号
+     */
+    void on_search_pushButton_clicked();
 
-    signals:
-        /**
-         * @brief 搜索更多音乐信号
-         */
-        void find_more_music();
+signals:
+    /**
+     * @brief 搜索更多音乐信号
+     */
+    void find_more_music();
+
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
 
 private:
-    Ui::DownloadedVideo *ui;            ///< UI 指针
+    Ui::DownloadedVideo *ui; ///< UI 指针
 };
 
 #endif // DOWNLOADEDVIDEO_H

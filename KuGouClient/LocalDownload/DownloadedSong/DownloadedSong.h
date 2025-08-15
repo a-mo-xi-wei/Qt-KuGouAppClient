@@ -9,6 +9,8 @@
 #ifndef DOWNLOADEDSONG_H
 #define DOWNLOADEDSONG_H
 
+#include <QTimer>
+
 #include "SortOptionMenu/SortOptionMenu.h"
 
 #include <QWidget>
@@ -18,10 +20,11 @@
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class DownloadedSong;
+
+namespace Ui {
+class DownloadedSong;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -131,6 +134,11 @@ signals:
      */
     void find_more_music();
 
+    void initialized();
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
 protected:
     /**
      * @brief 事件过滤器
@@ -142,10 +150,10 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    Ui::DownloadedSong *ui;             ///< UI 指针
-    QAction            *m_searchAction{}; ///< 搜索动作
-    SortOptionMenu     *m_sortOptMenu{};  ///< 排序选项菜单
-    QPoint              m_menuPosition; ///< 菜单位置
+    Ui::DownloadedSong *ui;          ///< UI 指针
+    QAction *m_searchAction{};       ///< 搜索动作
+    SortOptionMenu *m_sortOptMenu{}; ///< 排序选项菜单
+    QPoint m_menuPosition;           ///< 菜单位置
 };
 
 #endif // DOWNLOADEDSONG_H

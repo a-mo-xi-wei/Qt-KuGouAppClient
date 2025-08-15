@@ -65,6 +65,8 @@ public:
      */
     explicit SlidingStackedWidget(QWidget *parent = nullptr);
 
+    bool isSlideAnimationFinished() const;
+
 public slots:
     /**
      * @brief 设置动画速度

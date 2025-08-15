@@ -74,6 +74,7 @@ LocalSong::LocalSong(QWidget *parent)
                 QToolButton:hover{border-image:url(':/Res/titlebar/sort-blue.svg');})");
                 ///< 设置未选中样式
             });
+
     initUi(); ///< 初始化界面
     //QTimer::0, this, &LocalSong::fetchAndSyncServerSongList); ///< 延迟同步服务器歌曲
     firstShow = true;
@@ -246,7 +247,7 @@ void LocalSong::initUi()
     ui->upload_toolButton->setIcon(
         QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/upload-cloud-gray.svg"))); ///< 设置上传按钮图标
 
-    auto searchLineEdit = new MySearchLineEdit();
+    auto searchLineEdit = new MySearchLineEdit(this);
     this->m_searchAction->
           setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置搜索动作图标
     this->m_searchAction->setIconVisibleInMenu(false);                                ///< 仅显示图标

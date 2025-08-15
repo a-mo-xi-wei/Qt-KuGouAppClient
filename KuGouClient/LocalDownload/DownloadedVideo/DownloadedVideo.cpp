@@ -35,6 +35,8 @@ DownloadedVideo::DownloadedVideo(QWidget *parent)
         STREAM_ERROR() << "样式表打开失败QAQ";          ///< 记录错误日志
         return;
     }
+    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+
 }
 
 /**

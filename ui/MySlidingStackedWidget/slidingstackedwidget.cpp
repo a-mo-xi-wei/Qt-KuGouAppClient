@@ -46,6 +46,11 @@ SlidingStackedWidget::SlidingStackedWidget(QWidget *parent)
     }
 }
 
+bool SlidingStackedWidget::isSlideAnimationFinished() const
+{
+    return m_active;
+}
+
 /**
  * @brief 设置是否使用垂直模式
  * @param vertical 是否为垂直模式，默认为 true
