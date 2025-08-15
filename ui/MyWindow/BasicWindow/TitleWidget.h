@@ -79,6 +79,8 @@ public:
 
     void setEnableTitleButton(const bool &flag);
 
+    void setMaxScreen();
+
 private:
     /**
      * @brief 初始化界面元素
@@ -99,6 +101,8 @@ private:
      * @param index 标题索引（1-4）
      */
     void setTitleIndex(const int &index) const;
+
+    void setMaxToolButtonIcon(bool isMax);
 
 protected:
     /**
@@ -293,11 +297,6 @@ signals:
      * @param flag 是否显示菜单
      */
     void leftMenuShow(const bool &flag);
-
-    /**
-     * @brief 双击信号，当标题栏被双击时触发
-     */
-    void doubleClicked();
 
     /**
      * @brief 显示关于对话框信号

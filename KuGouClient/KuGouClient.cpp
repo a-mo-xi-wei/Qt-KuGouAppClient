@@ -44,7 +44,6 @@ KuGouClient::KuGouClient(MainWindow *parent)
     : MainWindow(parent)
       , ui(new Ui::KuGouClient)
       , m_menuBtnGroup(std::make_unique<QButtonGroup>(this)) ///< 初始化菜单按钮组
-      , m_sizeGrip(std::make_unique<QSizeGrip>(this))        ///< 初始化窗口大小调整角标
       , m_refreshMask(std::make_unique<RefreshMask>())       ///< 初始化刷新遮罩
       , m_snackbar(std::make_unique<QtMaterialSnackbar>())   ///< 初始化消息提示条
       , m_lyricWidget(std::make_unique<LyricWidget>(this))   ///< 初始化歌词组件
@@ -178,10 +177,6 @@ void KuGouClient::initUi()
     m_snackbar->setAutoHideDuration(1500);                      ///< 设置自动隐藏时间
     m_snackbar->setBackgroundColor(QColor(132, 202, 192, 200)); ///< 设置背景颜色
     m_snackbar->setStyleSheet("border-radius: 10px;");          ///< 设置圆角样式
-
-    // @note 设置大小调整角标
-    this->m_sizeGrip->setFixedSize(15, 15);                      ///< 设置角标大小
-    this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip")); ///< 设置对象名称
 
     // @note 设置歌词界面 TODO
 
@@ -573,6 +568,13 @@ void KuGouClient::connectPlayWidget()
             &PlayWidget::clickedNextBtn,
             this,
             &KuGouClient::onNextBtnClicked); ///< 连接下一首按钮点击信号
+
+    connect(ui->play_widget,
+            &PlayWidget::doubleClicked,
+            this,
+            [this] {
+                ui->title_widget->setMaxScreen();
+            });
 }
 
 /**
@@ -1034,11 +1036,6 @@ void KuGouClient::mouseMoveEvent(QMouseEvent *event)
 void KuGouClient::resizeEvent(QResizeEvent *event)
 {
     MainWindow::resizeEvent(event); ///< 调用父类处理
-    // @note 移动角标
-    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
-                           this->height() - this->m_sizeGrip->height() - 8);
-    this->m_sizeGrip->raise();          ///< 提升角标层级
-    this->m_sizeGrip->setVisible(true); ///< 显示角标
 
     // @note 同步刷新遮罩大小
     auto rect = ui->stackedWidget->geometry();

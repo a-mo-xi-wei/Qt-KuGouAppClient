@@ -46,11 +46,6 @@
  */
 class QButtonGroup;
 
-/**
- * @class QSizeGrip
- * @brief Qt 大小调整控件类，用于调整窗口大小
- */
-class QSizeGrip;
 
 /**
  * @class QPropertyAnimation
@@ -355,7 +350,6 @@ private:
     Ui::KuGouClient *ui;                            ///< UI 界面指针
     VideoPlayer *m_player;                          ///< 音频播放器实例
     std::unique_ptr<QButtonGroup> m_menuBtnGroup;   ///< 菜单按钮组
-    std::unique_ptr<QSizeGrip> m_sizeGrip;          ///< 窗口大小调整控件
     std::unique_ptr<RefreshMask> m_refreshMask;     ///< 刷新遮罩
     std::unique_ptr<QtMaterialSnackbar> m_snackbar; ///< 消息提示条
     std::unique_ptr<LyricWidget> m_lyricWidget;     ///< 歌词组件

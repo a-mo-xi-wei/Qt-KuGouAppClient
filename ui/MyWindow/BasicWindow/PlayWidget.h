@@ -10,6 +10,7 @@
 #define PLAYWIDGET_H
 
 #include <QWidget>
+#include <QSizeGrip>
 
 class ElaToolTip;
 
@@ -103,6 +104,8 @@ protected:
      */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
     void on_play_or_pause_toolButton_clicked();
     void on_love_toolButton_clicked();
@@ -140,7 +143,8 @@ signals :
     void clickedNextBtn();
 
 private:
-    Ui::PlayWidget *ui; ///< UI 界面对象
+    Ui::PlayWidget *ui;                    ///< UI 界面对象
+    std::unique_ptr<QSizeGrip> m_sizeGrip; ///< 窗口大小调整控件
     ElaToolTip *m_songNameToolTip;
     ElaToolTip *m_singerToolTip;
 };

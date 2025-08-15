@@ -6,12 +6,13 @@
  * @version 1.0
  */
 
+#include "PlayWidget.h"
 #include "ui_PlayWidget.h"
 #include "SpeedDialog.h"
 #include "ElaMessageBar.h"
 #include "ElaToolTip.h"
 
-#include "PlayWidget.h"
+#include <QSizeGrip>
 #include <QTime>
 
 QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius)
@@ -37,7 +38,9 @@ QPixmap roundedPixmap(const QPixmap &src, QSize size, int radius)
  * @param parent 父控件指针，默认为 nullptr
  */
 PlayWidget::PlayWidget(QWidget *parent)
-    : QWidget(parent), ui(new Ui::PlayWidget)
+    : QWidget(parent)
+      , ui(new Ui::PlayWidget)
+      , m_sizeGrip(std::make_unique<QSizeGrip>(this)) ///< 初始化窗口大小调整角标
 {
     ui->setupUi(this);
 
@@ -214,6 +217,10 @@ void PlayWidget::initUi()
     m_singerToolTip = new ElaToolTip(ui->singer_text);      ///< 创建歌手名称提示
     m_singerToolTip->setToolTip("网络歌手");                    ///< 设置默认歌手提示
 
+    // @note 设置大小调整角标
+    this->m_sizeGrip->setFixedSize(7, 7);                        ///< 设置角标大小
+    this->m_sizeGrip->setObjectName(QStringLiteral("sizegrip")); ///< 设置对象名称
+
     auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
     font.setPixelSize(14);
     font.setWeight(QFont::Medium);
@@ -330,6 +337,17 @@ bool PlayWidget::eventFilter(QObject *watched, QEvent *event)
     }
 
     return QWidget::eventFilter(watched, event);
+}
+
+void PlayWidget::resizeEvent(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);
+
+    // @note 移动角标
+    this->m_sizeGrip->move(this->width() - this->m_sizeGrip->width() - 8,
+                           this->height() - this->m_sizeGrip->height() - 8);
+    this->m_sizeGrip->raise();          ///< 提升角标层级
+    this->m_sizeGrip->setVisible(true); ///< 显示角标
 }
 
 /**

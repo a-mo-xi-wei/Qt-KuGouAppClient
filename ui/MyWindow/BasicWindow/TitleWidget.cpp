@@ -87,6 +87,11 @@ void TitleWidget::setEnableTitleButton(const bool &flag)
     ui->title_search_pushButton->setEnabled(flag);
 }
 
+void TitleWidget::setMaxScreen()
+{
+    on_max_toolButton_clicked();
+}
+
 /**
  * @brief 初始化界面元素
  */
@@ -157,8 +162,6 @@ void TitleWidget::initUi()
         close_toolButton_toolTip->setToolTip(QStringLiteral("关闭"));
     }
 
-    this->setStyleSheet("QWidget#TitleWidget{margin:5px;}"); ///< 设置外边距
-
     // 初始化标题选项菜单
     const auto menu = new MyMenu(MyMenu::MenuKind::TitleOption, this);
     m_titleOptMenu = menu->getMenu<TitleOptionMenu>();
@@ -208,7 +211,7 @@ void TitleWidget::initUi()
                             QTimer::singleShot(100,
                                                this,
                                                [this] { this->m_isTransForming = false; });
-                            ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); // 恢复最大化按钮样式
+                            setMaxToolButtonIcon(true); // 恢复最大化按钮样式
                         });
             });
 
@@ -348,6 +351,8 @@ void TitleWidget::mouseMoveEvent(QMouseEvent *event)
         if (this->rect().contains(m_pressPos)) {
             if (m_isMaxScreen) {
                 qobject_cast<QWidget *>(this->parent())->resize(this->m_startGeometry.size());
+                ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg"));
+                ///< 设置最大化图标
             }
         }
     }
@@ -873,34 +878,17 @@ void TitleWidget::on_max_toolButton_clicked()
     ///< 初始化窗口动画
 
     if (m_isMaxScreen) {
-        this->m_isMaxScreen = false;                                               ///< 设置正常状态
-        m_endGeometry = m_startGeometry;                                           ///< 记录正常几何形状
-        m_startGeometry = this->screen()->availableGeometry();                     ///< 设置最大化几何形状
-        this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
-                                background-color: transparent;
-                                qproperty-icon: url(":/Res/titlebar/maximize-black.svg");
-                                border-radius: 6px;
-                                height: 30px;
-                                width: 30px;
-                                icon-size: 12px 12px;
-                            })";                                                   ///< 设置最大化按钮样式
-        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
-        animation->setDuration(300);                                               ///< 设置动画时长
+        this->m_isMaxScreen = false;                           ///< 设置正常状态
+        m_endGeometry = m_startGeometry;                       ///< 记录正常几何形状
+        m_startGeometry = this->screen()->availableGeometry(); ///< 设置最大化几何形状
+        animation->setDuration(300);                           ///< 设置动画时长
     } else {
         this->m_normalGeometry = qobject_cast<QWidget *>(this->parent())->geometry(); ///< 记录正常几何形状
         this->m_isMaxScreen = true;                                                   ///< 设置最大化状态
         m_startGeometry = this->m_normalGeometry;                                     ///< 设置起始几何形状
         m_endGeometry = this->screen()->availableGeometry();                          ///< 设置目标几何形状
-        this->m_maxBtnStyle = R"(QToolButton#max_toolButton {
-                                background-color: transparent;
-                                qproperty-icon: url(":/Res/titlebar/resume-black.svg");
-                                border-radius: 6px;
-                                height: 30px;
-                                width: 30px;
-                                icon-size: 12px 12px;
-                            })";                                                      ///< 设置还原按钮样式
-        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg"));      ///< 设置还原图标
-        animation->setDuration(300);                                                  ///< 设置动画时长
+
+        animation->setDuration(300); ///< 设置动画时长
     }
     animation->setStartValue(m_startGeometry); ///< 设置动画起始值
     animation->setEndValue(m_endGeometry);     ///< 设置动画结束值
@@ -919,8 +907,7 @@ void TitleWidget::on_max_toolButton_clicked()
                                        this->m_isTransForming = false; ///< 启用交互
                                    });
             }); ///< 连接动画结束信号
-
-    ui->max_toolButton->setStyleSheet(this->m_maxBtnStyle); ///< 更新按钮样式
+    setMaxToolButtonIcon(!m_isMaxScreen);
 }
 
 /**
@@ -1153,4 +1140,13 @@ void TitleWidget::setTitleIndex(const int &index) const
     ui->title_index_label2->setVisible(index == 2);
     ui->title_index_label3->setVisible(index == 3);
     ui->title_index_label4->setVisible(index == 4);
+}
+
+void TitleWidget::setMaxToolButtonIcon(bool isMax)
+{
+    if (isMax) {
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/maximize-black.svg")); ///< 设置最大化图标
+    } else {
+        ui->max_toolButton->setMyIcon(QIcon(":/Res/titlebar/resume-black.svg")); ///< 设置还原图标
+    }
 }
