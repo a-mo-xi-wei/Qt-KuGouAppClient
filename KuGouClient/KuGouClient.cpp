@@ -485,18 +485,16 @@ void KuGouClient::connectPlayWidget()
                                     this,
                                     [this] {
                                         // @note 未使用，保留用于调试
-                                        qDebug() << __LINE__ << " ***** " << this->m_player
-                                            ->getMusicPath() << "播放结束。。。";
+                                        // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
                                         ui->play_widget->setPlayPauseIcon(false);
 
                                         // @note 未使用，保留用于调试
-                                        qDebug() << __LINE__ << "正常结束";
-                                        qDebug() << __LINE__ << "当前界面下标：" << ui->stackedWidget->
-                                            currentIndex();
+                                        // qDebug() << __LINE__ << "正常结束";
+                                        // qDebug() << __LINE__ << "当前界面下标：" << ui->stackedWidget->currentIndex();
                                         if (ui->stackedWidget->currentIndex() == static_cast<int>(
                                                 TitleWidget::StackType::LocalDownload) &&
                                             this->m_localDownload) {
-                                            qDebug() << "通知本地下载界面播放结束";
+                                            // qDebug() << "通知本地下载界面播放结束";
                                             ///< 通知本地下载组件
                                             this->m_localDownload->audioFinished();
                                         }
@@ -505,7 +503,7 @@ void KuGouClient::connectPlayWidget()
                                                 m_searchResultWidget.get()) &&
                                             this->m_searchResultWidget) {
                                             ///< 通知搜索结果组件
-                                            qDebug() << "通知搜索结果界面播放结束";
+                                            // qDebug() << "通知搜索结果界面播放结束";
                                             this->m_searchResultWidget->onAudioFinished();
                                         }
                                     }); ///< 连接正常播放结束信号
@@ -1289,12 +1287,11 @@ void KuGouClient::onCircleBtnClicked()
                                             this,
                                             [this] {
                                                 // @note 未使用，保留用于调试
-                                                qDebug() << __LINE__ << " ***** " << this->m_player
-                                                    ->getMusicPath() << "播放结束。。。";
+                                                // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
                                                 ui->play_widget->setPlayPauseIcon(false);
 
                                                 // @note 未使用，保留用于调试
-                                                qDebug() << __LINE__ << " 重新播放";
+                                                // qDebug() << __LINE__ << " 重新播放";
                                                 this->m_player->replay(true); ///< 重新播放
                                             });                               ///< 连接单曲循环信号
         } else {
@@ -1310,19 +1307,17 @@ void KuGouClient::onCircleBtnClicked()
                                             this,
                                             [this] {
                                                 // @note 未使用，保留用于调试
-                                                qDebug() << __LINE__ << " ***** " << this->m_player
-                                                    ->getMusicPath() << "播放结束。。。";
+                                                // qDebug() << __LINE__ << " ***** " << this->m_player->getMusicPath() << "播放结束。。。";
                                                 ui->play_widget->setPlayPauseIcon(false);
 
                                                 // @note 未使用，保留用于调试
-                                                qDebug() << __LINE__ << "正常结束";
-                                                qDebug() << __LINE__ << "当前界面下标：" << ui->
-                                                    stackedWidget->currentIndex();
+                                                // qDebug() << __LINE__ << "正常结束";
+                                                // qDebug() << __LINE__ << "当前界面下标：" << ui->stackedWidget->currentIndex();
                                                 if (ui->stackedWidget->currentIndex() == static_cast
                                                     <int>(
                                                         TitleWidget::StackType::LocalDownload) &&
                                                     this->m_localDownload) {
-                                                    qDebug() << "通知本地下载界面播放结束";
+                                                    // qDebug() << "通知本地下载界面播放结束";
                                                     ///< 通知本地下载组件
                                                     this->m_localDownload->audioFinished();
                                                 }
@@ -1331,7 +1326,7 @@ void KuGouClient::onCircleBtnClicked()
                                                         m_searchResultWidget.get()) &&
                                                     this->m_searchResultWidget) {
                                                     ///< 通知搜索结果组件
-                                                    qDebug() << "通知搜索结果界面播放结束";
+                                                    // qDebug() << "通知搜索结果界面播放结束";
                                                     this->m_searchResultWidget->onAudioFinished();
                                                 }
                                             }); ///< 连接正常播放结束信号

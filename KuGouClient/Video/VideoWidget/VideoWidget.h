@@ -9,6 +9,8 @@
 #ifndef VIDEOWIDGET_H
 #define VIDEOWIDGET_H
 
+#include <QTimer>
+
 #include "VideoPartWidget.h"
 
 class QPushButton;
@@ -31,9 +33,8 @@ class RefreshMask;
  */
 QT_BEGIN_NAMESPACE
 
-namespace Ui
-{
-    class VideoWidget;
+namespace Ui {
+class VideoWidget;
 }
 
 QT_END_NAMESPACE
@@ -51,7 +52,7 @@ public:
      * @brief 构造函数
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit VideoWidget(QWidget* parent = nullptr);
+    explicit VideoWidget(QWidget *parent = nullptr);
 
     /**
      * @brief 析构函数
@@ -78,7 +79,7 @@ private:
      */
     void initUi();
 
-    void loadSectionBlocks(VideoPartWidget* section, int idx);
+    void loadSectionBlocks(VideoPartWidget *section, int idx);
 
 private slots:
     /**
@@ -86,29 +87,35 @@ private slots:
      * @param value 滚动条值
      * @note 根据滚动位置切换按钮选中状态
      */
-    void handleWheelValue(const int& value);
+    void handleWheelValue(const int &value);
 
 protected:
-    void showEvent(QShowEvent* event) override;
+    void showEvent(QShowEvent *event) override;
 
-    void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent *event) override;
+
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
+signals:
+    void initialized();
 
 private:
-    Ui::VideoWidget* ui;                                      ///< UI 界面指针
+    Ui::VideoWidget *ui;                                      ///< UI 界面指针
     std::unique_ptr<QButtonGroup> m_buttonGroup;              ///< 按钮组
-    QPushButton* m_recommend_pushButton;                      ///< 推荐按钮
-    QPushButton* m_video_rank_pushButton;                     ///< 视频榜按钮
-    QPushButton* m_MV_pushButton;                             ///< MV按钮
-    QPushButton* m_site_pushButton;                           ///< 现场按钮
-    QPushButton* m_cover_pushButton;                          ///< 翻唱按钮
-    QPushButton* m_dance_pushButton;                          ///< 舞蹈按钮
-    QPushButton* m_children_pushButton;                       ///< 儿童按钮
-    QPushButton* m_live_pushButton;                           ///< TME LIVE按钮
-    QPushButton* m_first_concert_pushButton;                  ///< 首唱会按钮
-    QPushButton* m_chinese_language_pushButton;               ///< 华语按钮
-    QPushButton* m_South_Korea_pushButton;                    ///< 韩国按钮
-    QPushButton* m_Japan_pushButton;                          ///< 日本按钮
-    QPushButton* m_American_pushButton;                       ///< 欧美按钮
+    QPushButton *m_recommend_pushButton;                      ///< 推荐按钮
+    QPushButton *m_video_rank_pushButton;                     ///< 视频榜按钮
+    QPushButton *m_MV_pushButton;                             ///< MV按钮
+    QPushButton *m_site_pushButton;                           ///< 现场按钮
+    QPushButton *m_cover_pushButton;                          ///< 翻唱按钮
+    QPushButton *m_dance_pushButton;                          ///< 舞蹈按钮
+    QPushButton *m_children_pushButton;                       ///< 儿童按钮
+    QPushButton *m_live_pushButton;                           ///< TME LIVE按钮
+    QPushButton *m_first_concert_pushButton;                  ///< 首唱会按钮
+    QPushButton *m_chinese_language_pushButton;               ///< 华语按钮
+    QPushButton *m_South_Korea_pushButton;                    ///< 韩国按钮
+    QPushButton *m_Japan_pushButton;                          ///< 日本按钮
+    QPushButton *m_American_pushButton;                       ///< 欧美按钮
     std::unique_ptr<VideoPartWidget> m_recommendWidget;       ///< 推荐分区
     std::unique_ptr<VideoPartWidget> m_videoRankWidget;       ///< 视频榜分区
     std::unique_ptr<VideoPartWidget> m_MVWidget;              ///< MV 分区

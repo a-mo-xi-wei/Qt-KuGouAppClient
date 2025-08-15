@@ -35,19 +35,16 @@
  */
 MVWidget::MVWidget(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::MVWidget)
-    , m_buttonGroup(std::make_unique<QButtonGroup>(this))
-    , m_refreshMask(std::make_unique<RefreshMask>(this))                 ///< 初始化刷新遮罩
+      , ui(new Ui::MVWidget)
+      , m_buttonGroup(std::make_unique<QButtonGroup>(this))
+      , m_refreshMask(std::make_unique<RefreshMask>(this)) ///< 初始化刷新遮罩
 {
     ui->setupUi(this);
     {
         QFile file(GET_CURRENT_DIR + QStringLiteral("/mv.css"));
-        if (file.open(QIODevice::ReadOnly))
-        {
+        if (file.open(QIODevice::ReadOnly)) {
             this->setStyleSheet(file.readAll()); ///< 加载样式表
-        }
-        else
-        {
+        } else {
             qDebug() << "样式表打开失败QAQ";
             STREAM_ERROR() << "样式表打开失败QAQ";
             return;
@@ -56,10 +53,11 @@ MVWidget::MVWidget(QWidget *parent)
 
     initUi(); ///< 初始化界面
 
-    connect(ui->stackedWidget, &SlidingStackedWidget::animationFinished, [this]
-    {
-        enableButton(true);                              ///< 动画结束时启用按钮
-    });
+    connect(ui->stackedWidget,
+            &SlidingStackedWidget::animationFinished,
+            [this] {
+                enableButton(true); ///< 动画结束时启用按钮
+            });
     enableButton(true);
 }
 
@@ -76,21 +74,20 @@ MVWidget::~MVWidget()
  * @param beg 开始索引
  * @return 创建的页面控件
  */
-QWidget* MVWidget::createPage(const int& beg)
+QWidget *MVWidget::createPage(const int &beg)
 {
     auto pageWidget = new QWidget;
     auto mainLayout = new QVBoxLayout(pageWidget);
     mainLayout->setSpacing(10);
     mainLayout->setContentsMargins(10, 0, 10, 0);
 
-    for (int row = 0; row < 3; ++row)
-    {
+    for (int row = 0; row < 3; ++row) {
         auto rowLayout = new QHBoxLayout;
         rowLayout->setSpacing(10);
-        for (int col = 0; col < 3; ++col)
-        {
+        for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col + beg;
-            if (index >= 9 + beg) break;
+            if (index >= 9 + beg)
+                break;
             auto item = new MVBlockWidget;
             item->setCoverPix(m_total[index].pixPath);
             item->setTitle(m_total[index].title);
@@ -110,7 +107,8 @@ QWidget* MVWidget::createPage(const int& beg)
 void MVWidget::initButtonGroup()
 {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed)); ///< 随机打乱
+    std::shuffle(this->m_total.begin(), this->m_total.end(), std::default_random_engine(seed));
+    ///< 随机打乱
 
     // 设置按钮组（互斥）
     this->m_buttonGroup->addButton(ui->recommend_pushButton, 0);
@@ -120,8 +118,7 @@ void MVWidget::initButtonGroup()
     this->m_buttonGroup->setExclusive(true);
 
     // 初始化占位页面
-    for (int i = 0; i < 4; ++i)
-    {
+    for (int i = 0; i < 4; ++i) {
         auto *placeholder = new QWidget;
         auto *layout = new QVBoxLayout(placeholder);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -134,62 +131,54 @@ void MVWidget::initButtonGroup()
     ui->stackedWidget->slideInIdx(0);
 
     // 响应按钮点击事件
-    connect(m_buttonGroup.get(), &QButtonGroup::idClicked, this, [this](const int& id)
-    {
-        if (m_currentIdx == id)
-        {
-            return;
-        }
-
-        enableButton(false);
-
-        QWidget *placeholder = m_pages[m_currentIdx];
-        if (!placeholder)
-        {
-            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-            enableButton(true);
-            return;
-        }
-
-        // 清理目标 placeholder 内旧的控件
-        QLayout *layout = placeholder->layout();
-        if (!layout)
-        {
-            layout = new QVBoxLayout(placeholder);
-            layout->setContentsMargins(0, 0, 0, 0);
-            layout->setSpacing(0);
-        }
-        else
-        {
-            while (QLayoutItem* item = layout->takeAt(0))
-            {
-                if (QWidget* widget = item->widget())
-                {
-                    widget->deleteLater();
+    connect(m_buttonGroup.get(),
+            &QButtonGroup::idClicked,
+            this,
+            [this](const int &id) {
+                if (m_currentIdx == id) {
+                    return;
                 }
-                delete item;
-            }
-        }
-        placeholder = m_pages[id];
-        layout = placeholder->layout();
 
-        // 创建新页面
-        int beginIndex = id * 10 + 1;
-        QWidget *realPage = createPage(beginIndex);
-        if (!realPage)
-        {
-            qWarning() << "[WARNING] Failed to create repo page at index:" << id;
-        }
-        else
-        {
-            layout->addWidget(realPage);
-        }
+                enableButton(false);
 
-        ui->stackedWidget->slideInIdx(id);
-        m_currentIdx = id;
+                QWidget *placeholder = m_pages[m_currentIdx];
+                if (!placeholder) {
+                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+                    enableButton(true);
+                    return;
+                }
 
-        STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString();
-    });
+                // 清理目标 placeholder 内旧的控件
+                QLayout *layout = placeholder->layout();
+                if (!layout) {
+                    layout = new QVBoxLayout(placeholder);
+                    layout->setContentsMargins(0, 0, 0, 0);
+                    layout->setSpacing(0);
+                } else {
+                    while (QLayoutItem *item = layout->takeAt(0)) {
+                        if (QWidget *widget = item->widget()) {
+                            widget->deleteLater();
+                        }
+                        delete item;
+                    }
+                }
+                placeholder = m_pages[id];
+                layout = placeholder->layout();
+
+                // 创建新页面
+                int beginIndex = id * 10 + 1;
+                QWidget *realPage = createPage(beginIndex);
+                if (!realPage) {
+                    qWarning() << "[WARNING] Failed to create repo page at index:" << id;
+                } else {
+                    layout->addWidget(realPage);
+                }
+
+                ui->stackedWidget->slideInIdx(id);
+                m_currentIdx = id;
+
+                STREAM_INFO() << "切换到 " << m_buttonGroup->button(id)->text().toStdString();
+            });
 }
 
 /**
@@ -197,11 +186,9 @@ void MVWidget::initButtonGroup()
  */
 void MVWidget::initLiveScene()
 {
-    const auto layout = static_cast<QGridLayout*>(ui->live_scene_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
+    const auto layout = static_cast<QGridLayout *>(ui->live_scene_grid_widget->layout());
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col + 41; // 从索引 41 开始
             auto widget = new MVBlockWidget(ui->live_scene_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
@@ -217,11 +204,9 @@ void MVWidget::initLiveScene()
  */
 void MVWidget::initHonorOfKings()
 {
-    const auto layout = static_cast<QGridLayout*>(ui->honor_of_kings_grid_widget->layout());
-    for (int row = 0; row < 2; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
+    const auto layout = static_cast<QGridLayout *>(ui->honor_of_kings_grid_widget->layout());
+    for (int row = 0; row < 2; ++row) {
+        for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col + 51; // 从索引 51 开始
             auto widget = new MVBlockWidget(ui->honor_of_kings_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
@@ -237,11 +222,9 @@ void MVWidget::initHonorOfKings()
  */
 void MVWidget::initAwardCeremony()
 {
-    const auto layout = static_cast<QGridLayout*>(ui->award_ceremony_grid_widget->layout());
-    for (int row = 0; row < 2; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
+    const auto layout = static_cast<QGridLayout *>(ui->award_ceremony_grid_widget->layout());
+    for (int row = 0; row < 2; ++row) {
+        for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col + 61; // 从索引 61 开始
             auto widget = new MVBlockWidget(ui->award_ceremony_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
@@ -257,11 +240,9 @@ void MVWidget::initAwardCeremony()
  */
 void MVWidget::initHotMV()
 {
-    const auto layout = static_cast<QGridLayout*>(ui->hot_MV_grid_widget->layout());
-    for (int row = 0; row < 3; ++row)
-    {
-        for (int col = 0; col < 3; ++col)
-        {
+    const auto layout = static_cast<QGridLayout *>(ui->hot_MV_grid_widget->layout());
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
             int index = row * 3 + col + 71; // 从索引 71 开始
             auto widget = new MVBlockWidget(ui->hot_MV_grid_widget);
             widget->setCoverPix(this->m_total[index].pixPath); ///< 设置封面
@@ -284,17 +265,15 @@ const QString MVWidget::parseTitle(const QString &title)
     QString str2 = list[1];
     // 查找 '《' 字符的位置
     int indexOfParenthesis = str2.indexOf("》");
-    if (indexOfParenthesis != -1)
-    {
-        str2 = str2.left(indexOfParenthesis + 1);  // 截取到 '》' 以及之前的部分
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis + 1); // 截取到 '》' 以及之前的部分
         str2 += "MV上线";
         return str1 + " " + str2;
     }
     // 查找 "（" 字符的位置
     indexOfParenthesis = str2.indexOf("（");
-    if (indexOfParenthesis != -1)
-    {
-        str2 = str2.left(indexOfParenthesis);  // 截取到 "（" 之前的部分
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis); // 截取到 "（" 之前的部分
         str2 = "《" + str2 + "》MV上线";
         return str1 + " " + str2;
     }
@@ -303,9 +282,8 @@ const QString MVWidget::parseTitle(const QString &title)
     indexOfParenthesis = str2.indexOf('(');
 
     // 如果找到了 '('，则截取到 '(' 前的部分
-    if (indexOfParenthesis != -1)
-    {
-        str2 = str2.left(indexOfParenthesis);  // 截取到 '(' 之前的部分
+    if (indexOfParenthesis != -1) {
+        str2 = str2.left(indexOfParenthesis); // 截取到 '(' 之前的部分
     }
     str2 = "《" + str2 + "》MV上线";
     return str1 + " " + str2;
@@ -334,88 +312,101 @@ void MVWidget::initUi()
 
     m_refreshMask->keepLoading();
 
-    const auto future = Async::runAsync(QThreadPool::globalInstance(), [this]
-    {
-        QFile file(GET_CURRENT_DIR + QStringLiteral("/title.json"));
-        if (!file.open(QIODevice::ReadOnly))
-        {
-            qWarning() << "Could not open file for reading title.json";
-            STREAM_WARN() << "Could not open file for reading title.json";
-            return true;
-        }
-        auto obj = QJsonDocument::fromJson(file.readAll());
-        auto arr = obj.array();
-        for (const auto &item : arr)
-        {
-            QString title = item.toObject().value("title").toString();
-            this->m_titleAndDesc.emplace_back(title, parseTitle(title)); ///< 解析标题，感觉有点浪费
-        }
-        file.close();
+    const auto future = Async::runAsync(QThreadPool::globalInstance(),
+                                        [this] {
+                                            QFile file(
+                                                GET_CURRENT_DIR + QStringLiteral("/title.json"));
+                                            if (!file.open(QIODevice::ReadOnly)) {
+                                                qWarning() <<
+                                                    "Could not open file for reading title.json";
+                                                STREAM_WARN() <<
+                                                    "Could not open file for reading title.json";
+                                                return true;
+                                            }
+                                            auto obj = QJsonDocument::fromJson(file.readAll());
+                                            auto arr = obj.array();
+                                            for (const auto &item : arr) {
+                                                QString title = item.toObject().value("title").
+                                                    toString();
+                                                this->m_titleAndDesc.emplace_back(
+                                                    title,
+                                                    parseTitle(title)); ///< 解析标题，感觉有点浪费
+                                            }
+                                            file.close();
 
-        std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
-        auto last = std::unique(m_titleAndDesc.begin(), m_titleAndDesc.end());
-        m_titleAndDesc.erase(last, m_titleAndDesc.end());
+                                            std::sort(m_titleAndDesc.begin(), m_titleAndDesc.end());
+                                            auto last = std::unique(
+                                                m_titleAndDesc.begin(),
+                                                m_titleAndDesc.end());
+                                            m_titleAndDesc.erase(last, m_titleAndDesc.end());
 
-        for (int i = 1; i <= 100; i++)
-        {
-            this->m_total.emplace_back(
-                QString(":/RectCover/Res/rectcover/music-rect-cover%1.jpg").arg(i),
-                m_titleAndDesc[i].first,
-                m_titleAndDesc[i].second); ///< 添加音乐信息
-        }
+                                            for (int i = 1; i <= 100; i++) {
+                                                this->m_total.emplace_back(
+                                                    QString(
+                                                        ":/RectCover/Res/rectcover/music-rect-cover%1.jpg")
+                                                    .arg(i),
+                                                    m_titleAndDesc[i].first,
+                                                    m_titleAndDesc[i].second); ///< 添加音乐信息
+                                            }
 
-        return true;
-    });
-    Async::onResultReady(future, this, [this](bool flag)
-    {
-        using Task = std::function<void()>;
-        QVector<Task> tasks;
+                                            return true;
+                                        });
+    Async::onResultReady(future,
+                         this,
+                         [this](bool flag) {
+                             using Task = std::function<void()>;
+                             QVector<Task> tasks;
 
-        tasks << [this] { initButtonGroup(); };
-        tasks << [this] { initLiveScene(); };
-        tasks << [this] { initHonorOfKings(); };
-        tasks << [this] { initAwardCeremony(); };
-        tasks << [this] { initHotMV(); };
-        tasks << [this] { m_refreshMask->hideLoading(""); };
+                             tasks << [this] { initButtonGroup(); };
+                             tasks << [this] { initLiveScene(); };
+                             tasks << [this] { initHonorOfKings(); };
+                             tasks << [this] { initAwardCeremony(); };
+                             tasks << [this] { initHotMV(); };
+                             tasks << [this] {
+                                 m_refreshMask->hideLoading("");
+                                 QMetaObject::invokeMethod(this,
+                                                           "emitInitialized",
+                                                           Qt::QueuedConnection);
+                             };
 
-        auto queue = std::make_shared<QQueue<Task>>();
-        for (const auto& task : tasks)
-            queue->enqueue(task);
+                             auto queue = std::make_shared<QQueue<Task>>();
+                             for (const auto &task : tasks)
+                                 queue->enqueue(task);
 
-        auto runner = std::make_shared<std::function<void()>>();
-        *runner = [queue, runner]()
-        {
-            if (queue->isEmpty()) return;
+                             auto runner = std::make_shared<std::function<void()>>();
+                             *runner = [queue, runner]() {
+                                 if (queue->isEmpty())
+                                     return;
 
-            auto task = queue->dequeue();
-            QTimer::singleShot(0, nullptr, [task, runner]()
-            {
-                task();
-                (*runner)();
-            });
-        };
+                                 auto task = queue->dequeue();
+                                 QTimer::singleShot(0,
+                                                    nullptr,
+                                                    [task, runner]() {
+                                                        task();
+                                                        (*runner)();
+                                                    });
+                             };
 
-        (*runner)();
-    });
+                             (*runner)();
+                         });
 
     this->m_searchAction = new QAction(this); ///< 创建搜索动作
-    this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
+    this->m_searchAction->
+          setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
     this->m_searchAction->setIconVisibleInMenu(false);
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
     ui->search_lineEdit->setBorderRadius(10);
-    auto font = QFont("AaSongLiuKaiTi");     ///< 设置字体
+    auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
     font.setWeight(QFont::Bold);
     font.setPixelSize(12);
     ui->search_lineEdit->setFont(font);
 
     QToolButton *searchButton = nullptr;
-    foreach (QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton*>())
-    {
-        if (btn->defaultAction() == this->m_searchAction)
-        {
+    foreach(QToolButton *btn, ui->search_lineEdit->findChildren<QToolButton*>()) {
+        if (btn->defaultAction() == this->m_searchAction) {
             searchButton = btn;
             auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建提示
-            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置提示文本
+            search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索"));   ///< 设置提示文本
             break;
         }
     }
@@ -434,20 +425,21 @@ void MVWidget::initUi()
 
     ui->recommend_pushButton->clicked(); ///< 默认触发推荐按钮
 
-    initAdvertiseWidget();     ///< 初始化滑动广告
+    initAdvertiseWidget(); ///< 初始化滑动广告
 }
 
 void MVWidget::initAdvertiseWidget() const
 {
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.jpg"))); ///< 添加广告图片
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.jpg")));
+    ///< 添加广告图片
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.jpg")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.jpg")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/4.jpg")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/5.jpg")));
     ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/6.jpg")));
-    ui->advertise_widget->setCurrentIndex(0); ///< 设置初始索引
-    ui->advertise_widget->adjustSize();       ///< 调整大小
-    ui->advertise_widget->setAutoSlide(4000); ///< 设置自动轮播
+    ui->advertise_widget->setCurrentIndex(0);             ///< 设置初始索引
+    ui->advertise_widget->adjustSize();                   ///< 调整大小
+    ui->advertise_widget->setAutoSlide(4000);             ///< 设置自动轮播
     ui->advertise_widget->setContentsMargins(0, 0, 0, 0); ///< 设置边距
 }
 
@@ -475,8 +467,7 @@ void MVWidget::resizeEvent(QResizeEvent *event)
         else
             newState = 4;
 
-        if (currentState != newState)
-        {
+        if (currentState != newState) {
             currentState = newState;
             ui->pushButton5->setVisible(newState >= 1); ///< 动态显示按钮
             ui->pushButton6->setVisible(newState >= 2);
@@ -497,16 +488,14 @@ void MVWidget::resizeEvent(QResizeEvent *event)
  */
 bool MVWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    const auto button = qobject_cast<QToolButton*>(watched);
-    if (button && button->defaultAction() == this->m_searchAction)
-    {
-        if (event->type() == QEvent::Enter)
-        {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg"))); ///< 悬停图标
-        }
-        else if (event->type() == QEvent::Leave)
-        {
-            this->m_searchAction->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 默认图标
+    const auto button = qobject_cast<QToolButton *>(watched);
+    if (button && button->defaultAction() == this->m_searchAction) {
+        if (event->type() == QEvent::Enter) {
+            this->m_searchAction->setIcon(
+                QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-blue.svg"))); ///< 悬停图标
+        } else if (event->type() == QEvent::Leave) {
+            this->m_searchAction->setIcon(
+                QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 默认图标
         }
     }
     return QObject::eventFilter(watched, event);
@@ -517,7 +506,7 @@ void MVWidget::showEvent(QShowEvent *event)
     QWidget::showEvent(event);
     ui->advertise_widget->setFixedHeight(ui->advertise_widget->width() / 5 + 65); ///< 调整广告高度
     m_refreshMask->setGeometry(rect());
-    m_refreshMask->raise();  // 确保遮罩在最上层
+    m_refreshMask->raise(); // 确保遮罩在最上层
 }
 
 /**
@@ -525,8 +514,13 @@ void MVWidget::showEvent(QShowEvent *event)
  */
 void MVWidget::on_more_pushButton1_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                               QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton1->text().left(ui->more_pushButton1->text().size() - 2)), 1000, this->window()); ///< 显示提示
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("%1 功能未实现 敬请期待").arg(
+                                   ui->more_pushButton1->text().left(
+                                       ui->more_pushButton1->text().size() - 2)),
+                               1000,
+                               this->window()); ///< 显示提示
 }
 
 /**
@@ -534,8 +528,13 @@ void MVWidget::on_more_pushButton1_clicked()
  */
 void MVWidget::on_more_pushButton2_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                               QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton2->text().left(ui->more_pushButton2->text().size() - 2)), 1000, this->window()); ///< 显示提示
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("%1 功能未实现 敬请期待").arg(
+                                   ui->more_pushButton2->text().left(
+                                       ui->more_pushButton2->text().size() - 2)),
+                               1000,
+                               this->window()); ///< 显示提示
 }
 
 /**
@@ -543,8 +542,13 @@ void MVWidget::on_more_pushButton2_clicked()
  */
 void MVWidget::on_more_pushButton3_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                               QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton3->text().left(ui->more_pushButton3->text().size() - 2)), 1000, this->window()); ///< 显示提示
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("%1 功能未实现 敬请期待").arg(
+                                   ui->more_pushButton3->text().left(
+                                       ui->more_pushButton3->text().size() - 2)),
+                               1000,
+                               this->window()); ///< 显示提示
 }
 
 /**
@@ -552,8 +556,13 @@ void MVWidget::on_more_pushButton3_clicked()
  */
 void MVWidget::on_more_pushButton4_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                               QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton4->text().left(ui->more_pushButton4->text().size() - 2)), 1000, this->window()); ///< 显示提示
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("%1 功能未实现 敬请期待").arg(
+                                   ui->more_pushButton4->text().left(
+                                       ui->more_pushButton4->text().size() - 2)),
+                               1000,
+                               this->window()); ///< 显示提示
 }
 
 /**
@@ -561,6 +570,11 @@ void MVWidget::on_more_pushButton4_clicked()
  */
 void MVWidget::on_more_pushButton5_clicked()
 {
-    ElaMessageBar::information(ElaMessageBarType::BottomRight, "Info",
-                               QString("%1 功能未实现 敬请期待").arg(ui->more_pushButton5->text().left(ui->more_pushButton5->text().size() - 2)), 1000, this->window()); ///< 显示提示
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("%1 功能未实现 敬请期待").arg(
+                                   ui->more_pushButton5->text().left(
+                                       ui->more_pushButton5->text().size() - 2)),
+                               1000,
+                               this->window()); ///< 显示提示
 }

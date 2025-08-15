@@ -293,6 +293,7 @@ void VideoWidget::initUi()
         {
             loadSectionBlocks(m_americanWidget.get(), 12);
             m_refreshMask->hideLoading(); // 所有加载完成后再隐藏遮罩
+            QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
         };
 
         // 3. 串行执行器

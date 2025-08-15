@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QPointer>
+#include <QTimer>
+
 #include <array>
 
 class RefreshMask;
@@ -13,7 +15,11 @@ class QButtonGroup;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui { class MVWidget; }
+
+namespace Ui {
+class MVWidget;
+}
+
 QT_END_NAMESPACE
 
 /**
@@ -42,7 +48,7 @@ private:
      * @param beg 开始索引
      * @return 创建的页面控件
      */
-    QWidget* createPage(const int& beg);
+    QWidget *createPage(const int &beg);
 
     /**
      * @brief 初始化按钮组
@@ -134,6 +140,12 @@ private slots:
      */
     void on_more_pushButton5_clicked();
 
+public slots:
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
+
+signals:
+    void initialized();
+
 private:
     /**
      * @struct MusicInfo
@@ -155,14 +167,14 @@ private:
         QString description; ///< 描述
     };
 
-    Ui::MVWidget                            *ui;                   ///< UI 指针
-    std::unique_ptr<QButtonGroup>           m_buttonGroup;         ///< 按钮组
-    QAction                                 *m_searchAction{};     ///< 搜索动作
-    QList<std::pair<QString, QString>>      m_titleAndDesc;        ///< 标题和描述对
-    QList<MusicInfo>                        m_total;               ///< 所有音乐信息
-    std::array<QPointer<QWidget>, 4>        m_pages{};         // QPointer 可检测被释放的页面
+    Ui::MVWidget *ui;                                  ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;       ///< 按钮组
+    QAction *m_searchAction{};                         ///< 搜索动作
+    QList<std::pair<QString, QString>> m_titleAndDesc; ///< 标题和描述对
+    QList<MusicInfo> m_total;                          ///< 所有音乐信息
+    std::array<QPointer<QWidget>, 4> m_pages{};        // QPointer 可检测被释放的页面
     int m_currentIdx{0};
-    std::unique_ptr<RefreshMask>             m_refreshMask;         ///< 刷新遮罩
+    std::unique_ptr<RefreshMask> m_refreshMask; ///< 刷新遮罩
 };
 
 #endif // MVWIDGET_H
