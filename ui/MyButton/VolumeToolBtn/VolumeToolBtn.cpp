@@ -134,6 +134,7 @@ void VolumeToolBtn::checkMousePosition() const
     {
         if (this->m_volumeWidget->geometry().contains(this->m_volumeParent->mapFromGlobal(globalMousePos)))
         {
+            this->m_volumeWidget->raise();
             this->m_volumeWidget->show();
             if (m_leaveTimer->isActive())
             {
@@ -212,6 +213,7 @@ void VolumeToolBtn::enterEvent(QEnterEvent *event)
     updateIcon(true);
     getVolumeWidgetPosition();
     this->m_volumeWidget->move(this->m_volumePosition);
+    this->m_volumeWidget->raise();
     this->m_volumeWidget->show();
     // 鼠标进入时取消定时器
     if (m_leaveTimer->isActive())

@@ -6,17 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>854</width>
-    <height>103</height>
+    <width>864</width>
+    <height>99</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>PlayWidget</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="processLayout">
      <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
       <number>2</number>
      </property>
      <item>
@@ -120,18 +132,18 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>50</width>
+         <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>50</width>
+         <height>50</height>
         </size>
        </property>
        <property name="toolTip">
-        <string>查看歌词写真</string>
+        <string/>
        </property>
        <property name="text">
         <string/>

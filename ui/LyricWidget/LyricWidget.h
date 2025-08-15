@@ -58,9 +58,9 @@ public:
     bool isLyricValid() const;
     void setViewerHighlightLineLyricAtPos(const int &pos) const;
 
-    void showWithAnimation(int duration = 300);
-    void hideWithAnimation(int duration = 300);
     void toggleAnimation(int duration = 300);
+
+    bool isVisible() const;
 
 private:
     void initLayout();

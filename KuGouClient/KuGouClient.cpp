@@ -18,10 +18,7 @@
 
 #include <QButtonGroup>
 #include <QDir>
-#include <QFile>
-#include <QJsonArray>
 #include <QShortcut>
-#include <QSizeGrip>
 
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR                                                                                                \
@@ -445,6 +442,16 @@ void KuGouClient::connectPlayWidget()
             &VideoPlayer::positionChanged,
             ui->play_widget,
             &PlayWidget::onSliderPositionChanged);
+    connect(this->m_player,
+            &VideoPlayer::positionChanged,
+            this,
+            [this](const int &pos) {
+                //qDebug() << "播放器位置变化：" << pos;
+                //改变预览歌词时的滚动状态
+                if (m_lyricWidget->isLyricValid()) {
+                    m_lyricWidget->setViewerHighlightLineLyricAtPos(pos);
+                }
+            });
 
     connect(this->m_player,
             &VideoPlayer::durationChanged,
@@ -455,25 +462,66 @@ void KuGouClient::connectPlayWidget()
             &VideoPlayer::pictureFound,
             ui->play_widget,
             &PlayWidget::onCoverChanged); ///< 连接封面图片发现信号
+    connect(this->m_player,
+            &VideoPlayer::pictureFound,
+            this,
+            [this](const QPixmap &pixmap) {
+                if (!pixmap.isNull())
+                    m_lyricWidget->AlbumImageChanged(pixmap);
+                else {
+                    m_lyricWidget->setToDefaultAlbumImage();
+                }
+            });
 
     connect(this->m_player,
             &VideoPlayer::titleFound,
             ui->play_widget,
             &PlayWidget::onSongNameChanged); ///< 连接歌曲标题发现信号
+    connect(this->m_player,
+            &VideoPlayer::titleFound,
+            this,
+            [this](const QString &title) {
+                qDebug() << "标题：" << title;
+                if (!title.isEmpty()) {
+                    m_lyricWidget->setMusicTitle(title);
+                }
+            });
 
     connect(this->m_player,
             &VideoPlayer::artistFound,
             ui->play_widget,
             &PlayWidget::onSingerNameChanged);
+    connect(this->m_player,
+            &VideoPlayer::artistFound,
+            this,
+            [this](const QString &singer) {
+                qDebug() << "歌手：" << singer;
+                if (!singer.isEmpty())
+                    m_lyricWidget->setMusicSinger(singer);
+            });
 
     connect(this->m_player,
             &VideoPlayer::audioPlay,
             ui->play_widget,
             &PlayWidget::onAudioPlay);
     connect(this->m_player,
+            &VideoPlayer::audioPlay,
+            this,
+            [this] {
+                m_lyricWidget->playPhonograph();
+            });
+
+    connect(this->m_player,
             &VideoPlayer::audioPause,
             ui->play_widget,
             &PlayWidget::onAudioPause);
+
+    connect(this->m_player,
+            &VideoPlayer::audioPause,
+            this,
+            [this] {
+                m_lyricWidget->stopPhonograph();
+            });
 
     mediaStatusConnection = connect(this->m_player,
                                     &VideoPlayer::audioFinish,
@@ -535,6 +583,18 @@ void KuGouClient::connectPlayWidget()
                 this->m_player->seek(value); ///< 跳转到指定位置
                 this->m_player->play();      ///< 继续播放
             });
+    connect(m_lyricWidget.get(),
+            &LyricWidget::jumpToTime,
+            this,
+            [this](const int &pos) {
+                ///< 鼠标按下事件
+                if (this->m_player->state() == VideoPlayer::State::Stop) {
+                    this->m_player->replay(true); ///< 重新播放
+                }
+                this->m_player->pause();   ///< 暂停播放
+                this->m_player->seek(pos); ///< 跳转到指定位置
+                this->m_player->play();    ///< 继续播放
+            });
 
     connect(ui->play_widget,
             &PlayWidget::sliderReleased,
@@ -574,6 +634,20 @@ void KuGouClient::connectPlayWidget()
             this,
             [this] {
                 ui->title_widget->setMaxScreen();
+            });
+    connect(ui->play_widget,
+            &PlayWidget::showLyricWidget,
+            this,
+            [this] {
+                m_lyricWidget->toggleAnimation();
+                if (m_lyricWidget->isVisible()) {
+                    m_lyricWidget->raise();
+                    ui->play_widget->raise();
+                    ui->play_widget->setTextColor(true);
+                } else {
+                    ui->play_widget->lower(); // 恢复到底层
+                    ui->play_widget->setTextColor(false);
+                }
             });
 }
 
@@ -1042,6 +1116,8 @@ void KuGouClient::resizeEvent(QResizeEvent *event)
     rect.setLeft(5);
     rect.setRight(rect.width() - 6);
     this->m_refreshMask->setGeometry(rect); ///< 设置遮罩几何形状
+
+    m_lyricWidget->resize(size());
 }
 
 /**
@@ -1242,11 +1318,19 @@ void KuGouClient::onSearchResultMusicPlay(const MusicItemWidget *item)
                              2000,
                              this->window()); ///< 显示播放失败提示
     }
-    qDebug() << "设置封面：" << item->m_information.cover;
-    if (!item->m_information.cover.isNull())
-        ui->play_widget->setCover(item->m_information.cover);
+    //qDebug() << "设置封面：" << item->m_information.cover;
+    ui->play_widget->setCover(item->m_information.cover);
+    if (!item->m_information.cover.isNull()) {
+        m_lyricWidget->AlbumImageChanged(item->m_information.cover);
+    } else {
+        m_lyricWidget->setToDefaultAlbumImage();
+    }
+
     ui->play_widget->setSongName(item->m_information.songName);
     ui->play_widget->setSingerName(item->m_information.singer);
+
+    m_lyricWidget->setMusicTitle(item->m_information.songName);
+    m_lyricWidget->setMusicSinger(item->m_information.singer);
 }
 
 void KuGouClient::onTrayIconNoVolume(const bool &flag)

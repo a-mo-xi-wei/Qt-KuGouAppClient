@@ -7,6 +7,9 @@
  */
 
 #include "PlayWidget.h"
+
+#include <QPropertyAnimation>
+
 #include "ui_PlayWidget.h"
 #include "SpeedDialog.h"
 #include "ElaMessageBar.h"
@@ -76,11 +79,13 @@ void PlayWidget::setCover(const QPixmap &pix)
         /// if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().
         ///     startsWith("https://"))
         ///     return;
+        qDebug() << "图片为空，设置默认图片";
         ui->cover_label->setPixmap(roundedPixmap(
-            QPixmap(":/Res/playbar/default-cover.svg"),
+            QPixmap(":/Res/playbar/default-cover.png"),
             ui->cover_label->size(),
             8)); ///< 设置默认封面
     } else {
+        qDebug() << "图片不为空，设置图片：" << pix;
         ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8)); ///< 设置封面图片
     }
 }
@@ -131,6 +136,28 @@ void PlayWidget::setPlayPauseIcon(bool isPlay)
     } else {
         onAudioPause();
     }
+}
+
+qreal PlayWidget::coverFillRatioValue() const
+{
+    return coverFillRatio;
+}
+
+void PlayWidget::setCoverFillRatioValue(qreal ratio)
+{
+    coverFillRatio = ratio;
+    ui->cover_label->update();
+}
+
+void PlayWidget::setTextColor(bool isWhite)
+{
+    ui->speed_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    ui->stander_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    ui->acoustics_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+
+    ui->position_label->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    ui->duration_label->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    ui->song_name_text->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
 }
 
 void PlayWidget::onSliderPositionChanged(const int &position)
@@ -193,11 +220,25 @@ void PlayWidget::initUi()
     ui->song_queue_toolButton->setIcon(QIcon(QStringLiteral(":/Res/playbar/play-list.svg")));
     ///< 设置播放队列图标
 
-    ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover.svg"),
+    ui->cover_label->setPixmap(roundedPixmap(QPixmap(":/Res/playbar/default-cover.png"),
                                              ui->cover_label->size(),
                                              8)); ///< 设置默认封面
+    ///< @封面动画
+    hoverPixmap.load(":/Res/playbar/up-lyric.svg");
+    hoverPixmap = hoverPixmap.scaled(ui->cover_label->height() / 2,
+                                     ui->cover_label->height() / 2,
+                                     Qt::KeepAspectRatio,
+                                     Qt::SmoothTransformation); ///< 缩放封面图片
+
+    coverAnim = new QPropertyAnimation(this, QByteArrayLiteral("coverFillRatio"));
+    coverAnim->setDuration(400);
+    coverAnim->setEasingCurve(QEasingCurve::OutCubic);
+
+    ui->cover_label->installEventFilter(this);
+    ui->cover_label->setAttribute(Qt::WA_Hover); // 确保 hover 事件触发
 
     // @note 设置工具提示
+    setElaToolTip(ui->cover_label, "点击查看歌词写真");             ///< 歌词写真提示
     setElaToolTip(ui->love_toolButton, "我喜欢");              ///< 收藏按钮提示
     setElaToolTip(ui->download_toolButton, "下载");           ///< 下载按钮提示
     setElaToolTip(ui->comment_toolButton, "评论");            ///< 评论按钮提示
@@ -266,7 +307,8 @@ void PlayWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     QWidget::mouseDoubleClickEvent(event);
     if (event->button() == Qt::LeftButton) {
-        emit doubleClicked(); ///< 左键双击时发出自定义信号
+        if (!ui->cover_label->rect().contains(ui->cover_label->mapFromParent(event->pos())))
+            emit doubleClicked(); ///< 左键双击时发出自定义信号
     }
 }
 
@@ -335,7 +377,73 @@ bool PlayWidget::eventFilter(QObject *watched, QEvent *event)
             }
         }
     }
+    if (watched == ui->cover_label) {
+        if (event->type() == QEvent::Enter) {
+            coverAnim->stop();
+            coverAnim->setStartValue(coverFillRatio);
+            coverAnim->setEndValue(1.0);
+            coverAnim->start();
+        } else if (event->type() == QEvent::Leave) {
+            coverAnim->stop();
+            coverAnim->setStartValue(coverFillRatio);
+            coverAnim->setEndValue(0.0);
+            coverAnim->start();
+        } else if (event->type() == QEvent::Paint) {
+            QPainter p(ui->cover_label);
+            p.setRenderHint(QPainter::Antialiasing, true);
+            p.setRenderHint(QPainter::SmoothPixmapTransform, true);
 
+            // 先画默认封面
+            QPixmap base = roundedPixmap(ui->cover_label->pixmap(),
+                                         ui->cover_label->size(),
+                                         8);
+            p.drawPixmap(ui->cover_label->rect(), base);
+
+            int coverSquareSide = ui->cover_label->height(); // 左上角正方形区域边长
+
+            // 2) 几何参数
+            const int h = ui->cover_label->height();
+            const int radius = 11;
+
+            // 3) 圆角阴影遮罩（方向由 m_isLyricWidgetShow 决定）
+            if (coverFillRatio > 0.0) {
+                const int maskH = qBound(0, int(h * coverFillRatio), h);
+                const int y = (m_isLyricWidgetShow ? 0 : (h - maskH)); // 上下方向切换
+                QPainterPath path;
+                path.addRoundedRect(QRectF(0, y, h, maskH), radius, radius);
+                p.fillPath(path, QColor(0, 0, 0, 100));
+            }
+
+            // 绘制 hover 图片
+            if (!hoverPixmap.isNull() && coverFillRatio > 0.0) {
+                // 缩放 hoverPixmap 为左上角正方形 1/3 大小
+                int hoverSide = coverSquareSide / 3;
+                QPixmap scaledHover = hoverPixmap.scaled(hoverSide,
+                                                         hoverSide,
+                                                         Qt::KeepAspectRatio,
+                                                         Qt::SmoothTransformation);
+
+                // 居中在左上角正方形区域
+                int x = (coverSquareSide - scaledHover.width()) / 2;
+                int y = (coverSquareSide - scaledHover.height()) / 2;
+
+                int visibleHeight = int(scaledHover.height() * coverFillRatio);
+
+                QRectF targetSubRect(x,
+                                     y + scaledHover.height() - visibleHeight,
+                                     scaledHover.width(),
+                                     visibleHeight);
+
+                QRectF sourceRect(0,
+                                  scaledHover.height() - visibleHeight,
+                                  scaledHover.width(),
+                                  visibleHeight);
+
+                p.drawPixmap(targetSubRect, scaledHover, sourceRect);
+            }
+            return true; // 我们自己绘制，不让 QLabel 默认绘制
+        }
+    }
     return QWidget::eventFilter(watched, event);
 }
 
@@ -348,6 +456,23 @@ void PlayWidget::resizeEvent(QResizeEvent *event)
                            this->height() - this->m_sizeGrip->height() - 8);
     this->m_sizeGrip->raise();          ///< 提升角标层级
     this->m_sizeGrip->setVisible(true); ///< 显示角标
+}
+
+void PlayWidget::mousePressEvent(QMouseEvent *event)
+{
+    QWidget::mousePressEvent(event);
+    if (event->button() == Qt::LeftButton) {
+        if (ui->cover_label->rect().contains(ui->cover_label->mapFromParent(event->pos()))) {
+            emit showLyricWidget();
+            // qDebug() << "显示歌词窗口";
+            m_isLyricWidgetShow = !m_isLyricWidgetShow;
+            if (m_isLyricWidgetShow) {
+                hoverPixmap.load(":/Res/playbar/down-lyric.svg");
+            } else {
+                hoverPixmap.load(":/Res/playbar/up-lyric.svg");
+            }
+        }
+    }
 }
 
 /**
@@ -498,11 +623,23 @@ void PlayWidget::on_speed_pushButton_clicked()
             [this](const QString &text) {
                 ui->speed_pushButton->setText(text);
                 if (text == "倍速") {
-                    ui->speed_pushButton->setStyleSheet("background-color: transparent;");
+                    if (m_isLyricWidgetShow) {
+                        ui->speed_pushButton->setStyleSheet(
+                            "QPushButton {background-color: transparent;color:while;}");
+                    } else {
+                        ui->speed_pushButton->setStyleSheet(
+                            "QPushButton {background-color: transparent; color:black;}");
+                    }
                 } else {
-                    ui->speed_pushButton->setStyleSheet(
-                        "background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 "
-                        "rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255));");
+                    if (m_isLyricWidgetShow) {
+                        ui->speed_pushButton->setStyleSheet(
+                            "QPushButton {background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 "
+                            "rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255)); color:white;}");
+                    } else {
+                        ui->speed_pushButton->setStyleSheet(
+                            "QPushButton {background-color: qlineargradient(spread:pad,x1:0, y1:0,x2:1, y2:0,stop:0 "
+                            "rgb(105, 225, 255), stop:1 rgba(255, 182, 193, 255)); color:black;}");
+                    }
                 }
             });
 

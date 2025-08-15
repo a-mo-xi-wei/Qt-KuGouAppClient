@@ -12,6 +12,7 @@
 #include <QWidget>
 #include <QSizeGrip>
 
+class QPropertyAnimation;
 class ElaToolTip;
 
 /** @brief 动态库导出宏，定义库的导出/导入行为 */
@@ -32,6 +33,7 @@ class PlayWidget;
 class MYWINDOW_EXPORT PlayWidget : public QWidget
 {
     Q_OBJECT
+    Q_PROPERTY(qreal coverFillRatio READ coverFillRatioValue WRITE setCoverFillRatioValue)
 
 public:
     /**
@@ -58,6 +60,12 @@ public:
     void setNoVolume(const bool &flag);
 
     void setPlayPauseIcon(bool isPlay);
+
+    qreal coverFillRatioValue() const;
+
+    void setCoverFillRatioValue(qreal ratio);
+
+    void setTextColor(bool isWhite);
 
 public slots:
     void onSliderPositionChanged(const int &position);
@@ -106,6 +114,8 @@ protected:
 
     void resizeEvent(QResizeEvent *event) override;
 
+    void mousePressEvent(QMouseEvent *event) override;
+
 private slots:
     void on_play_or_pause_toolButton_clicked();
     void on_love_toolButton_clicked();
@@ -142,11 +152,20 @@ signals :
 
     void clickedNextBtn();
 
+    void showLyricWidget();
+
 private:
     Ui::PlayWidget *ui;                    ///< UI 界面对象
     std::unique_ptr<QSizeGrip> m_sizeGrip; ///< 窗口大小调整控件
     ElaToolTip *m_songNameToolTip;
     ElaToolTip *m_singerToolTip;
+
+    ///< 封面动画相关
+    qreal coverFillRatio = 0.0; // 0~1 控制 hover 图片可见高度
+    QPixmap hoverPixmap;        // 要上升的图片
+    QPropertyAnimation *coverAnim = nullptr;
+
+    bool m_isLyricWidgetShow = false; ///< 歌词窗口是否显示
 };
 
 #endif // PLAYWIDGET_H

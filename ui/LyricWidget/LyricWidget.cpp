@@ -55,7 +55,7 @@ void ThreadCalcBackgroundImage::showPic(QPixmap pic)
 
 LyricWidget::LyricWidget(QWidget *parent)
     : QWidget(parent)
-    , m_animationGroup(new QParallelAnimationGroup(this))
+      , m_animationGroup(new QParallelAnimationGroup(this))
 
 {
     this->setMouseTracking(true);
@@ -109,9 +109,9 @@ void LyricWidget::initEntity()
 
     //初始化图片
     useBlackMask = false;
-    blurBackgroundImage = QPixmap(":/LyricWidget/lyric/default_preview_background.png");
-    whiteMaskImage = QPixmap(":/LyricWidget/lyric/album_background_white_mask.png");
-    blackMaskImage = QPixmap(":/LyricWidget/lyric/album_background_black_mask.png");
+    blurBackgroundImage = QPixmap(":/Res/lyric/default_preview_background.png");
+    whiteMaskImage = QPixmap(":/Res/lyric/album_background_white_mask.png");
+    blackMaskImage = QPixmap(":/Res/lyric/album_background_black_mask.png");
     connect(&revealTimer,
             &QTimer::timeout,
             this,
@@ -136,7 +136,7 @@ void LyricWidget::initConnection()
     connect(lyricViewer->getLyricPanel(),
             &LyricPanel::jumpToTime,
             this,
-            [this](const int& time) {
+            [this](const int &time) {
                 emit jumpToTime(time);
                 lyricViewer->setBlockAutoScroll(false);
             });
@@ -207,8 +207,9 @@ void LyricWidget::toggleAnimation(int duration)
         setWindowOpacity(0.0);
         animateTo(targetRect, 1.0, duration);
     }
-
 }
+
+bool LyricWidget::isVisible() const { return m_visible; }
 
 void LyricWidget::playPhonograph() const
 {
@@ -231,8 +232,8 @@ void LyricWidget::setToDefaultAlbumImage()
     //不要每次都计算了，直接使用预定义的图片
     //AlbumImageChanged(QPixmap(":/resource/image/AlbumCover.jpg"));
 
-    phonograph->setAlbumCover(QPixmap(":/LyricWidget/lyric/AlbumCover.jpg"));
-    setNewBackgroundPixmap(QPixmap(":/LyricWidget/lyric/default_preview_background.png"));
+    phonograph->setAlbumCover(QPixmap(":/Res/lyric/AlbumCover.jpg"));
+    setNewBackgroundPixmap(QPixmap(":/Res/lyric/default_preview_background.png"));
 }
 
 void LyricWidget::setMusicTitle(const QString &title)
@@ -271,52 +272,61 @@ void LyricWidget::mousePressEvent(QMouseEvent *event)
 
 void LyricWidget::paintEvent(QPaintEvent *event)
 {
-    QPixmap maskLayer = useBlackMask ? blackMaskImage : whiteMaskImage;
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QRect outerRect(0, 0, width() - 1, height() - 1);
-    painter.fillRect(outerRect, QBrush("#ffffff"));
-    QWidget::paintEvent(event);
+    int margin = 4;  // 四周内边距
+    int radius = 10; // 圆角半径
 
+    // 1️⃣ 设置圆角裁剪，考虑 margin
+    QRect innerRect = rect().adjusted(margin, margin, -margin, -margin);
+    QPainterPath roundRectPath;
+    roundRectPath.addRoundedRect(innerRect, radius, radius);
+    painter.setClipPath(roundRectPath);
+
+    // 2️⃣ 填充背景色
+    painter.fillRect(innerRect, Qt::white);
+
+    // 3️⃣ 绘制缩放背景
     auto drawScaledBackground = [&](const QPixmap &pix) {
         if (pix.isNull())
             return;
         QSize halfSize = pix.size();
         halfSize.setHeight(halfSize.height() * 2.5 / 4);
         QPixmap half = pix.scaled(halfSize);
-        painter.drawPixmap(0, 0, half.scaled(size(), Qt::KeepAspectRatioByExpanding));
+        painter.drawPixmap(innerRect,
+                           half.scaled(innerRect.size(), Qt::KeepAspectRatioByExpanding));
     };
 
     if (revealProgress < 1.0 && !nextBackgroundImage.isNull()) {
         painter.save();
 
-        // 绘制旧图
+        // 绘制旧背景
         drawScaledBackground(blurBackgroundImage);
 
-        // 以窗口中心为圆心
+        // 圆形 reveal 动画
         QPointF center(width() / 2.0, height() / 2.0);
-
-        // 当前圆半径
         qreal maxRadius = std::hypot(width() / 2.0, height() / 2.0);
         qreal currentRadius = maxRadius * revealProgress;
 
-        // 圆形裁剪
         QPainterPath clipPath;
         clipPath.addEllipse(center, currentRadius, currentRadius);
-        painter.setClipPath(clipPath);
+        painter.setClipPath(clipPath, Qt::IntersectClip); // 与圆角裁剪叠加
 
         // 绘制新背景
         painter.setOpacity(revealProgress);
         drawScaledBackground(nextBackgroundImage);
 
-        painter.restore(); // 恢复 painter 状态
+        painter.restore();
         painter.setOpacity(1.0);
     } else {
-        // 正常绘制
         drawScaledBackground(blurBackgroundImage);
     }
 
-    painter.drawPixmap(0, 0, maskLayer.scaled(size()));
+    // 4️⃣ 绘制遮罩
+    QPixmap maskLayer = useBlackMask ? blackMaskImage : whiteMaskImage;
+    if (!maskLayer.isNull())
+        painter.drawPixmap(innerRect, maskLayer.scaled(innerRect.size()));
 }
 
 QRect LyricWidget::currentTargetRect() const
@@ -327,7 +337,7 @@ QRect LyricWidget::currentTargetRect() const
         return QRect(pos(), size());
 }
 
-void LyricWidget::animateTo(const QRect& endRect, qreal endOpacity, int duration)
+void LyricWidget::animateTo(const QRect &endRect, qreal endOpacity, int duration)
 {
     if (m_animationGroup->state() == QAbstractAnimation::Running)
         m_animationGroup->stop();
@@ -349,12 +359,14 @@ void LyricWidget::animateTo(const QRect& endRect, qreal endOpacity, int duration
     m_animationGroup->addAnimation(geomAnim);
     m_animationGroup->addAnimation(opacityAnim);
 
-    connect(m_animationGroup, &QParallelAnimationGroup::finished, [this]() {
-    m_animating = false;
-    // 仅在隐藏动画完成后才 hide
-    if (!m_visible) hide();
-});
-
+    connect(m_animationGroup,
+            &QParallelAnimationGroup::finished,
+            [this]() {
+                m_animating = false;
+                // 仅在隐藏动画完成后才 hide
+                if (!m_visible)
+                    hide();
+            });
 
     m_animating = true;
     show(); // 确保动画期间可见

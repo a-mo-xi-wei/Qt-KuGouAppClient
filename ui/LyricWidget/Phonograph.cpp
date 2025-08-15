@@ -2,16 +2,16 @@
 #include <QPainter>
 #include <QTimer>
 
-Phonograph::Phonograph(QWidget *parent)
+Phonograph::Phonograph(QWidget* parent)
     : QWidget(parent),
       YOffsetOfDisk(76),
       maxAngleOfArm(36),
       currentDiskAngle(0),
       currentArmAngle(0),
       playing(false),
-      AlbumCover(":/LyricWidget/lyric/AlbumCover.jpg"),
-      disk(":/LyricWidget/lyric/netease_disk.png"),
-      toneArm(":/LyricWidget/lyric/netease_tone_arm.png")
+      AlbumCover(":/Res/lyric/AlbumCover.jpg"),
+      disk(":/Res/lyric/netease_disk.png"),
+      toneArm(":/Res/lyric/netease_tone_arm.png")
 {
     setMouseTracking(true);       //详见 BesFramelessWidget.h 注释
     timerDisk = new QTimer(this); //唱片转动定时器
@@ -26,7 +26,7 @@ Phonograph::Phonograph(QWidget *parent)
     initPaintingData(true);
 }
 
-void Phonograph::setAlbumCover(const QPixmap &cover)
+void Phonograph::setAlbumCover(const QPixmap& cover)
 {
     AlbumCover = cover;
     initPaintingData(false);
@@ -58,10 +58,10 @@ bool Phonograph::isPlaying()
 
 void Phonograph::setOriginStyle()
 {
-    setAlbumCover(QPixmap(":/LyricWidget/lyric/AlbumCover.jpg"));
+    setAlbumCover(QPixmap(":/Res/lyric/AlbumCover.jpg"));
 }
 
-void Phonograph::paintEvent(QPaintEvent *event)
+void Phonograph::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
@@ -114,19 +114,24 @@ void Phonograph::paintEvent(QPaintEvent *event)
 
 void Phonograph::updateAngleOfDisk()
 {
-    if (playing) {
+    if (playing)
+    {
         currentDiskAngle += 3; //每帧转动 0.3 度
 
         currentDiskAngle = currentDiskAngle % 3600; // 0.1 * 3600 = 360
 
         update();
-    } else
+    }
+    else
         timerDisk->stop(); //已经被要求停止，停止定时器
 }
 
 void Phonograph::updateAngleOfArm()
 {
-    if (playing && currentArmAngle != maxAngleOfArm) //播放中，但是磁头没到位，则转动一下
+    if (playing&& currentArmAngle
+    !=
+    maxAngleOfArm
+    ) //播放中，但是磁头没到位，则转动一下
     {
         currentArmAngle += 4; // 每帧转动4度
 
@@ -146,14 +151,16 @@ void Phonograph::updateAngleOfArm()
     }
 
     if ((playing && currentArmAngle == maxAngleOfArm) ||
-        (!playing && currentArmAngle == 0)) {
+        (!playing && currentArmAngle == 0))
+    {
         timerArm->stop(); //唱臂到位，停止定时器
     }
 }
 
 void Phonograph::initPaintingData(bool firstTime)
 {
-    if (firstTime) {
+    if (firstTime)
+    {
         albumWidth = 400;
         albumHeight = 400;
         toneArmWidth = 200;
