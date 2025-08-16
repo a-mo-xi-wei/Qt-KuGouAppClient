@@ -12,6 +12,7 @@
 
 #include <QCoreApplication>
 #include <QHBoxLayout>
+#include <QTimer>
 #include <QWidgetAction>
 
 REGISTER_MENU(MyMenu::MenuKind::SongOption, SongOptionMenu)
@@ -91,9 +92,9 @@ void SongOptionMenu::initMenu()
     }
 
     // 添加到子菜单
-    auto a_addToMenu = new BaseMenu(this);
+    auto a_addToAction = new QWidgetAction(this);
     {
-        auto a_addToAction = new QWidgetAction(this);
+        auto a_addToMenu = new BaseMenu(this);
         auto widget = new QWidget(this);
         widget->setContentsMargins(0, 0, 0, 0);
         auto layout = new QHBoxLayout(widget);
@@ -302,12 +303,16 @@ void SongOptionMenu::initMenu()
         // 子菜单
         a_addToMenu->setFixedSize(150, 220);
         a_addToMenu->addAction(a_playQueueAction);
-        a_addToMenu->addSeparator();
+        a_addToMenu->addAction(createSeparator(this));
         a_addToMenu->addAction(a_newPlayListAction);
         a_addToMenu->addAction(a_likeAction);
         a_addToMenu->addAction(a_defaultCollectAction);
         a_addToMenu->addAction(a_defaultListAction);
         a_addToAction->setMenu(a_addToMenu);
+        connect(a_addToMenu,
+                &QMenu::aboutToShow,
+                this,
+                [=] {});
     }
 
     // 下载按钮
@@ -525,9 +530,9 @@ void SongOptionMenu::initMenu()
     }
 
     // 搜索子菜单
-    auto a_searchMenu = new BaseMenu(this);
+    auto a_searchAction = new QWidgetAction(this);
     {
-        auto a_searchAction = new QWidgetAction(this);
+        auto a_searchMenu = new BaseMenu(this);
         auto widget = new QWidget(this);
         widget->setContentsMargins(0, 0, 0, 0);
         auto layout = new QHBoxLayout(widget);
@@ -610,6 +615,12 @@ void SongOptionMenu::initMenu()
         a_searchMenu->setFixedSize(140, 65);
         a_searchMenu->addAction(a_searchTitleAction);
         a_searchAction->setMenu(a_searchMenu);
+        connect(a_searchMenu,
+                &QMenu::aboutToShow,
+                this,
+                [=] {
+                    //this->setActiveAction(a_searchAction);
+                });
     }
 
     // 上传到音乐云盘按钮
@@ -646,18 +657,18 @@ void SongOptionMenu::initMenu()
     // 添加所有动作到菜单
     this->addAction(a_playAction);
     this->addAction(a_nextPlayAction);
-    this->addSeparator();
-    this->addMenu(a_addToMenu);
+    this->addAction(createSeparator(this));
+    this->addAction(a_addToAction);
     this->addAction(a_downloadAction);
     this->addAction(a_shareAction);
-    this->addSeparator();
+    this->addAction(createSeparator(this));
     this->addAction(a_commentAction);
     this->addAction(a_sameSongAction);
     this->addAction(a_songInfoAction);
-    this->addSeparator();
+    this->addAction(createSeparator(this));
     this->addAction(a_deleteAction);
     this->addAction(a_openFileAction);
-    this->addMenu(a_searchMenu);
+    this->addAction(a_searchAction);
     this->addAction(a_uploadAction);
     this->hide();
 }

@@ -35,6 +35,12 @@ QMenu {
 
 QMenu::separator { /* 菜单子控件separator，定义菜单项之间的分隔线 */
     height: 1px;
-    background: #dedede;
-    margin: 2px; /* 距离菜单边界2px */
+    background: #73b6f3;
+    margin: 2px 10px; /* 左右留一点空间 */
+}
+
+QFrame {
+    height: 1px;
+    background: #73b6f3;
+    margin: 2px 10px; /* 左右留一点空间 */
 }

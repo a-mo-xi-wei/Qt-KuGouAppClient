@@ -25,17 +25,14 @@ REGISTER_MENU(MyMenu::MenuKind::ListenOption, ListenOptionMenu)
  * @brief 构造函数，初始化听单选项菜单
  * @param parent 父控件指针，默认为 nullptr
  */
-ListenOptionMenu::ListenOptionMenu(QWidget* parent)
+ListenOptionMenu::ListenOptionMenu(QWidget *parent)
     : BaseMenu(parent)
 {
     // 加载样式表
     QFile file(GET_CURRENT_DIR + QStringLiteral("/listenmenu.css"));
-    if (file.open(QIODevice::ReadOnly))
-    {
+    if (file.open(QIODevice::ReadOnly)) {
         this->setStyleSheet(file.readAll());
-    }
-    else
-    {
+    } else {
         qDebug() << "样式表打开失败QAQ";
         return;
     }
@@ -65,125 +62,108 @@ void ListenOptionMenu::initMenu()
     layout->setSpacing(0);
 
     // 分类及初始化函数
-    const QList<QPair<QString, std::function<void(QWidget*)>>> categories =
+    const QList<QPair<QString, std::function<void(QWidget *)>>> categories =
     {
         {
             "contentWidget_novel",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initAudioNovelWidget(w);
             }
         },
         {
             "contentWidget_children",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initChildrenWorldWidget(w);
             }
         },
         {
             "contentWidget_comment",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initCommentBookWidget(w);
             }
         },
         {
             "contentWidget_sleep",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initSleepHelpingWidget(w);
             }
         },
         {
             "contentWidget_humanity",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initHumanityWidget(w);
             }
         },
         {
             "contentWidget_self",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initSelfChargingWidget(w);
             }
         },
         {
             "contentWidget_crosstalk",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initCrosstalkWidget(w);
             }
         },
         {
             "contentWidget_sentimentality",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initSentimentalityWidget(w);
             }
         },
         {
             "contentWidget_radio",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initRadioDramaWidget(w);
             }
         },
         {
             "contentWidget_entertainment",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initEntertainmentJokesWidget(w);
             }
         },
         {
             "contentWidget_acgn",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initACGNWidget(w);
             }
         },
         {
             "contentWidget_podcast",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initPodcastWidget(w);
             }
         },
         {
             "contentWidget_cantonese",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initCantoneseWidget(w);
             }
         },
         {
             "contentWidget_foreign",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initForeignLanguageWidget(w);
             }
         },
         {
             "contentWidget_createCover",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initCreateCoverWidget(w);
             }
         },
         {
             "contentWidget_electronicSound",
-            [this](QWidget* w)
-            {
+            [this](QWidget *w) {
                 initElectronicSoundWidget(w);
             }
         }
     };
 
-    for (int i = 0; i < categories.size(); ++i)
-    {
-        const auto& [name, initFunc] = categories[i];
+    for (int i = 0; i < categories.size(); ++i) {
+        const auto &[name, initFunc] = categories[i];
 
         auto sectionWidget = new QWidget(contentWidget);
         sectionWidget->setObjectName(name);
@@ -193,10 +173,9 @@ void ListenOptionMenu::initMenu()
         initFunc(sectionWidget);
         layout->addWidget(sectionWidget);
 
-        if (i != categories.size() - 1)
-        {
+        if (i != categories.size() - 1) {
             auto separator = new QFrame(contentWidget);
-            separator->setStyleSheet("height: 0px;border-top: 1px solid pink;");
+            separator->setStyleSheet("height: 0px;border-top: 1px solid #73b6f3;");
             separator->setObjectName("separator");
             separator->setFrameShape(QFrame::HLine);
             separator->setFrameShadow(QFrame::Sunken);
@@ -213,12 +192,12 @@ void ListenOptionMenu::initMenu()
  * @brief 初始化有声小说分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initAudioNovelWidget(QWidget* widget)
+void ListenOptionMenu::initAudioNovelWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 210); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -269,11 +248,9 @@ void ListenOptionMenu::initAudioNovelWidget(QWidget* widget)
                               "豪门总裁",
                               "关斗宅斗",
                               "年代重生"
-                             };
-    for (int i = 0; i < 5; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    };
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j >= 24)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -303,12 +280,12 @@ void ListenOptionMenu::initAudioNovelWidget(QWidget* widget)
  * @brief 初始化儿童天地分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initChildrenWorldWidget(QWidget* widget)
+void ListenOptionMenu::initChildrenWorldWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 130); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -348,11 +325,9 @@ void ListenOptionMenu::initChildrenWorldWidget(QWidget* widget)
                               "哄睡音乐",
                               "卡通动画",
                               "文学名著"
-                             };
-    for (int i = 0; i < 3; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    };
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 12)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -382,12 +357,12 @@ void ListenOptionMenu::initChildrenWorldWidget(QWidget* widget)
  * @brief 初始化评书分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initCommentBookWidget(QWidget* widget)
+void ListenOptionMenu::initCommentBookWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -415,10 +390,8 @@ void ListenOptionMenu::initCommentBookWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"评书大全", "袁阔成", "李庆丰", "田连元", "评书小说", "连丽如", "单田芳", "孙一"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 7)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -448,12 +421,12 @@ void ListenOptionMenu::initCommentBookWidget(QWidget* widget)
  * @brief 初始化助眠解压分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initSleepHelpingWidget(QWidget* widget)
+void ListenOptionMenu::initSleepHelpingWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -480,11 +453,10 @@ void ListenOptionMenu::initSleepHelpingWidget(QWidget* widget)
     gridLayout->setHorizontalSpacing(12);
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
-    const QString labArr[] = {"失眠必听", "放松音乐", "助眠故事", "自然疗愈", "能量颂钵", "情绪调节", "清新古风", "减压冥想", "脑波音乐", "耳朵按摩"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    const QString labArr[] = {"失眠必听", "放松音乐", "助眠故事", "自然疗愈", "能量颂钵", "情绪调节", "清新古风", "减压冥想",
+                              "脑波音乐", "耳朵按摩"};
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             const auto label = new QLabel(contentWidget);
             label->setMouseTracking(true);
             label->setFixedSize(110, 30);
@@ -512,12 +484,12 @@ void ListenOptionMenu::initSleepHelpingWidget(QWidget* widget)
  * @brief 初始化人文分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initHumanityWidget(QWidget* widget)
+void ListenOptionMenu::initHumanityWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -545,10 +517,8 @@ void ListenOptionMenu::initHumanityWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"诗词歌赋", "文化大观", "国学经典", "艺术美学", "社科人文", "读书思考", "法律讲堂"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 6)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -578,12 +548,12 @@ void ListenOptionMenu::initHumanityWidget(QWidget* widget)
  * @brief 初始化自我充电分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initSelfChargingWidget(QWidget* widget)
+void ListenOptionMenu::initSelfChargingWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -611,10 +581,8 @@ void ListenOptionMenu::initSelfChargingWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"心理调节", "外语", "职场升级", "人际关系", "商业财经", "个人提升", "健康养生", "学科教育"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 7)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -644,12 +612,12 @@ void ListenOptionMenu::initSelfChargingWidget(QWidget* widget)
  * @brief 初始化相声曲艺分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initCrosstalkWidget(QWidget* widget)
+void ListenOptionMenu::initCrosstalkWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -677,10 +645,8 @@ void ListenOptionMenu::initCrosstalkWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"相声精选", "豫剧", "曲艺", "精选小品", "二人转", "黄梅戏", "越剧", "京剧"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 7)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -710,12 +676,12 @@ void ListenOptionMenu::initCrosstalkWidget(QWidget* widget)
  * @brief 初始化情感生活分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initSentimentalityWidget(QWidget* widget)
+void ListenOptionMenu::initSentimentalityWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 130); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -756,11 +722,9 @@ void ListenOptionMenu::initSentimentalityWidget(QWidget* widget)
                               "美文伴读",
                               "偶像暖心",
                               "励志感悟"
-                             };
-    for (int i = 0; i < 3; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    };
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 13)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -790,12 +754,12 @@ void ListenOptionMenu::initSentimentalityWidget(QWidget* widget)
  * @brief 初始化广播剧分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initRadioDramaWidget(QWidget* widget)
+void ListenOptionMenu::initRadioDramaWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -823,10 +787,8 @@ void ListenOptionMenu::initRadioDramaWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"悬疑好剧", "言情", "全年龄", "影视剧场", "心动剧场", "漫剧场", "游戏剧场"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 6)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -856,12 +818,12 @@ void ListenOptionMenu::initRadioDramaWidget(QWidget* widget)
  * @brief 初始化娱乐段子分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initEntertainmentJokesWidget(QWidget* widget)
+void ListenOptionMenu::initEntertainmentJokesWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -889,10 +851,8 @@ void ListenOptionMenu::initEntertainmentJokesWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"音乐推荐", "爱豆频道", "生活杂谈", "综艺节目", "脱口秀", "热剧影评", "奇闻怪谈", "搞笑段子"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 7)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -922,12 +882,12 @@ void ListenOptionMenu::initEntertainmentJokesWidget(QWidget* widget)
  * @brief 初始化二次元分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initACGNWidget(QWidget* widget)
+void ListenOptionMenu::initACGNWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -955,10 +915,8 @@ void ListenOptionMenu::initACGNWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"次元速递", "声控福利", "游戏攻略", "ACG串烧", "ACG音声", "鬼畜名梗"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 5)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -988,12 +946,12 @@ void ListenOptionMenu::initACGNWidget(QWidget* widget)
  * @brief 初始化播客分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initPodcastWidget(QWidget* widget)
+void ListenOptionMenu::initPodcastWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -1020,11 +978,10 @@ void ListenOptionMenu::initPodcastWidget(QWidget* widget)
     gridLayout->setHorizontalSpacing(12);
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
-    const QString labArr[] = {"生活观察", "商业洞察", "汽车资讯", "运动体育", "影视娱乐", "科技科学", "情感剧场", "音乐雷达", "人文艺术"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    const QString labArr[] = {"生活观察", "商业洞察", "汽车资讯", "运动体育", "影视娱乐", "科技科学", "情感剧场", "音乐雷达",
+                              "人文艺术"};
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 8)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -1054,12 +1011,12 @@ void ListenOptionMenu::initPodcastWidget(QWidget* widget)
  * @brief 初始化粤语分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initCantoneseWidget(QWidget* widget)
+void ListenOptionMenu::initCantoneseWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -1086,11 +1043,10 @@ void ListenOptionMenu::initCantoneseWidget(QWidget* widget)
     gridLayout->setHorizontalSpacing(12);
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
-    const QString labArr[] = {"文化知识", "音乐FM", "劲歌金曲", "都市情感", "Talk Show", "生活资讯", "亲子故事", "粤韵风华", "粤语讲古"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    const QString labArr[] = {"文化知识", "音乐FM", "劲歌金曲", "都市情感", "Talk Show", "生活资讯", "亲子故事", "粤韵风华",
+                              "粤语讲古"};
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 8)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -1119,12 +1075,12 @@ void ListenOptionMenu::initCantoneseWidget(QWidget* widget)
  * @brief 初始化外语分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initForeignLanguageWidget(QWidget* widget)
+void ListenOptionMenu::initForeignLanguageWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 55); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -1152,10 +1108,8 @@ void ListenOptionMenu::initForeignLanguageWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"基础入门", "实用口语", "考试题材", "美文朗诵"};
-    for (int i = 0; i < 1; ++i)
-    {
-        for (int j = 0; j < 4; ++j)
-        {
+    for (int i = 0; i < 1; ++i) {
+        for (int j = 0; j < 4; ++j) {
             const auto label = new QLabel(contentWidget);
             label->setMouseTracking(true);
             label->setFixedSize(110, 30);
@@ -1182,12 +1136,12 @@ void ListenOptionMenu::initForeignLanguageWidget(QWidget* widget)
  * @brief 初始化创作翻唱分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initCreateCoverWidget(QWidget* widget)
+void ListenOptionMenu::initCreateCoverWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 100); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -1215,10 +1169,8 @@ void ListenOptionMenu::initCreateCoverWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"纯音乐", "古风", "流行", "推荐", "其他", "外语"};
-    for (int i = 0; i < 2; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 5; ++j) {
             if (i * 5 + j > 5)
                 break;
             const auto label = new QLabel(contentWidget);
@@ -1247,12 +1199,12 @@ void ListenOptionMenu::initCreateCoverWidget(QWidget* widget)
  * @brief 初始化DJ电音分类窗口
  * @param widget 目标控件
  */
-void ListenOptionMenu::initElectronicSoundWidget(QWidget* widget)
+void ListenOptionMenu::initElectronicSoundWidget(QWidget *widget)
 {
     widget->setFixedSize(735, 55); // 设置内容窗口大小（根据需求调整）
     //整体水平布局
-    const auto mainLayout    = new QHBoxLayout(widget);
-    const auto titleLab      = new QLabel(widget);
+    const auto mainLayout = new QHBoxLayout(widget);
+    const auto titleLab = new QLabel(widget);
     const auto contentWidget = new QWidget(widget);
     contentWidget->setContentsMargins(0, 0, 0, 0);
     contentWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -1280,10 +1232,8 @@ void ListenOptionMenu::initElectronicSoundWidget(QWidget* widget)
     gridLayout->setContentsMargins(0, 0, 0, 0);
 
     const QString labArr[] = {"舞曲串烧", "DJ嗨歌", "DJ舞曲"};
-    for (int i = 0; i < 1; ++i)
-    {
-        for (int j = 0; j < 3; ++j)
-        {
+    for (int i = 0; i < 1; ++i) {
+        for (int j = 0; j < 3; ++j) {
             const auto label = new QLabel(contentWidget);
             label->setMouseTracking(true);
             label->setFixedSize(110, 30);
@@ -1310,7 +1260,7 @@ void ListenOptionMenu::initElectronicSoundWidget(QWidget* widget)
  * @brief 初始化水平分隔线
  * @param frame 分隔线控件
  */
-void ListenOptionMenu::initSeparator(QFrame* frame)
+void ListenOptionMenu::initSeparator(QFrame *frame)
 {
     frame->setFixedWidth(675);
     frame->setObjectName("separator");
@@ -1322,7 +1272,7 @@ void ListenOptionMenu::initSeparator(QFrame* frame)
  * @brief 获取当前菜单对象
  * @return 当前菜单对象指针
  */
-const ListenOptionMenu* ListenOptionMenu::getMenu() const
+const ListenOptionMenu *ListenOptionMenu::getMenu() const
 {
     return this;
 }
@@ -1333,10 +1283,9 @@ const ListenOptionMenu* ListenOptionMenu::getMenu() const
  * @param event 事件对象
  * @return 是否处理事件
  */
-bool ListenOptionMenu::eventFilter(QObject* watched, QEvent* event)
+bool ListenOptionMenu::eventFilter(QObject *watched, QEvent *event)
 {
-    if (QLabel* label = qobject_cast<QLabel*>(watched))
-    {
+    if (QLabel *label = qobject_cast<QLabel *>(watched)) {
         // 获取当前样式表（用于状态恢复）
         const QString normalStyle = R"(
             QLabel {
@@ -1355,8 +1304,7 @@ bool ListenOptionMenu::eventFilter(QObject* watched, QEvent* event)
             }
         )";
 
-        switch (event->type())
-        {
+        switch (event->type()) {
         case QEvent::MouseButtonPress:
             // 按下时添加临时按压效果
             label->setStyleSheet(normalStyle + R"(
@@ -1366,12 +1314,10 @@ bool ListenOptionMenu::eventFilter(QObject* watched, QEvent* event)
             )");
             return true;
 
-        case QEvent::MouseButtonRelease:
-        {
-            QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+        case QEvent::MouseButtonRelease: {
+            QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
             if (mouseEvent->button() == Qt::LeftButton &&
-                    label->rect().contains(mouseEvent->pos()))
-            {
+                label->rect().contains(mouseEvent->pos())) {
                 // 恢复悬停状态
                 label->setStyleSheet(normalStyle + hoverStyle);
 
@@ -1394,7 +1340,7 @@ bool ListenOptionMenu::eventFilter(QObject* watched, QEvent* event)
 
         case QEvent::MouseMove:
             // 实时更新悬停状态（确保在快速移动时也能正确显示）
-            if (label->rect().contains(static_cast<QMouseEvent*>(event)->pos()))
+            if (label->rect().contains(static_cast<QMouseEvent *>(event)->pos()))
                 label->setStyleSheet(normalStyle + hoverStyle);
             else
                 label->setStyleSheet(normalStyle);

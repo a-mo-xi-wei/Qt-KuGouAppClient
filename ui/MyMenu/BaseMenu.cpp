@@ -11,12 +11,14 @@
 #include "dynamicbackgroundgradient.h"
 
 #include <QFile>
+#include <QFrame>
 #include <QPainter>
 #include <QPainterPath>
 #include <QCoreApplication>
 #include <QWidgetAction>
 #include <QGraphicsOpacityEffect>
 #include <QTimeLine>
+#include <QVBoxLayout>
 
 constexpr int ShadowWidth = 4;                ///< 阴影宽度
 constexpr int ShadowRadius = 12;              ///< 阴影圆角半径
@@ -112,6 +114,36 @@ void BaseMenu::setCurIndex(const int &idx)
 void BaseMenu::setAniDuration(const int &duration)
 {
     m_timeLine->setDuration(duration);
+}
+
+QWidgetAction *BaseMenu::createSeparator(QWidget *parent,
+                                         int left,
+                                         int right,
+                                         int top,
+                                         int bottom,
+                                         const char *color,
+                                         int px)
+{
+    auto act = new QWidgetAction(parent);
+
+    // 外层包装，负责边距与防止被压扁
+    auto wrapper = new QWidget(parent);
+    auto lay = new QHBoxLayout(wrapper);
+    lay->setContentsMargins(left, top, right, bottom);
+    lay->setSpacing(0);
+
+    // 真正的线：用 QWidget 而不是 QFrame(HLine)
+    auto line = new QWidget(wrapper);
+    line->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    line->setMinimumHeight(px);
+    line->setMaximumHeight(px);
+    line->setStyleSheet(QString("background-color:%1;").arg(color));
+
+    lay->addWidget(line);
+    act->setDefaultWidget(wrapper);
+    act->setEnabled(false); // 不要抢 hover/点击
+
+    return act;
 }
 
 /**

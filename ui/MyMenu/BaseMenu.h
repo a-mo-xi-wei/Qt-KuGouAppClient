@@ -39,7 +39,7 @@ public:
      * @brief 构造函数，初始化菜单基类
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit BaseMenu(QWidget* parent = nullptr);
+    explicit BaseMenu(QWidget *parent = nullptr);
 
     /**
      * @brief 虚析构函数，确保子类正确释放资源
@@ -49,15 +49,13 @@ public:
     /**
      * @brief 虚函数，初始化菜单布局和内容，由子类实现
      */
-    virtual void initMenu()
-    {
-    }
+    virtual void initMenu() {}
 
     /**
      * @brief 获取当前菜单对象
      * @return 当前菜单对象指针
      */
-    virtual const BaseMenu* getMenu() const;
+    virtual const BaseMenu *getMenu() const;
 
     /**
      * @brief 虚函数，设置菜单阴影效果，由子类实现
@@ -65,21 +63,27 @@ public:
      * @param radius 阴影圆角半径
      * @param color 阴影颜色
      */
-    virtual void setShadow(const int& width, const int& radius, const QColor& color)
-    {
-    }
+    virtual void setShadow(const int &width, const int &radius, const QColor &color) {}
 
     /**
      * @brief 设置当前响应项的索引
      * @param idx 索引值
      */
-    void setCurIndex(const int& idx);
+    void setCurIndex(const int &idx);
 
     /**
      * @brief 设置动画持续时间
      * @param duration 动画持续时间（毫秒）
      */
-    void setAniDuration(const int& duration);
+    void setAniDuration(const int &duration);
+
+    static QWidgetAction *createSeparator(QWidget *parent,
+                                          int left = 10,
+                                          int right = 10,
+                                          int top = 4,
+                                          int bottom = 4,
+                                          const char *color = "#73b6f3",
+                                          int px = 1);
 
 protected:
     /**
@@ -96,38 +100,38 @@ protected:
      * @brief 重写绘制事件，绘制自定义阴影效果
      * @param event 绘制事件
      */
-    void paintEvent(QPaintEvent* event) override;
+    void paintEvent(QPaintEvent *event) override;
 
     /**
      * @brief 重写显示事件，触发显示动画
      * @param event 显示事件
      */
-    void showEvent(QShowEvent* event) override;
+    void showEvent(QShowEvent *event) override;
 
     /**
      * @brief 重写离开事件，清理悬停状态
      * @param event 离开事件
      */
-    void leaveEvent(QEvent* event) override;
+    void leaveEvent(QEvent *event) override;
 
     /**
      * @brief 连接 QWidgetAction 的悬停事件到按钮
      * @param widgetAction 菜单项动作
      * @param btn 关联的按钮
      */
-    void connectAction(const QWidgetAction* widgetAction, MenuBtn* btn);
+    void connectAction(const QWidgetAction *widgetAction, MenuBtn *btn);
 
 protected:
-    QVector<QWidget*> m_lastHover{}; ///< 上一次悬停的控件列表
-    QVector<QWidget*> m_currentHover{}; ///< 当前悬停的控件列表
-    MenuBtn* m_lastSelect{}; ///< 上一次选中的按钮
-    MenuBtn* m_curSelect{}; ///< 当前选中的按钮
-    int m_curIndex = -1; ///< 当前响应项的索引
+    QVector<QWidget *> m_lastHover{};    ///< 上一次悬停的控件列表
+    QVector<QWidget *> m_currentHover{}; ///< 当前悬停的控件列表
+    MenuBtn *m_lastSelect{};             ///< 上一次选中的按钮
+    MenuBtn *m_curSelect{};              ///< 当前选中的按钮
+    int m_curIndex = -1;                 ///< 当前响应项的索引
 
 private:
-    QGraphicsOpacityEffect* m_opacityEffect{}; ///< 透明度效果
-    QTimeLine* m_timeLine{}; ///< 动画时间线
-    DynamicBackgroundInterface* dm_bg; ///< 动态背景
+    QGraphicsOpacityEffect *m_opacityEffect{}; ///< 透明度效果
+    QTimeLine *m_timeLine{};                   ///< 动画时间线
+    DynamicBackgroundInterface *dm_bg;         ///< 动态背景
 };
 
 #endif // BASEMENU_H
