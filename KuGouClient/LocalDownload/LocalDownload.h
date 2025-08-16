@@ -152,18 +152,18 @@ private slots:
     void local_music_label_changed(const int &num);
 
 public slots:
-    void emitInitialized()
-    {
-        QTimer::singleShot(0,
-                           this,
-                           [this] {
-                               emit initialized();
-                               isNumberInitialized = true;
-                           });
-    }
+    void emitInitialized(const bool &flag = true)
+{
+    QTimer::singleShot(0,
+                       this,
+                       [this,flag] {
+                           emit initialized(flag);
+                           isNumberInitialized = flag;
+                       });
+}
 
-signals:
-    void initialized();
+    signals:
+        void initialized(const bool &flag = true); ///< 初始化完成信号
 
 private:
     Ui::LocalDownload *ui;                              ///< UI 指针

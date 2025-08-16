@@ -44,7 +44,7 @@ LocalDownload::LocalDownload(QWidget *parent)
                     enableButton(true);
             }); ///< 连接动画完成信号
 
-    enableButton(true); ///< 初始启用按钮
+    enableButton(false); ///< 初始启用按钮
 }
 
 /**
@@ -113,7 +113,10 @@ QWidget *LocalDownload::createPage(int id)
                 &LocalSong::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
                     if (ui->stackedWidget->isSlideAnimationFinished()) {
                         enableButton(true);
                     }
@@ -129,7 +132,10 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedSong::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
                     if (ui->stackedWidget->isSlideAnimationFinished()) {
                         enableButton(true);
                     }
@@ -145,7 +151,10 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedVideo::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
                     if (ui->stackedWidget->isSlideAnimationFinished()) {
                         enableButton(true);
                     }
@@ -161,7 +170,10 @@ QWidget *LocalDownload::createPage(int id)
                 &Downloading::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
                     if (ui->stackedWidget->isSlideAnimationFinished()) {
                         enableButton(true);
                     }
@@ -213,6 +225,11 @@ void LocalDownload::initStackedWidget()
                 }
 
                 enableButton(false);
+                isNumberInitialized = false;
+                QMetaObject::invokeMethod(this,
+                                          "emitInitialized",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(bool, false));
 
                 // 清理目标 placeholder 内旧的控件
                 QWidget *placeholder = m_pages[m_currentIdx];

@@ -764,9 +764,9 @@ QWidget *KuGouClient::createPage(int id)
                 m_listenBook.get(),
                 &ListenBook::initialized,
                 this,
-                [this] {
-                    this->m_isInitialized = true;
-                    enableButton(true);
+                [this](bool flag) {
+                    this->m_isInitialized = flag;
+                    enableButton(flag);
                 },
                 Qt::QueuedConnection);
         } else
@@ -844,9 +844,9 @@ QWidget *KuGouClient::createPage(int id)
                 m_video.get(),
                 &Video::initialized,
                 this,
-                [this] {
-                    this->m_isInitialized = true;
-                    enableButton(true);
+                [this](bool flag) {
+                    this->m_isInitialized = flag;
+                    enableButton(flag);
                 },
                 Qt::QueuedConnection);
         } else
@@ -944,9 +944,9 @@ QWidget *KuGouClient::createPage(int id)
                 m_localDownload.get(),
                 &LocalDownload::initialized,
                 this,
-                [this] {
-                    this->m_isInitialized = true;
-                    enableButton(true);
+                [this](bool flag) {
+                    this->m_isInitialized = flag;
+                    enableButton(flag);
                 },
                 Qt::QueuedConnection);
         } else

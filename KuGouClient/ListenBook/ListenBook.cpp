@@ -70,7 +70,10 @@ QWidget *ListenBook::createPage(int id)
                 &ListenRecommend::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
                     if (ui->stackedWidget->isSlideAnimationFinished()) {
                         enableButton(true);
                     }
@@ -91,7 +94,10 @@ QWidget *ListenBook::createPage(int id)
                     &ListenMyDownload::initialized,
                     this,
                     [this] {
-                        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                        QMetaObject::invokeMethod(this,
+                                                  "emitInitialized",
+                                                  Qt::QueuedConnection,
+                                                  Q_ARG(bool, true));
                         if (ui->stackedWidget->isSlideAnimationFinished()) {
                             enableButton(true);
                         }
@@ -113,7 +119,10 @@ QWidget *ListenBook::createPage(int id)
                     &ListenRecentlyPlay::initialized,
                     this,
                     [this] {
-                        QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
+                        QMetaObject::invokeMethod(this,
+                                                  "emitInitialized",
+                                                  Qt::QueuedConnection,
+                                                  Q_ARG(bool, true));
                         if (ui->stackedWidget->isSlideAnimationFinished()) {
                             enableButton(true);
                         }
@@ -230,6 +239,10 @@ void ListenBook::initStackedWidget()
 
                 enableButton(false);
                 isNumberInitialized = false;
+                QMetaObject::invokeMethod(this,
+                                          "emitInitialized",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(bool, false));
 
                 QWidget *placeholder = m_pages[m_currentIdx];
                 if (!placeholder) {

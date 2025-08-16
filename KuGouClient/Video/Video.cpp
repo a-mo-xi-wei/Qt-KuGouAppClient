@@ -40,8 +40,13 @@ Video::Video(QWidget *parent)
     }
     initUi();
     initStackedWidget();
-
-    enableButton(true);
+    connect(ui->stackedWidget,
+            &SlidingStackedWidget::animationFinished,
+            [this] {
+                if (isNumberInitialized)
+                    enableButton(true);
+            });
+    enableButton(false);
 }
 
 /**
@@ -69,8 +74,13 @@ QWidget *Video::createPage(const int &id)
                 &VideoChannelWidget::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
-                    enableButton(true);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
                 });
 
         page = m_videoChannelWidget.get();
@@ -83,8 +93,13 @@ QWidget *Video::createPage(const int &id)
                 &MVWidget::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
-                    enableButton(true);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
                 });
         page = m_MVWidget.get();
         break;
@@ -96,8 +111,13 @@ QWidget *Video::createPage(const int &id)
                 &VideoWidget::initialized,
                 this,
                 [this] {
-                    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
-                    enableButton(true);
+                    QMetaObject::invokeMethod(this,
+                                              "emitInitialized",
+                                              Qt::QueuedConnection,
+                                              Q_ARG(bool, true));
+                    if (ui->stackedWidget->isSlideAnimationFinished()) {
+                        enableButton(true);
+                    }
                 });
         page = m_videoWidget.get();
         break;
@@ -169,6 +189,11 @@ void Video::initStackedWidget()
                     return;
 
                 enableButton(false);
+                isNumberInitialized = false;
+                QMetaObject::invokeMethod(this,
+                                          "emitInitialized",
+                                          Qt::QueuedConnection,
+                                          Q_ARG(bool, false));
 
                 // 2. 清理旧页面
 

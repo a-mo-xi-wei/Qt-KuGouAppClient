@@ -303,12 +303,6 @@ void TitleWidget::initUi()
                 on_min_toolButton_clicked();
             });
 
-    // 连接菜单按钮
-    connect(ui->menu_toolButton,
-            &QToolButton::clicked,
-            this,
-            &TitleWidget::on_menu_toolButton_clicked);
-
     // 创建快捷键对象，绑定 F5 到 title_refresh_toolButton 的点击事件
     const auto shortcut = new QShortcut(QKeySequence(Qt::Key_F5), this);
     connect(shortcut, &QShortcut::activated, ui->title_refresh_toolButton, &QToolButton::click);

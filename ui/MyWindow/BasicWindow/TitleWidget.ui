@@ -613,7 +613,7 @@
    <item>
     <layout class="QHBoxLayout" name="sizeOptionLayout">
      <item>
-      <widget class="RippleButton" name="max_toolButton">
+      <widget class="RippleButton" name="min_toolButton">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -632,7 +632,7 @@
       </widget>
      </item>
      <item>
-      <widget class="RippleButton" name="min_toolButton">
+      <widget class="RippleButton" name="max_toolButton">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>

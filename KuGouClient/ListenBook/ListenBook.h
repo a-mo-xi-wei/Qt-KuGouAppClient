@@ -80,18 +80,18 @@ private:
     void enableButton(bool flag) const;
 
 public slots:
-    void emitInitialized()
+    void emitInitialized(const bool &flag = true)
     {
         QTimer::singleShot(0,
                            this,
-                           [this] {
-                               emit initialized();
-                               isNumberInitialized = true;
+                           [this,flag] {
+                               emit initialized(flag);
+                               isNumberInitialized = flag;
                            });
     }
 
 signals:
-    void initialized();
+    void initialized(const bool &flag = true); ///< 初始化完成信号
 
 private:
     Ui::ListenBook *ui;                                       ///< UI 指针
