@@ -82,13 +82,13 @@ void PlayWidget::setCover(const QPixmap &pix)
         /// if (m_player->getMusicPath().startsWith("http://") || m_player->getMusicPath().
         ///     startsWith("https://"))
         ///     return;
-        qDebug() << "图片为空，设置默认图片";
+        // qDebug() << "图片为空，设置默认图片";
         ui->cover_label->setPixmap(roundedPixmap(
             QPixmap(":/Res/playbar/default-cover.png"),
             ui->cover_label->size(),
             8)); ///< 设置默认封面
     } else {
-        qDebug() << "图片不为空，设置图片：" << pix;
+        // qDebug() << "图片不为空，设置图片：" << pix;
         ui->cover_label->setPixmap(roundedPixmap(pix, ui->cover_label->size(), 8)); ///< 设置封面图片
     }
 }

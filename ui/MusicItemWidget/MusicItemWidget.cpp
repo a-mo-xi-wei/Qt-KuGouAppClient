@@ -451,6 +451,8 @@ void MusicItemWidget::resizeEvent(QResizeEvent *event)
                                              Qt::ElideRight,
                                              this->m_albumLab->width());
     this->m_albumLab->setText("<span style='color:gray;'>《" + elidedAlbum + "》</span>");
+    if (m_isPlaying)
+        setPlayState(true); // 如果正在播放，重新设置涟漪效果
 }
 
 /**

@@ -1308,6 +1308,9 @@ void KuGouClient::onPlayLocalMusic(const QString &localPath)
                              "Failed to start playback",
                              2000,
                              this->window()); ///< 显示播放失败提示
+    } else {
+        ///< 本地歌曲没有歌词
+        m_lyricWidget->setLyricPath("");
     }
 }
 

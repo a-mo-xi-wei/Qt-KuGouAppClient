@@ -395,7 +395,6 @@ private:
     QToolButton *m_moreToolBtn{};     ///< 更多按钮
 
     //跳转选中高亮
-    bool m_isHighlighted = false; ///< 是否高亮
     int m_highlightAlpha = 0;     ///< 当前透明度 (0-255)
     int m_highlightDirection = 1; ///< 透明度变化方向 (1增加, -1减少)
     QTimer *m_blinkTimer;         ///< 闪烁定时器
@@ -403,7 +402,6 @@ private:
     bool m_isPlaying = false; ///< 是否正在播放
     //菜单相关
     SongOptionMenu *m_songOptMenu{}; ///< 歌曲选项菜单
-    QPoint m_menuPosition;           ///< 菜单显示位置
     //歌曲信息相关
     int m_index;        ///< 歌曲索引
     QPixmap m_cover;    ///< 封面图片
@@ -422,7 +420,7 @@ private:
     QPointF mouse_point;       ///< 鼠标位置
     int max_radius;            ///< 最大涟漪半径
     int radius = 0;            ///< 当前涟漪半径
-    int radius_var = 10;       ///< 半径变化量
+    int radius_var = 15;       ///< 半径变化量
     QColor fill_color;         ///< 填充颜色
     int frame_radius = 0;      ///< 圆角半径
     bool m_forceHover = false; ///< 强制悬停状态
