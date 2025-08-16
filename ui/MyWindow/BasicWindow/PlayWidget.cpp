@@ -364,8 +364,8 @@ bool PlayWidget::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == ui->progressSlider) {
         // @note 禁用进度条拖拽
-        if (event->type() == QEvent::MouseButtonPress || event->type() ==
-            QEvent::MouseButtonRelease
+        if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease
+            || event->type() == QEvent::MouseButtonDblClick
             || event->type() == QEvent::MouseMove) {
             if (ui->duration_label->text() == "00:00" && ui->position_label->text() ==
                 "00:00") {
