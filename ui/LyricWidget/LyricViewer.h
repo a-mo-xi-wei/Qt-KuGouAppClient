@@ -129,12 +129,14 @@ private:
     void initEntity();
     void initLayout();
     bool loadLyricFromFile(const QString &lyricPath);
+    bool loadLyricFromRawText(const QString &content);
 
 public slots:
     void setMusicTitle(const QString &title) const;
     void setMusicSinger(const QString &singer) const;
-    void setLyricPath(const QString &path); //设置歌词
-    void setEmptyLyric();                   //设置空的歌词
+    void setLyricPath(const QString &path);       //设置歌词
+    void setLyricRawText(const QString &content); //设置歌词文本内容
+    void setEmptyLyric();                         //设置空的歌词
     void setOriginStyle();
 
 protected:

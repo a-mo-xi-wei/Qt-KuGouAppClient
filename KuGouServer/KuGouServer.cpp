@@ -807,7 +807,7 @@ bool KuGouServer::onApiGetSongNetUrl(const QPointer<JQHttpServer::Session> &sess
                     QNetworkAccessManager manager;
 
                     QString kugouUrl = QString(KG_SONGINFO).arg(hash);
-                    qDebug() << "请求歌曲网络路径地址：" << kugouUrl;
+                    //qDebug() << "请求歌曲网络路径地址：" << kugouUrl;
                     QNetworkRequest request(kugouUrl);
 
                     QTimer timer;
@@ -894,9 +894,10 @@ bool KuGouServer::onApiGetSongLyric(const QPointer<JQHttpServer::Session> &sessi
 {
     try {
         QString keyword = session->requestUrlQuery().value("keyword");
-        int duration = session->requestUrlQuery().value("duration").toInt();
+        QString duration = session->requestUrlQuery().value("duration");
         QString hash = session->requestUrlQuery().value("hash");
-        if (keyword.isEmpty() || duration == 0 || hash.isEmpty()) {
+        // qDebug() << "session->requestUrlQuery() : " << session->requestUrlQuery();
+        if (keyword.isEmpty() || duration.isEmpty() || hash.isEmpty()) {
             session->replyBytes(SResult::failure(SResultCode::ParamLoss), "application/json");
             QLOG_WARN() << "keyword / duration / hash 参数缺失";
             return false;
@@ -916,7 +917,7 @@ bool KuGouServer::onApiGetSongLyric(const QPointer<JQHttpServer::Session> &sessi
                     // Step 2: 获取歌词
                     QNetworkRequest lrcRequest_part0(QUrl(
                         QString(KG_LRC_PART0).arg(QUrl::toPercentEncoding(keyword))
-                                             .arg(QString::number(duration)).arg(hash)
+                                             .arg(duration).arg(hash)
                         ));
                     QNetworkReply *lrcReply_part0 = manager->get(lrcRequest_part0);
                     QEventLoop lyric_loop_part0;
@@ -958,7 +959,7 @@ bool KuGouServer::onApiGetSongLyric(const QPointer<JQHttpServer::Session> &sessi
                         workerThread->quit();
                         return;
                     }
-                    qDebug() << "lrcId: " << lrcId << " accessKey: " << accessKey;
+                    // qDebug() << "lrcId: " << lrcId << " accessKey: " << accessKey;
                     QNetworkRequest lrcRequest_part1(
                         QUrl(QString(KG_LRC_PART1).arg(lrcId).arg(accessKey)));
 
@@ -995,16 +996,19 @@ bool KuGouServer::onApiGetSongLyric(const QPointer<JQHttpServer::Session> &sessi
                         qWarning() << "歌词搜索失败:" << lrcReply_part0->errorString();
                     }
                     lrcReply_part1->deleteLater();
-                    qDebug() << "歌词内容：" << lyricsText;
+                    // qDebug() << "歌词内容：" << lyricsText;
                     // 发送响应
                     if (!weakSession.isNull()) {
-                        QJsonObject response;
-                        response["status"] = "success";
+                        //QJsonObject response;
+                        //response["status"] = "success";
 
-                        response["lyric"] = lyricsText;
+                        //response["lyric"] = lyricsText;
 
-                        weakSession->replyBytes(QJsonDocument(response).toJson(),
-                                                "application/json");
+                        weakSession->replyBytes(
+                            SResult::success(QJsonObject{{"lyric", lyricsText}}),
+                            "application/json");
+                        QLOG_INFO() << "歌词获取成功:" << QUrl(
+                                       QString(KG_LRC_PART1).arg(lrcId, accessKey));
                     }
                     manager->deleteLater();
                     worker->deleteLater();

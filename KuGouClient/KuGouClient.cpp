@@ -576,6 +576,7 @@ void KuGouClient::connectPlayWidget()
             this,
             [this](const int &value) {
                 ///< 鼠标按下事件
+                //qDebug() << __LINE__ << "滑块按下，准备跳转到位置：" << value;
                 if (this->m_player->state() == VideoPlayer::State::Stop) {
                     this->m_player->replay(true); ///< 重新播放
                 }
@@ -587,13 +588,14 @@ void KuGouClient::connectPlayWidget()
             &LyricWidget::jumpToTime,
             this,
             [this](const int &pos) {
+                //qDebug() << __LINE__ << "跳转到时间：" << pos;
                 ///< 鼠标按下事件
                 if (this->m_player->state() == VideoPlayer::State::Stop) {
                     this->m_player->replay(true); ///< 重新播放
                 }
-                this->m_player->pause();   ///< 暂停播放
-                this->m_player->seek(pos); ///< 跳转到指定位置
-                this->m_player->play();    ///< 继续播放
+                this->m_player->pause();          ///< 暂停播放
+                this->m_player->seek(pos * 1000); ///< 跳转到指定位置
+                this->m_player->play();           ///< 继续播放
             });
 
     connect(ui->play_widget,
@@ -1331,6 +1333,7 @@ void KuGouClient::onSearchResultMusicPlay(const MusicItemWidget *item)
 
     m_lyricWidget->setMusicTitle(item->m_information.songName);
     m_lyricWidget->setMusicSinger(item->m_information.singer);
+    m_lyricWidget->setLyricRawText(item->m_information.lyric);
 }
 
 void KuGouClient::onTrayIconNoVolume(const bool &flag)

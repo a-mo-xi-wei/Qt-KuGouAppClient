@@ -251,6 +251,11 @@ void LyricWidget::setLyricPath(const QString &path)
     lyricViewer->setLyricPath(path);
 }
 
+void LyricWidget::setLyricRawText(const QString &content)
+{
+    lyricViewer->setLyricRawText(content);
+}
+
 void LyricWidget::setNewBackgroundPixmap(const QPixmap &newPixmap)
 {
     if (blurBackgroundImage.isNull()) {

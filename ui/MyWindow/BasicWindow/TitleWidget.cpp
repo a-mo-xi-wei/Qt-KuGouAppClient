@@ -217,13 +217,17 @@ void TitleWidget::initUi()
 
     // 设置标题索引指示器
     ui->title_index_label1->setPixmap(
-        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).
+        scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label2->setPixmap(
-        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).
+        scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label3->setPixmap(
-        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).
+        scaled(30, 15, Qt::KeepAspectRatio));
     ui->title_index_label4->setPixmap(
-        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).scaled(30, 15, Qt::KeepAspectRatio));
+        QPixmap(QStringLiteral(":/Res/titlebar/h-line.png")).
+        scaled(30, 15, Qt::KeepAspectRatio));
     setTitleIndex(1);
 
     // 设置搜索框和图标
@@ -287,7 +291,10 @@ void TitleWidget::initUi()
     // 初始化退出对话框
     m_closeDialog->setParent(this->window());
     m_closeDialog->hide();
-    connect(m_closeDialog.get(), &ElaExitDialog::rightButtonClicked, this, [] { qApp->quit(); });
+    connect(m_closeDialog.get(),
+            &ElaExitDialog::rightButtonClicked,
+            this,
+            [] { qApp->quit(); });
     connect(m_closeDialog.get(),
             &ElaExitDialog::middleButtonClicked,
             this,
@@ -449,13 +456,15 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                         // 触发界面更新（与返回逻辑保持模式一致）s
                         switch (nextType) {
                         case StackType::RecommendForYou: {
-                            emit currentStackChange(static_cast<int>(StackType::RecommendForYou));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::RecommendForYou));
                             qDebug() << "[前进] 为你推荐";
                             STREAM_INFO() << "前进到推荐界面";
                             break;
                         }
                         case StackType::MusicRepository: {
-                            emit currentStackChange(static_cast<int>(StackType::MusicRepository));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::MusicRepository));
                             qDebug() << "[前进] 乐库";
                             STREAM_INFO() << "前进到乐库界面";
                             break;
@@ -485,7 +494,8 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                             break;
                         }
                         case StackType::DailyRecommend: {
-                            emit currentStackChange(static_cast<int>(StackType::DailyRecommend));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::DailyRecommend));
                             qDebug() << "[前进] 每日推荐";
                             STREAM_INFO() << "前进到每日推荐";
                             break;
@@ -503,19 +513,22 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                             break;
                         }
                         case StackType::MusicCloudDisk: {
-                            emit currentStackChange(static_cast<int>(StackType::MusicCloudDisk));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::MusicCloudDisk));
                             qDebug() << "[前进] 音乐云盘";
                             STREAM_INFO() << "前进到云盘界面";
                             break;
                         }
                         case StackType::PurchasedMusic: {
-                            emit currentStackChange(static_cast<int>(StackType::PurchasedMusic));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::PurchasedMusic));
                             qDebug() << "[前进] 已购音乐";
                             STREAM_INFO() << "前进到已购音乐";
                             break;
                         }
                         case StackType::RecentlyPlayed: {
-                            emit currentStackChange(static_cast<int>(StackType::RecentlyPlayed));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::RecentlyPlayed));
                             qDebug() << "[前进] 最近播放";
                             STREAM_INFO() << "前进到最近播放";
                             break;
@@ -527,7 +540,8 @@ bool TitleWidget::eventFilter(QObject *watched, QEvent *event)
                             break;
                         }
                         default: {
-                            emit currentStackChange(static_cast<int>(StackType::RecommendForYou));
+                            emit currentStackChange(
+                                static_cast<int>(StackType::RecommendForYou));
                             qDebug() << "[前进] 默认跳转推荐";
                             STREAM_INFO() << "前进到默认推荐";
                         }
@@ -874,7 +888,8 @@ void TitleWidget::on_min_toolButton_clicked()
  */
 void TitleWidget::on_max_toolButton_clicked()
 {
-    auto animation = new QPropertyAnimation(qobject_cast<QWidget *>(this->parent()), "geometry");
+    auto animation = new
+        QPropertyAnimation(qobject_cast<QWidget *>(this->parent()), "geometry");
     ///< 初始化窗口动画
 
     if (m_isMaxScreen) {
@@ -883,10 +898,11 @@ void TitleWidget::on_max_toolButton_clicked()
         m_startGeometry = this->screen()->availableGeometry(); ///< 设置最大化几何形状
         animation->setDuration(300);                           ///< 设置动画时长
     } else {
-        this->m_normalGeometry = qobject_cast<QWidget *>(this->parent())->geometry(); ///< 记录正常几何形状
-        this->m_isMaxScreen = true;                                                   ///< 设置最大化状态
-        m_startGeometry = this->m_normalGeometry;                                     ///< 设置起始几何形状
-        m_endGeometry = this->screen()->availableGeometry();                          ///< 设置目标几何形状
+        this->m_normalGeometry = qobject_cast<QWidget *>(this->parent())->geometry();
+        ///< 记录正常几何形状
+        this->m_isMaxScreen = true;                          ///< 设置最大化状态
+        m_startGeometry = this->m_normalGeometry;            ///< 设置起始几何形状
+        m_endGeometry = this->screen()->availableGeometry(); ///< 设置目标几何形状
 
         animation->setDuration(300); ///< 设置动画时长
     }

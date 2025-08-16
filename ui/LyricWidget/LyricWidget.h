@@ -53,6 +53,7 @@ public:
     void setMusicTitle(const QString &title);
     void setMusicSinger(const QString &singer);
     void setLyricPath(const QString &path);
+    void setLyricRawText(const QString& content);
     void setWhetherToUseBlackMask(bool); //设置是否使用黑色mask图层
 
     bool isLyricValid() const;

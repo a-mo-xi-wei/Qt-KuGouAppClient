@@ -633,3 +633,25 @@ bool LyricViewer::loadLyricFromFile(const QString &lyricPath)
 
     return true;
 }
+
+bool LyricViewer::loadLyricFromRawText(const QString &content)
+{
+    LrcProcessor lrcProcessor;
+    if (!lrcProcessor.LoadFromRawText(content)) {
+        return false;
+    }
+    lrcLyrics = lrcProcessor.GetLrcLyric();
+    bIsLyricValid = lrcProcessor.bIsLrcLyric;
+    bIsLrcLyric = lrcProcessor.bIsLrcLyric;
+    bIsNeteaseLrcFormat = lrcProcessor.bIsNeteaseLrcFormat;
+    return true;
+}
+
+void LyricViewer::setLyricRawText(const QString &content)
+{
+    if (!loadLyricFromRawText(content)) {
+        lrcLyrics.clear();
+        bIsLrcLyric = false;
+    }
+    scrollLyricPanel->updateLyric(lrcLyrics, bIsLrcLyric);
+}

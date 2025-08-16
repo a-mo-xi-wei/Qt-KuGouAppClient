@@ -56,19 +56,22 @@ PlayWidget::PlayWidget(QWidget *parent)
 
 void PlayWidget::setSongName(const QString &name)
 {
-    m_songNameToolTip->setToolTip(name); ///< 更新歌曲名称提示
     ui->song_name_text->setText(name);
     ui->song_name_text->adjustSize(); ///< 适应文本
-    m_songNameToolTip->adjustSize();  ///< 调整提示尺寸
+
+    m_songNameToolTip->setToolTip(name); ///< 更新歌曲名称提示
+    m_songNameToolTip->adjustSize();     ///< 调整提示尺寸
     ui->singer_song_HLayout->update();
 }
 
 void PlayWidget::setSingerName(const QString &singer)
 {
-    m_singerToolTip->setToolTip(singer);
     ui->singer_text->setText(singer);
     ui->singer_text->adjustSize();
+
+    m_singerToolTip->setToolTip(singer);
     m_songNameToolTip->adjustSize();
+
     ui->singer_song_HLayout->update(); ///< 更新布局
 }
 
@@ -151,14 +154,18 @@ void PlayWidget::setCoverFillRatioValue(qreal ratio)
 
 void PlayWidget::setTextColor(bool isWhite)
 {
-    ui->speed_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
-    ui->stander_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
-    ui->acoustics_pushButton->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    const QString btnColor = QString("QPushButton { color:%1; }").arg(isWhite ? "white" : "black");
+    const QString labelColor = QString("QLabel { color:%1; }").arg(isWhite ? "white" : "black");
 
-    ui->position_label->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
-    ui->duration_label->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
-    ui->song_name_text->setStyleSheet(QString("color:%1;").arg(isWhite ? "white" : "black"));
+    ui->speed_pushButton->setStyleSheet(btnColor);
+    ui->stander_pushButton->setStyleSheet(btnColor);
+    ui->acoustics_pushButton->setStyleSheet(btnColor);
+
+    ui->position_label->setStyleSheet(labelColor);
+    ui->duration_label->setStyleSheet(labelColor);
+    ui->song_name_text->setStyleSheet(labelColor);
 }
+
 
 void PlayWidget::onSliderPositionChanged(const int &position)
 {
