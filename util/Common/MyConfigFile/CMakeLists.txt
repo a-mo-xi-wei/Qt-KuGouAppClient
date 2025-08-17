@@ -1,0 +1,5 @@
+set(MYCONFIGFILE_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyConfigFile.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyConfigFile.cpp
+        PARENT_SCOPE
+)

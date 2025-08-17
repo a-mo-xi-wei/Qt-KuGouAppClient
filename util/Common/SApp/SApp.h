@@ -9,30 +9,30 @@
 
 #define URL(route) QUrl("http://" + sApp->globalConfig()->value("host/host").toString() +route)
 
-#if defined(SAPP_LIBRARY)
-#define SAPP_EXPORT Q_DECL_EXPORT
+#if defined(COMMON_LIBRARY)
+#define COMMON_EXPORT Q_DECL_EXPORT
 #else
-#define SAPP_EXPORT Q_DECL_IMPORT
+#define COMMON_EXPORT Q_DECL_IMPORT
 #endif
 
-class SAPP_EXPORT SApp : public QApplication
+class COMMON_EXPORT SApp : public QApplication
 {
 public:
-    SApp(int argc, char* argv[]);
+    SApp(int argc, char *argv[]);
 
-    inline SConfigFile* globalConfig()
+    inline SConfigFile *globalConfig()
     {
         if (!m_globalConfig)
             qWarning() << "global Config is nullptr";
         return m_globalConfig;
     }
 
-    void setUserData(const QString& key, const QVariant& data);
+    void setUserData(const QString &key, const QVariant &data);
 
-    QVariant userData(const QString& key);
+    QVariant userData(const QString &key);
 
 private:
-    SConfigFile* m_globalConfig{};
+    SConfigFile *m_globalConfig{};
 
     void initGlobalConfig();
 

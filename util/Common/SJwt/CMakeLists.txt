@@ -1,0 +1,5 @@
+﻿set(SJWT_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/SJwt.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/SJwt.cpp
+        PARENT_SCOPE
+)

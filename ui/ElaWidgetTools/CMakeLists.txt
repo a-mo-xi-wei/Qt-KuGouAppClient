@@ -104,4 +104,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/ElaSlider
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog MyAsyncThread MyHttpClient SApp)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets Qt6::Core Qt6::Network MySpdlog MyAsyncThread Common)

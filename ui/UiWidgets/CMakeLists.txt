@@ -105,5 +105,5 @@ target_include_directories(UiWidgets PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/LyricWidget
 )
 
-target_link_libraries(UiWidgets PUBLIC Qt::Widgets Qt::Core5Compat Qt::Network Qt::Core
-        QtMaterialWidget ElaWidgetTools dwmapi MyHttpClient MyAsyncThread SApp MySpdlog)
+target_link_libraries(UiWidgets PUBLIC Qt::Widgets Qt::Core5Compat Qt::Network Qt::Core dwmapi
+        QtMaterialWidget ElaWidgetTools MyAsyncThread MySpdlog)

@@ -3,21 +3,21 @@
 
 #include <QSettings>
 
-#if defined(SAPP_LIBRARY)
-#define SAPP_EXPORT Q_DECL_EXPORT
+#if defined(COMMON_LIBRARY)
+#define COMMON_EXPORT Q_DECL_EXPORT
 #else
-#define SAPP_EXPORT Q_DECL_IMPORT
+#define COMMON_EXPORT Q_DECL_IMPORT
 #endif
 
-class SAPP_EXPORT SConfigFile
+class COMMON_EXPORT SConfigFile
 {
 public:
-    SConfigFile(const QString& filename);
+    SConfigFile(const QString &filename);
     bool isOpen() const { return m_settings.status() == QSettings::NoError; }
 
-    void setValue(QAnyStringView key, const QVariant& value);
+    void setValue(QAnyStringView key, const QVariant &value);
     QVariant value(QAnyStringView key) const;
-    QVariant value(QAnyStringView key, const QVariant& def_value) const;
+    QVariant value(QAnyStringView key, const QVariant &def_value) const;
 
     void removeValue(QAnyStringView key);
 

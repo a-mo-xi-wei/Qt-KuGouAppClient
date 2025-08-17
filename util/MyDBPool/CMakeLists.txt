@@ -5,23 +5,23 @@ project(MyDBPool VERSION 1.0)
 file(GLOB SOURCE_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 file(GLOB SOURCE_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 
-file(GLOB SOURCE_COMMON_CPP ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon/*.cpp)
-file(GLOB SOURCE_COMMON_C ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon/*.c)
-file(GLOB SOURCE_COMMON_H ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon/*.h)
+file(GLOB SOURCE_COMMON_CPP MyCommon/*.cpp)
+file(GLOB SOURCE_COMMON_C MyCommon/*.c)
+file(GLOB SOURCE_COMMON_H MyCommon/*.h)
 
 set(SOURCE_FILE
-    ${SOURCE_CPP}
-    ${SOURCE_H}
-    ${SOURCE_COMMON_CPP}
-    ${SOURCE_COMMON_C}
-    ${SOURCE_COMMON_H}
+        ${SOURCE_CPP}
+        ${SOURCE_H}
+        ${SOURCE_COMMON_CPP}
+        ${SOURCE_COMMON_C}
+        ${SOURCE_COMMON_H}
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/../MyCommon
+        MyCommon
         ${CMAKE_CURRENT_SOURCE_DIR}/../../tools/zlib/include
 )
 

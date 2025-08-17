@@ -14,21 +14,11 @@ add_subdirectory(MyQsLog)
 #播放器核心模块
 add_subdirectory(MyPlayer)
 
-#JWT模块
-add_subdirectory(SJwt)
-
 #数据库连接池模块
 add_subdirectory(MyDBPool)
-
-#配置文件模块
-add_subdirectory(MyConfigFile)
 
 #JQHttpServer模块
 add_subdirectory(JQHttpServer)
 
-#http请求模块
-add_subdirectory(MyHttpClient)
-
-#通用配置文件处理模块
-add_subdirectory(SApp)
-
+#常用简易模块
+add_subdirectory(Common)

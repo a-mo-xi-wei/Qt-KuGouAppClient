@@ -1,0 +1,5 @@
+set(MYHTTPCLIENT_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/libhttp.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/libhttp.h
+        PARENT_SCOPE
+)

@@ -1,0 +1,7 @@
+set(SAPP_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/SApp.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/SApp.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SConfigFile.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/SConfigFile.cpp
+        PARENT_SCOPE
+)
