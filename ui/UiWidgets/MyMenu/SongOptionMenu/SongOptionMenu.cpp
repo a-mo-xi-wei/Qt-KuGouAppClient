@@ -451,7 +451,7 @@ void SongOptionMenu::initMenu()
                 &QToolButton::clicked,
                 this,
                 [this] {
-                    emit songInfo();
+                    emit viewSongInfo();
                     this->hide();
                 });
         // 以下为注释掉的悬停事件处理代码，保留以供调试

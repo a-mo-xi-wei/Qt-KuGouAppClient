@@ -9,17 +9,21 @@
 #include "MusicItemWidget.h"
 #include "logger.hpp"
 #include "ElaToolTip.h"
+#include "ElaMessageBar.h"
 
 #include <QApplication>
+#include <QDesktopServices>
 #include <QLabel>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include <QFile>
+#include <QFileInfo>
 #include <QTimer>
 #include <QPainter>
 #include <QPaintEvent>
 #include <QPainterPath>
 #include <QRandomGenerator>
+
+#include "Async.h"
 
 #define PIX_SIZE 50 ///< 图片大小
 
@@ -85,7 +89,7 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
     m_playToolBtn->setObjectName(QStringLiteral("playToolBtn"));
     m_playNextToolBtn->setObjectName(QStringLiteral("playNextToolBtn"));
     m_downloadToolBtn->setObjectName(QStringLiteral("downloadToolBtn"));
-    m_collectToolBtn->setObjectName(QStringLiteral("collectToolBtn"));
+    m_loveToolBtn->setObjectName(QStringLiteral("loveToolBtn"));
     m_moreToolBtn->setObjectName(QStringLiteral("moreToolBtn"));
     // 设置tooltip
     {
@@ -95,8 +99,8 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
         playNextToolBtn_toolTip->setToolTip(QStringLiteral("下一首"));
         auto downloadToolBtn_toolTip = new ElaToolTip(m_downloadToolBtn);
         downloadToolBtn_toolTip->setToolTip(QStringLiteral("下载"));
-        auto collectToolBtn_toolTip = new ElaToolTip(m_collectToolBtn);
-        collectToolBtn_toolTip->setToolTip(QStringLiteral("收藏"));
+        auto collectToolBtn_toolTip = new ElaToolTip(m_loveToolBtn);
+        collectToolBtn_toolTip->setToolTip(QStringLiteral("喜欢"));
         auto moreToolBtn_toolTip = new ElaToolTip(m_moreToolBtn);
         moreToolBtn_toolTip->setToolTip(QStringLiteral("更多"));
     }
@@ -123,16 +127,15 @@ MusicItemWidget::MusicItemWidget(SongInfor info, QWidget *parent)
             &QToolButton::clicked,
             this,
             &MusicItemWidget::onDownloadToolBtnClicked);
-    connect(m_collectToolBtn,
+    connect(m_loveToolBtn,
             &QToolButton::clicked,
             this,
-            &MusicItemWidget::onCollectToolBtnClicked);
+            &MusicItemWidget::onLoveToolBtnClicked);
     connect(m_moreToolBtn, &QToolButton::clicked, this, &MusicItemWidget::onMoreToolBtnClicked);
     //menu响应
     auto menu = new MyMenu(MyMenu::MenuKind::SongOption, this);
     m_songOptMenu = menu->getMenu<SongOptionMenu>();
-    connect(m_songOptMenu, &SongOptionMenu::play, this, &MusicItemWidget::onPlay);
-    connect(m_songOptMenu, &SongOptionMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
+    initMenuConnection();
 
     //跳转选中
     m_blinkTimer = new QTimer(this);
@@ -342,6 +345,32 @@ void MusicItemWidget::setHighlight(bool highlight)
     }
 }
 
+void MusicItemWidget::initMenuConnection()
+{
+    connect(m_songOptMenu, &SongOptionMenu::play, this, &MusicItemWidget::onPlay);
+    connect(m_songOptMenu, &SongOptionMenu::nextPlay, this, &MusicItemWidget::onNextPlay);
+    connect(m_songOptMenu,
+            &SongOptionMenu::addToPlayQueue,
+            this,
+            &MusicItemWidget::onAddToPlayQueue);
+    connect(m_songOptMenu,
+            &SongOptionMenu::addToNewSongList,
+            this,
+            &MusicItemWidget::onAddToNewSongList);
+    connect(m_songOptMenu, &SongOptionMenu::addToLove, this, &MusicItemWidget::onAddToLove);
+    connect(m_songOptMenu, &SongOptionMenu::addToCollect, this, &MusicItemWidget::onAddToCollect);
+    connect(m_songOptMenu, &SongOptionMenu::addToPlayList, this, &MusicItemWidget::onAddToPlayList);
+    connect(m_songOptMenu, &SongOptionMenu::download, this, &MusicItemWidget::onDownload);
+    connect(m_songOptMenu, &SongOptionMenu::share, this, &MusicItemWidget::onShare);
+    connect(m_songOptMenu, &SongOptionMenu::comment, this, &MusicItemWidget::onComment);
+    connect(m_songOptMenu, &SongOptionMenu::sameSong, this, &MusicItemWidget::onSameSong);
+    connect(m_songOptMenu, &SongOptionMenu::viewSongInfo, this, &MusicItemWidget::onViewSongInfo);
+    connect(m_songOptMenu, &SongOptionMenu::deleteSong, this, &MusicItemWidget::onDeleteSong);
+    connect(m_songOptMenu, &SongOptionMenu::openInFile, this, &MusicItemWidget::onOpenInFile);
+    connect(m_songOptMenu, &SongOptionMenu::search, this, &MusicItemWidget::onSearch);
+    connect(m_songOptMenu, &SongOptionMenu::upload, this, &MusicItemWidget::onUpLoad);
+}
+
 /**
  * @brief 鼠标进入事件
  * @param event 进入事件对象
@@ -508,17 +537,75 @@ void MusicItemWidget::onPlayToolBtnClicked()
 /**
  * @brief 下一首按钮点击处理
  */
-void MusicItemWidget::onPlayNextToolBtnClicked() {}
+void MusicItemWidget::onPlayNextToolBtnClicked()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("下一首播放暂未实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 下载按钮点击处理
  */
-void MusicItemWidget::onDownloadToolBtnClicked() {}
+void MusicItemWidget::onDownloadToolBtnClicked()
+{
+    if (m_information.netUrl.isEmpty() && !m_information.mediaPath.isEmpty()) {
+        ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                   "Info",
+                                   QString("无需下载本地已有歌曲"),
+                                   1000,
+                                   this->window());
+        return;
+    }
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("开始下载: %1").arg(m_information.songName),
+                               1000,
+                               this->window());
+    const auto future = Async::runAsync(QThreadPool::globalInstance(),
+                                        [this] {
+                                            return m_libHttp.DownloadFile(
+                                                m_information.netUrl,
+                                                m_information.songName + '.' + m_information.
+                                                format);
+                                        }); ///< 异步下载
+    Async::onResultReady(future,
+                         this,
+                         [this](bool flag) {
+                             if (flag) {
+                                 ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                                                        "Success",
+                                                        QString("音乐下载完成 : %1").arg(
+                                                            DOWNLOAD_DIR),
+                                                        1000,
+                                                        this->window());
+                             } else {
+                                 ElaMessageBar::error(ElaMessageBarType::BottomRight,
+                                                      "Error",
+                                                      QString("音乐下载完成失败! 请检查网络是否通畅"),
+                                                      2000,
+                                                      this->window());
+                             }
+                         });
+}
 
 /**
  * @brief 收藏按钮点击处理
  */
-void MusicItemWidget::onCollectToolBtnClicked() {}
+void MusicItemWidget::onLoveToolBtnClicked()
+{
+    m_isLove = !m_isLove; // 切换收藏状态
+    m_loveToolBtn->setIcon(QIcon(QString(":/Res/window/%1.svg").arg(
+        m_isLove ? "love" : "unlove"))); // 更新图标
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                           "Success",
+                           QString("%1 : 成功%2我喜欢").arg(m_information.songName,
+                                                       m_isLove ? "添加到" : "移出"),
+                           1000,
+                           this->window());
+}
 
 /**
  * @brief 更多按钮点击处理
@@ -540,57 +627,124 @@ void MusicItemWidget::onPlay()
 /**
  * @brief 下一首播放菜单项处理
  */
-void MusicItemWidget::onNextPlay() {}
+void MusicItemWidget::onNextPlay()
+{
+    onPlayNextToolBtnClicked();
+}
 
 /**
  * @brief 添加到播放队列菜单项处理
  */
-void MusicItemWidget::onAddToPlayQueue() {}
+void MusicItemWidget::onAddToPlayQueue()
+{
+    m_isInPlayQueue = !m_isInPlayQueue; // 切换播放队列状态
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                           "Success",
+                           QString("%1 : 成功%2默认播放队列").arg(m_information.songName,
+                                                          m_isInPlayQueue ? "添加到" : "移出"),
+                           1000,
+                           this->window());
+}
 
 /**
- * @brief 添加到新歌单菜单项处理
+ * @brief 添加到新建菜单项处理
  */
-void MusicItemWidget::onAddToNewSongList() {}
+void MusicItemWidget::onAddToNewSongList()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("添加到新建歌单暂未实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 添加到喜欢菜单项处理
  */
-void MusicItemWidget::onAddToLove() {}
+void MusicItemWidget::onAddToLove()
+{
+    onLoveToolBtnClicked();
+}
 
 /**
  * @brief 添加到收藏菜单项处理
  */
-void MusicItemWidget::onAddToCollect() {}
+void MusicItemWidget::onAddToCollect()
+{
+    m_isCollect = !m_isCollect; // 切换收藏状态
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                           "Success",
+                           QString("%1 : 成功%2默认收藏").arg(m_information.songName,
+                                                        m_isCollect ? "添加到" : "移出"),
+                           1000,
+                           this->window());
+}
 
 /**
  * @brief 添加到播放列表菜单项处理
  */
-void MusicItemWidget::onAddToPlayList() {}
+void MusicItemWidget::onAddToPlayList()
+{
+    m_isInPlayList = !m_isInPlayList; // 切换播放列表状态
+    ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                           "Success",
+                           QString("%1 : 成功%2默认列表").arg(m_information.songName,
+                                                        m_isInPlayList ? "添加到" : "移出"),
+                           1000,
+                           this->window());
+}
 
 /**
  * @brief 下载菜单项处理
  */
-void MusicItemWidget::onDownload() {}
+void MusicItemWidget::onDownload()
+{
+    onDownloadToolBtnClicked();
+}
 
 /**
  * @brief 分享菜单项处理
  */
-void MusicItemWidget::onShare() {}
+void MusicItemWidget::onShare()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("分享功能暂未实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 评论菜单项处理
  */
-void MusicItemWidget::onComment() {}
+void MusicItemWidget::onComment()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("评论功能暂未实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 相似歌曲菜单项处理
  */
-void MusicItemWidget::onSameSong() {}
+void MusicItemWidget::onSameSong()
+{
+    emit sameSong(m_information.songName);
+}
 
 /**
  * @brief 查看歌曲信息菜单项处理
  */
-void MusicItemWidget::onViewSongInfo() {}
+void MusicItemWidget::onViewSongInfo()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("查看歌曲信息功能即将实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 删除歌曲菜单项处理
@@ -604,17 +758,60 @@ void MusicItemWidget::onDeleteSong(const int &idx)
 /**
  * @brief 在文件管理器中打开菜单项处理
  */
-void MusicItemWidget::onOpenInFile() {}
+void MusicItemWidget::onOpenInFile()
+{
+    if (m_information.mediaPath.isEmpty()) {
+        STREAM_ERROR() << "MusicItemWidget::onOpenInFile: Media path is empty.";
+        return;
+    }
+
+    QFileInfo fileInfo(m_information.mediaPath);
+    if (!fileInfo.exists()) {
+        STREAM_ERROR() << "MusicItemWidget::onOpenInFile: File does not exist:" << m_information.
+            mediaPath.toStdString();
+        qDebug() << "MusicItemWidget::onOpenInFile: File does not exist:" << m_information.
+            mediaPath;
+        return;
+    }
+
+    // 获取文件所在的目录路径
+    QString dirPath = fileInfo.absolutePath();
+    QUrl url = QUrl::fromLocalFile(dirPath);
+
+    // 在文件管理器中打开目录
+    if (!QDesktopServices::openUrl(url)) {
+        STREAM_ERROR() << "MusicItemWidget::onOpenInFile: Failed to open file explorer for:" <<
+            dirPath.toStdString();
+        qDebug() << "MusicItemWidget::onOpenInFile: Failed to open file explorer for:" <<
+            dirPath;
+    } else {
+        ElaMessageBar::success(ElaMessageBarType::BottomRight,
+                               "Success",
+                               QString("成功打开路径: %1").arg(m_information.mediaPath),
+                               1000,
+                               this->window());
+    }
+}
 
 /**
  * @brief 搜索菜单项处理
  */
-void MusicItemWidget::onSearch() {}
+void MusicItemWidget::onSearch()
+{
+    emit search(m_information.songName);
+}
 
 /**
  * @brief 上传菜单项处理
  */
-void MusicItemWidget::onUpLoad() {}
+void MusicItemWidget::onUpLoad()
+{
+    ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                               "Info",
+                               QString("上传功能暂未实现, 敬请期待"),
+                               1000,
+                               this->window());
+}
 
 /**
  * @brief 初始化用户界面
@@ -634,7 +831,7 @@ void MusicItemWidget::initUi()
     this->m_playToolBtn = new QToolButton(this);
     this->m_playNextToolBtn = new QToolButton(this);
     this->m_downloadToolBtn = new QToolButton(this);
-    this->m_collectToolBtn = new QToolButton(this);
+    this->m_loveToolBtn = new QToolButton(this);
     this->m_moreToolBtn = new QToolButton(this);
 
     m_nameLab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -656,13 +853,13 @@ void MusicItemWidget::initUi()
     this->m_playNextToolBtn->setIcon(
         QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/add-music-list-gray.svg")));
     this->m_downloadToolBtn->setIcon(QIcon(QStringLiteral(":/Res/window/download.svg")));
-    this->m_collectToolBtn->setIcon(QIcon(QStringLiteral(":/Res/window/collect.svg")));
+    this->m_loveToolBtn->setIcon(QIcon(QStringLiteral(":/Res/window/unlove.svg")));
     this->m_moreToolBtn->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/more2-gray.svg")));
 
     this->m_playToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_playNextToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_downloadToolBtn->setCursor(Qt::PointingHandCursor);
-    this->m_collectToolBtn->setCursor(Qt::PointingHandCursor);
+    this->m_loveToolBtn->setCursor(Qt::PointingHandCursor);
     this->m_moreToolBtn->setCursor(Qt::PointingHandCursor);
 
     auto hlayout = new QHBoxLayout(this);
@@ -684,7 +881,7 @@ void MusicItemWidget::initUi()
     hlayout->addWidget(m_playToolBtn);
     hlayout->addWidget(m_playNextToolBtn);
     hlayout->addWidget(m_downloadToolBtn);
-    hlayout->addWidget(m_collectToolBtn);
+    hlayout->addWidget(m_loveToolBtn);
     hlayout->addWidget(m_moreToolBtn);
     //this->m_durationLab->move(this->width()*5/6,(this->height() - this->m_durationLab->height()) / 2);
 }

@@ -643,7 +643,7 @@ bool KuGouServer::onApiSearchSong(const QPointer<JQHttpServer::Session> &session
                             songInfo["singer"] = songObj.value("SingerName").toString();
                             songInfo["album"] = songObj.value("AlbumName").toString();
                             songInfo["fileSize"] = songObj.value("FileSize").toInt();
-                            songInfo["format"] = songObj.value("ExtName").toInt();
+                            songInfo["format"] = songObj.value("ExtName").toString();
                             songInfo["issueDate"] = songObj.value("PublishDate").toString(
                                 "yyyy-MM-dd hh:mm:ss");
                             songInfo["duration"] = QTime(0, duration / 60, duration % 60).toString(

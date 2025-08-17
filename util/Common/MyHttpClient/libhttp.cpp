@@ -1,15 +1,14 @@
 ﻿#include "libhttp.h"
 #include "QsLog.h"
 
+#include <QCoreApplication>
 #include <QEventLoop>
 #include <QFileDialog>
 #include <QTimer>
 #include <qurlquery.h>
 
-CLibhttp::CLibhttp(QObject* parent): QObject(parent)
-{
-
-}
+CLibhttp::CLibhttp(QObject *parent)
+    : QObject(parent) {}
 
 CLibhttp::~CLibhttp() = default;
 
@@ -19,18 +18,16 @@ CLibhttp::~CLibhttp() = default;
  * @param timeout 连接超时时间
  * @return
  */
-QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int timeout)
+QString CLibhttp::UrlRequestGet(const QString &url, const QString &data, int timeout)
 {
-    if (url.isEmpty() || timeout <= 0)
-    {
+    if (url.isEmpty() || timeout <= 0) {
         return "";
     }
 
     QLOG_INFO() << ("CLibhttp::UrlRequestGet: " + url);
 
     QUrl aurl(url);
-    if (!data.isEmpty())
-    {
+    if (!data.isEmpty()) {
         QUrlQuery query(aurl);
         query.setQuery(data);
         aurl.setQuery(query);
@@ -47,7 +44,7 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
 
     //qint64 currenttime = QDateTime::currentSecsSinceEpoch();
 
-    QNetworkReply* reply = qnam.get(qnr);
+    QNetworkReply *reply = qnam.get(qnr);
     QEventLoop eventloop;
     /*
         connect(reply,SIGNAL(finished()),&eventloop,SLOT(quit()));
@@ -60,22 +57,19 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
     eventloop.exec();
 
     QString replyData;
-    if (timeout_timer.isActive())
-    {
+    if (timeout_timer.isActive()) {
         timeout_timer.stop();
 
-        if (reply->error() != QNetworkReply::NoError)
-        {
+        if (reply->error() != QNetworkReply::NoError) {
             QLOG_ERROR() << "CLibhttp::UrlRequestGet:http error:" + reply->errorString();
             qDebug() << "CLibhttp::UrlRequestGet:http error:" + reply->errorString();
-        }
-        else
-        {
+        } else {
             int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
             //QLOG_INFO()<<"status code:"<<nStatusCode;
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
-            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d", nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d",
+                                              nStatusCode));
             qDebug() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d", nStatusCode));
 
             /*QTextCodec *codec = QTextCodec::codecForName("utf8");
@@ -87,11 +81,8 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
             QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             replyData = codec->toUnicode(reply->readAll());
 #endif
-
         }
-    }
-    else
-    {
+    } else {
         disconnect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
         reply->abort();
         reply->deleteLater();
@@ -107,18 +98,19 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, int tim
     return replyData;
 }
 
-QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const QString& token, int timeout)
+QString CLibhttp::UrlRequestGet(const QString &url,
+                                const QString &data,
+                                const QString &token,
+                                int timeout)
 {
-    if (url.isEmpty() || timeout <= 0)
-    {
+    if (url.isEmpty() || timeout <= 0) {
         return "";
     }
 
     QLOG_INFO() << ("CLibhttp::UrlRequestGet: " + url);
 
     QUrl aurl(url);
-    if (!data.isEmpty())
-    {
+    if (!data.isEmpty()) {
         QUrlQuery query(aurl);
         query.setQuery(data);
         aurl.setQuery(query);
@@ -130,8 +122,7 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const Q
     qnr.setRawHeader("Content-Type", "application/json;charset=utf-8");
 
     // 如果 token 不为空，设置 Authorization 头
-    if (!token.isEmpty())
-    {
+    if (!token.isEmpty()) {
         qnr.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
     }
 
@@ -141,7 +132,7 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const Q
 
     //qint64 currenttime = QDateTime::currentSecsSinceEpoch();
 
-    QNetworkReply* reply = qnam.get(qnr);
+    QNetworkReply *reply = qnam.get(qnr);
     QEventLoop eventloop;
     /*
         connect(reply,SIGNAL(finished()),&eventloop,SLOT(quit()));
@@ -154,22 +145,19 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const Q
     eventloop.exec();
 
     QString replyData;
-    if (timeout_timer.isActive())
-    {
+    if (timeout_timer.isActive()) {
         timeout_timer.stop();
 
-        if (reply->error() != QNetworkReply::NoError)
-        {
+        if (reply->error() != QNetworkReply::NoError) {
             QLOG_ERROR() << "CLibhttp::UrlRequestGet:http error:" + reply->errorString();
             qDebug() << "CLibhttp::UrlRequestGet:http error:" + reply->errorString();
-        }
-        else
-        {
+        } else {
             int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
             //QLOG_INFO()<<"status code:"<<nStatusCode;
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
-            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d", nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d",
+                                              nStatusCode));
             qDebug() << (QString::asprintf("CLibhttp::UrlRequestGet:status code:%d", nStatusCode));
 
             /*QTextCodec *codec = QTextCodec::codecForName("utf8");
@@ -181,11 +169,8 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const Q
             QTextCodec *codec = QTextCodec::codecForName("UTF-8");
             replyData = codec->toUnicode(reply->readAll());
 #endif
-
         }
-    }
-    else
-    {
+    } else {
         disconnect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
         reply->abort();
         reply->deleteLater();
@@ -201,18 +186,16 @@ QString CLibhttp::UrlRequestGet(const QString& url, const QString& data, const Q
     return replyData;
 }
 
-QByteArray CLibhttp::UrlRequestGetRaw(const QString& url, const QString& data, int timeout)
+QByteArray CLibhttp::UrlRequestGetRaw(const QString &url, const QString &data, int timeout)
 {
-    if (url.isEmpty() || timeout <= 0)
-    {
+    if (url.isEmpty() || timeout <= 0) {
         return QByteArray();
     }
 
     QLOG_INFO() << ("CLibhttp::UrlRequestGetRaw: " + url);
 
     QUrl aurl(url);
-    if (!data.isEmpty())
-    {
+    if (!data.isEmpty()) {
         QUrlQuery query(aurl);
         query.setQuery(data);
         aurl.setQuery(query);
@@ -226,7 +209,7 @@ QByteArray CLibhttp::UrlRequestGetRaw(const QString& url, const QString& data, i
     timeout_timer.setInterval(timeout);
     timeout_timer.setSingleShot(true);
 
-    QNetworkReply* reply = qnam.get(qnr);
+    QNetworkReply *reply = qnam.get(qnr);
     QEventLoop eventloop;
 
     connect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
@@ -237,26 +220,22 @@ QByteArray CLibhttp::UrlRequestGetRaw(const QString& url, const QString& data, i
 
     QByteArray replyData;
 
-    if (timeout_timer.isActive())
-    {
+    if (timeout_timer.isActive()) {
         timeout_timer.stop();
 
-        if (reply->error() != QNetworkReply::NoError)
-        {
+        if (reply->error() != QNetworkReply::NoError) {
             QLOG_ERROR() << "CLibhttp::UrlRequestGetRaw:http error:" + reply->errorString();
             qDebug() << "CLibhttp::UrlRequestGetRaw:http error:" + reply->errorString();
-        }
-        else
-        {
+        } else {
             int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d", nStatusCode));
-            qDebug() << (QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d", nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d",
+                                              nStatusCode));
+            qDebug() << (
+                QString::asprintf("CLibhttp::UrlRequestGetRaw:status code:%d", nStatusCode));
 
             replyData = reply->readAll(); // 保留原始字节数据
         }
-    }
-    else
-    {
+    } else {
         disconnect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
         reply->abort();
         reply->deleteLater();
@@ -275,7 +254,7 @@ QByteArray CLibhttp::UrlRequestGetRaw(const QString& url, const QString& data, i
  * @param data 要发送的http数据
  * @return 如果请求成功返回请求成功的数据，否则返回空
  */
-QString CLibhttp::UrlRequestPost(const QString& url, const QString& data, int timeout)
+QString CLibhttp::UrlRequestPost(const QString &url, const QString &data, int timeout)
 {
     if (url == "" || data == "" || timeout <= 0)
         return "";
@@ -292,7 +271,7 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString& data, int ti
 
     //qint64 currenttime = QDateTime::currentSecsSinceEpoch();
 
-    QNetworkReply* reply = qnam.post(qnr, data.toUtf8());
+    QNetworkReply *reply = qnam.post(qnr, data.toUtf8());
     QEventLoop eventloop;
 
     QObject::connect(reply, SIGNAL(finished()), &eventloop, SLOT(quit()));
@@ -301,22 +280,19 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString& data, int ti
     timeout_timer.start();
     eventloop.exec();
 
-    if (timeout_timer.isActive())
-    {
+    if (timeout_timer.isActive()) {
         timeout_timer.stop();
 
-        if (reply->error() != QNetworkReply::NoError)
-        {
+        if (reply->error() != QNetworkReply::NoError) {
             QLOG_ERROR() << ("CLibhttp::UrlRequestPost:http error:" + reply->errorString());
-        }
-        else
-        {
+        } else {
             QVariant variant = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-            int nStatusCode  = variant.toInt();
+            int nStatusCode = variant.toInt();
 
             //QLOG_INFO()<<"status code:"<<nStatusCode;
             //QLOG_INFO()<<"UrlRequestPost:"<<(QDateTime::currentSecsSinceEpoch()-currenttime);
-            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestPost:status code:%d", nStatusCode));
+            QLOG_INFO() << (QString::asprintf("CLibhttp::UrlRequestPost:status code:%d",
+                                              nStatusCode));
 
             /*QTextCodec *codec = QTextCodec::codecForName("utf8");
 
@@ -332,9 +308,7 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString& data, int ti
 
             return replyData;
         }
-    }
-    else
-    {
+    } else {
         QObject::disconnect(reply, SIGNAL(finished()), &eventloop, SLOT(quit()));
         reply->abort();
         reply->deleteLater();
@@ -348,7 +322,10 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString& data, int ti
     return "";
 }
 
-QString CLibhttp::UrlRequestPost(const QString& url, const QString &data, const QString &token, int timeout)
+QString CLibhttp::UrlRequestPost(const QString &url,
+                                 const QString &data,
+                                 const QString &token,
+                                 int timeout)
 {
     if (url.isEmpty() || data.isEmpty() || timeout <= 0)
         return "";
@@ -362,8 +339,7 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString &data, const 
     qnr.setRawHeader("Content-Type", "application/json;charset=utf-8");
 
     // 如果 token 不为空，设置 Authorization 头
-    if (!token.isEmpty())
-    {
+    if (!token.isEmpty()) {
         qnr.setRawHeader("Authorization", ("Bearer " + token).toUtf8());
     }
 
@@ -379,18 +355,15 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString &data, const 
     timeout_timer.start();
     eventloop.exec();
 
-    if (timeout_timer.isActive())
-    {
+    if (timeout_timer.isActive()) {
         timeout_timer.stop();
 
-        if (reply->error() != QNetworkReply::NoError)
-        {
+        if (reply->error() != QNetworkReply::NoError) {
             QLOG_ERROR() << "CLibhttp::UrlRequestPost:http error:" + reply->errorString();
-        }
-        else
-        {
+        } else {
             int nStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-            QLOG_INFO() << QString::asprintf("CLibhttp::UrlRequestPost:status code:%d", nStatusCode);
+            QLOG_INFO() << QString::asprintf("CLibhttp::UrlRequestPost:status code:%d",
+                                             nStatusCode);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             QString replyData = QString::fromUtf8(reply->readAll());
@@ -401,9 +374,7 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString &data, const 
             reply->deleteLater();
             return replyData;
         }
-    }
-    else
-    {
+    } else {
         QObject::disconnect(reply, &QNetworkReply::finished, &eventloop, &QEventLoop::quit);
         reply->abort();
         reply->deleteLater();
@@ -446,29 +417,28 @@ QString CLibhttp::UrlRequestPost(const QString& url, const QString &data, const 
  *
  * @return 如果文件上传成功返回真，否则返回假
  */
-bool CLibhttp::UploadFile(const QString& strServerUrl, const QString& srcFilePath, int timeout)
+bool CLibhttp::UploadFile(const QString &strServerUrl, const QString &srcFilePath, int timeout)
 {
     if (strServerUrl.isEmpty() || srcFilePath.isEmpty())
         return false;
 
     QNetworkAccessManager manager;
-    auto* multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    auto *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
     QHttpPart filePart;
 
     QFileInfo fileInfo(srcFilePath);
-    if (!fileInfo.exists())
-    {
+    if (!fileInfo.exists()) {
         QLOG_ERROR() << "CLibhttp::UploadFile:" << srcFilePath << " is not exists.";
         return false;
     }
 
     filePart.setHeader(QNetworkRequest::ContentDispositionHeader,
-                       QVariant(R"(form-data; name="file"; filename=")" + fileInfo.fileName() + "\""));
+                       QVariant(
+                           R"(form-data; name="file"; filename=")" + fileInfo.fileName() + "\""));
     // file为后端定义的key，filename即为excel文件名
 
-    auto* file = new QFile(srcFilePath);
-    if (!file->open(QIODevice::ReadOnly))
-    {
+    auto *file = new QFile(srcFilePath);
+    if (!file->open(QIODevice::ReadOnly)) {
         QLOG_ERROR() << "CLibhttp::UploadFile:" << srcFilePath << " open fail.";
         return false;
     }
@@ -482,9 +452,12 @@ bool CLibhttp::UploadFile(const QString& strServerUrl, const QString& srcFilePat
     QNetworkRequest netReq;
     netReq.setUrl(url);
 
-    QNetworkReply* reply = manager.post(netReq, multiPart);
+    QNetworkReply *reply = manager.post(netReq, multiPart);
     //connect(&manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(RequestFinished(QNetworkReply*)));
-    connect(reply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(Error(QNetworkReply::NetworkError)));
+    connect(reply,
+            SIGNAL(error(QNetworkReply::NetworkError)),
+            this,
+            SLOT(Error(QNetworkReply::NetworkError)));
     connect(reply, SIGNAL(uploadProgress(qint64, qint64)), this, SLOT(Progress(qint64, qint64)));
 
     QEventLoop eventloop;
@@ -507,74 +480,84 @@ bool CLibhttp::UploadFile(const QString& strServerUrl, const QString& srcFilePat
  *
  * @return 如果文件下载成功返回真，否则返回假
  */
-bool CLibhttp::DownloadFile(const QString& strServerUrl, const QString& decFilePath, int timeout)
+bool CLibhttp::DownloadFile(const QString &strServerUrl, const QString &fileName, int timeout)
 {
-    if (strServerUrl.isEmpty() || decFilePath.isEmpty())
+    if (strServerUrl.isEmpty() || fileName.isEmpty())
         return false;
 
-    QTimer timeout_timer;
-    QNetworkAccessManager manager;
-    QNetworkRequest netReq;
-    netReq.setUrl(QUrl(strServerUrl));
-
-    timeout_timer.setInterval(timeout);
-    timeout_timer.setSingleShot(true);
-
-    qint64 currenttime = QDateTime::currentSecsSinceEpoch();
-
-    QNetworkReply* reply = manager.get(netReq);
-    connect(reply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(Error(QNetworkReply::NetworkError)));
-    connect(reply, SIGNAL(downloadProgress(qint64, qint64)), this, SLOT(Progress(qint64, qint64)));
-
-    QEventLoop eventloop;
-
-    QObject::connect(reply, SIGNAL(finished()), &eventloop, SLOT(quit()));
-    QObject::connect(&timeout_timer, SIGNAL(timeout()), &eventloop, SLOT(quit()));
-
-    timeout_timer.start();
-    eventloop.exec(QEventLoop::ExcludeUserInputEvents);
-
-    if (timeout_timer.isActive())
-    {
-        timeout_timer.stop();
-
-        if (reply->error() != QNetworkReply::NoError)
-        {
-            QLOG_ERROR() << "http DownloadFile error:" << reply->errorString();
-        }
-        else
-        {
-            QVariant variant = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-            int nStatusCode  = variant.toInt();
-
-            QLOG_INFO() << "DownloadFile status code:" << nStatusCode;
-            QLOG_INFO() << "DownloadFile UrlRequestPost:" << (QDateTime::currentSecsSinceEpoch() - currenttime);
-
-            QFile precvFile(decFilePath);
-            if (!precvFile.open(QIODevice::WriteOnly))
-            {
-                QLOG_ERROR() << "CLibhttp::DownloadFile:" << decFilePath << " open fail.";
-                return false;
-            }
-
-            precvFile.write(reply->readAll());
-            precvFile.close();
-
-            reply->deleteLater();
-            reply = nullptr;
-
-            return true;
-        }
+    // 构建统一下载目录：cmake-build-release/downloaded_music
+    QString downloadDir = QString(DOWNLOAD_DIR);
+    QDir dir(downloadDir);
+    if (!dir.exists() && !dir.mkpath(".")) {
+        QLOG_ERROR() << "DownloadFile: cannot create directory:" << downloadDir;
+        return false;
     }
-    else
-    {
-        QObject::disconnect(reply, SIGNAL(finished()), &eventloop, SLOT(quit()));
+    QString fullPath = dir.filePath(fileName);
+    //qDebug() << "Full download path:" << fullPath;
+
+    QNetworkAccessManager manager;
+    QUrl url(strServerUrl);
+    QNetworkRequest request(url);
+    QNetworkReply *reply = manager.get(request);
+
+    connect(reply, &QNetworkReply::downloadProgress, this, &CLibhttp::Progress);
+    connect(reply, &QNetworkReply::errorOccurred, this, &CLibhttp::Error);
+
+    QEventLoop loop;
+    QTimer timeoutTimer;
+    timeoutTimer.setInterval(timeout);
+    timeoutTimer.setSingleShot(true);
+
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    connect(&timeoutTimer, &QTimer::timeout, &loop, &QEventLoop::quit);
+
+    timeoutTimer.start();
+    loop.exec(QEventLoop::ExcludeUserInputEvents);
+
+    // 超时处理
+    if (!timeoutTimer.isActive()) {
         reply->abort();
         reply->deleteLater();
-        QLOG_WARN() << "DownloadFile timeout.";
+        QLOG_WARN() << "DownloadFile timeout:" << strServerUrl;
+        QFile::remove(fullPath); // 删除残留文件
+        return false;
     }
 
-    return false;
+    timeoutTimer.stop();
+
+    if (reply->error() != QNetworkReply::NoError) {
+        QLOG_ERROR() << "DownloadFile error:" << reply->errorString();
+        reply->deleteLater();
+        QFile::remove(fullPath);
+        return false;
+    }
+
+    // 写入文件
+    QFile file(fullPath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        QLOG_ERROR() << "DownloadFile open fail:" << fullPath;
+        reply->deleteLater();
+        QFile::remove(fullPath);
+        return false;
+    }
+
+    QByteArray data = reply->readAll();
+    if (file.write(data) == -1) {
+        QLOG_ERROR() << "DownloadFile write fail:" << fullPath;
+        file.close();
+        reply->deleteLater();
+        QFile::remove(fullPath);
+        return false;
+    }
+
+    file.close();
+
+    QVariant statusVar = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+    int statusCode = statusVar.toInt();
+    QLOG_INFO() << "DownloadFile status code:" << statusCode;
+
+    reply->deleteLater();
+    return true;
 }
 
 void CLibhttp::Progress(qint64 bytesSent, qint64 bytesTotal)
@@ -586,4 +569,3 @@ void CLibhttp::Error(QNetworkReply::NetworkError reply)
 {
     QLOG_ERROR() << "CLibhttp:" << reply;
 }
-

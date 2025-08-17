@@ -22,7 +22,8 @@
  * @class SongOptionMenu
  * @brief 歌曲操作选项菜单类，继承自 BaseMenu，提供播放、添加、删除等功能
  */
-class UIWIDGETS_EXPORT SongOptionMenu : public BaseMenu {
+class UIWIDGETS_EXPORT SongOptionMenu : public BaseMenu
+{
     Q_OBJECT
 
 public:
@@ -30,13 +31,13 @@ public:
      * @brief 构造函数，初始化歌曲操作选项菜单
      * @param parent 父控件指针，默认为 nullptr
      */
-    explicit SongOptionMenu(QWidget* parent = nullptr);
+    explicit SongOptionMenu(QWidget *parent = nullptr);
 
     /**
      * @brief 获取当前菜单对象
      * @return 当前菜单对象指针
      */
-    const SongOptionMenu* getMenu() const override;
+    const SongOptionMenu *getMenu() const override;
 
 private:
     /**
@@ -44,11 +45,11 @@ private:
      */
     void initMenu() override;
 
-    signals:
-        /**
-         * @brief 播放歌曲信号
-         */
-        void play();
+signals:
+    /**
+     * @brief 播放歌曲信号
+     */
+    void play();
 
     /**
      * @brief 下一首播放信号
@@ -103,7 +104,7 @@ private:
     /**
      * @brief 查看歌曲信息信号
      */
-    void songInfo();
+    void viewSongInfo();
 
     /**
      * @brief 删除歌曲信号

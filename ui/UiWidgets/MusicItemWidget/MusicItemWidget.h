@@ -11,8 +11,8 @@
 
 #include "MyMenu.h"
 #include "SongOptionMenu/SongOptionMenu.h"
+#include "libhttp.h"
 
-#include <QDateTime>
 #include <QFrame>
 
 #if defined(UIWIDGETS_LIBRARY)
@@ -33,22 +33,22 @@ class QSpacerItem;
  */
 typedef struct SongInformation
 {
-    int index;           ///< 音乐索引
-    QString coverUrl;    ///< 网络封面图片路径
-    QPixmap cover;       ///< 封面图片
-    QString songName;    ///< 歌曲名称
-    QString singer;      ///< 歌手名称
-    QString duration;    ///< 歌曲时长
-    QString album;       ///< 专辑名称
-    QString hash;        ///< 歌曲hash值
-    QString lyric;       ///< 歌词内容
-    QString mediaPath;   ///< 本地媒体文件路径
-    QString netUrl;      ///< 网络文件路径
-    int fileSize;        ///< 网络文件大小
-    QString format;      ///< 网络文件格式
-    QDateTime issueDate; ///< 发行日期
-    QDateTime addTime;   ///< 添加时间
-    int playCount;       ///< 播放次数
+    int index;              ///< 音乐索引
+    QString coverUrl;       ///< 网络封面图片路径
+    QPixmap cover;          ///< 封面图片
+    QString songName;       ///< 歌曲名称
+    QString singer;         ///< 歌手名称
+    QString duration;       ///< 歌曲时长
+    QString album;          ///< 专辑名称
+    QString hash;           ///< 歌曲hash值
+    QString lyric;          ///< 歌词内容
+    QString mediaPath;      ///< 本地媒体文件路径
+    QString netUrl;         ///< 网络文件路径
+    int fileSize;           ///< 网络文件大小
+    QString format = "mp3"; ///< 网络文件格式
+    QDateTime issueDate;    ///< 发行日期
+    QDateTime addTime;      ///< 添加时间
+    int playCount;          ///< 播放次数
 
     /**
      * @brief 比较运算符
@@ -145,6 +145,9 @@ public:
      */
     void setHighlight(bool highlight);
 
+private:
+    void initMenuConnection();
+
 protected:
     /**
      * @brief 鼠标进入事件
@@ -202,7 +205,7 @@ private slots:
     /**
      * @brief 收藏按钮点击处理
      */
-    void onCollectToolBtnClicked();
+    void onLoveToolBtnClicked();
 
     /**
      * @brief 更多按钮点击处理
@@ -345,7 +348,7 @@ signals:
     /**
      * @brief 相似歌曲信号
      */
-    void sameSong();
+    void sameSong(const QString &songName);
 
     /**
      * @brief 查看歌曲信息信号
@@ -366,7 +369,7 @@ signals:
     /**
      * @brief 搜索信号
      */
-    void search();
+    void search(const QString &songName);
 
     /**
      * @brief 上传信号
@@ -391,7 +394,7 @@ private:
     QToolButton *m_playToolBtn{};     ///< 播放按钮
     QToolButton *m_playNextToolBtn{}; ///< 下一首按钮
     QToolButton *m_downloadToolBtn{}; ///< 下载按钮
-    QToolButton *m_collectToolBtn{};  ///< 收藏按钮
+    QToolButton *m_loveToolBtn{};     ///< 收藏按钮
     QToolButton *m_moreToolBtn{};     ///< 更多按钮
 
     //跳转选中高亮
@@ -424,6 +427,13 @@ private:
     QColor fill_color;         ///< 填充颜色
     int frame_radius = 0;      ///< 圆角半径
     bool m_forceHover = false; ///< 强制悬停状态
+    CLibhttp m_libHttp;        ///< HTTP 请求库
+
+private:
+    bool m_isInPlayQueue = false; ///< 是否在播放队列中
+    bool m_isLove = false;        ///< 是否喜欢
+    bool m_isCollect = false;     ///< 是否收藏
+    bool m_isInPlayList = false;  ///< 是否在播放列表中
 };
 
 #endif // MUSICITEMWIDGET_H

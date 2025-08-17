@@ -1,30 +1,30 @@
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
     # 通用优化标志（-O2/O3）
     add_compile_options(-O3)
 
     # 针对特定编译器的优化
-    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         add_compile_options(-march=native)  # 启用本地 CPU 架构优化
-    elseif(MSVC)
+    elseif (MSVC)
         add_compile_options(/O2 /fp:fast)   # MSVC 的优化选项
-    endif()
+    endif ()
 
     add_compile_options(-g0)                   # 禁用调试符号
     set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-s")   # 去除符号表（GCC/Clang）
-endif()
+endif ()
 
 # 编译器特定设置
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-flto)
     add_link_options(-flto)
-elseif(MSVC)
+elseif (MSVC)
     add_compile_options(/GL)     # 全程序优化
     add_link_options(/LTCG)      # 链接时代码生成
     # 启用函数/数据段分离 + 垃圾回收
     add_compile_options(-ffunction-sections -fdata-sections)
     add_link_options(-Wl,--gc-sections)
     add_link_options(/OPT:REF)   # 移除未使用的函数和数据
-endif()
+endif ()
 
 # 隐藏所有符号，仅显式导出的符号可见（减少动态库体积）
 add_compile_options(-fvisibility=hidden)
@@ -36,6 +36,7 @@ add_compile_options(-fvisibility=hidden)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # 设置可执行文件输出目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 设置静态库文件输出目录
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # 设置动态库文件输出目录
+add_definitions(-DDOWNLOAD_DIR="${CMAKE_BINARY_DIR}/downloaded_music") # 设置网络歌曲的下载目录
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -52,7 +53,7 @@ add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
-endif()
+endif ()
 
 # 使用ccache
 # 统一跨平台ccache配置
@@ -62,7 +63,7 @@ if (NOT MSVC)  # 同时适用于GCC/Clang环境
         set(CCACHE_EXECUTABLE_NAME "ccache.exe")
     elseif (UNIX)
         set(CCACHE_EXECUTABLE_NAME "ccache")
-    endif()
+    endif ()
 
     # 优先使用项目自带ccache
     set(CCACHE_PROGRAM "${CMAKE_SOURCE_DIR}/tools/ccache/${CCACHE_EXECUTABLE_NAME}")
@@ -71,21 +72,21 @@ if (NOT MSVC)  # 同时适用于GCC/Clang环境
         # 设置执行权限（仅Linux需要）
         if (UNIX)
             execute_process(COMMAND chmod +x ${CCACHE_PROGRAM})
-        endif()
-    else()
+        endif ()
+    else ()
         # 回退到系统路径查找
         find_program(CCACHE_PROGRAM ${CCACHE_EXECUTABLE_NAME})
-    endif()
+    endif ()
 
     # 配置编译器包装
     if (CCACHE_PROGRAM)
         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
         set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "${CCACHE_PROGRAM}")
-    endif()
-endif()
+    endif ()
+endif ()
 
 # 定义库文件路径
-if(WIN32)
+if (WIN32)
     # ZLib 库
     set(ZLIB_IMPORT_LIB ${CMAKE_SOURCE_DIR}/tools/zlib/lib/libzlib.dll.a)
     set(ZLIB_DLL ${CMAKE_SOURCE_DIR}/tools/zlib/bin/zlib.dll)
