@@ -99,6 +99,7 @@ KuGouClient::~KuGouClient()
 {
     // @note 在 spdlog 静态变量销毁前关闭日志
     mylog::logger::get().shutdown();
+    spdlog::shutdown();
     delete ui; ///< 释放 UI 界面
 }
 

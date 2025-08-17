@@ -60,13 +60,21 @@ int main(int argc, char *argv[])
 #endif
 
     SApp a(argc, argv);
-#if QT_DEBUG
+
+#ifdef QT_DEBUG
     qInstallMessageHandler(myMessageOutput);
     // 打印信息
     qDebug("This is a debug message.");
     qWarning("This is a warning message.");
     qCritical("This is a critical message.");
 #endif
+
     AppController::instance().start();
-    return a.exec();
+    int ret = a.exec();
+
+    // --- 程序退出前 flush + shutdown ---
+    mylog::logger::get().shutdown();
+    spdlog::shutdown(); // 推荐多加这一句，确保线程池退出前 flush 完毕
+
+    return ret;
 }
