@@ -1,0 +1,5 @@
+set(MYSCROLLAREA_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyScrollArea.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyScrollArea.cpp
+        PARENT_SCOPE
+)

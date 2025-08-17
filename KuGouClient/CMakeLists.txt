@@ -50,8 +50,8 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 target_link_libraries(${PROJECT_NAME}
         PUBLIC
-        Qt6::Widgets Qt6::Multimedia MyWindow MyPlayer
+        Qt6::Widgets Qt6::Multimedia UiWidgets MyPlayer
         AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
         MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo SearchResultWidget LyricWidget
+        Search SongList StartVideo SearchResultWidget
 )

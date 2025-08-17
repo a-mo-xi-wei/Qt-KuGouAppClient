@@ -1,0 +1,10 @@
+#更加地通用
+file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE SRC_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+
+set(MYMENU_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MenuBtn.hpp
+        ${SRC_CPP}
+        ${SRC_H}
+        PARENT_SCOPE
+)

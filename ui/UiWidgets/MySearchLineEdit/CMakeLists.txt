@@ -1,0 +1,5 @@
+set(MYSEARCHLINEEDIT_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MySearchLineEdit.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/MySearchLineEdit.h
+        PARENT_SCOPE
+)

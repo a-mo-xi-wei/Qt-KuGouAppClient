@@ -1,0 +1,5 @@
+set(MYBLOCKWIDGET_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyBlockWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyBlockWidget.h
+        PARENT_SCOPE
+)

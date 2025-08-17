@@ -1,0 +1,5 @@
+set(MYFLOWLAYOUT_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyFlowLayout.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyFlowLayout.h
+        PARENT_SCOPE
+)

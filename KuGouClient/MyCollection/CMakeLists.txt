@@ -16,9 +16,9 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME}
-    PUBLIC
+        PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-    PRIVATE
+        PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/CollectVideo
         ${CMAKE_CURRENT_SOURCE_DIR}/DeviceWidget
         ${CMAKE_CURRENT_SOURCE_DIR}/SingerWidget
@@ -27,5 +27,4 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/SpecialAlbum
 )
 
-target_link_libraries(${PROJECT_NAME} Qt6::Widgets MySlidingStackedWidget
-        MyBlockWidget MyMenu MySearchLineEdit ElaWidgetTools)
+target_link_libraries(${PROJECT_NAME} Qt6::Widgets UiWidgets ElaWidgetTools)

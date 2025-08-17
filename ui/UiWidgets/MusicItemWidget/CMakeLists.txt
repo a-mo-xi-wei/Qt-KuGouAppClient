@@ -1,0 +1,5 @@
+set(MUSICITEMWIDGET_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MusicItemWidget.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/MusicItemWidget.cpp
+        PARENT_SCOPE
+)

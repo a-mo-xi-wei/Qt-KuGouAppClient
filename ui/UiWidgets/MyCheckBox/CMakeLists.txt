@@ -1,0 +1,15 @@
+set(SOURCE_FILE_ANI
+        ${CMAKE_CURRENT_SOURCE_DIR}/AniCheckBox.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/AniCheckBox.cpp
+)
+
+set(SOURCE_FILE_CHECK1
+        ${CMAKE_CURRENT_SOURCE_DIR}/CheckBox1.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/CheckBox1.cpp
+)
+
+set(MYCHECKBOX_SOURCES
+        ${SOURCE_FILE_ANI}
+        ${SOURCE_FILE_CHECK1}
+        PARENT_SCOPE
+)

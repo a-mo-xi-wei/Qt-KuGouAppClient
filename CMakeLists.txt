@@ -53,6 +53,6 @@ target_include_directories(${PROJECT_NAME}
         ${CMAKE_CURRENT_SOURCE_DIR}/KuGouServer
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer LoginInterface MySpdlog)
+target_link_libraries(${PROJECT_NAME} PRIVATE KuGouClient KuGouServer UiWidgets MySpdlog)
 
 include(cmake/build_info.cmake)

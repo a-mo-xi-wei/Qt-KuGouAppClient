@@ -1,0 +1,9 @@
+set(DYNAMIC_BACKGROUND_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundgradient.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundinterface.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundpure.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundgradient.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundinterface.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/dynamicbackgroundpure.h
+        PARENT_SCOPE
+)
