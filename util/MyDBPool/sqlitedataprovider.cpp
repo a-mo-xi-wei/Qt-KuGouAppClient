@@ -183,13 +183,6 @@ RecordSetList SqliteDataProvider::execSql(const QString &sql,
         QLOG_ERROR() << "commit failed:" << tempDB.lastError().text();
     }
 
-    // 4. 关闭连接（避免事务悬挂）
-    // 延迟回收，但确保在获取连接的线程里执行
-    QTimer::singleShot(5000,
-                       [tempDB] {
-                           NDBPool::closeConnection(tempDB);
-                       });
-
     return pRecordSetList;
 }
 
