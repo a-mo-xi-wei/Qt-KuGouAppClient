@@ -184,7 +184,11 @@ RecordSetList SqliteDataProvider::execSql(const QString &sql,
     }
 
     // 4. 关闭连接（避免事务悬挂）
-    NDBPool::closeConnection(tempDB);
+    // 延迟回收，但确保在获取连接的线程里执行
+    QTimer::singleShot(5000,
+                       [tempDB] {
+                           NDBPool::closeConnection(tempDB);
+                       });
 
     return pRecordSetList;
 }
@@ -383,6 +387,6 @@ isOpen();
  */
 void SqliteDataProvider::disconnect()
 {
-    //NDBPool::release();
+    NDBPool::release();
 }
 
