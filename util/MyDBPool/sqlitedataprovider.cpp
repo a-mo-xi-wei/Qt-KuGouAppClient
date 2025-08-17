@@ -11,9 +11,7 @@
  * @param parent
  */
 SqliteDataProvider::SqliteDataProvider(QObject *parent)
-    : QObject(parent)
-{
-}
+    : QObject(parent) {}
 
 /**
  * @brief SqliteDataProvider::~SqliteDataProvider 析构函数
@@ -41,16 +39,25 @@ bool SqliteDataProvider::connect(const QString &dbPath)
  * @param longConnect
  * @return
  */
-RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QString connectionName,bool longConnect)
+RecordSetList SqliteDataProvider::execTransaction(const QStringList &sqls,
+                                                  QString connectionName,
+                                                  bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,
+                                                    m_dbPath,
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    1433,
+                                                    longConnect,
+                                                    connectionName);
     //QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
 
-    if(!tempDB.isOpen())
-    {
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.isOpen() << "\n";
+    if (!tempDB.isOpen()) {
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.
+isOpen() << "\n";
         return pRecordSetList;
     }
 
@@ -58,58 +65,46 @@ RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QStrin
 
     bool isOk = true;
 
-    if(tempDB.transaction())
-    {
-        for(int i=0;i<sqls.size();i++)
-        {
-            if(!queryresult.exec(sqls[i]))
-            {
+    if (tempDB.transaction()) {
+        for (int i = 0; i < sqls.size(); i++) {
+            if (!queryresult.exec(sqls[i])) {
                 isOk = false;
                 break;
             }
         }
 
-        if(tempDB.commit())
-        {
-            if(isOk)
-            {
+        if (tempDB.commit()) {
+            if (isOk) {
                 try {
-                    do
-                    {
+                    do {
                         RecordSet pRecordSet;
                         QSqlRecord precord = queryresult.record();
 
                         Row fieldNames;
-                        for(int i=0;i<precord.count();i++)
-                        {
+                        for (int i = 0; i < precord.count(); i++) {
                             //qDebug()<<"query:"<<precord.fieldName(i);
                             fieldNames.push_back(precord.fieldName(i));
                         }
 
                         pRecordSet.setColumnHeaders(fieldNames);
 
-                        while(queryresult.next())
-                        {
+                        while (queryresult.next()) {
                             Row fieldDatas;
-                            for(int i=0;i<precord.count();i++)
-                            {
+                            for (int i = 0; i < precord.count(); i++) {
                                 fieldDatas.push_back(queryresult.value(i).toString());
                             }
 
                             pRecordSet.add(fieldDatas);
                         }
 
-                        if(!pRecordSet.isEmpty())
+                        if (!pRecordSet.isEmpty())
                             pRecordSetList.add(pRecordSet);
-                    }
-                    while(queryresult.nextResult());
+                    } while (queryresult.nextResult());
                 } catch (...) {
-                    QLOG_ERROR()<<"query error:"<<queryresult.lastError().text();
+                    QLOG_ERROR() << "query error:" << queryresult.lastError().text();
                 }
             }
-        }
-        else
-        {
+        } else {
             tempDB.rollback();
         }
     }
@@ -124,61 +119,72 @@ RecordSetList SqliteDataProvider::execTransaction(const QStringList& sqls,QStrin
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-RecordSetList SqliteDataProvider::execSql(const QString& sql,
-                                                const QString &connectionName,
-                                                bool longConnect)
+RecordSetList SqliteDataProvider::execSql(const QString &sql,
+                                          const QString &connectionName,
+                                          bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    // 1. 获取新连接
+    QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,
+                                                    m_dbPath,
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    1433,
+                                                    longConnect,
+                                                    connectionName);
 
-    if(!tempDB.isOpen())
-    {
-        qDebug() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+    if (!tempDB.isOpen()) {
+        QLOG_WARN() << "connection failed, name:" << tempDB.connectionName();
         return pRecordSetList;
     }
 
+    // 2. 开启自动提交模式（关键）
+    tempDB.setConnectOptions("QSQLITE_ENABLE_REGEXP"); // 示例，可选
+    tempDB.transaction();                              // 开事务
+    // 注意：在 SQLite 中，如果你想强制 autocommit，可以直接不显式 BEGIN，
+    // 或者确保执行后调用 commit()。
+
     QSqlQuery query_result(tempDB);
 
-    if(query_result.exec(sql))
-    {
+    if (!query_result.exec(sql)) {
+        QLOG_ERROR() << "SQL exec error:" << query_result.lastError().text() << "SQL:" << sql;
+    } else {
         try {
-            do
-            {
+            do {
                 RecordSet pRecordSet;
                 QSqlRecord precord = query_result.record();
 
                 Row fieldNames;
-                for(int i=0;i<precord.count();i++)
-                {
-                    //qDebug()<<"query:"<<precord.fieldName(i);
+                for (int i = 0; i < precord.count(); i++) {
                     fieldNames.push_back(precord.fieldName(i));
                 }
-
                 pRecordSet.setColumnHeaders(fieldNames);
 
-                while(query_result.next())
-                {
+                while (query_result.next()) {
                     Row fieldDatas;
-                    for(int i=0;i<precord.count();i++)
-                    {
+                    for (int i = 0; i < precord.count(); i++) {
                         fieldDatas.push_back(query_result.value(i).toString());
                     }
-
                     pRecordSet.add(fieldDatas);
                 }
 
-                if(!pRecordSet.isEmpty())
+                if (!pRecordSet.isEmpty())
                     pRecordSetList.add(pRecordSet);
-            }
-            while(query_result.nextResult());
+            } while (query_result.nextResult());
         } catch (...) {
-            QLOG_ERROR()<<"query error:"<<query_result.lastError().text();
+            QLOG_ERROR() << "query error:" << query_result.lastError().text();
         }
     }
 
-    //NDBPool::closeConnection(tempDB);
+    // 3. 提交事务（保证写操作立刻生效）
+    if (!tempDB.commit()) {
+        QLOG_ERROR() << "commit failed:" << tempDB.lastError().text();
+    }
+
+    // 4. 关闭连接（避免事务悬挂）
+    NDBPool::closeConnection(tempDB);
 
     return pRecordSetList;
 }
@@ -189,18 +195,25 @@ RecordSetList SqliteDataProvider::execSql(const QString& sql,
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
-                                                 QString connectionName,
-                                                 bool longConnect)
+RecordSetList SqliteDataProvider::execSqls(const QStringList &sqls,
+                                           QString connectionName,
+                                           bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,
+                                                          m_dbPath,
+                                                          "",
+                                                          "",
+                                                          "",
+                                                          1433,
+                                                          longConnect,
+                                                          connectionName);
     //QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
 
-    if(!tempDB.isOpen())
-    {
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+    if (!tempDB.isOpen()) {
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.
+isOpen() << "\n";
         return pRecordSetList;
     }
 
@@ -208,49 +221,41 @@ RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
 
     bool isOk = true;
 
-    for(int i=0;i<sqls.size();i++)
-    {
-        if(!queryresult.exec(sqls[i]))
-        {
+    for (int i = 0; i < sqls.size(); i++) {
+        if (!queryresult.exec(sqls[i])) {
             isOk = false;
             break;
         }
     }
 
-    if(isOk)
-    {
+    if (isOk) {
         try {
-            do
-            {
+            do {
                 RecordSet pRecordSet;
                 QSqlRecord precord = queryresult.record();
 
                 Row fieldNames;
-                for(int i=0;i<precord.count();i++)
-                {
+                for (int i = 0; i < precord.count(); i++) {
                     //qDebug()<<"query:"<<precord.fieldName(i);
                     fieldNames.push_back(precord.fieldName(i));
                 }
 
                 pRecordSet.setColumnHeaders(fieldNames);
 
-                while(queryresult.next())
-                {
+                while (queryresult.next()) {
                     Row fieldDatas;
-                    for(int i=0;i<precord.count();i++)
-                    {
+                    for (int i = 0; i < precord.count(); i++) {
                         fieldDatas.push_back(queryresult.value(i).toString());
                     }
 
                     pRecordSet.add(fieldDatas);
                 }
 
-                if(!pRecordSet.isEmpty())
+                if (!pRecordSet.isEmpty())
                     pRecordSetList.add(pRecordSet);
-            }
-            while(queryresult.nextResult());
+            } while (queryresult.nextResult());
         } catch (...) {
-            QLOG_ERROR()<<"query error:"<<queryresult.lastError().text();
+            QLOG_ERROR() << "query error:" << queryresult.lastError().text();
         }
     }
 
@@ -265,59 +270,60 @@ RecordSetList SqliteDataProvider::execSqls(const QStringList& sqls,
  *
  * @return 如果成功获取到数据返回这个数据记录，否则抛出异常
  */
-RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
-                                                  const QString &connectionName,
-                                                  bool longConnect)
+RecordSetList SqliteDataProvider::execInsertSql(const QString &sql,
+                                                const QString &connectionName,
+                                                bool longConnect)
 {
     RecordSetList pRecordSetList;
 
-    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,m_dbPath,"","","",1433,longConnect,connectionName);
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,
+                                                          m_dbPath,
+                                                          "",
+                                                          "",
+                                                          "",
+                                                          1433,
+                                                          longConnect,
+                                                          connectionName);
 
-
-    if(!tempDB.isOpen())
-    {
-        qDebug() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen() << "\n";
+    if (!tempDB.isOpen()) {
+        qDebug() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.isOpen()
+            << "\n";
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is vaild:" << tempDB.
+isOpen() << "\n";
         return pRecordSetList;
     }
 
     QSqlQuery queryresult(tempDB);
 
-    if(queryresult.exec(sql) &&
-            queryresult.exec("select last_insert_rowid()"))
-    {
+    if (queryresult.exec(sql) &&
+        queryresult.exec("select last_insert_rowid()")) {
         try {
-            do
-            {
+            do {
                 RecordSet pRecordSet;
                 QSqlRecord precord = queryresult.record();
 
                 Row fieldNames;
-                for(int i=0;i<precord.count();i++)
-                {
+                for (int i = 0; i < precord.count(); i++) {
                     //qDebug()<<"query:"<<precord.fieldName(i);
                     fieldNames.push_back(precord.fieldName(i));
                 }
 
                 pRecordSet.setColumnHeaders(fieldNames);
 
-                while(queryresult.next())
-                {
+                while (queryresult.next()) {
                     Row fieldDatas;
-                    for(int i=0;i<precord.count();i++)
-                    {
+                    for (int i = 0; i < precord.count(); i++) {
                         fieldDatas.push_back(queryresult.value(i).toString());
                     }
 
                     pRecordSet.add(fieldDatas);
                 }
 
-                if(!pRecordSet.isEmpty())
+                if (!pRecordSet.isEmpty())
                     pRecordSetList.add(pRecordSet);
-            }
-            while(queryresult.nextResult());
+            } while (queryresult.nextResult());
         } catch (...) {
-            QLOG_ERROR()<<"query error:"<<queryresult.lastError().text();
+            QLOG_ERROR() << "query error:" << queryresult.lastError().text();
         }
     }
 
@@ -326,27 +332,36 @@ RecordSetList SqliteDataProvider::execInsertSql(const QString& sql,
     return pRecordSetList;
 }
 
-RecordSetList SqliteDataProvider::execDeleteSql(const QString &sql, const QString &connectionName, bool longConnect) {
+RecordSetList SqliteDataProvider::execDeleteSql(const QString &sql,
+                                                const QString &connectionName,
+                                                bool longConnect)
+{
     RecordSetList pRecordSetList;
 
-    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE, m_dbPath, "", "", "", 1433, longConnect, connectionName);
+    const QSqlDatabase tempDB = NDBPool::getNewConnection(QSQLITE,
+                                                          m_dbPath,
+                                                          "",
+                                                          "",
+                                                          "",
+                                                          1433,
+                                                          longConnect,
+                                                          connectionName);
 
-    if (!tempDB.isOpen())
-    {
-        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.isOpen();
+    if (!tempDB.isOpen()) {
+        QLOG_INFO() << " connection name:" << tempDB.connectionName() << "is valid:" << tempDB.
+isOpen();
         return pRecordSetList;
     }
 
     QSqlQuery queryresult(tempDB);
 
-    if (queryresult.exec(sql))
-    {
+    if (queryresult.exec(sql)) {
         int affected = queryresult.numRowsAffected();
 
         try {
             // 构建一个包含影响行数的结果
             RecordSet pRecordSet;
-            pRecordSet.setColumnHeaders({ "rowsAffected" });
+            pRecordSet.setColumnHeaders({"rowsAffected"});
 
             Row fieldDatas;
             fieldDatas.push_back(QString::number(affected));
@@ -356,9 +371,7 @@ RecordSetList SqliteDataProvider::execDeleteSql(const QString &sql, const QStrin
         } catch (...) {
             QLOG_ERROR() << "delete error:" << queryresult.lastError().text();
         }
-    }
-    else
-    {
+    } else {
         QLOG_ERROR() << "delete exec error:" << queryresult.lastError().text();
     }
 

@@ -1433,39 +1433,31 @@ bool KuGouServer::onApiUserDestroy(const QPointer<JQHttpServer::Session> &sessio
         // 获取用户ID用于后续操作
         QString userId = verifyResult(0)(0, "id");
 
-        // 开始事务（确保数据一致性）
-        m_SqliteDataProvider.execSql("BEGIN TRANSACTION;", "begin_transaction", false);
+        // 构造需要在事务中执行的 SQL 列表
+        QStringList sqls;
+        sqls << QString("DELETE FROM user_table WHERE account='%1' AND password='%2';")
+            .arg(safeAccount, safePassword);
 
-        try {
-            // 删除用户相关数据（根据实际需求扩展）
-            // 1. 删除用户基本信息
-            QString deleteUserSql = QString(
-                "DELETE FROM user_table "
-                "WHERE account = '%1' AND password = '%2';"
-                ).arg(safeAccount, safePassword);
-            m_SqliteDataProvider.execSql(deleteUserSql, "delete_user", false);
+        // 如果需要删除用户歌曲，可以加上：
+        // sqls << QString("DELETE FROM local_song_table WHERE owner_id='%1';").arg(userId);
 
-            // 2. 删除用户相关歌曲数据（可选）
-            // QString deleteSongsSql = QString(
-            //     "DELETE FROM local_song_table WHERE owner_id = '%1';"
-            // ).arg(userId);
-            // m_SqliteDataProvider.execSql(deleteSongsSql, "delete_user_songs", false);
-
-            // 提交事务
-            m_SqliteDataProvider.execSql("COMMIT;", "commit_transaction", false);
-
-            QLOG_INFO() << "User destroyed:" << account;
-
-            // 构造成功响应
-            QJsonObject response;
-            response["status"] = "success";
-            session->replyBytes(QJsonDocument(response).toJson(), "application/json");
-            return true;
-        } catch (const std::exception &e) {
-            // 回滚事务
-            m_SqliteDataProvider.execSql("ROLLBACK;", "rollback_transaction", false);
-            throw; // 重新抛出异常
+        // 执行事务
+        auto txResult = m_SqliteDataProvider.execTransaction(sqls, "delete_user_tx", false);
+        if (txResult.isEmpty() && !sqls.isEmpty()) {
+            // 说明事务失败
+            session->replyBytes(SResult::failure(SResultCode::ServerInnerError),
+                                "application/json");
+            QLOG_ERROR() << "User destroy transaction failed for account:" << account;
+            return false;
         }
+
+        QLOG_INFO() << "User destroyed:" << account;
+
+        // 构造成功响应
+        QJsonObject response;
+        response["status"] = "success";
+        session->replyBytes(QJsonDocument(response).toJson(), "application/json");
+        return true;
     } catch (const std::exception &e) {
         QLOG_ERROR() << "Exception in onApiUserDestroy:" << e.what();
         session->replyBytes(SResult::failure(SResultCode::ServerInnerError), "application/json");
