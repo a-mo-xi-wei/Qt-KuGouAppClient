@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(Common LANGUAGES CXX)
 
+#缓存模块
+add_subdirectory(Caches)
+
 #JWT模块
 add_subdirectory(SJwt)
 
@@ -14,6 +17,7 @@ add_subdirectory(MyHttpClient)
 add_subdirectory(SApp)
 
 set(COMMON_SOURCE
+        ${CACHES_SOURCES}
         ${SJWT_SOURCES}
         ${MYCONFIGFILE_SOURCES}
         ${MYHTTPCLIENT_SOURCES}
@@ -25,6 +29,7 @@ add_library(Common SHARED ${COMMON_SOURCE})
 target_compile_definitions(Common PRIVATE COMMON_LIBRARY)
 
 target_include_directories(Common PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/Caches
         ${CMAKE_CURRENT_SOURCE_DIR}/MyConfigFile
         ${CMAKE_CURRENT_SOURCE_DIR}/MyHttpClient
         ${CMAKE_CURRENT_SOURCE_DIR}/SJwt
