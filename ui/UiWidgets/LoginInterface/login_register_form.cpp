@@ -122,6 +122,17 @@ void LoginRegisterForm::build_animation()
             &QPropertyAnimation::finished,
             this,
             &LoginRegisterForm::onAnimation4Finished);
+
+    connect(animation5,
+            &QPropertyAnimation::finished,
+            this,
+            [this] {
+                /// qDebug() << __LINE__;
+                ///< 显示了注册界面
+                login_form->setDefaultButton(false);
+                registration_form->setDefaultButton(true);
+                registration_form->setFocus(); // 保证焦点在注册界面
+            });
 }
 
 void LoginRegisterForm::onAnimation3Finished()
@@ -150,6 +161,11 @@ void LoginRegisterForm::onAnimation4Finished()
         animation6->setDirection(QAbstractAnimation::Backward);
         animation6->start();
     }
+    //qDebug() << __LINE__;
+    ///< 显示了登录界面，设置default_button
+    login_form->setDefaultButton(true);
+    registration_form->setDefaultButton(false);
+    login_form->setFocus(); // 保证焦点在登录界面
 }
 
 void LoginRegisterForm::execute_animation(Hollow_button::AnimationState status)

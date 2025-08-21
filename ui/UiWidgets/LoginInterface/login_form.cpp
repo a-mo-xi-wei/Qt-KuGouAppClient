@@ -70,6 +70,12 @@ Login_form::Login_form(QWidget *parent)
             });
 }
 
+void Login_form::setDefaultButton(bool flag)
+{
+    qDebug() << "设置登录界面 登录按钮默认：" << flag;
+    login_button->setDefault(flag);
+}
+
 void Login_form::initUi()
 {
     ///< 两个输入框
@@ -157,7 +163,6 @@ void Login_form::initUi()
     login_button->move(46, 371);
     //设置快捷键为Enter，打开登录界面时，可以直接按回车登录
     login_button->setShortcut(Qt::Key::Key_Return);
-    login_button->setDefault(true);
 
     ///< 底部四个登录选项按钮
     {

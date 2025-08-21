@@ -14,6 +14,8 @@ class Login_form : public QWidget
 public:
     explicit Login_form(QWidget* parent = nullptr);
 
+    void setDefaultButton(bool flag);
+
 private:
     void initUi();
 

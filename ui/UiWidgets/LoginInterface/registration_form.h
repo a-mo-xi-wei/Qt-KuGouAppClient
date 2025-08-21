@@ -11,39 +11,42 @@ class Registration_form : public QWidget
     Q_OBJECT
 
 public:
-    explicit Registration_form(QWidget* parent = nullptr);
+    explicit Registration_form(QWidget *parent = nullptr);
 
+    void setDefaultButton(bool flag);
+
+private:
     void animations();
 
-    void crop_corner(QPainter* painter);
+    void crop_corner(QPainter *painter);
 
-    void draw_text(QPainter* painter);
+    void draw_text(QPainter *painter);
 
 public slots:
     void execute_animation(Login_button::AnimationState State);
 
 protected:
-    void paintEvent(QPaintEvent* event) override;
+    void paintEvent(QPaintEvent *event) override;
 
 signals:
     void exit();
 
 public:
-    QPropertyAnimation* animation;
-    int zoom_rate            = 20;
+    QPropertyAnimation *animation;
+    int zoom_rate = 20;
     bool m_isPasswordVisible = false;
-    bool m_forceInvalidHint  = false;
+    bool m_forceInvalidHint = false;
 
-    Input_box* username;
-    Input_box* email;
-    Input_box* password;
+    Input_box *username;
+    Input_box *email;
+    Input_box *password;
 
-    Login_button* login_button;
+    Login_button *login_button;
 
-    QtMaterialFloatingActionButton* other_login_buttons1;
-    QtMaterialFloatingActionButton* other_login_buttons2;
-    QtMaterialFloatingActionButton* other_login_buttons3;
-    QtMaterialFloatingActionButton* other_login_buttons4;
+    QtMaterialFloatingActionButton *other_login_buttons1;
+    QtMaterialFloatingActionButton *other_login_buttons2;
+    QtMaterialFloatingActionButton *other_login_buttons3;
+    QtMaterialFloatingActionButton *other_login_buttons4;
 };
 
 #endif // REGISTRATION_FORM_H

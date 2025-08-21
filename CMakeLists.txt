@@ -37,7 +37,7 @@ add_subdirectory(ui)
 #util目录
 add_subdirectory(util)
 
-#开始模块
+#客户端模块
 add_subdirectory(KuGouClient)
 
 #服务器模块
