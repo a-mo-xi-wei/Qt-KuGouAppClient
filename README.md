@@ -74,7 +74,7 @@ SQL模块实现播放记录管理
 **QThreadPool** 构建动态弹性线程池，通过 QRunnable 封装任务单元，实现线程资源的自动回收。
 
 项目难点：播放列表、菜单功能，**歌曲搜索**、**歌词显示**、播放控制等**播放器核心功能**设计问题，自定义控件和事件响应，遮罩绘图，控件拉伸，
-**特效绘制**， 堆栈界面**懒加载**、**LRU缓存**，**JWT验证登录**、**池化**技术、**Ai对话**、**数据库连接池**设计、**异步非阻塞式线程**、**日志系统**、**网络模块**封装、**开源库**（如 FFmpeg 和 SDL）的集成与优化，以提升媒体播放能力。
+**特效绘制**， 堆栈界面**懒加载**、**LRU缓存**，**JWT验证登录**、**池化**技术、**Ai对话**、**异步非阻塞式线程**、**日志系统**、**网络模块**封装、**开源库**（如 FFmpeg 和 SDL）的集成与优化，以提升媒体播放能力。
 
 ## 🎨 界面技术栈
 
@@ -171,8 +171,8 @@ flowchart TD
 
 ### 5.Ai对话界面(略卡😅)
 
+![](image-show/image24.png)
 ![](image-show/image25.png)
-![](image-show/image26.png)
 
 ### 6.歌单界面
 
@@ -181,51 +181,50 @@ flowchart TD
 ### 7.每日推荐界面
 
 ![输入图片说明](image-show/image11.png)
-![输入图片说明](image-show/image12.png)
 
 ### 8.我的收藏界面
 
-![输入图片说明](image-show/image13.png)
+![输入图片说明](image-show/image12.png)
 
 ### 9.本地与下载界面
 
+![输入图片说明](image-show/image13.png)
 ![输入图片说明](image-show/image14.png)
-![输入图片说明](image-show/image15.png)
 
 ### 10.音乐云盘界面
 
-![输入图片说明](image-show/image16.png)
+![输入图片说明](image-show/image15.png)
 
 ### 11.已购音乐界面
 
-![输入图片说明](image-show/image17.png)
+![输入图片说明](image-show/image16.png)
 
 ### 12.最近播放界面
 
-![输入图片说明](image-show/image18.png)
+![输入图片说明](image-show/image17.png)
 
 ### 13.全部音乐界面
 
-![输入图片说明](image-show/image19.png)
+![输入图片说明](image-show/image18.png)
 
 ### 14.探索界面
 
-![输入图片说明](image-show/image20.png)
+![输入图片说明](image-show/image19.png)
 
 ### 15.听书界面
 
+![输入图片说明](image-show/image20.png)
 ![输入图片说明](image-show/image21.png)
-![输入图片说明](image-show/image22.png)
 
 ### 16.直播界面
 
+![输入图片说明](image-show/image22.png)
 ![输入图片说明](image-show/image23.png)
-![输入图片说明](image-show/image24.png)
 
 ### 17.网络歌曲搜索界面
 
+![输入图片说明](image-show/image26.png)
 ![输入图片说明](image-show/image27.png)
-![输入图片说明](image-show/image28.png)
 
 ---
 
