@@ -34,10 +34,6 @@ ListenRecentlyPlay::ListenRecentlyPlay(QWidget *parent)
             return;
         }
     }
-    QMetaObject::invokeMethod(
-        this,
-        "emitInitialized",
-        Qt::QueuedConnection);
 }
 
 /**

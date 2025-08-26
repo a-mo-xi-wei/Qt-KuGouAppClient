@@ -94,12 +94,6 @@ protected:
 
     void resizeEvent(QResizeEvent *event) override;
 
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
-signals:
-    void initialized();
-
 private:
     Ui::VideoWidget *ui;                                      ///< UI 界面指针
     std::unique_ptr<QButtonGroup> m_buttonGroup;              ///< 按钮组

@@ -40,11 +40,10 @@ LocalDownload::LocalDownload(QWidget *parent)
     connect(ui->stackedWidget,
             &SlidingStackedWidget::animationFinished,
             [this] {
-                if (isNumberInitialized)
-                    enableButton(true);
+                enableButton(true);
             }); ///< 连接动画完成信号
 
-    enableButton(false); ///< 初始启用按钮
+    enableButton(true); ///< 初始启用按钮
 }
 
 /**
@@ -109,18 +108,6 @@ QWidget *LocalDownload::createPage(int id)
                 &LocalSong::cancelLoopPlay,
                 this,
                 &LocalDownload::cancelLoopPlay);
-        connect(m_localSong.get(),
-                &LocalSong::initialized,
-                this,
-                [this] {
-                    QMetaObject::invokeMethod(this,
-                                              "emitInitialized",
-                                              Qt::QueuedConnection,
-                                              Q_ARG(bool, true));
-                    if (ui->stackedWidget->isSlideAnimationFinished()) {
-                        enableButton(true);
-                    }
-                });
         page = m_localSong.get();
         break;
     case 1: m_downloadedSong = std::make_unique<DownloadedSong>(ui->stackedWidget);
@@ -128,18 +115,6 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedSong::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
-        connect(m_downloadedSong.get(),
-                &DownloadedSong::initialized,
-                this,
-                [this] {
-                    QMetaObject::invokeMethod(this,
-                                              "emitInitialized",
-                                              Qt::QueuedConnection,
-                                              Q_ARG(bool, true));
-                    if (ui->stackedWidget->isSlideAnimationFinished()) {
-                        enableButton(true);
-                    }
-                });
         page = m_downloadedSong.get();
         break;
     case 2: m_downloadedVideo = std::make_unique<DownloadedVideo>(ui->stackedWidget);
@@ -147,18 +122,6 @@ QWidget *LocalDownload::createPage(int id)
                 &DownloadedVideo::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
-        connect(m_downloadedVideo.get(),
-                &DownloadedVideo::initialized,
-                this,
-                [this] {
-                    QMetaObject::invokeMethod(this,
-                                              "emitInitialized",
-                                              Qt::QueuedConnection,
-                                              Q_ARG(bool, true));
-                    if (ui->stackedWidget->isSlideAnimationFinished()) {
-                        enableButton(true);
-                    }
-                });
         page = m_downloadedVideo.get();
         break;
     case 3: m_downloading = std::make_unique<Downloading>(ui->stackedWidget);
@@ -166,18 +129,6 @@ QWidget *LocalDownload::createPage(int id)
                 &Downloading::find_more_music,
                 this,
                 &LocalDownload::find_more_music);
-        connect(m_downloading.get(),
-                &Downloading::initialized,
-                this,
-                [this] {
-                    QMetaObject::invokeMethod(this,
-                                              "emitInitialized",
-                                              Qt::QueuedConnection,
-                                              Q_ARG(bool, true));
-                    if (ui->stackedWidget->isSlideAnimationFinished()) {
-                        enableButton(true);
-                    }
-                });
         page = m_downloading.get();
         break;
     default:
@@ -202,16 +153,12 @@ void LocalDownload::initStackedWidget()
 
     // 初始化占位页面
     for (int i = 0; i < 4; ++i) {
-        auto *placeholder = new QWidget;
-        auto *layout = new QVBoxLayout(placeholder);
-        layout->setContentsMargins(0, 0, 0, 0);
-        layout->setSpacing(0);
-        m_pages[i] = placeholder;
-        ui->stackedWidget->insertWidget(i, placeholder);
+        ui->stackedWidget->insertWidget(i, createPage(i));
     }
-
-    // 创建并添加默认页面（本地歌曲）
-    m_pages[0]->layout()->addWidget(createPage(0));
+    QMetaObject::invokeMethod(this,
+                              "emitInitialized",
+                              Qt::QueuedConnection,
+                              Q_ARG(bool, true));
 
     ui->stackedWidget->setCurrentIndex(0);
 
@@ -225,56 +172,6 @@ void LocalDownload::initStackedWidget()
                 }
 
                 enableButton(false);
-                isNumberInitialized = false;
-                QMetaObject::invokeMethod(this,
-                                          "emitInitialized",
-                                          Qt::QueuedConnection,
-                                          Q_ARG(bool, false));
-
-                // 清理目标 placeholder 内旧的控件
-                QWidget *placeholder = m_pages[m_currentIdx];
-                if (!placeholder) {
-                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-                    enableButton(true);
-                    return;
-                }
-
-                QLayout *layout = placeholder->layout();
-                if (!layout) {
-                    layout = new QVBoxLayout(placeholder);
-                    layout->setContentsMargins(0, 0, 0, 0);
-                    layout->setSpacing(0);
-                } else {
-                    while (QLayoutItem *item = layout->takeAt(0)) {
-                        if (QWidget *widget = item->widget()) {
-                            // qDebug()<<"删除旧控件";
-                            widget->deleteLater();
-                        }
-                        delete item;
-                    }
-                    switch (m_currentIdx) {
-                    case 0: m_localSong.reset();
-                        break;
-                    case 1: m_downloadedSong.reset();
-                        break;
-                    case 2: m_downloadedVideo.reset();
-                        break;
-                    case 3: m_downloading.reset();
-                        break;
-                    default: break;
-                    }
-                }
-
-                placeholder = m_pages[id];
-                layout = placeholder->layout();
-                // 创建新页面
-                QWidget *realPage = createPage(id);
-
-                if (!realPage) {
-                    qWarning() << "[WARNING] Failed to create page at index:" << id;
-                } else {
-                    layout->addWidget(realPage);
-                }
 
                 ui->stackedWidget->slideInIdx(id);
                 m_currentIdx = id;

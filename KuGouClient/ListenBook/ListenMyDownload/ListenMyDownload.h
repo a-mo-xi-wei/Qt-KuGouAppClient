@@ -16,9 +16,6 @@
 #include <QPointer>
 #include <QTimer>
 
-#include <array>
-#include <memory>
-
 class QButtonGroup;
 
 /**
@@ -106,17 +103,11 @@ signals:
      */
     void switch_to_listen_recommend();
 
-    void initialized();
-
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
 private:
     Ui::ListenMyDownload *ui;                         ///< UI 指针
     std::unique_ptr<QButtonGroup> m_buttonGroup;      ///< 按钮组
     std::unique_ptr<DownloadedWidget> m_downloaded;   ///< 已下载控件
     std::unique_ptr<DownloadingWidget> m_downloading; ///< 下载中控件
-    std::array<QPointer<QWidget>, 2> m_pages{};       ///< 页面数组
     int m_currentIdx{0};                              ///< 当前页面索引
 };
 

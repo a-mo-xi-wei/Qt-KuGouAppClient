@@ -89,11 +89,6 @@ signals:
      */
     void find_more_music();
 
-    void initialized();
-
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
 private:
     Ui::Downloading *ui; ///< UI 指针
 };

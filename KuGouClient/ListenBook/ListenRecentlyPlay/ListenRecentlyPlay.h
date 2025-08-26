@@ -57,11 +57,6 @@ signals:
      */
     void switch_to_listen_recommend();
 
-    void initialized();
-
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
 private:
     Ui::ListenRecentlyPlay *ui; ///< UI 指针
 };

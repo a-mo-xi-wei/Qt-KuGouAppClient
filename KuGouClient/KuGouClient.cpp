@@ -80,10 +80,10 @@ KuGouClient::KuGouClient(MainWindow *parent)
     connect(ui->stackedWidget,
             &SlidingStackedWidget::animationFinished,
             [this] {
-                if (m_isInitialized) {
-                    /// qDebug()<<__LINE__<<" 动画结束，初始化完成，设置按钮可交互";
-                    enableButton(true);
-                }
+                //if (m_isInitialized) {
+                /// qDebug()<<__LINE__<<" 动画结束，初始化完成，设置按钮可交互";
+                enableButton(true);
+                //}
             });
     enableButton(true);                       ///< 启用按钮
     ui->stackedWidget->setVerticalMode(true); ///< 设置堆栈窗口垂直滑动
@@ -212,6 +212,7 @@ void KuGouClient::initUi()
 void KuGouClient::initStackedWidget()
 {
     m_menuBtnGroup->setParent(ui->center_menu_widget);
+
     for (int i = 0; i < 17; ++i) {
         auto *placeholder = new QWidget;
         auto *layout = new QVBoxLayout(placeholder);
@@ -220,11 +221,14 @@ void KuGouClient::initStackedWidget()
         m_pages[i] = placeholder;
         ui->stackedWidget->insertWidget(i, placeholder);
     }
-
-    ///< 默认构造下面两个界面的原因：由于图片解码后占用内存过高，导致切换时动态申请内存会造成卡顿，因此不采用懒加载
-    m_pages[3]->layout()->addWidget(createPage(3)); // Default to RecommendForYou
-    m_pages[11]->layout()->addWidget(createPage(11));
-
+    /*
+         ///< 默认构造下面两个界面的原因：由于图片解码后占用内存过高，导致切换时动态申请内存会造成卡顿，因此不采用懒加载
+         m_pages[3]->layout()->addWidget(createPage(3)); // Default to RecommendForYou
+         m_pages[11]->layout()->addWidget(createPage(11));
+     */
+    for (int i = 0; i < 16; ++i) {
+        m_pages[i]->layout()->addWidget((createPage(i)));
+    }
     ui->stackedWidget->setCurrentIndex(3);
 
     /// 都被titleWidget 转发回来了，无需再次连接
@@ -235,11 +239,87 @@ void KuGouClient::onSelectedWidget(const int &id)
 {
     if (m_currentIdx == id)
         return;
-    ///< 可以在此处筛选哪些界面不需要动态地创建删除
-    if (id == 3 || id == 16 || id == 11) {
-        ///< 已经缓存的直接显示
-        m_isInitialized = true;
-        ///< 删除还是要正常进行
+    /*
+        ///< 可以在此处筛选哪些界面不需要动态地创建删除
+        if (id == 3 || id == 16 || id == 11) {
+            ///< 已经缓存的直接显示
+            m_isInitialized = true;
+            ///< 删除还是要正常进行
+            enableButton(false);
+            QWidget *placeholder = m_pages[m_currentIdx];
+            if (m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 11) {
+                if (!placeholder) {
+                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
+                    enableButton(true);
+                    return;
+                }
+                QLayout *layout = placeholder->layout();
+                if (!layout) {
+                    layout = new QVBoxLayout(placeholder);
+                    layout->setContentsMargins(0, 0, 0, 0);
+                    layout->setSpacing(0);
+                } else {
+                    while (QLayoutItem *item = layout->takeAt(0)) {
+                        if (QWidget *widget = item->widget()) {
+                            // qDebug()<<"删除旧控件";
+                            widget->deleteLater();
+                        }
+                        delete item;
+                    }
+
+                    switch (m_currentIdx) {
+                    case 0: m_live.reset();
+                        break;
+                    case 1: m_listenBook.reset();
+                        break;
+                    case 2: m_search.reset();
+                        break;
+                    // case 3: m_recommendForYou.reset();break;
+                    case 4: m_musicRepository.reset();
+                        break;
+                    case 5: m_channel.reset();
+                        break;
+                    case 6: m_video.reset();
+                        break;
+                    case 7: m_aiChat.reset();
+                        break;
+                    case 8: m_songList.reset();
+                        break;
+                    case 9: m_dailyRecommend.reset();
+                        break;
+                    case 10: m_collection.reset();
+                        break;
+                    // case 11: m_localDownload.reset();break;
+                    case 12: m_musicCloudDisk.reset();
+                        break;
+                    case 13: m_purchasedMusic.reset();
+                        break;
+                    case 14: m_recentlyPlayed.reset();
+                        break;
+                    case 15: m_allMusic.reset();
+                        break;
+                    default: break;
+                    }
+                }
+            }
+            if (id == 16) {
+                ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+                enableButton(true);
+            } else
+                ui->stackedWidget->slideInIdx(id);
+            m_currentIdx = id;
+            return;
+        }
+        if (id == 16) {
+            m_isInitialized = true;
+            m_currentIdx = id;
+            return;
+        }
+
+        m_refreshMask->hideLoading("");
+        m_snackbar->hide();
+        m_isInitialized = false;
+        /// qDebug()<<__LINE__ << " 设置按钮状态为禁用";
         enableButton(false);
         QWidget *placeholder = m_pages[m_currentIdx];
         if (m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 11) {
@@ -297,92 +377,21 @@ void KuGouClient::onSelectedWidget(const int &id)
                 }
             }
         }
-        if (id == 16) {
-            ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
-            enableButton(true);
-        } else
-            ui->stackedWidget->slideInIdx(id);
-        m_currentIdx = id;
-        return;
-    }
-    if (id == 16) {
-        m_isInitialized = true;
-        m_currentIdx = id;
-        return;
-    }
+        placeholder = m_pages[id];
+        auto layout = placeholder->layout();
 
-    m_refreshMask->hideLoading("");
-    m_snackbar->hide();
-    m_isInitialized = false;
-    /// qDebug()<<__LINE__ << " 设置按钮状态为禁用";
-    enableButton(false);
-    QWidget *placeholder = m_pages[m_currentIdx];
-    if (m_currentIdx != 16 && m_currentIdx != 3 && m_currentIdx != 11) {
-        if (!placeholder) {
-            qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-            enableButton(true);
-            return;
-        }
-        QLayout *layout = placeholder->layout();
-        if (!layout) {
-            layout = new QVBoxLayout(placeholder);
-            layout->setContentsMargins(0, 0, 0, 0);
-            layout->setSpacing(0);
+        QWidget *realPage = createPage(id);
+        if (!realPage) {
+            qWarning() << "[WARNING] Failed to create page at index:" << id;
         } else {
-            while (QLayoutItem *item = layout->takeAt(0)) {
-                if (QWidget *widget = item->widget()) {
-                    // qDebug()<<"删除旧控件";
-                    widget->deleteLater();
-                }
-                delete item;
-            }
-
-            switch (m_currentIdx) {
-            case 0: m_live.reset();
-                break;
-            case 1: m_listenBook.reset();
-                break;
-            case 2: m_search.reset();
-                break;
-            // case 3: m_recommendForYou.reset();break;
-            case 4: m_musicRepository.reset();
-                break;
-            case 5: m_channel.reset();
-                break;
-            case 6: m_video.reset();
-                break;
-            case 7: m_aiChat.reset();
-                break;
-            case 8: m_songList.reset();
-                break;
-            case 9: m_dailyRecommend.reset();
-                break;
-            case 10: m_collection.reset();
-                break;
-            // case 11: m_localDownload.reset();break;
-            case 12: m_musicCloudDisk.reset();
-                break;
-            case 13: m_purchasedMusic.reset();
-                break;
-            case 14: m_recentlyPlayed.reset();
-                break;
-            case 15: m_allMusic.reset();
-                break;
-            default: break;
-            }
+            layout->addWidget(realPage);
         }
-    }
-    placeholder = m_pages[id];
-    auto layout = placeholder->layout();
-
-    QWidget *realPage = createPage(id);
-    if (!realPage) {
-        qWarning() << "[WARNING] Failed to create page at index:" << id;
-    } else {
-        layout->addWidget(realPage);
-    }
-
-    ui->stackedWidget->slideInIdx(id);
+    */
+    if (id == 16) {
+        ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
+        enableButton(true);
+    } else
+        ui->stackedWidget->slideInIdx(id);
 
     m_currentIdx = id;
     STREAM_INFO() << "切换到界面 ID:" << id;

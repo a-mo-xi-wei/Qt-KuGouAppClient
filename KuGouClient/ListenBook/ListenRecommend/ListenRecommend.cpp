@@ -189,10 +189,6 @@ void ListenRecommend::initTableWidgets()
                                    initOtherGalleryWidget(info.galleryName, widget);
                                    if (info.cnt == 16) {
                                        m_refreshMask->hideLoading("");
-                                       QMetaObject::invokeMethod(
-                                           this,
-                                           "emitInitialized",
-                                           Qt::QueuedConnection);
                                    }
                                });
 

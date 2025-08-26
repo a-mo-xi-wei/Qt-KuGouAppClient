@@ -119,15 +119,9 @@ void MVWidget::initButtonGroup()
 
     // 初始化占位页面
     for (int i = 0; i < 4; ++i) {
-        auto *placeholder = new QWidget;
-        auto *layout = new QVBoxLayout(placeholder);
-        layout->setContentsMargins(0, 0, 0, 0);
-        layout->setSpacing(0);
-        m_pages[i] = placeholder;
-        ui->stackedWidget->insertWidget(i, placeholder);
+        ui->stackedWidget->insertWidget(i, createPage(i));
     }
 
-    m_pages[m_currentIdx]->layout()->addWidget(createPage(1));
     ui->stackedWidget->slideInIdx(0);
 
     // 响应按钮点击事件
@@ -140,39 +134,6 @@ void MVWidget::initButtonGroup()
                 }
 
                 enableButton(false);
-
-                QWidget *placeholder = m_pages[m_currentIdx];
-                if (!placeholder) {
-                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-                    enableButton(true);
-                    return;
-                }
-
-                // 清理目标 placeholder 内旧的控件
-                QLayout *layout = placeholder->layout();
-                if (!layout) {
-                    layout = new QVBoxLayout(placeholder);
-                    layout->setContentsMargins(0, 0, 0, 0);
-                    layout->setSpacing(0);
-                } else {
-                    while (QLayoutItem *item = layout->takeAt(0)) {
-                        if (QWidget *widget = item->widget()) {
-                            widget->deleteLater();
-                        }
-                        delete item;
-                    }
-                }
-                placeholder = m_pages[id];
-                layout = placeholder->layout();
-
-                // 创建新页面
-                int beginIndex = id * 10 + 1;
-                QWidget *realPage = createPage(beginIndex);
-                if (!realPage) {
-                    qWarning() << "[WARNING] Failed to create repo page at index:" << id;
-                } else {
-                    layout->addWidget(realPage);
-                }
 
                 ui->stackedWidget->slideInIdx(id);
                 m_currentIdx = id;

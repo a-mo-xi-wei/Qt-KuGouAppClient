@@ -61,7 +61,6 @@ void Downloading::initUi()
     ui->stop_toolButton->setIcon(QIcon(QStringLiteral(":/TabIcon/Res/tabIcon/stop-gray.svg"))); ///< 设置停止按钮图标
     ui->clear_toolButton->setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/delete-black.svg"))); ///< 设置清除按钮图标
 
-    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
 }
 
 /**

@@ -369,12 +369,6 @@ signals:
      */
     void cancelLoopPlay();
 
-signals:
-    void initialized();
-
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
 protected:
     /**
      * @brief 事件过滤器

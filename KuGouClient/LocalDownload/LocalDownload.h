@@ -153,17 +153,16 @@ private slots:
 
 public slots:
     void emitInitialized(const bool &flag = true)
-{
-    QTimer::singleShot(0,
-                       this,
-                       [this,flag] {
-                           emit initialized(flag);
-                           isNumberInitialized = flag;
-                       });
-}
+    {
+        QTimer::singleShot(0,
+                           this,
+                           [this,flag] {
+                               emit initialized(flag);
+                           });
+    }
 
-    signals:
-        void initialized(const bool &flag = true); ///< 初始化完成信号
+signals:
+    void initialized(const bool &flag = true); ///< 初始化完成信号
 
 private:
     Ui::LocalDownload *ui;                              ///< UI 指针
@@ -172,8 +171,6 @@ private:
     std::unique_ptr<DownloadedSong> m_downloadedSong;   ///< 已下载歌曲界面
     std::unique_ptr<DownloadedVideo> m_downloadedVideo; ///< 已下载视频界面
     std::unique_ptr<Downloading> m_downloading;         ///< 正在下载界面
-    std::array<QPointer<QWidget>, 4> m_pages{};         ///< 页面数组
-    bool isNumberInitialized{false};                    ///< 子界面是否初始化
     int m_currentIdx{0};                                ///< 当前页面索引
 };
 

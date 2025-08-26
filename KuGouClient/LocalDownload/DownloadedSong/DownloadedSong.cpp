@@ -126,8 +126,6 @@ void DownloadedSong::initUi()
         auto search_lineEdit_toolTip = new ElaToolTip(searchButton); ///< 创建搜索按钮工具提示
         search_lineEdit_toolTip->setToolTip(QStringLiteral("搜索")); ///< 设置搜索提示
     }
-    QMetaObject::invokeMethod(this, "emitInitialized", Qt::QueuedConnection);
-
 }
 
 /**

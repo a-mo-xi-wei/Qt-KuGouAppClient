@@ -22,7 +22,11 @@ class RefreshMask;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui { class VideoChannelWidget; }
+
+namespace Ui {
+class VideoChannelWidget;
+}
+
 QT_END_NAMESPACE
 
 /**
@@ -61,7 +65,7 @@ private:
      */
     void initUi();
 
-    void loadSectionBlocks(VideoChannelPartWidget* section,const int& cnt , const int& sum);
+    void loadSectionBlocks(VideoChannelPartWidget *section, const int &cnt, const int &sum);
 
 private slots:
     /**
@@ -73,29 +77,23 @@ private slots:
 protected:
     void showEvent(QShowEvent *event) override;
 
-public slots:
-    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
-
-signals:
-    void initialized();
-
 private:
-    Ui::VideoChannelWidget                  *ui;                    ///< UI 指针
-    std::unique_ptr<QButtonGroup>            m_buttonGroup;         ///< 按钮组
-    std::unique_ptr<VideoChannelPartWidget>  m_popularWidget;       ///< 热门分类
-    std::unique_ptr<VideoChannelPartWidget>  m_childrenWidget;      ///< 儿童分类
-    std::unique_ptr<VideoChannelPartWidget>  m_themeWidget;         ///< 主题分类
-    std::unique_ptr<VideoChannelPartWidget>  m_filmWidget;          ///< 影视分类
-    std::unique_ptr<VideoChannelPartWidget>  m_varietyWidget;       ///< 综艺分类
-    std::unique_ptr<VideoChannelPartWidget>  m_ACGNWidget;          ///< 二次元分类
-    std::unique_ptr<VideoChannelPartWidget>  m_sceneWidget;         ///< 场景分类
-    std::unique_ptr<VideoChannelPartWidget>  m_languageWidget;      ///< 语言分类
-    std::unique_ptr<VideoChannelPartWidget>  m_danceWidget;         ///< 舞蹈分类
-    std::unique_ptr<VideoChannelPartWidget>  m_siteWidget;          ///< 现场分类
-    std::unique_ptr<VideoChannelPartWidget>  m_singerWidget;        ///< 歌手分类
-    QList<QString>                           m_pixPathVector;       ///< 图片路径容器
-    QList<QString>                           m_coverTextVector;     ///< 图片文字容器
-    std::unique_ptr<RefreshMask>             m_refreshMask;         ///< 刷新遮罩
+    Ui::VideoChannelWidget *ui;                               ///< UI 指针
+    std::unique_ptr<QButtonGroup> m_buttonGroup;              ///< 按钮组
+    std::unique_ptr<VideoChannelPartWidget> m_popularWidget;  ///< 热门分类
+    std::unique_ptr<VideoChannelPartWidget> m_childrenWidget; ///< 儿童分类
+    std::unique_ptr<VideoChannelPartWidget> m_themeWidget;    ///< 主题分类
+    std::unique_ptr<VideoChannelPartWidget> m_filmWidget;     ///< 影视分类
+    std::unique_ptr<VideoChannelPartWidget> m_varietyWidget;  ///< 综艺分类
+    std::unique_ptr<VideoChannelPartWidget> m_ACGNWidget;     ///< 二次元分类
+    std::unique_ptr<VideoChannelPartWidget> m_sceneWidget;    ///< 场景分类
+    std::unique_ptr<VideoChannelPartWidget> m_languageWidget; ///< 语言分类
+    std::unique_ptr<VideoChannelPartWidget> m_danceWidget;    ///< 舞蹈分类
+    std::unique_ptr<VideoChannelPartWidget> m_siteWidget;     ///< 现场分类
+    std::unique_ptr<VideoChannelPartWidget> m_singerWidget;   ///< 歌手分类
+    QList<QString> m_pixPathVector;                           ///< 图片路径容器
+    QList<QString> m_coverTextVector;                         ///< 图片文字容器
+    std::unique_ptr<RefreshMask> m_refreshMask;               ///< 刷新遮罩
 };
 
 #endif // VIDEOCHANNELWIDGET_H

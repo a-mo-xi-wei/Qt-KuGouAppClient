@@ -14,9 +14,6 @@
 #include "MVWidget/MVWidget.h"
 
 #include <QWidget>
-#include <QPointer>
-#include <memory>
-#include <array>
 #include <QTimer>
 
 class QButtonGroup;
@@ -84,7 +81,6 @@ public slots:
                            this,
                            [this,flag] {
                                emit initialized(flag);
-                               isNumberInitialized = flag;
                            });
     }
 
@@ -97,9 +93,7 @@ private:
     std::unique_ptr<VideoChannelWidget> m_videoChannelWidget; ///< 视频频道控件
     std::unique_ptr<VideoWidget> m_videoWidget;               ///< 视频控件
     std::unique_ptr<MVWidget> m_MVWidget;                     ///< MV 控件
-    std::array<QPointer<QWidget>, 3> m_pages{};               ///< 页面数组
     int m_currentIdx{0};                                      ///< 当前页面索引
-    bool isNumberInitialized{false};                          ///< 子界面是否初始化
 };
 
 #endif // VIDEO_H

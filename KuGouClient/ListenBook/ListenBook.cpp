@@ -39,10 +39,9 @@ ListenBook::ListenBook(QWidget *parent)
     connect(ui->stackedWidget,
             &SlidingStackedWidget::animationFinished,
             [this] {
-                if (isNumberInitialized)
-                    enableButton(true);
+                enableButton(true);
             });
-    enableButton(false);
+    enableButton(true);
 }
 
 /**
@@ -66,18 +65,6 @@ QWidget *ListenBook::createPage(int id)
         if (!m_listenRecommend) {
             m_listenRecommend = std::make_unique<ListenRecommend>(ui->stackedWidget);
         }
-        connect(m_listenRecommend.get(),
-                &ListenRecommend::initialized,
-                this,
-                [this] {
-                    QMetaObject::invokeMethod(this,
-                                              "emitInitialized",
-                                              Qt::QueuedConnection,
-                                              Q_ARG(bool, true));
-                    if (ui->stackedWidget->isSlideAnimationFinished()) {
-                        enableButton(true);
-                    }
-                });
         page = m_listenRecommend.get();
         break;
     case 1: // My Download
@@ -89,18 +76,6 @@ QWidget *ListenBook::createPage(int id)
                     [this] {
                         ui->listen_recommend_toolButton->click();
                         ui->listen_recommend_toolButton->setChecked(true);
-                    });
-            connect(m_listenMyDownload.get(),
-                    &ListenMyDownload::initialized,
-                    this,
-                    [this] {
-                        QMetaObject::invokeMethod(this,
-                                                  "emitInitialized",
-                                                  Qt::QueuedConnection,
-                                                  Q_ARG(bool, true));
-                        if (ui->stackedWidget->isSlideAnimationFinished()) {
-                            enableButton(true);
-                        }
                     });
         }
         page = m_listenMyDownload.get();
@@ -114,18 +89,6 @@ QWidget *ListenBook::createPage(int id)
                     [this] {
                         ui->listen_recommend_toolButton->click();
                         ui->listen_recommend_toolButton->setChecked(true);
-                    });
-            connect(m_listenRecentlyPlay.get(),
-                    &ListenRecentlyPlay::initialized,
-                    this,
-                    [this] {
-                        QMetaObject::invokeMethod(this,
-                                                  "emitInitialized",
-                                                  Qt::QueuedConnection,
-                                                  Q_ARG(bool, true));
-                        if (ui->stackedWidget->isSlideAnimationFinished()) {
-                            enableButton(true);
-                        }
                     });
         }
         page = m_listenRecentlyPlay.get();
@@ -218,15 +181,13 @@ void ListenBook::initStackedWidget()
     m_buttonGroup->setExclusive(true);
 
     for (int i = 0; i < 3; ++i) {
-        auto *placeholder = new QWidget;
-        auto *layout = new QVBoxLayout(placeholder);
-        layout->setContentsMargins(0, 0, 0, 0);
-        layout->setSpacing(0);
-        m_pages[i] = placeholder;
-        ui->stackedWidget->insertWidget(i, placeholder);
+        ui->stackedWidget->insertWidget(i, createPage(i));
     }
 
-    m_pages[0]->layout()->addWidget(createPage(0));
+    QMetaObject::invokeMethod(this,
+                              "emitInitialized",
+                              Qt::QueuedConnection,
+                              Q_ARG(bool, true));
     ui->stackedWidget->setCurrentIndex(0);
 
     connect(m_buttonGroup.get(),
@@ -238,51 +199,6 @@ void ListenBook::initStackedWidget()
                 }
 
                 enableButton(false);
-                isNumberInitialized = false;
-                QMetaObject::invokeMethod(this,
-                                          "emitInitialized",
-                                          Qt::QueuedConnection,
-                                          Q_ARG(bool, false));
-
-                QWidget *placeholder = m_pages[m_currentIdx];
-                if (!placeholder) {
-                    qWarning() << "[WARNING] No placeholder for page ID:" << m_currentIdx;
-                    enableButton(true);
-                    return;
-                }
-
-                QLayout *layout = placeholder->layout();
-                if (!layout) {
-                    layout = new QVBoxLayout(placeholder);
-                    layout->setContentsMargins(0, 0, 0, 0);
-                    layout->setSpacing(0);
-                } else {
-                    while (QLayoutItem *item = layout->takeAt(0)) {
-                        if (QWidget *widget = item->widget()) {
-                            widget->deleteLater();
-                        }
-                        delete item;
-                    }
-                    switch (m_currentIdx) {
-                    case 0: m_listenRecommend.reset();
-                        break;
-                    case 1: m_listenMyDownload.reset();
-                        break;
-                    case 2: m_listenRecentlyPlay.reset();
-                        break;
-                    default: break;
-                    }
-                }
-
-                placeholder = m_pages[id];
-                layout = placeholder->layout();
-
-                QWidget *realPage = createPage(id);
-                if (!realPage) {
-                    qWarning() << "[WARNING] Failed to create page at index:" << id;
-                } else {
-                    layout->addWidget(realPage);
-                }
 
                 ui->stackedWidget->slideInIdx(id);
                 m_currentIdx = id;

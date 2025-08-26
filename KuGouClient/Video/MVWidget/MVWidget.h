@@ -2,10 +2,7 @@
 #define MVWIDGET_H
 
 #include <QWidget>
-#include <QPointer>
 #include <QTimer>
-
-#include <array>
 
 class RefreshMask;
 class QButtonGroup;
@@ -140,12 +137,6 @@ private slots:
      */
     void on_more_pushButton5_clicked();
 
-public slots:
-    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
-
-signals:
-    void initialized();
-
 private:
     /**
      * @struct MusicInfo
@@ -172,7 +163,6 @@ private:
     QAction *m_searchAction{};                         ///< 搜索动作
     QList<std::pair<QString, QString>> m_titleAndDesc; ///< 标题和描述对
     QList<MusicInfo> m_total;                          ///< 所有音乐信息
-    std::array<QPointer<QWidget>, 4> m_pages{};        // QPointer 可检测被释放的页面
     int m_currentIdx{0};
     std::unique_ptr<RefreshMask> m_refreshMask; ///< 刷新遮罩
 };
