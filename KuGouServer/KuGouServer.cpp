@@ -196,45 +196,45 @@ void KuGouServer::initRouter()
     m_SqliteDataProvider.connect(QCoreApplication::applicationDirPath() + QString("SQLite.db"));
     //apiRouter["/api/test"] = std::bind(&Server::onApiTest, this, std::placeholders::_1);
     ///< 应用完美转发！！！
-    apiRouter["/api/test"] = [this](auto &&PH1) {
-        return onApiTest(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/test"] = [this](auto &&Arg) {
+        return onApiTest(std::forward<decltype(Arg)>(Arg));
     };
     //apiRouter["/api/version"] = std::bind(&Server::onApiVersion, this, std::placeholders::_1);
-    apiRouter["/api/version"] = [this](auto &&PH1) {
-        return onApiVersion(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/version"] = [this](auto &&Arg) {
+        return onApiVersion(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/localSongList"] = [this](auto &&PH1) {
-        return onApiLocalSongList(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/localSongList"] = [this](auto &&Arg) {
+        return onApiLocalSongList(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/searchSuggestion"] = [this](auto &&PH1) {
-        return onApiSearchSuggestion(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/searchSuggestion"] = [this](auto &&Arg) {
+        return onApiSearchSuggestion(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/searchSong"] = [this](auto &&PH1) {
-        return onApiSearchSong(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/searchSong"] = [this](auto &&Arg) {
+        return onApiSearchSong(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/getPicture"] = [this](auto &&PH1) {
-        return onApiGetPicture(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/getPicture"] = [this](auto &&Arg) {
+        return onApiGetPicture(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/getSongNetUrl"] = [this](auto &&PH1) {
-        return onApiGetSongNetUrl(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/getSongNetUrl"] = [this](auto &&Arg) {
+        return onApiGetSongNetUrl(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/getSongLyric"] = [this](auto &&PH1) {
-        return onApiGetSongLyric(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/getSongLyric"] = [this](auto &&Arg) {
+        return onApiGetSongLyric(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/addSong"] = [this](auto &&PH1) {
-        return onApiAddSong(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/addSong"] = [this](auto &&Arg) {
+        return onApiAddSong(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/delSong"] = [this](auto &&PH1) {
-        return onApiDelSong(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/delSong"] = [this](auto &&Arg) {
+        return onApiDelSong(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/login"] = [this](auto &&PH1) {
-        return onApiLogin(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/login"] = [this](auto &&Arg) {
+        return onApiLogin(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/register"] = [this](auto &&PH1) {
-        return onApiRegister(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/register"] = [this](auto &&Arg) {
+        return onApiRegister(std::forward<decltype(Arg)>(Arg));
     };
-    apiRouter["/api/userDestroy"] = [this](auto &&PH1) {
-        return onApiUserDestroy(std::forward<decltype(PH1)>(PH1));
+    apiRouter["/api/userDestroy"] = [this](auto &&Arg) {
+        return onApiUserDestroy(std::forward<decltype(Arg)>(Arg));
     };
 }
 
