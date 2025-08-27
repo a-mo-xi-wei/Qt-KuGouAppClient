@@ -65,7 +65,7 @@ public slots:
      * @param pixmap 图片
      * @param text 关联文本，默认为空
      */
-    void addImage(const QPixmap &pixmap, QString text = "");
+    void addImage(const QPixmap &pixmap, const QString &text = "");
 
     /**
      * @brief 插入图片

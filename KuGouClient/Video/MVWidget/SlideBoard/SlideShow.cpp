@@ -32,19 +32,22 @@ do {                                                                    \
  * @brief 构造函数，初始化轮播图控件
  * @param parent 父控件指针，默认为 nullptr
  */
-SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
+SlideShow::SlideShow(QWidget *parent)
+    : QWidget(parent)
 {
-    setPixmapSize(QSize(520, 150)); ///< 设置默认图片大小
+    setPixmapSize(QSize(400, 150)); ///< 设置默认图片大小
 
     auto indicationLayout = new QHBoxLayout; ///< 创建指示器布局
     indicationLayout->setObjectName("indicationLayout");
     auto mainLayout = new QVBoxLayout(this); ///< 创建主布局
-    mainLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding)); ///< 添加弹性空间
-    mainLayout->addLayout(indicationLayout); ///< 添加指示器布局
+    mainLayout->
+        addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
+    ///< 添加弹性空间
+    mainLayout->addLayout(indicationLayout);         ///< 添加指示器布局
     indicationLayout->setAlignment(Qt::AlignCenter); ///< 居中对齐
 
-    autoSlideTimer = new QTimer(this); ///< 创建自动轮播定时器
-    autoSlideTimer->setInterval(5000); ///< 默认间隔 5 秒
+    autoSlideTimer = new QTimer(this);                                         ///< 创建自动轮播定时器
+    autoSlideTimer->setInterval(5000);                                         ///< 默认间隔 5 秒
     connect(autoSlideTimer, &QTimer::timeout, this, &SlideShow::slideToRight); ///< 连接定时器到右滑槽
 }
 
@@ -55,14 +58,16 @@ SlideShow::SlideShow(QWidget *parent) : QWidget(parent)
 void SlideShow::setPixmapSize(const QSize &size)
 {
     this->oneSize = size;
-    this->setMinimumSize(static_cast<int>(oneSize.width() * (3 - backScale * 2) + SHADOW_RADIUS), ///< 设置最小尺寸
-                        oneSize.height() + SHADOW_RADIUS);
-    for (int i = 0; i < labels.size(); i++)
-    {
-        labels.at(i)->setPixmap(getScaledRoundedPixmap(pixmaps.at(i)), oneSize.width() * imgOffside); ///< 更新图片
-        labels.at(i)->setMinimumSize(1, 1); ///< 设置最小尺寸
+    this->setMinimumSize(static_cast<int>(oneSize.width() * (3 - backScale * 2) + SHADOW_RADIUS),
+                         ///< 设置最小尺寸
+                         oneSize.height() + SHADOW_RADIUS);
+    for (int i = 0; i < labels.size(); i++) {
+        labels.at(i)->
+               setPixmap(getScaledRoundedPixmap(pixmaps.at(i)), oneSize.width() * imgOffside);
+        ///< 更新图片
+        labels.at(i)->setMinimumSize(1, 1);    ///< 设置最小尺寸
         labels.at(i)->setMaximumSize(oneSize); ///< 设置最大尺寸
-        labels.at(i)->resize(oneSize); ///< 调整大小
+        labels.at(i)->resize(oneSize);         ///< 调整大小
     }
 }
 
@@ -74,7 +79,8 @@ void SlideShow::setPixmapScale(const bool &scale)
 {
     this->scalePixmap = scale;
     for (int i = 0; i < labels.size(); i++)
-        labels.at(i)->setPixmap(getScaledRoundedPixmap(pixmaps.at(i)), oneSize.width() * imgOffside); ///< 更新图片
+        labels.at(i)->setPixmap(getScaledRoundedPixmap(pixmaps.at(i)),
+                                oneSize.width() * imgOffside); ///< 更新图片
 }
 
 /**
@@ -83,14 +89,11 @@ void SlideShow::setPixmapScale(const bool &scale)
  */
 void SlideShow::setAutoSlide(const int &interval) const
 {
-    if (interval)
-    {
+    if (interval) {
         autoSlideTimer->setInterval(interval); ///< 设置间隔
-        autoSlideTimer->start();              ///< 启动定时器
-    }
-    else
-    {
-        autoSlideTimer->stop();               ///< 停止定时器
+        autoSlideTimer->start();               ///< 启动定时器
+    } else {
+        autoSlideTimer->stop(); ///< 停止定时器
     }
 }
 
@@ -99,7 +102,7 @@ void SlideShow::setAutoSlide(const int &interval) const
  * @param pixmap 图片
  * @param text 关联文本，默认为空
  */
-void SlideShow::addImage(const QPixmap &pixmap, QString text)
+void SlideShow::addImage(const QPixmap &pixmap, const QString &text)
 {
     insertImage(static_cast<int>(labels.size()), pixmap, text); ///< 插入到末尾
 }
@@ -113,30 +116,27 @@ void SlideShow::addImage(const QPixmap &pixmap, QString text)
 void SlideShow::insertImage(const int &index, const QPixmap &pixmap, QString text)
 {
     auto label = new SideHideLabel(this); ///< 创建图片标签
-    label->setScaledContents(true);      ///< 启用缩放内容
-    labels.insert(index, label);         ///< 插入标签
-    texts.insert(index, text);           ///< 插入文本
-    pixmaps.insert(index, pixmap);       ///< 插入原始图片
+    label->setScaledContents(true);       ///< 启用缩放内容
+    labels.insert(index, label);          ///< 插入标签
+    texts.insert(index, text);            ///< 插入文本
+    pixmaps.insert(index, pixmap);        ///< 插入原始图片
 
     label->setPixmap(getScaledRoundedPixmap(pixmap), oneSize.width() * imgOffside); ///< 设置图片
-    label->setMinimumSize(1, 1);        ///< 设置最小尺寸
-    label->resize(oneSize);             ///< 调整大小
-    CREATE_SHADOW(label);               ///< 添加阴影效果
-    label->show();                      ///< 显示标签
-    label->installEventFilter(this);    ///< 安装事件过滤器
-
+    label->setMinimumSize(1, 1);                                                    ///< 设置最小尺寸
+    label->resize(oneSize);                                                         ///< 调整大小
+    CREATE_SHADOW(label);                                                           ///< 添加阴影效果
+    label->show();                                                                  ///< 显示标签
+    label->installEventFilter(this);                                                ///< 安装事件过滤器
 
     auto btn = new QPushButton(this); ///< 创建指示器按钮
-    btn->setFixedSize(8, 8);                    ///< 设置按钮大小
-    updateButtonColor(btn,normalColor,selectColor);
+    btn->setFixedSize(8, 8);          ///< 设置按钮大小
+    updateButtonColor(btn, normalColor, selectColor);
 
-    indications.insert(index, btn);             ///< 插入指示器
+    indications.insert(index, btn); ///< 插入指示器
 
-    auto allLayouts = findChildren<QHBoxLayout*>();
-    for (auto layout : allLayouts)
-    {
-        if (layout->objectName() == "indicationLayout")
-        {
+    auto allLayouts = findChildren<QHBoxLayout *>();
+    for (auto layout : allLayouts) {
+        if (layout->objectName() == "indicationLayout") {
             layout->insertWidget(index, btn); ///< 添加到布局
         }
     }
@@ -144,12 +144,11 @@ void SlideShow::insertImage(const int &index, const QPixmap &pixmap, QString tex
     btn->installEventFilter(this);
 
     for (auto indication : indications)
-        indication->raise();                    ///< 提升指示器层级
+        indication->raise(); ///< 提升指示器层级
 
-    if (currentIndex > index)
-    {
+    if (currentIndex > index) {
         currentIndex++;
-        setCurrentIndex(currentIndex);          ///< 更新当前索引
+        setCurrentIndex(currentIndex); ///< 更新当前索引
     }
 }
 
@@ -159,21 +158,21 @@ void SlideShow::insertImage(const int &index, const QPixmap &pixmap, QString tex
  */
 void SlideShow::removeImage(const int &index)
 {
-    labels.takeAt(index)->deleteLater();       ///< 删除标签
-    pixmaps.removeAt(index);                   ///< 删除图片
-    texts.removeAt(index);                     ///< 删除文本
-    indications.takeAt(index)->deleteLater();  ///< 删除指示器
+    labels.takeAt(index)->deleteLater();      ///< 删除标签
+    pixmaps.removeAt(index);                  ///< 删除图片
+    texts.removeAt(index);                    ///< 删除文本
+    indications.takeAt(index)->deleteLater(); ///< 删除指示器
 
     if (labels.empty())
-        update();                              ///< 无图片时刷新
-    else
-    {
+        update(); ///< 无图片时刷新
+    else {
         if (currentIndex > index)
-            currentIndex--;                    ///< 调整索引
-        setCurrentIndex(currentIndex);         ///< 更新索引
+            currentIndex--;            ///< 调整索引
+        setCurrentIndex(currentIndex); ///< 更新索引
     }
 }
-void SlideShow::updateButtonColor(QPushButton* btn, const QColor& normal, const QColor& hover)
+
+void SlideShow::updateButtonColor(QPushButton *btn, const QColor &normal, const QColor &hover)
 {
     btn->setStyleSheet(QString(R"(
         QPushButton {
@@ -196,42 +195,40 @@ void SlideShow::setCurrentIndex(int index)
 {
     const int count = static_cast<int>(labels.size());
     if (index >= count)
-        index = count - 1;                     ///< 限制最大索引
+        index = count - 1; ///< 限制最大索引
     if (index < 0)
-        index = 0;                             ///< 限制最小索引
+        index = 0; ///< 限制最小索引
     if (index >= count)
         return;
     if (autoSlideTimer->isActive())
-        autoSlideTimer->start();               ///< 重启定时器
+        autoSlideTimer->start(); ///< 重启定时器
 
-    bool leftToRight = currentIndex < index;   ///< 判断滑动方向
+    bool leftToRight = currentIndex < index; ///< 判断滑动方向
     if (currentIndex >= 0 && currentIndex < count)
-        updateButtonColor(indications.at(currentIndex),normalColor,selectColor); ///< 恢复指示器颜色
+        updateButtonColor(indications.at(currentIndex), normalColor, selectColor); ///< 恢复指示器颜色
 
     SideHideLabel *leavingLabel = nullptr;
-    if (currentIndex >= 0 && currentIndex < count)
-    {
+    if (currentIndex >= 0 && currentIndex < count) {
         leavingLabel = labels.at(currentIndex); ///< 获取即将离开的标签
     }
 
-    currentIndex = index;                      ///< 更新当前索引
-    adjustLabels(leavingLabel);                ///< 调整标签布局
+    currentIndex = index;       ///< 更新当前索引
+    adjustLabels(leavingLabel); ///< 调整标签布局
 
     if (leftToRight)
-        labels.at((index + 1) % count)->raise(); ///< 左滑时提升右侧标签
+        labels.at((index + 1) % count)->raise();     ///< 左滑时提升右侧标签
     labels.at((index + count - 1) % count)->raise(); ///< 提升左侧标签
     if (!leftToRight)
         labels.at((index + 1) % count)->raise(); ///< 右滑时提升右侧标签
-    labels.at(index)->raise();                 ///< 提升中心标签
+    labels.at(index)->raise();                   ///< 提升中心标签
     if (hidingLabel)
-        hidingLabel->raise();                  ///< 提升隐藏标签
+        hidingLabel->raise(); ///< 提升隐藏标签
 
-    for (auto indication : indications)
-    {
-        indication->raise();                   ///< 提升指示器
-        updateButtonColor(indication,normalColor,selectColor); ///< 恢复颜色
+    for (auto indication : indications) {
+        indication->raise();                                     ///< 提升指示器
+        updateButtonColor(indication, normalColor, selectColor); ///< 恢复颜色
     }
-    updateButtonColor(indications.at(index),selectColor,selectColor); ///< 设置选中颜色
+    updateButtonColor(indications.at(index), selectColor, selectColor); ///< 设置选中颜色
 }
 
 /**
@@ -250,7 +247,8 @@ void SlideShow::slideToLeft()
 {
     if (labels.empty())
         return;
-    setCurrentIndex(static_cast<int>((currentIndex + labels.size() - 1) % labels.size())); ///< 切换到前一张
+    setCurrentIndex(static_cast<int>((currentIndex + labels.size() - 1) % labels.size()));
+    ///< 切换到前一张
 }
 
 /**
@@ -271,17 +269,21 @@ void SlideShow::slideToRight()
 QPixmap SlideShow::getScaledRoundedPixmap(QPixmap pixmap) const
 {
     const int needWidth = static_cast<int>(oneSize.width() * (1 + imgOffside * 2)); ///< 计算所需宽度
-    pixmap = pixmap.scaled(needWidth, oneSize.height(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation); ///< 缩放图片
-
-    if (true || !scalePixmap)
-    {
-        if (pixmap.width() > needWidth)
-        {
-            pixmap = pixmap.copy(pixmap.width() / 2 - needWidth / 2, 0, needWidth, oneSize.height()); ///< 裁剪宽度
-        }
-        else if (pixmap.height() > oneSize.height())
-        {
-            pixmap = pixmap.copy(0, pixmap.height() / 2 - oneSize.height() / 2, needWidth, oneSize.height()); ///< 裁剪高度
+    pixmap = pixmap.scaled(needWidth,
+                           oneSize.height(),
+                           Qt::KeepAspectRatioByExpanding,
+                           Qt::SmoothTransformation); ///< 缩放图片
+    if (true || !scalePixmap) {
+        if (pixmap.width() > needWidth) {
+            pixmap = pixmap.copy(pixmap.width() / 2 - needWidth / 2,
+                                 0,
+                                 needWidth,
+                                 oneSize.height()); ///< 裁剪宽度
+        } else if (pixmap.height() > oneSize.height()) {
+            pixmap = pixmap.copy(0,
+                                 pixmap.height() / 2 - oneSize.height() / 2,
+                                 needWidth,
+                                 oneSize.height()); ///< 裁剪高度
         }
     }
 
@@ -310,62 +312,66 @@ void SlideShow::adjustLabels(SideHideLabel *leavingLabel)
     if (labels.empty())
         return;
 
-    int sw = width(), sh = height(); ///< 获取控件尺寸
-    int w = oneSize.width(), h = oneSize.height(); ///< 获取图片尺寸
-    double scale = backScale;        ///< 两侧缩放比例
+    int sw = width(), sh = height();                    ///< 获取控件尺寸
+    int w = oneSize.width(), h = oneSize.height();      ///< 获取图片尺寸
+    double scale = backScale;                           ///< 两侧缩放比例
     int marginTop = sh / 2 - h / 2 - SHADOW_RADIUS / 2; ///< 计算顶部边距
 
     auto centerRect = QRect(sw / 2 - w / 2, marginTop, w, h); ///< 中心区域
-    leftRect = QRect(static_cast<int>(centerRect.left() - w * scale * sideOffside), ///< 左侧区域
+    leftRect = QRect(static_cast<int>(centerRect.left() - w * scale * sideOffside),
+                     ///< 左侧区域
                      marginTop + static_cast<int>(h * (1 - scale) / 2),
                      static_cast<int>(w * scale),
                      static_cast<int>(h * scale));
-    rightRect = QRect(static_cast<int>(centerRect.right() + w * scale * sideOffside - w * scale), ///< 右侧区域
+    rightRect = QRect(static_cast<int>(centerRect.right() + w * scale * sideOffside - w * scale),
+                      ///< 右侧区域
                       marginTop + static_cast<int>(h * (1 - scale) / 2),
                       static_cast<int>(w * scale),
                       static_cast<int>(h * scale));
-    auto backRect = QRect(static_cast<int>(sw / 2 - w * scale / 2), ///< 隐藏区域
-                     marginTop + static_cast<int>(h * (1 - scale) / 2),
-                     static_cast<int>(w * scale),
-                     static_cast<int>(h * scale));
+    auto backRect = QRect(static_cast<int>(sw / 2 - w * scale / 2),
+                          ///< 隐藏区域
+                          marginTop + static_cast<int>(h * (1 - scale) / 2),
+                          static_cast<int>(w * scale),
+                          static_cast<int>(h * scale));
 
     int count = static_cast<int>(labels.size());
-    for (int i = currentIndex; i < count + currentIndex; i++)
-    {
+    for (int i = currentIndex; i < count + currentIndex; i++) {
         QRect rect = backRect;
         if (i == currentIndex)
-            rect = centerRect;       ///< 当前图片居中
+            rect = centerRect; ///< 当前图片居中
         else if (i == currentIndex + 1)
-            rect = rightRect;        ///< 下一张在右侧
+            rect = rightRect; ///< 下一张在右侧
         else if ((i + 1) % count == currentIndex)
-            rect = leftRect;         ///< 上一张在左侧
+            rect = leftRect; ///< 上一张在左侧
         auto label = labels.at(i % count);
-        moveTo(label, rect);         ///< 移动标签
+        moveTo(label, rect); ///< 移动标签
 
-        if (leavingLabel && label == leavingLabel)
-        {
+        if (leavingLabel && label == leavingLabel) {
             hidingLabel = SideHideLabel::copy(leavingLabel); ///< 复制隐藏标签
             auto opaLabel = hidingLabel;
-            moveTo(opaLabel, rect);      ///< 移动隐藏标签
-            opaLabel->show();            ///< 显示隐藏标签
+            moveTo(opaLabel, rect); ///< 移动隐藏标签
+            opaLabel->show();       ///< 显示隐藏标签
 
             auto effect = new QGraphicsOpacityEffect(opaLabel); ///< 创建透明度效果
-            effect->setOpacity(1);       ///< 设置初始透明度
+            effect->setOpacity(1);                              ///< 设置初始透明度
             opaLabel->setGraphicsEffect(effect);
 
             auto ani = new QPropertyAnimation(effect, "opacity"); ///< 创建透明度动画
-            ani->setStartValue(1);       ///< 起始透明度
-            ani->setEndValue(0);         ///< 结束透明度
-            ani->setEasingCurve(QEasingCurve::OutQuad); ///< 动画曲线
-            ani->setDuration(200);       ///< 动画时长
-            connect(ani, &QPropertyAnimation::finished, this, [=]{
-                if (hidingLabel == opaLabel)
-                    hidingLabel = nullptr; ///< 清理隐藏标签
-                ani->deleteLater();      ///< 删除动画
-                opaLabel->deleteLater(); ///< 删除标签
-                effect->deleteLater();   ///< 删除效果
-            });
-            ani->start();                ///< 启动动画
+            ani->setStartValue(1);                                ///< 起始透明度
+            ani->setEndValue(0);                                  ///< 结束透明度
+            ani->setEasingCurve(QEasingCurve::OutQuad);           ///< 动画曲线
+            ani->setDuration(200);                                ///< 动画时长
+            connect(ani,
+                    &QPropertyAnimation::finished,
+                    this,
+                    [=] {
+                        if (hidingLabel == opaLabel)
+                            hidingLabel = nullptr; ///< 清理隐藏标签
+                        ani->deleteLater();        ///< 删除动画
+                        opaLabel->deleteLater();   ///< 删除标签
+                        effect->deleteLater();     ///< 删除效果
+                    });
+            ani->start(); ///< 启动动画
         }
     }
 }
@@ -380,24 +386,24 @@ void SlideShow::moveTo(SideHideLabel *label, QRect geometry) const
     if (label->geometry() == geometry)
         return;
 
-    auto ani = new QPropertyAnimation(label, "geometry"); ///< 创建几何动画
-    ani->setStartValue(label->geometry());               ///< 起始几何
-    ani->setEndValue(geometry);                          ///< 结束几何
-    ani->setDuration(300);                               ///< 动画时长
-    ani->setEasingCurve(QEasingCurve::OutQuad);          ///< 动画曲线
+    auto ani = new QPropertyAnimation(label, "geometry");                    ///< 创建几何动画
+    ani->setStartValue(label->geometry());                                   ///< 起始几何
+    ani->setEndValue(geometry);                                              ///< 结束几何
+    ani->setDuration(300);                                                   ///< 动画时长
+    ani->setEasingCurve(QEasingCurve::OutQuad);                              ///< 动画曲线
     connect(ani, &QPropertyAnimation::finished, ani, &QObject::deleteLater); ///< 动画结束时删除
     ani->start();
 
-    ani = new QPropertyAnimation(label, "sideOffset");   ///< 创建偏移动画
-    ani->setStartValue(label->getSideOffset());          ///< 起始偏移
+    ani = new QPropertyAnimation(label, "sideOffset"); ///< 创建偏移动画
+    ani->setStartValue(label->getSideOffset());        ///< 起始偏移
     double offset = 0;
     if (geometry.x() == leftRect.x())
-        offset = -label->getMaxOffset();                 ///< 左侧偏移
+        offset = -label->getMaxOffset(); ///< 左侧偏移
     else if (geometry.x() == rightRect.x())
-        offset = label->getMaxOffset();                  ///< 右侧偏移
-    ani->setEndValue(offset);                            ///< 结束偏移
-    ani->setDuration(500);                               ///< 动画时长
-    ani->setEasingCurve(QEasingCurve::OutQuad);          ///< 动画曲线
+        offset = label->getMaxOffset();                                      ///< 右侧偏移
+    ani->setEndValue(offset);                                                ///< 结束偏移
+    ani->setDuration(500);                                                   ///< 动画时长
+    ani->setEasingCurve(QEasingCurve::OutQuad);                              ///< 动画曲线
     connect(ani, &QPropertyAnimation::finished, ani, &QObject::deleteLater); ///< 动画结束时删除
     ani->start();
 }
@@ -410,10 +416,10 @@ void SlideShow::moveTo(SideHideLabel *label, QRect geometry) const
 void SlideShow::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
-    const auto w = this->width() / 2 + 20; ///< 计算宽度
+    const auto w = this->width() / 2 + 20;                       ///< 计算宽度
     const auto h = static_cast<int>(150 + 60 * (w * 1.0 / 500)); ///< 计算高度
-    oneSize = QSize(w, h);                 ///< 更新图片大小
-    adjustLabels();                        ///< 调整标签布局
+    oneSize = QSize(w, h);                                       ///< 更新图片大小
+    adjustLabels();                                              ///< 调整标签布局
 }
 
 /**
@@ -425,26 +431,21 @@ void SlideShow::resizeEvent(QResizeEvent *event)
  */
 bool SlideShow::eventFilter(QObject *obj, QEvent *event)
 {
-    if (event->type() == QEvent::MouseButtonRelease)
-    {
-        if (labels.contains(static_cast<SideHideLabel*const>(obj)))
-        {
+    if (event->type() == QEvent::MouseButtonRelease) {
+        if (labels.contains(static_cast<SideHideLabel *const>(obj))) {
             // 图片被单击
-            int index = static_cast<int>(labels.indexOf(static_cast<SideHideLabel*const>(obj)));
+            int index = static_cast<int>(labels.indexOf(static_cast<SideHideLabel *const>(obj)));
             if (currentIndex == index) // 正面图片被单击
             {
-                emit signalImageClicked(index); ///< 中心图片点击
+                emit signalImageClicked(index);            ///< 中心图片点击
                 emit signalTextActivated(texts.at(index)); ///< 文本激活
-            }
-            else // 不是当前图片，可能是动画或者两侧的
-                setCurrentIndex(index);        ///< 切换到点击的图片
+            } else                                         // 不是当前图片，可能是动画或者两侧的
+                setCurrentIndex(index);                    ///< 切换到点击的图片
         }
     }
-    if (event->type() == QEvent::Enter)
-    {
+    if (event->type() == QEvent::Enter) {
         auto btn = qobject_cast<QPushButton *>(obj);
-        if (btn)
-        {
+        if (btn) {
             int idx = indications.indexOf(btn);
             setCurrentIndex(idx);
         }
