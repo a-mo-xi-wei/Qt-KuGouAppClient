@@ -25,7 +25,6 @@
 #include <QJsonArray>
 #include <QQueue>
 
-
 /** @brief 获取当前文件所在目录宏 */
 #define GET_CURRENT_DIR (QString(__FILE__).left(qMax(QString(__FILE__).lastIndexOf('/'), QString(__FILE__).lastIndexOf('\\'))))
 
@@ -325,9 +324,6 @@ void MVWidget::initUi()
                              tasks << [this] { initHotMV(); };
                              tasks << [this] {
                                  m_refreshMask->hideLoading("");
-                                 QMetaObject::invokeMethod(this,
-                                                           "emitInitialized",
-                                                           Qt::QueuedConnection);
                              };
 
                              auto queue = std::make_shared<QQueue<Task>>();
@@ -391,13 +387,14 @@ void MVWidget::initUi()
 
 void MVWidget::initAdvertiseWidget() const
 {
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/1.png")));
     ///< 添加广告图片
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.jpg")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.jpg")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/4.jpg")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/5.jpg")));
-    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/6.jpg")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/2.png")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/3.png")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/4.png")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/5.png")));
+    ui->advertise_widget->addImage(QPixmap(QStringLiteral(":/MVPoster/Res/mvposter/6.png")));
+
     ui->advertise_widget->setCurrentIndex(0);             ///< 设置初始索引
     ui->advertise_widget->adjustSize();                   ///< 调整大小
     ui->advertise_widget->setAutoSlide(4000);             ///< 设置自动轮播
