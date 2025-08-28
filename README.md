@@ -1,4 +1,8 @@
+<div align="center">
+
 # 🎵 高仿酷狗音乐客户端 - 用Qt重塑极致音乐体验😌
+
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Qt%20Music%20Client-v1.0.0-%23007ACC?logo=qt" />
