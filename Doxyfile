@@ -61,7 +61,7 @@ PROJECT_BRIEF          = "KuGouDocs build by doxygen"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = Res_Qrc/Res/window/windowIcon.ico
+PROJECT_LOGO           = F:/code_review/Qt-WorkSpace/fight/KuGouApp/Res_Qrc/Res/window/windowIcon.ico
 
 # With the PROJECT_ICON tag one can specify an icon that is included in the tabs
 # when the HTML document is shown. Doxygen will copy the logo to the output
@@ -1104,8 +1104,8 @@ EXCLUDE                = cmake-build-debug \
                          .git \
                          tools \
                          util/MySpdlog/doc.md \
-                         build \
-                         CMakeLists.txt.user
+                         F:/code_review/Qt-WorkSpace/fight/KuGouApp/cmake-build-debug-mingw-qt-6_6_2 \
+                         F:/code_review/Qt-WorkSpace/fight/KuGouApp/cmake-build-release-mingw-qt-6_6_2
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
