@@ -61,50 +61,68 @@ Registration_form::Registration_form(QWidget *parent)
     login_button->move(46, 400);
     login_button->setShortcut(Qt::Key::Key_Return);
 
-    other_login_buttons1 = new QtMaterialFloatingActionButton(QIcon(":/Res/login/qq.png"), this);
-    other_login_buttons1->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
-    other_login_buttons1->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
-    other_login_buttons1->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
-    other_login_buttons1->setXOffset(62);                             ///< 设置 X 偏移
-    other_login_buttons1->setYOffset(90);                             ///< 设置 Y 偏移
-    other_login_buttons1->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
-    auto qq_tooTip = new ElaToolTip(other_login_buttons1);
+    QQ_LoginBtn = new QtMaterialFloatingActionButton(QIcon(":/Res/login/qq.png"), this);
+    QQ_LoginBtn->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+    QQ_LoginBtn->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+    QQ_LoginBtn->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
+    QQ_LoginBtn->setXOffset(62);                             ///< 设置 X 偏移
+    QQ_LoginBtn->setYOffset(90);                             ///< 设置 Y 偏移
+    QQ_LoginBtn->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+    auto qq_tooTip = new ElaToolTip(QQ_LoginBtn);
     qq_tooTip->setToolTip(QStringLiteral("QQ登录"));
 
-    other_login_buttons2 = new
+    WeChat_LoginBtn = new
         QtMaterialFloatingActionButton(QIcon(":/Res/login/wechat.png"), this);
-    other_login_buttons2->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
-    other_login_buttons2->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
-    other_login_buttons2->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
-    other_login_buttons2->setXOffset(157);                            ///< 设置 X 偏移
-    other_login_buttons2->setYOffset(90);                             ///< 设置 Y 偏移
-    other_login_buttons2->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
-    auto wechat_tooTip = new ElaToolTip(other_login_buttons2);
+    WeChat_LoginBtn->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+    WeChat_LoginBtn->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+    WeChat_LoginBtn->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
+    WeChat_LoginBtn->setXOffset(157);                            ///< 设置 X 偏移
+    WeChat_LoginBtn->setYOffset(90);                             ///< 设置 Y 偏移
+    WeChat_LoginBtn->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+    auto wechat_tooTip = new ElaToolTip(WeChat_LoginBtn);
     wechat_tooTip->setToolTip(QStringLiteral("微信登录"));
 
-    other_login_buttons3 = new QtMaterialFloatingActionButton(
+    Google_LoginBtn = new QtMaterialFloatingActionButton(
         QIcon(":/Res/login/logo_google.png"),
         this);
-    other_login_buttons3->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
-    other_login_buttons3->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
-    other_login_buttons3->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
-    other_login_buttons3->setXOffset(262);                            ///< 设置 X 偏移
-    other_login_buttons3->setYOffset(90);                             ///< 设置 Y 偏移
-    other_login_buttons3->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
-    auto google_tooTip = new ElaToolTip(other_login_buttons3);
+    Google_LoginBtn->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+    Google_LoginBtn->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+    Google_LoginBtn->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
+    Google_LoginBtn->setXOffset(262);                            ///< 设置 X 偏移
+    Google_LoginBtn->setYOffset(90);                             ///< 设置 Y 偏移
+    Google_LoginBtn->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+    auto google_tooTip = new ElaToolTip(Google_LoginBtn);
     google_tooTip->setToolTip(QStringLiteral("谷歌登录"));
 
-    other_login_buttons4 = new QtMaterialFloatingActionButton(
+    Github_LoginBtn = new QtMaterialFloatingActionButton(
         QIcon(":/Res/login/github-fill.png"),
         this);
-    other_login_buttons4->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
-    other_login_buttons4->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
-    other_login_buttons4->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
-    other_login_buttons4->setXOffset(367);                            ///< 设置 X 偏移
-    other_login_buttons4->setYOffset(90);                             ///< 设置 Y 偏移
-    other_login_buttons4->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
-    auto github_tooTip = new ElaToolTip(other_login_buttons4);
+    Github_LoginBtn->setCursor(Qt::PointingHandCursor);          ///< 设置发送按钮光标
+    Github_LoginBtn->setRippleStyle(Material::PositionedRipple); ///< 设置涟漪效果
+    Github_LoginBtn->setCorner(Qt::BottomLeftCorner);            ///< 设置按钮位置
+    Github_LoginBtn->setXOffset(367);                            ///< 设置 X 偏移
+    Github_LoginBtn->setYOffset(90);                             ///< 设置 Y 偏移
+    Github_LoginBtn->setBackgroundColor(QColor(0xa5bbe4));       ///< 设置背景色
+    auto github_tooTip = new ElaToolTip(Github_LoginBtn);
     github_tooTip->setToolTip(QStringLiteral("Github登录"));
+
+    ///< 连接相关信号
+    connect(QQ_LoginBtn,
+            &QtMaterialFloatingActionButton::clicked,
+            this,
+            &Registration_form::QQ_login);
+    connect(WeChat_LoginBtn,
+            &QtMaterialFloatingActionButton::clicked,
+            this,
+            &Registration_form::WeChat_login);
+    connect(Google_LoginBtn,
+            &QtMaterialFlatButton::clicked,
+            this,
+            &Registration_form::Google_login);
+    connect(Github_LoginBtn,
+            &QtMaterialFlatButton::clicked,
+            this,
+            &Registration_form::Github_login);
 
     this->animations();
     connect(login_button,

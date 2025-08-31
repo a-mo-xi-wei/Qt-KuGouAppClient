@@ -2,6 +2,7 @@
 #include "windoweffect.h"
 #include "ElaToolTip.h"
 #include "SApp.h"
+#include "ElaMessageBar.h"
 
 #include <QGraphicsDropShadowEffect>
 #include <QMouseEvent>
@@ -420,9 +421,90 @@ void LoginRegisterForm::initUi()
             &LoginRegisterForm::execute_animation);
 
     connect(login_form, &Login_form::loginSuccess, this, &QDialog::accept);
-
     connect(login_form, &Login_form::exit, this, &LoginRegisterForm::exit);
+
     connect(registration_form, &Registration_form::exit, this, &LoginRegisterForm::exit);
+
+    connect(login_form,
+            &Login_form::QQ_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("QQ登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(login_form,
+            &Login_form::WeChat_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("微信登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(login_form,
+            &Login_form::Google_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("Google登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(login_form,
+            &Login_form::Github_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("GitHub登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(registration_form,
+            &Registration_form::QQ_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("QQ登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(registration_form,
+            &Registration_form::WeChat_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("微信登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(registration_form,
+            &Registration_form::Google_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("Google登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
+    connect(registration_form,
+            &Registration_form::Github_login,
+            this,
+            [=]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Infor",
+                                           QString("GitHub登录功能暂未实现，敬请期待"),
+                                           1500,
+                                           this->window());
+            });
 }
 
 int LoginRegisterForm::animation_duration() const

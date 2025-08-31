@@ -31,6 +31,14 @@ protected:
 signals:
     void exit();
 
+    void QQ_login();
+
+    void WeChat_login();
+
+    void Google_login();
+
+    void Github_login();
+
 public:
     QPropertyAnimation *animation;
     int zoom_rate = 20;
@@ -43,10 +51,10 @@ public:
 
     Login_button *login_button;
 
-    QtMaterialFloatingActionButton *other_login_buttons1;
-    QtMaterialFloatingActionButton *other_login_buttons2;
-    QtMaterialFloatingActionButton *other_login_buttons3;
-    QtMaterialFloatingActionButton *other_login_buttons4;
+    QtMaterialFloatingActionButton *QQ_LoginBtn;
+    QtMaterialFloatingActionButton *WeChat_LoginBtn;
+    QtMaterialFloatingActionButton *Google_LoginBtn;
+    QtMaterialFloatingActionButton *Github_LoginBtn;
 };
 
 #endif // REGISTRATION_FORM_H
