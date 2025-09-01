@@ -768,7 +768,7 @@ ItemListWidget::ItemListWidget(QPixmap coverPix,
                                const QString &author,
                                QWidget *parent)
     : QWidget(parent),
-      m_mask(std::make_unique<SMaskWidget>(this)) ///< 初始化遮罩控件
+      m_mask(new SMaskWidget(this))               ///< 初始化遮罩控件
       , m_coverLab(new QLabel(this))              ///< 初始化封面标签
       , m_songNameLab(new QLabel(this))           ///< 初始化歌曲名标签
       , m_singerLab(new QLabel(this))             ///< 初始化歌手标签
