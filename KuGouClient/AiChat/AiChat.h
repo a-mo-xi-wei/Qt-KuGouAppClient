@@ -25,10 +25,11 @@ class ChatItemBase;
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class AiChat;
+
+namespace Ui {
+class AiChat;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -44,12 +45,12 @@ public:
      * @brief 构造函数，初始化 AI 聊天界面
      * @param parent 父控件指针，默认为 nullptr
      */
-    AiChat(QWidget *parent = nullptr);
+    explicit AiChat(QWidget *parent = nullptr);
 
     /**
      * @brief 析构函数，清理资源
      */
-    ~AiChat();
+    ~AiChat() override;
 
 private:
     /**
@@ -64,12 +65,12 @@ private:
      * @param radius 圆角半径
      * @return 圆角图片
      */
-    QPixmap getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius);
+    static QPixmap getRoundedPixmap(const QPixmap &src, const QSize &size, const int &radius);
 
     /**
      * @brief 处理消息时间气泡
      */
-    void dealMessageTime();
+    void dealMessageTime() const;
 
 private slots:
     /**
@@ -99,19 +100,19 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 public slots:
-    void emitInitialized() {QTimer::singleShot(0, this, [this] {emit initialized();});}
+    void emitInitialized() { QTimer::singleShot(0, this, [this] { emit initialized(); }); }
 
 signals:
     void initialized();
 
 private:
-    Ui::AiChat *const                   ui;                     ///< UI 指针
-    Chat                                m_deepSeek;             ///< 聊天对象
-    QtMaterialFloatingActionButton *const m_sendBtn;            ///< 发送按钮
-    std::unique_ptr<QtMaterialSnackbar> m_snackbar;             ///< 消息条
-    QElapsedTimer                       m_snackbarTimer;        ///< 消息条计时器
-    TextBubble                         *m_currentResponseBubble; ///< 当前回答气泡
-    ChatItemBase                       *m_currentResponseItem;   ///< 当前回答聊天项
+    Ui::AiChat *const ui;                            ///< UI 指针
+    Chat m_deepSeek;                                 ///< 聊天对象
+    QtMaterialFloatingActionButton *const m_sendBtn; ///< 发送按钮
+    std::unique_ptr<QtMaterialSnackbar> m_snackbar;  ///< 消息条
+    QElapsedTimer m_snackbarTimer;                   ///< 消息条计时器
+    TextBubble *m_currentResponseBubble;             ///< 当前回答气泡
+    ChatItemBase *m_currentResponseItem;             ///< 当前回答聊天项
 };
 
 #endif // AICHAT_H

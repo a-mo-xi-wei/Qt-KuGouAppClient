@@ -351,6 +351,16 @@ void MVWidget::initUi()
     this->m_searchAction->
           setIcon(QIcon(QStringLiteral(":/MenuIcon/Res/menuIcon/search-black.svg"))); ///< 设置图标
     this->m_searchAction->setIconVisibleInMenu(false);
+    connect(this->m_searchAction,
+            &QAction::triggered,
+            this,
+            [this]() {
+                ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                           "Info",
+                                           QString("MV搜索功能未实现 敬请期待"),
+                                           1000,
+                                           this->window()); ///< 显示提示
+            });
     ui->search_lineEdit->addAction(this->m_searchAction, QLineEdit::TrailingPosition); ///< 添加到搜索框
     ui->search_lineEdit->setBorderRadius(10);
     auto font = QFont("AaSongLiuKaiTi"); ///< 设置字体
