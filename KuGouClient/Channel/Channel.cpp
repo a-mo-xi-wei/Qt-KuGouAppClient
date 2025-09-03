@@ -372,15 +372,15 @@ void Channel::handleWheelValue(const int &value)
         },
         {m_sportsWidget.get(), ui->sports_pushButton}
     };
-
+    int currentY, nextY;
     for (int i = 0; i < sectionMappings.size(); ++i) {
         QWidget *currentWidget = sectionMappings[i].first;
         QWidget *nextWidget = (i + 1 < sectionMappings.size())
                                   ? sectionMappings[i + 1].first
                                   : nullptr;
 
-        int currentY = currentWidget->mapToParent(QPoint(0, 0)).y();
-        int nextY = nextWidget ? nextWidget->mapToParent(QPoint(0, 0)).y() : INT_MAX;
+        currentY = currentWidget->mapToParent(QPoint(0, 0)).y();
+        nextY = nextWidget ? nextWidget->mapToParent(QPoint(0, 0)).y() : INT_MAX;
 
         if (value >= currentY && value < nextY) {
             sectionMappings[i].second->setChecked(true);
