@@ -245,6 +245,7 @@ void KuGouClient::onSelectedWidget(const int &id)
         ui->stackedWidget->setCurrentWidget(this->m_searchResultWidget.get()); ///< 切换到搜索结果界面
         enableButton(true);
         m_isInitialized = true;
+        m_currentIdx = 16;
         return;
     }
 
