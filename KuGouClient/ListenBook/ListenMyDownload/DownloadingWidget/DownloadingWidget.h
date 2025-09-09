@@ -16,10 +16,11 @@
  * @brief 包含 UI 类的命名空间
  */
 QT_BEGIN_NAMESPACE
-namespace Ui
-{
-    class DownloadingWidget;
+
+namespace Ui {
+class DownloadingWidget;
 }
+
 QT_END_NAMESPACE
 
 /**
@@ -48,18 +49,26 @@ private:
      */
     void initUi();
 
-    private slots:
-        /**
-         * @brief 搜索按钮点击槽函数
-         * @note 触发查找更多有声书的信号
-         */
-        void on_search_pushButton_clicked();
+private slots:
+    /**
+     * @brief 搜索按钮点击槽函数
+     * @note 触发查找更多有声书的信号
+     */
+    void on_search_pushButton_clicked();
 
-    signals:
-        /**
-         * @brief 查找更多有声书的信号
-         */
-        void find_more_audio_book();
+    void on_downloading_play_toolButton_clicked();
+
+    void on_downloading_pause_toolButton_clicked();
+
+    void on_downloading_clear_toolButton_clicked();
+
+    void on_downloading_setting_toolButton_clicked();
+
+signals:
+    /**
+     * @brief 查找更多有声书的信号
+     */
+    void find_more_audio_book();
 
 private:
     Ui::DownloadingWidget *ui; ///< UI 指针
