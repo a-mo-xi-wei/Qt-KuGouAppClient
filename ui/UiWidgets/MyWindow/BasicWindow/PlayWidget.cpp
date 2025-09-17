@@ -702,7 +702,12 @@ void PlayWidget::on_erji_toolButton_clicked()
                                QStringLiteral("暂无可播放音乐"),
                                1000,
                                this->window()); ///< 显示无音乐提示
-        return;
+    } else {
+        ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                   "Info",
+                                   QStringLiteral("一起听功能暂未实现,敬请期待"),
+                                   1000,
+                                   this->window()); ///< 显示无音乐提示
     }
 }
 
@@ -718,7 +723,12 @@ void PlayWidget::on_lyrics_toolButton_clicked()
                                QStringLiteral("暂无可播放音乐"),
                                1000,
                                this->window()); ///< 显示无音乐提示
-        return;
+    } else {
+        ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                   "Info",
+                                   QStringLiteral("桌面歌词功能暂未实现,敬请期待"),
+                                   1000,
+                                   this->window()); ///< 显示无音乐提示
     }
 }
 
@@ -734,6 +744,11 @@ void PlayWidget::on_song_queue_toolButton_clicked()
                                    QStringLiteral("播放队列功能 暂未实现 敬请期待"),
                                    1000,
                                    this->window()); ///< 显示未实现提示
-        return;
+    } else {
+        ElaMessageBar::information(ElaMessageBarType::BottomRight,
+                                   "Info",
+                                   QStringLiteral("播放队列功能暂未实现,敬请期待"),
+                                   1000,
+                                   this->window()); ///< 显示无音乐提示
     }
 }
