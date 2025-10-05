@@ -7,7 +7,9 @@ set(SOURCE_FILE
         Searchresultwidget.cpp
 )
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
+add_library(${PROJECT_NAME} OBJECT ${SOURCE_FILE})
+
+set(LINK_OBJS ${LINK_OBJS} "$<TARGET_OBJECTS:${PROJECT_NAME}>" PARENT_SCOPE)
 
 # 指定库的包含目录
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

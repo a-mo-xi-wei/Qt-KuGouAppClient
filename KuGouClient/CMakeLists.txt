@@ -46,12 +46,34 @@ add_subdirectory(Search)
 ###        网络歌曲     ####
 add_subdirectory(SearchResultWidget)
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE})
+add_library(${PROJECT_NAME} STATIC ${SOURCE_FILE} ${LINK_OBJS})
 
-target_link_libraries(${PROJECT_NAME}
-        PUBLIC
-        Qt6::Widgets Qt6::Multimedia UiWidgets MyPlayer
-        AllMusic Channel DailyRecommend ListenBook Live AiChat LocalDownload MusicCloudDisk
-        MusicRepository MyCollection PurchasedMusic RecentlyPlayed RecommendForYou
-        Search SongList StartVideo SearchResultWidget
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/AiChat
+        ${CMAKE_CURRENT_SOURCE_DIR}/AllMusic
+        ${CMAKE_CURRENT_SOURCE_DIR}/Channel
+        ${CMAKE_CURRENT_SOURCE_DIR}/DailyRecommend
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenRecommend/Gallery
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenRecommend/ListenRankWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenRecommend/ListenTableWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenMyDownload
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenMyDownload/DownloadedWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenMyDownload/DownloadingWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenRecentlyPlay
+        ${CMAKE_CURRENT_SOURCE_DIR}/ListenBook/ListenRecommend
+        ${CMAKE_CURRENT_SOURCE_DIR}/Live
+        ${CMAKE_CURRENT_SOURCE_DIR}/LocalDownload
+        ${CMAKE_CURRENT_SOURCE_DIR}/MusicCloudDisk
+        ${CMAKE_CURRENT_SOURCE_DIR}/MusicRepository
+        ${CMAKE_CURRENT_SOURCE_DIR}/MyCollection
+        ${CMAKE_CURRENT_SOURCE_DIR}/PurchasedMusic
+        ${CMAKE_CURRENT_SOURCE_DIR}/RecentlyPlayed
+        ${CMAKE_CURRENT_SOURCE_DIR}/RecommendForYou
+        ${CMAKE_CURRENT_SOURCE_DIR}/Search
+        ${CMAKE_CURRENT_SOURCE_DIR}/SearchResultWidget
+        ${CMAKE_CURRENT_SOURCE_DIR}/SongList
+        ${CMAKE_CURRENT_SOURCE_DIR}/Video
 )
+
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets Qt6::Multimedia UiWidgets MyPlayer)
