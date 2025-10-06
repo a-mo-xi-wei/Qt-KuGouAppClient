@@ -577,14 +577,15 @@ void MusicItemWidget::onDownloadToolBtnClicked()
                              if (flag) {
                                  ElaMessageBar::success(ElaMessageBarType::BottomRight,
                                                         "Success",
-                                                        QString("音乐下载完成 : %1").arg(
+                                                        QString("%1 下载完成 : %2").arg(
+                                                            m_information.songName,
                                                             DOWNLOAD_DIR),
-                                                        1000,
+                                                        2000,
                                                         this->window());
                              } else {
                                  ElaMessageBar::error(ElaMessageBarType::BottomRight,
                                                       "Error",
-                                                      QString("音乐下载完成失败! 请检查网络是否通畅"),
+                                                      QString("音乐下载失败! 请检查网络是否通畅"),
                                                       2000,
                                                       this->window());
                              }
