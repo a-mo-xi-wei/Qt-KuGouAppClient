@@ -76,4 +76,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/Video
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets Qt6::Multimedia UiWidgets MyPlayer)
+target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Widgets Qt6::Multimedia UiWidgets MyPlayer Common)

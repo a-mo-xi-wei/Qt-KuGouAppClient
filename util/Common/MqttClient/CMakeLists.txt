@@ -1,0 +1,5 @@
+set(MQTTCLIENT_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/MqttClient.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/MqttClient.h
+        PARENT_SCOPE
+)

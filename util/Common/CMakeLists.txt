@@ -13,6 +13,9 @@ add_subdirectory(MyConfigFile)
 #http请求模块
 add_subdirectory(MyHttpClient)
 
+#mqtt请求模块
+add_subdirectory(MqttClient)
+
 #通用配置文件处理模块
 add_subdirectory(SApp)
 
@@ -21,6 +24,7 @@ set(COMMON_SOURCE
         ${SJWT_SOURCES}
         ${MYCONFIGFILE_SOURCES}
         ${MYHTTPCLIENT_SOURCES}
+        ${MQTTCLIENT_SOURCES}
         ${SAPP_SOURCES}
 )
 
@@ -32,8 +36,9 @@ target_include_directories(Common PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/Caches
         ${CMAKE_CURRENT_SOURCE_DIR}/MyConfigFile
         ${CMAKE_CURRENT_SOURCE_DIR}/MyHttpClient
+        ${CMAKE_CURRENT_SOURCE_DIR}/MqttClient
         ${CMAKE_CURRENT_SOURCE_DIR}/SJwt
         ${CMAKE_CURRENT_SOURCE_DIR}/SApp
 )
 
-target_link_libraries(Common PUBLIC Qt::Widgets Qt::Core Qt::Network MyQsLog)
+target_link_libraries(Common PUBLIC Qt::Widgets Qt::Core Qt::Network Qt6::Mqtt MyQsLog)

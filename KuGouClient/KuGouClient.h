@@ -34,6 +34,7 @@
 // 其他
 #include "SearchResultWidget.h"
 #include "LyricWidget.h"
+#include "MqttClient.h"
 
 #include <QPointer>
 #include <memory>
@@ -71,8 +72,9 @@ class QtMaterialSnackbar;
  */
 QT_BEGIN_NAMESPACE
 
-namespace Ui {
-class KuGouClient;
+namespace Ui
+{
+    class KuGouClient;
 }
 
 QT_END_NAMESPACE
@@ -90,7 +92,7 @@ public:
      * @brief 构造函数
      * @param parent 父窗口指针，默认为 nullptr
      */
-    explicit KuGouClient(MainWindow *parent = nullptr);
+    explicit KuGouClient(MainWindow* parent = nullptr);
 
     /**
      * @brief 析构函数
@@ -117,7 +119,7 @@ private:
      */
     void initStackedWidget();
 
-    void onSelectedWidget(const int &id);
+    void onSelectedWidget(const int& id);
 
     /**
      * @brief 初始化标题栏
@@ -142,14 +144,14 @@ private:
      * @param flag 是否启用
      * @note 控制菜单按钮和标题栏的交互
      */
-    void enableButton(const bool &flag);
+    void enableButton(const bool& flag);
 
     /**
      * @brief 动态创建删除页面
      * @param id 需要创建的页面id
      * @return 指向创建好的页面的指针
      */
-    QWidget *createPage(int id);
+    QWidget* createPage(int id);
 
     /**
      * @brief 信号映射表
@@ -162,21 +164,21 @@ protected:
      * @param ev 鼠标事件
      * @note 处理窗口拖动
      */
-    void mousePressEvent(QMouseEvent *ev) override;
+    void mousePressEvent(QMouseEvent* ev) override;
 
     /**
      * @brief 鼠标移动事件
      * @param event 鼠标事件
      * @note 处理窗口拖动和最大化恢复
      */
-    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
 
     /**
      * @brief 调整大小事件
      * @param event 调整大小事件
      * @note 更新角标位置和控件大小
      */
-    void resizeEvent(QResizeEvent *event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
     /**
      * @brief 事件处理
@@ -184,15 +186,15 @@ protected:
      * @return 是否处理事件
      * @note 处理鼠标移动事件
      */
-    bool event(QEvent *event) override;
+    bool event(QEvent* event) override;
 
 private slots:
     /**
     * @brief 处理suggestBox选中项槽函数
      * @note 切换搜索结果界面
      */
-    void handleSuggestBoxSuggestionClicked(const QString &suggestText,
-                                           const QVariantMap &suggestData);
+    void handleSuggestBoxSuggestionClicked(const QString& suggestText,
+                                           const QVariantMap& suggestData);
 
     /**
      * @brief 循环播放按钮点击槽函数
@@ -216,7 +218,7 @@ private slots:
      * @brief 更新播放进度
      * @note 根据进度条调整播放位置
      */
-    void updateProcess(const int &sliderValue, const int &maxSliderValue);
+    void updateProcess(const int& sliderValue, const int& maxSliderValue);
 
     /**
      * @brief 空格键暂停/播放槽函数
@@ -241,14 +243,16 @@ private slots:
      * @param index 目标索引
      * @note 切换堆栈窗口并更新按钮状态
      */
-    void onTitleCurrentStackChange(const int &index);
+    void onTitleCurrentStackChange(const int& index);
 
     /**
      * @brief 左侧菜单显示槽函数
      * @param flag 是否显示
      * @note 控制菜单滚动区域的显示
      */
-    void onLeftMenuShow(const bool &flag) const;
+    void onLeftMenuShow(const bool& flag) const;
+
+    void onMqttMessageReceived(const QString& command);
 
 public slots:
     /**
@@ -256,15 +260,15 @@ public slots:
      * @param localPath 本地音乐路径
      * @note 播放指定的本地音乐文件
      */
-    void onPlayLocalMusic(const QString &localPath);
+    void onPlayLocalMusic(const QString& localPath);
 
-    void onSearchResultMusicPlay(const MusicItemWidget *item);
+    void onSearchResultMusicPlay(const MusicItemWidget* item);
 
     /**
      * @brief 连接托盘音量控制信号
      * @param flag 是否静音
      */
-    void onTrayIconNoVolume(const bool &flag);
+    void onTrayIconNoVolume(const bool& flag);
 
     /**
      * @brief 连接托盘退出信号
@@ -277,14 +281,14 @@ signals:
      * @param songName 歌曲名称
      * @note 通知歌曲名称更新
      */
-    void curPlaySongNameChange(const QString &songName);
+    void curPlaySongNameChange(const QString& songName);
 
     /**
      * @brief 当前播放歌手改变信号
      * @param singer 歌手名称
      * @note 通知歌手名称更新
      */
-    void curPlaySingerChange(const QString &singer);
+    void curPlaySingerChange(const QString& singer);
 
     /**
      * @brief 切换账号
@@ -297,7 +301,7 @@ protected:
      * @param code 错误码
      * @note 输出错误信息
      */
-    void onOpenVideoFileFailed(const int &code) override
+    void onOpenVideoFileFailed(const int& code) override
     {
         qWarning() << "Open video file failed with code: " << code;
     }
@@ -307,7 +311,7 @@ protected:
      * @param code 错误码
      * @note 输出错误信息
      */
-    void onOpenSdlFailed(const int &code) override
+    void onOpenSdlFailed(const int& code) override
     {
         qWarning() << "Open SDL failed with code: " << code;
     }
@@ -317,7 +321,7 @@ protected:
      * @param uSec 总时长（微秒）
      * @note 输出时长信息
      */
-    void onTotalTimeChanged(const int64_t &uSec) override
+    void onTotalTimeChanged(const int64_t& uSec) override
     {
         qDebug() << "Total time: " << uSec / 1000000 << " seconds";
     }
@@ -329,9 +333,9 @@ protected:
      * @param hasAudio 是否有音频
      * @note 输出状态信息
      */
-    void onPlayerStateChanged(const VideoPlayer::State &state,
-                              const bool &hasVideo,
-                              const bool &hasAudio) override
+    void onPlayerStateChanged(const VideoPlayer::State& state,
+                              const bool& hasVideo,
+                              const bool& hasAudio) override
     {
         qDebug() << "Player state changed to: " << state << " (Has audio: " << hasAudio << ")";
     }
@@ -347,8 +351,8 @@ protected:
     }
 
 private:
-    Ui::KuGouClient *ui;                            ///< UI 界面指针
-    VideoPlayer *m_player;                          ///< 音频播放器实例
+    Ui::KuGouClient* ui;                            ///< UI 界面指针
+    VideoPlayer* m_player;                          ///< 音频播放器实例
     std::unique_ptr<QButtonGroup> m_menuBtnGroup;   ///< 菜单按钮组
     std::unique_ptr<RefreshMask> m_refreshMask;     ///< 刷新遮罩
     std::unique_ptr<QtMaterialSnackbar> m_snackbar; ///< 消息提示条
@@ -383,6 +387,8 @@ private:
     CLibhttp m_libHttp; ///< HTTP 请求库
     // 窗口创建相关
     bool m_isInitialized = false; ///< 是否初始化完成
+    // Mqtt服务
+    MqttClient m_mqttClient;
 };
 
 #endif // KUGOUCLIENT_H

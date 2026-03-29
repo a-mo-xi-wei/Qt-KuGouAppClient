@@ -2,7 +2,7 @@
 // Created by WeiWang on 25-3-9.
 //
 /**
- * @file Server.cpp
+ * @file KuGouServer.cpp
  * @brief HTTP 服务器核心实现，处理请求路由、数据库操作及业务逻辑。
  *
  * 此文件是服务器应用程序的核心，负责处理 HTTP 请求、数据库操作和业务逻辑。

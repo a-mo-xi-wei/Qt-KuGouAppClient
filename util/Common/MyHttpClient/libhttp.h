@@ -13,7 +13,6 @@
 class COMMON_EXPORT CLibhttp : public QObject
 {
     Q_OBJECT
-
 public:
     explicit CLibhttp(QObject *parent = nullptr);
     ~CLibhttp() override;

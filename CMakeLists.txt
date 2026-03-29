@@ -7,7 +7,7 @@ project(KuGouApp VERSION 1.0 LANGUAGES CXX
         DESCRIPTION "Qt KuGou App")
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets StateMachine Core Network Multimedia
-        Core5Compat Sql Concurrent Gui)
+        Core5Compat Sql Concurrent Gui Mqtt)
 
 # 设置资源文件路径宏
 file(TO_CMAKE_PATH "${CMAKE_SOURCE_DIR}/Res_Qrc/Res" RESOURCE_DIR_PATH)

@@ -74,7 +74,6 @@ KuGouClient::KuGouClient(MainWindow* parent)
             return;
         }
     }
-
     initPlayer(); ///< 初始化播放器
     initUi();     ///< 初始化界面
 
@@ -95,6 +94,10 @@ KuGouClient::KuGouClient(MainWindow* parent)
     ui->stackedWidget->setVerticalMode(true); ///< 设置堆栈窗口垂直滑动
     // @note 默认选中为你推荐页面
     ui->recommend_you_toolButton->clicked();
+
+    // 初始化Mqtt客户端
+    m_mqttClient.init();
+    connect(&m_mqttClient, &MqttClient::MqttMessageReceived, this, &KuGouClient::onMqttMessageReceived);
 }
 
 /**
@@ -1305,6 +1308,31 @@ void KuGouClient::onLeftMenuShow(const bool& flag) const
     else
     {
         ui->menu_scrollArea->hide(); ///< 隐藏菜单
+    }
+}
+
+void KuGouClient::onMqttMessageReceived(const QString& command)
+{
+    // 定义成员函数指针类型
+    using CommandHandler = void (KuGouClient::*)();
+
+    // 使用 QMap 存储命令到成员函数指针的映射
+    static const QMap<QString, CommandHandler> commandMap = {
+        {"prev song", &KuGouClient::onPreBtnClicked},
+        {"next song", &KuGouClient::onNextBtnClicked},
+        {"stop", &KuGouClient::onKeyPause},
+        {"play", &KuGouClient::onKeyPause}
+    };
+
+    // 查找并执行对应的函数
+    auto it = commandMap.find(command);
+    if (it != commandMap.end())
+    {
+        (this->*(it.value()))(); // 调用成员函数
+    }
+    else
+    {
+        qWarning() << "Unknown command received:" << command;
     }
 }
 
